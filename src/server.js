@@ -630,7 +630,7 @@ process.on("unhandledRejection", (reason) => {
 // Baslamadan once ortam degiskenlerini dogrula
 config.validate();
 
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
   console.log(`
 ╔══════════════════════════════════════════╗
 ║   MASAL - Admin Panel                    ║
