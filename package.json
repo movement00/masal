@@ -5,7 +5,7 @@
   "author": "MASAL Team",
   "main": "electron-main.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/server.js",
     "server": "node src/server.js",
     "generate": "node src/index.js",
     "electron": "electron .",

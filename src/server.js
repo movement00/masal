@@ -92,7 +92,7 @@ function collectBody(req, maxBytes = UPLOAD_MAX_BYTES) {
 function sendJson(res, statusCode, data) {
   res.writeHead(statusCode, {
     "Content-Type": "application/json; charset=utf-8",
-    "Access-Control-Allow-Origin": `http://localhost:${PORT}`,
+    "Access-Control-Allow-Origin": "*",
   });
   res.end(JSON.stringify(data));
 }
@@ -165,7 +165,7 @@ const server = http.createServer(async (req, res) => {
 
   if (req.method === "OPTIONS") {
     res.writeHead(204, {
-      "Access-Control-Allow-Origin": `http://localhost:${PORT}`,
+      "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
     });
@@ -189,7 +189,7 @@ const server = http.createServer(async (req, res) => {
         "Content-Type": "text/event-stream",
         "Cache-Control": "no-cache",
         Connection: "keep-alive",
-        "Access-Control-Allow-Origin": `http://localhost:${PORT}`,
+        "Access-Control-Allow-Origin": "*",
       });
       sseResponse = res;
 
