@@ -67,6 +67,16 @@ class TextGenerator {
    * @returns {Promise<object[]>} - Kisisellesirilmis sahne metinleri
    */
   async personalizeStoryTexts(bookData, childInfo) {
+    // OpenAI client yoksa basit {CHILD_NAME} replace yap
+    if (!this.client) {
+      console.log("  [text] OpenAI yok - book.json metinleri {CHILD_NAME} ile kişiselleştiriliyor");
+      return bookData.scenes.map(s => ({
+        sceneNumber: s.sceneNumber,
+        title: s.title,
+        text: (s.text || "").replace(/\{CHILD_NAME\}/g, childInfo.name)
+      }));
+    }
+
     // Yaş grubunu belirle (book.json'dan veya çocuk yaşından)
     const ageGroup = bookData.ageGroup || getAgeGroup(childInfo.age);
     const rules = AGE_GROUP_RULES[ageGroup] || AGE_GROUP_RULES["3-6"];
