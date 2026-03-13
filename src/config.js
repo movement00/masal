@@ -36,10 +36,6 @@ const config = {
 config.validate = function () {
   const errors = [];
 
-  if (!config.openai.apiKey) {
-    errors.push("OPENAI_API_KEY eksik (.env dosyasını kontrol edin)");
-  }
-
   const provider = config.imageProvider;
   if (provider === "google" && !config.google.apiKey) {
     errors.push("GOOGLE_API_KEY eksik (IMAGE_PROVIDER=google secili)");
