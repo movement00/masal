@@ -1,0 +1,139 @@
+{
+  "id": "dijital-dedektifler",
+  "title": "Dijital Dedektifler",
+  "description": "İstanbul Kadıköy'de yaşayan üç arkadaşın sahte bir haberi araştırarak dijital okuryazarlığın önemini keşfettiği güncel ve eğitici bir macera hikayesi.",
+  "ageGroup": "6-12",
+  "ageRange": "6-12",
+  "pageCount": 10,
+  "style": "3D Pixar animated movie style with modern urban Istanbul setting, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality, realistic Turkish neighborhood backgrounds, tech-savvy digital world elements, expressive character animation",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D Pixar style with expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": "Dijital okuryazarlık temalı hikaye - çocuk bir teknoloji meraklısı dedektif olarak tasvir edilmeli, Kadıköy İstanbul'da geçiyor"
+  },
+  "theme": {
+    "primaryColor": "#26A69A",
+    "secondaryColor": "#80CBC4",
+    "accentColor": "#E0F2F1",
+    "icon": "🔍"
+  },
+  "outfit": {
+    "description": "wearing a cool tech-style light gray jacket with neon blue LED-like trim lines and a {CHILD_NAME} name badge clipped to the collar, dark jogger pants, futuristic white sneakers",
+    "nameVisible": true,
+    "nameLocation": "on a name badge clipped to the jacket collar"
+  },
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "title": "Şok Edici Haber",
+      "text": "İstanbul'un Kadıköy ilçesinde, yan yana oturan üç yakın arkadaş vardı: On bir yaşında teknoloji meraklısı Kaan, on yaşında araştırmacı ruhu olan Selin ve on bir yaşında fotoğrafçılığı seven Berk.\nBir öğleden sonra Selin heyecanla arkadaşlarının yanına koştu:\n\"Çocuklar, büyük haber! Okulumuz kapanıyormuş!\"",
+      "prompt": "Three diverse children friends standing together on a sunny street in Istanbul Kadikoy neighborhood, a girl showing her phone screen with shocking news to two boys, one boy wearing a camera around his neck, Turkish shop signs and colorful buildings in background, concerned and surprised expressions, urban neighborhood setting, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and warm yellow background with Istanbul cityscape silhouettes, smartphone screen shapes, neighborhood building outlines, urban friendship atmosphere, modern digital world theme, children's storybook illustration background",
+      "mood": "alarmed",
+      "setting": "Kadıköy sokakları, İstanbul"
+    },
+    {
+      "sceneNumber": 2,
+      "title": "Şüpheli İşaretler",
+      "text": "Selin telefonunu gösterdi. Ekranda büyük harflerle yazılmış bir haber vardı:\n\"SON DAKİKA: Kadıköy'deki Tüm Okullar Kapanıyor!\"\nKaan haberi dikkatlice okudu. Bir şeyler garip görünüyordu.\n\"Dur bir dakika\" dedi Kaan. \"Bu sitede birçok yazım hatası var. Ve bu siteyi daha önce hiç duymadım.\"\nBerk de baktı. \"Haberdeki fotoğraf da garip görünüyor. Sanki başka bir yerden alınmış.\"",
+      "prompt": "Close-up of three children huddled around a smartphone screen showing a suspicious news article with large alarming headlines, one boy pointing out spelling errors on screen with a skeptical expression, another boy noticing the fake photo, the girl looking worried, dramatic lighting from the phone screen illuminating their faces, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and red-orange background with smartphone screen shape in center, warning exclamation marks, question mark symbols, suspicious and alert atmosphere, critical thinking theme, children's storybook illustration background",
+      "mood": "suspicious",
+      "setting": "Kadıköy sokağı, telefon ekranı başında"
+    },
+    {
+      "sceneNumber": 3,
+      "title": "Dijital Dedektifler Olalım",
+      "text": "Kaan bir fikir önerdi: \"Dijital dedektif olalım! Bu haberin gerçek olup olmadığını araştıralım.\"\n\"Nasıl yapacağız?\" diye sordu Selin.\n\"İlk adım: Haberi resmi kaynaklardan kontrol etmek. Milli Eğitim Bakanlığı'nın sitesine bakalım.\"\nResmi sitede okulların kapanacağına dair hiçbir bilgi yoktu.\n\"İlk ipucu: Resmi kaynaklar bu haberi doğrulamıyor!\" dedi Kaan not alarak.",
+      "prompt": "Three children sitting at a desk with a laptop computer, the boy typing on the keyboard checking an official government website, a girl taking notes in a notebook, another boy looking at the screen, a whiteboard behind them with detective notes and checkmarks, focused investigation atmosphere, bright room lighting, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and white background with magnifying glass shapes, checklist and notebook elements, official document stamp silhouettes, investigation and research atmosphere, fact-checking theme, children's storybook illustration background",
+      "mood": "focused",
+      "setting": "Kaan'ın odası, bilgisayar başı"
+    },
+    {
+      "sceneNumber": 4,
+      "title": "Kaynak Araştırması",
+      "text": "İkinci adım: Haberin kaynağını araştırmak.\nKaan haberi yayınlayan siteyi inceledi.\n\"Bu site daha iki hafta önce kurulmuş. Yazarın adı yok. İletişim bilgisi yok. 'Hakkımızda' sayfası boş.\"\nSelin ekledi: \"Güvenilir haber siteleri yazar adı ve iletişim bilgisi paylaşır. Bu sitenin hiçbiri yok!\"\n\"İkinci ipucu: Kaynak güvenilir değil!\" dedi Kaan defterine yazarak.",
+      "prompt": "Three children gathered around a computer screen analyzing a suspicious website, the screen shows a basic poorly designed website with missing information highlighted in red circles, one boy pointing at the screen explaining, the girl marking notes with a red pen, investigative mood, close-up of their determined faces and the screen, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and amber background with website wireframe shapes, red warning circles and X marks, anonymous silhouette icons, digital investigation atmosphere, source verification theme, children's storybook illustration background",
+      "mood": "analytical",
+      "setting": "Kaan'ın odası, bilgisayar başı"
+    },
+    {
+      "sceneNumber": 5,
+      "title": "Sahte Fotoğraf",
+      "text": "Üçüncü adım: Görselleri kontrol etmek.\nBerk fotoğrafçılık bilgisini kullandı. Haberdeki fotoğrafı tersine görsel aramayla kontrol ettiler.\n\"Buldum!\" dedi Berk. \"Bu fotoğraf iki yıl önce başka bir şehirde çekilmiş. Haberin fotoğrafı çalıntı!\"\nSelin şaşkındı: \"Yani fotoğrafı başka bir haberden alıp buraya koymuşlar?\"\n\"Aynen öyle\" dedi Berk. \"Üçüncü ipucu: Görsel sahte!\"",
+      "prompt": "Three children looking at a computer screen showing a reverse image search result, the screen split showing the fake news photo on one side and the original photo from two years ago on the other side with different context, the boy with camera expertise pointing excitedly at the match, the other two children looking amazed at the discovery, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and coral background with split screen comparison shapes, image search icon elements, photo frame silhouettes with magnifying glass, digital forensics atmosphere, visual verification theme, children's storybook illustration background",
+      "mood": "triumphant",
+      "setting": "Kaan'ın odası, bilgisayar başı"
+    },
+    {
+      "sceneNumber": 6,
+      "title": "Sonuç: Yalan Haber",
+      "text": "Araştırma tamamlandı. Selin bulgularını özetledi:\n\"Birincisi: Resmi kaynaklar haberi doğrulamıyor.\nİkincisi: Haber sitesi güvenilir değil.\nÜçüncüsü: Fotoğraf çalıntı ve sahte.\"\nKaan sonucu açıkladı: \"Bu haber kesinlikle yalan haber! Birisi insanları korkutmak veya tıklanma almak için uydurmuş.\"\nBerk üzgündü: \"Ama buna çok kişi inanmış. Ne yapacağız?\"",
+      "prompt": "Three children standing in front of a whiteboard where they have written their investigation findings with bullet points and evidence photos pinned up, the girl presenting the summary, the two boys listening, one looking determined and the other concerned, a notebook with all clues listed, detective-style evidence board, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and white background with evidence board elements, pinned notes and connected string lines, bullet point list shapes, investigation summary atmosphere, truth revealed theme, children's storybook illustration background",
+      "mood": "resolved",
+      "setting": "Kaan'ın odası, kanıt tahtası önü"
+    },
+    {
+      "sceneNumber": 7,
+      "title": "Sınıf Sunumu",
+      "text": "Ertesi gün okulda arkadaşlarına durumu anlattılar.\n\"Bu haber yalan!\" dedi Kaan sınıfın önünde. \"Ve biz bunu nasıl anladığımızı göstereceğiz.\"\nÜçü birlikte araştırma adımlarını sınıfa sundu.\nÖğretmenleri Elif Hanım çok etkilendi: \"Harika bir iş çıkardınız. Her habere hemen inanmamak gerektiğini gösterdiniz.\"\nSınıf arkadaşları alkışladı.",
+      "prompt": "Three children presenting to their classmates in a school classroom, the boy at the front pointing at a projected presentation showing the fake news investigation steps, classmates looking impressed and clapping, a proud female teacher standing to the side smiling, colorful classroom with educational posters, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and warm yellow background with classroom presentation screen shape, applauding hands silhouettes, educational poster elements, proud classroom atmosphere, sharing knowledge theme, children's storybook illustration background",
+      "mood": "proud",
+      "setting": "Okul sınıfı"
+    },
+    {
+      "sceneNumber": 8,
+      "title": "Kulüp Kuruluşu",
+      "text": "Elif Hanım bir öneride bulundu:\n\"Neden bir 'Dijital Dedektifler Kulübü' kurmuyorsunuz? Okuldaki diğer öğrencilere de bu becerileri öğretebilirsiniz.\"\nÜç arkadaş heyecanla kabul etti.\nKulübün kurallarını belirlediler:\n1. Her haberi sorgulamak\n2. Kaynağı kontrol etmek\n3. Görselleri araştırmak\n4. Paylaşmadan önce doğrulamak\n5. Başkalarını da eğitmek",
+      "prompt": "Three children in a school meeting room founding their club, hanging up a colorful hand-made banner reading Digital Detectives Club in Turkish, a list of five rules written on a poster board, other students signing up at a desk, the female teacher helping them organize, enthusiastic collaborative atmosphere, bright colors and creative decorations, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and vibrant green background with club banner shapes, numbered list elements, magnifying glass and shield icons, community building atmosphere, founding and teamwork theme, children's storybook illustration background",
+      "mood": "enthusiastic",
+      "setting": "Okul toplantı odası"
+    },
+    {
+      "sceneNumber": 9,
+      "title": "Küçük Öğrenciye Yardım",
+      "text": "Haftalar geçti. Kulüp büyüdü ve okuldaki öğrencilere çok yardımcı oldu.\nBir gün küçük sınıflardan bir öğrenci Selin'e koşarak geldi:\n\"Abla, internette biri bana 'Tebrikler bir ödül kazandınız, bilgilerinizi girin' diyor. Ne yapmalıyım?\"\nSelin gülümsedi. \"Harika bir soru! Gel, birlikte bunun bir dolandırıcılık olup olmadığını kontrol edelim.\"\nBirlikte incelediler ve bunun bir internet dolandırıcılığı olduğunu buldular. Küçük öğrenci çok rahatladı.",
+      "prompt": "An older girl helping a younger student at a computer, pointing at a suspicious pop-up on screen that shows a fake prize notification, the younger student looking relieved and grateful, other club members working in the background helping other students, a bright school computer lab with Digital Detectives Club posters on walls, mentoring scene, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and orange warning background with pop-up window shapes, shield protection icon, mentoring silhouettes, online safety atmosphere, protecting others theme, children's storybook illustration background",
+      "mood": "caring",
+      "setting": "Okul bilgisayar laboratuvarı"
+    },
+    {
+      "sceneNumber": 10,
+      "title": "Dijital Kahramanlar",
+      "text": "Yıl sonunda okul müdürü özel bir törenle Dijital Dedektifler Kulübü'nü ödüllendirdi.\n\"Bu üç öğrenci\" dedi müdür, \"bize dijital dünyada dikkatli olmanın önemini hatırlattı. Onlar gerçek birer dijital kahraman!\"\nKaan, Selin ve Berk sahneye çıktı. Kaan mikrofonu aldı:\n\"Unutmayın: İnternette gördüğünüz her şey doğru değildir. Sormak, araştırmak ve doğrulamak en büyük süper gücümüzdür.\"\nSelin ekledi: \"Gerçek, arayanı bulur.\"\nSalon alkışlarla doldu.",
+      "prompt": "Three children on a school stage receiving an award from a school principal, a large audience of students parents and teachers applauding, a boy speaking into a microphone confidently, a banner behind them celebrating Digital Detectives Club, confetti falling, proud and emotional ceremony moment, school auditorium decorated festively, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel teal and gold celebration background with stage curtain shapes, trophy and medal silhouettes, confetti and applause elements, triumphant ceremony atmosphere, digital heroes recognition theme, children's storybook illustration background",
+      "mood": "inspiring",
+      "setting": "Okul konferans salonu, ödül töreni"
+    }
+  ],
+  "funFacts": [
+    {
+      "fact": "Dünyada her gün milyonlarca yalan haber üretiliyor! Araştırmalara göre yalan haberler gerçek haberlerden 6 kat daha hızlı yayılıyor. Bu yüzden paylaşmadan önce doğrulamak çok önemli!",
+      "category": "Dijital Okuryazarlık"
+    },
+    {
+      "fact": "Tersine görsel arama yaparak bir fotoğrafın orijinal kaynağını bulabilirsin. Google Görseller'e bir fotoğraf yükleyerek o fotoğrafın daha önce nerede kullanıldığını görebilirsin!",
+      "category": "Teknoloji"
+    },
+    {
+      "fact": "Güvenilir bir haber sitesini tanımanın yolları: Yazar adı ve iletişim bilgisi olması, uzun süredir yayında olması ve resmi kaynaklara atıfta bulunmasıdır.",
+      "category": "Dijital Okuryazarlık"
+    },
+    {
+      "fact": "Siber zorbalık ve internet dolandırıcılığı, çocukların en çok karşılaştığı çevrimiçi tehlikelerdir. Şüpheli bir durumla karşılaştığında mutlaka bir yetişkine söylemelisin!",
+      "category": "Güvenlik"
+    },
+    {
+      "fact": "Türkiye'de internet kullanıcılarının yüzde 83'ü sosyal medyada en az bir kez yalan haberle karşılaşmıştır. Eleştirel düşünme becerisi, dijital çağın en önemli yeteneğidir!",
+      "category": "Dijital Okuryazarlık"
+    }
+  ],
+  "funFactPlacements": [2, 4, 6, 8, 10]
+}

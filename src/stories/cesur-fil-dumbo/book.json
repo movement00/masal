@@ -1,0 +1,140 @@
+{
+  "id": "cesur-fil-dumbo",
+  "title": "Cesur Fil Dumbo'nun U\u00e7an R\u00fcyas\u0131",
+  "description": "Farkl\u0131 olman\u0131n g\u00fczelli\u011fini ke\u015ffeden cesur bir yavru filin ilham verici hikayes\u0131.",
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 10,
+  "style": "3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a small baby elephant with very large floppy ears, big blue expressive eyes, light grey skin, and a short trunk, slightly smaller than other elephants",
+    "notes": "K\u00fc\u00e7\u00fck, b\u00fcy\u00fck kulakl\u0131, mavi g\u00f6zl\u00fc, gri derili sevimli yavru fil"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "title": "Farkl\u0131 Olan Dumbo",
+      "text": "Afrika'n\u0131n s\u0131cak topraklar\u0131nda Dumbo ad\u0131nda bir yavru fil ya\u015farm\u0131\u015f.\nDumbo'nun kulaklar\u0131 di\u011fer fillerden \u00e7ok daha b\u00fcy\u00fckm\u00fc\u015f.\nDi\u011fer hayvanlar ona g\u00fclermi\u015f.\nDumbo \u00e7ok \u00fczg\u00fcnm\u00fc\u015f.",
+      "prompt": "A small sad baby elephant with enormous floppy ears that drag on the ground, standing alone on the African savanna. Other young elephants in the background laughing and pointing. Golden grass, acacia trees, warm sunset colors. The baby elephant looks down sadly. 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, emotional scene.",
+      "textPagePrompt": "Soft pastel warm amber-golden background with subtle African savanna grass and acacia tree silhouette patterns, gentle sunset watercolor texture, emotional and warm atmosphere, children's book illustration style, no text, no characters",
+      "mood": "sad, emotional",
+      "setting": "African savanna"
+    },
+    {
+      "sceneNumber": 2,
+      "title": "U\u00e7an R\u00fcya",
+      "text": "Bir gece Dumbo bir r\u00fcya g\u00f6rd\u00fc.\nR\u00fcyas\u0131nda g\u00f6ky\u00fcz\u00fcnde u\u00e7uyordu!\nBulutlar\u0131n aras\u0131nda dans ediyordu.\nY\u0131ld\u0131zlara dokunuyordu.",
+      "prompt": "A baby elephant with huge ears spread wide like wings, flying through a magical starry night sky among fluffy white clouds. The elephant looks amazed and happy. Glowing stars all around, a crescent moon nearby. Dreamy purple-blue sky with sparkles. Dream-like magical atmosphere. 3D Pixar animated movie style, vibrant colors, magical lighting, fantasy scene.",
+      "textPagePrompt": "Soft pastel deep purple-blue night sky gradient background with subtle twinkling star and cloud patterns, gentle dreamy magical watercolor texture with sparkles, fantastical and wonder-filled atmosphere, children's book style, no text, no characters",
+      "mood": "magical, dreamy",
+      "setting": "dream sky"
+    },
+    {
+      "sceneNumber": 3,
+      "title": "Anneye Anlatt\u0131",
+      "text": "Dumbo, annesi Mama Fil'e r\u00fcyas\u0131n\u0131 anlatt\u0131.\n\"Anne, r\u00fcyamda u\u00e7uyordum!\" dedi heyecanla.\nMama Fil g\u00fcl\u00fcmsedi.\n\"Hayaller ger\u00e7ek olabilir yavrum.\"",
+      "prompt": "A small baby elephant looking up excitedly at a large gentle mother elephant by a peaceful lake. The mother elephant has a warm loving smile, trunk gently touching the baby's head. African landscape with a calm blue lake reflecting the sky. Warm golden morning light. 3D Pixar animated movie style, warm emotional lighting, touching family scene.",
+      "textPagePrompt": "Soft pastel warm peach-pink background with subtle lake reflection and heart patterns, gentle loving watercolor texture, warm and nurturing atmosphere, children's book style, no text, no characters",
+      "mood": "loving, hopeful",
+      "setting": "lakeside"
+    },
+    {
+      "sceneNumber": 4,
+      "title": "Pratik Yapmak",
+      "text": "Dumbo her g\u00fcn kulaklar\u0131n\u0131 \u00e7\u0131rpma prati\u011fi yapt\u0131.\nAma u\u00e7am\u0131yordu.\nD\u00fc\u015ft\u00fc, kalkt\u0131, tekrar denedi.\nYine d\u00fc\u015ft\u00fc...",
+      "prompt": "A baby elephant on a small grassy hill flapping its huge ears hard trying to fly but only lifting slightly off the ground. Dust and leaves swirling around from the ear-flapping wind. Expression of determination mixed with frustration. A wise old owl watching from a nearby tree branch. 3D Pixar animated movie style, vibrant colors, warm lighting, dynamic action scene.",
+      "textPagePrompt": "Soft pastel green-blue background with subtle wind swirl and leaf patterns, gentle determined watercolor texture, persistent and effortful atmosphere, children's book style, no text, no characters",
+      "mood": "determined, struggling",
+      "setting": "grassy hill"
+    },
+    {
+      "sceneNumber": 5,
+      "title": "Bayku\u015fun Bilgeli\u011fi",
+      "text": "Ya\u015fl\u0131 Bayku\u015f a\u011fa\u00e7tan indi.\n\"K\u00fc\u00e7\u00fck fil,\" dedi, \"u\u00e7mak i\u00e7in sadece kanat yetmez.\nKalbinde cesaret olmal\u0131.\nKendine inan!\"",
+      "prompt": "A wise old owl with brown and white feathers, wearing tiny round spectacles, perched on a branch talking to the baby elephant below. Moonlight illuminating the scene. Fireflies glowing around them. The elephant looking up with wonder. Magical forest clearing at twilight. 3D Pixar animated movie style, warm magical lighting, wise mentor scene.",
+      "textPagePrompt": "Soft pastel deep blue-silver moonlit background with subtle owl feather and firefly glow patterns, gentle wisdom watercolor texture, mystical and enlightening atmosphere, children's book style, no text, no characters",
+      "mood": "wise, inspiring",
+      "setting": "forest clearing moonlight"
+    },
+    {
+      "sceneNumber": 6,
+      "title": "Tepenin \u00dcst\u00fcnde",
+      "text": "Ertesi g\u00fcn Dumbo y\u00fcksek bir tepeye \u00e7\u0131kt\u0131.\nA\u015fa\u011f\u0131ya bakt\u0131. \u00c7ok y\u00fcksekti!\nKorktu ama vazge\u00e7medi.\n\"Kendime inan\u0131yorum!\" dedi.",
+      "prompt": "A small baby elephant standing at the edge of a tall cliff overlooking a vast beautiful African landscape far below. Wind blowing the elephant's huge ears. The elephant looks scared but determined, standing tall at the edge. Dramatic clouds in the sky. Epic wide angle view. 3D Pixar animated movie style, dramatic cinematic lighting, epic composition.",
+      "textPagePrompt": "Soft pastel sky blue and sandy brown gradient background with subtle cliff edge and wind patterns, gentle brave watercolor texture, dramatic and courageous atmosphere, children's book style, no text, no characters",
+      "mood": "brave, dramatic",
+      "setting": "cliff edge"
+    },
+    {
+      "sceneNumber": 7,
+      "title": "U\u00e7u\u015f An\u0131!",
+      "text": "Dumbo g\u00f6zlerini kapad\u0131.\nDerin bir nefes ald\u0131.\nZIPLADI!\nKulaklar\u0131n\u0131 \u00e7\u0131rpt\u0131 ve...\nU\u00c7UYORDU!",
+      "prompt": "A baby elephant with ears spread wide like magnificent wings, soaring through the bright blue sky after jumping off a cliff. The elephant's eyes are wide open with pure joy and amazement. Wind rushing past. Clouds below. Sun rays breaking through clouds creating a dramatic golden light effect. Epic flying moment. 3D Pixar animated movie style, vibrant colors, dramatic golden lighting, epic cinematic action shot.",
+      "textPagePrompt": "Soft pastel bright sky blue background with subtle dynamic wind streak and cloud patterns, gentle triumphant watercolor texture with golden sparkles, exhilarating and victorious atmosphere, children's book style, no text, no characters",
+      "mood": "triumphant, exhilarating",
+      "setting": "sky"
+    },
+    {
+      "sceneNumber": 8,
+      "title": "G\u00f6ky\u00fcz\u00fcnde Dans",
+      "text": "\"U\u00e7uyorum! Ger\u00e7ekten u\u00e7uyorum!\" diye ba\u011f\u0131rd\u0131 Dumbo.\nKu\u015flarla birlikte u\u00e7tu.\nBulutlar\u0131n aras\u0131ndan ge\u00e7ti.\nG\u00f6ky\u00fcz\u00fcnde muhte\u015fem bir g\u00f6kku\u015fa\u011f\u0131 belirdi!",
+      "prompt": "A baby elephant flying joyfully alongside colorful birds (parrots, bluebirds) through the sky. A magnificent full rainbow arching across the entire sky. White fluffy clouds below. The elephant doing aerial twirls and tricks with ears spread wide. Birds flying in formation around the elephant. Pure joy and freedom. 3D Pixar animated movie style, vibrant rainbow colors, bright warm lighting, spectacular wide cinematic shot.",
+      "textPagePrompt": "Soft pastel rainbow arc gradient background with subtle bird and cloud patterns, gentle free-spirited watercolor texture with iridescent sparkles, joyful and liberating atmosphere, children's book style, no text, no characters",
+      "mood": "joyful, free",
+      "setting": "sky with rainbow"
+    },
+    {
+      "sceneNumber": 9,
+      "title": "Kahraman D\u00f6n\u00fc\u015f\u00fc",
+      "text": "Dumbo k\u00f6y\u00fcne d\u00f6nd\u00fc\u011f\u00fcnde herkes onu kar\u015f\u0131lad\u0131.\nArt\u0131k kimse g\u00fclm\u00fcyordu.\n\"U\u00e7an Fil\" diyorlard\u0131 hayranl\u0131kla.\nDumbo art\u0131k kahramand\u0131!",
+      "prompt": "A baby elephant landing gracefully in the middle of a gathering of African animals - elephants, zebras, giraffes, lions, all cheering and celebrating. The other young elephants now looking up with admiration instead of laughing. Confetti-like flower petals falling. Hero's welcome scene. Warm sunset golden light. 3D Pixar animated movie style, vibrant colors, warm celebratory lighting, grand cinematic scene.",
+      "textPagePrompt": "Soft pastel warm golden-orange background with subtle celebration confetti and star patterns, gentle triumphant watercolor texture, celebratory and proud atmosphere, children's book style, no text, no characters",
+      "mood": "proud, celebratory",
+      "setting": "village gathering"
+    },
+    {
+      "sceneNumber": 10,
+      "title": "\u00d6zel Olmak",
+      "text": "O gece Mama Fil yavrusuna sar\u0131ld\u0131.\n\"Seninle \u00e7ok gurur duyuyorum Dumbo.\nFarkl\u0131 olmak seni \u00f6zel k\u0131l\u0131yor.\nSeni her zaman sevece\u011fim.\"\nDumbo mutlulukla g\u00fcl\u00fcmsedi.\nY\u0131ld\u0131zlar onlara g\u00f6z k\u0131rpt\u0131.",
+      "prompt": "A mother elephant and baby elephant cuddled together under a magnificent starry African night sky. The mother's trunk lovingly wrapped around the baby. Both looking up at the bright stars. The baby elephant has a peaceful happy smile. The Milky Way visible in the sky. Warm soft moonlight on their faces. Acacia tree silhouette. Deeply emotional and beautiful scene. 3D Pixar animated movie style, warm moonlight, emotional cinematic masterpiece.",
+      "textPagePrompt": "Soft pastel deep navy blue starry night background with subtle mother-child silhouette and twinkling star patterns, gentle loving night watercolor texture, deeply emotional and peaceful atmosphere, children's book style, no text, no characters",
+      "mood": "deeply loving, peaceful",
+      "setting": "starry night savanna"
+    }
+  ],
+  "theme": {
+    "primaryColor": "#78909C",
+    "secondaryColor": "#B0BEC5",
+    "accentColor": "#ECEFF1",
+    "textPageBg": "#F0F4F7",
+    "funFactBg": "#546E7A",
+    "icon": "\ud83d\udc18"
+  },
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? \ud83d\udc18",
+      "facts": [
+        "Filler d\u00fcnyan\u0131n en b\u00fcy\u00fck kara hayvanlar\u0131d\u0131r!",
+        "Bir filin kulaklar\u0131 v\u00fccutlar\u0131n\u0131 so\u011futmaya yard\u0131m eder.",
+        "Filler \u00e7ok iyi y\u00fcz\u00fcc\u00fcd\u00fcr!"
+      ],
+      "icon": "\ud83d\udc18"
+    },
+    {
+      "id": "fact-2",
+      "title": "Cesaret ve Farkl\u0131l\u0131k \u2b50",
+      "facts": [
+        "Filler 70 y\u0131la kadar ya\u015fayabilir!",
+        "Filler arkada\u015flar\u0131n\u0131 ve ailelerini asla unutmaz.",
+        "Farkl\u0131 olmak seni \u00f6zel k\u0131lar - t\u0131pk\u0131 Dumbo gibi!"
+      ],
+      "icon": "\u2b50"
+    }
+  ],
+  "funFactPlacements": [
+    {"afterScene": 5, "factId": "fact-1"},
+    {"afterScene": 9, "factId": "fact-2"}
+  ]
+}

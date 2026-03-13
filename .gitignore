@@ -1,0 +1,11 @@
+node_modules/
+.env
+output/
+uploads/
+dist/
+server.log
+server-err.log
+server_log.txt
+nul
+*.log
+Baglam/

@@ -1,0 +1,74 @@
+{
+  "name": "masal-storybook-generator",
+  "version": "1.0.0",
+  "description": "Kisisellestirilmis 3D Pixar tarzi hikaye kitabi uretici",
+  "author": "MASAL Team",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "server": "node src/server.js",
+    "generate": "node src/index.js",
+    "electron": "electron .",
+    "build": "electron-builder build --win",
+    "build:dir": "electron-builder build --win --dir"
+  },
+  "dependencies": {
+    "@fal-ai/client": "^1.2.0",
+    "@google/genai": "^1.0.0",
+    "archiver": "^7.0.1",
+    "canvas": "^3.2.1",
+    "dotenv": "^16.4.0",
+    "openai": "^4.70.0",
+    "pdfkit": "^0.17.2",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "electron": "^40.4.1",
+    "electron-builder": "^26.8.1",
+    "pdfjs-dist": "^4.0.379"
+  },
+  "build": {
+    "appId": "com.masal.storybook",
+    "productName": "MASAL",
+    "copyright": "Copyright 2026 MASAL",
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "files": [
+      "electron-main.js",
+      ".env",
+      "src/**/*",
+      "fonts/**/*",
+      "node_modules/**/*",
+      "!node_modules/electron/**",
+      "!node_modules/electron-builder/**",
+      "!node_modules/.cache/**",
+      "!dist/**",
+      "!assets/create-icon.js"
+    ],
+    "extraResources": [
+      {
+        "from": ".env",
+        "to": ".env"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.png",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "MASAL-${version}.exe"
+    },
+    "asar": false,
+    "forceCodeSigning": false
+  }
+}

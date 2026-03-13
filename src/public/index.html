@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASAL Studio</title>
+  <style>
+    :root {
+      --bg: #08080a;
+      --bg-elevated: #0e0e12;
+      --surface: #131318;
+      --surface-2: #1a1a21;
+      --surface-3: #22222b;
+      --border: #25252f;
+      --border-hover: #35354a;
+      --text: #eeeef2;
+      --text-2: #a0a0b8;
+      --text-3: #6a6a80;
+      --accent: #7c5cfc;
+      --accent-2: #9b7fff;
+      --accent-glow: rgba(124,92,252,0.12);
+      --success: #34d399;
+      --error: #f87171;
+      --warning: #fbbf24;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --transition: 0.2s cubic-bezier(.4,0,.2,1);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ===== LAYOUT ===== */
+    .app { display: flex; min-height: 100vh; }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      width: 280px;
+      background: var(--bg-elevated);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .sidebar-header {
+      padding: 24px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--accent), #b47cff);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 15px; color: #fff;
+    }
+    .brand-text h1 { font-size: 16px; font-weight: 700; letter-spacing: -0.03em; }
+    .brand-text span { font-size: 11px; color: var(--text-3); }
+
+    .sidebar-nav { flex: 1; padding: 16px 12px; overflow-y: auto; }
+    .nav-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--text-3); padding: 8px 8px 6px;
+    }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: var(--radius-sm);
+      font-size: 13px; color: var(--text-2); cursor: pointer;
+      transition: all var(--transition); margin-bottom: 2px;
+      border: 1px solid transparent;
+    }
+    .nav-item:hover { background: var(--surface); color: var(--text); }
+    .nav-item.active {
+      background: var(--accent-glow); color: var(--accent-2);
+      border-color: rgba(124,92,252,0.15);
+    }
+    .nav-icon { font-size: 16px; width: 20px; text-align: center; }
+    .nav-age-badge {
+      margin-left: auto; font-size: 9px; padding: 2px 6px;
+      border-radius: 8px; background: var(--surface-3); color: var(--text-3);
+    }
+
+    .sidebar-footer {
+      padding: 16px 20px; border-top: 1px solid var(--border);
+      font-size: 11px; color: var(--text-3);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .status-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 8px rgba(52,211,153,0.4);
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main {
+      flex: 1; display: flex; flex-direction: column;
+      min-width: 0;
+    }
+
+    /* Top bar */
+    .topbar {
+      height: 56px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; flex-shrink: 0;
+    }
+    .topbar-title { font-size: 14px; font-weight: 600; }
+    .topbar-actions { display: flex; gap: 8px; }
+    .btn-sm {
+      padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 500;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-2); cursor: pointer; transition: all var(--transition);
+      font-family: inherit;
+    }
+    .btn-sm:hover { border-color: var(--border-hover); color: var(--text); }
+
+    /* Content area */
+    .content {
+      flex: 1; overflow-y: auto; padding: 28px;
+    }
+
+    /* ===== VIEWS ===== */
+    .view { display: none; }
+    .view.active { display: block; }
+
+    /* ===== AGE FILTER ===== */
+    .age-filter {
+      display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
+    }
+    .age-filter-btn {
+      padding: 7px 16px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-3); cursor: pointer;
+      transition: all var(--transition); font-family: inherit;
+    }
+    .age-filter-btn:hover { border-color: var(--border-hover); color: var(--text-2); }
+    .age-filter-btn.active {
+      background: var(--accent-glow); color: var(--accent-2);
+      border-color: var(--accent);
+    }
+    .age-filter-count {
+      font-size: 10px; margin-left: 4px; opacity: 0.7;
+    }
+
+    /* ===== BOOK GRID (Uretim view) ===== */
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px; margin-bottom: 32px;
+    }
+    .book-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      cursor: pointer;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .book-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--card-color, var(--accent));
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .book-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .book-card:hover::before { opacity: 1; }
+    .book-card.selected {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+    .book-card.selected::before { opacity: 1; }
+    .book-card.hidden { display: none; }
+    .book-card-icon { font-size: 36px; margin-bottom: 12px; }
+    .book-card-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .book-card-desc { font-size: 12px; color: var(--text-3); line-height: 1.4; }
+    .book-card-badges { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+    .book-card-badge {
+      display: inline-block;
+      font-size: 10px; padding: 3px 8px;
+      background: var(--surface-2); border-radius: 20px;
+      color: var(--text-3);
+    }
+    .book-card-badge.age-badge {
+      font-weight: 600;
+    }
+    .book-card-badge.age-0-3 { background: rgba(255,183,77,0.15); color: #FFB74D; }
+    .book-card-badge.age-3-6 { background: rgba(129,199,132,0.15); color: #81C784; }
+    .book-card-badge.age-6-12 { background: rgba(100,181,246,0.15); color: #64B5F6; }
+
+    /* ===== FORM SECTION ===== */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px; margin-bottom: 24px;
+    }
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .form-card-title {
+      font-size: 12px; font-weight: 600; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 18px;
+    }
+    .field { margin-bottom: 16px; }
+    .field:last-child { margin-bottom: 0; }
+    .field label {
+      display: block; font-size: 12px; font-weight: 500;
+      color: var(--text-2); margin-bottom: 6px;
+    }
+    .field input, .field select {
+      width: 100%; padding: 10px 14px;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); color: var(--text);
+      font-size: 14px; font-family: inherit;
+      transition: all var(--transition); outline: none;
+    }
+    .field input:focus, .field select:focus {
+      border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .field select {
+      cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236a6a80' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+    }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .field-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+    /* Upload zone */
+    .upload-zone {
+      border: 2px dashed var(--border); border-radius: var(--radius);
+      padding: 36px 20px; text-align: center; cursor: pointer;
+      transition: all var(--transition); position: relative;
+    }
+    .upload-zone:hover { border-color: var(--accent); background: var(--accent-glow); }
+    .upload-zone.has-file { border-color: var(--success); border-style: solid; padding: 16px; }
+    .upload-icon { font-size: 28px; margin-bottom: 10px; opacity: 0.5; }
+    .upload-text { font-size: 13px; color: var(--text-2); }
+    .upload-text strong { color: var(--accent-2); }
+    .upload-hint { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+    .upload-preview { display: flex; align-items: center; gap: 14px; }
+    .upload-preview img {
+      width: 72px; height: 72px; border-radius: var(--radius-sm); object-fit: cover;
+    }
+    .upload-preview-info { flex: 1; text-align: left; }
+    .upload-preview-info .name { font-size: 13px; font-weight: 500; }
+    .upload-preview-info .size { font-size: 11px; color: var(--text-3); }
+    .upload-remove {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--surface-2);
+      color: var(--text-3); cursor: pointer; font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition);
+    }
+    .upload-remove:hover { border-color: var(--error); color: var(--error); }
+    #fileInput { display: none; }
+
+    /* Generate button */
+    .btn-generate {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, var(--accent), #9b6dff);
+      border: none; border-radius: var(--radius);
+      color: #fff; font-size: 14px; font-weight: 600;
+      font-family: inherit; cursor: pointer;
+      transition: all var(--transition);
+    }
+    .btn-generate:hover { box-shadow: 0 8px 32px rgba(124,92,252,0.3); transform: translateY(-1px); }
+    .btn-generate:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    /* ===== PROGRESS ===== */
+    .progress-panel {
+      display: none; margin-bottom: 24px;
+    }
+    .progress-panel.active { display: block; }
+    .progress-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .progress-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .progress-title { font-size: 14px; font-weight: 600; }
+    .progress-pct { font-size: 13px; color: var(--accent-2); font-variant-numeric: tabular-nums; }
+    .progress-track {
+      width: 100%; height: 4px; background: var(--surface-3);
+      border-radius: 2px; overflow: hidden; margin-bottom: 20px;
+    }
+    .progress-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--accent), #b47cff);
+      border-radius: 2px; transition: width 0.5s ease;
+    }
+
+    /* Steps */
+    .steps { display: flex; flex-direction: column; gap: 3px; max-height: 400px; overflow-y: auto; }
+    .step {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 10px; border-radius: 8px;
+      font-size: 12px; color: var(--text-3);
+      transition: all 0.3s;
+    }
+    .step.active { background: var(--surface-2); color: var(--text); }
+    .step.done { color: var(--text-2); }
+    .step-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; flex-shrink: 0;
+      border: 1.5px solid var(--border);
+    }
+    .step.active .step-icon { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+    .step.done .step-icon { border-color: var(--success); color: var(--success); background: rgba(52,211,153,0.08); }
+    .step.error .step-icon { border-color: var(--error); color: var(--error); }
+
+    /* Log */
+    .log {
+      background: var(--bg); border-radius: 8px;
+      padding: 12px 14px; max-height: 160px; overflow-y: auto;
+      font-family: 'SF Mono','Cascadia Code','Fira Code', monospace;
+      font-size: 11px; line-height: 1.8; color: var(--text-3);
+      margin-top: 16px;
+    }
+    .log .l-ok { color: var(--success); }
+    .log .l-err { color: var(--error); }
+    .log .l-info { color: var(--accent-2); }
+
+    /* ===== GALLERY ===== */
+    .gallery-panel { display: none; }
+    .gallery-panel.active { display: block; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .gallery-item {
+      position: relative; border-radius: var(--radius-sm);
+      overflow: hidden; background: var(--surface-2);
+      border: 1px solid var(--border);
+      transition: all var(--transition); cursor: pointer;
+    }
+    .gallery-item:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .gallery-item img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .gallery-item-info {
+      padding: 8px 10px; font-size: 11px;
+    }
+    .gallery-item-info strong { display: block; font-size: 12px; color: var(--text); margin-bottom: 1px; }
+    .gallery-item-info span { color: var(--text-3); }
+    .gallery-item-type {
+      position: absolute; top: 8px; right: 8px;
+      font-size: 9px; padding: 2px 6px; border-radius: 6px;
+      background: rgba(0,0,0,0.6); color: #fff; font-weight: 600;
+    }
+    .gallery-item-download {
+      position: absolute; top: 8px; left: 8px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; opacity: 0; transition: all var(--transition);
+      z-index: 2;
+    }
+    .gallery-item-download svg { width: 14px; height: 14px; }
+    .gallery-item:hover .gallery-item-download { opacity: 1; }
+    .gallery-item-download:hover { background: var(--accent); border-color: var(--accent); transform: scale(1.1); }
+
+    /* Toplu indirme butonu */
+    .gallery-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .gallery-header-label {
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-3);
+    }
+    .btn-bulk-download {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 600;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-2); cursor: pointer; transition: all var(--transition);
+      font-family: inherit;
+    }
+    .btn-bulk-download:hover { border-color: var(--accent); color: var(--accent-2); background: var(--accent-glow); }
+    .btn-bulk-download svg { width: 14px; height: 14px; }
+
+    /* PDF banner */
+    .pdf-banner {
+      display: none; margin-bottom: 20px;
+    }
+    .pdf-banner.active { display: flex; }
+    .pdf-banner-card {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; background: var(--surface);
+      border: 1px solid var(--success); border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+    .pdf-banner-left { display: flex; align-items: center; gap: 14px; }
+    .pdf-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(52,211,153,0.1); display: flex;
+      align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700; color: var(--success);
+    }
+    .pdf-info-title { font-size: 14px; font-weight: 600; }
+    .pdf-info-sub { font-size: 11px; color: var(--text-3); }
+    .btn-download {
+      padding: 9px 18px; background: var(--success); color: #000;
+      border-radius: 8px; text-decoration: none;
+      font-size: 12px; font-weight: 600; transition: all var(--transition);
+    }
+    .btn-download:hover { box-shadow: 0 4px 16px rgba(52,211,153,0.3); }
+
+    /* Lightbox / Editor */
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.92); z-index: 100;
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.active { display: flex; }
+    .lb-close {
+      position: fixed; top: 16px; right: 20px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--surface-2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--text-2); font-size: 14px; font-weight: 700;
+      z-index: 102; transition: all var(--transition);
+    }
+    .lb-close:hover { background: var(--error); color: #fff; border-color: var(--error); }
+    .lb-content {
+      display: flex; gap: 20px; max-width: 1200px; max-height: 90vh;
+      align-items: flex-start;
+    }
+    .lb-content img {
+      max-width: 55%; max-height: 85vh; border-radius: var(--radius);
+      object-fit: contain; flex-shrink: 0;
+    }
+    .lb-editor {
+      width: 340px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; flex-shrink: 0; max-height: 85vh; overflow-y: auto;
+    }
+    .lb-editor-title {
+      font-size: 14px; font-weight: 700; margin-bottom: 14px;
+      color: var(--accent-2);
+    }
+    @media (max-width: 900px) {
+      .lb-content { flex-direction: column; align-items: center; }
+      .lb-content img { max-width: 100%; max-height: 50vh; }
+      .lb-editor { width: 100%; }
+    }
+
+    /* Spinner */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner {
+      width: 13px; height: 13px;
+      border: 2px solid var(--border); border-top-color: var(--accent);
+      border-radius: 50%; animation: spin 0.6s linear infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sidebar { display: none; }
+      .form-grid { grid-template-columns: 1fr; }
+      .book-grid { grid-template-columns: repeat(2, 1fr); }
+      .field-row-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-icon">M</div>
+          <div class="brand-text">
+            <h1>MASAL Studio</h1>
+            <span>Hikaye Kitabi Uretim</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-label">Menu</div>
+        <div class="nav-item active" onclick="switchView('produce')">
+          <span class="nav-icon">+</span> Yeni Kitap Uret
+        </div>
+        <div class="nav-item" onclick="switchView('gallery')">
+          <span class="nav-icon">G</span> Galeri
+        </div>
+        <div class="nav-label" style="margin-top:16px">Hikayeler</div>
+        <div id="sidebarBooks"></div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="status-dot"></div>
+        Kie.ai Bagli &middot; Hazir
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+      <div class="topbar">
+        <span class="topbar-title" id="topbarTitle">Yeni Kitap Uret</span>
+        <div class="topbar-actions">
+          <button class="btn-sm" onclick="location.reload()">Yenile</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- VIEW: PRODUCE -->
+        <div class="view active" id="view-produce">
+          <!-- Age filter -->
+          <div style="margin-bottom:10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);">Kitap Sec</div>
+          <div class="age-filter" id="ageFilter">
+            <button class="age-filter-btn active" data-age="all" onclick="filterAge('all')">Tumu<span class="age-filter-count" id="countAll"></span></button>
+            <button class="age-filter-btn" data-age="0-3" onclick="filterAge('0-3')">0-3 Yas<span class="age-filter-count" id="count03"></span></button>
+            <button class="age-filter-btn" data-age="3-6" onclick="filterAge('3-6')">3-6 Yas<span class="age-filter-count" id="count36"></span></button>
+            <button class="age-filter-btn" data-age="6-12" onclick="filterAge('6-12')">6-12 Yas<span class="age-filter-count" id="count612"></span></button>
+          </div>
+
+          <!-- Book grid -->
+          <div class="book-grid" id="bookGrid"></div>
+
+          <!-- Form -->
+          <div class="form-grid">
+            <div class="form-card">
+              <div class="form-card-title">Cocuk Bilgileri</div>
+              <div class="field">
+                <label>Ad</label>
+                <input type="text" id="childName" placeholder="Cocugun adi">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label>Cinsiyet</label>
+                  <select id="childGender">
+                    <option value="erkek">Erkek</option>
+                    <option value="kiz">Kiz</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Yas</label>
+                  <select id="childAge">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" selected>5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <div class="form-card-title">Fotograf</div>
+              <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
+                <div class="upload-icon">+</div>
+                <div class="upload-text"><strong>Fotograf yukle</strong></div>
+                <div class="upload-hint">JPG, PNG - Yuz net gorunmeli</div>
+              </div>
+              <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+            </div>
+          </div>
+
+          <button class="btn-generate" id="btnGenerate" disabled>Kitap Olustur</button>
+
+          <!-- Progress -->
+          <div class="progress-panel" id="progressPanel">
+            <div class="progress-card">
+              <div class="progress-top">
+                <span class="progress-title" id="progressTitle">Hazirlaniyor...</span>
+                <span class="progress-pct" id="progressPct">0%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+              <div class="steps" id="stepsContainer"></div>
+              <div class="log" id="logConsole"></div>
+            </div>
+          </div>
+
+          <!-- PDF -->
+          <div class="pdf-banner" id="pdfBanner">
+            <div class="pdf-banner-card">
+              <div class="pdf-banner-left">
+                <div class="pdf-icon">PDF</div>
+                <div>
+                  <div class="pdf-info-title">Baskiya Hazir PDF</div>
+                  <div class="pdf-info-sub">Tek sayfa duzeni - Direkt bastirilabilir</div>
+                </div>
+              </div>
+              <a id="pdfLink" href="#" download class="btn-download">PDF Indir</a>
+            </div>
+          </div>
+
+          <!-- Gallery -->
+          <div class="gallery-panel" id="galleryPanel">
+            <div class="gallery-header">
+              <span class="gallery-header-label">Olusturulan Gorseller</span>
+              <button class="btn-bulk-download" id="btnBulkDownload" onclick="downloadAll()" title="Tum gorselleri ZIP olarak indir">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Tumunu Indir (ZIP)
+              </button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+          </div>
+        </div>
+
+        <!-- VIEW: GALLERY (past books) -->
+        <div class="view" id="view-gallery">
+          <div style="text-align:center;padding:80px 20px;color:var(--text-3);font-size:14px;">
+            Uretilen kitaplar burada gorunecek
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox / Editor -->
+  <div class="lightbox" id="lightbox">
+    <div class="lb-close" onclick="closeLightbox()">X</div>
+    <div class="lb-content" onclick="event.stopPropagation()">
+      <img id="lbImg" src="" alt="">
+      <div class="lb-editor" id="lbEditor">
+        <div class="lb-editor-title">Metin Duzenle</div>
+        <div class="field" style="margin-bottom:10px">
+          <label style="color:var(--text-2)">Baslik</label>
+          <input type="text" id="editTitle" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;width:100%;font-size:14px;font-family:inherit;">
+        </div>
+        <div class="field" style="margin-bottom:10px">
+          <label style="color:var(--text-2)">Metin</label>
+          <textarea id="editText" rows="6" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;width:100%;font-size:13px;resize:vertical;font-family:inherit;line-height:1.6;"></textarea>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn-sm" id="btnRerender" onclick="rerenderScene()" style="flex:1;background:var(--accent);color:#fff;border:none;font-weight:600;">Gorseli Guncelle</button>
+          <button class="btn-sm" id="btnRebuildPdf" onclick="rebuildPdf()" style="flex:1;">PDF Yeniden Olustur</button>
+        </div>
+        <div id="editStatus" style="font-size:11px;color:var(--text-3);margin-top:8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // === STATE ===
+    let selectedBook = null;
+    let selectedFile = null;
+    let allBooks = [];
+    let currentAgeFilter = 'all';
+    let currentOutputDir = ''; // Uretim sonrasi output klasoru
+    let currentChildName = '';
+    let sceneTexts = {}; // { sceneNumber: { title, text, src } }
+
+    // === ELEMENTS ===
+    const btnGen = document.getElementById('btnGenerate');
+    const fileInput = document.getElementById('fileInput');
+    const uploadZone = document.getElementById('uploadZone');
+
+    // === LOAD BOOKS ===
+    async function loadBooks() {
+      try {
+        const r = await fetch('/api/books');
+        const d = await r.json();
+        allBooks = d.books || [];
+        renderBooks(allBooks);
+        updateFilterCounts();
+      } catch(e) { console.error(e); }
+    }
+
+    function renderBooks(books) {
+      const grid = document.getElementById('bookGrid');
+      const sidebar = document.getElementById('sidebarBooks');
+
+      grid.innerHTML = books.map(b => {
+        const ageClass = 'age-' + (b.ageGroup || '3-6').replace('-','');
+        const ageBadgeClass = 'age-' + (b.ageGroup || '3-6');
+        return `
+        <div class="book-card" data-id="${b.id}" data-age="${b.ageGroup||'3-6'}" onclick="selectBook('${b.id}')" style="--card-color:${b.primaryColor||'var(--accent)'}">
+          <div class="book-card-icon">${b.icon||'&#x1F4D6;'}</div>
+          <div class="book-card-title">${b.title}</div>
+          <div class="book-card-desc">${b.description||''}</div>
+          <div class="book-card-badges">
+            <span class="book-card-badge age-badge ${ageBadgeClass}">${b.ageGroup||'3-6'} yas</span>
+            <span class="book-card-badge">${b.sceneCount||10} sahne</span>
+          </div>
+        </div>`;
+      }).join('');
+
+      sidebar.innerHTML = books.map(b => `
+        <div class="nav-item" onclick="selectBook('${b.id}');switchView('produce')">
+          <span class="nav-icon">${b.icon||'&#x1F4D6;'}</span>
+          ${b.title.length > 20 ? b.title.substring(0,18)+'...' : b.title}
+          <span class="nav-age-badge">${b.ageGroup||'3-6'}</span>
+        </div>
+      `).join('');
+    }
+
+    function updateFilterCounts() {
+      const counts = { 'all': allBooks.length, '0-3': 0, '3-6': 0, '6-12': 0 };
+      allBooks.forEach(b => { counts[b.ageGroup||'3-6']++; });
+      document.getElementById('countAll').textContent = '(' + counts['all'] + ')';
+      document.getElementById('count03').textContent = '(' + counts['0-3'] + ')';
+      document.getElementById('count36').textContent = '(' + counts['3-6'] + ')';
+      document.getElementById('count612').textContent = '(' + counts['6-12'] + ')';
+    }
+
+    function filterAge(age) {
+      currentAgeFilter = age;
+      document.querySelectorAll('.age-filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.age === age);
+      });
+      document.querySelectorAll('.book-card').forEach(card => {
+        if (age === 'all') {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.toggle('hidden', card.dataset.age !== age);
+        }
+      });
+      // If selected book is hidden, deselect
+      if (selectedBook) {
+        const sel = document.querySelector('.book-card[data-id="'+selectedBook+'"]');
+        if (sel && sel.classList.contains('hidden')) {
+          selectedBook = null;
+          checkValid();
+        }
+      }
+    }
+
+    function selectBook(id) {
+      selectedBook = id;
+      document.querySelectorAll('.book-card').forEach(c => c.classList.toggle('selected', c.dataset.id===id));
+      checkValid();
+    }
+
+    // === FILE UPLOAD ===
+    fileInput.addEventListener('change', e => {
+      const file = e.target.files[0]; if(!file) return;
+      selectedFile = file;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        uploadZone.classList.add('has-file');
+        uploadZone.innerHTML = `
+          <div class="upload-preview">
+            <img src="${ev.target.result}" alt="">
+            <div class="upload-preview-info">
+              <div class="name">${file.name}</div>
+              <div class="size">${(file.size/1024).toFixed(0)} KB</div>
+            </div>
+            <button class="upload-remove" onclick="event.stopPropagation();removeFile()">x</button>
+          </div>`;
+      };
+      reader.readAsDataURL(file);
+      checkValid();
+    });
+
+    uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.style.borderColor='var(--accent)'; });
+    uploadZone.addEventListener('dragleave', () => { uploadZone.style.borderColor=''; });
+    uploadZone.addEventListener('drop', e => {
+      e.preventDefault(); uploadZone.style.borderColor='';
+      const f = e.dataTransfer.files[0];
+      if(f && f.type.startsWith('image/')) { fileInput.files=e.dataTransfer.files; fileInput.dispatchEvent(new Event('change')); }
+    });
+
+    function removeFile() {
+      selectedFile=null; fileInput.value='';
+      uploadZone.classList.remove('has-file');
+      uploadZone.innerHTML = `<div class="upload-icon">+</div><div class="upload-text"><strong>Fotograf yukle</strong></div><div class="upload-hint">JPG, PNG - Yuz net gorunmeli</div>`;
+      checkValid();
+    }
+
+    function checkValid() {
+      btnGen.disabled = !(selectedBook && selectedFile && document.getElementById('childName').value.trim());
+    }
+    document.getElementById('childName').addEventListener('input', checkValid);
+
+    // === GENERATE ===
+    btnGen.addEventListener('click', startGen);
+
+    let activeSse = null;
+    let genDone = false;
+
+    async function startGen() {
+      const name = document.getElementById('childName').value.trim();
+      const gender = document.getElementById('childGender').value;
+      const age = document.getElementById('childAge').value;
+
+      currentChildName = name;
+      currentOutputDir = '';
+      sceneTexts = {};
+      genDone = false;
+
+      btnGen.disabled = true; btnGen.textContent = 'Uretiliyor...';
+      const pp = document.getElementById('progressPanel');
+      pp.classList.add('active');
+      document.getElementById('galleryPanel').classList.remove('active');
+      document.getElementById('pdfBanner').classList.remove('active');
+      document.getElementById('galleryGrid').innerHTML = '';
+      document.getElementById('logConsole').innerHTML = '';
+
+      // Secili kitabin sahne sayisini al
+      const selBook = allBooks.find(b=>b.id===selectedBook);
+      const sceneCount = selBook ? (selBook.sceneCount||10) : 10;
+      const totalSteps = 3 + sceneCount + 2;
+
+      let steps = [
+        'Kitap sablonu yukleniyor',
+        'Hikaye metinleri kisisellestiriliyor',
+        'Karakter referans sayfasi olusturuluyor'
+      ];
+      for(let i=1;i<=sceneCount;i++) {
+        steps.push('Sahne '+i+' uretiliyor');
+      }
+      steps.push('Ozel sayfalar hazirlaniyor');
+      steps.push('PDF olusturuluyor');
+      renderSteps(steps);
+      setProgress(0, totalSteps, 'Baslatiliyor...');
+
+      let cur=-1, total=totalSteps;
+
+      // SSE baglantisi - yeniden baglanti destegi ile
+      function connectSSE(replay) {
+        const url = '/api/progress?t='+Date.now()+(replay?'&replay=1':'');
+        const sse = new EventSource(url);
+        activeSse = sse;
+
+        sse.onopen = () => {
+          if(replay) addLog('Baglanti yeniden kuruldu','info');
+        };
+
+        sse.onmessage = e => {
+          try {
+            const m = JSON.parse(e.data);
+            if(m.type==='init') {
+              // Sunucudan gelen gercek adim sayisi
+              total = m.totalSteps || total;
+            } else if(m.type==='step') {
+              if(cur>=0) stepState(cur,'done');
+              cur=m.step; stepState(cur,'active');
+              setProgress(cur+1,total,m.message);
+              addLog(m.message,'info');
+            } else if(m.type==='heartbeat') {
+              // Kullaniciya bekleme durumu goster
+              addLog(m.message,'info');
+            } else if(m.type==='scene_done') {
+              addLog('Sahne '+m.sceneNumber+': '+(m.title||'') +' - tamamlandi','ok');
+              sceneTexts[m.sceneNumber] = { title: m.title||'', text: m.text||'', src: m.imagePath||'' };
+              if(m.imagePath) addGallery(m.sceneNumber,m.title,m.imagePath,m.text,'sahne');
+            } else if(m.type==='pdf_ready') {
+              addLog(m.message,'ok');
+              showPdf(m.pdfPath);
+            } else if(m.type==='error') {
+              addLog(m.message,'err');
+            } else if(m.type==='generation_failed') {
+              genDone = true;
+              addLog('Uretim basarisiz: '+m.message,'err');
+              sse.close(); activeSse=null;
+              btnGen.textContent='Kitap Olustur'; btnGen.disabled=false;
+            } else if(m.type==='complete') {
+              genDone = true;
+              if(cur>=0) stepState(cur,'done');
+              setProgress(total,total,'Tamamlandi!');
+              addLog('Kitap uretimi tamamlandi!','ok');
+              if(m.pdfPath) showPdf(m.pdfPath);
+              if(m.outputDir) currentOutputDir = m.outputDir.replace(/^\/output\//,'');
+              sse.close(); activeSse=null;
+              btnGen.textContent='Kitap Olustur'; btnGen.disabled=false;
+            }
+          } catch(err){ console.error('SSE parse hatasi:', err); }
+        };
+
+        sse.onerror = () => {
+          if(genDone) return; // Uretim bittiyse yeniden baglanma
+          sse.close();
+          activeSse = null;
+          addLog('Baglanti koptu, 3s sonra yeniden baglaniliyor...','err');
+          setTimeout(()=>{
+            if(!genDone) connectSSE(true);
+          }, 3000);
+        };
+      }
+
+      // Ilk SSE baglantisi
+      connectSSE(false);
+
+      // SSE hazir olana kadar bekle
+      await new Promise(r => {
+        const check = () => {
+          if(activeSse && activeSse.readyState === EventSource.OPEN) return r();
+          setTimeout(check, 100);
+        };
+        check();
+        setTimeout(r, 2000); // En fazla 2s bekle
+      });
+
+      const fd = new FormData();
+      fd.append('bookId',selectedBook);
+      fd.append('childName',name);
+      fd.append('childGender',gender);
+      fd.append('childAge',age);
+      fd.append('childPhoto',selectedFile);
+
+      try {
+        const r = await fetch('/api/generate',{method:'POST',body:fd});
+        const d = await r.json();
+        if(!d.success) {
+          addLog('Hata: '+(d.error||'Bilinmeyen hata'),'err');
+          if(activeSse) { activeSse.close(); activeSse=null; }
+          genDone = true;
+          btnGen.textContent='Kitap Olustur'; btnGen.disabled=false;
+        }
+      } catch(err) {
+        addLog('Baglanti hatasi: '+err.message,'err');
+        if(activeSse) { activeSse.close(); activeSse=null; }
+        genDone = true;
+        btnGen.textContent='Kitap Olustur'; btnGen.disabled=false;
+      }
+    }
+
+    function renderSteps(s) {
+      document.getElementById('stepsContainer').innerHTML = s.map((t,i) =>
+        `<div class="step" id="s${i}"><div class="step-icon" id="si${i}">${i+1}</div><span>${t}</span></div>`
+      ).join('');
+    }
+    function stepState(i,state) {
+      const s=document.getElementById('s'+i), ic=document.getElementById('si'+i);
+      if(!s) return; s.className='step '+state;
+      if(state==='done') ic.textContent='OK';
+      else if(state==='error') ic.textContent='X';
+      else if(state==='active') ic.innerHTML='<div class="spinner"></div>';
+    }
+    function setProgress(cur,total,title) {
+      const p=Math.round(cur/total*100);
+      document.getElementById('progressFill').style.width=p+'%';
+      document.getElementById('progressPct').textContent=p+'%';
+      document.getElementById('progressTitle').textContent=title;
+    }
+    function addLog(msg,type='') {
+      const c=document.getElementById('logConsole');
+      const d=document.createElement('div');
+      d.className=type?'l-'+type:'';
+      d.textContent='['+new Date().toLocaleTimeString('tr-TR')+'] '+msg;
+      c.appendChild(d); c.scrollTop=c.scrollHeight;
+    }
+    function addGallery(num,title,src,text,type) {
+      document.getElementById('galleryPanel').classList.add('active');
+      const g=document.getElementById('galleryGrid');
+      const d=document.createElement('div');
+      d.className='gallery-item';
+      d.onclick=()=>openEditor(num,src,title,text);
+      const downloadBtn = `<div class="gallery-item-download" onclick="event.stopPropagation();downloadImage('${src}','sahne-${num}.png')" title="Bu gorseli indir">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </div>`;
+      const typeLabel = '<div class="gallery-item-type">SAHNE '+num+'</div>';
+      d.innerHTML=`<img src="${src}" alt="" loading="lazy">${downloadBtn}${typeLabel}<div class="gallery-item-info"><strong>Sahne ${num}</strong><span>${title}</span></div>`;
+      g.appendChild(d);
+    }
+
+    // Tekli gorsel indirme
+    function downloadImage(src, filename) {
+      // src: /output/dirName/scene-XX-final.png?t=...
+      const cleanSrc = src.split('?')[0]; // cache-bust kaldir
+      const relPath = cleanSrc.replace(/^\/output\//, '');
+      const downloadUrl = '/api/download-image?file=' + encodeURIComponent(relPath);
+      const a = document.createElement('a');
+      a.href = downloadUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    // Toplu indirme (ZIP)
+    function downloadAll() {
+      if (!currentOutputDir) {
+        alert('Lutfen once kitap uretin');
+        return;
+      }
+      const btn = document.getElementById('btnBulkDownload');
+      btn.disabled = true;
+      btn.innerHTML = '<div class="spinner"></div> Hazirlaniyor...';
+
+      const downloadUrl = '/api/download-all?dir=' + encodeURIComponent(currentOutputDir);
+      const a = document.createElement('a');
+      a.href = downloadUrl;
+      a.download = currentOutputDir + '.zip';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      // Butonu geri yukle
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg> Tumunu Indir (ZIP)`;
+      }, 3000);
+    }
+    function showPdf(p) {
+      document.getElementById('pdfBanner').classList.add('active');
+      document.getElementById('pdfLink').href=p;
+    }
+
+    // Editor / Lightbox
+    let editingScene = null;
+    function openEditor(sceneNum, src, title, text) {
+      editingScene = sceneNum;
+      document.getElementById('lbImg').src = src;
+      document.getElementById('editTitle').value = title || '';
+      document.getElementById('editText').value = text || '';
+      document.getElementById('editStatus').textContent = '';
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      editingScene = null;
+    }
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
+
+    async function rerenderScene() {
+      if(!editingScene || !currentOutputDir) {
+        document.getElementById('editStatus').textContent = 'Lutfen once kitap uretin';
+        return;
+      }
+      const title = document.getElementById('editTitle').value;
+      const text = document.getElementById('editText').value;
+      const statusEl = document.getElementById('editStatus');
+      statusEl.textContent = 'Gorsel guncelleniyor...';
+      statusEl.style.color = 'var(--accent-2)';
+      document.getElementById('btnRerender').disabled = true;
+
+      try {
+        const r = await fetch('/api/rerender-scene', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            outputDir: currentOutputDir,
+            sceneNumber: editingScene,
+            title,
+            text,
+            bookId: selectedBook,
+          })
+        });
+        const d = await r.json();
+        if(d.success) {
+          statusEl.textContent = 'Gorsel guncellendi!';
+          statusEl.style.color = 'var(--success)';
+          document.getElementById('lbImg').src = d.imagePath;
+          // Gallery'deki gorseli de guncelle
+          sceneTexts[editingScene] = { title, text, src: d.imagePath };
+          const items = document.querySelectorAll('.gallery-item img');
+          items.forEach(img => {
+            if(img.src.includes('scene-'+String(editingScene).padStart(2,'0')+'-final')) {
+              img.src = d.imagePath;
+            }
+          });
+        } else {
+          statusEl.textContent = 'Hata: ' + (d.error||'Bilinmeyen');
+          statusEl.style.color = 'var(--error)';
+        }
+      } catch(err) {
+        statusEl.textContent = 'Baglanti hatasi: '+err.message;
+        statusEl.style.color = 'var(--error)';
+      }
+      document.getElementById('btnRerender').disabled = false;
+    }
+
+    async function rebuildPdf() {
+      if(!currentOutputDir) {
+        document.getElementById('editStatus').textContent = 'Lutfen once kitap uretin';
+        return;
+      }
+      const statusEl = document.getElementById('editStatus');
+      statusEl.textContent = 'PDF yeniden olusturuluyor...';
+      statusEl.style.color = 'var(--accent-2)';
+      document.getElementById('btnRebuildPdf').disabled = true;
+
+      try {
+        const r = await fetch('/api/rebuild-pdf', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            outputDir: currentOutputDir,
+            bookId: selectedBook,
+            childName: currentChildName,
+          })
+        });
+        const d = await r.json();
+        if(d.success) {
+          statusEl.textContent = 'PDF guncellendi!';
+          statusEl.style.color = 'var(--success)';
+          showPdf(d.pdfPath);
+        } else {
+          statusEl.textContent = 'Hata: ' + (d.error||'Bilinmeyen');
+          statusEl.style.color = 'var(--error)';
+        }
+      } catch(err) {
+        statusEl.textContent = 'PDF hatasi: '+err.message;
+        statusEl.style.color = 'var(--error)';
+      }
+      document.getElementById('btnRebuildPdf').disabled = false;
+    }
+
+    // Views
+    function switchView(v) {
+      document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+      document.getElementById('view-'+v).classList.add('active');
+      document.querySelectorAll('.sidebar-nav > .nav-item').forEach((el,i)=>{
+        el.classList.toggle('active', (v==='produce'&&i===0)||(v==='gallery'&&i===1));
+      });
+      document.getElementById('topbarTitle').textContent = v==='produce'?'Yeni Kitap Uret':'Galeri';
+    }
+
+    // Onceki uretimleri yukle (galeri persistence)
+    async function loadPreviousOutputs() {
+      try {
+        const r = await fetch('/api/outputs');
+        const d = await r.json();
+        if (!d.outputs || d.outputs.length === 0) return;
+
+        // En son uretimi al
+        const latest = d.outputs[0];
+        if (!latest || latest.sceneCount === 0) return;
+
+        currentOutputDir = latest.dir;
+
+        // Profil gorsellerini ekle
+        for (const p of latest.profiles) {
+          addGallery(
+            p.name,
+            p.type === 'profile' ? 'Karakter Profili' : p.name.replace('outfit-','Kıyafet: '),
+            p.imagePath + '?t=' + Date.now(),
+            p.type === 'profile' ? 'Karakter referans görseli' : 'Kıyafet referans görseli',
+            p.type
+          );
+        }
+
+        // Sahne gorsellerini ekle
+        for (const s of latest.scenes) {
+          sceneTexts[s.sceneNumber] = { title: s.title, text: s.text, src: s.imagePath };
+          addGallery(s.sceneNumber, s.title, s.imagePath + '?t=' + Date.now(), s.text, 'sahne');
+        }
+
+        // PDF banner goster
+        if (latest.pdfPath) {
+          showPdf(latest.pdfPath + '?t=' + Date.now());
+        }
+
+        console.log('Onceki uretim yuklendi:', latest.dir, latest.sceneCount, 'sahne');
+      } catch(e) {
+        console.log('Onceki uretim yuklenemedi:', e.message);
+      }
+    }
+
+    // Init
+    loadBooks();
+    loadPreviousOutputs();
+  </script>
+</body>
+</html>

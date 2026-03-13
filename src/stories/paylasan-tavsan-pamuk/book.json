@@ -1,0 +1,140 @@
+{
+  "id": "paylasan-tavsan-pamuk",
+  "title": "Payla\u015fan Tav\u015fan Pamuk",
+  "description": "Payla\u015fman\u0131n g\u00fczelli\u011fini ke\u015ffeden sevimli bir tav\u015fan\u0131n dostluk hikayes\u0131.",
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 10,
+  "style": "3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a fluffy white rabbit with long soft ears, pink nose, bright blue eyes, and a small cotton tail, wearing a tiny green vest",
+    "notes": "Beyaz, uzun kulakl\u0131, pembe burunlu, mavi g\u00f6zl\u00fc, k\u00fc\u00e7\u00fck ye\u015fil yelekli sevimli tav\u015fan"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "title": "Tav\u015fan Pamuk",
+      "text": "Pamuk ad\u0131nda beyaz bir tav\u015fan varm\u0131\u015f.\nOrman\u0131n kenar\u0131nda, k\u00fc\u00e7\u00fck bir bah\u00e7ede ya\u015farm\u0131\u015f.\nPamuk'un bah\u00e7esinde en g\u00fczel havu\u00e7lar yeti\u015firmi\u015f.",
+      "prompt": "A fluffy white rabbit with long soft ears, pink nose, bright blue eyes, and a small cotton tail, wearing a tiny green vest, standing proudly in a beautiful vegetable garden full of orange carrots growing in rows. A small cozy burrow house in the background. Forest edge visible. Flowers and butterflies. 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail.",
+      "textPagePrompt": "Soft pastel green background with subtle carrot and leaf patterns, gentle garden watercolor texture, warm and inviting atmosphere, children's book illustration style, no text, no characters",
+      "mood": "happy, proud",
+      "setting": "rabbit's garden"
+    },
+    {
+      "sceneNumber": 2,
+      "title": "Havu\u00e7 Toplama",
+      "text": "Bir g\u00fcn Pamuk sepetini ald\u0131.\nBah\u00e7esinden en g\u00fczel havu\u00e7lar\u0131 toplad\u0131.\n\"Bunlar sadece benim!\" dedi kendi kendine.",
+      "prompt": "A white rabbit wearing a green vest pulling big orange carrots from the garden soil and putting them in a woven basket. The basket is getting full of bright orange carrots with green tops. The rabbit looks determined and possessive. Sunny garden scene. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel orange background with subtle basket weave and carrot top patterns, gentle harvest watercolor texture, warm and abundant atmosphere, children's book style, no text, no characters",
+      "mood": "determined, possessive",
+      "setting": "garden"
+    },
+    {
+      "sceneNumber": 3,
+      "title": "Sincap F\u0131nd\u0131k Geldi",
+      "text": "Tam o s\u0131rada arkada\u015f\u0131 Sincap F\u0131nd\u0131k geldi.\nF\u0131nd\u0131k \u00e7ok a\u00e7m\u0131\u015f.\n\"Pamuk, bana biraz yiyecek verebilir misin?\" dedi \u00fczg\u00fcn\u00e7e.",
+      "prompt": "A small brown squirrel with a big fluffy tail looking sad and hungry, standing in front of the white rabbit who is holding a basket full of carrots. The squirrel has pleading eyes and holds its belly. Forest path background. 3D Pixar animated movie style, vibrant colors, warm lighting, emotional scene.",
+      "textPagePrompt": "Soft pastel brown-green background with subtle acorn and leaf patterns, gentle forest watercolor texture, empathetic and emotional atmosphere, children's book style, no text, no characters",
+      "mood": "sad, empathetic",
+      "setting": "garden path"
+    },
+    {
+      "sceneNumber": 4,
+      "title": "Pamuk D\u00fc\u015f\u00fcnd\u00fc",
+      "text": "Pamuk d\u00fc\u015f\u00fcnd\u00fc.\nHavu\u00e7lar\u0131n\u0131 payla\u015fmak istemiyordu.\n\"Ben bunlar\u0131 \u00e7ok zor yeti\u015ftirdim...\" dedi i\u00e7inden.",
+      "prompt": "Close-up of a white rabbit with a conflicted expression, looking down at the basket of carrots then back at the sad squirrel. A thought bubble showing the rabbit working hard in the garden. Internal struggle visible on the rabbit's face. 3D Pixar animated movie style, vibrant colors, warm lighting, emotional close-up.",
+      "textPagePrompt": "Soft pastel warm yellow background with subtle thought bubble and question mark patterns, gentle contemplative watercolor texture, thoughtful and conflicted atmosphere, children's book style, no text, no characters",
+      "mood": "conflicted, thoughtful",
+      "setting": "garden"
+    },
+    {
+      "sceneNumber": 5,
+      "title": "Kirpi Diken Geldi",
+      "text": "Sonra Kirpi Diken de geldi.\nO da \u00e7ok a\u00e7m\u0131\u015f.\n\"Ben de \u00e7ok a\u00e7\u0131m Pamuk...\" dedi mahcup\u00e7a.",
+      "prompt": "A small cute hedgehog with brown spines and a friendly face approaching the white rabbit and squirrel. The hedgehog looks shy and hungry, rubbing its paws together. All three animals together on the garden path. Wildflowers around. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel warm brown background with subtle hedgehog spine and mushroom patterns, gentle woodland watercolor texture, compassionate and warm atmosphere, children's book style, no text, no characters",
+      "mood": "compassionate, shy",
+      "setting": "garden path"
+    },
+    {
+      "sceneNumber": 6,
+      "title": "Payla\u015fma Karar\u0131",
+      "text": "Pamuk'un kalbi s\u0131k\u0131\u015ft\u0131.\nArkada\u015flar\u0131n\u0131n \u00fczg\u00fcn y\u00fczlerine bakt\u0131.\n\"Gelin, havu\u00e7lar\u0131m\u0131 payla\u015fal\u0131m!\" dedi g\u00fcl\u00fcmseyerek.",
+      "prompt": "A white rabbit with a warm smile offering carrots from the basket to the squirrel and hedgehog. The rabbit's expression changed from selfish to generous and happy. Warm golden light around them, almost magical. The friends look up hopefully. 3D Pixar animated movie style, vibrant colors, warm golden lighting, heartwarming scene.",
+      "textPagePrompt": "Soft pastel warm golden background with subtle heart and sharing hand patterns, gentle magical watercolor texture with sparkles, generous and heartwarming atmosphere, children's book style, no text, no characters",
+      "mood": "generous, heartwarming",
+      "setting": "garden"
+    },
+    {
+      "sceneNumber": 7,
+      "title": "Birlikte Yediler",
+      "text": "F\u0131nd\u0131k ve Diken \u00e7ok sevindi!\n\u00dc\u00e7\u00fc birlikte havu\u00e7lar\u0131 yedi.\nHepsi \u00e7ok mutluydu.",
+      "prompt": "Three animal friends sitting together on the grass eating carrots happily - a white rabbit, a brown squirrel, and a small hedgehog. All smiling and laughing. Carrot pieces around them. Warm sunlight, flowers in the background. Joyful picnic scene. 3D Pixar animated movie style, vibrant colors, warm lighting, happy group scene.",
+      "textPagePrompt": "Soft pastel bright green background with subtle picnic blanket and carrot patterns, gentle joyful watercolor texture, happy and friendly atmosphere, children's book style, no text, no characters",
+      "mood": "joyful, friendly",
+      "setting": "garden picnic"
+    },
+    {
+      "sceneNumber": 8,
+      "title": "\u00c7ilek S\u00fcrprizi",
+      "text": "Ertesi g\u00fcn F\u0131nd\u0131k geldi.\nBir sepet dolusu \u00e7ilek getirmi\u015fti!\n\"Bunlar\u0131 seninle payla\u015fmak istiyorum!\" dedi.",
+      "prompt": "A brown squirrel carrying a small basket overflowing with bright red strawberries, offering them to the surprised and delighted white rabbit at the garden gate. The squirrel looks proud and happy. Red ripe strawberries with green leaves. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel red-pink background with subtle strawberry and leaf patterns, gentle sweet watercolor texture, surprising and generous atmosphere, children's book style, no text, no characters",
+      "mood": "surprising, generous",
+      "setting": "garden gate"
+    },
+    {
+      "sceneNumber": 9,
+      "title": "B\u00f6\u011f\u00fcrtlen Hediyesi",
+      "text": "\"Bunlar\u0131 ormanda buldum, sizin i\u00e7in toplad\u0131m!\" dedi F\u0131nd\u0131k.\nDiken de geldi.\nB\u00f6\u011f\u00fcrtlenler getirmi\u015fti.\n\"Ben de payla\u015fmak istiyorum!\" dedi.",
+      "prompt": "All three friends together - the hedgehog arrived with a leaf plate full of dark purple blackberries. The squirrel showing strawberries, the rabbit showing carrots. Everyone sharing their food. A beautiful forest clearing with wildflowers. 3D Pixar animated movie style, vibrant colors, warm lighting, colorful food scene.",
+      "textPagePrompt": "Soft pastel purple-pink background with subtle berry and fruit patterns, gentle bountiful watercolor texture, abundant and sharing atmosphere, children's book style, no text, no characters",
+      "mood": "abundant, sharing",
+      "setting": "forest clearing"
+    },
+    {
+      "sceneNumber": 10,
+      "title": "Dostluk Pikni\u011fi",
+      "text": "\u00dc\u00e7 arkada\u015f birlikte piknik yapt\u0131.\nPamuk o g\u00fcn \u00f6\u011frendi ki:\nPayla\u015ft\u0131k\u00e7a \u00e7o\u011fal\u0131r mutluluk!\nG\u00f6ky\u00fcz\u00fcnde g\u00f6kkuag\u0131 belirdi.\nKelebekler dans etti.",
+      "prompt": "Three best friends - white rabbit, brown squirrel, and hedgehog - having a beautiful picnic on a checkered blanket with all their shared food (carrots, strawberries, blackberries). A magnificent rainbow arching across the blue sky. Colorful butterflies dancing around them. Wildflowers everywhere. Pure joy and friendship. 3D Pixar animated movie style, vibrant colors, warm lighting, magical cinematic wide shot.",
+      "textPagePrompt": "Soft pastel rainbow gradient background with subtle butterfly and flower patterns, gentle magical watercolor texture with sparkles, joyful and magical friendship atmosphere, children's book style, no text, no characters",
+      "mood": "magical, joyful",
+      "setting": "meadow with rainbow"
+    }
+  ],
+  "theme": {
+    "primaryColor": "#66BB6A",
+    "secondaryColor": "#AED581",
+    "accentColor": "#F1F8E9",
+    "textPageBg": "#F5FBF0",
+    "funFactBg": "#43A047",
+    "icon": "\ud83d\udc30"
+  },
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? \ud83e\udd55",
+      "facts": [
+        "Tav\u015fanlar sadece havu\u00e7 yemez, ot ve sebze de severler!",
+        "Tav\u015fanlar\u0131n di\u015fleri hi\u00e7 b\u00fcymeyi b\u0131rakmaz!",
+        "Tav\u015fanlar \u00e7ok h\u0131zl\u0131 ko\u015fabilir - saatte 70 km!"
+      ],
+      "icon": "\ud83d\udc30"
+    },
+    {
+      "id": "fact-2",
+      "title": "Orman Dostlar\u0131 \ud83c\udf33",
+      "facts": [
+        "Sincaplar k\u0131\u015f i\u00e7in yiyecek saklar ama bazen nereye saklad\u0131klar\u0131n\u0131 unuturlar!",
+        "Kirpiler tehlike hissedince topak olur!",
+        "Payla\u015fmak, arkada\u015fl\u0131\u011f\u0131n en g\u00fczel yoludur!"
+      ],
+      "icon": "\ud83c\udf33"
+    }
+  ],
+  "funFactPlacements": [
+    {"afterScene": 5, "factId": "fact-1"},
+    {"afterScene": 9, "factId": "fact-2"}
+  ]
+}

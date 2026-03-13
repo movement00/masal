@@ -1,0 +1,143 @@
+{
+  "id": "banyo-zamani",
+  "title": "Banyo Zaman\u0131",
+  "description": "Banyo zaman\u0131 e\u011flenceli! Su sesleri ve k\u00f6p\u00fcklerle dolu ne\u015feli bir banyo maceras\u0131.",
+  "ageGroup": "0-3",
+  "ageRange": "0-3",
+  "pageCount": 10,
+  "style": "3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a cute chubby baby with rosy cheeks, short brown curly hair, and big sparkling brown eyes",
+    "notes": "Sevimli, tombul yanakl\u0131, k\u0131v\u0131rc\u0131k kahverengi sa\u00e7l\u0131 bebek karakteri"
+  },
+  "outfit": {
+    "description": "wearing a soft pastel blue pajama onesie with tiny white cloud patterns, bare feet",
+    "nameVisible": false
+  },
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "title": "Ak\u015fam Oldu",
+      "text": "Ak\u015fam oldu.\nBanyo zaman\u0131!",
+      "prompt": "A cozy warm house interior in the evening, soft orange-yellow light from lamps. A cute chubby baby with rosy cheeks and short brown curly hair sitting on the floor playing with toys. A mother figure smiling and pointing toward the bathroom. Warm evening atmosphere. 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail.",
+      "textPagePrompt": "Soft pastel warm orange background with subtle water droplet patterns, gentle evening glow watercolor texture, cozy and warm atmosphere, children's book illustration style, no text, no characters",
+      "mood": "warm, cozy",
+      "setting": "living room evening"
+    },
+    {
+      "sceneNumber": 2,
+      "title": "Su Akt\u0131",
+      "text": "Anne suyu a\u00e7t\u0131.\n\"\u015e\u0131r\u0131l \u015f\u0131r\u0131l!\" akt\u0131 su.",
+      "prompt": "A white bathtub with water running from a silver faucet. Crystal clear water flowing and splashing into the tub. Steam rising gently. Bathroom tiles in soft blue and white. Warm lighting. 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition.",
+      "textPagePrompt": "Soft pastel light blue background with subtle water stream and ripple patterns, gentle flowing watercolor texture, fresh and clean atmosphere, children's book style, no text, no characters",
+      "mood": "anticipating, gentle",
+      "setting": "bathroom"
+    },
+    {
+      "sceneNumber": 3,
+      "title": "Bebek Geldi",
+      "text": "Bebek geldi.\nK\u0131yafetlerini \u00e7\u0131kard\u0131.",
+      "prompt": "A cute chubby baby with rosy cheeks standing next to a bathtub, wearing a diaper, arms up excitedly. Small colorful clothes on the floor. The baby looks happy and eager. Bathroom setting with warm lighting. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel lavender background with subtle star and moon patterns, gentle soft watercolor texture, playful and innocent atmosphere, children's book style, no text, no characters",
+      "mood": "excited, playful",
+      "setting": "bathroom"
+    },
+    {
+      "sceneNumber": 4,
+      "title": "Suya Girdi",
+      "text": "Bebek suya girdi.\n\"C\u0131p c\u0131p!\" yapt\u0131 su.",
+      "prompt": "A cute chubby baby sitting in a bathtub filled with warm water, splashing with hands. Water droplets flying around. The baby is laughing and having fun. Soft blue bathroom tiles in background. 3D Pixar animated movie style, vibrant colors, warm lighting, dynamic water splashes.",
+      "textPagePrompt": "Soft pastel aqua blue background with subtle splash and water droplet patterns, gentle bubbly watercolor texture, fun and refreshing atmosphere, children's book style, no text, no characters",
+      "mood": "fun, splashy",
+      "setting": "bathtub"
+    },
+    {
+      "sceneNumber": 5,
+      "title": "Sar\u0131 \u00d6rdek",
+      "text": "Sar\u0131 \u00f6rdek y\u00fczd\u00fc.\n\"Vak vak!\" dedi.",
+      "prompt": "A bright yellow rubber duck floating on water in a bathtub next to a happy baby. The rubber duck has a cute smiling face. Water ripples around the duck. Soap bubbles floating in the air. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel yellow background with subtle rubber duck and bubble patterns, gentle cheerful watercolor texture, happy and playful atmosphere, children's book style, no text, no characters",
+      "mood": "cheerful, playful",
+      "setting": "bathtub"
+    },
+    {
+      "sceneNumber": 6,
+      "title": "K\u00f6p\u00fck K\u00f6p\u00fck",
+      "text": "Anne sabun ald\u0131.\nK\u00f6p\u00fck k\u00f6p\u00fck oldu!",
+      "prompt": "A mother's hands holding a soap bar creating lots of white fluffy bubbles and foam. A baby in the bathtub covered in soap bubbles, laughing. Bubbles floating everywhere in the air. Iridescent rainbow reflections in bubbles. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel white-blue background with subtle iridescent bubble patterns floating, gentle foamy watercolor texture, magical and bubbly atmosphere, children's book style, no text, no characters",
+      "mood": "bubbly, fun",
+      "setting": "bathtub"
+    },
+    {
+      "sceneNumber": 7,
+      "title": "Su S\u0131\u00e7ratt\u0131",
+      "text": "Bebek su s\u0131\u00e7ratt\u0131.\n\"\u015eap \u015fap \u015fap!\" yapt\u0131.",
+      "prompt": "A happy baby slapping the water surface in the bathtub creating big splashes. Water droplets flying everywhere. The baby has a huge grin. Rubber duck bouncing on waves. Dynamic splash effects. 3D Pixar animated movie style, vibrant colors, warm lighting, dynamic composition.",
+      "textPagePrompt": "Soft pastel turquoise background with subtle dynamic splash and wave patterns, gentle energetic watercolor texture, lively and fun atmosphere, children's book style, no text, no characters",
+      "mood": "energetic, playful",
+      "setting": "bathtub"
+    },
+    {
+      "sceneNumber": 8,
+      "title": "Tertemiz Oldu",
+      "text": "Anne bebe\u011fi y\u0131kad\u0131.\nTertemiz oldu!",
+      "prompt": "A mother gently washing a baby's hair in the bathtub with shampoo foam on the baby's head shaped like a funny hat. The baby is smiling with eyes closed. Gentle warm light. Loving mother-child moment. 3D Pixar animated movie style, warm lighting, soft emotional scene.",
+      "textPagePrompt": "Soft pastel pink-white background with subtle sparkle and clean star patterns, gentle pure watercolor texture, clean and fresh atmosphere, children's book style, no text, no characters",
+      "mood": "gentle, loving",
+      "setting": "bathtub"
+    },
+    {
+      "sceneNumber": 9,
+      "title": "Havluya Sar\u0131ld\u0131",
+      "text": "Bebek sudan \u00e7\u0131kt\u0131.\nHavluya sar\u0131ld\u0131.",
+      "prompt": "A cute baby wrapped in a fluffy white towel with a hood that has little bear ears. The baby looks warm and cozy, only the face visible from the towel. Bathroom background with soft warm lighting. Water droplets on the baby's face. 3D Pixar animated movie style, warm lighting, adorable scene.",
+      "textPagePrompt": "Soft pastel cream-white background with subtle fluffy cloud and towel texture patterns, gentle cozy watercolor texture, warm and snuggly atmosphere, children's book style, no text, no characters",
+      "mood": "cozy, warm",
+      "setting": "bathroom"
+    },
+    {
+      "sceneNumber": 10,
+      "title": "\u0130yi Geceler",
+      "text": "Bebek p\u0131r\u0131l p\u0131r\u0131l!\n\"\u00d6p\u00fcc\u00fck!\" dedi anne.\n\u0130yi geceler bebek!",
+      "prompt": "A clean sparkling baby in pajamas being kissed on the forehead by the mother. The baby is in a cozy crib with a small teddy bear. Soft nightlight glow, stars visible through the window. Warm loving bedtime scene. 3D Pixar animated movie style, warm golden lighting, emotional cinematic scene.",
+      "textPagePrompt": "Soft pastel dark blue-purple gradient background with subtle twinkling star and moon patterns, gentle dreamy night watercolor texture, peaceful and sleepy atmosphere, children's book style, no text, no characters",
+      "mood": "loving, peaceful",
+      "setting": "bedroom night"
+    }
+  ],
+  "theme": {
+    "primaryColor": "#4FC3F7",
+    "secondaryColor": "#81D4FA",
+    "accentColor": "#E1F5FE",
+    "textPageBg": "#E8F4FD",
+    "funFactBg": "#29B6F6",
+    "icon": "\ud83d\udec1"
+  },
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? \ud83d\udca7",
+      "facts": [
+        "Su d\u00fcnyan\u0131n en \u00f6nemli kayna\u011f\u0131d\u0131r!",
+        "V\u00fccudumuzun y\u00fczde 60'\u0131 sudan olu\u015fur.",
+        "Sabun k\u00f6p\u00fckleri asl\u0131nda k\u00fc\u00e7\u00fcc\u00fck hava balonlar\u0131d\u0131r!"
+      ],
+      "icon": "\ud83d\udca7"
+    },
+    {
+      "id": "fact-2",
+      "title": "Banyo E\u011flencesi \ud83d\udec1",
+      "facts": [
+        "\u00d6rdekler suda y\u00fczebilir \u00e7\u00fcnk\u00fc t\u00fcyleri su ge\u00e7irmez!",
+        "Banyo yapmak v\u00fccudumuzu temiz ve sa\u011fl\u0131kl\u0131 tutar.",
+        "S\u0131cak su kaslar\u0131m\u0131z\u0131 rahatlatır!"
+      ],
+      "icon": "\ud83d\udec1"
+    }
+  ],
+  "funFactPlacements": [
+    {"afterScene": 5, "factId": "fact-1"},
+    {"afterScene": 9, "factId": "fact-2"}
+  ]
+}

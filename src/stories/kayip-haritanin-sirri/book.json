@@ -1,0 +1,139 @@
+{
+  "id": "kayip-haritanin-sirri",
+  "title": "Kayıp Haritanın Sırrı",
+  "description": "Deniz ve Elif'in dedesinin çatı katında buldukları eski bir haritayla başlayan heyecanlı macera. Foça'da geçen bu hikaye, gerçek hazinenin bilgi olduğunu öğretir.",
+  "ageGroup": "6-12",
+  "ageRange": "6-12",
+  "pageCount": 10,
+  "style": "3D Pixar animated movie style with Mediterranean coastal town setting, warm golden lighting, ancient stone textures, cinematic composition, high detail, Disney Pixar render quality, historical adventure atmosphere, Aegean coast scenery, rich earthy color palette",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D Pixar style with expressive curious eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": "Macera ve tarih temalı hikaye - çocuk kaşif ve hazine avcısı olarak tasvir edilmeli, Foça'da geçiyor"
+  },
+  "theme": {
+    "primaryColor": "#8D6E63",
+    "secondaryColor": "#BCAAA4",
+    "accentColor": "#EFEBE9",
+    "icon": "🗺️"
+  },
+  "outfit": {
+    "description": "wearing a khaki explorer vest with many pockets over a striped navy-white t-shirt with the name {CHILD_NAME} embroidered on the chest pocket, cargo shorts, brown leather adventure boots with thick soles",
+    "nameVisible": true,
+    "nameLocation": "embroidered on the chest pocket of the vest"
+  },
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "title": "Çatı Katındaki Keşif",
+      "text": "Ege Denizi kıyısındaki küçük Foça kasabasında, on iki yaşındaki Deniz ve kuzeni on yaşındaki Elif, yaz tatilini dedelerinin eski taş evinde geçiriyorlardı.\nBir yağmurlu gün, çatı katında eski eşyalar arasında oyun oynarken, Elif'in eli tahta bir kutunun altındaki gizli bölmeye takıldı.\n\"Deniz! Buraya gel, bir şey buldum!\" diye bağırdı Elif heyecanla.",
+      "prompt": "Two children, a 12-year-old boy and 10-year-old girl, in a dusty old attic of a stone house, the girl excitedly holding up an old yellowed paper she found in a secret compartment of a wooden box, rain visible through the small attic window, old furniture and antiques around them, warm lamp light, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel brown and amber background with old parchment texture, dusty attic atmosphere with antique silhouettes, warm golden lamplight glow, adventure and mystery theme, children's storybook illustration background",
+      "mood": "excited",
+      "setting": "Dedenin taş evi, çatı katı, Foça"
+    },
+    {
+      "sceneNumber": 2,
+      "title": "Hazine Haritası",
+      "text": "Haritanın üst köşesinde eski Osmanlıca harflerle \"Kaptan Yorgo'nun Hazinesi - 1821\" yazıyordu.\nHaritada Foça kalesinin çizimi, kıyı şeridi ve \"X\" ile işaretlenmiş bir nokta vardı.\n\"Bu gerçek bir hazine haritası olabilir!\" dedi Deniz gözleri parlayarak.\nElif tereddütlü görünüyordu. \"Ya sadece eski bir çizimse?\"",
+      "prompt": "Close-up view of two children examining an ancient treasure map spread on a wooden table, the map shows a coastline with a castle drawing and an X mark, Ottoman script visible at the top reading the date 1821, candlelight illuminating the old yellowed parchment, the boy looks excited while the girl looks uncertain, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel parchment and sepia toned background with old map elements like compass roses and coastline drawings, faded ink marks and aged paper texture, mysterious adventure atmosphere, children's storybook illustration background",
+      "mood": "mysterious",
+      "setting": "Dedenin evi, masa başı"
+    },
+    {
+      "sceneNumber": 3,
+      "title": "Yolculuk Başlıyor",
+      "text": "Ertesi sabah erkenden yola çıktılar. Sırt çantalarına su, sandviç, el feneri ve haritayı koydular.\nFoça'nın dar taş sokaklarından geçip zeytin ağaçlarının arasındaki patikaya saptılar.\n\"Haritaya göre kaleye kuzey yolundan gitmemiz gerekiyor\" dedi Deniz haritayı incelerken.\nElif yanına geldi. \"Bak, burada bir kaynak çeşmesi işareti var. Onu bulursak doğru yoldayız demektir.\"",
+      "prompt": "Two children with backpacks hiking on a rocky path through olive trees along a Mediterranean coastline, the boy checking an old map while walking, bright morning sunshine, ancient stone walls visible in the distance on a hilltop, wild flowers along the path, blue sea visible between the trees, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel green and Mediterranean blue background with olive tree silhouettes, rocky path elements, warm sunshine glow, coastal adventure atmosphere, gentle rolling hills shapes, children's storybook illustration background",
+      "mood": "adventurous",
+      "setting": "Foça kıyı patikası, zeytin ağaçları arası"
+    },
+    {
+      "sceneNumber": 4,
+      "title": "Gizli Giriş",
+      "text": "Kaleye vardıklarında güneş tepedeydi. Eski taş duvarlar yosunla kaplıydı.\nDeniz haritadaki \"X\" noktasını bulmaya çalışıyordu.\n\"Burada olmalı... Kuzey duvarının dibinde\" dedi.\nElif yosunları temizlemeye başladı ve birden durdu.\n\"Deniz! Burada metal bir halka var!\" Gerçekten de taşların arasına gizlenmiş eski bir demir halka ve altında karanlık bir giriş vardı.",
+      "prompt": "Two children at ancient ruined castle walls covered in moss, the girl has cleared moss to reveal a hidden iron ring in the stone wall, a dark secret entrance visible underneath, the boy rushes over excitedly, midday sun casting dramatic shadows on old stone walls, Mediterranean landscape in the background, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel grey stone and moss green background with ancient castle wall textures, mysterious hidden doorway shapes, dramatic light and shadow contrast, discovery and adventure atmosphere, children's storybook illustration background",
+      "mood": "thrilling",
+      "setting": "Foça kalesi, kuzey duvarı"
+    },
+    {
+      "sceneNumber": 5,
+      "title": "Gizli Oda",
+      "text": "El fenerlerini yakıp merdivenleri indiler. Taş basamaklar dar ve dikti.\nAşağıda küçük bir oda vardı. Odanın ortasında taştan bir masa, üzerinde tozlu bir sandık duruyordu.\nDuvarlar eski haritalar ve çizimlerle kaplıydı.\n\"Burası bir çeşit gizli oda!\" diye fısıldadı Elif.",
+      "prompt": "Two children descending narrow stone stairs with flashlights into an underground chamber, a stone table in the center with a dusty old wooden chest on it, ancient maps and drawings on the stone walls, cobwebs in corners, dramatic flashlight beams cutting through the dusty air, mysterious underground atmosphere, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel dark grey and warm amber background with stone wall texture patterns, flashlight beam shapes cutting through darkness, ancient underground chamber atmosphere, dust particles floating, children's storybook illustration background",
+      "mood": "mysterious",
+      "setting": "Kalenin altındaki gizli oda"
+    },
+    {
+      "sceneNumber": 6,
+      "title": "Gerçek Hazine",
+      "text": "Sandığı açtıklarında içinde altın ya da mücevher yoktu.\nAma çok daha değerli bir şey vardı: Eski kitaplar, haritalar ve mektuplar!\n\"Bunlar... Kaptan Yorgo'nun günlükleri!\" dedi Deniz bir defteri açarken.\n\"Foça'nın 200 yıl önceki halini anlatıyor. Balıkçıları, tüccarları, günlük yaşamı... Bu müthiş bir tarihi belge!\"",
+      "prompt": "Two children opening an old wooden chest filled with ancient books leather-bound journals old maps and yellowed letters, the boy holds open a journal with handwritten text and sketches of ships and coastlines, the girl looks amazed picking up old documents, warm golden light from flashlights illuminating the treasures, dust particles in the air, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel warm amber and cream background with old book and document silhouettes, vintage letter and map elements, golden warm glow, historical discovery atmosphere, aged paper textures, children's storybook illustration background",
+      "mood": "awestruck",
+      "setting": "Gizli oda, sandığın başı"
+    },
+    {
+      "sceneNumber": 7,
+      "title": "Kaptan Yorgo'nun Mesajı",
+      "text": "Deniz, Kaptan Yorgo'nun günlüğünü okumaya başladı:\n\"Ben Kaptan Yorgo. Bu belgeleri gelecek nesiller için saklıyorum. Foça'nın hikayesi unutulmasın diye.\nGerçek hazine altın değil, bilgidir. Kim bu belgeleri bulursa, kasabamızın hafızasını korumuş olacak.\"\nElif'in gözleri doldu. \"Kaptan Yorgo haklıymış. Bu belgeler gerçekten de bir hazine.\"",
+      "prompt": "Close-up of a boy reading an old leather-bound journal by flashlight, the journal shows handwritten text and a small portrait sketch of a sea captain, the girl beside him wiping tears from her eyes touched by the words, warm intimate lighting, the underground chamber walls visible in background, emotional and moving scene, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel warm sepia and gold background with old handwriting patterns and quill pen elements, open book shapes, emotional warm glow, wisdom and history atmosphere, vintage journaling theme, children's storybook illustration background",
+      "mood": "emotional",
+      "setting": "Gizli oda, el feneri ışığında"
+    },
+    {
+      "sceneNumber": 8,
+      "title": "Müze Müdürü",
+      "text": "Belgeleri dikkatle topladılar ve kasabaya döndüler.\nDoğruca müze müdürü Ayşe Hanım'a gittiler.\nAyşe Hanım belgeleri görünce çok heyecanlandı:\n\"Çocuklar, siz Foça'nın kayıp tarihini buldunuz! Bu belgeler paha biçilemez. Kaptan Yorgo'nun gemisi hakkında yıllardır araştırma yapıyordum!\"",
+      "prompt": "Two children showing old documents to an excited middle-aged woman museum director in a small town museum, display cases with artifacts visible in background, the woman examining the documents with magnifying glass with amazement, warm afternoon light streaming through museum windows, Turkish coastal town museum interior, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel cream and warm brown background with museum display case silhouettes, document and artifact shapes, warm afternoon light glow, academic discovery atmosphere, small town museum theme, children's storybook illustration background",
+      "mood": "proud",
+      "setting": "Foça müzesi"
+    },
+    {
+      "sceneNumber": 9,
+      "title": "Küçük Tarihçiler Ödülü",
+      "text": "Bir ay sonra kasabada büyük bir tören düzenlendi.\nFoça Belediye Başkanı, Deniz ve Elif'e \"Küçük Tarihçiler\" ödülü verdi.\nMüzede özel bir \"Kaptan Yorgo Odası\" açıldı. Tüm belgeler, haritalar ve günlükler burada sergilenecekti.\nKasaba halkı çocuklara teşekkür ediyordu. Dedeler torunlarına Kaptan Yorgo'nun hikayelerini anlatmaya başlamıştı bile.",
+      "prompt": "A festive town ceremony in a Mediterranean coastal town square, a mayor giving awards to two proud children on a small stage, townspeople applauding, colorful bunting and Turkish flags decorating the square, a banner reading about young historians, museum building visible in background, warm golden hour sunlight, joyful celebration atmosphere, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel warm gold and festive colors background with celebration bunting shapes, town square silhouettes, confetti and star elements, joyful ceremony atmosphere, community celebration theme, children's storybook illustration background",
+      "mood": "celebratory",
+      "setting": "Foça kasaba meydanı, ödül töreni"
+    },
+    {
+      "sceneNumber": 10,
+      "title": "Yeni Bir Macera",
+      "text": "O gece Deniz, dedesinin evinin balkonunda yıldızlara bakıyordu.\nElif yanına geldi. \"Ne düşünüyorsun?\" diye sordu.\nDeniz cebinden eski bir kağıt çıkardı. \"Bugün sandıkta bunu da buldum ama kimseye göstermedim.\"\nKağıtta başka bir harita vardı. Bu sefer işaret farklı bir yeri gösteriyordu.\nİkisi birbirine baktı ve gülümsedi.\nMacera daha yeni başlıyordu.",
+      "prompt": "Two children on a stone balcony of an old house at night under a starry sky, the boy showing the girl a secret second map by moonlight, both smiling mischievously at each other, Mediterranean sea and town lights visible in the background, crescent moon above, magical starlit atmosphere promising new adventures, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel deep navy blue night sky background with twinkling star shapes and a crescent moon, balcony silhouette, Mediterranean coastline in distance, mysterious and exciting atmosphere, new adventure beginning theme, children's storybook illustration background",
+      "mood": "mysterious",
+      "setting": "Dedenin evi balkonu, yıldızlı gece"
+    }
+  ],
+  "funFacts": [
+    {
+      "fact": "Foça, antik çağda Phokaia adıyla bilinen ve denizciliğiyle ünlü bir Yunan kolonisiydi. Foça'lı denizciler Akdeniz'in en uzak köşelerine kadar yolculuk yapmışlardır!",
+      "category": "Tarih"
+    },
+    {
+      "fact": "Osmanlı İmparatorluğu döneminde haritacılık çok gelişmişti. Ünlü denizci Piri Reis, 1513 yılında dünya haritası çizmiştir ve bu harita hâlâ bilim insanlarını şaşırtmaktadır!",
+      "category": "Tarih"
+    },
+    {
+      "fact": "Arkeologlar, toprağın altında gömülü tarihi eserleri bulmak için özel aletler kullanırlar. Bazen küçük bir çömlek parçası bile bize yüzlerce yıl önceki yaşam hakkında bilgi verebilir!",
+      "category": "Bilim"
+    },
+    {
+      "fact": "Müzeler, tarihi eserleri korumak için özel sıcaklık ve nem koşulları sağlar. Eski kağıt belgeler çok hassastır ve doğru korunmazsa birkaç yüz yıl içinde yok olabilir!",
+      "category": "Bilim"
+    },
+    {
+      "fact": "Türkiye'de her yıl yüzlerce arkeolojik kazı yapılır. Anadolu toprakları, binlerce yıllık medeniyetlere ev sahipliği yapmış dünyanın en zengin arkeolojik bölgelerinden biridir!",
+      "category": "Tarih"
+    }
+  ],
+  "funFactPlacements": [2, 4, 6, 8, 10]
+}

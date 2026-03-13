@@ -1,0 +1,140 @@
+{
+  "id": "minik-kedi-miyav",
+  "title": "Minik Kedi Miyav",
+  "description": "Minik bir kedinin bah\u00e7ede hayvanlarla tan\u0131\u015fma maceras\u0131. Hayvan seslerini \u00f6\u011frenelim!",
+  "ageGroup": "0-3",
+  "ageRange": "0-3",
+  "pageCount": 10,
+  "style": "3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a cute small orange-white spotted kitten with big adorable eyes",
+    "notes": "Sevimli, turuncu-beyaz benekli minik kedi karakteri"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "title": "Kedi Uyand\u0131",
+      "text": "Minik kedi uyand\u0131.\n\"Miyav miyav!\" dedi.",
+      "prompt": "A cute small orange-white spotted kitten with big adorable eyes opening its eyes on a colorful pillow. Light blue simple background, soft morning light. The kitten looks sleepy and cute. 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail.",
+      "textPagePrompt": "Soft pastel light blue background with subtle paw print watermark patterns, gentle watercolor texture, warm and dreamy atmosphere, children's book illustration style, no text, no characters",
+      "mood": "warm, gentle",
+      "setting": "bedroom"
+    },
+    {
+      "sceneNumber": 2,
+      "title": "G\u00fcne\u015f Parl\u0131yor",
+      "text": "Kedi pencereye bakt\u0131.\nG\u00fcne\u015f parl\u0131yordu.",
+      "prompt": "A cute orange-white kitten sitting in front of a big window looking outside. Bright yellow sun shining through the window. Light blue sky with a few white clouds visible. Warm sunlight streaming in. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel yellow-blue gradient background with subtle sun ray patterns, gentle morning glow texture, warm and bright atmosphere, children's book style, no text, no characters",
+      "mood": "bright, cheerful",
+      "setting": "by the window"
+    },
+    {
+      "sceneNumber": 3,
+      "title": "K\u00f6pek Havlad\u0131",
+      "text": "Bah\u00e7ede k\u00f6pek g\u00f6rd\u00fc.\nK\u00f6pek \"Hav hav!\" dedi.",
+      "prompt": "A cute brown dog standing in a green grassy garden, mouth open barking happily. An orange-white kitten watching from a window. Green lawn, colorful flowers. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel green background with subtle grass and flower patterns, gentle garden watercolor texture, fresh spring atmosphere, children's book style, no text, no characters",
+      "mood": "playful, curious",
+      "setting": "garden"
+    },
+    {
+      "sceneNumber": 4,
+      "title": "Ku\u015f \u015eark\u0131 S\u00f6yledi",
+      "text": "A\u011fa\u00e7ta ku\u015f vard\u0131.\nKu\u015f \"Cik cik!\" dedi.",
+      "prompt": "A small yellow-blue bird sitting on a green tree branch, beak open singing. Blue sky background, green leaves. The bird looks happy and musical. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel sky blue background with subtle leaf and bird silhouette patterns, gentle nature watercolor texture, airy and musical atmosphere, children's book style, no text, no characters",
+      "mood": "musical, happy",
+      "setting": "garden tree"
+    },
+    {
+      "sceneNumber": 5,
+      "title": "Bah\u00e7eye \u00c7\u0131kt\u0131",
+      "text": "Kedi bah\u00e7eye \u00e7\u0131kt\u0131.\n\u00c7imlerde y\u00fcr\u00fcd\u00fc.",
+      "prompt": "A cute orange-white kitten walking on green grass, paws stepping on the lawn. Colorful flowers around - red, yellow, purple. Sunny garden, butterflies in the air. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel green background with subtle colorful flower patterns scattered, gentle garden meadow watercolor texture, fresh and vibrant atmosphere, children's book style, no text, no characters",
+      "mood": "adventurous, curious",
+      "setting": "garden"
+    },
+    {
+      "sceneNumber": 6,
+      "title": "Kelebek U\u00e7tu",
+      "text": "Bir kelebek u\u00e7tu.\n\"F\u0131r f\u0131r f\u0131r!\" yapt\u0131.",
+      "prompt": "A big orange and black patterned butterfly flying in the air. A cute kitten looking up at the butterfly with amazement. Colorful flowers in the background. Bright sunny day. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "textPagePrompt": "Soft pastel orange-pink background with subtle butterfly wing patterns, gentle floating watercolor texture, magical and whimsical atmosphere, children's book style, no text, no characters",
+      "mood": "magical, playful",
+      "setting": "flower garden"
+    },
+    {
+      "sceneNumber": 7,
+      "title": "Kelebek Pe\u015finde",
+      "text": "Kedi kelebe\u011fi kovalad\u0131.\n\"Miyav miyav!\" dedi.",
+      "prompt": "A cute kitten jumping and chasing a butterfly, tail up in the air, looking happy and playful. The butterfly flying just ahead. Green grass, flowers, dynamic action pose. 3D Pixar animated movie style, vibrant colors, warm lighting, dynamic composition.",
+      "textPagePrompt": "Soft pastel lime green background with subtle motion swirl patterns, gentle playful watercolor texture, energetic and fun atmosphere, children's book style, no text, no characters",
+      "mood": "energetic, playful",
+      "setting": "garden"
+    },
+    {
+      "sceneNumber": 8,
+      "title": "Yoruldu Kedi",
+      "text": "Yoruldu minik kedi.\n\u00c7imenlere uzand\u0131.",
+      "prompt": "A cute tired kitten lying down on soft green grass, eyes half closed, looking relaxed and sleepy. A small daisy flower next to the kitten. Warm afternoon light. Peaceful scene. 3D Pixar animated movie style, warm lighting, soft focus.",
+      "textPagePrompt": "Soft pastel mint green background with subtle daisy and grass patterns, gentle relaxing watercolor texture, calm and peaceful atmosphere, children's book style, no text, no characters",
+      "mood": "calm, peaceful",
+      "setting": "garden grass"
+    },
+    {
+      "sceneNumber": 9,
+      "title": "Anne Kedi Geldi",
+      "text": "Anne kedi geldi.\n\"Miyav!\" dedi.",
+      "prompt": "A large white fluffy mother cat approaching a small orange-white kitten on the grass. The mother cat looking at the kitten with love and care. Both cats with similar orange-white markings. Warm golden light. 3D Pixar animated movie style, emotional scene.",
+      "textPagePrompt": "Soft pastel warm peach background with subtle heart and paw print patterns, gentle loving watercolor texture, warm and nurturing atmosphere, children's book style, no text, no characters",
+      "mood": "loving, warm",
+      "setting": "garden"
+    },
+    {
+      "sceneNumber": 10,
+      "title": "Mutlu Son",
+      "text": "Anne kedi yavruyu yalad\u0131.\n\"M\u0131rr m\u0131rr!\" yapt\u0131lar.\nMutlu oldular.",
+      "prompt": "Mother cat grooming the small kitten, both cuddled together looking happy and content. Soft warm light around them. Beautiful orange-pink sunset sky in the background. A loving family moment. 3D Pixar animated movie style, warm emotional scene, golden hour lighting.",
+      "textPagePrompt": "Soft pastel warm sunset orange-pink gradient background with subtle heart patterns, gentle loving watercolor texture, warm and cozy family atmosphere, children's book style, no text, no characters",
+      "mood": "loving, happy",
+      "setting": "sunset garden"
+    }
+  ],
+  "theme": {
+    "primaryColor": "#FF6B35",
+    "secondaryColor": "#FFA07A",
+    "accentColor": "#FFF0E5",
+    "textPageBg": "#FFF5EE",
+    "funFactBg": "#FF8C00",
+    "icon": "\ud83d\udc31"
+  },
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? \ud83d\udc3e",
+      "facts": [
+        "Kediler g\u00fcnde 12-16 saat uyur!",
+        "Kedilerin b\u0131y\u0131klar\u0131 onlara y\u00f6n bulmada yard\u0131mc\u0131 olur.",
+        "Bir kedinin kalbi dakikada 110-140 kez atar!"
+      ],
+      "icon": "\ud83d\udc31"
+    },
+    {
+      "id": "fact-2",
+      "title": "Hayvan Sesleri \ud83d\udc3e",
+      "facts": [
+        "K\u00f6pekler mutlu olunca kuyruklar\u0131n\u0131 sallar!",
+        "Ku\u015flar \u015fark\u0131 s\u00f6yleyerek ileti\u015fim kurar.",
+        "Kelebekler ayaklar\u0131yla tat al\u0131r!"
+      ],
+      "icon": "\ud83e\udd8b"
+    }
+  ],
+  "funFactPlacements": [
+    {"afterScene": 4, "factId": "fact-1"},
+    {"afterScene": 8, "factId": "fact-2"}
+  ]
+}
