@@ -3,19 +3,17 @@
  *
  * Tum ajanlari koordine eder. server.js'deki generateBookWithProgress()'in yerini alir.
  *
- * Pipeline (SIRALI URETIM + KIYAFET PROFILLERI):
+ * Pipeline (PARALEL URETIM + KIYAFET PROFILLERI):
  *   Faz 1:   BASLANGIC        → Ajanlari olustur, cocuk foto hazirla, metinleri kisisellestir
  *   Faz 2:   KARAKTER PROFILI  → 3D karakter referans gorseli uret
  *   Faz 2.5: KIYAFET PROFILLERI → Her benzersiz kiyafet icin karakter profili uret (paralel)
- *   Faz 3:   SIRALI SAHNELER   → Her sahneyi sirayla uret (refs: kiyafet profili + onceki sahne)
+ *   Faz 3:   PARALEL SAHNELER  → 7'li batch halinde paralel uret (refs: kiyafet profili)
  *   Faz 4:   FINALIZE          → Ozel sayfalar, funfact, PDF
  *
  * Referans zinciri:
  *   Karakter Profili:  refs = [cocuk foto]
  *   Kiyafet Profili:   refs = [cocuk foto, karakter profili]
- *   Sahne 1: refs = [cocuk foto, kiyafet profili]
- *   Sahne 2: refs = [cocuk foto, kiyafet profili, sahne 1]
- *   ...
+ *   Her Sahne: refs = [cocuk foto, kiyafet profili] (paralel - onceki sahne ref YOK)
  *
  * Kiyafet sistemi opsiyoneldir — sahnelerde outfitId tanimlanmissa aktif olur.
  */
@@ -237,13 +235,77 @@ class BookOrchestrator {
     }
 
     // ──────────────────────────────────────────
-    // FAZ 3: SIRALI SAHNE URETIMI
+    // FAZ 3: PARALEL BATCH SAHNE URETIMI
     // ──────────────────────────────────────────
-    console.log(`  [orchestrator] FAZ 3: ${sceneCount} sahne SIRAYLA uretilecek...`);
+    const BATCH_SIZE = 7; // Ayni anda max 7 sahne
+    console.log(`  [orchestrator] FAZ 3: ${sceneCount} sahne PARALEL uretilecek (batch: ${BATCH_SIZE})...`);
 
-    let previousSceneRef = null;  // Onceki sahnenin URL veya path'i
-    let previousSceneBuffer = null; // Onceki sahnenin buffer'i (validasyon icin)
+    const outfitStepOffset = hasOutfitSystem ? 1 : 0;
+    this.sendSSE({
+      type: "step",
+      step: 4 + outfitStepOffset,
+      total: TOTAL_STEPS,
+      message: `${sceneCount} sahne paralel uretiliyor...`,
+    });
 
+    // Tum sahneler icin prompt ve referanslari onceden hazirla
+    const sceneConfigs = bookData.scenes.map((scene, i) => {
+      const sceneOutfitProfile = scene.outfitId ? outfitProfileMap.get(scene.outfitId) : null;
+      const activeProfileRef = sceneOutfitProfile?.ref || characterProfileRef;
+      const hasOutfitProfile = !!sceneOutfitProfile;
+      const hasCharacterProfile = !hasOutfitProfile && !!characterProfileRef;
+
+      // Referans: sadece kiyafet/karakter profili (onceki sahne YOK — hiz icin)
+      // Cocuk foto SceneGenerator icinde otomatik ekleniyor
+      const referenceImages = [];
+      if (activeProfileRef) {
+        referenceImages.push(activeProfileRef);
+      }
+
+      if (hasOutfitProfile) {
+        console.log(`    → Sahne ${scene.sceneNumber}: Kiyafet profili: ${scene.outfitId}`);
+      }
+
+      const promptOptions = {
+        isAnchor: i === 0,
+        hasCharacterProfile,
+        hasOutfitProfile,
+        hasPreviousScene: false, // Paralel modda onceki sahne referansi yok
+      };
+      const scenePrompt = promptArchitect.buildScenePrompt(scene, promptOptions);
+
+      return {
+        sceneNumber: scene.sceneNumber,
+        prompt: scenePrompt,
+        referenceImages,
+        maxRetries: 2,
+        // Metadata (post-processing icin)
+        _scene: scene,
+        _promptOptions: promptOptions,
+        _activeProfileRef: activeProfileRef,
+        _activeProfileBuffer: sceneOutfitProfile?.buffer || characterProfileBuffer,
+      };
+    });
+
+    // Paralel batch uretim
+    const batchStartTime = Date.now();
+    let completedCount = 0;
+    const batchResults = await sceneGenerator.generateBatch(sceneConfigs, {
+      batchSize: BATCH_SIZE,
+      onSceneDone: (result) => {
+        completedCount++;
+        const elapsed = Math.round((Date.now() - batchStartTime) / 1000);
+        console.log(`  [orchestrator] Sahne ${result.sceneNumber} tamamlandi (${completedCount}/${sceneCount}, ${elapsed}s)`);
+        this.sendSSE({
+          type: "heartbeat",
+          message: `Sahne ${result.sceneNumber} hazir (${completedCount}/${sceneCount})`,
+        });
+      },
+    });
+    const totalBatchElapsed = Math.round((Date.now() - batchStartTime) / 1000);
+    console.log(`  [orchestrator] Tum sahneler uretildi: ${totalBatchElapsed}s (${completedCount}/${sceneCount})`);
+
+    // Sonuclari isle — sirayla diske yaz + overlay uygula
     for (let i = 0; i < bookData.scenes.length; i++) {
       const scene = bookData.scenes[i];
       const sceneNum = scene.sceneNumber;
@@ -252,68 +314,13 @@ class BookOrchestrator {
       const finalPath = path.join(outputDir, `scene-${padNum}-final.png`);
       const textEntry = textsArray.find((t) => t.sceneNumber === sceneNum);
 
-      const outfitStepOffset = hasOutfitSystem ? 1 : 0;
-      const stepNum = 4 + outfitStepOffset + i; // 0:baslangic, 1:metin, 2:foto, 3:profil, [4:kiyafet], 4/5+:sahneler
-      this.sendSSE({
-        type: "step",
-        step: stepNum,
-        total: TOTAL_STEPS,
-        message: `Sahne ${sceneNum}/${sceneCount} uretiliyor...`,
-      });
-      console.log(`  [orchestrator] Sahne ${sceneNum}/${sceneCount} uretiliyor (sirali)...`);
+      // Batch sonucundan bul
+      const result = batchResults.find((r) => r.sceneNumber === sceneNum);
+      const sceneConfig = sceneConfigs[i];
 
-      // Kiyafet profili varsa onu kullan, yoksa master karakter profilini kullan
-      const sceneOutfitProfile = scene.outfitId ? outfitProfileMap.get(scene.outfitId) : null;
-      const activeProfileRef = sceneOutfitProfile?.ref || characterProfileRef;
-      const activeProfileBuffer = sceneOutfitProfile?.buffer || characterProfileBuffer;
-      const hasOutfitProfile = !!sceneOutfitProfile;
-
-      // Referans gorselleri hazirla
-      // Sira: [kiyafet/karakter profili, onceki sahne] (cocuk foto SceneGenerator icinde otomatik ekleniyor)
-      const referenceImages = [];
-      const hasCharacterProfile = !hasOutfitProfile && !!characterProfileRef;
-      const hasPreviousScene = !!previousSceneRef;
-
-      if (activeProfileRef) {
-        referenceImages.push(activeProfileRef);
-      }
-      if (previousSceneRef) {
-        referenceImages.push(previousSceneRef);
-      }
-
-      if (hasOutfitProfile) {
-        console.log(`    → Kiyafet profili kullaniliyor: ${scene.outfitId}`);
-      }
-
-      // Prompt olustur
-      const promptOptions = {
-        isAnchor: i === 0, // Ilk sahne stil referansi
-        hasCharacterProfile,
-        hasOutfitProfile,
-        hasPreviousScene,
-      };
-      const scenePrompt = promptArchitect.buildScenePrompt(scene, promptOptions);
-
-      // Uret (nano-banana-2 kalite modunda her sahne ~60-150s surebilir)
-      const sceneStartTime = Date.now();
-      let result = await sceneGenerator.generateScene({
-        prompt: scenePrompt,
-        referenceImages,
-        maxRetries: 2,
-        onProgress: (progress) => {
-          if (progress.elapsedSec % 10 === 0 && progress.elapsedSec > 0) {
-            this.sendSSE({
-              type: "heartbeat",
-              message: `Sahne ${sceneNum}/${sceneCount} uretiliyor... (${progress.elapsedSec}s) [kalite modu - 1K]`,
-            });
-          }
-        },
-      });
-      const sceneElapsed = Math.round((Date.now() - sceneStartTime) / 1000);
-      console.log(`  [orchestrator] Sahne ${sceneNum} uretim suresi: ${sceneElapsed}s`);
-
-      // Validasyon
-      if (result.success && result.buffer) {
+      let sceneSuccess = false;
+      if (result && result.success && result.buffer) {
+        // Validasyon (paralel uretim sonrasi)
         const validation = await qualityValidator.validateScene(result.buffer, {
           outfitDescription: outfitDesc,
           style: bookData.style,
@@ -321,7 +328,7 @@ class BookOrchestrator {
           setting: scene.setting,
           scenePrompt: scene.prompt,
           childPhotoBuffer,
-        }, activeProfileBuffer); // Kiyafet veya karakter profili ile karsilastirma
+        }, sceneConfig._activeProfileBuffer);
 
         this.sendSSE({
           type: "validation",
@@ -331,58 +338,12 @@ class BookOrchestrator {
           checks: validation.checks,
         });
 
-        // Basarisizsa duzeltme prompt'u ile tekrar uret
-        if (!validation.passed && MAX_REGEN_ATTEMPTS > 0) {
-          console.log(`  [orchestrator] Sahne ${sceneNum} validasyon KALDI (skor: ${validation.overallScore}), tekrar uretiliyor...`);
-          this.sendSSE({ type: "heartbeat", message: `Sahne ${sceneNum} kalite kontrolunden gecemedi, iyilestiriliyor...` });
-
-          const correctionPrompt = promptArchitect.buildCorrectionPrompt(scene, promptOptions, validation);
-          const regenResult = await sceneGenerator.generateScene({
-            prompt: correctionPrompt,
-            referenceImages,
-            maxRetries: 2,
-          });
-
-          if (regenResult.success && regenResult.buffer) {
-            // Hangi gorsel daha iyi? (childPhotoBuffer ve characterProfileBuffer dahil)
-            const comparison = await qualityValidator.compareScenes(
-              result.buffer,
-              regenResult.buffer,
-              {
-                outfitDescription: outfitDesc,
-                style: bookData.style,
-                mood: scene.mood,
-                setting: scene.setting,
-                scenePrompt: scene.prompt,
-                childPhotoBuffer,
-              },
-              activeProfileBuffer,
-            );
-
-            if (comparison.betterImage === "b") {
-              console.log(`  [orchestrator] Sahne ${sceneNum}: yeniden uretilen daha iyi (${comparison.aScore} vs ${comparison.bScore})`);
-              result = regenResult;
-            } else {
-              console.log(`  [orchestrator] Sahne ${sceneNum}: orijinal daha iyi (${comparison.aScore} vs ${comparison.bScore})`);
-            }
-          }
-        }
-      }
-
-      // Diske yaz + onceki sahne referansini guncelle
-      let sceneSuccess = false;
-      if (result.success && result.buffer) {
+        // Diske yaz
         fs.writeFileSync(illPath, result.buffer);
         sceneSuccess = true;
-
-        // Sonraki sahne icin referans olarak bu sahneyi kullan
-        previousSceneRef = result.resultUrl || illPath;
-        previousSceneBuffer = result.buffer;
-
         console.log(`  [orchestrator] Sahne ${sceneNum} TAMAM`);
       } else {
         console.error(`  [orchestrator] Sahne ${sceneNum} BASARISIZ`);
-        // Onceki sahne referansini koruyoruz — basarisiz sahne zinciri kirmaz
       }
 
       // Canvas metin overlay

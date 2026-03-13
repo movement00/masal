@@ -202,14 +202,14 @@ const server = http.createServer(async (req, res) => {
         }
       }
 
-      // Heartbeat - her 15s baglanti canli tutar
+      // Heartbeat - her 5s baglanti canli tutar (Railway proxy timeout onlemi)
       const heartbeatInterval = setInterval(() => {
         if (sseResponse === res && !res.writableEnded) {
           try { res.write(`:heartbeat\n\n`); } catch(e) { clearInterval(heartbeatInterval); }
         } else {
           clearInterval(heartbeatInterval);
         }
-      }, 15000);
+      }, 5000);
 
       req.on("close", () => {
         clearInterval(heartbeatInterval);
