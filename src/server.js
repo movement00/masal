@@ -314,6 +314,25 @@ const server = http.createServer(async (req, res) => {
       return sendJson(res, 200, { outputs });
     }
 
+    // Kie.ai callback endpoint
+    if (url.pathname === "/api/kie-callback" && req.method === "POST") {
+      let body = "";
+      req.on("data", (chunk) => { body += chunk; });
+      req.on("end", () => {
+        try {
+          const data = JSON.parse(body);
+          const taskId = data.taskId || data.data?.taskId;
+          console.log(`  [callback] Kie.ai callback alındı: taskId=${taskId}, state=${data.state || data.data?.state}`);
+          KieImageGenerator.handleCallback(taskId, data.data || data);
+          sendJson(res, 200, { ok: true });
+        } catch (err) {
+          console.error("  [callback] Parse hatası:", err.message);
+          sendJson(res, 400, { error: "Invalid JSON" });
+        }
+      });
+      return;
+    }
+
     // Kitap uret
     if (url.pathname === "/api/generate" && req.method === "POST") {
       console.log("  [server] POST /api/generate alindi");

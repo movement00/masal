@@ -1,6 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 const config = require("../config");
+const EventEmitter = require("events");
+
+// Global callback registry - taskId → {resolve, reject} mapping
+const callbackRegistry = new Map();
+const callbackEmitter = new EventEmitter();
+callbackEmitter.setMaxListeners(50);
 
 class KieImageGenerator {
   constructor() {
@@ -13,6 +19,38 @@ class KieImageGenerator {
     };
     // URL cache - ayni dosyayi tekrar yuklemekten kacin
     this._urlCache = new Map();
+    // Callback URL (Railway public URL)
+    this.callbackUrl = process.env.CALLBACK_URL || null;
+  }
+
+  /**
+   * Callback endpoint'inden gelen sonucu işle
+   * Server.js'den çağrılır
+   */
+  static handleCallback(taskId, data) {
+    const pending = callbackRegistry.get(taskId);
+    if (pending) {
+      callbackRegistry.delete(taskId);
+      const state = data?.state;
+      if (state === "success") {
+        try {
+          const result = JSON.parse(data.resultJson);
+          const url = result.resultUrls?.[0];
+          if (url) {
+            console.log(`    [kie.ai] Callback: Task ${taskId} başarılı`);
+            pending.resolve(url);
+          } else {
+            pending.reject(new Error("Callback sonucunda URL bulunamadı"));
+          }
+        } catch (e) {
+          pending.reject(new Error(`Callback JSON parse hatası: ${e.message}`));
+        }
+      } else if (state === "fail") {
+        pending.reject(new Error(`Kie.ai üretim başarısız: ${data.failMsg || "Bilinmeyen hata"}`));
+      }
+    } else {
+      console.log(`    [kie.ai] Callback: Task ${taskId} - bekleyen yok (geç gelmiş olabilir)`);
+    }
   }
 
   /**
@@ -109,6 +147,11 @@ class KieImageGenerator {
       body.input.image_input = imageUrls.slice(0, 8);
     }
 
+    // Callback URL varsa ekle
+    if (this.callbackUrl) {
+      body.callBackUrl = `${this.callbackUrl}/api/kie-callback`;
+    }
+
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
         const controller = new AbortController();
@@ -192,18 +235,67 @@ class KieImageGenerator {
   }
 
   /**
-   * Task sonucunu bekler (polling) - ag hatalarina karsi dayanikli
+   * Task sonucunu bekler - callback varsa callback, yoksa polling
    * @param {string} taskId
    * @param {number} maxWaitMs
-   * @param {function} onProgress - Her polling turunda cagrilir (gecen sure bilgisi)
+   * @param {function} onProgress - Bekleme durumu bilgisi
    */
   async _waitForResult(taskId, maxWaitMs = 300000, onProgress = null) {
+    if (this.callbackUrl) {
+      return this._waitForCallback(taskId, maxWaitMs, onProgress);
+    }
+    return this._waitWithPolling(taskId, maxWaitMs, onProgress);
+  }
+
+  /**
+   * Callback modunda bekle - API bize POST atar
+   */
+  async _waitForCallback(taskId, maxWaitMs = 300000, onProgress = null) {
     const startTime = Date.now();
-    const pollInterval = 2000; // 2s polling - hizli yanit
+    console.log(`    [kie.ai] Callback modu - ${taskId} bekleniyor...`);
+
+    return new Promise((resolve, reject) => {
+      // Timeout
+      const timer = setTimeout(() => {
+        callbackRegistry.delete(taskId);
+        // Timeout olursa polling'e fallback
+        console.log(`    [kie.ai] Callback timeout - polling'e geçiliyor...`);
+        this._waitWithPolling(taskId, 60000, onProgress).then(resolve).catch(reject);
+      }, maxWaitMs);
+
+      // Progress interval
+      const progressInterval = onProgress ? setInterval(() => {
+        const elapsedSec = Math.round((Date.now() - startTime) / 1000);
+        onProgress({ elapsedSec, callback: true });
+      }, 10000) : null;
+
+      // Registry'ye ekle
+      callbackRegistry.set(taskId, {
+        resolve: (url) => {
+          clearTimeout(timer);
+          if (progressInterval) clearInterval(progressInterval);
+          const elapsed = Math.round((Date.now() - startTime) / 1000);
+          console.log(`    [kie.ai] Callback ile görsel hazır (${elapsed}s)`);
+          resolve(url);
+        },
+        reject: (err) => {
+          clearTimeout(timer);
+          if (progressInterval) clearInterval(progressInterval);
+          reject(err);
+        }
+      });
+    });
+  }
+
+  /**
+   * Polling modunda bekle (fallback)
+   */
+  async _waitWithPolling(taskId, maxWaitMs = 300000, onProgress = null) {
+    const startTime = Date.now();
+    const pollInterval = 2000;
     let consecutiveErrors = 0;
 
     while (Date.now() - startTime < maxWaitMs) {
-      // Progress callback - kullaniciya bekleme durumu bildir
       if (onProgress) {
         const elapsedSec = Math.round((Date.now() - startTime) / 1000);
         onProgress({ elapsedSec, polling: true });
@@ -233,7 +325,6 @@ class KieImageGenerator {
           continue;
         }
         const state = data.data?.state;
-
         consecutiveErrors = 0;
 
         if (state === "success") {
@@ -249,26 +340,18 @@ class KieImageGenerator {
         }
 
         if (state === "fail") {
-          throw new Error(
-            `Kie.ai üretim başarısız: ${data.data.failMsg || "Bilinmeyen hata"}`,
-          );
+          throw new Error(`Kie.ai üretim başarısız: ${data.data.failMsg || "Bilinmeyen hata"}`);
         }
 
-        // Durum bilgisi logla (her 12 saniyede bir)
         if (state) {
           const elapsed = Math.round((Date.now() - startTime) / 1000);
           if (elapsed % 10 < 3) console.log(`    [kie.ai] Durum: ${state} (${elapsed}s / ${Math.round(maxWaitMs/1000)}s)`);
         }
       } catch (err) {
-        if (err.message.includes("üretim başarısız")) {
-          throw err;
-        }
+        if (err.message.includes("üretim başarısız")) throw err;
         consecutiveErrors++;
         console.warn(`    [kie.ai] Polling hatası (${consecutiveErrors}): ${err.message}`);
-
-        if (consecutiveErrors >= 6) {
-          throw new Error(`Kie.ai bağlantı hatası: ${consecutiveErrors} ardışık hata`);
-        }
+        if (consecutiveErrors >= 6) throw new Error(`Kie.ai bağlantı hatası: ${consecutiveErrors} ardışık hata`);
       }
 
       await new Promise((r) => setTimeout(r, pollInterval));
