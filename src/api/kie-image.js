@@ -21,6 +21,7 @@ class KieImageGenerator {
     this._urlCache = new Map();
     // Callback URL (Railway public URL)
     this.callbackUrl = process.env.CALLBACK_URL || null;
+    console.log(`  [kie.ai] Mod: ${this.callbackUrl ? "CALLBACK (" + this.callbackUrl + ")" : "POLLING"}`);
   }
 
   /**

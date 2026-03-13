@@ -658,6 +658,9 @@ server.listen(PORT, "0.0.0.0", () => {
 ║   Görsel: ${config.imageProvider.toUpperCase().padEnd(30)}║
 ║   Çözünürlük: ${config.output.resolution.padEnd(26)}║
 ║   Mod: Tek Sayfa (canvas overlay)        ║
+║   Callback: ${(process.env.CALLBACK_URL || "KAPALI (polling)").padEnd(24)}║
 ╚══════════════════════════════════════════╝
 `);
+  console.log(`  [server] CALLBACK_URL = ${process.env.CALLBACK_URL || "(yok - polling modu)"}`);
+});
 });
