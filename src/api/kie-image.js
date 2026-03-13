@@ -67,17 +67,25 @@ class KieImageGenerator {
       return this._urlCache.get(imagePath);
     }
 
-    const buffer = fs.readFileSync(imagePath);
-    const ext = path.extname(imagePath).toLowerCase();
-    const mimeTypes = {
-      ".jpg": "image/jpeg",
-      ".jpeg": "image/jpeg",
-      ".png": "image/png",
-      ".webp": "image/webp",
-    };
-    const mime = mimeTypes[ext] || "image/jpeg";
+    // Görseli optimize et - max 1024px, JPEG %85 kalite
+    let buffer;
+    try {
+      const sharp = require("sharp");
+      const originalBuffer = fs.readFileSync(imagePath);
+      const originalKB = Math.round(originalBuffer.length / 1024);
+      buffer = await sharp(originalBuffer)
+        .resize(1024, 1024, { fit: "inside", withoutEnlargement: true })
+        .jpeg({ quality: 85 })
+        .toBuffer();
+      const newKB = Math.round(buffer.length / 1024);
+      console.log(`    [kie.ai] Görsel optimize: ${originalKB}KB → ${newKB}KB`);
+    } catch (sharpErr) {
+      console.warn(`    [kie.ai] Sharp optimize başarısız, orijinal kullanılıyor: ${sharpErr.message}`);
+      buffer = fs.readFileSync(imagePath);
+    }
+    const mime = "image/jpeg";
     const base64Data = `data:${mime};base64,${buffer.toString("base64")}`;
-    const fileName = `masal_${Date.now()}${ext}`;
+    const fileName = `masal_${Date.now()}.jpg`;
 
     for (let attempt = 0; attempt <= retries; attempt++) {
       try {
