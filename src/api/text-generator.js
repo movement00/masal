@@ -47,7 +47,12 @@ function getAgeGroup(age) {
 
 class TextGenerator {
   constructor() {
-    this.client = new OpenAI({ apiKey: config.openai.apiKey });
+    if (config.openai.apiKey) {
+      this.client = new OpenAI({ apiKey: config.openai.apiKey });
+    } else {
+      this.client = null;
+      console.log("  [TextGenerator] OpenAI API key yok - metin üretimi devre dışı (book.json metinleri kullanılacak)");
+    }
   }
 
   /**
