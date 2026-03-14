@@ -1,0 +1,156 @@
+{
+  "id": "uzay-kasifleri",
+  "title": "Uzay Kaşifleri",
+  "description": "Yıldızlara hayran bir çocuğun, küçük bir uzaylı arkadaşıyla birlikte uzayın derinliklerine çıktığı büyülü bir keşif yolculuğu. Aydan Satürne, cesaretten dostluğa uzanan kozmik bir masal.",
+  "ageGroup": "6-12",
+  "ageRange": "6-12",
+  "pageCount": 12,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": "5 kiyafet grubu: 1-pijama, 2/3-gunluk kiyafet, 4/5-kasif kiyafeti, 6/7/8/9/10-uzay giysi, 11/12-komutan giysi"
+  },
+  "theme": {
+    "primaryColor": "#1A237E",
+    "secondaryColor": "#7C4DFF",
+    "accentColor": "#FFD600",
+    "icon": "\ud83d\ude80"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas",
+      "title": "Yıldızlara Bakan Çocuk",
+      "text": "Her gece {CHILD_NAME} yatağına uzanmadan önce pencerenin önüne giderdi. Gökyüzü o kadar büyüktü ki, her baktığında yeni bir yıldız keşfederdi.\nBazı geceler yıldızlar ona göz kırpar gibiydi. Bazı geceler ay, sanki sadece {CHILD_NAME}'e gülümserdi.\n\"Bir gün oraya gideceğim\" diye fısıldadı {CHILD_NAME}. Ve bu sözü gökyüzüne bir söz gibi bıraktı.",
+      "prompt": "CHARACTER_DESC wearing cozy dark navy blue pajamas covered with tiny glowing star prints and small rocket ship patterns and soft matching slippers, kneeling on a cushioned window seat in a softly lit bedroom pressing both small hands against the cool glass of a large bedroom window, gazing up in pure wonder at a breathtaking night sky filled with thousands of twinkling stars and a large luminous full moon casting silver-blue light across the child's face, the child's big eyes wide with amazement reflecting the starlight like tiny mirrors, a soft gentle smile of pure wonder on the face, the bedroom behind has glow-in-the-dark star stickers on the ceiling and walls, a small telescope sitting on the desk, planet posters on the wall, a stuffed rocket toy on the bed, warm bedside lamp casting a soft amber glow contrasting with the cool blue moonlight from the window, dust particles floating in the moonbeam like tiny stars, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Yatak odası penceresi, yıldızlı gece"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Teleskop Hediyesi",
+      "text": "Bir sabah {CHILD_NAME} masasının üzerinde parlak bir kutu buldu. İçinde gerçek bir teleskop vardı!\n{CHILD_NAME} heyecanla teleskobu bahçeye taşıdı. Gökyüzüne tuttuğunda gözlerine inanamadı.\nYıldızlar sandığından çok daha yakındı. Her biri farklı renkte parlıyordu. Mavi, sarı, kırmızı...\n\"Gökyüzü bir resim tablosu gibi!\" dedi {CHILD_NAME} hayranlıkla.",
+      "prompt": "CHARACTER_DESC wearing a comfortable light blue hoodie with a small embroidered star on the chest and dark blue jeans with clean white sneakers, standing in a green garden during golden hour late afternoon, one eye pressed excitedly against the eyepiece of a shiny new silver and black telescope on a tripod, the other eye squinted shut with concentration, a huge excited grin spreading across the face, one hand gripping the telescope tube and the other adjusting the focus knob, the telescope pointing upward toward a beautiful gradient sky transitioning from warm orange sunset on the horizon to deep indigo blue above with the first bright stars appearing, the opened gift box with shiny wrapping paper and ribbon scattered on the grass nearby, a wooden garden fence with climbing flowers in the background, warm golden sunset light illuminating the child from the side creating a beautiful rim light effect on the hoodie and hair, fireflies beginning to appear in the garden, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "excited",
+      "setting": "Bahçe, gün batımından geceye geçiş"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Takımyıldızları Keşfi",
+      "text": "{CHILD_NAME} her gece bahçeye çıkıp gökyüzünü inceledi. Büyükayı'yı buldu, Küçükayı'yı takip etti.\nKutup Yıldızı'nı gördüğünde kalbinde bir sıcaklık hissetti. Sanki yıldızlar ona yol gösteriyordu.\nBir deftere çizmeye başladı. Her takımyıldızını, her parlak noktayı not etti.\n\"Gökyüzünün bir haritası olmalı\" dedi {CHILD_NAME}. \"Ve ben onu çizeceğim.\"",
+      "prompt": "CHARACTER_DESC wearing a comfortable light blue hoodie with a small embroidered star on the chest and dark blue jeans with clean white sneakers, sitting cross-legged on a soft plaid blanket spread on the garden grass at night, a large open sketchbook on the lap with hand-drawn constellation maps visible on the pages with connecting lines between stars and Turkish labels written in childish handwriting, looking up at the night sky with one hand holding a pencil and the other pointing upward at a magnificent constellation of Ursa Major clearly visible and glowing with bright connected lines in the deep indigo sky, the child's face illuminated by a soft warm glow from a small lantern placed on the blanket beside them, expression of focused curiosity and intellectual excitement with slightly parted lips in wonder, the telescope standing nearby on its tripod, the magnificent Milky Way stretching across the entire sky with purple and blue nebula clouds, thousands of stars of varying brightness and colors, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Bahçe, yıldızlı gece gökyüzü altında"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "explorer-suit",
+      "title": "Düşen Yıldız",
+      "text": "O gece her şey değişti. {CHILD_NAME} teleskobuyla gökyüzünü izlerken parlak bir ışık süzüldü.\nBir kayan yıldız! Ama bu yıldız kayıp gitmedi. Yavaşladı. Döndü. Ve bahçeye doğru indi.\nÇimlerin üzerine yumuşacık kondu. Küçücük, sıcacık, altın rengi bir ışık topuydu.\n{CHILD_NAME} korkuyla değil, merakla yaklaştı. Ve ışık topunun içinden iki minik göz belirdi.",
+      "prompt": "CHARACTER_DESC wearing a khaki explorer vest with multiple pockets over a dark green t-shirt and brown cargo pants with sturdy brown lace-up adventure boots, standing in the garden at night with mouth wide open in absolute astonishment and eyes huge with wonder, both hands raised to the cheeks in shock, staring at a beautiful small glowing golden orb of warm light that has just softly landed on the green grass a few steps away, the golden orb about the size of a soccer ball pulsating with gentle warm light and tiny sparkles radiating outward, two adorable tiny bright blue eyes peeking out from within the golden glow, a faint trail of golden stardust and sparkling particles tracing a curved path from the sky down to the landing spot on the grass, the grass around the orb glowing warm gold and gently swaying from the landing energy, small flowers nearby leaning toward the light as if attracted to it, the telescope knocked slightly askew from the child's surprise, the night sky above showing the tail end of a shooting star trail still fading, deep purple and navy sky with brilliant stars, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Bahçe, büyülü yıldız düşüşü gecesi"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "explorer-suit",
+      "title": "Küçük Uzaylı Arkadaş",
+      "text": "Işık yavaşça söndü ve içinden minicik bir yaratık çıktı. Mavi-mor renkte, parlak gözlü, sevimli bir uzaylıydı.\n{CHILD_NAME}'e baktı ve gülümsedi. Konuşamıyordu ama her şeyi anlıyordu.\n{CHILD_NAME} elini uzattı. Küçük uzaylı, minik parmaklarıyla {CHILD_NAME}'in avucuna dokundu.\nO anda ikisi de bildi: Bu bir dostluğun başlangıcıydı.\n\"Sana Yıldız diyeceğim\" dedi {CHILD_NAME} gülümseyerek.",
+      "prompt": "CHARACTER_DESC wearing a khaki explorer vest with multiple pockets over a dark green t-shirt and brown cargo pants with sturdy brown lace-up adventure boots, kneeling on the garden grass reaching out one hand gently with a warm tender smile and soft kind eyes, touching tiny fingers with a small adorable alien creature about 30cm tall standing on the grass, the alien has smooth blue-purple iridescent skin with subtle bioluminescent freckles, enormous round bright turquoise eyes with starlight reflections in them, a small round head with two tiny antennae that glow softly gold at the tips, a pudgy cute body with small stubby arms and legs, no mouth visible but the eyes expressing pure joy and connection, a soft warm golden glow emanating from where their fingers meet creating a magical bond of light between them, tiny golden sparkles floating up from the touch point, the alien leaving small glowing footprints on the grass, the garden bathed in soft moonlight and the residual warm glow from the alien, stars twinkling brightly overhead, a peaceful magical intimate moment between two new friends, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "heartwarming",
+      "setting": "Bahçe, ay ışığında dostluk anı"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "space-suit",
+      "title": "Hayalden Rokete",
+      "text": "Yıldız, {CHILD_NAME}'e bir şey gösterdi. Minik elleriyle havaya çizgiler çizdi ve çizgiler ışığa dönüştü.\nBir roket! Hayal gücünden doğan, yıldız tozuyla parlayan muhteşem bir roket!\n{CHILD_NAME} gözlerine inanamadı. \"Bu gerçek mi?\" diye sordu.\nYıldız başını salladı ve rokete doğru yürüdü.\n\"O zaman hazırız!\" dedi {CHILD_NAME}, cesaretle adım atarak.",
+      "prompt": "CHARACTER_DESC wearing a detailed white astronaut space suit with bright blue accent stripes along the arms and legs and blue panels on the shoulders, a round glass helmet held under one arm not on the head yet, a fabric name patch on the chest reading {CHILD_NAME} in bold blue letters, blue space boots with white soles, standing next to the small cute blue-purple alien companion Yildiz who is excitedly pointing with both tiny arms at a magnificent magical rocket ship materializing from golden stardust and light particles in the garden, the rocket is beautiful and whimsical about 5 meters tall with a sleek silver and blue body with golden window frames and a glowing golden nose cone, streams of golden magical energy and stardust swirling around it as it solidifies from imagination into reality, the child's face showing pure exhilarated joy and disbelief with the biggest smile and sparkling eyes, the garden transformed with magical golden light everywhere, flowers and grass swaying from the magical energy, neighbors' houses visible in the background with all lights off everyone sleeping, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "magical-epic",
+      "setting": "Bahçe, büyülü roket oluşumu gecesi"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "space-suit",
+      "title": "Uzaya Fırlatılış",
+      "text": "Roketin içi sıcacık ve rengârenk ışıklarla doluydu. {CHILD_NAME} koltuğa oturdu, Yıldız da yanına tırmandı.\nGeri sayım başladı: Üç... İki... Bir... KALKIŞ!\nRoket gümbürtüyle havalandı. Bulutları deldi. Gökyüzü maviden mora, mordan siyaha döndü.\nVe sonra... Sessizlik. Sonsuz, güzel, büyülü bir sessizlik.\n{CHILD_NAME} pencereden baktı. Dünya küçücük ve masmaviydi.",
+      "prompt": "CHARACTER_DESC wearing a detailed white astronaut space suit with bright blue accent stripes along the arms and legs and blue panels on the shoulders, the round glass helmet now on the head with the visor open showing the excited face inside, a fabric name patch on the chest reading {CHILD_NAME} in bold blue letters, blue space boots, strapped into a colorful spaceship cockpit seat with hands gripping the armrests tightly, the small cute blue-purple alien Yildiz strapped into a tiny custom seat beside them with enormous excited turquoise eyes and glowing antennae, both looking out through a large curved cockpit window at the breathtaking view of planet Earth receding below them, Earth shown as a beautiful blue marble with white cloud swirls and green-brown continents visible, the black void of space ahead filled with millions of brilliant stars and colorful distant nebulae in purple pink and blue, the child's face inside the helmet showing absolute ecstatic wonder with mouth open in a joyful gasp and eyes reflecting the starlight, colorful holographic dashboard controls glowing with buttons and screens in the cockpit, streaks of light from stars passing by suggesting incredible speed, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "exhilarating",
+      "setting": "Roket kokpiti, Dünya'dan uzaklaşış"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "space-suit",
+      "title": "Ay'da Yürüyüş",
+      "text": "İlk durak: Ay! {CHILD_NAME} roketin kapısını açtığında gözleri kamaştı.\nGri ve gümüş renkli kraterler her yerdeydi. Ve yerçekimi çok azdı!\n{CHILD_NAME} bir adım attı ve havaya süzüldü! Yıldız da zıpladı ve ikisi birlikte dans eder gibi uçtular.\n\"Burada herkes balerin gibi!\" dedi {CHILD_NAME} gülerek.\nDünya, gökyüzünde mavi bir bilye gibi parlıyordu.",
+      "prompt": "CHARACTER_DESC wearing a detailed white astronaut space suit with bright blue accent stripes along the arms and legs and blue panels on the shoulders, the round glass helmet on with visor open and a huge delighted laughing expression visible inside, a fabric name patch on the chest reading {CHILD_NAME} in bold blue letters, blue space boots leaving footprints in the grey lunar dust, floating slightly above the Moon's surface in low gravity with arms spread wide like a ballet dancer and legs lifted gracefully behind in a playful weightless pose, the small cute blue-purple alien Yildiz bouncing joyfully nearby doing somersaults in the low gravity with its antennae spinning happily, the lunar surface stretching out with detailed grey craters of various sizes and rocky formations and fine silvery dust, astronaut bootprints visible in the dust below, the silver and blue rocket ship landed in the background on a flat area, the magnificent Earth visible in the black sky above as a stunning blue and white marble half-lit by sunlight, thousands of brilliant sharp stars in the pitch black space sky since there is no atmosphere, dramatic harsh sunlight creating stark bright highlights and deep shadows on the space suit, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Ay yüzeyi, Dünya manzarası"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "space-suit",
+      "title": "Mars'ın Sırları",
+      "text": "Mars! Kırmızı çöller sonsuza kadar uzanıyordu. {CHILD_NAME} ve Yıldız birlikte yürüdüler.\nKumun altında garip işaretler buldular. Daireler, çizgiler, yıldız şekilleri...\nYıldız heyecanla parladı. Bu işaretler çok eskiydi. Belki milyonlarca yıllık!\n\"Demek biz ilk kaşifler değilmişiz\" dedi {CHILD_NAME} hayretle.\n\"Ama belki en cesurlarıyız!\"",
+      "prompt": "CHARACTER_DESC wearing a detailed white astronaut space suit with bright blue accent stripes along the arms and legs and blue panels on the shoulders, the round glass helmet on with visor open showing a face full of archaeological wonder and fascination, a fabric name patch on the chest reading {CHILD_NAME} in bold blue letters, blue space boots covered in red Martian dust, kneeling on one knee on the rusty red surface of Mars examining mysterious ancient glowing golden symbols and geometric patterns carved into a flat red rock surface, the symbols showing circles connected by lines and star shapes faintly glowing with warm amber light, one hand gently brushing red dust away from the markings with careful reverence, the small cute blue-purple alien Yildiz standing on the rock beside the markings with its entire body glowing brighter than usual with excited recognition its antennae pulsing gold rapidly, the vast Martian landscape stretching behind them with enormous red rock formations and towering rust-colored cliffs and deep canyons, fine red dust particles floating in the thin atmosphere, two small Martian moons Phobos and Deimos visible in the butterscotch-colored sky, the rocket parked in the distance on the red terrain, dramatic warm orange-red lighting from the distant small Sun, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Mars yüzeyi, antik işaretler ve kırmızı çöl"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "space-suit",
+      "title": "Satürn'ün Halkaları",
+      "text": "Satürn görününce {CHILD_NAME}'in nefesi kesildi. Dev bir gezegen, etrafında binlerce parlak halkayla dönüyordu.\nRoket halkaların arasından geçti. Her halka buz ve kayadan oluşan milyarlarca parçacıktı.\nParçacıklar güneş ışığında gökkuşağı gibi parlıyordu.\n\"Bu evrendeki en güzel şey olmalı\" diye fısıldadı {CHILD_NAME}.\nYıldız başını {CHILD_NAME}'in omzuna yasladı. İkisi de sessizce bu güzelliği izledi.",
+      "prompt": "CHARACTER_DESC wearing a detailed white astronaut space suit with bright blue accent stripes along the arms and legs and blue panels on the shoulders, the round glass helmet on with visor open showing an expression of breathless speechless awe with glistening eyes as if about to cry from pure beauty, a fabric name patch on the chest reading {CHILD_NAME} in bold blue letters, standing at the large curved panoramic window of the rocket ship cockpit, both hands pressed flat against the glass in wonder, the small cute blue-purple alien Yildiz perched on the child's shoulder resting its tiny head against the helmet with peaceful content expression and softly glowing antennae, outside the window the absolutely magnificent planet Saturn dominates the entire view with its stunning multi-colored rings stretching across the frame in bands of gold cream white and subtle pink, thousands of individual ice and rock particles visible in the rings catching sunlight and creating rainbow prismatic reflections and sparkles, the massive gas giant surface showing beautiful bands of amber gold and cream cloud layers, sunlight streaming through gaps in the rings creating spectacular god rays, the rings casting dramatic shadows on the planet surface, tiny distant moons visible as bright dots, the scene bathed in warm golden Saturn-light, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "awe-inspiring",
+      "setting": "Satürn halkaları arasında, roket penceresi"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "commander-suit",
+      "title": "Uzay Fırtınası",
+      "text": "Aniden roket sallanmaya başladı! Bir uzay fırtınası! Yıldız tozu ve kozmik rüzgârlar her yeri kapladı.\nIşıklar yanıp söndü. Roket sarsıldı. Ama {CHILD_NAME} panik yapmadı.\nYıldız, kontrol panelinde ışıklarla yol gösterdi. {CHILD_NAME} dümeni sıkıca tuttu.\n\"Birlikte yapabiliriz Yıldız!\" dedi {CHILD_NAME} kararlılıkla.\nVe birlikte çalışarak fırtınanın içinden geçtiler. Takım olmak, cesaret demekti.",
+      "prompt": "CHARACTER_DESC wearing a decorated gold-trimmed commander space suit that is white with elegant gold accent stripes along the arms and legs and gold shoulder epaulettes, a sleek commander helmet with a gold stripe down the center held firmly on the head with visor open showing a face of fierce brave determination with gritted teeth and narrowed focused eyes, a prominent gold-bordered name patch on the chest reading {CHILD_NAME} in bold gold letters with a small gold star badge pinned beside it, gold-trimmed space boots, gripping the ship's control wheel tightly with both hands leaning forward in the pilot seat with intense concentration, the small cute blue-purple alien Yildiz standing on the dashboard frantically pressing glowing buttons with its tiny hands its antennae flashing red and gold in warning patterns helping navigate, outside the cockpit windows a spectacular dangerous cosmic storm raging with swirling purple and electric blue nebula clouds and bright lightning-like energy bolts crackling across space and chunks of glowing space debris tumbling past, the cockpit interior bathed in flashing red warning lights and golden instrument panel glows, holographic navigation screens showing the storm pattern and a safe path highlighted in gold, dramatic turbulent shaking effect with loose items floating in the cockpit, intense dramatic lighting alternating between cool blue storm light and warm gold instrument glow, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Roket kokpiti, kozmik fırtına içinde"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "commander-suit",
+      "title": "Eve Dönüş",
+      "text": "Fırtınadan sonra yepyeni bir gezegen belirdi. Yeşil ormanları, mor gölleri ve altın rengi gökyüzü vardı.\nAma {CHILD_NAME} biliyordu: En güzel gezegen eviydi.\nRoket yavaşça bahçeye indi. Güneş doğuyordu. Yıldız, {CHILD_NAME}'e son kez sarıldı ve gökyüzüne doğru süzüldü.\nGözden kaybolmadan önce bir kez daha parladı. Sanki \"Her zaman buradayım\" diyordu.\n{CHILD_NAME} gökyüzüne baktı ve gülümsedi.\n\"Evren, cesur kaşifleri bekleyen harikalarla dolu. Ve ben onlardan biriyim.\"\nAferin sana {CHILD_NAME}!",
+      "prompt": "CHARACTER_DESC wearing a decorated gold-trimmed commander space suit that is white with elegant gold accent stripes along the arms and legs and gold shoulder epaulettes, the commander helmet removed and held casually under one arm, the gold-bordered name patch on the chest reading {CHILD_NAME} in bold gold letters with the gold star badge gleaming in the sunrise light, gold-trimmed space boots standing on the dewy garden grass, looking up at the beautiful dawn sky with the most peaceful grateful contented smile full of wisdom and wonder, one hand raised in a gentle wave goodbye, the small cute blue-purple alien Yildiz floating upward into the sky as a beautiful bright turquoise and gold star trail spiraling gracefully upward fading into the brightening sky but looking back at the child with loving glowing eyes one last time, the silver and blue rocket in the background slowly dissolving into golden stardust and sparkles returning to imagination, the garden looking magical with morning dew drops on every flower and blade of grass each drop reflecting tiny rainbows, the sky a breathtaking canvas of sunrise colors with warm peach pink orange and gold blending into the retreating deep blue starry night on the other side, a few bright stars still visible in the fading night portion of the sky, the child's telescope still standing faithfully in the garden, warm golden sunrise rays creating a spectacular backlight halo around the child, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Bahçe, gün doğumu vedası"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? \ud83c\udf1f",
+      "facts": [
+        "Güneş, Dünya'dan tam 1 milyon 300 bin kat daha büyüktür! Eğer Güneş bir kapı olsaydı, Dünya bir madeni para kadar küçük olurdu.",
+        "Uzayda ses duyulmaz çünkü ses dalgalarının yayılması için havaya ihtiyacı vardır. Uzay tamamen sessizdir!",
+        "Bir astronotun uzay giysisi yaklaşık 12 milyon dolara mal olur ve giyilmesi 45 dakika sürer. Giysinin ağırlığı yaklaşık 127 kilogramdır!"
+      ],
+      "icon": "\ud83c\udf1f"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? \ud83e\ude90",
+      "facts": [
+        "Satürn'ün halkaları çoğunlukla buz parçacıklarından oluşur. Bu parçacıklar kum tanesi kadar küçük olabildiği gibi bir ev kadar büyük de olabilir!",
+        "Mars'taki Olympus Mons, güneş sistemindeki en yüksek dağdır. Yaklaşık 22 kilometre yüksekliğiyle Everest Dağı'ndan neredeyse üç kat daha yüksektir!",
+        "Ay'da yerçekimi Dünya'nın altıda biri kadardır. Dünya'da 30 kilo olan bir çocuk Ay'da sadece 5 kilo gelir ve çok yükseğe zıplayabilir!"
+      ],
+      "icon": "\ud83e\ude90"
+    }
+  ],
+  "funFactPlacements": [
+    { "afterScene": 4, "factId": "fact-1" },
+    { "afterScene": 9, "factId": "fact-2" }
+  ]
+}
