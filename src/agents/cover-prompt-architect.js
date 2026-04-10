@@ -434,26 +434,31 @@ signoff + "\n" +
       }).join("\n");
     }
 
-    return `CHILDREN'S STORYBOOK BACK COVER PAGE \u2014 2:3 portrait format. FLAT full-bleed print-ready back cover.
+    return `CHILDREN'S STORYBOOK BACK COVER PAGE — 2:3 portrait format. FLAT full-bleed print-ready back cover.
 
-HEADER: "Masal Bitti Ama \u0130zleri Kald\u0131..." in large elegant decorative bold font at top, warm brown color.
+LANGUAGE: ALL text on this page MUST be in TURKISH. Do NOT translate any Turkish text to English. Write EXACTLY as provided below.
+
+HEADER (display this EXACT Turkish text): "Masal Bitti Ama İzleri Kaldı..."
+Style: large elegant decorative bold font at top, warm brown color.
 
 STORY SUMMARY (display this EXACT Turkish text):
 "${summary}"
 
-SECTION HEADING: "KAZANIMLAR" in bold playful display font, centered.
+SECTION HEADING (display this EXACT Turkish text): "KAZANIMLAR"
+Style: bold playful display font, centered.
 
-ACHIEVEMENTS (display as a 2x2 grid with emoji icons and subtle card frames):
+ACHIEVEMENTS (display as a 2x2 grid with emoji icons and subtle card frames, ALL IN TURKISH):
 ${lessonsText}
 
-FOOTER LINE: "Her \u00e7ocuk kendi hik\u00e2yesinin kahraman\u0131d\u0131r..." in elegant italic warm script font.
+FOOTER LINE (display this EXACT Turkish text): "Her çocuk kendi hikâyesinin kahramanıdır..."
+Style: elegant italic warm script font.
 
 BRAND SECTION at very bottom:
 - Small book/magic icon illustration
 - "www.masalsensin.com" in elegant small font
-- Small personalization badge: "Bu kitap ${name} i\u00e7in \u00f6zel olarak haz\u0131rlanm\u0131\u015ft\u0131r \u2764\uFE0F"
+- Small personalization badge: "Bu kitap ${name} için özel olarak hazırlanmıştır ❤️"
 
-CHARACTER: A small cute 3D Pixar-style illustration of the main character peeking from the bottom left corner with a happy confident smile. Small and subtle, not dominating the page.
+CHARACTER: CHARACTER_DESC as a small cute 3D illustration peeking from the bottom left corner with a happy confident smile. The character must have the EXACT SAME face as the reference photo. Small and subtle, not dominating the page.
 
 DESIGN:
 - Soft warm cream to light peach gradient background
@@ -469,6 +474,7 @@ TYPOGRAPHY:
 - "KAZANIMLAR": bold playful display font, warm orange (#E65100)
 - Achievement items: readable sans-serif with emoji icons
 - Footer quote: elegant italic script, warm orange (#BF360C)
+- Turkish characters (ş ç ğ ü ö ı İ) MUST be PERFECT — do NOT replace with ASCII
 - Brand: small elegant serif
 - Turkish characters PERFECT \u2014 \u00e7 \u015f \u011f \u00fc \u00f6 \u0131 \u0130 must be exact
 

@@ -639,14 +639,21 @@ class BookOrchestrator {
       } catch (e2) { console.error("  [orchestrator] Hero SVG fallback da basarisiz:", e2.message); }
     }
 
-    // 4. ARKA KAPAK — AI ile metin dahil (referans: yok)
+    // 4. ARKA KAPAK — AI ile metin dahil (referans: karakter profili)
     this.sendSSE({ type: "step", message: "Arka kapak üretiliyor..." });
     const backCoverPath = path.join(outputDir, "back-cover.png");
     try {
-      const bcPrompt = coverArchitect.buildBackCoverPrompt();
+      let bcPrompt = coverArchitect.buildBackCoverPrompt();
+      // CHARACTER_DESC'yi gercek karakter tarifiyle degistir
+      if (characterProfileRef && bcPrompt.includes("CHARACTER_DESC")) {
+        const charBase = bookData.characterDescription?.base || "a child with the EXACT same facial features as the reference photo";
+        bcPrompt = bcPrompt.replace("CHARACTER_DESC", charBase);
+      }
+      // Referans gorseller — karakter profili varsa ekle
+      const bcRefs = characterProfileRef ? [characterProfileRef] : [];
       const bcResult = await sceneGenerator.generateBackground({
         prompt: bcPrompt,
-        referenceImages: [],
+        referenceImages: bcRefs,
         maxRetries: 2,
       });
       if (bcResult.success && bcResult.buffer) {
@@ -670,11 +677,13 @@ class BookOrchestrator {
 
     // 5. GONDEREN NOTU — Her zaman uret (senderName yoksa genel not)
     {
-      // senderName yoksa varsayilan deger ata (customMessage'a dokunma — buildSenderNotePrompt kendi dinamik notunu olusturur)
-      if (!childInfo.senderName) childInfo.senderName = "Seni \u00e7ok seven ailenden";
+      // senderName yoksa varsayilan deger ata
+      if (!childInfo.senderName) childInfo.senderName = "Ailen";
+      console.log("  [orchestrator] Not icin senderName:", childInfo.senderName);
       this.sendSSE({ type: "step", message: "Gönderen notu üretiliyor..." });
       try {
         const snPrompt = coverArchitect.buildSenderNotePrompt();
+        console.log("  [orchestrator] Not prompt baslik:", snPrompt.substring(0, 200));
         const snResult = await sceneGenerator.generateBackground({
           prompt: snPrompt,
           referenceImages: [],
