@@ -489,15 +489,15 @@ ART STYLE: Premium children's book back cover. Clean, warm, professional. Mix of
    * Kitap basligini cocuk adiyla kisisellestirir
    */
   _personalizeTitle(title, name) {
-    // "Altin Basketbol" -> "Toprak'in Altin Basketbol Macerasi"
-    // "Fenerbahce'nin Yildizi" -> "Toprak: Fenerbahce'nin Yildizi"
+    // "Altın Basketbol" -> "Toprak'ın Altın Basketbol Macerası"
+    // "Fenerbahçe'nin Yıldızı" -> "Toprak: Fenerbahçe'nin Yıldızı"
     if (title.includes("'")) {
-      // Zaten possessive var: "Fenerbahce'nin Yildizi" -> "Toprak: Fenerbahce'nin Yildizi"
+      // Zaten possessive var
       return `${name}: ${title}`;
     }
-    // Genel: "Altin Basketbol" -> "Toprak'in Altin Basketbol Macerasi"
+    // Genel: "Altın Basketbol" -> "Toprak'ın Altın Basketbol Macerası"
     const suffix = this._getNameSuffix(name);
-    return `${name}'${suffix} ${title} Macerasi`;
+    return `${name}'${suffix} ${title} Macerası`;
   }
 
   /**

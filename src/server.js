@@ -133,7 +133,11 @@ function createImageGenerator() {
 // Tum gorevler: PromptArchitect + SceneGenerator + QualityValidator
 // ============================================================
 async function generateBookWithProgress(options) {
-  const { bookId, childPhotoPath, childName, childGender, childAge, extraPhotoPaths } = options;
+  const {
+    bookId, childPhotoPath, childName, childGender, childAge, extraPhotoPaths,
+    recipientName, recipientNickname, senderName, senderGender,
+    customMessage, sharedActivity, recipientHobby, specialMemory,
+  } = options;
 
   // Cikti klasoru
   const timestamp = new Date().toISOString().slice(0, 10);
@@ -157,6 +161,15 @@ async function generateBookWithProgress(options) {
     outputDir,
     dirName,
     extraPhotoPaths: extraPhotoPaths || [],
+    // Ozel alanlar — not ve ozel gun kitaplari icin
+    recipientName,
+    recipientNickname,
+    senderName,
+    senderGender,
+    customMessage,
+    sharedActivity,
+    recipientHobby,
+    specialMemory,
   });
 }
 
@@ -427,6 +440,7 @@ const server = http.createServer(async (req, res) => {
 
       // Uretimi arka planda baslat
       console.log("  [server] Uretim baslatiliyor...");
+      console.log("  [server] senderName:", JSON.stringify(parts.senderName), "| customMessage:", JSON.stringify(parts.customMessage ? parts.customMessage.substring(0, 50) : null));
       isGenerating = true;
       sseEventBuffer = []; // Onceki olaylari temizle
 
