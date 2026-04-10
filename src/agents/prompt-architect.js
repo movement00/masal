@@ -27,6 +27,10 @@ class PromptArchitect {
     this.childInfo = childInfo;
     this.genderDesc = childInfo.gender === "erkek" ? "boy" : "girl";
     this.ageDesc = `${childInfo.age}-year-old`;
+    if (bookData.targetAudience === 'yetiskin') {
+      this.genderDesc = 'person';
+      this.ageDesc = 'adult';
+    }
     this.style =
       bookData.style ||
       "3D Pixar/Disney animated movie style, vibrant colors, warm cinematic lighting, subsurface scattering, high detail render quality";
@@ -47,11 +51,41 @@ class PromptArchitect {
     const parts = [];
 
     // Ana direktif — net ve guçlu
+    const isAdult = this.bookData.targetAudience === 'yetiskin';
+    const occasion = this.bookData.occasion;
+    const subjectText = isAdult ? 'person' : 'child';
+    const bookTypeText = isAdult ? 'illustrated gift book' : "children's picture book";
+
+    // Yetiskin kitaplarda (anneler/babalar gunu) foto secimi
+    let photoSubjectDesc;
+    if (isAdult && occasion === 'anneler-gunu') {
+      photoSubjectDesc = 'the OLDER woman / mother figure in the reference photo';
+    } else if (isAdult && occasion === 'babalar-gunu') {
+      photoSubjectDesc = 'the OLDER man / father figure in the reference photo';
+    } else {
+      photoSubjectDesc = `a ${this.ageDesc} ${this.genderDesc}`;
+    }
+
     parts.push(
-      `Image 1 is a REAL PHOTO of a ${this.ageDesc} ${this.genderDesc}. ` +
-        `Transform this child into a breathtaking 3D animated character for a children's picture book.`
+      `Image 1 is a REAL PHOTO of ${photoSubjectDesc}. ` +
+        `Transform this ${subjectText} into a breathtaking 3D animated character for a ${bookTypeText}.`
     );
     parts.push("");
+
+    // Aile fotosu uyarisi — birden fazla kisi varsa dogru kisiyi sec
+    if (isAdult && occasion === 'anneler-gunu') {
+      parts.push(
+        "IMPORTANT: If there are multiple people in the reference photo, focus ONLY on the OLDER woman who is the MOTHER. " +
+        "Ignore younger people - they are her children. The mother is the main character."
+      );
+      parts.push("");
+    } else if (isAdult && occasion === 'babalar-gunu') {
+      parts.push(
+        "IMPORTANT: If there are multiple people in the reference photo, focus ONLY on the OLDER man who is the FATHER. " +
+        "Ignore younger people - they are his children. The father is the main character."
+      );
+      parts.push("");
+    }
 
     // Stil — kitabin stili
     parts.push(`ART STYLE: ${this.style}`);
@@ -198,10 +232,36 @@ class PromptArchitect {
     // ── ANA SAHNE PROMPT'U (book.json'dan — en onemli kisim) ──
     // CHARACTER_DESC → gorsel karakter tarifi ile degistir
     // {CHILD_NAME} → cocugun gercek ismiyle degistir (forma, tabelalar vs.)
-    const characterDesc = `a ${this.ageDesc} ${this.genderDesc} with the exact same face, hair, skin tone, and all accessories (including glasses if worn) as the child in the reference photo`;
+    let characterDesc;
+    const isAdult = this.bookData.targetAudience === 'yetiskin';
+    if (isAdult) {
+      if (this.bookData.occasion === 'anneler-gunu') {
+        characterDesc = `the MOTHER character - the OLDER woman from the reference photo, with her exact facial features, hair style, skin tone, and any accessories including glasses. She should look warm, loving, and maternal. If the reference photo has multiple people, use ONLY the older woman's appearance`;
+      } else if (this.bookData.occasion === 'babalar-gunu') {
+        characterDesc = `the FATHER character - the OLDER man from the reference photo, with his exact facial features, hair style, skin tone, and any accessories including glasses. He should look warm, loving, and paternal. If the reference photo has multiple people, use ONLY the older man's appearance`;
+      } else {
+        characterDesc = `a person with the EXACT same facial features, hair, skin tone, and all accessories (including glasses if worn) as the person in the reference photo, rendered in the specified art style`;
+      }
+    } else {
+      // Cocuk kitaplari — mevcut mantik degismiyor
+      characterDesc = `a ${this.ageDesc} ${this.genderDesc} with the exact same face, hair, skin tone, and all accessories (including glasses if worn) as the child in the reference photo`;
+    }
+
+    // Aktivite/hobi anahtar kelimelerini detayli gorsel tariflerine donustur
+    const expandedActivity = this._expandActivityForPrompt(this.childInfo.sharedActivity);
+    const expandedHobby = this._expandHobbyForPrompt(this.childInfo.recipientHobby);
+
     const processedPrompt = scene.prompt
       .replace(/CHARACTER_DESC/g, characterDesc)
-      .replace(/\{CHILD_NAME\}/g, this.childInfo.name);
+      .replace(/\{CHILD_NAME\}/g, this.childInfo.name)
+      .replace(/\{RECIPIENT_NAME\}/g, this.childInfo.recipientName || this.childInfo.name)
+      .replace(/\{SENDER_NAME\}/g, this.childInfo.senderName || "")
+      .replace(/\{CUSTOM_MESSAGE\}/g, this.childInfo.customMessage || "")
+      .replace(/\{NICKNAME\}/g, this.childInfo.recipientNickname || this.childInfo.recipientName || this.childInfo.name)
+      .replace(/\{SENDER_GENDER\}/g, this.childInfo.senderGender || 'erkek')
+      .replace(/\{SHARED_ACTIVITY\}/g, expandedActivity)
+      .replace(/\{RECIPIENT_HOBBY\}/g, expandedHobby)
+      .replace(/\{SPECIAL_MEMORY\}/g, this.childInfo.specialMemory || '');
     parts.push(processedPrompt);
 
     // ── Yuz ifadesi (mood'dan turetilir) ──
@@ -213,11 +273,11 @@ class PromptArchitect {
       }
     }
 
-    // ── Kompozisyon (tek satir) ──
+    // ── Kompozisyon (tam sayfa) ──
     parts.push("");
     parts.push(
-      "FRAMING: Place all characters and important action in the upper 65% of the image. " +
-        "Keep the bottom 35% as simple ground/background for text overlay space."
+      "FRAMING: FULL BLEED illustration — fill the ENTIRE frame edge to edge with the scene. " +
+        "Character and action should be centered and prominent. Use the complete canvas, no empty borders or blank areas at bottom."
     );
 
     return parts.join("\n");
@@ -501,6 +561,54 @@ class PromptArchitect {
     );
 
     return parts.join("\n");
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // AKTİVİTE / HOBİ → DETAYLI GÖRSEL TARİFİ
+  // ══════════════════════════════════════════════════════════════
+
+  /**
+   * Aktivite anahtar kelimesini detayli gorsel tarifine donusturur.
+   * Gorsel AI'nin daha iyi sahne uretmesi icin kisa kelime yerine
+   * zengin, betimleyici bir aciklama verir.
+   *
+   * @param {string} activityKey - Aktivite kisa kodu (orn: 'yemek', 'bahce')
+   * @returns {string}
+   */
+  _expandActivityForPrompt(activityKey) {
+    const activityDescriptions = {
+      'yemek': 'joyfully cooking together in a warm sunlit kitchen, mixing ingredients in bowls, flour on their hands, fresh cookies on a baking tray, warm golden kitchen lighting',
+      'bahce': 'gardening together in a beautiful flower garden, planting colorful flowers, watering plants with a small watering can, surrounded by blooming roses and tulips',
+      'gezme': 'walking together hand in hand through a beautiful park with autumn leaves, a peaceful tree-lined path stretching ahead',
+      'alisveris': 'walking together through a charming marketplace, carrying shopping bags, pointing at colorful store displays',
+      'film': 'cuddled together on a cozy sofa watching a movie, warm blanket over their laps, popcorn bowl, soft lamp light',
+      'kitap': 'reading a book together on a cozy window seat, sharing the same book, warm afternoon sunlight streaming in',
+      'oyun': 'playing a board game together at a dining table, laughing and having fun, colorful game pieces on the table',
+      'muzik': 'listening to music together, one playing guitar or piano while the other listens with closed eyes and a peaceful smile',
+      'spor': 'exercising together in a beautiful park, stretching and laughing, morning sunlight and fresh green trees'
+    };
+    return activityDescriptions[activityKey] || activityKey || '';
+  }
+
+  /**
+   * Hobi anahtar kelimesini detayli gorsel tarifine donusturur.
+   *
+   * @param {string} hobbyKey - Hobi kisa kodu (orn: 'cicek', 'el-isi')
+   * @returns {string}
+   */
+  _expandHobbyForPrompt(hobbyKey) {
+    const hobbyDescriptions = {
+      'cicek': 'tending to a beautiful flower garden, carefully pruning roses, surrounded by colorful blooming flowers and butterflies',
+      'yemek': 'cooking a delicious meal in a warm kitchen, stirring a pot with wooden spoon, herbs and vegetables on the counter',
+      'kitap': 'reading a book in a cozy armchair by a window, a cup of tea on the side table, warm afternoon light',
+      'muzik': 'listening to or playing beautiful music, eyes closed with a peaceful serene expression, musical notes floating in the air',
+      'el-isi': 'doing needlework or knitting in a comfortable chair, colorful yarns and fabrics around, creating something beautiful with skilled hands',
+      'resim': 'painting on a canvas with watercolors, an easel set up in a sunlit room, colorful palette and brushes',
+      'yoga': 'doing peaceful yoga or meditation in a serene garden setting, surrounded by nature and calm energy',
+      'seyahat': 'standing at a scenic overlook with a breathtaking landscape view, camera in hand, wind in hair, adventurous smile',
+      'doga': 'hiking through a beautiful mountain trail, wildflowers along the path, panoramic nature view'
+    };
+    return hobbyDescriptions[hobbyKey] || hobbyKey || '';
   }
 
   // ══════════════════════════════════════════════════════════════

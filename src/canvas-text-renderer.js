@@ -80,7 +80,10 @@ class CanvasTextRenderer {
     const canvas = createCanvas(CW, CH);
     const ctx = canvas.getContext("2d");
 
-    // 1. Arka plan: illustrasyon gorselini ciz
+    // 1. Arka plan: guvenlik dolgusu + illustrasyon gorselini ciz
+    ctx.fillStyle = "#0f0f1a";
+    ctx.fillRect(0, 0, CW, CH);
+
     try {
       const img = await loadImage(imagePath);
       const scale = Math.max(CW / img.width, CH / img.height);

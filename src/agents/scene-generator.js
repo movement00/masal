@@ -48,6 +48,21 @@ class SceneGenerator {
   }
 
   /**
+   * Ek fotografi hazirla (upload veya path kaydet)
+   */
+  async prepareExtraPhoto(photoPath) {
+    if (config.imageProvider === "kie" && this.imageGen._uploadToKie) {
+      try {
+        return await this.imageGen._uploadToKie(photoPath);
+      } catch (e) {
+        console.warn("  [scene-generator] Ek foto upload basarisiz:", e.message);
+        return photoPath;
+      }
+    }
+    return photoPath;
+  }
+
+  /**
    * Tek bir sahne gorseli uretir (retry ile).
    *
    * @param {object} params
@@ -57,6 +72,45 @@ class SceneGenerator {
    * @param {function} params.onProgress      - Bekleme durumu callback
    * @returns {Promise<{buffer: Buffer, resultUrl: string|null, success: boolean}>}
    */
+  /**
+   * Referans fotografi OLMADAN gorsel uretir (arka plan, kapak, ozel sayfalar icin)
+   * childPhotoRef gerektirmez.
+   */
+  async generateBackground({ prompt, referenceImages = [], maxRetries = 2, onProgress = null }) {
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        if (attempt > 1) {
+          console.log(`  [scene-generator] BG tekrar deneniyor (${attempt}/${maxRetries})...`);
+          await new Promise((r) => setTimeout(r, 3000));
+        }
+
+        // Direkt task olustur - cocuk fotografi OLMADAN
+        const taskId = await this.imageGen._createTask(prompt,
+          referenceImages.length > 0 ?
+            await Promise.all(referenceImages.map(async ref => {
+              try { return await this.imageGen._uploadToKie(ref); }
+              catch(e) { return null; }
+            })).then(urls => urls.filter(Boolean)) :
+            []
+        );
+
+        const resultUrl = await this.imageGen._waitForResult(taskId, 300000, onProgress);
+        const buffer = await this.imageGen._downloadImage(resultUrl);
+
+        if (buffer && buffer.length > 1024) {
+          return { buffer, resultUrl, success: true };
+        }
+        throw new Error("Gorsel cok kucuk");
+      } catch (err) {
+        console.error(`  [scene-generator] BG uretim hatasi (${attempt}/${maxRetries}):`, err.message);
+        if (attempt === maxRetries) {
+          return { buffer: null, resultUrl: null, success: false, error: err.message };
+        }
+      }
+    }
+    return { buffer: null, resultUrl: null, success: false, error: "Tum denemeler basarisiz" };
+  }
+
   async generateScene({ prompt, referenceImages = [], maxRetries = 3, onProgress = null }) {
     if (!this.childPhotoRef) {
       throw new Error("Cocuk fotografi henuz hazirlanmadi. prepareChildPhoto() cagirin.");

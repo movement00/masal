@@ -32,6 +32,15 @@ const AGE_GROUP_RULES = {
     sceneLength: "Her sahne 4-8 cümle. Birden fazla paragraf olabilir.",
     emotionalDepth: "Karmaşık duygular: iç çatışma, hayal kırıklığı, azim, gurur. Karakter dönüşümü.",
     specialNotes: "Gerçekçi durumlar ve mekanlar kullan. Eğitici mesajı doğal şekilde ver."
+  },
+  "yetiskin": {
+    sentenceLength: "Kısa ve uzun cümleleri dengeli kullan. Kısa cümleler duygusal vurgu için (3-5 kelime), uzun cümleler anlatım derinliği için (15-25 kelime).",
+    style: "Edebî, lirik, duygu yüklü. Şiirsel ama yapmacık olmayan. İçten ve samimi.",
+    vocabulary: "Zengin, sofistike. Duyusal kelimeler: sıcaklık, koku, dokunuş, ışık. Nostalji kelimeleri: eskiden, o günlerde, hâlâ, her zaman.",
+    interaction: "Direkt hitap: 'Sen...', 'Bilir misin...', 'Hatırlar mısın...' Okuyucu ile göz göze gelme hissi.",
+    sceneLength: "Her sahne 4-6 cümle. Duygusal doruk sahneleri 6-8 cümle olabilir.",
+    emotionalDepth: "Maksimum. Gözyaşı eşiğinde ama melodramatik değil. Gerçek, samimi, içten.",
+    specialNotes: "Her sahne bir duyguyu temsil etmeli: güven, sıcaklık, minnettarlık, nostalji, gurur, sevgi. Sahneler arası duygusal bir yolculuk olmalı."
   }
 };
 
@@ -73,7 +82,15 @@ class TextGenerator {
       return bookData.scenes.map(s => ({
         sceneNumber: s.sceneNumber,
         title: s.title,
-        text: (s.text || "").replace(/\{CHILD_NAME\}/g, childInfo.name)
+        text: (s.text || "")
+          .replace(/\{CHILD_NAME\}/g, childInfo.name)
+          .replace(/\{RECIPIENT_NAME\}/g, childInfo.recipientName || childInfo.name)
+          .replace(/\{SENDER_NAME\}/g, childInfo.senderName || "")
+          .replace(/\{CUSTOM_MESSAGE\}/g, childInfo.customMessage || "")
+          .replace(/\{NICKNAME\}/g, childInfo.recipientNickname || childInfo.recipientName || childInfo.name)
+          .replace(/\{SHARED_ACTIVITY\}/g, childInfo.sharedActivity || '')
+          .replace(/\{RECIPIENT_HOBBY\}/g, childInfo.recipientHobby || '')
+          .replace(/\{SPECIAL_MEMORY\}/g, childInfo.specialMemory || '')
       }));
     }
 
@@ -81,7 +98,48 @@ class TextGenerator {
     const ageGroup = bookData.ageGroup || getAgeGroup(childInfo.age);
     const rules = AGE_GROUP_RULES[ageGroup] || AGE_GROUP_RULES["3-6"];
 
-    const systemPrompt = `Sen profesyonel bir çocuk kitabı yazarısın. Verilen hikaye şablonunu çocuğun bilgilerine göre kişiselleştir.
+    const isAdultBook = bookData.targetAudience === 'yetiskin';
+
+    const systemPrompt = isAdultBook ?
+`Sen ödüllü bir Türk edebiyatçısısın. Kişiselleştirilmiş yetişkin hediye kitapları yazıyorsun.
+
+HEDEF: ${bookData.occasion === 'anneler-gunu' ? 'ANNELER GÜNÜ hediye kitabı - bir evladın annesine olan derin sevgisini, minnettarlığını ve duygusal bağını anlatan' : 'Özel gün hediye kitabı - derin duygusal bağları anlatan'}
+
+YAZIM KURALLARI:
+- Edebî, akıcı, duygu yüklü Türkçe kullan
+- Kısa ve uzun cümleleri dengeli kullan — kısa cümleler vurgu için, uzun cümleler duygu derinliği için
+- Her sahne okuyucunun gözünü yaşartacak kadar samimi olmalı
+- Klişelerden kaçın — "dünyanın en güzel annesi" gibi basmakalıp ifadeler yerine özgün, kişisel anlatım kullan
+- Duyuları kullan: kokular, sesler, dokunuşlar, sıcaklık hissi
+- Nostalji ve özlem duygusu oluştur — geçmiş anıları şimdiki zamana bağla
+- Hitap şekli olarak LAKAP/NICKNAME kullan (${childInfo.recipientNickname || childInfo.name}), gerçek ismi (${childInfo.name}) sadece vurgu anlarında kullan
+- Gönderen kişi: ${childInfo.senderName || 'belirtilmemiş'} (${childInfo.senderGender === 'kiz' ? 'Kızı' : childInfo.senderGender === 'karma' ? 'Çocukları' : 'Oğlu'})
+
+İSİM KULLANIMI (ÇOK ÖNEMLİ):
+- Sahnelerin çoğunda LAKAP kullan: "${childInfo.recipientNickname || 'Anneciğim'}"
+- Gerçek ismi (${childInfo.name}) sadece 3-4 sahnede ve duygusal vurgu anlarında kullan
+- Örnek doğru kullanım: "Anneciğim, senin ellerinin sıcaklığını hiç unutmadım."
+- Örnek doğru kullanım: "${childInfo.name}... Bu ismi her söylediğimde kalbim gülümser."
+- YANLIŞ: Her cümlede "${childInfo.name}" yazmak
+
+KİŞİSELLEŞTİRME VERİLERİ:
+- Birlikte yapılan aktivite: ${childInfo.sharedActivity || 'belirtilmemiş'}
+- Alıcının hobisi: ${childInfo.recipientHobby || 'belirtilmemiş'}
+- Özel anı: ${childInfo.specialMemory || 'belirtilmemiş'}
+- Son mesaj: ${childInfo.customMessage || 'belirtilmemiş'}
+
+ÖNEMLİ: Bu verileri sahne metinlerine DOĞAL ve DUYGUSAL şekilde yerleştir. Eğer bir veri boşsa o sahneyi genel ama yine de duygusal yaz. Boş veriyi "[boş]" veya "belirtilmemiş" olarak YAZMA.
+
+DİL KURALLARI:
+- Cümle uzunluğu: ${rules.sentenceLength}
+- Yazım tarzı: ${rules.style}
+- Kelime dağarcığı: ${rules.vocabulary}
+- Etkileşim: ${rules.interaction}
+- Sahne uzunluğu: ${rules.sceneLength}
+- Duygusal derinlik: ${rules.emotionalDepth}
+- Özel notlar: ${rules.specialNotes}`
+
+: `Sen profesyonel bir çocuk kitabı yazarısın. Verilen hikaye şablonunu çocuğun bilgilerine göre kişiselleştir.
 
 HEDEF YAŞ GRUBU: ${ageGroup} yaş
 
@@ -95,15 +153,23 @@ DİL KURALLARI (${ageGroup} yaş grubu):
 - Özel notlar: ${rules.specialNotes}
 
 GENEL KURALLAR:
-- Çocuğun adını HER SAHNEDE EN AZ 2-3 KEZ kullan. Bu kişiselleştirilmiş bir kitap, çocuk kendi adını sık sık görmeli ve bundan heyecan duymalı. Adı doğal cümlelerde kullan: "${childInfo.name} koşarak...", "${childInfo.name}'in gözleri parladı", "Bravo ${childInfo.name}!" gibi.
+${bookData.characterType === 'animal' || bookData.characterType === 'hayvan' ? `- Bu hikayede ana karakter bir HAYVAN. Çocuğun adını (${childInfo.name}) HİKAYEYE DOĞAL ŞEKİLDE YERLEŞTİR - çocuk hikayedeki olayları izleyen veya hayvana yardım eden bir karakter olarak yer alsın. Örnek: "${childInfo.name} kediye baktı", "${childInfo.name} kelebeği gösterdi" gibi. Hayvanın kendi eylemlerini çocuğun adıyla DEĞİŞTİRME.` : `- Çocuğun adını her sahnede 1-2 KEZ doğal şekilde kullan. Aşırı tekrardan KAÇIN. Bir sahnede 3'ten fazla isim kullanma. İsim yerine "o", "çocuk", "küçük kahraman" gibi zamirler ve sıfatlar kullan.`}
 - Cinsiyet uyumunu sağla (erkek/kız zamirler)
 - Pixar filmlerindeki gibi hem çocukları hem yetişkinleri etkileyen duygusal derinlik kat
 - Türkçe yaz, sade ve akıcı bir dil kullan
 - Sonu her zaman umut verici ve öğretici olsun
 - Orijinal hikayenin ruhunu ve mesajını koru
-- Çocuğun adı ile hitap eden cümleler ekle: "Aferin ${childInfo.name}!", "Hadi ${childInfo.name}!" gibi`;
+${bookData.characterType === 'animal' || bookData.characterType === 'hayvan' ? `- Çocuğu hikayeye dahil et ama hayvanın yerini ALMA. Çocuk gözlemci veya yardımcı rolünde olsun.` : `- İsmi doğal yerlerde kullan: sahne başında tanıtım, önemli bir eylemde, sahne sonunda hitap. Her cümlede isim YAZMA.
 
-    const userPrompt = `Çocuk Bilgileri:
+METİN KALİTE KURALLARI (KRİTİK):
+- Devrik cümle KULLANMA. Türkçe'nin doğal özne-nesne-yüklem sırasını takip et.
+- Anlamsız veya mantıksız cümleler yazma. Her cümle bir anlam taşımalı.
+- Aynı kelimeyi art arda iki cümlede tekrarlama.
+- Cümle sonlarını çeşitlendir: hep "...dedi" veya "...baktı" ile bitirme.
+- Diyaloglar doğal olmalı — çocuklar gerçekte nasıl konuşursa öyle yaz.
+- Paragraflar arası mantıksal geçiş olmalı — sahneler kopuk olmamalı.`}`;
+
+    let userPrompt = `Çocuk Bilgileri:
 - Ad: ${childInfo.name}
 - Cinsiyet: ${childInfo.gender}
 - Yaş: ${childInfo.age}
@@ -123,6 +189,25 @@ Her sahne için JSON formatında döndür:
   ]
 }`;
 
+    // Yetiskin kitaplar icin ek kisisellesirme verileri
+    if (bookData.targetAudience === 'yetiskin') {
+      userPrompt += `\n\nEK KİŞİSELLEŞTİRME VERİLERİ:
+- Hitap/Lakap: ${childInfo.recipientNickname || childInfo.name}
+- Gerçek İsim: ${childInfo.name}
+- Gönderen: ${childInfo.senderName || 'belirtilmemiş'} (${childInfo.senderGender === 'kiz' ? 'Kızı' : childInfo.senderGender === 'karma' ? 'Çocukları' : 'Oğlu'})
+- Birlikte yapılan aktivite: ${childInfo.sharedActivity || 'belirtilmemiş'}
+- Alıcının hobisi: ${childInfo.recipientHobby || 'belirtilmemiş'}
+- Özel anı: ${childInfo.specialMemory || 'belirtilmemiş'}
+- Son mesaj: ${childInfo.customMessage || 'belirtilmemiş'}
+
+KRİTİK KURALLAR:
+1. Sahnelerde LAKAP kullan ("${childInfo.recipientNickname || 'Anneciğim'}"), gerçek ismi (${childInfo.name}) sadece 2-3 sahnede vurgu için kullan
+2. Verilen aktivite, hobi ve anı bilgilerini ilgili sahnelere DOĞAL şekilde yerleştir
+3. Boş olan verileri "belirtilmemiş" olarak YAZMA — o sahneyi genel duygusal içerikle doldur
+4. Her sahne edebî kalitede, duygu yüklü olmalı — bu bir çocuk kitabı DEĞİL
+5. Duyuları kullan: annenin ellerinin sıcaklığı, mutfaktan gelen koku, sarılmanın huzuru`;
+    }
+
     const response = await this.client.chat.completions.create({
       model: config.openai.model,
       messages: [
@@ -141,7 +226,19 @@ Her sahne için JSON formatında döndür:
       console.error("  [text] JSON parse hatasi. Raw:", raw.substring(0, 200));
       throw new Error("AI yanıtı JSON olarak ayrıştırılamadı");
     }
-    return result.scenes || result;
+    const scenes = result.scenes || result;
+    // Ek placeholder degisimleri (yetiskin kitaplari icin)
+    return scenes.map(s => ({
+      ...s,
+      text: (s.text || "")
+        .replace(/\{RECIPIENT_NAME\}/g, childInfo.recipientName || childInfo.name)
+        .replace(/\{SENDER_NAME\}/g, childInfo.senderName || "")
+        .replace(/\{CUSTOM_MESSAGE\}/g, childInfo.customMessage || "")
+        .replace(/\{NICKNAME\}/g, childInfo.recipientNickname || childInfo.recipientName || childInfo.name)
+        .replace(/\{SHARED_ACTIVITY\}/g, childInfo.sharedActivity || '')
+        .replace(/\{RECIPIENT_HOBBY\}/g, childInfo.recipientHobby || '')
+        .replace(/\{SPECIAL_MEMORY\}/g, childInfo.specialMemory || '')
+    }));
   }
 
   /**

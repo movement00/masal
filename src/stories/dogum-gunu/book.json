@@ -1,0 +1,91 @@
+{
+  "id": "dogum-gunu",
+  "category": "ozel-gunler",
+  "occasion": "dogum-gunu",
+  "title": "Doğum Günün Kutlu Olsun!",
+  "description": "Sevdiklerinize özel, kişiselleştirilmiş doğum günü hediye kitabı. Renkli ve neşeli illüstrasyonlarla dolu.",
+  "ageGroup": "yetiskin",
+  "ageRange": "yetiskin",
+  "targetAudience": "yetiskin",
+  "pageCount": 8,
+  "placeholders": ["RECIPIENT_NAME", "SENDER_NAME", "CUSTOM_MESSAGE"],
+  "style": "Vibrant colorful modern pop art celebration illustration, bright warm cheerful colors, confetti and streamers, fun playful atmosphere, bold graphic design elements, joyful party aesthetic, clean modern illustration with warm lighting, birthday celebration mood",
+  "coverPrompt": "CHARACTER_DESC wearing a glittery golden party crown and a fun colorful outfit, standing in front of a massive tiered birthday cake with lit candles, arms raised in joyful celebration, surrounded by an explosion of colorful confetti balloons and streamers in every color of the rainbow, gift boxes with sparkly bows stacked around, bright festive party lights twinkling in the background, the biggest happiest smile, vibrant colorful modern pop art celebration illustration, bright warm cheerful colors, epic birthday party poster composition, ultra high detail render quality",
+  "characterDescription": {
+    "base": "a person with the EXACT same facial features as the reference photo, rendered in vibrant modern pop art illustration style, bright warm colors, cheerful expression",
+    "notes": "Pop art tarzında doğum günü karakteri, canlı ve neşeli"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "title": "Bugun Senin Gunun!",
+      "text": "Günaydın {RECIPIENT_NAME}!\nBugün çok özel bir gün çünkü sen doğdun!\nDünya seni tanıdığı için daha güzel bir yer.\nHaydi, bu özel günü birlikte kutlayalım!",
+      "prompt": "CHARACTER_DESC CAMERA WIDE ESTABLISHING SHOT revealing the entire transformed bedroom, waking up in a beautifully decorated bedroom with the biggest happiest surprised smile, eyes wide with delight and hands raised to cheeks in joyful astonishment, wearing comfortable fun pajamas with colorful polka dot patterns, the entire bedroom has been secretly transformed overnight into a birthday wonderland, thousands of pieces of colorful confetti in gold pink blue and green cover the bed sheets and floor, dozens of helium balloons in every color of the rainbow float against the ceiling with curling ribbons hanging down, a large glittery banner reading HAPPY BIRTHDAY stretches across the wall above the headboard, streamers twisted in spirals hang from the ceiling fan and doorframe, a bedside table holds a small beautifully wrapped gift box with a sparkly bow, morning sunlight streams through the window catching the floating confetti and making everything sparkle and shimmer, the curtains have been tied back with colorful ribbon bows, a party hat sits on the pillow next to where the character was sleeping, the scene is bursting with color energy and celebration from the very first moment of waking, vibrant colorful modern pop art celebration illustration, bright warm cheerful colors, confetti and streamers, fun playful atmosphere, bold graphic design elements, joyful party aesthetic, clean modern illustration with warm lighting, birthday celebration mood",
+      "mood": "excited, joyful",
+      "setting": "Yatak odasi, sabah surprizi"
+    },
+    {
+      "sceneNumber": 2,
+      "title": "Hayatin Filmi",
+      "text": "Her yılın sana yeni bir güzellik getirdi {RECIPIENT_NAME}.\nBebeklikten bugüne, ne güzel bir yolculuk!\nHer anı, her gülüş, her ders seni sen yaptı.\nVe sen muhteşemsin!",
+      "prompt": "CHARACTER_DESC CAMERA AT EYE LEVEL diagonal, sitting comfortably in a cozy armchair surrounded by floating polaroid-style photographs and photo album pages that magically hover in the air around them like a living timeline, the character wearing a comfortable stylish casual outfit in warm tones, reaching out to touch one of the floating photos with a nostalgic fond smile, each floating photo shows a different life milestone depicted as small illustrated vignettes including a baby's first steps a birthday cake with candles a graduation cap a group of laughing friends a beautiful sunset moment and a celebratory dinner, the photos are connected by golden glowing thread-like lines creating a beautiful constellation pattern, soft warm ambient lighting fills the room with golden tones, the armchair is surrounded by stacked photo albums and memory boxes, a cup of coffee or tea steams gently on a side table, fairy lights string along the background adding warm bokeh dots of light, some photos have small hearts and stars drawn around them, the character's expression is one of warm reflection gratitude and contentment looking at the beautiful journey of their life, vibrant colorful modern pop art celebration illustration, bright warm cheerful colors with nostalgic golden tones, fun playful atmosphere, bold graphic design elements, joyful aesthetic, clean modern illustration with warm lighting",
+      "mood": "nostalgic, warm",
+      "setting": "Anilarin arasinda, sicak oda"
+    },
+    {
+      "sceneNumber": 3,
+      "title": "Seni Sevenlerin",
+      "text": "Etrafına bak {RECIPIENT_NAME}, ne kadar çok seviliyorsun!\nArkadaşların, ailen, seni sevenler...\nHepsi bugün senin için burada.\nÇünkü sen sevilmeyi hak eden harika bir insansın!",
+      "prompt": "CHARACTER_DESC CAMERA HIGH ANGLE from above capturing the crowd, standing in the center of a vibrant colorful gathering surrounded by a diverse group of happy smiling people representing friends and family, everyone reaching toward the character with open arms hugs high-fives and warm gestures of love, the character wearing a stylish birthday outfit with a fun sparkly birthday sash and a tilted party crown, the setting is a beautifully decorated outdoor garden party with string lights hanging between trees creating a magical canopy of warm light, a long table in the background is set with colorful plates cups and a magnificent multi-tiered birthday cake as the centerpiece, balloons in clusters are tied to chairs and tree branches, flower arrangements in bright colors decorate every surface, bunting flags in rainbow colors stretch between the trees, some people hold wrapped gifts while others hold sparklers that create trails of light in the warm evening air, everyone is dressed in festive colorful clothing, the character's face beams with overwhelming happiness and gratitude feeling surrounded by love, group confetti throw captured mid-air with pieces glittering in the string lights, vibrant colorful modern pop art celebration illustration, bright warm cheerful colors, confetti and streamers, fun playful party atmosphere, bold graphic design elements, joyful party aesthetic, clean modern illustration with warm festive lighting",
+      "mood": "loving, festive",
+      "setting": "Bahce partisi, sevdiklerin arasinda"
+    },
+    {
+      "sceneNumber": 4,
+      "title": "Pasta Zamani!",
+      "text": "Ve işte karşınızda, dünyanın en güzel pastası!\n{RECIPIENT_NAME} için özenle hazırlandı.\nHer katmanı sevgiyle, her süsü mutlulukla yapıldı.\nŞimdi gözlerini kapat ve bir dilek tut!",
+      "prompt": "CHARACTER_DESC CAMERA LOW ANGLE looking up at the towering cake, standing behind an absolutely magnificent towering multi-tiered birthday cake that is a work of art, the cake has five tiers each decorated differently with one tier covered in colorful fondant flowers another with gold leaf patterns another with rainbow drip icing another with edible sparkles and glitter and the top tier crowned with spectacular golden sparkler candles blazing with bright light, the character's face is beautifully illuminated from below by the warm golden glow of the many lit candles, eyes sparkling with reflected candlelight and a huge anticipatory smile ready to make a wish, both hands placed on the edge of the table leaning slightly forward toward the cake, the table is decorated with a beautiful tablecloth scattered with rose petals and confetti, golden plates and sparkling glasses surround the cake, party guests visible in the soft-focus background with excited anticipatory expressions watching the moment, colorful balloons frame the scene on both sides, overhead string lights and a crystal chandelier add warm ambient glow, the cake sits on an elegant cake stand with the name written in beautiful icing script, the entire scene captures that magical suspended moment just before the candles are blown out, vibrant colorful modern pop art celebration illustration, bright warm cheerful colors, dramatic candlelight lighting, fun playful atmosphere, bold graphic design elements, joyful party aesthetic, clean modern illustration with warm dramatic lighting",
+      "mood": "magical, anticipating",
+      "setting": "Parti masasi, muhtesem pasta"
+    },
+    {
+      "sceneNumber": 5,
+      "title": "Dilek Tut!",
+      "text": "Gözlerini kapat {RECIPIENT_NAME}...\nEn güzel dileğini tut kalbinde.\nŞimdi üfle!\nBütün dileklerin gerçek olsun!",
+      "prompt": "CHARACTER_DESC CAMERA CLOSE-UP on face capturing the candle-lit expression, captured in the exact magical moment of blowing out birthday candles on the magnificent cake, cheeks puffed out blowing with eyes squeezed shut in concentration making a heartfelt wish, the candle flames caught mid-extinguish with some candles still lit and others with wisps of smoke trailing upward, tiny golden sparks and embers float upward from the blown candles mixing with magical sparkle effects suggesting the wish taking flight, the warm candlelight casts a beautiful golden glow on the character's face from below, behind the character a crowd of friends and family lean in close watching with huge smiles some with hands clasped in excitement, everyone captured in the warm intimate glow of the remaining candles, the birthday cake is spectacular with detailed decorations visible in the golden light, confetti is frozen mid-air as someone started throwing it in anticipation of the moment, camera flash effects from someone taking a photo add dynamic light bursts in the background, sparklers held by guests create streaks of light, the smoke from the extinguished candles forms whimsical heart and star shapes as it rises suggesting magical wishes coming true, the entire scene is suffused with warm golden intimate lighting and pure joy, vibrant colorful modern pop art celebration illustration, bright warm cheerful colors, dramatic magical candlelight, fun playful atmosphere, bold graphic design elements, joyful party aesthetic, clean modern illustration with warm magical lighting",
+      "mood": "magical, hopeful",
+      "setting": "Mum ufleme ani, buyulu isik"
+    },
+    {
+      "sceneNumber": 6,
+      "title": "Surprizler",
+      "text": "Hediye zamanı {RECIPIENT_NAME}!\nHer kutu içinde bir sürpriz, her sürprizde bir sevgi.\nAma en büyük hediye zaten yanında:\nSeni seven insanlar!",
+      "prompt": "CHARACTER_DESC CAMERA FROM THE SIDE dynamic three-quarter angle, sitting cross-legged on the floor surrounded by a mountain of beautifully wrapped gift boxes in every size shape and color, currently in the middle of opening a large gift box with wrapping paper mid-tear and ribbons flying, the character's expression is one of pure childlike excited surprise and delight with mouth open in a gasp of joy and eyes sparkling wide, colorful wrapping paper scraps and ribbon curls scattered all around on the floor creating a festive mess, gift boxes are wrapped in vibrant patterns including stripes polka dots stars and metallic gold and silver, elaborate bows in satin and organza ribbon top each package, some opened boxes reveal tissue paper peeking out, a few small gifts already unwrapped sit nearby including items that suggest thoughtful personal presents, helium balloons in birthday colors are tied to some of the larger gift boxes, a gift bag with tissue paper overflowing sits to one side, confetti and small sparkles catch the light scattered among the wrapping debris, friends and family sit in a semicircle around watching the unwrapping with cameras ready capturing the reactions, warm cheerful ambient lighting floods the festive room, vibrant colorful modern pop art celebration illustration, bright warm cheerful colors, confetti and streamers, fun playful gift-opening atmosphere, bold graphic design elements, joyful party aesthetic, clean modern illustration with warm lighting",
+      "mood": "excited, grateful",
+      "setting": "Hediye acma, renkli kutular"
+    },
+    {
+      "sceneNumber": 7,
+      "title": "Dans Et!",
+      "text": "Müzik çalsın, dans edelim!\n{RECIPIENT_NAME} dans pistinin yıldızı!\nHayat güzel, an güzel, sen güzelsin!\nBu gece hiç bitmesin!",
+      "prompt": "CHARACTER_DESC CAMERA TRACKING from behind following the movement, dancing joyfully and freely in the center of a vibrant dance floor at their birthday party, captured mid-dance move with one arm raised high and hips moving to the rhythm, wearing a stunning festive party outfit that catches the light beautifully, a huge uninhibited genuinely happy laughing expression of pure freedom and joy, the dance floor is illuminated by colorful disco lights in pink purple blue and gold that create dramatic beams and patterns across the floor and walls, a DJ booth is visible in the background with speakers and colorful LED panels, other party guests are dancing around the character in a circle some clapping along to the rhythm, disco ball reflections scatter tiny light diamonds across every surface, a smoke machine creates dramatic low-lying fog across the dance floor catching the colored lights beautifully, confetti cannons have been fired and golden confetti rains down through the colored light beams, streamers hang from the ceiling swaying with the music's bass, some guests hold glow sticks and light-up accessories, the floor reflects the colorful lights creating a mirror effect, the energy is electric and the atmosphere is pure celebration and uninhibited joy, vibrant colorful modern pop art celebration illustration, bright warm cheerful neon colors, dramatic party lighting, fun playful dance atmosphere, bold graphic design elements, joyful party aesthetic, clean modern illustration with dynamic colorful lighting",
+      "mood": "energetic, free",
+      "setting": "Dans pisti, renkli isiklar"
+    },
+    {
+      "sceneNumber": 8,
+      "title": "Mutlu Yillar!",
+      "text": "Mutlu yıllar {RECIPIENT_NAME}!\nBu yeni yaşın sana sağlık, mutluluk ve başarı getirsin.\n{SENDER_NAME}'den sonsuz sevgilerle, doğum günün kutlu olsun!\nSeni çok seviyoruz!",
+      "prompt": "CHARACTER_DESC CAMERA FROM FRONT LOW ANGLE looking up heroically, standing outdoors at the grand finale of their birthday celebration, holding a huge bunch of colorful helium balloons in one hand with strings trailing upward into a beautiful starry night sky, the other hand waving happily, wearing their party outfit with a birthday sash and sparkly crown looking absolutely radiant and happy, the background shows a spectacular birthday fireworks display exploding in the night sky with golden pink blue and purple bursts illuminating the clouds, some of the balloons are shaped like stars and hearts in metallic gold and silver, the character is surrounded by settled confetti and streamers from the evening's celebrations, friends and family visible in the background silhouetted against the fireworks cheering and celebrating, sparklers held by the crowd create a beautiful border of warm light, a large illuminated sign or marquee lights spell out HAPPY BIRTHDAY in warm bulb letters behind the character, the character's face is tilted slightly upward watching the fireworks with the most content grateful peaceful happy expression, firework reflections shimmer in the character's eyes, the entire scene captures the perfect ending to a perfect birthday celebration with the promise of wonderful things ahead in the new year of life, vibrant colorful modern pop art celebration illustration, bright warm cheerful colors against dramatic night sky, spectacular fireworks, fun playful atmosphere, bold graphic design elements, joyful party aesthetic, clean modern illustration with dramatic celebratory lighting",
+      "mood": "triumphant, grateful",
+      "setting": "Gece havai fisek, final kutlamasi"
+    }
+  ],
+  "theme": {
+    "primaryColor": "#FF9800",
+    "secondaryColor": "#FFE0B2",
+    "accentColor": "#FFF8E1",
+    "icon": "\uD83C\uDF82"
+  }
+}

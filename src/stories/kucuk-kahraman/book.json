@@ -1,0 +1,169 @@
+{
+  "id": "kucuk-kahraman",
+  "category": "hikaye",
+  "title": "Küçük Kahraman",
+  "description": "Kendi başına yapabilmenin gururunu keşfeden bir çocuğun ve sadık köpek arkadaşı Bulut'un hikayesi. Odasını toplamaktan sofrayı kurmaya, küçük sorumlulukların büyük kahramanlıklar olduğunu birlikte öğreniyorlar.",
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 10,
+  "lessons": ["Sorumluluk alma", "Bağımsızlık", "Yardımseverlik", "Kendine güven"],
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "sidekick": {
+    "name": "Bulut",
+    "type": "köpek",
+    "description": "A very small fluffy golden retriever puppy with floppy ears, big round brown eyes, tiny wet black nose, always wagging tail, clumsy and lovable",
+    "promptDesc": "a very small fluffy golden retriever puppy named Bulut with floppy ears, big round adorable brown eyes, tiny wet black nose, soft golden fur, constantly wagging tail, small enough to fit in the child's arms"
+  },
+  "coverPrompt": "SIMPLE SOFT-COVER CHILDREN'S STORYBOOK COVER — 2:3 portrait format, thin flexible magazine-style book.\n\nTITLE TEXT: \"{CHILD_NAME}: Küçük Kahraman\"\nTYPOGRAPHY — Character's name in playful hand-lettered script in bright golden yellow, rest in chunky friendly bold display font in white with dark shadow. Turkish characters PERFECT.\n\nPERSONALIZATION BADGE: \"Bu kitap {CHILD_NAME} için özel olarak üretilmiştir\" — small circular golden badge bottom right.\n\nCHARACTER: CHARACTER_DESC wearing a superhero cape made from a bedsheet tied around the neck over casual home clothes, standing proudly in a tidy colorful children's bedroom with hands on hips in a heroic pose, toys neatly organized on shelves behind, a broom leaning against the wall like a sword. Next to the child stands a very small fluffy golden retriever puppy with floppy ears and big round brown eyes, also wearing a tiny red cape, wagging its tail happily and looking up at the child with adoration, the puppy is about the size of the child's head.\n\nCOMPOSITION: Title top 25%, character + puppy + bedroom scene middle 55%, badge bottom right 15%.\n\nART STYLE: 3D Pixar/Disney CGI — Stylized 3D cartoon, vibrant warm sunny colors, soft volumetric lighting from window. Mood: gururlu, bağımsız, neşeli.",
+  "specialPagePrompts": {
+    "heroPage": "CHILDREN'S STORYBOOK SPECIAL PAGE — Meet the Hero page, 2:3 portrait format.\n\nTITLE TEXT: \"Hikayemizin Kahramanları\"\nSUBTITLE TEXT: \"{CHILD_NAME} ve Bulut\"\nTYPOGRAPHY — decorative header in white, name in large bold golden font. Turkish characters PERFECT.\n\nCHARACTER: CHARACTER_DESC wearing a colorful superhero cape over home clothes, standing proudly with hands on hips, confident happy smile. Beside the child sits a very small fluffy golden retriever puppy with floppy ears and big round brown eyes wearing a tiny matching cape, looking up at the child with tongue out and tail wagging, in a beautiful warm children's room with neatly organized toys and books.\n\nDECORATIVE FRAME: Warm golden frame decorated with stars, small brooms, folded clothes, toy boxes, tiny paw prints, and sparkles. Magical and inviting.\n\nBOTTOM TEXT: \"Bu macera {CHILD_NAME} ve Bulut için özel olarak yazıldı\"\n\nART STYLE: 3D Pixar/Disney CGI, warm golden colors, heroic presentation. Mood: gururlu, özel.",
+    "funFactBg": "A bright colorful educational background for children with playful illustrations of household items arranged artistically — a tiny broom, folded colorful clothes, a plate with fork and spoon, a toothbrush, an alarm clock, toy blocks being stacked neatly, and small puppy paw prints scattered around. Warm pastel yellow and orange color palette, soft bokeh lights, cheerful atmosphere. NO TEXT NO LETTERS in image, 3D Pixar render style, decorative children's educational background.",
+    "senderNoteBg": "A warm cozy children's bedroom scene with soft morning golden light streaming through curtains, a small wooden desk with a handwritten letter and crayons, a superhero cape draped over a chair, a tiny golden puppy curled up sleeping on a pillow beside the desk, neatly organized toy shelf in background, warm intimate atmosphere. NO TEXT NO LETTERS in image, 3D Pixar render, personal cozy setting.",
+    "backCover": "A beautiful warm sunset scene viewed through a children's bedroom window, golden hour light flooding the tidy room, a small superhero cape hanging on a hook by the door, a very small fluffy golden retriever puppy wearing a tiny red cape sleeping peacefully curled up on a soft cushion below the cape hook, toys neatly on shelves casting long shadows, peaceful accomplished atmosphere, nostalgic ending feeling. NO TEXT NO LETTERS in image, 3D Pixar render, gentle movie ending atmosphere."
+  },
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": "3 kıyafet grubu: 1/2-pijama, 3/4/5/6-ev kıyafeti (rahat tişört+şort), 7/8/9/10-ev kıyafeti+süper kahraman pelerin. Her sahnede Bulut adında küçük golden retriever köpek yavrusu da bulunur."
+  },
+  "theme": {
+    "primaryColor": "#FF8A65",
+    "secondaryColor": "#FFCCBC",
+    "accentColor": "#FFF3E0",
+    "textPageBg": "#FFF8E1",
+    "funFactBg": "#FF6D00",
+    "icon": "🦸"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas",
+      "title": "Sabah Oldu!",
+      "text": "{CHILD_NAME} gözlerini açtı. Güneş odaya gülümsüyordu.\nYatağın kenarında bir şey kıpırdadı. Bulut, minik köpek, çorap yığınının üstünde uyuyakalmıştı! Başında komik bir çorap vardı.\n{CHILD_NAME} güldü: \"Bulut, uyan tembel köpek!\"\nBulut kuyrugunu sallayarak esnedi. Çorap başından düştü.\nAnnesi kapıdan seslendi: \"Günaydın tatlım! Bugün çok özel bir gün olacak.\"\n{CHILD_NAME} merakla sordu: \"Neden özel?\"",
+      "prompt": "CHARACTER_DESC wearing soft light blue pajamas with tiny star prints, CAMERA AT EYE LEVEL diagonal capturing the morning interaction, sitting on the edge of a messy children's bed yawning cutely, morning sunlight streaming through window creating warm golden rays. On the floor next to the bed lies a very small fluffy golden retriever puppy with floppy ears and big round brown eyes just waking up from sleeping on a pile of scattered clothes and toys, the puppy has a colorful sock comically draped over its head and is yawning with a tiny pink tongue sticking out, tail starting to wag. Toys scattered on the colorful bedroom floor, stuffed animals fallen off the bed, socks and clothes here and there, a warm cozy but messy bedroom, the child looks sleepy but amused looking down at the funny puppy, mother's silhouette visible at the doorway, 3D Pixar animated movie style, vibrant warm morning colors, soft volumetric lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel yellow and orange background with subtle sun ray patterns and tiny star shapes and small paw prints, warm morning glow, cheerful awakening atmosphere, children's storybook illustration background",
+      "mood": "curious",
+      "setting": "Çocuk odası, sabah güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "pajamas",
+      "title": "Dağınık Oda",
+      "text": "Annesi gülümsedi: \"Bugün sen kendi başına her şeyi yapacaksın. Küçük bir kahraman gibi!\"\n{CHILD_NAME} odaya baktı. Oyuncak arabalar yatağın altında, boyama kalemleri masada dağınık...\n\"Ama bu çok zor!\" dedi {CHILD_NAME}.\nBulut bir oyuncağı ağzına aldı ve yatağın altına götürdü. Yanlış yer!\nAnnesi güldü: \"Bulut bile yardım etmeye çalışıyor. Kahramanlar zor işlerden korkmaz.\"",
+      "prompt": "CHARACTER_DESC wearing soft light blue pajamas, CAMERA WIDE ESTABLISHING SHOT showing the full messy room, standing in the middle of a very messy colorful children's bedroom looking overwhelmed but determined, toys everywhere on the floor including toy cars blocks and stuffed animals, coloring pencils scattered on a small desk, books fallen on the floor. A very small fluffy golden retriever puppy with floppy ears and big round brown eyes proudly holding a stuffed teddy bear in its mouth and dropping it in completely the wrong spot under the bed, looking extremely proud of itself with wagging tail despite the mistake. Mother kneeling at child's eye level with an encouraging warm smile laughing at the puppy's effort while pointing at the messy room, morning sunlight flooding through the window, the child has a mix of worry and determination on their cute face, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel orange and cream background with subtle scattered toy silhouettes and star shapes and tiny paw prints, warm encouraging atmosphere, gentle challenge feeling, children's storybook illustration background",
+      "mood": "determined",
+      "setting": "Dağınık çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "home-casual",
+      "title": "Oyuncaklar Eve!",
+      "text": "{CHILD_NAME} kolları sıvadı. Önce oyuncak arabaları topladı.\n\"Sen buraya!\" dedi kırmızı arabaya. \"Sen de buraya!\" dedi mavi olana.\nBulut da yardım etmek istedi! Ağzına bir oyuncak araba aldı ama kaçmaya başladı.\n{CHILD_NAME} peşinden koştu: \"Bulut, geri getir!\"\nSonunda Bulut durdu. Arabayı birlikte kutuya koydular.\nOda güzelleşmeye başlamıştı!",
+      "prompt": "CHARACTER_DESC wearing a casual orange t-shirt with a small star logo and comfortable blue shorts, CAMERA FROM THE SIDE dynamic three-quarter angle capturing the chase, actively organizing toys with a proud focused expression, placing colorful toy cars into a wooden toy box with one hand holding a red car and the other pointing to the shelf where it belongs. A very small fluffy golden retriever puppy with floppy ears and big round brown eyes is playfully running away with a blue toy car in its mouth, tail wagging excitedly, looking back at the child with mischievous happy eyes as if playing chase. Some toys already neatly arranged on colorful shelves behind, the bedroom is half-tidy now showing clear progress, warm afternoon-like lighting, the child is reaching out toward the puppy with an amused exasperated expression, a fun chase moment frozen in time, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel green and yellow background with tiny toy car and building block silhouettes and paw prints, organized cheerful atmosphere, sense of accomplishment, children's storybook illustration background",
+      "mood": "proud",
+      "setting": "Çocuk odası, oyuncaklar toplanıyor"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "home-casual",
+      "title": "Yatak Yapma Zamanı",
+      "text": "{CHILD_NAME} yatağa baktı. Yorgan buruş buruş, yastık bir kenarda...\nYorganı iki eliyle çekti. Tam düzeltecekken Bulut yatağın üstüne zıpladı!\n\"Bulut, aşağı!\" dedi {CHILD_NAME} gülerek.\nBulut başını yana yatırıp baktı. Sonra usulca indi.\n{CHILD_NAME} yorganı düzeltti. Biraz eğri oldu ama olsun!\nBulut kuyrugunu salladı. Beğenmiş gibiydi!",
+      "prompt": "CHARACTER_DESC wearing a casual orange t-shirt and blue shorts, CAMERA CLOSE-UP on face showing the laughing expression, standing beside a children's bed trying to make the bed, pulling a colorful patterned blanket with both small hands to straighten it. A very small fluffy golden retriever puppy with floppy ears and big round brown eyes is sitting right in the middle of the bed on top of the blanket the child is trying to fix, head tilted adorably to one side as if confused about why the child wants him to move, tail wagging against the pillow. The pillow already placed but slightly crooked, the child has a laughing exasperated expression looking at the puppy on the bed, the blanket is slightly uneven but much better than before, warm bedroom with organized toy shelves visible in background showing earlier accomplishment, sunlight making the room feel warm and bright, 3D Pixar animated movie style, vibrant colors, warm lighting, humorous cute composition showing the effort, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel blue and white background with subtle pillow and blanket patterns and tiny paw prints, cozy bedroom atmosphere, gentle accomplishment feeling, children's storybook illustration background",
+      "mood": "humorous",
+      "setting": "Çocuk odası, yatak yapılıyor"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "home-casual",
+      "title": "Kahvaltı Hazırlığı",
+      "text": "{CHILD_NAME} mutfağa indi. Bulut hemen peşinden koştu!\nTabakları tezgahtan aldı — çok dikkatli, kırmamak lazım.\nBulut ayakların arasında yürüyordu. {CHILD_NAME} neredeyse toslanacaktı!\n\"Bulut, dikkat!\" dedi gülerek.\nBir tabak annesi için, bir tabak babası için, bir tabak da kendisi için.\nSofrayı kurduktan sonra Bulut'a küçük bir ödül verdi. Bulut kuyrugunu çok hızlı salladı!",
+      "prompt": "CHARACTER_DESC wearing a casual orange t-shirt and blue shorts, CAMERA TRACKING from behind following the careful walk, carefully carrying a colorful children's plate with both hands in a sunny bright kitchen, walking slowly with concentration to not drop it. A very small fluffy golden retriever puppy with floppy ears and big round brown eyes is walking right between the child's feet nearly tripping them, looking up at the plate with hopeful eyes and tongue out hoping for a treat, tail wagging excitedly. A breakfast table in the background with two plates already placed and napkins folded, cereal box and juice carton on the counter, mother watching from the background with a proud loving smile and hands clasped together, warm morning kitchen light streaming through window, the child is being very careful while also looking down at the puppy between their feet with an amused worried expression, 3D Pixar animated movie style, vibrant warm kitchen colors, soft volumetric lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel yellow and warm orange background with subtle plate fork and spoon silhouettes and tiny paw prints, warm kitchen atmosphere, helpful cheerful feeling, children's storybook illustration background",
+      "mood": "proud",
+      "setting": "Mutfak, kahvaltı hazırlığı"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "home-casual",
+      "title": "Dökülen Süt",
+      "text": "{CHILD_NAME} süt bardağını doldurmak istedi. Ama bardak kayıverdi!\nSüt masaya döküldü. {CHILD_NAME}'in gözleri doldu.\n\"Mahvettim...\" dedi usulca.\nAma Bulut hemen masaya atladı ve sütü yalamaya başladı! Şap şap şap!\nHerkes gülmeye başladı. {CHILD_NAME} bile gözlerini silerek güldü.\nBabası yanına geldi: \"Bak, Bulut problemi çözdü! Kahramanlar hata yapar ama hatasını düzeltir.\"\n{CHILD_NAME} bezle masayı sildi. Bulut da yardım etmişti — kendi yöntemiyle!",
+      "prompt": "CHARACTER_DESC wearing a casual orange t-shirt and blue shorts, CAMERA HIGH ANGLE from above looking down at the spill scene, standing at the kitchen table with a mix of tears and laughter on their face, a puddle of spilled milk on the wooden table surface with the milk glass tipped over. A very small fluffy golden retriever puppy with floppy ears and big round brown eyes has jumped up with front paws on the edge of the table and is happily enthusiastically licking up the spilled milk with its tiny pink tongue, tail wagging furiously with pure joy, milk on its little nose. Father kneeling beside with a warm laughing reassuring expression, one hand on the child's shoulder, everyone in the scene is transitioning from concern to laughter because of the puppy's hilarious solution, bright kitchen setting with morning light, a moment of learning compassion and humor, 3D Pixar animated movie style, emotional warm funny scene, soft lighting emphasizing the tender yet hilarious family moment, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel cream and light blue background with subtle water drop patterns and tiny paw prints, gentle supportive atmosphere, learning from mistakes feeling, children's storybook illustration background",
+      "mood": "emotional",
+      "setting": "Mutfak, dökülen süt ve teselli"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "home-casual-cape",
+      "title": "Süper Kahraman Pelerini",
+      "text": "Babası dolabından renkli bir havlu çıkardı ve {CHILD_NAME}'in omuzlarına bağladı.\n\"Bu senin süper kahraman pelerinin!\" dedi babası.\nSonra küçük bir bez parçasıyla Bulut'a da minik bir pelerin bağladı!\nBulut pelerinini görmeye çalıştı. Döndü, döndü, kendi etrafında döndü!\n{CHILD_NAME} kahkaha attı: \"Bulut, pelerin arkanda!\"\nAynaya birlikte baktılar. İki süper kahraman!\n\"Süper {CHILD_NAME} ve Süper Bulut, görev başına!\"",
+      "prompt": "CHARACTER_DESC wearing a casual orange t-shirt and blue shorts with a colorful bright red towel tied around the neck as a superhero cape, CAMERA LOW ANGLE looking up at the heroic transformation, looking at themselves in a full-length mirror in the hallway with absolute delight and wonder, striking a superhero pose with one fist raised up and the cape flowing behind. Next to the child a very small fluffy golden retriever puppy with floppy ears and big round brown eyes is wearing a tiny matching red cloth cape tied around its small body and is spinning in circles trying to see its own cape, creating a hilarious whirl of golden fur and red fabric, the puppy's expression is one of confused excitement. Father standing behind laughing warmly with pride holding the remains of the cloth, golden warm hallway light, the child's face beaming with the biggest smile of pure joy looking at the spinning puppy in the mirror reflection, sparkle effects around both capes, 3D Pixar animated movie style, vibrant heroic colors, warm dramatic lighting like a hero reveal moment, cinematic composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel red and golden background with subtle star burst and cape flowing patterns and tiny paw prints, heroic empowering atmosphere, superhero transformation feeling, children's storybook illustration background",
+      "mood": "excited",
+      "setting": "Koridor, ayna önünde süper kahraman anı"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "home-casual-cape",
+      "title": "Çiçeklere Su Vermek",
+      "text": "Süper {CHILD_NAME} balkona çıktı. Bulut da peşinden zıpladı!\nKüçük sulama kabını doldurdu ve her saksıya su verdi.\n\"Bu sana, bu da sana!\" dedi her çiçeğe.\nBulut her çiçeği kokladı. Sonra bir çiçek onu gıdıkladı ve HAPŞU!\nBulut hapşurunca sulama kabındaki su burnuna sıçradı!\nBulut kafasını salladı, su damlaları her yere sıçradı — {CHILD_NAME}'a da!\nİkisi birlikte güldüler. Çiçekler de sulandı, Bulut da!",
+      "prompt": "CHARACTER_DESC wearing a casual orange t-shirt and blue shorts with a red superhero cape flowing in gentle breeze, CAMERA FROM BEHIND over the shoulder looking out at the balcony view, standing on a sunny balcony watering colorful potted flowers with a small green watering can, carefully pouring water into each pot one by one. A very small fluffy golden retriever puppy with floppy ears and big round brown eyes wearing a tiny red cape is sneezing adorably from flower pollen with its whole tiny body scrunching up in a big ACHOO, water droplets splashing on the puppy's wet nose from the sneeze impact, the puppy shaking its head sending tiny water droplets spraying everywhere including onto the laughing child. Beautiful blooming flowers in red yellow and pink pots along the balcony railing, warm golden afternoon sunlight, a beautiful city or garden view in the background, the child is laughing with eyes squinting from getting splashed by the shaking puppy, butterflies nearby, 3D Pixar animated movie style, vibrant colors, warm golden lighting, hilarious playful composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel green and pink background with subtle flower and watering can silhouettes and tiny paw prints and water droplets, nurturing garden atmosphere, caring gentle feeling, children's storybook illustration background",
+      "mood": "peaceful",
+      "setting": "Balkon, çiçeklere su verme"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "home-casual-cape",
+      "title": "Akşam Yemeği Yardımı",
+      "text": "Akşam oldu. Annesi yemek yapıyordu.\n{CHILD_NAME} sordu: \"Yardım edebilir miyim?\"\nAnnesi gülümsedi: \"Tabii! Salata malzemelerini yıkayabilirsin.\"\n{CHILD_NAME} domatesleri ve salatalıkları yıkadı.\nBulut mutfak zeminine oturmuş, yere bir şey düşecek diye bekliyordu. Bir salatalık kaydı — Bulut hemen atladı!\nAnnesi yakaladı: \"Olmaz Bulut!\" Bulut suçlu köpek gözleriyle baktı.\n{CHILD_NAME} güldü: \"Bulut, sen canımı yedin!\"",
+      "prompt": "CHARACTER_DESC wearing a casual orange t-shirt and blue shorts with the red superhero cape still on, CAMERA FROM FRONT LOW ANGLE looking up at the child on the step stool, standing on a small step stool at the kitchen sink carefully washing red tomatoes and green cucumbers under running water. A very small fluffy golden retriever puppy with floppy ears and big round brown eyes is sitting on the kitchen floor right below looking up with the most hopeful begging expression, a cucumber has just rolled off the counter and the puppy is lunging for it with mouth open, mother reaching down to catch the cucumber before the puppy gets it with a laughing scolding expression. The puppy's ears are pressed back with the classic guilty puppy eyes look but tail still wagging. A beautiful colorful kitchen with warm evening golden light, pots steaming on stove, colorful vegetables on the counter, the child looking down at the puppy scene laughing, family warmth atmosphere, 3D Pixar animated movie style, vibrant warm kitchen colors, soft golden evening lighting, heartwarming funny family composition, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel warm orange and yellow background with subtle vegetable and kitchen utensil silhouettes and tiny paw prints, warm family kitchen atmosphere, teamwork and love feeling, children's storybook illustration background",
+      "mood": "warm",
+      "setting": "Mutfak, akşam yemeği hazırlığı"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "pajamas",
+      "title": "Gerçek Kahraman",
+      "text": "Yatma vakti geldi. {CHILD_NAME} pijamalarını KENDİ giydi.\nDişlerini KENDİ fırçaladı. Yatağına KENDİ girdi.\nBulut da yatağın ayak ucuna zıpladı. Üzerinde hâlâ minik pelerini vardı.\nAnnesi ve babası odaya geldi. Annesi alnından öptü.\n\"Bugün gerçek bir kahraman oldun\" dedi babası. Sonra Bulut'u da sıvazladı.\n{CHILD_NAME} gülümsedi. Bulut kuyrugunu yavaşça sallayarak gözlerini kapadı.\n\"İyi geceler süper {CHILD_NAME}, iyi geceler süper Bulut!\"",
+      "prompt": "CHARACTER_DESC wearing clean soft light blue pajamas with tiny star prints, CAMERA OVERHEAD looking down at the cozy family bedtime scene, lying in a neatly made bed that they made themselves earlier, tucked in comfortably under a colorful blanket, both parents sitting on either side of the bed, mother leaning down to kiss the child's forehead tenderly, father holding the child's small hand with a proud loving expression. At the foot of the bed a very small fluffy golden retriever puppy with floppy ears and big round brown eyes is curled up in a tiny ball on the blanket still wearing its small red superhero cape, eyes half closed and drowsy, tail giving one last slow sleepy wag, the tiniest most peaceful puppy sleeping pose. The red superhero cape for the child is carefully folded and hanging on the bedpost like a trophy, the room is perfectly tidy compared to the messy start of the day, warm soft bedside lamp creating a golden cozy glow, stars visible through the window, the child has the most peaceful content happy smile with droopy sleepy eyes looking at sleeping Bulut, the tidy room visible behind showing all the accomplishments of the day, 3D Pixar animated movie style, warm emotional golden lighting, intimate loving family composition, the most heartwarming tender final scene, high detail, Disney Pixar render quality",
+      "textPagePrompt": "Soft pastel deep blue and warm golden background with subtle star and moon shapes and a tiny cape silhouette and small paw prints, peaceful cozy bedtime atmosphere, accomplishment and love, children's storybook illustration background",
+      "mood": "emotional",
+      "setting": "Yatak odası, yatma vakti, huzur"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🦸",
+      "facts": [
+        "Çocuklar 3 yaşından itibaren kendi oyuncaklarını toplayabilir! Bu onların bağımsızlığını geliştirir.",
+        "Yatak yapmak günde sadece 2 dakika sürer ama gün boyu düzenli hissetttirir!",
+        "Sofra kurmayı öğrenen çocuklar matematik becerilerini de geliştirmiş olur — sayma ve eşleştirme yaparlar!",
+        "Dünyada en çok sorumluluk sahibi hayvan karıncadır — kendi ağırlığının 50 katını taşıyabilir!",
+        "Çiçeklere düzenli su veren çocuklar empati duygusunu daha hızlı geliştirir!"
+      ],
+      "icon": "🦸"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 🌟",
+      "facts": [
+        "Golden Retriever köpekleri dünyanın en sadık ve sevecen ırklarından biridir!",
+        "Yemek hazırlamaya yardım eden çocuklar daha sağlıklı beslenme alışkanlıkları kazanır!",
+        "Hata yapmak beyni güçlendirir — her hata yeni bir öğrenme fırsatıdır!",
+        "Köpek yavruları günde 18-20 saat uyuyabilir — tıpkı bebekler gibi!",
+        "Evcil hayvanlarla büyüyen çocuklar empati ve sorumluluk duygusunu daha erken geliştirir!"
+      ],
+      "icon": "🌟"
+    }
+  ],
+  "funFactPlacements": [
+    { "afterScene": 4, "factId": "fact-1" },
+    { "afterScene": 8, "factId": "fact-2" }
+  ]
+}

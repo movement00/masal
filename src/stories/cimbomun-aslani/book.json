@@ -1,0 +1,198 @@
+{
+  "id": "cimbomun-aslani",
+  "category": "hikaye",
+  "title": "Cimbom'un Aslanı",
+  "description": "Aslan yürekli bir çocuğun parkta reddedilmekten RAMS Park'ın kahramanı olmaya uzanan yolculuğu. Bir mentor, bir aslan kükreyişi ve vazgeçmeyen bir kalp.",
+  "lessons": [
+    "Cesaret",
+    "Saygı kazanma",
+    "Mentordan öğrenme",
+    "Aslan gibi mücadele"
+  ],
+  "ageGroup": "6-12",
+  "ageRange": "6-12",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": "5 kıyafet grubu: 1-pijama, 2/3-günlük spor, 4/5-hoodie, 6/7/8/9-park antrenman, 10/11/12/13/14-profesyonel Galatasaray forması (kırmızı-sarı, isim+numara)"
+  },
+  "theme": {
+    "primaryColor": "#C62828",
+    "secondaryColor": "#FDD835",
+    "accentColor": "#FFEBEE",
+    "icon": "❤️💛"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas",
+      "title": "Aslan Yürekli Sabah",
+      "text": "Her sabah {CHILD_NAME} gözlerini açtığında ilk gördüğü şey duvardaki Galatasaray posterleriydi. Osimhen'in gol sevinci, Sané'nin dribblingi, Barış Alper'in sprintleri...\nKırmızı-sarı nevresiminin altından kalktı. Bugün de güzel bir gündü.\n{CHILD_NAME} aynaya baktı ve kendine gülümsedi. \"Bugün sahaya çıkacağım!\"",
+      "prompt": "CHARACTER_DESC wearing cozy red pajamas with tiny yellow lion paw prints and fluffy golden slippers, CAMERA FROM BEHIND looking over the shoulder, just waking up stretching arms wide with a big happy yawn in a warm cozy bedroom, the bedroom walls covered with multiple large Galatasaray football posters showing football action scenes in red and yellow colors, a big poster of a footballer doing a goal celebration on the main wall, a red and yellow striped duvet crumpled on the bed with a small red and yellow football plushie on the pillow, a Galatasaray scarf draped over the headboard, a small trophy shelf with plastic football trophies, the child looking at a mirror on the wall with a determined excited smile, warm golden morning sunlight streaming through curtains casting soft amber light across the room, dust particles floating in the light beams, a pair of football boots sitting neatly by the bedroom door ready to go, cozy dreamy bedroom atmosphere with red and yellow color accents everywhere, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, subsurface skin scattering, volumetric god rays through curtains, photorealistic fabric wrinkles on pajamas and bedding, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Yatak odası, Galatasaray posterleri, sabah güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "park-casual",
+      "title": "Babamla Parka",
+      "text": "{CHILD_NAME} topunu kaptı ve babasının elini tuttu. Birlikte parka yürüdüler.\nBabası anlattı: \"Ben de senin yaşındayken bu parkta top oynardım. Galatasaray formasını ilk burada giydim.\"\n{CHILD_NAME}'in gözleri parladı. Baba-oğul, omuz omuza sahaya doğru yürüdüler.",
+      "prompt": "CHARACTER_DESC wearing a casual white t-shirt with a small red and yellow lion emblem on the chest and comfortable grey jogger pants with clean white sneakers, CAMERA WIDE ESTABLISHING SHOT, walking hand in hand with a warm friendly father figure who is a tall kind-looking man with short dark hair wearing a casual red polo shirt and jeans, the father carrying a red and yellow football under his other arm, both walking together on a tree-lined sidewalk path leading toward a green park visible ahead with football goalposts in the distance, the child looking up at the father with big adoring eyes and a bright excited smile, the father looking down at the child with a warm proud loving smile, beautiful tall plane trees creating a natural green canopy overhead with dappled golden sunlight filtering through the leaves creating dancing light spots on the path, a few autumn leaves gently floating down, other families visible in the far background walking toward the park, warm intimate family bonding atmosphere, late morning golden sunlight, Ice Age and Shrek style 3D CGI animation with warm intimate medium shot, detailed facial expressions showing the loving father-child bond, beautiful natural outdoor lighting, photorealistic fabric textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Parka giden yol, baba-çocuk, sabah güneşi"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "park-casual",
+      "title": "Kenarda Kalan",
+      "text": "Parkta büyük çocuklar maç yapıyordu. {CHILD_NAME} heyecanla koştu: \"Ben de oynayabilir miyim?\"\nBüyük çocuklar baktılar. \"Sen küçüksün, giremezsin\" dediler ve oyunlarına devam ettiler.\n{CHILD_NAME} kenardaki bankta oturdu. Top sesleri kulağında yankılanırken gözleri doldu ama ağlamadı.\nBabası omzuna dokundu: \"Üzülme. Bir gün onlar seni isteyecek.\"",
+      "prompt": "CHARACTER_DESC wearing a casual white t-shirt with a small red and yellow lion emblem on the chest and comfortable grey jogger pants with clean white sneakers, CAMERA HIGH ANGLE from slightly above looking down, sitting alone on a green wooden park bench at the edge of a football pitch looking sad and disappointed with slightly teary eyes but holding back the tears bravely with a determined chin, shoulders slumped and the red and yellow football sitting idle on the ground beside the bench, in the midground a group of five older taller kids aged around twelve actively playing an intense football match on the grass pitch completely ignoring the child, one of the older kids with his back turned making a dismissive hand wave gesture, the warm kind father figure in a red polo shirt standing beside the bench with his hand gently resting on the child's shoulder in a comforting supportive gesture looking down with empathetic caring eyes, tall green trees surrounding the park with afternoon sunlight filtering through, the mood is bittersweet with warm golden light contrasting the sad emotional moment, a few pigeons pecking at the ground near the bench adding to the lonely atmosphere, Ice Age and Shrek style 3D CGI animation with emotionally powerful medium shot, detailed expressive facial features showing restrained sadness and quiet determination, warm but melancholic lighting, photorealistic fabric and skin textures, ultra high detail render quality",
+      "mood": "bittersweet",
+      "setting": "Park sahası kenarı, reddedilme anı"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "hoodie",
+      "title": "Boş Sahada Tek Başına",
+      "text": "Akşam oldu. Büyük çocuklar gitti. Park boşaldı.\nAma {CHILD_NAME} gitmedi. Boş sahada tek başına kaldı.\nTop ayağının dibindeydi. Bir şut çekti. Sonra bir tane daha.\nDerken... kalenin direkleri hafifçe kırmızı-sarı parlamaya başladı!",
+      "prompt": "CHARACTER_DESC wearing a dark red hoodie with a subtle yellow lion silhouette print on the back and the hood down and comfortable dark jogger pants with clean white sneakers, CAMERA FROM THE SIDE at a dynamic three-quarter angle, standing alone on a completely empty deserted park football pitch in the quiet golden hour of early evening, the child mid-kick striking a red and yellow football toward a standard football goal with white posts, the goalposts mysteriously beginning to glow with a warm pulsating red and golden light emanating from the metal frame, tiny red and yellow light particles starting to float and sparkle around the crossbar and net like embers from a fire, the entire park completely empty and quiet with abandoned jackets and water bottles on distant benches showing everyone has left, long dramatic golden shadows stretching across the slightly worn grass pitch, the sky a gorgeous gradient from warm orange at the horizon through deep purple to early stars appearing overhead, a few scattered autumn leaves blowing across the empty pitch in a gentle breeze, the child's face showing surprise and wonder at the glowing goal with wide eyes and slightly open mouth, solitary but powerful atmosphere of a child who refused to leave, Ice Age and Shrek style 3D CGI animation with dramatic cinematic wide shot showing the lone small child against the large empty pitch, magical realism emerging, volumetric golden hour light, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Boş park sahası, alacakaranlık, parlayan kale"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "hoodie",
+      "title": "Aslan Kükreyişi",
+      "text": "Rüzgâr esti. Ama bu sıradan bir rüzgâr değildi.\nRüzgârın içinde bir ses vardı. Uzaktan gelen, güçlü bir kükreyiş!\n{CHILD_NAME} durdu. Kalbinde bir ateş yandı. Sıcak, güçlü, korkusuz.\nAslan kükreyişi sadece {CHILD_NAME}'e geliyordu. Bu bir işaretti: \"Sen bir aslansın. Vazgeçme!\"",
+      "prompt": "CHARACTER_DESC wearing a dark red hoodie with a subtle yellow lion silhouette print on the back and the hood pulled up by the wind and comfortable dark jogger pants with clean white sneakers, CAMERA LOW ANGLE from ground level looking slightly upward, standing in the center of the glowing football pitch with arms slightly spread and chest pushed forward feeling an invisible powerful force, a dramatic magical wind blowing strongly toward the child making the hoodie fabric billow and hair flow backward, in the swirling wind a magnificent semi-transparent ethereal golden lion spirit figure forming from red and golden magical particles and light wisps, the spectral lion mid-roar with its massive jaws open sending visible golden sound waves and energy ripples through the air toward the child, the child's eyes glowing with reflected golden fire and face showing an expression of awakening power and fierce determination with no fear, a warm golden fire-like aura igniting around the child's chest over the heart area radiating outward, the football goal behind now fully ablaze with beautiful red and golden magical energy, the night sky above deep indigo with stars being outshone by the magical golden light, fallen leaves and grass being swept up in the magical wind spiral, goosebumps visible on the child's arms, Ice Age and Shrek style 3D CGI animation with spectacular magical effects, dramatic low-angle hero shot with the ethereal lion towering protectively behind the child, volumetric light beams, golden particle effects, epic cinematic atmosphere, ultra high detail render quality",
+      "mood": "magical-epic",
+      "setting": "Park sahası, aslan ruhu, büyülü gece"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "park-training",
+      "title": "Yaşlı Usta",
+      "text": "Ertesi gün {CHILD_NAME} yine sahaya geldi. Bu sefer orada yaşlı bir amca vardı.\nBeyaz saçlı, güler yüzlü, elinde eski bir düdük. \"Seni dün gördüm\" dedi. \"Herkes gitti ama sen kaldın.\"\nYaşlı usta topun nasıl tutulacağını, ayağın nasıl vurulacağını, vücudun nasıl döneceğini gösterdi.\n\"Yetenek önemli ama çalışmak her şeydir\" dedi yaşlı usta.",
+      "prompt": "CHARACTER_DESC wearing a bright red training jersey with yellow trim on the sleeves and collar and red football shorts with yellow side stripes and red-yellow professional football cleats, CAMERA AT EYE LEVEL from slight diagonal, standing on the green park grass pitch next to a wise elderly mentor figure who is a short kindly old Turkish man with white hair and a warm wrinkled friendly face wearing a simple grey tracksuit with a silver whistle around his neck, the old mentor crouching down to the child's level demonstrating proper football shooting technique by positioning the child's foot angle against a red and yellow football on the ground, the mentor's weathered hands gently guiding the child's ankle to show the correct striking position, the child watching intently with big focused eyes full of respect and eagerness to learn, several orange training cones arranged in a drill pattern on the grass behind them, a worn leather football bag with extra balls nearby, warm bright afternoon sunlight bathing the training scene, green trees in the background with birds perched on branches watching, a beautiful teacher-student mentorship atmosphere full of warmth and wisdom, Ice Age and Shrek style 3D CGI animation with warm intimate medium shot, detailed expressive faces showing the bond between mentor and student, the old man's face kind and wise with deep smile lines, beautiful natural afternoon lighting, ultra high detail render quality",
+      "mood": "warm-educational",
+      "setting": "Park sahası, mentor ile antrenman, öğleden sonra"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "park-training",
+      "title": "Aslanlar Yağmurdan Kaçmaz",
+      "text": "Bir gün antrenman sırasında gökyüzü karardı. Yağmur başladı.\n{CHILD_NAME} durakladı. \"Eve mi dönelim?\" diye sordu.\nYaşlı usta güldü. \"Aslanlar yağmurdan kaçmaz!\" dedi.\nO gün {CHILD_NAME} yağmur altında en güzel antrenmanını yaptı. Her damla, onu daha güçlü yapıyordu.",
+      "prompt": "CHARACTER_DESC wearing a bright red training jersey with yellow trim on the sleeves and collar and red football shorts with yellow side stripes and red-yellow professional football cleats, CAMERA FROM FRONT LOW ANGLE looking up, completely soaked from heavy rain with wet hair plastered to the forehead and water streaming down the face, performing an intense dribbling drill around orange training cones on a rain-drenched park grass pitch with huge water splashes erupting from every step, the wise elderly mentor in his grey tracksuit also completely soaked standing nearby with arms crossed and a big proud approving smile watching the child train, the old mentor's white hair wet and plastered down but his expression beaming with pride and joy, his silver whistle glinting with rain droplets, the mentor has just shouted something encouraging and his mouth is slightly open in a warm laugh, dramatic heavy rain falling in sheets with individual raindrops visible frozen in mid-air catching the available light, deep puddles on the grass reflecting both figures like mirrors, three other kids visible running away from the field in the far background with bags over their heads escaping the downpour, dark dramatic storm clouds overhead with one powerful beam of warm golden light breaking through a gap in the clouds illuminating the child and mentor like a natural spotlight, steam rising from the child's warm body in the cool rain, the atmosphere of pure dedication and an unbreakable spirit, Ice Age and Shrek style 3D CGI animation with spectacular rain particle effects, dramatic cinematic shot showing both mentor and student in the storm, every raindrop rendered with light refraction, beautiful wet surface reflections, moody storm lighting with warm golden undertones, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Park sahası, şiddetli yağmur, mentor ile antrenman"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "park-training",
+      "title": "Bu Sefer Farklı",
+      "text": "Haftalar geçti. {CHILD_NAME} her gün çalıştı. Tekniği gelişti, şutları güçlendi.\nBir gün o büyük çocuklar yine geldi. {CHILD_NAME}'i görünce durdular.\n\"Heyy, sen o küçük değil misin?\" dedi biri. \"Vay be, nasıl oynuyorsun öyle!\"\n\"Bizimle oynasana!\" dediler bu sefer. {CHILD_NAME} gülümsedi. Zamanı gelmişti.",
+      "prompt": "CHARACTER_DESC wearing a bright red training jersey with yellow trim on the sleeves and collar and red football shorts with yellow side stripes and red-yellow professional football cleats, CAMERA TRACKING from behind following the character, standing confidently on the park grass pitch with the red and yellow football balanced on the right foot doing a cool keep-up trick, five older taller kids standing in a semicircle around the child looking impressed and amazed with wide eyes and open mouths, one of the older kids the same one who previously rejected the child now stepping forward with an outstretched hand offering a friendly handshake invitation with a respectful impressed expression, another older kid giving a thumbs up, the child's face showing a calm confident knowing smile with chin slightly raised radiating quiet pride and vindication without arrogance, the child stands taller and more confident than before showing visible growth in posture and presence, the elderly mentor visible sitting on a distant park bench in the background watching the scene with a subtle proud smile and a small knowing nod, warm bright golden afternoon sunlight flooding the scene creating a triumphant atmosphere, green trees with golden-tinged leaves framing the scene, Ice Age and Shrek style 3D CGI animation with satisfying cinematic medium shot showing the power dynamic shift, detailed expressive faces on every character showing genuine respect and admiration, warm victorious lighting, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Park sahası, kabul edilme anı, altın ışık"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "park-training",
+      "title": "Sokak Turnuvası",
+      "text": "Mahallede büyük bir sokak turnuvası vardı. {CHILD_NAME}'in takımı finale çıktı!\n{CHILD_NAME} her maçta parladı. Pas verdi, gol attı, oyunu kurdu.\nFinal maçında herkes {CHILD_NAME}'i izliyordu. Mahalle halkı, çocuklar, aileler...\nSon dakikada {CHILD_NAME} muhteşem bir gol attı ve turnuvayı kazandı!",
+      "prompt": "CHARACTER_DESC wearing a bright red training jersey with yellow trim on the sleeves and collar and red football shorts with yellow side stripes and red-yellow professional football cleats, CAMERA OVERHEAD looking down, celebrating a spectacular goal in an exciting street football tournament final match on a decorated park pitch with colorful bunting flags and handmade tournament banners strung between trees and posts, the child in a dynamic victory celebration pose with one fist pumped in the air and a huge ecstatic smile, teammates of various ages rushing toward the child to celebrate with arms wide open for group hugs, a makeshift scoreboard on a wooden board showing the winning score, a large excited crowd of neighborhood families parents grandparents and children lining the sidelines cheering wildly and clapping with some standing on tiptoes to see, the wise elderly mentor standing among the crowd with his arms raised in celebration tears of pride in his eyes, the father figure also in the crowd cheering with both fists raised, colorful paper streamers thrown from the crowd floating in the air, dramatic late afternoon golden hour sunlight creating spectacular long shadows and warm golden backlighting on all the celebrating players, the atmosphere of a neighborhood coming together for sport, Ice Age and Shrek style 3D CGI animation with dynamic celebratory wide shot capturing the entire festive scene, detailed crowd reactions with individual expressions, warm golden triumphant lighting, confetti and streamer particles, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Mahalle parkı, sokak turnuvası finali, festival havası"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "pro-jersey",
+      "title": "RAMS Park'a Dönüşüm",
+      "text": "Final maçının son anlarında saha titredi. Çimenler parladı. Ağaçlar ışıklara dönüştü.\nPark yavaşça büyüdü, genişledi... Ve bir anda {CHILD_NAME} devasa bir stadyumdaydı!\nRAMS Park! Kırmızı-sarı bayraklar dalgalanıyor, tribünler coşuyor, ışıklar parlıyordu.\n{CHILD_NAME} üzerindeki formaya baktı: profesyonel Galatasaray forması, üstünde kendi adı!",
+      "prompt": "CHARACTER_DESC wearing a professional bright red Galatasaray football jersey with yellow collar and sleeve trim with the name {CHILD_NAME} in bold yellow letters across the chest front and bright yellow number 10 below the name on the back, the same name {CHILD_NAME} in bold yellow letters across the upper back with number 10, matching red football shorts with yellow side stripes, and red-yellow professional football boots, CAMERA WIDE ESTABLISHING SHOT, the entire jersey shimmering with magical golden light particles flowing across the fabric, standing in absolute awe with mouth wide open and eyes huge as the park football field magically transforms around them in real-time, the park trees on the left side morphing and stretching upward becoming towering stadium floodlight towers, the grass expanding and reforming into a gleaming perfect professional pitch with bright white lines and perfectly striped mowed grass, park benches transforming into massive stadium seating tiers filling with appearing spectators waving red and yellow Galatasaray flags and scarves, the old makeshift tournament goals dissolving and reforming as professional stadium goals with pristine white nets, a massive golden magical energy vortex swirling overhead connecting the park reality to the stadium reality, the tournament bunting flags transforming into massive Galatasaray banners, the iconic RAMS Park Stadium structure forming majestically around the scene, thousands of golden sparkles and spiraling red and yellow light beams filling the air, Ice Age and Shrek style 3D CGI animation with spectacular ultra-wide establishing shot showing the magical transformation in progress with half-park half-stadium visible, overwhelming scale and wonder, ultra high detail render quality",
+      "mood": "magical-epic",
+      "setting": "Park-RAMS Park dönüşümü, büyülü gece"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "pro-jersey",
+      "title": "Yıldızlarla Tanışma",
+      "text": "{CHILD_NAME} sahaya çıktığında durdu. Karşısında Galatasaray'ın yıldızları vardı!\nOsimhen gülümseyerek elini uzattı: \"Seni bekliyorduk, küçük aslan!\"\nSané göz kırptı, Barış Alper alkışladı, Torreira diz çöküp yumruk selamı verdi.\nHepsi aynı formayı giyiyordu. Artık {CHILD_NAME} de takımın bir parçasıydı!",
+      "prompt": "CHARACTER_DESC wearing a professional bright red Galatasaray football jersey with yellow collar and sleeve trim with the name {CHILD_NAME} in bold yellow letters across the chest front and bright yellow number 10 below the name, the same name {CHILD_NAME} in bold yellow letters across the upper back with number 10, matching red football shorts with yellow side stripes, and red-yellow professional football boots, CAMERA LOW ANGLE from ground level looking slightly upward, standing on the center circle of a massive spectacular professional RAMS Park stadium filled with red and yellow flags, facing four star football players who are all wearing the SAME bright red Galatasaray jerseys with yellow trim matching the child, the four players are: Victor Osimhen a tall muscular athletic dark-skinned Nigerian striker with short dark hair wearing number 45 with the name OSIMHEN in yellow letters on the chest front extending his large hand warmly for a handshake while leaning down to the child's level with a broad welcoming smile, Leroy Sane a tall lean athletic German winger with light skin and distinctive thin face and short dark hair wearing number 19 with the name SANE in yellow letters on the chest front giving a cool confident wink and thumbs up, Baris Alper Yilmaz a young lean athletic Turkish winger with olive skin and short dark brown hair wearing number 17 with the name BARIS in yellow letters on the chest front clapping enthusiastically with an excited grin, and Lucas Torreira a short compact muscular Uruguayan midfielder with olive skin and long dark hair tied back wearing number 34 with the name TORREIRA in yellow letters on the chest front kneeling down to give the child a warm fist bump with a big friendly smile, all four stars genuinely happy and welcoming, the enormous RAMS Park stadium packed with cheering fans waving red and yellow scarves under dazzling bright white floodlights, massive LED screens showing the child's face with the text ASLAN YUREKLI, Ice Age and Shrek style 3D CGI animation with dramatic low-angle shot, each player with distinctly different body proportions and recognizable features, spectacular stadium lighting with lens flares, inspiring heroic welcoming atmosphere, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "RAMS Park Stadyumu, yıldızlarla buluşma"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "pro-jersey",
+      "title": "Kanat Akınları",
+      "text": "Maç başladı! RAMS Park inliyordu!\n{CHILD_NAME} sağ kanatta Sané ile birlikte koştu. Sané pas verdi, {CHILD_NAME} dribling yaptı.\nTorreira arkadan destek verdi. Barış Alper karşı kanattan açıldı.\nBir duvar pası, bir çalım, bir daha... {CHILD_NAME} sahada dans ediyordu!",
+      "prompt": "CHARACTER_DESC wearing a professional bright red Galatasaray football jersey with yellow collar and sleeve trim with the name {CHILD_NAME} in bold yellow letters across the chest front and bright yellow number 10 below the name, the same name {CHILD_NAME} in bold yellow letters across the upper back with number 10, matching red football shorts with yellow side stripes, and red-yellow professional football boots, CAMERA FROM THE SIDE at a dynamic three-quarter angle, now with visible sweat showing intense effort, sprinting at full speed down the right wing of the perfectly striped green grass RAMS Park pitch alongside Leroy Sane number 19 with SANE on the chest a tall lean German winger with light skin and distinctive thin face running in perfect sync just ahead and to the left, both executing a beautiful flowing wall pass combination with the red and yellow ball mid-flight between them, Sane looking back with an impressed excited smile as the child receives the return pass, Lucas Torreira number 34 with TORREIRA on the chest with his distinctive long dark hair tied back visible in the midfield providing defensive cover and pointing directions, Baris Alper Yilmaz number 17 with BARIS on the chest sprinting hard down the opposite left wing creating width, two opponent defenders scrambling to keep up but being completely outpaced, the child's face showing pure exhilarating joy and fierce competitive focus while running at full speed, a packed roaring RAMS Park stadium with red and yellow sections in the stands creating a wall of color and sound, dramatic floodlight beams cutting through a slight atmospheric haze, motion blur on the trailing defenders emphasizing the speed, grass particles kicked up catching the floodlight, Ice Age and Shrek style 3D CGI animation with dynamic low-angle sports action camera at pitch level, high energy fast-paced composition, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "RAMS Park Stadyumu, hızlı kanat akını"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "pro-jersey",
+      "title": "Korner Anı",
+      "text": "Son dakika. Skor eşit. Kalpler duracak gibi.\nKorner kullandılar. Top havada süzüldü, ceza sahası kaos içindeydi.\nO an {CHILD_NAME} sıçradı! Küçük bedeniyle devlerin arasından yükseldi.\nKafa! Top dire direğin yanından ağlara gitti!\nZaman durdu. Herkes {CHILD_NAME}'e baktı.",
+      "prompt": "CHARACTER_DESC wearing a professional bright red Galatasaray football jersey with yellow collar and sleeve trim with the name {CHILD_NAME} in bold yellow letters across the chest front and bright yellow number 10 below the name, the same name {CHILD_NAME} in bold yellow letters across the upper back with number 10, matching red football shorts with yellow side stripes, and red-yellow professional football boots, the jersey untucked and sweat-soaked from the intense match, CAMERA CLOSE-UP focusing on face and upper body, captured in a spectacular frozen mid-air moment leaping incredibly high above taller defenders to head the football, the child's entire body suspended in the air with back arched and neck muscles tensed connecting perfectly with the red and yellow ball at the forehead, eyes squeezed shut with absolute focused determination at the moment of impact, several taller opponent defenders around the child looking up helplessly unable to match the incredible leap, the football just leaving the child's head rocketing toward the bottom corner of the goal with the goalkeeper diving desperately in the wrong direction, the white goal net about to receive the ball, a corner kick flag visible in the near background showing this was from a corner, the enormous packed RAMS Park stadium frozen in a collective gasp with thousands of fans mid-rise from their seats mouths open in disbelief, red and yellow scarves frozen mid-wave, a large LED scoreboard visible showing TIED score in the final minute, Victor Osimhen number 45 with OSIMHEN on the chest visible nearby already beginning to raise his arms anticipating the goal, dramatic slow-motion freeze-frame atmosphere with the child as the highest point in the entire frame defying gravity, Ice Age and Shrek style 3D CGI animation with ultra-dramatic cinematic freeze-frame from a low side angle showing the incredible height of the jump, shallow depth of field with the child in razor-sharp focus, slight motion blur on everything else, the most climactic sporting moment, ultra high detail render quality",
+      "mood": "climactic",
+      "setting": "RAMS Park Stadyumu, korner, kafa golü anı"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "pro-jersey",
+      "title": "Aslanın Zaferi",
+      "text": "GOOOOL! Top ağlara saplandı! {CHILD_NAME} kafa golü attı!\nStadyum patladı! Tribünler inledi! Konfetiler yağdı!\nOsimhen koşarak geldi ve {CHILD_NAME}'i omzuna aldı! Sané sarıldı, Torreira saçlarını karıştırdı, Barış Alper sevinç koşusu yaptı!\nTribünlerden \"ASLAN YÜREKLİ!\" sesleri yükseldi.\nBu sadece bir gol değildi. Reddedilmekti, tek başına kalmaktı, yağmurda ıslanmaktı, vazgeçmemekti.\nAferin sana {CHILD_NAME}! Sen gerçek bir aslansın!",
+      "prompt": "CHARACTER_DESC wearing a professional bright red Galatasaray football jersey with yellow collar and sleeve trim with the name {CHILD_NAME} in bold yellow letters across the chest front and bright yellow number 10 below the name, the same name {CHILD_NAME} in bold yellow letters across the upper back with number 10, matching red football shorts with yellow side stripes, and red-yellow professional football boots, CAMERA FROM BEHIND looking over the shoulder, sitting triumphantly on the broad shoulders of Victor Osimhen number 45 with OSIMHEN on the chest a tall muscular dark-skinned Nigerian striker who is carrying the child like a champion with both hands securely holding the child's legs and looking up at the child with an enormous proud celebratory roar, the child's arms raised high in absolute triumph with the biggest happiest most emotional smile imaginable and sparkling eyes glistening with happy tears, the football visible in the back of the net in the background with the white net still bulging from the header goal, thousands of pieces of golden red and yellow confetti raining down from the stadium roof like a spectacular blizzard of celebration, Leroy Sane number 19 with SANE on the chest a tall lean German winger with light skin and distinctive thin face running alongside hugging Osimhen's waist while looking up at the child cheering, Lucas Torreira number 34 with TORREIRA on the chest a short compact Uruguayan with long dark hair tied back jumping up trying to reach the child's hair to ruffle it with a beaming joyful laugh, Baris Alper Yilmaz number 17 with BARIS on the chest a young Turkish winger with olive skin doing an exuberant knee slide celebration on the wet grass nearby with arms spread wide, the entire packed RAMS Park stadium erupting with seventy thousand fans on their feet cheering wildly waving red and yellow scarves and flags, a massive LED banner scrolling ASLAN YUREKLI in golden letters, golden spotlight beams and colorful stadium lights creating a spectacular light show cutting through the falling confetti, red and yellow streamers and balloons everywhere, the LED scoreboard showing the WINNING score, warm golden confetti catching the floodlights beautifully creating magical sparkles, the most epic joyful triumphant celebration scene, Ice Age and Shrek style 3D CGI animation with spectacular wide cinematic hero shot, golden warm color grading, confetti particles rendered individually with beautiful depth of field, volumetric spotlight beams cutting through the confetti, the ultimate feel-good victory moment, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "RAMS Park Stadyumu, kafa golü zafer kutlaması"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? ❤️💛",
+      "facts": [
+        "Galatasaray Spor Kulübü 1905 yılında kurulmuştur ve Türkiye'nin en eski ve en büyük spor kulüplerinden biridir! Ali Sami Yen tarafından Galatasaray Lisesi'öğrencileri tarafından kurulmuştur.",
+        "Galatasaray, 2000 yılında UEFA Kupası ve Süper Kupa'yı kazanan ilk ve tek Türk takımıdır! Avrupa'nın zirvesine çıkan ilk Türk kulübü olarak tarihe geçmiştir.",
+        "Kırmızı-sarı renkler ateşi ve gücü simgeler. Galatasaray'ın sembolü olan aslan, cesareti ve yılmazlığı temsil eder. Cimbom lakabı taraftarların kulübe olan sevgisinden doğmuştur!",
+        "RAMS Park Stadyumu 52.000 kişilik kapasitesiyle Türkiye'nin en modern stadyumlarından biridir ve 2011 yılında açılmıştır!",
+        "Galatasaray, Türk futbol tarihinde en çok şampiyonluk kazanan kulüptür ve taraftarları dünyanın en tutkulu taraftar gruplarından biri olarak kabul edilir!"
+      ],
+      "icon": "❤️"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ⭐",
+      "facts": [
+        "Victor Osimhen, Nijeryalı süper star forvet olarak dünyanın en iyi golcülerinden biridir. Napoli'de İtalya şampiyonluğu kazanmıştır! Güçlü fiziği ve gol içgüdüsüyle taraftarların sevgilisidir.",
+        "Leroy Sane, Almanya Milli Takımı'nın yıldızı ve Manchester City ile Premier Lig şampiyonu olmuştur! Hızı ve tekniğiyle rakip savunmaları tek başına çözebilen bir kanat oyuncusudur.",
+        "Barış Alper Yılmaz, Türk futbolunun parlayan genç yıldızlarından biridir. Trabzonspor altyapısından yetişen Barış, hızı ve cesur oyunuyla Avrupa'ın dikkatini çekmiştir!",
+        "Lucas Torreira, Uruguay Milli Takımı'nın yıldız orta saha oyuncusudur. Arsenal ve Fiorentina'da forma giymiş, mücadeleci ruhuyla tanınır!",
+        "Galatasaray altyapısı, Türk futboluna onlarca yıldız oyuncu kazandırmıştır. Altyapıdan yetişmek, her genç futbolcunun en büyük hayalidir!"
+      ],
+      "icon": "⭐"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 5,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 10,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "CHARACTER_DESC wearing a red Galatasaray jersey with yellow trim and number 10, standing heroically in RAMS Park stadium, fist raised in victory, red and yellow scarves and flags in the packed stadium, dramatic spotlight from above, golden confetti raining, epic low-angle hero shot, Ice Age and Shrek style 3D CGI animation, ultra cinematic poster composition, ultra high detail render quality",
+  "specialPagePrompts": {
+    "heroPage": "CHARACTER_DESC standing proudly in a heroic pose inside the magnificent RAMS Park stadium bathed in red and golden yellow light, dramatic floodlights creating spectacular warm light beams, red and gold confetti and sparkles filling the air, the child standing with a confident lion-hearted pose with fists raised, packed stands radiating red-yellow energy, warm crimson and gold atmosphere with fiery glow, NO TEXT NO LETTERS in image, Ice Age and Shrek style 3D CGI animation, ultra high detail render quality, portrait composition",
+    "funFactBg": "A beautiful Galatasaray-themed decorative background with rich crimson red and golden yellow color palette, footballs, lion mane motifs, stars, crescent shapes, and championship trophy silhouettes arranged in artistic floating patterns, golden bokeh lights against deep red gradients, magical fiery sparkly atmosphere with warm light rays, NO TEXT NO LETTERS in image, 3D CGI render, artistic decorative background style, ultra high detail",
+    "senderNoteBg": "A warm cozy room with soft red-golden lamplight creating intimate atmosphere, a beautiful antique desk with an open letter and a treasured memory book, red and gold memorabilia arranged on mahogany shelves, a small football and lion figurine on the desk, rich burgundy curtains framing a window showing Istanbul skyline at golden hour, comfortable plush armchair, magical warm atmosphere with gentle amber bokeh, NO TEXT NO LETTERS in image, 3D CGI render, intimate personal setting",
+    "backCover": "A breathtaking panoramic sunset view of Istanbul with the RAMS Park stadium silhouette against a dramatic crimson and gold sky, warm red-orange gradient with majestic clouds catching fiery light, the city skyline with minarets and bridges in warm silhouette, golden light reflecting off the Sea of Marmara, peaceful powerful nostalgic atmosphere with first stars appearing, cinematic ultra-wide composition, NO TEXT NO LETTERS in image, 3D CGI render, movie poster ending atmosphere"
+  }
+}

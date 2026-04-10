@@ -1,0 +1,164 @@
+{
+  "id": "minik-kedi-miyav-boyama",
+  "category": "boyama",
+  "title": "Minik Kedi Miyav - Boyama Kitabı",
+  "description": "Minik kedi Miyav ile bahçe macerası! Çocuğunuz kediye yardım ederken hayvan seslerini öğreniyor. Renklendirilmeyi bekleyen eğlenceli boyama sayfaları.",
+  "lessons": [
+    "Hayvan sevgisi",
+    "Merak ve keşif",
+    "Doğayı tanıma"
+  ],
+  "ageGroup": "0-3",
+  "ageRange": "0-3",
+  "pageCount": 10,
+  "style": "Clean professional black and white line art coloring book illustration, thick bold outlines perfect for children to color, no shading no gradients no color fills no gray tones, pure black ink lines on pure white background, simple cute shapes with large open areas ready to be colored in, children's coloring book page style, detailed but not overly complex line work",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo standing next to a cute small orange-white spotted kitten with big adorable eyes",
+    "notes": "Çocuk ve kedi birlikte sahnelerde yer alır. Çocuk kediye yardım eden, onu seven bir arkadaş rolündedir."
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "title": "Kedi Uyandı",
+      "text": "{CHILD_NAME} sabah uyandığında yatağının ucunda minik bir kedi gördü.\nKedi gözlerini açtı. \"Miyav miyav!\" dedi.\n{CHILD_NAME} gülümsedi. \"Günaydın minik kedi!\"",
+      "prompt": "CAMERA FROM BEHIND looking over the shoulder, A child with the reference photo face sitting up in bed looking delighted at a cute small spotted kitten stretching and yawning at the foot of the bed, the child reaches out a hand toward the kitten with a big warm smile, cozy bedroom with pillow and patterned blanket, bedside table with alarm clock, morning rays through window, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "warm, gentle",
+      "setting": "bedroom",
+      "textPagePrompt": "Soft pastel light blue background with subtle paw print watermark patterns, gentle watercolor texture, warm and dreamy atmosphere, children's book illustration style, no text, no characters"
+    },
+    {
+      "sceneNumber": 2,
+      "title": "Güneş Parlıyor",
+      "text": "{CHILD_NAME} kediyi kucağına aldı ve pencereye gitti.\nBirlikte dışarı baktılar. Güneş parlıyordu!\n\"Hadi bahçeye çıkalım!\" dedi {CHILD_NAME}.",
+      "prompt": "CAMERA LOW ANGLE from ground level looking slightly upward, A child with the reference photo face standing at a large window holding a cute spotted kitten gently in their arms, both looking out the window together, big round sun with radiating rays, puffy clouds, green hills and garden visible, the child points outside excitedly, flower pot with tulips on windowsill, polka dot curtains, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "bright, cheerful",
+      "setting": "by the window",
+      "textPagePrompt": "Soft pastel yellow-blue gradient background with subtle sun ray patterns, gentle morning glow texture, warm and bright atmosphere, children's book style, no text, no characters"
+    },
+    {
+      "sceneNumber": 3,
+      "title": "Köpek Havladı",
+      "text": "Bahçede bir köpek gördüler.\nKöpek \"Hav hav!\" dedi.\nKedi biraz korktu. {CHILD_NAME} kediye sarıldı.\n\"Korkma, o iyi bir köpek!\" dedi {CHILD_NAME}.",
+      "prompt": "CAMERA FROM THE SIDE at a dynamic three-quarter angle, A child with the reference photo face kneeling in a garden hugging and protecting a small spotted kitten, the kitten looks slightly scared, a friendly chubby puppy standing nearby barking happily with wagging tail, the child has a reassuring smile, green grass with colorful flowers, wooden picket fence, butterflies, garden path with stepping stones, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "playful, protective",
+      "setting": "garden",
+      "textPagePrompt": "Soft pastel green background with subtle grass and flower patterns, gentle garden watercolor texture, fresh spring atmosphere, children's book style, no text, no characters"
+    },
+    {
+      "sceneNumber": 4,
+      "title": "Kuş Şarkı Söyledi",
+      "text": "Ağaçta bir kuş vardı.\nKuş \"Cik cik!\" diye şarkı söyledi.\n{CHILD_NAME} ve kedi birlikte dinlediler.\n\"Ne güzel şarkı!\" dedi {CHILD_NAME}.",
+      "prompt": "CAMERA WIDE ESTABLISHING SHOT, A child with the reference photo face sitting under a large tree with a cute spotted kitten on their lap, both looking up at a cheerful bird on a branch singing with musical notes floating around, the tree has thick trunk with large leaves and apples, nest with eggs, the child cups one ear to listen with a delighted face, the kitten tilts its head curiously, flowers at the base of the tree, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "musical, happy",
+      "setting": "garden tree",
+      "textPagePrompt": "Soft pastel sky blue background with subtle leaf and bird silhouette patterns, gentle nature watercolor texture, airy and musical atmosphere, children's book style, no text, no characters"
+    },
+    {
+      "sceneNumber": 5,
+      "title": "Bahçe Macerası",
+      "text": "{CHILD_NAME} ve kedi bahçede yürüdüler.\nÇiçeklerin arasından geçtiler.\nKedi çiçekleri kokladı. {CHILD_NAME} güldü.\n\"Çiçekler ne güzel kokuyor!\"",
+      "prompt": "CAMERA CLOSE-UP focusing on face and upper body, A child with the reference photo face walking happily through a lush garden with a cute spotted kitten walking beside them, the kitten sniffing a large flower, the child laughing and pointing at the kitten, large flowers including tulips daisies and sunflowers, butterflies fluttering, winding garden path with oval stones, ladybug on a leaf, watering can, puffy clouds, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "adventurous, curious",
+      "setting": "garden",
+      "textPagePrompt": "Soft pastel green background with subtle colorful flower patterns scattered, gentle garden meadow watercolor texture, fresh and vibrant atmosphere, children's book style, no text, no characters"
+    },
+    {
+      "sceneNumber": 6,
+      "title": "Kelebek Uçtu",
+      "text": "Bir kelebek uçtu. \"Fır fır fır!\" yaptı.\nKedi kelebeği izledi.\n{CHILD_NAME} de kelebeği gösterdi.\n\"Bak ne güzel kanatları var!\"",
+      "prompt": "CAMERA HIGH ANGLE from slightly above, A child with the reference photo face pointing excitedly at a large butterfly with elaborate wing patterns, the spotted kitten stands on hind legs reaching up playfully, the child crouches beside the kitten with wonder, garden flowers surround them, a second smaller butterfly nearby, bees near flowers, sparkle star shapes, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "magical, playful",
+      "setting": "flower garden",
+      "textPagePrompt": "Soft pastel orange-pink background with subtle butterfly wing patterns, gentle floating watercolor texture, magical and whimsical atmosphere, children's book style, no text, no characters"
+    },
+    {
+      "sceneNumber": 7,
+      "title": "Kelebek Peşinde",
+      "text": "{CHILD_NAME} ve kedi kelebeği kovaladılar.\n\"Miyav miyav!\" dedi kedi.\n\"Hadi yakala!\" dedi {CHILD_NAME}.\nİkisi de gülerek koştular.",
+      "prompt": "CAMERA FROM FRONT LOW ANGLE looking up, A child with the reference photo face running joyfully through the garden chasing a butterfly, the spotted kitten leaping alongside the child with all four paws off the ground, both have excited happy expressions, butterfly flies just ahead, motion lines suggest fast movement, flower petals float in the air, garden bench in background, birds on tree branch, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "energetic, playful",
+      "setting": "garden",
+      "textPagePrompt": "Soft pastel lime green background with subtle motion swirl patterns, gentle playful watercolor texture, energetic and fun atmosphere, children's book style, no text, no characters"
+    },
+    {
+      "sceneNumber": 8,
+      "title": "Yoruldular",
+      "text": "Yoruldular ikisi de.\n{CHILD_NAME} çimenlere oturdu.\nKedi {CHILD_NAME}'in kucağına kıvrıldı.\n\"Yoruldun mu minik kedi?\" dedi {CHILD_NAME}.",
+      "prompt": "CAMERA AT EYE LEVEL from slight diagonal, A child with the reference photo face sitting peacefully on soft grass with the spotted kitten curled up cozily in their lap, the child gently petting the kitten's head, both have peaceful sleepy expressions, a large daisy bends gently next to them, a butterfly landed on the kitten's tail, gentle breeze lines, clouds in the sky, small flowers around, ladybug on grass, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "calm, peaceful",
+      "setting": "garden grass",
+      "textPagePrompt": "Soft pastel mint green background with subtle daisy and grass patterns, gentle relaxing watercolor texture, calm and peaceful atmosphere, children's book style, no text, no characters"
+    },
+    {
+      "sceneNumber": 9,
+      "title": "Anne Kedi Geldi",
+      "text": "Anne kedi geldi. \"Miyav!\" dedi.\nMinik kedi annesine koştu.\n{CHILD_NAME} gülümsedi.\n\"Annen seni arıyormuş!\"",
+      "prompt": "CAMERA TRACKING from behind following the character, A child with the reference photo face sitting on the grass watching with a warm smile as a large fluffy mother cat walks toward the small spotted kitten, the kitten jumps up excitedly running to its mother, hearts float in the air between mother and kitten, the child waves at the mother cat, garden background with flowering bush and climbing vines, warm rays of light, birds on branch watching, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "loving, warm",
+      "setting": "garden",
+      "textPagePrompt": "Soft pastel warm peach background with subtle heart and paw print patterns, gentle loving watercolor texture, warm and nurturing atmosphere, children's book style, no text, no characters"
+    },
+    {
+      "sceneNumber": 10,
+      "title": "Mutlu Son",
+      "text": "Anne kedi yavrusunu yaladı.\n\"Mırr mırr!\" yaptılar.\n{CHILD_NAME} ikisine de sarıldı.\n\"Yarın yine oynayalım!\" dedi {CHILD_NAME}.\nHepsi çok mutlu oldular.",
+      "prompt": "CAMERA OVERHEAD looking down, A heartwarming scene of a child with the reference photo face sitting on soft grass hugging both the mother cat and the small spotted kitten, all three cuddled together in a warm group hug, the mother cat nuzzles the child's cheek while the kitten purrs in the child's lap, beautiful setting sun on the horizon with radiating lines, rolling hills, flowers surrounding them, fireflies appearing, crescent moon and stars in the sky, tiny heart shapes scattered around, the child beams with the purest happiest smile, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, volumetric lighting, cinematic composition, Disney Pixar render quality",
+      "mood": "loving, happy",
+      "setting": "sunset garden",
+      "textPagePrompt": "Soft pastel warm sunset orange-pink gradient background with subtle heart patterns, gentle loving watercolor texture, warm and cozy family atmosphere, children's book style, no text, no characters"
+    }
+  ],
+  "theme": {
+    "primaryColor": "#9C27B0",
+    "secondaryColor": "#E1BEE7",
+    "accentColor": "#F3E5F5",
+    "textPageBg": "#FFF5EE",
+    "funFactBg": "#9C27B0",
+    "icon": "🎨"
+  },
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🐾",
+      "facts": [
+        "Kediler gunde 12-16 saat uyur!",
+        "Kedilerin biyiklari onlara yon bulmada yardimci olur.",
+        "Bir kedinin kalbi dakikada 110-140 kez atar!",
+        "Kediler 100'den fazla farklı ses çıkarabilir!",
+        "Bir kedinin atlama yeteneği kendi boyunun 6 katı yüksekliğe kadar ulaşabilir!"
+      ],
+      "icon": "🐱"
+    },
+    {
+      "id": "fact-2",
+      "title": "Hayvan Sesleri 🐾",
+      "facts": [
+        "Kopekler mutlu olunca kuyruklarini sallar!",
+        "Kuslar sarki soyleyerek iletisim kurar.",
+        "Kelebekler ayaklariyla tat alir!",
+        "Köpekler insanların duygularını yüz ifadelerinden anlayabilir!",
+        "Kelebekler saniyede 12 kez kanat çırpar!"
+      ],
+      "icon": "🦋"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 8,
+      "factId": "fact-2"
+    }
+  ],
+  "characterType": "animal",
+  "coverPrompt": "CHARACTER_DESC standing in a beautiful garden holding a cute small spotted kitten, surrounded by butterflies and flowers, warm composition, the child and kitten looking at each other, clean black and white line art coloring book style, thick bold outlines, no shading, no color, pure black lines on white background, large areas for coloring, enchanting poster composition",
+  "specialPagePrompts": {
+    "heroPage": "CHARACTER_DESC sitting happily in a beautiful garden filled with flowers and butterflies, holding a cute small kitten, sunshine streaming through trees, magical atmosphere with floating petals, clean professional black and white line art coloring book illustration, thick bold outlines perfect for children to color, no shading no gradients no color fills no gray tones, pure black ink lines on pure white background, simple cute shapes with large open areas, NO TEXT NO LETTERS in image, portrait composition",
+    "funFactBg": "A decorative background with cute paw prints, butterflies, flowers, leaves, ladybugs, and small animal silhouettes arranged in an artistic pattern, clean professional black and white line art coloring book illustration, thick bold outlines, no shading no gradients no color fills no gray tones, pure black ink lines on pure white background, large open areas ready to be colored, NO TEXT NO LETTERS in image, decorative background style",
+    "senderNoteBg": "A cozy room with a window showing a garden outside, a small desk with an open book and a cute toy kitten, a lamp, flowers in a vase, a comfortable chair with a blanket, clean professional black and white line art coloring book illustration, thick bold outlines, no shading no gradients no color fills no gray tones, pure black ink lines on pure white background, large open areas for coloring, NO TEXT NO LETTERS in image, intimate cozy setting",
+    "backCover": "A garden scene with a child and kitten sitting together on a hill watching the sunset, flowers in foreground, butterflies floating around, peaceful atmosphere, clean professional black and white line art coloring book illustration, thick bold outlines, no shading no gradients no color fills no gray tones, pure black ink lines on pure white background, large open areas for coloring, NO TEXT NO LETTERS in image, cinematic wide composition"
+  }
+}

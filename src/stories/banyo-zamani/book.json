@@ -1,14 +1,20 @@
 {
   "id": "banyo-zamani",
-  "title": "Banyo Zaman\u0131",
-  "description": "Banyo zaman\u0131 e\u011flenceli! Su sesleri ve k\u00f6p\u00fcklerle dolu ne\u015feli bir banyo maceras\u0131.",
+  "category": "hikaye",
+  "title": "Banyo Zamanı",
+  "description": "Banyo zamanı eğlenceli! Su sesleri ve köpüklerle dolu neşeli bir banyo macerası.",
+  "lessons": [
+    "Temizlik alışkanlığı",
+    "Su sevgisi",
+    "Bağımsızlık"
+  ],
   "ageGroup": "0-3",
   "ageRange": "0-3",
   "pageCount": 10,
   "style": "3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
   "characterDescription": {
     "base": "a cute chubby baby with rosy cheeks, short brown curly hair, and big sparkling brown eyes",
-    "notes": "Sevimli, tombul yanakl\u0131, k\u0131v\u0131rc\u0131k kahverengi sa\u00e7l\u0131 bebek karakteri"
+    "notes": "Sevimli, tombul yanaklı, kıvırcık kahverengi saçlı bebek karakteri"
   },
   "outfit": {
     "description": "wearing a soft pastel blue pajama onesie with tiny white cloud patterns, bare feet",
@@ -17,18 +23,18 @@
   "scenes": [
     {
       "sceneNumber": 1,
-      "title": "Ak\u015fam Oldu",
-      "text": "Ak\u015fam oldu.\nBanyo zaman\u0131!",
-      "prompt": "A cozy warm house interior in the evening, soft orange-yellow light from lamps. A cute chubby baby with rosy cheeks and short brown curly hair sitting on the floor playing with toys. A mother figure smiling and pointing toward the bathroom. Warm evening atmosphere. 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail.",
+      "title": "Akşam Oldu",
+      "text": "Akşam oldu.\nBanyo zamanı!",
+      "prompt": "CAMERA WIDE ESTABLISHING SHOT. A cozy warm house interior in the evening, soft orange-yellow light from lamps. CHARACTER_DESC sitting on the floor playing with toys. A mother figure smiling and pointing toward the bathroom. Warm evening atmosphere. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel warm orange background with subtle water droplet patterns, gentle evening glow watercolor texture, cozy and warm atmosphere, children's book illustration style, no text, no characters",
       "mood": "warm, cozy",
       "setting": "living room evening"
     },
     {
       "sceneNumber": 2,
-      "title": "Su Akt\u0131",
-      "text": "Anne suyu a\u00e7t\u0131.\n\"\u015e\u0131r\u0131l \u015f\u0131r\u0131l!\" akt\u0131 su.",
-      "prompt": "A white bathtub with water running from a silver faucet. Crystal clear water flowing and splashing into the tub. Steam rising gently. Bathroom tiles in soft blue and white. Warm lighting. 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition.",
+      "title": "Su Aktı",
+      "text": "Anne suyu açtı.\n\"Şırıl şırıl!\" aktı su.",
+      "prompt": "CAMERA CLOSE-UP on face. CHARACTER_DESC watching with excited wide eyes as water runs from a silver faucet into a white bathtub. Crystal clear water flowing and splashing into the tub. Steam rising gently. Bathroom tiles in soft blue and white. Warm lighting. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel light blue background with subtle water stream and ripple patterns, gentle flowing watercolor texture, fresh and clean atmosphere, children's book style, no text, no characters",
       "mood": "anticipating, gentle",
       "setting": "bathroom"
@@ -36,8 +42,8 @@
     {
       "sceneNumber": 3,
       "title": "Bebek Geldi",
-      "text": "Bebek geldi.\nK\u0131yafetlerini \u00e7\u0131kard\u0131.",
-      "prompt": "A cute chubby baby with rosy cheeks standing next to a bathtub, wearing a diaper, arms up excitedly. Small colorful clothes on the floor. The baby looks happy and eager. Bathroom setting with warm lighting. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "text": "Bebek geldi.\nKıyafetlerini çıkardı.",
+      "prompt": "CAMERA LOW ANGLE. CHARACTER_DESC standing next to a bathtub, wearing a diaper, arms up excitedly. Small colorful clothes on the floor. The baby looks happy and eager. Bathroom setting with warm lighting. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel lavender background with subtle star and moon patterns, gentle soft watercolor texture, playful and innocent atmosphere, children's book style, no text, no characters",
       "mood": "excited, playful",
       "setting": "bathroom"
@@ -45,35 +51,35 @@
     {
       "sceneNumber": 4,
       "title": "Suya Girdi",
-      "text": "Bebek suya girdi.\n\"C\u0131p c\u0131p!\" yapt\u0131 su.",
-      "prompt": "A cute chubby baby sitting in a bathtub filled with warm water, splashing with hands. Water droplets flying around. The baby is laughing and having fun. Soft blue bathroom tiles in background. 3D Pixar animated movie style, vibrant colors, warm lighting, dynamic water splashes.",
+      "text": "Bebek suya girdi.\n\"Cıp cıp!\" yaptı su.",
+      "prompt": "CAMERA FROM THE SIDE dynamic three-quarter angle. CHARACTER_DESC sitting in a bathtub filled with warm water, splashing with hands. Water droplets flying around. The baby is laughing and having fun. Soft blue bathroom tiles in background. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel aqua blue background with subtle splash and water droplet patterns, gentle bubbly watercolor texture, fun and refreshing atmosphere, children's book style, no text, no characters",
       "mood": "fun, splashy",
       "setting": "bathtub"
     },
     {
       "sceneNumber": 5,
-      "title": "Sar\u0131 \u00d6rdek",
-      "text": "Sar\u0131 \u00f6rdek y\u00fczd\u00fc.\n\"Vak vak!\" dedi.",
-      "prompt": "A bright yellow rubber duck floating on water in a bathtub next to a happy baby. The rubber duck has a cute smiling face. Water ripples around the duck. Soap bubbles floating in the air. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "title": "Sarı Ördek",
+      "text": "Sarı ördek yüzdü.\n\"Vak vak!\" dedi.",
+      "prompt": "CAMERA HIGH ANGLE from above. A bright yellow rubber duck floating on water in a bathtub next to CHARACTER_DESC who is happy and laughing. The rubber duck has a cute smiling face. Water ripples around the duck. Soap bubbles floating in the air. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel yellow background with subtle rubber duck and bubble patterns, gentle cheerful watercolor texture, happy and playful atmosphere, children's book style, no text, no characters",
       "mood": "cheerful, playful",
       "setting": "bathtub"
     },
     {
       "sceneNumber": 6,
-      "title": "K\u00f6p\u00fck K\u00f6p\u00fck",
-      "text": "Anne sabun ald\u0131.\nK\u00f6p\u00fck k\u00f6p\u00fck oldu!",
-      "prompt": "A mother's hands holding a soap bar creating lots of white fluffy bubbles and foam. A baby in the bathtub covered in soap bubbles, laughing. Bubbles floating everywhere in the air. Iridescent rainbow reflections in bubbles. 3D Pixar animated movie style, vibrant colors, warm lighting.",
+      "title": "Köpük Köpük",
+      "text": "Anne sabun aldı.\nKöpük köpük oldu!",
+      "prompt": "CAMERA FROM BEHIND over the shoulder. A mother's hands holding a soap bar creating lots of white fluffy bubbles and foam. CHARACTER_DESC in the bathtub covered in soap bubbles, laughing. Bubbles floating everywhere in the air. Iridescent rainbow reflections in bubbles. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel white-blue background with subtle iridescent bubble patterns floating, gentle foamy watercolor texture, magical and bubbly atmosphere, children's book style, no text, no characters",
       "mood": "bubbly, fun",
       "setting": "bathtub"
     },
     {
       "sceneNumber": 7,
-      "title": "Su S\u0131\u00e7ratt\u0131",
-      "text": "Bebek su s\u0131\u00e7ratt\u0131.\n\"\u015eap \u015fap \u015fap!\" yapt\u0131.",
-      "prompt": "A happy baby slapping the water surface in the bathtub creating big splashes. Water droplets flying everywhere. The baby has a huge grin. Rubber duck bouncing on waves. Dynamic splash effects. 3D Pixar animated movie style, vibrant colors, warm lighting, dynamic composition.",
+      "title": "Su Sıçrattı",
+      "text": "Bebek su sıçrattı.\n\"Şap şap şap!\" yaptı.",
+      "prompt": "CAMERA FROM FRONT LOW ANGLE. CHARACTER_DESC slapping the water surface in the bathtub creating big splashes. Water droplets flying everywhere. The baby has a huge grin. Rubber duck bouncing on waves. Dynamic splash effects. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel turquoise background with subtle dynamic splash and wave patterns, gentle energetic watercolor texture, lively and fun atmosphere, children's book style, no text, no characters",
       "mood": "energetic, playful",
       "setting": "bathtub"
@@ -81,26 +87,26 @@
     {
       "sceneNumber": 8,
       "title": "Tertemiz Oldu",
-      "text": "Anne bebe\u011fi y\u0131kad\u0131.\nTertemiz oldu!",
-      "prompt": "A mother gently washing a baby's hair in the bathtub with shampoo foam on the baby's head shaped like a funny hat. The baby is smiling with eyes closed. Gentle warm light. Loving mother-child moment. 3D Pixar animated movie style, warm lighting, soft emotional scene.",
+      "text": "Anne bebeği yıkadı.\nTertemiz oldu!",
+      "prompt": "CAMERA AT EYE LEVEL diagonal. A mother gently washing CHARACTER_DESC's hair in the bathtub with shampoo foam on the baby's head shaped like a funny hat. The baby is smiling with eyes closed. Gentle warm light. Loving mother-child moment. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel pink-white background with subtle sparkle and clean star patterns, gentle pure watercolor texture, clean and fresh atmosphere, children's book style, no text, no characters",
       "mood": "gentle, loving",
       "setting": "bathtub"
     },
     {
       "sceneNumber": 9,
-      "title": "Havluya Sar\u0131ld\u0131",
-      "text": "Bebek sudan \u00e7\u0131kt\u0131.\nHavluya sar\u0131ld\u0131.",
-      "prompt": "A cute baby wrapped in a fluffy white towel with a hood that has little bear ears. The baby looks warm and cozy, only the face visible from the towel. Bathroom background with soft warm lighting. Water droplets on the baby's face. 3D Pixar animated movie style, warm lighting, adorable scene.",
+      "title": "Havluya Sarıldı",
+      "text": "Bebek sudan çıktı.\nHavluya sarıldı.",
+      "prompt": "CAMERA TRACKING from behind. CHARACTER_DESC wrapped in a fluffy white towel with a hood that has little bear ears. The baby looks warm and cozy, only the face visible from the towel. Bathroom background with soft warm lighting. Water droplets on the baby's face. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel cream-white background with subtle fluffy cloud and towel texture patterns, gentle cozy watercolor texture, warm and snuggly atmosphere, children's book style, no text, no characters",
       "mood": "cozy, warm",
       "setting": "bathroom"
     },
     {
       "sceneNumber": 10,
-      "title": "\u0130yi Geceler",
-      "text": "Bebek p\u0131r\u0131l p\u0131r\u0131l!\n\"\u00d6p\u00fcc\u00fck!\" dedi anne.\n\u0130yi geceler bebek!",
-      "prompt": "A clean sparkling baby in pajamas being kissed on the forehead by the mother. The baby is in a cozy crib with a small teddy bear. Soft nightlight glow, stars visible through the window. Warm loving bedtime scene. 3D Pixar animated movie style, warm golden lighting, emotional cinematic scene.",
+      "title": "İyi Geceler",
+      "text": "Bebek pırıl pırıl!\n\"Öpücük!\" dedi anne.\nİyi geceler bebek!",
+      "prompt": "CAMERA OVERHEAD. CHARACTER_DESC clean and sparkling in pajamas being kissed on the forehead by the mother. The baby is in a cozy crib with a small teddy bear. Soft nightlight glow, stars visible through the window. Warm loving bedtime scene. Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality.",
       "textPagePrompt": "Soft pastel dark blue-purple gradient background with subtle twinkling star and moon patterns, gentle dreamy night watercolor texture, peaceful and sleepy atmosphere, children's book style, no text, no characters",
       "mood": "loving, peaceful",
       "setting": "bedroom night"
@@ -112,32 +118,49 @@
     "accentColor": "#E1F5FE",
     "textPageBg": "#E8F4FD",
     "funFactBg": "#29B6F6",
-    "icon": "\ud83d\udec1"
+    "icon": "🛁"
   },
   "funFacts": [
     {
       "id": "fact-1",
-      "title": "Biliyor muydun? \ud83d\udca7",
+      "title": "Biliyor muydun? 💧",
       "facts": [
-        "Su d\u00fcnyan\u0131n en \u00f6nemli kayna\u011f\u0131d\u0131r!",
-        "V\u00fccudumuzun y\u00fczde 60'\u0131 sudan olu\u015fur.",
-        "Sabun k\u00f6p\u00fckleri asl\u0131nda k\u00fc\u00e7\u00fcc\u00fck hava balonlar\u0131d\u0131r!"
+        "Su dünyanın en önemli kaynağıdır!",
+        "Vücudumuzun yüzde 60'ı sudan oluşur.",
+        "Sabun köpükleri aslında küçücük hava balonlarıdır!",
+        "Dünya'daki suyun büyük kısmı denizlerde ve okyanuslardadır!",
+        "Eller yıkandığında mikropların çoğu 20 saniyede temizlenir!"
       ],
-      "icon": "\ud83d\udca7"
+      "icon": "💧"
     },
     {
       "id": "fact-2",
-      "title": "Banyo E\u011flencesi \ud83d\udec1",
+      "title": "Banyo Eğlencesi 🛁",
       "facts": [
-        "\u00d6rdekler suda y\u00fczebilir \u00e7\u00fcnk\u00fc t\u00fcyleri su ge\u00e7irmez!",
-        "Banyo yapmak v\u00fccudumuzu temiz ve sa\u011fl\u0131kl\u0131 tutar.",
-        "S\u0131cak su kaslar\u0131m\u0131z\u0131 rahatlatır!"
+        "Ördekler suda yüzebilir çünkü tüyleri su geçirmez!",
+        "Banyo yapmak vücudumuzu temiz ve sağlıklı tutar.",
+        "Sıcak su kaslarımızı rahatlatır!",
+        "Bebekler genellikle suyu çok sever çünkü doğmadan önce suyun içinde yaşarlar!",
+        "Sarı plastik ördek, dünyanın en popüler banyo oyuncağıdır!"
       ],
-      "icon": "\ud83d\udec1"
+      "icon": "🛁"
     }
   ],
   "funFactPlacements": [
-    {"afterScene": 5, "factId": "fact-1"},
-    {"afterScene": 9, "factId": "fact-2"}
-  ]
+    {
+      "afterScene": 5,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "CHARACTER_DESC sitting happily in a colorful bathtub full of bubbles and rubber ducks, water splashing playfully, bathroom decorated with sea creatures and rainbow tiles, warm cozy lighting, big happy smile, 3D Pixar animated style, fun cheerful poster composition, ultra high detail render quality",
+  "specialPagePrompts": {
+    "heroPage": "CHARACTER_DESC standing happily in a magical bathroom wonderland filled with enormous colorful bubbles floating everywhere, rainbow soap suds creating miniature mountains, rubber ducks of various sizes bobbing around, warm golden bathroom lighting creating sparkles on water droplets, the child laughing joyfully with arms outstretched catching bubbles, splashy playful atmosphere with iridescent bubble reflections, steamy warm magical bathroom scene, NO TEXT NO LETTERS in image, Ice Age and Shrek style 3D CGI animation, ultra high detail render quality, portrait composition",
+    "funFactBg": "A beautiful bathroom-themed decorative background with colorful floating bubbles of various sizes, cute rubber ducks, soap bars, water droplets, bath toys, starfish, and splash elements arranged in an artistic floating pattern, soft pastel blue and warm bubbly pink color palette with iridescent bubble bokeh lights, magical clean sparkly bathroom atmosphere, NO TEXT NO LETTERS in image, 3D CGI render, artistic decorative background style, ultra high detail",
+    "senderNoteBg": "A warm cozy bathroom corner with soft golden evening light, a small shelf with neatly folded fluffy towels and a cute rubber duck, a steamy window showing stars outside, a small stool with a storybook and bath crayons, warm tiles with playful patterns, a fluffy bath mat, gentle steam creating dreamy atmosphere, peaceful bedtime-bath-time intimate setting, NO TEXT NO LETTERS in image, 3D CGI render, intimate personal setting",
+    "backCover": "A beautiful dreamy bathroom scene at night with soft blue moonlight streaming through a frosted window, thousands of iridescent bubbles floating peacefully through the warm air catching moonlight, a single rubber duck floating serenely in calm water reflecting starlight, peaceful sleepy end-of-bathtime atmosphere with gentle warm mist, soft pastel blue and lavender tones, NO TEXT NO LETTERS in image, 3D CGI render, movie ending atmosphere, cinematic composition"
+  }
 }

@@ -133,7 +133,7 @@ function createImageGenerator() {
 // Tum gorevler: PromptArchitect + SceneGenerator + QualityValidator
 // ============================================================
 async function generateBookWithProgress(options) {
-  const { bookId, childPhotoPath, childName, childGender, childAge } = options;
+  const { bookId, childPhotoPath, childName, childGender, childAge, extraPhotoPaths } = options;
 
   // Cikti klasoru
   const timestamp = new Date().toISOString().slice(0, 10);
@@ -156,6 +156,7 @@ async function generateBookWithProgress(options) {
     childAge,
     outputDir,
     dirName,
+    extraPhotoPaths: extraPhotoPaths || [],
   });
 }
 
@@ -240,6 +241,7 @@ const server = http.createServer(async (req, res) => {
             const book = JSON.parse(fs.readFileSync(bp, "utf-8"));
             books.push({
               id: book.id,
+              category: book.category || "hikaye",
               title: book.title,
               description: book.description,
               ageRange: book.ageRange || book.ageGroup,
@@ -248,6 +250,8 @@ const server = http.createServer(async (req, res) => {
               sceneCount: book.scenes?.length || 0,
               icon: book.theme?.icon || "📖",
               primaryColor: book.theme?.primaryColor || "#6366f1",
+              occasion: book.occasion || null,
+              targetAudience: book.targetAudience || "cocuk",
             });
           }
         }
@@ -349,27 +353,55 @@ const server = http.createServer(async (req, res) => {
       const body = await collectBody(req);
       const parts = parseMultipart(body, boundary);
 
-      for (const field of ["bookId", "childName", "childGender", "childPhoto"]) {
-        if (!parts[field]) {
-          console.log(`  [server] Eksik alan: ${field}`);
-          return sendJson(res, 400, { error: `Eksik alan: ${field}` });
+      // Kitap bilgisini yukle (kategori kontrolu icin)
+      const storiesDir = path.join(__dirname, "stories");
+      const bookCheckResult = validateBookId(parts.bookId, storiesDir);
+      if (!bookCheckResult.valid) return sendJson(res, 400, { error: bookCheckResult.error });
+
+      const bookMeta = JSON.parse(fs.readFileSync(path.join(storiesDir, parts.bookId, "book.json"), "utf-8"));
+      const isAdultBook = bookMeta.category === "ozel-gunler";
+
+      // Zorunlu alan kontrolu (kategoriye gore)
+      if (isAdultBook) {
+        // Ozel gunler: recipientName ve foto gerekli, gender/age opsiyonel
+        for (const field of ["bookId", "childPhoto"]) {
+          if (!parts[field]) {
+            console.log(`  [server] Eksik alan: ${field}`);
+            return sendJson(res, 400, { error: `Eksik alan: ${field}` });
+          }
+        }
+        const recipientName = parts.recipientName || parts.childName;
+        if (!recipientName) {
+          return sendJson(res, 400, { error: "Eksik alan: recipientName veya childName" });
+        }
+        // recipientName'i childName olarak kullan (pipeline uyumlulugu)
+        parts.childName = recipientName;
+        parts.childGender = parts.childGender || "erkek";
+        parts.childAge = parts.childAge || "25";
+      } else {
+        // Cocuk kitaplari: eski zorunlu alanlar
+        for (const field of ["bookId", "childName", "childGender", "childPhoto"]) {
+          if (!parts[field]) {
+            console.log(`  [server] Eksik alan: ${field}`);
+            return sendJson(res, 400, { error: `Eksik alan: ${field}` });
+          }
         }
       }
 
       // Girdi dogrulama (validation modulu)
-      const storiesDir = path.join(__dirname, "stories");
       const checks = [
-        validateBookId(parts.bookId, storiesDir),
         validateChildName(parts.childName),
-        validateGender(parts.childGender),
-        validateAge(parts.childAge),
         validatePhotoExt(parts.childPhoto.filename),
       ];
+      if (!isAdultBook) {
+        checks.push(validateGender(parts.childGender));
+        checks.push(validateAge(parts.childAge));
+      }
       for (const check of checks) {
         if (!check.valid) return sendJson(res, 400, { error: check.error });
       }
 
-      console.log(`  [server] Kitap: ${parts.bookId}, Cocuk: ${parts.childName}, Cinsiyet: ${parts.childGender}`);
+      console.log(`  [server] Kitap: ${parts.bookId}, Kategori: ${bookMeta.category || 'hikaye'}, Isim: ${parts.childName}`);
 
       // Fotoyu kaydet
       fs.mkdirSync(UPLOADS_DIR, { recursive: true });
@@ -378,6 +410,20 @@ const server = http.createServer(async (req, res) => {
       const photoPath = path.join(UPLOADS_DIR, photoName);
       fs.writeFileSync(photoPath, parts.childPhoto.data);
       console.log(`  [server] Foto kaydedildi: ${photoPath}`);
+
+      // Ek fotograflari kaydet
+      const extraPhotoPaths = [];
+      for (let i = 1; i <= 4; i++) {
+        const key = 'extraPhoto_' + i;
+        if (parts[key] && parts[key].data) {
+          const extraExt = path.extname(parts[key].filename) || ".jpg";
+          const extraName = `${Date.now()}_extra${i}${extraExt}`;
+          const extraPath = path.join(UPLOADS_DIR, extraName);
+          fs.writeFileSync(extraPath, parts[key].data);
+          extraPhotoPaths.push(extraPath);
+          console.log(`  [server] Ek foto ${i} kaydedildi: ${extraPath}`);
+        }
+      }
 
       // Uretimi arka planda baslat
       console.log("  [server] Uretim baslatiliyor...");
@@ -389,7 +435,17 @@ const server = http.createServer(async (req, res) => {
         childPhotoPath: photoPath,
         childName: parts.childName,
         childGender: parts.childGender,
-        childAge: parts.childAge || "6",
+        childAge: parts.childAge || (isAdultBook ? "25" : "6"),
+        extraPhotoPaths,
+        // Ozel gunler icin ek alanlar
+        recipientName: parts.recipientName || null,
+        recipientNickname: parts.recipientNickname || null,
+        senderName: parts.senderName || null,
+        senderGender: parts.senderGender || null,
+        customMessage: parts.customMessage || null,
+        sharedActivity: parts.sharedActivity || null,
+        recipientHobby: parts.recipientHobby || null,
+        specialMemory: parts.specialMemory || null,
       }).catch((err) => {
         console.error("  [server] Uretim hatasi:", err.message);
         sendSSE({ type: "error", message: `Kritik hata: ${err.message}` });
@@ -401,6 +457,10 @@ const server = http.createServer(async (req, res) => {
           if (fs.existsSync(photoPath)) fs.unlinkSync(photoPath);
         } catch (cleanupErr) {
           console.warn("  [server] Foto temizleme hatasi:", cleanupErr.message);
+        }
+        // Ek fotograflari temizle
+        for (const ep of (extraPhotoPaths || [])) {
+          try { if (fs.existsSync(ep)) fs.unlinkSync(ep); } catch(e) {}
         }
       });
 
@@ -469,6 +529,149 @@ const server = http.createServer(async (req, res) => {
         });
       } catch (err) {
         console.error("  [server] Rerender hatasi:", err.message);
+        return sendJson(res, 500, { error: err.message });
+      }
+    }
+
+    // Sahne gorselini yeniden uret (AI illustration regeneration)
+    if (url.pathname === "/api/regenerate-scene" && req.method === "POST") {
+      console.log("  [server] POST /api/regenerate-scene");
+
+      try {
+        const body = await collectBody(req);
+        const data = JSON.parse(body.toString("utf-8"));
+        const { outputDir: relDir, sceneNumber, bookId, title, text } = data;
+
+        if (!relDir || !sceneNumber || !bookId) {
+          return sendJson(res, 400, { error: "outputDir, sceneNumber ve bookId gerekli" });
+        }
+
+        const pathCheck = sanitizePath(OUTPUT_DIR, relDir);
+        if (!pathCheck.safe) return sendJson(res, 403, { error: pathCheck.error });
+        const absDir = pathCheck.resolved;
+
+        const padNum = String(sceneNumber).padStart(2, "0");
+        const illPath = path.join(absDir, `scene-${padNum}-illustration.png`);
+        const finalPath = path.join(absDir, `scene-${padNum}-final.png`);
+
+        // Kitap verisini yukle
+        const bookIdCheck = validateBookId(bookId);
+        if (!bookIdCheck.valid) return sendJson(res, 400, { error: bookIdCheck.error });
+        const bookPath = path.join(__dirname, "stories", bookId, "book.json");
+        if (!fs.existsSync(bookPath)) {
+          return sendJson(res, 404, { error: "Kitap bulunamadi" });
+        }
+        const bookData = JSON.parse(fs.readFileSync(bookPath, "utf-8"));
+        const scene = bookData.scenes.find(s => s.sceneNumber === parseInt(sceneNumber));
+        if (!scene) {
+          return sendJson(res, 404, { error: "Sahne bulunamadi" });
+        }
+
+        // Meta bilgilerini oku (cocuk adi, cinsiyet, yas)
+        let childName = "Kahraman";
+        let childGender = "erkek";
+        let childAge = "6";
+        const metaPath = path.join(absDir, "meta.json");
+        if (fs.existsSync(metaPath)) {
+          try {
+            const meta = JSON.parse(fs.readFileSync(metaPath, "utf-8"));
+            childName = meta.childName || childName;
+            childGender = meta.childGender || childGender;
+            childAge = meta.childAge || childAge;
+          } catch(e) {
+            console.warn("  [server] Meta okunamadi:", e.message);
+          }
+        }
+
+        // Prompt olustur
+        const { PromptArchitect, SceneGenerator } = require("./agents");
+        const childInfo = { name: childName, gender: childGender, age: childAge };
+        const promptArchitect = new PromptArchitect(bookData, childInfo);
+
+        const profilePath = path.join(absDir, "character-profile.png");
+        const hasCharacterProfile = fs.existsSync(profilePath);
+        // Kiyafet profili varsa kullan
+        const outfitId = scene.outfitId;
+        let outfitProfilePath = null;
+        let hasOutfitProfile = false;
+        if (outfitId) {
+          const possibleOutfitPath = path.join(absDir, `outfit-${outfitId}.png`);
+          if (fs.existsSync(possibleOutfitPath)) {
+            outfitProfilePath = possibleOutfitPath;
+            hasOutfitProfile = true;
+          }
+        }
+
+        const promptOptions = {
+          hasCharacterProfile: !hasOutfitProfile && hasCharacterProfile,
+          hasOutfitProfile,
+          hasPreviousScene: false,
+        };
+        const scenePrompt = promptArchitect.buildScenePrompt(scene, promptOptions);
+
+        // Referans gorselleri
+        const referenceImages = [];
+        if (hasOutfitProfile) {
+          referenceImages.push(outfitProfilePath);
+        } else if (hasCharacterProfile) {
+          referenceImages.push(profilePath);
+        }
+
+        // Gorsel uret
+        const imageGen = createImageGenerator();
+        const sceneGen = new SceneGenerator(imageGen);
+
+        // Cocuk fotografini bul
+        const childPhotoFiles = fs.readdirSync(absDir).filter(f => f.startsWith("child-photo"));
+        if (childPhotoFiles.length > 0) {
+          await sceneGen.prepareChildPhoto(path.join(absDir, childPhotoFiles[0]));
+        } else {
+          // uploads dizininde arama yap (eski format uyumlulugu)
+          const uploadsChildPhotos = fs.existsSync(UPLOADS_DIR)
+            ? fs.readdirSync(UPLOADS_DIR).filter(f => f.match(/\.(jpg|jpeg|png|webp)$/i))
+            : [];
+          if (uploadsChildPhotos.length > 0) {
+            await sceneGen.prepareChildPhoto(path.join(UPLOADS_DIR, uploadsChildPhotos[uploadsChildPhotos.length - 1]));
+          } else {
+            return sendJson(res, 400, { error: "Cocuk fotografi bulunamadi. Yeniden uretim icin cocuk fotografi gerekli." });
+          }
+        }
+
+        console.log(`  [server] Sahne ${sceneNumber} gorseli yeniden uretiliyor...`);
+        const result = await sceneGen.generateScene({
+          prompt: scenePrompt,
+          referenceImages,
+          maxRetries: 2,
+        });
+
+        if (result.success && result.buffer) {
+          fs.writeFileSync(illPath, result.buffer);
+          console.log(`  [server] Sahne ${sceneNumber} gorseli yeniden uretildi`);
+
+          // Metin overlay uygula
+          const theme = bookData.theme || {};
+          const ageGroup = bookData.ageGroup || "3-6";
+          const canvasRenderer = new CanvasTextRenderer();
+          await canvasRenderer.renderTextOnImage(illPath, {
+            sceneNumber: parseInt(sceneNumber),
+            title: title || scene.title,
+            text: text || scene.text,
+            theme,
+            ageGroup,
+            pageNumber: 3 + parseInt(sceneNumber),
+            totalScenes: bookData.scenes.length,
+            outputPath: finalPath,
+          });
+
+          return sendJson(res, 200, {
+            success: true,
+            imagePath: `/output/${relDir}/scene-${padNum}-final.png?t=${Date.now()}`,
+          });
+        } else {
+          return sendJson(res, 500, { error: result.error || "Gorsel uretilemedi" });
+        }
+      } catch (err) {
+        console.error("  [server] Regenerate hatasi:", err.message);
         return sendJson(res, 500, { error: err.message });
       }
     }
@@ -543,6 +746,165 @@ const server = http.createServer(async (req, res) => {
         });
       } catch (err) {
         console.error("  [server] PDF rebuild hatasi:", err.message);
+        return sendJson(res, 500, { error: err.message });
+      }
+    }
+
+    // Ozel sayfalari yeniden uret (test icin)
+    if (url.pathname === "/api/generate-special-pages" && req.method === "POST") {
+      console.log("  [server] POST /api/generate-special-pages");
+
+      const body = await collectBody(req);
+      const data = JSON.parse(body.toString());
+      const { outputDir: relDir, bookId, childName, senderName, customMessage } = data;
+
+      if (!relDir || !bookId) {
+        return sendJson(res, 400, { error: "outputDir ve bookId gerekli" });
+      }
+
+      const pathCheck = sanitizePath(OUTPUT_DIR, relDir);
+      if (!pathCheck.safe) return sendJson(res, 403, { error: pathCheck.error });
+      const absDir = pathCheck.resolved;
+
+      // SSE ile progress gonder
+      sendSSE({ type: "step", message: "Özel sayfalar üretimi başlıyor..." });
+
+      const bookPath = path.join(__dirname, "stories", bookId, "book.json");
+      if (!fs.existsSync(bookPath)) return sendJson(res, 404, { error: "Kitap bulunamadi" });
+      const bookData = JSON.parse(fs.readFileSync(bookPath, "utf-8"));
+
+      try {
+        const { PromptArchitect, SceneGenerator } = require("./agents");
+        const CoverPromptArchitect = require("./agents/cover-prompt-architect");
+        const TextPageRenderer2 = require("./text-page-renderer");
+
+        const childInfo = {
+          name: childName || "Kahraman", gender: "erkek", age: "6",
+          senderName: senderName || "", customMessage: customMessage || ""
+        };
+        const theme = bookData.theme || {};
+        const textRenderer2 = new TextPageRenderer2();
+        const coverArchitect = new CoverPromptArchitect(bookData, childInfo);
+
+        const imageGen = createImageGenerator();
+        const sceneGen = new SceneGenerator(imageGen);
+
+        // Karakter profili referansi
+        const profilePath = path.join(absDir, "character-profile.png");
+        const profileRef = fs.existsSync(profilePath) ? profilePath : null;
+
+        // Cocuk fotografi
+        const childPhotos = fs.readdirSync(absDir).filter(f => f.startsWith("child-photo"));
+        const childPhotoPath = childPhotos.length > 0 ? path.join(absDir, childPhotos[0]) : null;
+        const extraPhotos = fs.readdirSync(absDir).filter(f => f.startsWith("extra-photo-")).map(f => path.join(absDir, f));
+
+        // 1. Kapak
+        sendSSE({ type: "step", message: "📖 1/5 Ön kapak üretiliyor..." });
+        console.log("  [server] Ozel: Kapak uretiliyor...");
+        const coverPrompt = coverArchitect.buildCoverPrompt({ characterDesc: bookData.characterDescription?.base || "" });
+        const coverResult = await sceneGen.generateBackground({ prompt: coverPrompt, referenceImages: profileRef ? [profileRef] : [], maxRetries: 2 });
+        if (coverResult.success) {
+          fs.writeFileSync(path.join(absDir, "cover-final.png"), coverResult.buffer);
+          sendSSE({ type: "step", message: "✅ Ön kapak tamamlandı" });
+        } else {
+          sendSSE({ type: "step", message: "⚠️ Ön kapak üretilemedi, atlanıyor..." });
+        }
+
+        // 2. Hero page (AI bg + gercek foto)
+        sendSSE({ type: "step", message: "🦸 2/5 Hikayemizin kahramanı sayfası üretiliyor..." });
+        console.log("  [server] Ozel: Hero page uretiliyor...");
+        if (bookData.specialPagePrompts?.heroPage) {
+          const heroPrompt = bookData.specialPagePrompts.heroPage + ", " + bookData.style;
+          const heroResult = await sceneGen.generateBackground({ prompt: heroPrompt, referenceImages: profileRef ? [profileRef] : [], maxRetries: 2 });
+          if (heroResult.success) {
+            const heroBgPath = path.join(absDir, "hero-page-bg.png");
+            fs.writeFileSync(heroBgPath, heroResult.buffer);
+            await textRenderer2.renderHeroPage({
+              childName: childInfo.name, childPhotoPath, extraPhotoPaths: extraPhotos,
+              theme, ageGroup: bookData.ageGroup, bookTitle: bookData.title,
+              outputPath: path.join(absDir, "hero-page.png"), backgroundImagePath: heroBgPath,
+            });
+            sendSSE({ type: "step", message: "✅ Kahraman sayfası tamamlandı (fotoğraflar yerleştirildi)" });
+          } else {
+            sendSSE({ type: "step", message: "⚠️ Kahraman sayfası AI arka plan üretilemedi" });
+          }
+        }
+
+        // 3. Arka kapak
+        sendSSE({ type: "step", message: "📕 3/5 Arka kapak üretiliyor..." });
+        console.log("  [server] Ozel: Arka kapak uretiliyor...");
+        const bcPrompt = coverArchitect.buildBackCoverPrompt();
+        const bcResult = await sceneGen.generateBackground({ prompt: bcPrompt, referenceImages: [], maxRetries: 1 });
+        if (bcResult.success) {
+          fs.writeFileSync(path.join(absDir, "back-cover.png"), bcResult.buffer);
+          sendSSE({ type: "step", message: "✅ Arka kapak tamamlandı" });
+        } else {
+          sendSSE({ type: "step", message: "⚠️ Arka kapak üretilemedi" });
+        }
+
+        // 4. Sender note
+        if (senderName || customMessage) {
+          sendSSE({ type: "step", message: "✉️ 4/5 Gönderen notu üretiliyor..." });
+          console.log("  [server] Ozel: Sender note uretiliyor...");
+          const snPrompt = coverArchitect.buildSenderNotePrompt();
+          const snResult = await sceneGen.generateBackground({ prompt: snPrompt, referenceImages: [], maxRetries: 1 });
+          if (snResult.success) {
+            fs.writeFileSync(path.join(absDir, "sender-note.png"), snResult.buffer);
+            sendSSE({ type: "step", message: "✅ Gönderen notu tamamlandı" });
+          }
+        } else {
+          sendSSE({ type: "step", message: "⏭️ 4/5 Gönderen notu atlandı (bilgi girilmemiş)" });
+        }
+
+        // 5. Fun facts
+        const funFacts = bookData.funFacts || [];
+        const placements = bookData.funFactPlacements || [];
+
+        let normalizedFacts = [];
+        if (funFacts.length > 0 && funFacts[0].fact) {
+          const grouped = {};
+          funFacts.forEach((f) => { const cat = f.category || "Bilgi"; if (!grouped[cat]) grouped[cat] = []; grouped[cat].push(f.fact); });
+          let fid = 1;
+          for (const [cat, facts] of Object.entries(grouped)) {
+            normalizedFacts.push({ id: `fact-${fid}`, title: `Biliyor muydun? ${cat === "Tarih" ? "\u{1f4dc}" : cat === "Bilim" ? "\u{1f52c}" : "\u{1f4a1}"}`, facts: facts.slice(0, 3), icon: cat === "Tarih" ? "\u{1f4dc}" : cat === "Bilim" ? "\u{1f52c}" : "\u{1f4a1}" });
+            fid++;
+          }
+        } else if (funFacts.length > 0 && funFacts[0].id) {
+          normalizedFacts = funFacts;
+        }
+
+        let normalizedPlacements = [];
+        if (placements.length > 0 && typeof placements[0] === "number") {
+          placements.forEach((afterScene, idx) => { if (idx < normalizedFacts.length) normalizedPlacements.push({ afterScene, factId: normalizedFacts[idx].id }); });
+        } else {
+          normalizedPlacements = placements;
+        }
+
+        const factMap = new Map();
+        for (const f of normalizedFacts) factMap.set(f.id, f);
+
+        sendSSE({ type: "step", message: `🧠 5/5 Biliyor muydunuz sayfaları üretiliyor (${normalizedPlacements.length} adet)...` });
+        let ffDone = 0;
+        for (const placement of normalizedPlacements) {
+          const fact = factMap.get(placement.factId);
+          if (fact) {
+            ffDone++;
+            sendSSE({ type: "step", message: `🧠 Fun Fact ${ffDone}/${normalizedPlacements.length} üretiliyor...` });
+            console.log("  [server] Ozel: FunFact " + placement.afterScene + " uretiliyor...");
+            const ffPrompt = coverArchitect.buildFunFactPagePrompt(fact);
+            const ffResult = await sceneGen.generateBackground({ prompt: ffPrompt, referenceImages: [], maxRetries: 1 });
+            if (ffResult.success) {
+              fs.writeFileSync(path.join(absDir, `funfact-after-${placement.afterScene}.png`), ffResult.buffer);
+              sendSSE({ type: "step", message: `✅ Fun Fact ${ffDone} tamamlandı` });
+            }
+          }
+        }
+
+        sendSSE({ type: "step", message: "🎉 Tüm özel sayfalar tamamlandı!" });
+        console.log("  [server] Ozel sayfalar tamamlandi!");
+        return sendJson(res, 200, { success: true, message: "Ozel sayfalar uretildi" });
+      } catch (err) {
+        console.error("  [server] Ozel sayfa hatasi:", err.message);
         return sendJson(res, 500, { error: err.message });
       }
     }

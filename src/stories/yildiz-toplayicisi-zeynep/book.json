@@ -1,7 +1,13 @@
 {
   "id": "yildiz-toplayicisi-zeynep",
+  "category": "hikaye",
   "title": "Yıldız Toplayıcısı Zeynep",
   "description": "Ankara'da yaşayan 11 yaşındaki Zeynep'in bilim tutkusu, azmi ve yaratıcılığıyla yıldızlara uzanma hikayesi. Bilim pahalı aletlerle değil, merakla yapılır!",
+  "lessons": [
+    "Hayallerin gücü",
+    "Paylaşma",
+    "Umut"
+  ],
   "ageGroup": "6-12",
   "ageRange": "6-12",
   "pageCount": 10,
@@ -26,7 +32,8 @@
       "sceneNumber": 1,
       "title": "Yıldızlara Bakan Kız",
       "text": "On bir yaşındaki Zeynep, Ankara'nın kenar mahallelerinden birinde annesiyle birlikte yaşıyordu.\nHer gece apartmanlarının damına çıkar, gökyüzündeki yıldızlara bakardı.\n\"Bir gün sizi yakından tanıyacağım\" diye fısıldardı yıldızlara.\nZeynep'in bir defteri vardı. Her gece gördüğü yıldızları ve takımyıldızlarını bu deftere çizerdi.",
-      "prompt": "An 11-year-old Turkish girl with dark hair and bright curious eyes sitting on a rooftop of an apartment building at night looking up at a magnificent starry sky, she has a notebook in her lap where she sketches constellations, city lights of Ankara visible in the background, warm magical starlight illuminating her face, dreamy atmosphere, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, CAMERA WIDE ESTABLISHING SHOT, sitting on a rooftop of an apartment building at night looking up at a magnificent starry sky, she has a notebook in her lap where she sketches constellations, city lights of Ankara visible in the background, warm magical starlight illuminating her face, dreamy atmosphere, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel deep indigo and purple night sky background with twinkling star shapes and constellation line drawings, gentle city skyline silhouette at bottom, magical dreamy atmosphere, astronomy theme, children's storybook illustration background",
       "mood": "dreamy",
       "setting": "Apartman çatısı, Ankara, gece"
@@ -35,7 +42,8 @@
       "sceneNumber": 2,
       "title": "Meraklı Öğrenci",
       "text": "Okulda fen bilgisi dersi Zeynep'in en sevdiği dersti.\nÖğretmeni Murat Bey, onun merakına hayrandı.\n\"Murat Bey, kara delikler gerçekten her şeyi yutar mı?\" diye sordu Zeynep bir gün.\n\"Işığı bile yutarlar Zeynep. Evrende hâlâ keşfedilmeyi bekleyen çok şey var.\"\nZeynep'in gözleri parladı. \"Ben de keşfetmek istiyorum!\"",
-      "prompt": "A classroom scene with an enthusiastic 11-year-old Turkish girl raising her hand eagerly to ask a question, a kind male teacher at the blackboard which shows space diagrams with planets and black holes, other students in the background, colorful science posters on walls, warm bright classroom lighting, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC CAMERA AT EYE LEVEL diagonal, A classroom scene with CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, raising her hand eagerly to ask a question, a kind male teacher at the blackboard which shows space diagrams with planets and black holes, other students in the background, colorful science posters on walls, warm bright classroom lighting, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel light blue and lavender background with chalkboard elements, planet and star doodles, science equation shapes, bright classroom atmosphere, learning and curiosity theme, children's storybook illustration background",
       "mood": "curious",
       "setting": "Okul sınıfı, fen bilgisi dersi"
@@ -44,7 +52,8 @@
       "sceneNumber": 3,
       "title": "Bilim Yarışması",
       "text": "Bir gün Murat Bey sınıfa heyecanlı bir haber verdi:\n\"TÜBİTAK bu yıl ortaokul öğrencileri için bir bilim yarışması düzenliyor. Konu: 'Evrenin Sırları'. Katılmak isteyen var mı?\"\nZeynep'in eli hemen kalktı. \"Ben katılmak istiyorum!\"\nMurat Bey gülümsedi. \"Biliyordum Zeynep. Sana güveniyorum.\"",
-      "prompt": "A classroom scene with a happy male teacher announcing exciting news while holding up a colorful science competition poster, an eager Turkish girl with hand raised high in the front row, a big smile on her face, other students looking interested, bright cheerful classroom with science decorations, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC CAMERA FROM THE SIDE dynamic three-quarter angle, A classroom scene with a happy male teacher announcing exciting news while holding up a colorful science competition poster, CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, with hand raised high in the front row, a big smile on her face, other students looking interested, bright cheerful classroom with science decorations, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel warm yellow and indigo background with competition trophy and certificate silhouettes, star burst shapes, excitement and opportunity atmosphere, achievement theme, children's storybook illustration background",
       "mood": "excited",
       "setting": "Okul sınıfı"
@@ -53,7 +62,8 @@
       "sceneNumber": 4,
       "title": "Teleskop Sorunu",
       "text": "Haftalarca çalıştı. Kütüphaneden astronomi kitapları aldı, internette araştırma yaptı.\nAma bir sorun vardı: Projesini tamamlamak için bir teleskopa ihtiyacı vardı ve annesiyle birlikte buna paraları yetmiyordu.\n\"Belki vazgeçmeliyim\" dedi Zeynep bir akşam üzgünce.\nAnnesi onun saçlarını okşadı. \"Yavrum, her zaman bir yol vardır. Yarın öğretmeninle konuş.\"",
-      "prompt": "A sad 11-year-old Turkish girl sitting at a small desk in a modest room surrounded by astronomy books and papers, her mother comforting her by stroking her hair, a piggy bank on the desk showing it is nearly empty, a picture of a telescope on the computer screen, evening lamp light creating warm shadows, emotional tender moment between mother and daughter, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, CAMERA HIGH ANGLE from above, sitting at a small desk in a modest room surrounded by astronomy books and papers looking sad, her mother comforting her by stroking her hair, a piggy bank on the desk showing it is nearly empty, a picture of a telescope on the computer screen, evening lamp light creating warm shadows, emotional tender moment between mother and daughter, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel warm amber and soft blue background with scattered book and paper shapes, gentle lamp light glow, modest room atmosphere, tender emotional moment theme, hope in difficulty, children's storybook illustration background",
       "mood": "sad",
       "setting": "Zeynep'in odası, akşam"
@@ -62,7 +72,8 @@
       "sceneNumber": 5,
       "title": "Merakla Yapılır",
       "text": "Ertesi gün Zeynep durumu Murat Bey'e anlattı.\nMurat Bey düşündü ve kütüphaneden bir kitap getirdi:\n\"Evde Yapılabilecek Bilim Deneyleri\"\n\"Zeynep, bilim pahalı aletlerle değil, merakla yapılır. Bu kitapta basit malzemelerle teleskop yapımı bile var!\"\nZeynep'in gözleri umutla parladı. \"Gerçekten mi? Kendi teleskobumu yapabilir miyim?\"",
-      "prompt": "A kind male teacher showing a book to an 11-year-old Turkish girl in a school library, the book cover shows DIY science experiments including a homemade telescope, the girl's eyes light up with hope and excitement, bookshelves full of colorful books in the background, warm library lighting, inspiring mentor moment, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC CAMERA CLOSE-UP on face, A kind male teacher showing a book to CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, in a school library, the book cover shows DIY science experiments including a homemade telescope, the girl's eyes light up with hope and excitement, bookshelves full of colorful books in the background, warm library lighting, inspiring mentor moment, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel green and warm gold background with open book shapes and light bulb idea icons, library bookshelf silhouettes, warm knowledge and inspiration atmosphere, mentor and student theme, children's storybook illustration background",
       "mood": "hopeful",
       "setting": "Okul kütüphanesi"
@@ -71,7 +82,8 @@
       "sceneNumber": 6,
       "title": "El Yapımı Teleskop",
       "text": "Zeynep, kitaptaki talimatları izleyerek karton tüpler, büyüteç camları ve bant kullanarak kendi teleskobunu yaptı.\nMükemmel değildi ama işe yarıyordu!\nProjesini \"Yıldız Toplayıcısı\" olarak adlandırdı. El yapımı teleskobuyla gökyüzü gözlemleri yaptı, yıldız haritaları çizdi ve her şeyi raporuna yazdı.\n\"Bilim gerçekten merakla başlıyormuş\" diye gülümsedi Zeynep.",
-      "prompt": "An 11-year-old Turkish girl proudly assembling a homemade telescope from cardboard tubes and magnifying lenses at a messy crafting table, finished star charts and drawings spread around her, glue tape and scissors visible, a completed project report beside her, determined and proud expression, creative workspace with warm lighting, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, CAMERA FROM BEHIND over the shoulder, proudly assembling a homemade telescope from cardboard tubes and magnifying lenses at a messy crafting table, finished star charts and drawings spread around her, glue tape and scissors visible, a completed project report beside her, determined and proud expression, creative workspace with warm lighting, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel warm orange and indigo background with DIY crafting elements like tubes scissors and tape shapes, star chart drawings, creative making atmosphere, ingenuity and determination theme, children's storybook illustration background",
       "mood": "determined",
       "setting": "Zeynep'in çalışma masası"
@@ -80,7 +92,8 @@
       "sceneNumber": 7,
       "title": "Finale Seçilme",
       "text": "Üç hafta sonra mektup geldi. Zeynep'in elleri titreyerek zarfı açtı.\n\"Sevgili Zeynep, projeniz TÜBİTAK Bilim Yarışması finaline seçilmiştir. Tebrikler!\"\nZeynep mektubu okuyunca sevinçten ağlamaya başladı. Annesi de ağlıyordu.\n\"Başardın yavrum!\" dedi annesi onu sıkıca sarılarak.\n\"Hayır anne, birlikte başardık!\"",
-      "prompt": "An 11-year-old Turkish girl and her mother hugging each other tightly and crying tears of joy, the girl holding an official letter, a torn envelope on the floor, in their modest but warm living room, golden sunlight streaming through the window, deeply emotional celebration moment, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, CAMERA LOW ANGLE, and her mother hugging each other tightly and crying tears of joy, the girl holding an official letter, a torn envelope on the floor, in their modest but warm living room, golden sunlight streaming through the window, deeply emotional celebration moment, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel warm gold and pink background with confetti shapes and letter envelope silhouettes, joyful tears and celebration atmosphere, warm emotional glow, achievement and love theme, children's storybook illustration background",
       "mood": "emotional",
       "setting": "Zeynep'in evi, oturma odası"
@@ -89,7 +102,8 @@
       "sceneNumber": 8,
       "title": "Büyük Sunum",
       "text": "Sunum günü geldi. Büyük bir konferans salonu, jüri üyeleri ve onlarca proje.\nZeynep çok heyecanlıydı. Elleri titriyordu.\n\"Ya beğenmezlerse? Ya gülerler el yapımı teleskobuma?\" diye düşündü.\nAma sunuma başlayınca her şey değişti. Zeynep yıldızlardan, galaksilerden ve hayallerinden öyle bir tutkuyla bahsetti ki salon sessizliğe büründü.\nJüri üyeleri hayranlıkla dinliyordu.",
-      "prompt": "An 11-year-old Turkish girl presenting her science project on a stage in a large conference hall, she holds her homemade cardboard telescope while pointing at a projected star map behind her, jury members at a table watching with impressed expressions, audience of other students and parents in seats, professional stage lighting, confident passionate presentation moment, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, CAMERA WIDE ESTABLISHING SHOT, presenting her science project on a stage in a large conference hall, she holds her homemade cardboard telescope while pointing at a projected star map behind her, jury members at a table watching with impressed expressions, audience of other students and parents in seats, professional stage lighting, confident passionate presentation moment, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel deep blue and spotlight gold background with stage curtain shapes, presentation screen silhouette, audience seating outlines, professional conference atmosphere, confidence and passion theme, children's storybook illustration background",
       "mood": "confident",
       "setting": "TÜBİTAK konferans salonu, sahne"
@@ -98,7 +112,8 @@
       "sceneNumber": 9,
       "title": "Ödül Anı",
       "text": "Sonuçlar açıklandığında Zeynep kulaklarına inanamadı:\n\"'En Yaratıcı Çözüm' ödülü: Zeynep Yılmaz - Yıldız Toplayıcısı projesi!\"\nJüri başkanı sahneye çağırdı: \"Bu genç bilim insanı bize gösterdi ki, bilim yapmak için büyük laboratuvarlar gerekmez. Merak, azim ve yaratıcılık yeterlidir!\"\nZeynep ödülünü alırken gözlerinden yaşlar süzülüyordu. Seyirciler arasındaki annesi ve Murat Bey ayakta alkışlıyordu.",
-      "prompt": "An 11-year-old Turkish girl on stage receiving a crystal trophy award, tears of joy streaming down her face, a big smile, the jury chairman shaking her hand, a large screen behind showing her project name, her mother and teacher standing and applauding enthusiastically in the audience, confetti falling, emotional award ceremony moment, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, CAMERA FROM FRONT LOW ANGLE, on stage receiving a crystal trophy award, tears of joy streaming down her face, a big smile, the jury chairman shaking her hand, a large screen behind showing her project name, her mother and teacher standing and applauding enthusiastically in the audience, confetti falling, emotional award ceremony moment, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel gold and indigo background with trophy and medal shapes, confetti and celebration elements, sparkling spotlight effects, triumph and recognition atmosphere, award ceremony theme, children's storybook illustration background",
       "mood": "triumphant",
       "setting": "TÜBİTAK ödül töreni sahnesi"
@@ -107,7 +122,8 @@
       "sceneNumber": 10,
       "title": "Yıldızlara Doğru",
       "text": "O gece Zeynep yine damda oturuyordu. Ama bu sefer yanında gerçek bir teleskop vardı - yarışmanın ödülü olarak verilmişti.\nTeleskobu gökyüzüne doğrulttu. Yıldızlar hiç bu kadar yakın görünmemişti.\n\"Merhaba yıldızlar\" dedi Zeynep gülümseyerek. \"Artık sizi daha yakından tanıyorum. Ama bu sadece başlangıç.\"\nDefterine son bir not düştü: \"Hayaller uzak görünebilir ama onlara doğru adım attığında yakınlaşırlar.\"\nYıldızlar bekleyin. Geliyorum.",
-      "prompt": "An 11-year-old Turkish girl sitting on her rooftop at night looking through a real professional telescope at a spectacular starry sky with the Milky Way visible, her old notebook beside her, a crystal trophy gleaming nearby, city lights of Ankara below, her face illuminated with wonder and determination, magical starlit atmosphere with shooting stars, 3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail, Disney Pixar render quality",
+      "outfitId": "casual",
+      "prompt": "CHARACTER_DESC wearing a deep purple hoodie with silver star patterns, dark blue jeans, and white canvas sneakers with star doodles, CAMERA TRACKING from behind, sitting on her rooftop at night looking through a real professional telescope at a spectacular starry sky with the Milky Way visible, her old notebook beside her, a crystal trophy gleaming nearby, city lights of Ankara below, her face illuminated with wonder and determination, magical starlit atmosphere with shooting stars, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, cinematic composition, Disney Pixar render quality",
       "textPagePrompt": "Soft pastel deep cosmic purple and indigo background with magnificent star field, Milky Way swirl, telescope silhouette, shooting star streaks, magical infinite universe atmosphere, dreams and future theme, children's storybook illustration background",
       "mood": "inspiring",
       "setting": "Apartman çatısı, yıldızlı gece"
@@ -118,9 +134,11 @@
       "id": "fact-1",
       "title": "Biliyor muydun? ⭐",
       "facts": [
-        "Samanyolu galaksimizde tahminen 100 ila 400 milyar yıldız bulunmaktadır. Bu, Dünya'daki tüm kumsallarındaki kum tanelerinden daha fazladır!",
-        "Güneş'e en yakın yıldız Proxima Centauri'dir ve bizden 4.24 ışık yılı uzaklıktadır. Işık hızıyla gitsek bile oraya ulaşmamız 4 yıldan fazla sürerdi!",
-        "Uzayda ses duyulmaz çünkü ses dalgalarının yayılması için havaya ihtiyacı vardır. Uzay boşluğunda hava olmadığı için tamamen sessizdir!"
+        "Gökyüzünde çıplak gözle yaklaşık 5000 yıldız görülebilir!",
+        "En yakın yıldız Güneş tir ve bize 150 milyon km uzaktadır!",
+        "Samanyolu galaksisinde 200 milyar yıldız vardır!",
+        "Bazı yıldızların ışığı bize milyonlarca yılda ulaşır!",
+        "Kuzey Yıldızı yüzyıllardır denizcilere yön gösterir!"
       ],
       "icon": "⭐"
     },
@@ -128,14 +146,30 @@
       "id": "fact-2",
       "title": "Biliyor muydun? 🔭",
       "facts": [
-        "TÜBİTAK, Türkiye'nin en büyük bilimsel araştırma kurumudur ve her yıl binlerce genç bilim insanını desteklemektedir. Sen de bir gün katılabilirsin!",
-        "İlk teleskop 1608 yılında Hollandalı Hans Lippershey tarafından icat edilmiştir. Galileo Galilei ise 1609'da kendi teleskobunu yaparak gökyüzünü incelemiştir."
+        "Bir dilek yıldızı aslında atmosfere giren küçük bir taştır!",
+        "Güneş aslında sarı değil beyaz bir yıldızdır!",
+        "Evrendeki yıldız sayısı dünyadaki kum tanelerinden fazladır!",
+        "Yıldızlar milyarlarca yıl yaşayabilir!",
+        "Ay kendi ışığını üretmez Güneş ışığını yansıtır!"
       ],
       "icon": "🔭"
     }
   ],
   "funFactPlacements": [
-    { "afterScene": 3, "factId": "fact-1" },
-    { "afterScene": 7, "factId": "fact-2" }
-  ]
+    {
+      "afterScene": 3,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 7,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "CHARACTER_DESC reaching up to catch a glowing golden star from a deep purple night sky filled with thousands of stars, standing on a hilltop with a magical glowing jar of collected stars beside them, shooting stars streaking across the sky, warm magical golden light, Ice Age and Shrek style 3D CGI animation, enchanting fantasy poster composition, ultra high detail render quality",
+  "specialPagePrompts": {
+    "heroPage": "CHARACTER_DESC standing on a magical hilltop under a breathtaking starry night sky, reaching up with both hands as if collecting glowing stars that float down like gentle snowflakes, a magnificent crescent moon casting silver-blue light, the child wearing a flowing magical cloak with star patterns that shimmer and glow, a small woven basket of collected glowing stars beside them, magical stardust and cosmic sparkles swirling through the night air, enchanting celestial atmosphere, NO TEXT NO LETTERS in image, Ice Age and Shrek style 3D CGI animation, ultra high detail render quality, portrait composition",
+    "funFactBg": "A beautiful night sky and stars-themed decorative background with glowing stars of various sizes, crescent moon shapes, constellation line patterns, shooting stars, cosmic dust swirls, and celestial elements arranged in artistic floating patterns, deep midnight blue and magical purple color palette with glowing golden star bokeh lights, enchanting mystical night sky atmosphere with aurora-like shimmers, NO TEXT NO LETTERS in image, 3D CGI render, artistic decorative background style, ultra high detail",
+    "senderNoteBg": "A warm cozy attic room with a skylight window showing a magnificent starry night sky, soft blue-silver moonlight mixing with warm golden lamplight, a beautiful desk with an open heartfelt letter and a star-gazing journal, a small jar of glowing captured stars on the desk, constellation maps pinned to the wall, a telescope pointed at the skylight, a cozy reading nook with star-patterned cushions, magical nighttime intimate atmosphere with gentle stardust bokeh, NO TEXT NO LETTERS in image, 3D CGI render, intimate personal setting",
+    "backCover": "A breathtaking panoramic night sky scene with the silhouette of a child standing on a hilltop holding a small glowing lantern filled with stars, the vast cosmos stretching above with the Milky Way in full glory, countless stars twinkling in deep midnight blue and purple sky, a magnificent crescent moon low on the horizon, shooting stars streaking across the sky, peaceful magical end-of-night atmosphere with the first hints of dawn on the distant horizon, NO TEXT NO LETTERS in image, 3D CGI render, movie ending atmosphere, cinematic ultra-wide composition"
+  }
 }

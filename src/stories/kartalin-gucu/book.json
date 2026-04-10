@@ -1,0 +1,198 @@
+{
+  "id": "kartalin-gucu",
+  "category": "hikaye",
+  "title": "Kara Kartal'in Kanatlari",
+  "description": "Gizemli bir gece baslar her sey. Bir kartal tuyu, bir cocugun kaderini degistirir. Parktan okul takimina, okul takimindan Tupras Stadyumu'na uzanan cesaret ve azim dolu bir masal.",
+  "lessons": [
+    "Disiplin",
+    "Takım çalışması",
+    "Erken kalkanın gücü",
+    "Cesaretle hareket etme"
+  ],
+  "ageGroup": "6-12",
+  "ageRange": "6-12",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": "5 kiyafet grubu: 1-pijama, 2/3-gunluk spor, 4/5-hoodie, 6/7/8/9-park antrenman, 10/11/12/13/14-profesyonel Besiktas formasi (siyah-beyaz, isim+numara)"
+  },
+  "theme": {
+    "primaryColor": "#212121",
+    "secondaryColor": "#FAFAFA",
+    "accentColor": "#F5F5F5",
+    "icon": "🦅"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas",
+      "title": "Gece ve Kartal",
+      "text": "{CHILD_NAME} yatıyordu ama uyuyamıyordu. Yorganını sıkıyor, sağa sola dönüyordu.\nBir ses duydu. Pencereye koşup baktı.\nGökyüzünde koskocaman bir kartal süzülüyordu. Kanatları ayın ışığında parlıyordu.\nKartal bir an {CHILD_NAME}'e baktı gibi oldu. Sonra karanlığa karıştı.\n{CHILD_NAME}'in kalbi hızla atıyordu. Bu gece sıradan bir gece değildi.",
+      "prompt": "CHARACTER_DESC wearing cozy black pajamas with tiny white eagle prints and fluffy black slippers, CAMERA LOW ANGLE looking up at the child from below the windowsill, standing on tiptoes at a large bedroom window at night pressing both hands against the cold glass, gazing up at the dark sky with wide amazed eyes and mouth slightly open in wonder, outside the window a magnificent large black eagle with outstretched wings soaring gracefully across a deep navy-blue starlit night sky with a huge bright full moon behind the eagle creating a dramatic silhouette, silver moonlight flooding through the window casting pale blue-white light across the child's face and bedroom, the bedroom behind is dark and cozy with rumpled black and white bedsheets on the bed showing the child just jumped out of bed, a small Besiktas pennant with eagle emblem on the wall barely visible in the moonlight, curtains billowing slightly from a cracked-open window, mysterious magical nighttime atmosphere with tiny stars twinkling in the deep blue sky, the eagle's feathers catching moonlight with iridescent silver-black shimmer, Ice Age and Shrek style 3D CGI animation with dramatic moonlit cinematography, volumetric moonbeams through window, hyper-detailed eagle feather textures, mystical nocturnal color palette of deep blues and silvers, ultra high detail render quality",
+      "mood": "mystical",
+      "setting": "Yatak odasi penceresi, ayisiginda gece"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "park-casual",
+      "title": "Sabah Sessizligi",
+      "text": "Sabah çok erken uyandı {CHILD_NAME}. Kimse yoktu sokaklarda.\nTopunu aldı, sahaya gitti. Güneş henüz doğuyordu. Saha bomboştu.\n{CHILD_NAME} tek başına top sektirır, koşar, şut çekerken güneş yavaşça yükseldi.\nO an dünya sadece {CHILD_NAME}'e aitti.",
+      "prompt": "CHARACTER_DESC wearing a casual white t-shirt with a small black eagle silhouette logo on the chest and comfortable grey jogger pants with clean white sneakers, CAMERA WIDE ESTABLISHING SHOT showing the vast empty field, completely alone on a quiet empty neighborhood park football field at dawn, bouncing a black and white football on the right knee in a keepy-uppy juggling pose with focused concentration, the enormous orange-pink sunrise just breaking over the horizon behind rows of dark silhouetted trees at the edge of the field, long dramatic shadows stretching across the dewy glistening green grass from the low sun angle, morning mist hovering low across the empty pitch creating a dreamy ethereal ground fog layer, the white goalposts standing silent and empty in the background with thin cobwebs glistening with morning dew on the net, no other people anywhere in sight emphasizing the peaceful solitude, tiny birds on the crossbar of the far goal, warm golden-orange sunrise light painting everything in amber tones contrasting with cool blue shadows, the child looking peaceful and content in complete solitude with a gentle focused expression, Ice Age and Shrek style 3D CGI animation with spectacular sunrise cinematography, volumetric morning mist and god rays from the rising sun, dewy grass detail with light refraction, serene contemplative atmosphere, ultra high detail render quality",
+      "mood": "serene",
+      "setting": "Bos park sahasi, gun dogumu"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "park-casual",
+      "title": "Sokak Macina Katilmak",
+      "text": "Bir gün sahaya geldiğinde bir grup çocuk maç yapıyordu.\n{CHILD_NAME} kenarda durdu. Bir an düşündü. Sonra cesurca \"Ben de girebilir miyim?\" diye sordu.\nÇocuklar kabul etti. {CHILD_NAME} oyuna girdi, ilk topuna dokundu ve harika bir pas verdi.\nPas gole dönüştü! İlk asistini yapmıştı {CHILD_NAME}. Herkes şaşırmıştı.",
+      "prompt": "CHARACTER_DESC wearing a casual white t-shirt with a small black eagle silhouette logo on the chest and comfortable grey jogger pants with clean white sneakers, CAMERA FROM THE SIDE dynamic three-quarter angle, in the middle of an exciting street football match on a park grass pitch, having just delivered a beautiful through-pass with the right foot in a dynamic stretched passing pose with the right leg extended forward after striking the ball and left arm out for balance, watching the ball travel toward a teammate kid who is about to score at the far goal, the child's face showing surprised delight and pride with raised eyebrows and a growing excited smile realizing the assist is going to result in a goal, six other kids of various ages playing around the field in colorful casual clothes, two makeshift goals made of backpacks and water bottles at each end of the small pitch, bright midday sun high overhead casting short shadows, vibrant lively neighborhood park atmosphere with tall green trees surrounding the field, a couple of kids on the sideline pointing and looking impressed at the pass, the energy of a fun competitive pickup game, Ice Age and Shrek style 3D CGI animation with dynamic sports action camera angle following the ball trajectory from passer to scorer, natural warm outdoor lighting, detailed expressions on all kids showing surprise and excitement, ultra high detail render quality",
+      "mood": "excited",
+      "setting": "Mahalle parki, sokak maci, oglen"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "hoodie",
+      "title": "Parildayan Direkler",
+      "text": "Akşam olmuştu. Saha boşalmıştı. {CHILD_NAME} son birkaç şut daha çekmek için kalmıştı.\nBirden fark etti: kale direkleri hafifçe siyah ve beyaz parlıyordu! Normal bir ışık değildi bu.\nSonra bir şey gördü. Yere bir kartal tüyü düşüyor... yavaşça, süzülerek.",
+      "prompt": "CHARACTER_DESC CAMERA FROM THE SIDE at a dramatic angle, wearing a dark black hoodie with a subtle white stripe along the zipper and the hood down and comfortable dark jogger pants with clean white sneakers, standing on the park football field at dusk looking at the standard football goal ahead with a curious puzzled expression, the white metal goalposts and crossbar emitting a subtle mysterious pulsating glow alternating between soft black shadow energy and bright white light creating a mesmerizing black-and-white shimmer effect, a single large magnificent black eagle feather slowly falling from above in mid-air between the child and the glowing goal, the feather drifting down gracefully with a trail of tiny silver-white sparkle particles following its path like stardust, the child's eyes locked on the falling feather with wide wonder and one hand slowly reaching out toward it, dramatic twilight sky above with deep purple and dark blue gradient and the first stars appearing, the rest of the park looking completely normal and mundane in the background creating contrast with the magical goal area, long blue-purple shadows across the grass, a faint silhouette of an eagle barely visible high in the darkening sky above, Ice Age and Shrek style 3D CGI animation with dramatic magical realism cinematography, beautiful feather physics and particle trail, twilight color palette of deep purples and silver whites, volumetric low fog around the goalposts, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Park sahasi, alacakaranlik, gizemli isik"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "hoodie",
+      "title": "Kartal Tuyu",
+      "text": "{CHILD_NAME} tüyü yerden aldı. O an garip bir şey oldu.\nVücudu hafifleşir gibi oldu. Ayakları daha hızlı hareket etmeye başladı. Refleksleri keskinleşti.\nBirkaç adım attı, fırladığı gibi koşup şut çekti. Top ağın köşesine saplandı!\n{CHILD_NAME} şaşkın ellerine baktı. Bu tüy sıradan bir tüy değildi.",
+      "prompt": "CHARACTER_DESC CAMERA WIDE ESTABLISHING SHOT, wearing a dark black hoodie with a subtle white stripe along the zipper and the hood down and comfortable dark jogger pants with clean white sneakers, the hoodie fabric now subtly shimmering with faint silver-white energy traces, having just picked up the large black eagle feather from the ground and holding it in the right hand close to the chest, the feather glowing with warm silver-white magical energy that flows from the feather through the child's hand and arm in visible swirling energy vein patterns under the skin, the child's body surrounded by a subtle silver-white aura showing newfound power, frozen in a moment of awe looking down at their own feet which have a faint speed-blur shimmer around them suggesting supernatural quickness, in the background the football goal net still rippling from an incredibly powerful shot that just went in the top corner with the ball lodged in the net, a trail of silver sparkle particles on the grass showing the impossibly fast run the child just made from midfield to the goal, the child's face showing shock and wonder with mouth open and wide amazed eyes looking at the glowing feather then at their own hands alternating, deep indigo twilight sky with bright stars emerging overhead, the goalposts no longer glowing now that the feather has been claimed, Ice Age and Shrek style 3D CGI animation with spectacular magical transformation effects, silver energy vein details on arms, dynamic speed-blur visual effects on the ground trail, mystical empowerment atmosphere, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Park sahasi, yildizli alacakaranlik, guc uyanisi"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "park-training",
+      "title": "Disiplin",
+      "text": "{CHILD_NAME} o günden sonra her sabah güneş doğmadan sahaya geldi.\nKoşu turu, top sürme, şut çekme, pas çalışmaları...\nKimse görmüyordu ama {CHILD_NAME} biliyordu: tüy güç vermişti ama çalışmadan olmayacaktı.\nHer gün biraz daha iyi oluyordu.",
+      "prompt": "CHARACTER_DESC CAMERA FROM FRONT LOW ANGLE looking up, wearing a black training jersey with white trim on the sleeves and collar and black football shorts with white side stripes and black-white professional football cleats, performing an intense structured solo training routine on the park football pitch in the pre-dawn darkness with the sky showing the first pale hints of approaching sunrise in a thin orange-pink line on the eastern horizon, the child in a dynamic mid-sprint pose running through an agility ladder laid flat on the grass with knees high and arms pumping with fierce athletic determination, multiple training stations visible around the field telling the story of a complete workout: a line of orange cones for dribbling drills to the left, a stack of black and white footballs near the goal for shooting practice to the right, small hurdles for speed training in the background, the child drenched in sweat with beads visible on the forehead showing they have been at this for a while, breath visible as faint mist in the cool pre-dawn air, a small black eagle feather tucked into the waistband of the shorts barely visible as a personal talisman, dramatic pre-dawn lighting with deep blue-purple sky and warm orange horizon creating beautiful color contrast, one lone streetlight casting a pool of warm amber light on part of the pitch, Ice Age and Shrek style 3D CGI animation with dramatic pre-dawn cinematic lighting, detailed athletic form and movement, breath mist in cool air, motivational training montage atmosphere, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Park sahasi, safak oncesi, antrenman"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "park-training",
+      "title": "Firtinada Calisma",
+      "text": "Bir gün fırtına çıktı. Rüzgâr uğulduyor, yağmur şiddetle çiziyordu.\nHerkes eve kaçtı ama {CHILD_NAME} sahada kaldı.\nRüzgâra karşı top sürdü. Islak zeminde dengede kaldı. Yağmur yüzüne çarpıyordu ama aldırmadı.\nGerçek cesaret, hava güzel olunca değil, fırtına koparınca ortaya çıkar.",
+      "prompt": "CHARACTER_DESC CAMERA WIDE ESTABLISHING SHOT, wearing a black training jersey with white trim on the sleeves and collar and black football shorts with white side stripes and black-white professional football cleats, completely soaked from a violent rainstorm with hair plastered flat to the forehead and water streaming down the face, battling against powerful wind while dribbling the football on the waterlogged park pitch, leaning forward into the strong wind at a dramatic angle with legs wide apart for stability and arms out for balance, huge rain sheets blowing diagonally across the scene driven by fierce gusting wind shown by the grass bending sideways and tree branches whipping violently, massive splashes erupting from deep puddles on the saturated grass with every powerful step, the child's face showing intense fierce determination with gritted teeth and narrowed eyes fighting through the storm refusing to quit, the football goal net billowing and flapping wildly in the strong wind, fallen leaves and small debris flying horizontally through the air, dramatic dark grey-black storm clouds churning overhead with occasional lightning illuminating the clouds from within casting momentary dramatic white light, rain frozen mid-air in thousands of individual droplets catching what little light breaks through, steam rising from the child's warm body in the cold rain, no other people visible anywhere everyone has fled the storm, Ice Age and Shrek style 3D CGI animation with spectacular storm weather effects, dramatic diagonal rain and wind particle systems, intense low-angle hero shot showing the child battling the elements, moody cinematic storm lighting with occasional lightning flashes, ultra high detail render quality",
+      "mood": "fierce",
+      "setting": "Park sahasi, siddetli firtina"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "park-training",
+      "title": "Okul Takimina Secilmek",
+      "text": "Okulda futbol takımı için seçmeler başlamıştı. Herkes heyecanlı ama gergindi.\n{CHILD_NAME} sakinleşsin diye tüyü cebinde hissetti. Sonra sahaya çıktı.\nDribling, pas, şut... Antrenör her hareketini izledi.\nListe asıldığında {CHILD_NAME}'in adı en üstteydi! Okul takımına seçilmişti!",
+      "prompt": "CHARACTER_DESC CAMERA FROM THE SIDE at a dynamic three-quarter angle, wearing a black training jersey with white trim on the sleeves and collar and black football shorts with white side stripes and black-white professional football cleats, standing in front of a school bulletin board on an outdoor corridor wall reading a freshly posted team selection list pinned to the board, the child's face showing pure elated joy with the biggest smile and eyes sparkling with happiness, one fist pumped in the air in quiet celebration, the list on the board clearly showing a header in Turkish and a column of names with the child's position at the very top of the list circled or highlighted, the school building visible in the background with a clean modern exterior and a school crest, several other kids in the background showing mixed reactions some happy some disappointed looking at the same board from further away, a PE teacher or coach figure in a tracksuit standing nearby with arms crossed and a proud approving nod, bright sunny school day atmosphere with clear blue sky and warm sunlight casting crisp shadows, the small black eagle feather barely peeking from the child's shorts pocket as a lucky charm, green school sports field visible in the far background with white painted lines, Ice Age and Shrek style 3D CGI animation with warm bright school-day lighting, detailed bulletin board with readable list, joyful celebratory atmosphere, natural warm color palette, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Okul bahcesi, takim secme sonuclari"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "park-training",
+      "title": "Turnuva Ruhu",
+      "text": "Okul takımıyla turnuva başladı. {CHILD_NAME} artık yalnız değildi.\nBirlikte çalıştılar, birlikte kazandılar, birlikte üzüldüler.\nTakım arkadaşları {CHILD_NAME}'e güveniyordu. Paslar, goller, savunmalar... Her şey birlikte yapılıyordu.\n{CHILD_NAME} anladı: tek başına iyi olmak yetmez, takım olmak gerekir.",
+      "prompt": "CHARACTER_DESC CAMERA HIGH ANGLE from slightly above, wearing a black training jersey with white trim on the sleeves and collar and black football shorts with white side stripes and black-white professional football cleats, in the center of a group huddle with five school teammates all wearing matching black training jerseys, all players leaning into a tight circle huddle from above camera angle looking down, all hands stacked together in the center of the huddle in a classic team unity gesture, the child's hand on top of the stack leading the team chant with an intense focused expression and mouth open calling out a team rallying cry, all teammates showing fierce determined competitive faces looking at each other with trust and camaraderie, the huddle taking place on a proper school tournament football field with white line markings and corner flags, a tournament bracket board visible on the sideline showing their team advancing through rounds, opposing team in red jerseys warming up in the far background, parents and students cheering from simple metal bleachers on the sideline waving homemade banners, bright competitive tournament day atmosphere with partly cloudy sky and dramatic cloud formations, warm afternoon sunlight breaking through clouds creating natural spotlights on the pitch, the energy and excitement of youth tournament football, Ice Age and Shrek style 3D CGI animation with dramatic overhead camera looking down into the team huddle, detailed individual expressions on each teammate showing unity and determination, vibrant tournament atmosphere, ultra high detail render quality",
+      "mood": "united",
+      "setting": "Okul turnuvasi, takim ruhu"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "pro-jersey",
+      "title": "Tupras'a Donusum",
+      "text": "Turnuva finali başladı. {CHILD_NAME} sahaya çıktı. Ama bir şey değişiyordu.\nTribünler büyüdü. Işıklar parladı. Çimen mükemmelleşti.\nBirden her şey devasa oldu. {CHILD_NAME} artık okul sahasında değildi.\nTüpraş Stadyumu'ndaydı! 42.000 kişi siyah-beyaz bayrak sallıyordu!",
+      "prompt": "CHARACTER_DESC CAMERA WIDE ESTABLISHING SHOT showing the full transformation, wearing a professional black Besiktas football jersey with white collar and sleeve trim with the name {CHILD_NAME} in bold white letters across the chest front and bright white number 10 below the name on the back, the same name {CHILD_NAME} in bold white letters across the upper back with number 10, matching white football shorts with black side stripes, and black-white professional football boots, standing in absolute frozen awe at the center circle of the pitch as the entire school tournament field magically transforms into the massive Tupras Stadium around them in real-time, the school's simple metal bleachers morphing and expanding upward into towering three-tier stadium stands filling with thousands of appearing spectators, the basic school floodlights stretching skyward becoming enormous professional stadium light towers, the grass field reforming into a perfectly striped professional pitch with crisp white painted lines, the school goalpost growing and transforming into a full-size professional goal with pristine white net, massive black and white Besiktas banners with eagle emblems materializing on the stadium walls, giant LED screens flickering to life showing the child's face, a spectacular silver magical energy vortex swirling in the sky above connecting the school reality to the stadium reality with thousands of silver sparkles cascading down like snow, the child's mouth wide open and eyes huge taking in the impossible transformation, half the scene still showing remnants of the school field and half showing the completed Tupras Stadium creating a stunning split-reality visual, Ice Age and Shrek style 3D CGI animation with spectacular wide-angle establishing shot capturing the full transformation, overwhelming scale and wonder, magical silver particle effects everywhere, ultra high detail render quality",
+      "mood": "magical-epic",
+      "setting": "Okul sahasi-Tupras Stadyumu donusumu, buyulu an"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "pro-jersey",
+      "title": "Yildizlarla Tanisma",
+      "text": "{CHILD_NAME} dönüp baktı. Karşısında Beşiktaş'ın yıldızları duruyordu!\nOrkun Kökçü gülümseyerek elini uzattı: \"Hoş geldin takıma!\"\nCengiz Ünder göz kırptı. Rashica alkışladı. Ndidi kocaman güldü.\n{CHILD_NAME} onların arasında yerini aldı. Artık bir Kara Kartal'dı.",
+      "prompt": "CHARACTER_DESC CAMERA FROM BEHIND at the child's height looking forward, wearing a professional black Besiktas football jersey with white collar and sleeve trim with the name {CHILD_NAME} in bold white letters across the chest front and bright white number 10 below the name, the same name {CHILD_NAME} in bold white letters across the upper back with number 10, matching white football shorts with black side stripes, and black-white professional football boots, standing on the perfectly striped green pitch of the massive Tupras Stadium shaking hands warmly with four star football players who are all wearing the SAME black Besiktas jerseys with white trim, the four players are: Orkun Kokcu an athletic Turkish-Dutch midfielder with olive skin and short dark hair wearing number 8 with the name KOKCU in white letters on the chest front extending his right hand for a firm welcoming handshake with the child and smiling warmly, Cengiz Under a lean athletic Turkish winger with olive skin dark hair and slight beard wearing number 17 with the name UNDER in white letters on the chest front standing behind winking playfully with a cool confident grin, Milot Rashica an athletic Kosovar forward with light skin and short dark hair wearing number 7 with the name RASHICA in white letters on the chest front clapping his hands together enthusiastically with an encouraging smile, and Wilfred Ndidi a tall muscular Nigerian midfielder with dark skin and short hair wearing number 25 with the name NDIDI in white letters on the chest front with the biggest warmest smile showing bright white teeth and both hands on his hips looking proudly at the child, the enormous packed Tupras Stadium behind them with fans waving black and white scarves and flags under dazzling bright white floodlights, massive LED screens showing the Besiktas eagle emblem, Ice Age and Shrek style 3D CGI animation with dramatic low-angle hero shot, each player with distinctly different body proportions and recognizable features, spectacular stadium lighting with lens flares, welcoming inspiring atmosphere, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "Tupras Stadyumu, isiklar altinda takim"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "pro-jersey",
+      "title": "Orta Saha Hakimiyeti",
+      "text": "Maç başladı! Hakem düdüğü çaldı, stadyum canlandı.\n{CHILD_NAME} orta sahada Orkun ile birlikte oyunu kuruyordu.\nDuvar pasları, top çevirmeleri, rakibi şaşırtan kombinasyonlar...\nOrkun ile {CHILD_NAME} orta sahaya hükmediyordu. Tribünler her pasta coşkuyla bağırıyordu.",
+      "prompt": "CHARACTER_DESC wearing a professional black Besiktas football jersey with white collar and sleeve trim with the name {CHILD_NAME} in bold white letters across the chest front and bright white number 10 below the name, the same name {CHILD_NAME} in bold white letters across the upper back with number 10, matching white football shorts with black side stripes, and black-white professional football boots, now with visible sweat showing intense effort, performing a beautiful quick one-two wall pass combination with Orkun Kokcu on the center of the professional pitch, the child having just received the return pass from Orkun and controlling the ball elegantly with the inside of the right foot in a smooth first-touch, Orkun Kokcu number 8 with KOKCU on the chest an athletic Turkish-Dutch midfielder with olive skin and short dark hair running forward after delivering the pass pointing ahead to direct the next play, two bewildered opponent defenders caught flat-footed between them looking confused by the quick combination play, Cengiz Under number 17 with UNDER on the chest sprinting down the right wing making a darting run stretching the defense, Rashica number 7 with RASHICA on the chest visible on the left side of the pitch ready for a switch pass, the packed roaring Tupras Stadium with black and white flags waving in the stands and massive Besiktas banners with eagle emblems, dramatic overhead professional floodlights creating bright white illumination with sharp shadows on the perfectly striped green pitch, action frozen at the peak moment of the combination play, Ice Age and Shrek style 3D CGI animation with intense sports action camera at pitch level, dynamic shallow depth of field blurring the crowd, detailed tactical football positioning, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Tupras Stadyumu, orta saha, mac icinde"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "pro-jersey",
+      "title": "Kontra Atak",
+      "text": "Son dakikalar. Skor eşitti. Rakip ataklara basılmış, herkes öne çıkmıştı.\nNdidi topu kesti ve tek bir pasla {CHILD_NAME}'e verdi.\n{CHILD_NAME} fırladığı gibi koşmaya başladı. Önünde koskoca boş bir saha vardı. Kaleciye karşı tek başına!\nKalbi gümbür gümbür atıyordu. Ayakları yere değmiyordu sanki. Kartal gibi uçuyordu.",
+      "prompt": "CHARACTER_DESC CAMERA CLOSE-UP focusing on face and upper body, wearing a professional black Besiktas football jersey with white collar and sleeve trim with the name {CHILD_NAME} in bold white letters across the chest front and bright white number 10 below the name, the same name {CHILD_NAME} in bold white letters across the upper back with number 10, matching white football shorts with black side stripes, and black-white professional football boots, the jersey slightly untucked and sweat-soaked from the intense match, in an absolutely explosive solo counter-attack sprint running at full speed down the center of the massive Tupras Stadium pitch completely alone with the ball at the feet, the child's legs a blur of speed with dramatic motion trails behind showing incredible pace, face showing laser-focused fierce determination with eyes locked forward on the distant goal ahead, body leaning forward in maximum acceleration sprinting posture with arms pumping powerfully, the entire opposing team visible far behind having been caught upfield with desperate defenders trying hopelessly to chase back but falling further behind, the opposing goalkeeper standing alone at the far goal looking small and nervous waiting for the one-on-one confrontation, Ndidi number 25 with NDIDI on the chest visible in the far background where he intercepted and made the pass that started the break, the massive packed Tupras Stadium frozen in anticipation with 42000 fans rising from their seats, a faint translucent silver eagle silhouette flying alongside the child matching the sprint speed like a spiritual guardian, the LED scoreboard showing TIED with very little time remaining creating maximum tension, dramatic single spotlight tracking the sprinting child from above, Ice Age and Shrek style 3D CGI animation with ultra-dramatic behind-the-child camera angle showing the vast empty pitch ahead and the lonely goalkeeper waiting, intense speed-blur effects on the periphery, the most thrilling breakaway counter-attack moment, ultra high detail render quality",
+      "mood": "climactic",
+      "setting": "Tupras Stadyumu, kontra atak, son dakika"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "pro-jersey",
+      "title": "Kartal Gibi Ucmak",
+      "text": "{CHILD_NAME} kaleciye yaklaştı. Sakin bir nefes aldı.\nTopu sol tarafa çevirdi, kaleci atıldı ama {CHILD_NAME} topu boş kaleye yuvarladı.\nGOL! Stadyum patladı! Tribünler inliyordu!\n{CHILD_NAME} kollarını iki yana açtı, kartal gibi. Gol sevinci bir uçuştu.\nOrkun sarıldı, Ndidi havaya kaldırdı, Cengiz saçlarını karıştırdı, Rashica yanında sevinç koşusu yaptı.\nKonfetiler yağıyordu. Işıklar parlıyordu.\nAferin sana {CHILD_NAME}! Sen bir Kara Kartal'sın!",
+      "prompt": "CHARACTER_DESC CAMERA LOW ANGLE from ground level looking slightly upward, wearing a professional black Besiktas football jersey with white collar and sleeve trim with the name {CHILD_NAME} in bold white letters across the chest front and bright white number 10 below the name, the same name {CHILD_NAME} in bold white letters across the upper back with number 10, matching white football shorts with black side stripes, and black-white professional football boots, running in a triumphant celebration with BOTH ARMS spread wide open like eagle wings in the iconic eagle celebration pose, face tilted up toward the sky with the biggest most radiant smile of pure ecstasy and pride, eyes sparkling with tears of joy, running forward with arms outstretched like soaring eagle wings with the jersey billowing behind, the football sitting in the back of the net of the goal behind having just been scored with the net still gently swaying, thousands of pieces of silver and black and white confetti raining down from the stadium roof like a spectacular blizzard, the entire packed Tupras Stadium erupting with fans on their feet screaming and cheering wildly waving black and white scarves, four star Besiktas players in matching black jerseys celebrating: Orkun Kokcu number 8 with KOKCU on the chest an athletic Turkish-Dutch midfielder with olive skin and short dark hair running behind trying to catch the child to hug them with arms open, Wilfred Ndidi number 25 with NDIDI on the chest a tall muscular dark-skinned Nigerian sprinting over with fists pumping ready to lift the child on his shoulders, Cengiz Under number 17 with UNDER on the chest a lean Turkish winger with olive skin and slight beard sliding on his knees in celebration nearby, and Milot Rashica number 7 with RASHICA on the chest an athletic Kosovar forward with light skin running alongside doing a matching eagle-arms celebration mirroring the child, a magnificent translucent silver eagle apparition soaring in the sky directly above the child with wings spread matching the child's open arms creating a beautiful mirror image, the LED scoreboard showing the WINNING score, silver spotlight beams and colorful stadium lights creating a spectacular light show, streamers and balloons in black and white everywhere, the most epic joyful triumphant celebration with the unique eagle-wing pose, Ice Age and Shrek style 3D CGI animation with spectacular wide cinematic hero shot, warm golden color grading, confetti particles rendered individually, volumetric spotlight beams cutting through confetti, the ultimate feel-good eagle celebration victory moment, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Tupras Stadyumu, kartal kanadi zafer kutlamasi"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🦅🖤",
+      "facts": [
+        "Besiktas Jimnastik Kulubu 1903 yilinda kurulmustur ve Turkiye'nin en eski spor kulubudur! Siyah-beyaz renkler guc ve safligi simgeler.",
+        "Besiktas'in efsanevi stadyumu Tupras Stadyumu, Bogazici'nin hemen kiyisinda yer alir. 42.000'den fazla taraftari agirlayabilir ve Turkiye'nin en atmosferik stadyumlarindan biridir!",
+        "Besiktas'in sembolundeki kartal, guc, ozgurluk ve kararliligi temsil eder. Besiktas taraftarlari kendilerine 'Kara Kartal' der ve tribundeki birlikleriyle unludur!",
+        "Besiktas, Turkiye'de jimnastik kulubu olarak kurulmus ve sonradan futbol, basketbol ve daha bircok brans eklenmistir. Cok yonlu bir spor kulubudur!",
+        "Besiktas taraftarlarinin soyledigi 'Siyah beyaz ask' sarkisi, dunyanin en bilinen tribun sarkilarindan biridir ve her macta binlerce kisi tarafindan soylenir!"
+      ],
+      "icon": "🦅"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ⭐",
+      "facts": [
+        "Orkun Kokcu, Hollanda'da dogmus Turk asilli bir yildiz orta saha oyuncusudur. Feyenoord'da kaptan olarak takim arkadaslarini yonlendiren liderlik ozellikleriyle taninir. Besiktas'in oyun kurucusudur!",
+        "Cengiz Under, Roma ve Marsilya gibi buyuk Avrupa kuluplerinde forma giymis bir Turk kanat oyuncusudur. Sag ayagindan cikan muhtesem sutlari ve hizi ile rakip savunmalarin korkulu ruyasidir!",
+        "Wilfred Ndidi, Nijerya Milli Takimi'nin yildiz orta saha oyuncusudur. Leicester City ile Premier Lig sampiyonlugu yasayan Ndidi, guclu fizigi ve top kapma yetenegi ile dunyanin en iyi defansif orta sahalarindan biridir!",
+        "Milot Rashica, Kosovali bir yildiz forvet oyuncusudur. Werder Bremen'de gosterdigi performansla Avrupa'nin dikkatini cekmis, hizi ve gol yetenegi ile taninir!",
+        "Besiktas altyapisi, Turkiye Milli Takimi'na en cok oyuncu yetistiren kuluplerden biridir. Genc yeteneklere verilen onem Besiktas'in en onemli degerlerinden biridir!"
+      ],
+      "icon": "⭐"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 5,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 10,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "CHARACTER_DESC wearing a black Besiktas jersey with white trim and number 10, standing heroically in Tupras Stadium, arms spread wide like eagle wings, a majestic silver eagle flying above in the sky, black and white flags waving, dramatic moonlit atmosphere with spotlights, epic low-angle hero shot, Ice Age and Shrek style 3D CGI animation, ultra cinematic poster composition, ultra high detail render quality",
+  "specialPagePrompts": {
+    "heroPage": "CHARACTER_DESC standing proudly in a heroic pose inside the legendary Besiktas stadium with dramatic black and white atmosphere and silver accents, powerful stadium floodlights creating spectacular silver-white light beams cutting through dark atmosphere, black and white confetti with silver sparkles swirling through the air, the child standing strong with an eagle-like powerful confident pose, packed stands creating electric monochrome energy, dramatic black-white-silver atmosphere, NO TEXT NO LETTERS in image, Ice Age and Shrek style 3D CGI animation, ultra high detail render quality, portrait composition",
+    "funFactBg": "A beautiful Besiktas-themed decorative background with sleek black and pure white color palette with silver accents, footballs, majestic eagle wing motifs, stars, and championship trophy silhouettes arranged in powerful artistic floating patterns, silver bokeh lights against deep black gradients, elegant sparkly atmosphere with white light rays cutting through darkness, NO TEXT NO LETTERS in image, 3D CGI render, artistic decorative background style, ultra high detail",
+    "senderNoteBg": "A warm cozy room with soft silver-white lamplight contrasting elegant dark furnishings, a beautiful dark wood desk with an open heartfelt letter and a memory journal, black and white memorabilia and eagle figurines on shelves, a football resting beside a desk lamp, dark elegant curtains framing a window showing the moonlit Bosphorus and Istanbul bridge lights at night, intimate sophisticated atmosphere with gentle silver bokeh, NO TEXT NO LETTERS in image, 3D CGI render, intimate personal setting",
+    "backCover": "A dramatic panoramic night view of the Bosphorus with the Besiktas waterfront and stadium area silhouetted against a deep midnight blue sky with bright stars and a luminous full moon, silver moonlight reflecting on dark waters, Istanbul bridge lights twinkling in the distance, a majestic eagle silhouette soaring across the moon, powerful peaceful nocturnal atmosphere, cinematic ultra-wide composition, NO TEXT NO LETTERS in image, 3D CGI render, movie poster ending atmosphere"
+  }
+}

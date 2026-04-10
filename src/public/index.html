@@ -130,6 +130,26 @@
     .view { display: none; }
     .view.active { display: block; }
 
+    /* ===== CATEGORY FILTER ===== */
+    .cat-filter {
+      display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
+    }
+    .cat-filter-btn {
+      padding: 9px 20px; border-radius: 10px;
+      font-size: 13px; font-weight: 600;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-3); cursor: pointer;
+      transition: all var(--transition); font-family: inherit;
+    }
+    .cat-filter-btn:hover { border-color: var(--border-hover); color: var(--text-2); }
+    .cat-filter-btn.active {
+      background: var(--accent-glow); color: var(--accent-2);
+      border-color: var(--accent);
+    }
+    .cat-filter-count {
+      font-size: 10px; margin-left: 4px; opacity: 0.7;
+    }
+
     /* ===== AGE FILTER ===== */
     .age-filter {
       display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
@@ -220,14 +240,15 @@
       display: block; font-size: 12px; font-weight: 500;
       color: var(--text-2); margin-bottom: 6px;
     }
-    .field input, .field select {
+    .field input, .field select, .field textarea {
       width: 100%; padding: 10px 14px;
       background: var(--surface-2); border: 1px solid var(--border);
       border-radius: var(--radius-sm); color: var(--text);
       font-size: 14px; font-family: inherit;
       transition: all var(--transition); outline: none;
     }
-    .field input:focus, .field select:focus {
+    .field textarea { resize: vertical; line-height: 1.6; }
+    .field input:focus, .field select:focus, .field textarea:focus {
       border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow);
     }
     .field select {
@@ -339,9 +360,14 @@
     .gallery-panel { display: none; }
     .gallery-panel.active { display: block; }
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 12px;
+      justify-content: center;
+    }
+    .gallery-grid .gallery-item {
+      width: 180px;
+      flex-shrink: 0;
     }
     .gallery-item {
       position: relative; border-radius: var(--radius-sm);
@@ -518,8 +544,17 @@
       <div class="content">
         <!-- VIEW: PRODUCE -->
         <div class="view active" id="view-produce">
+          <!-- Category filter -->
+          <div style="margin-bottom:10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);">Kategori</div>
+          <div class="cat-filter" id="catFilter">
+            <button class="cat-filter-btn active" data-cat="all" onclick="filterCategory('all')">Tumu<span class="cat-filter-count" id="countCatAll"></span></button>
+            <button class="cat-filter-btn" data-cat="hikaye" onclick="filterCategory('hikaye')">&#x1F4D6; Hikaye Kitabi<span class="cat-filter-count" id="countCatHikaye"></span></button>
+            <button class="cat-filter-btn" data-cat="boyama" onclick="filterCategory('boyama')">&#x1F3A8; Boyama Kitabi<span class="cat-filter-count" id="countCatBoyama"></span></button>
+            <button class="cat-filter-btn" data-cat="ozel-gunler" onclick="filterCategory('ozel-gunler')">&#x1F381; Ozel Gunler<span class="cat-filter-count" id="countCatOzel"></span></button>
+          </div>
+
           <!-- Age filter -->
-          <div style="margin-bottom:10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);">Kitap Sec</div>
+          <div style="margin-bottom:10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);" id="ageFilterLabel">Yas Grubu</div>
           <div class="age-filter" id="ageFilter">
             <button class="age-filter-btn active" data-age="all" onclick="filterAge('all')">Tumu<span class="age-filter-count" id="countAll"></span></button>
             <button class="age-filter-btn" data-age="0-3" onclick="filterAge('0-3')">0-3 Yas<span class="age-filter-count" id="count03"></span></button>
@@ -532,7 +567,7 @@
 
           <!-- Form -->
           <div class="form-grid">
-            <div class="form-card">
+            <div class="form-card" id="childFormCard">
               <div class="form-card-title">Cocuk Bilgileri</div>
               <div class="field">
                 <label>Ad</label>
@@ -565,6 +600,96 @@
                   </select>
                 </div>
               </div>
+              <div class="field">
+                <label>Kimden? (Opsiyonel)</label>
+                <input type="text" id="childSenderName" placeholder="Örn: Anne & Baban, Annesi Ayşe...">
+              </div>
+              <div class="field">
+                <label>Kişisel Not (Opsiyonel)</label>
+                <textarea id="childSenderNote" rows="2" placeholder="Kitabın içine eklenecek duygusal bir not..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-card" id="adultFormCard" style="display:none;">
+              <div class="form-card-title">💝 Hediye Kitap Bilgileri</div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label>Kime? (Alıcının Adı) *</label>
+                  <input type="text" id="recipientName" placeholder="Örn: Ayşe, Fatma..." oninput="checkValid()">
+                </div>
+                <div class="field">
+                  <label>Nasıl Hitap Ediyorsunuz? *</label>
+                  <input type="text" id="recipientNickname" placeholder="Örn: Anneciğim, Canım Annem, Annecim...">
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label>Kimden? (Gönderen Adı) *</label>
+                  <input type="text" id="senderName" placeholder="Örn: Kerem, Ayşe ve Kerem...">
+                </div>
+                <div class="field">
+                  <label>Gönderen Cinsiyet</label>
+                  <select id="senderGender">
+                    <option value="erkek">Oğul / Erkek</option>
+                    <option value="kiz">Kız</option>
+                    <option value="karma">Karma (Birden fazla kişi)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Birlikte En Çok Ne Yaparsınız?</label>
+                <select id="sharedActivity">
+                  <option value="">Seçiniz...</option>
+                  <option value="yemek">🍳 Birlikte yemek yapmak</option>
+                  <option value="bahce">🌺 Bahçe işleri / çiçek yetiştirmek</option>
+                  <option value="gezme">🚶 Birlikte yürüyüşe çıkmak</option>
+                  <option value="alisveris">🛍️ Birlikte alışverişe gitmek</option>
+                  <option value="film">🎬 Birlikte film izlemek</option>
+                  <option value="kitap">📚 Birlikte kitap okumak</option>
+                  <option value="oyun">🎲 Birlikte oyun oynamak</option>
+                  <option value="muzik">🎵 Birlikte müzik dinlemek / şarkı söylemek</option>
+                  <option value="spor">⚽ Birlikte spor yapmak</option>
+                  <option value="diger">✨ Diğer</option>
+                </select>
+              </div>
+              <div class="field" id="customActivityField" style="display:none;">
+                <label>Aktiviteyi Yazınız</label>
+                <input type="text" id="customActivity" placeholder="Örn: Birlikte puzzle yapmak...">
+              </div>
+
+              <div class="field">
+                <label>Onun En Sevdiği Şey Nedir?</label>
+                <select id="recipientHobby">
+                  <option value="">Seçiniz...</option>
+                  <option value="cicek">🌸 Çiçek yetiştirmek</option>
+                  <option value="yemek">🍰 Yemek / pasta yapmak</option>
+                  <option value="kitap">📖 Kitap okumak</option>
+                  <option value="muzik">🎶 Müzik dinlemek</option>
+                  <option value="el-isi">🧶 El işi / örgü</option>
+                  <option value="resim">🎨 Resim yapmak</option>
+                  <option value="yoga">🧘 Yoga / meditasyon</option>
+                  <option value="seyahat">✈️ Seyahat etmek</option>
+                  <option value="doga">🌿 Doğa yürüyüşleri</option>
+                  <option value="diger">✨ Diğer</option>
+                </select>
+              </div>
+              <div class="field" id="customHobbyField" style="display:none;">
+                <label>Hobiyi Yazınız</label>
+                <input type="text" id="customHobby" placeholder="Örn: Puzzle yapmak...">
+              </div>
+
+              <div class="field">
+                <label>Özel Bir Anınız Var mı? (Opsiyonel ama çok önemli!)</label>
+                <textarea id="specialMemory" rows="3" placeholder="Örn: Her akşam bana ninni söylerdi... Birlikte pastane açmak isterdik... Yağmurlu günlerde sıcak çikolata yapardık..."></textarea>
+              </div>
+
+              <div class="field">
+                <label>Son Sayfa Mesajınız *</label>
+                <textarea id="customMessage" rows="3" placeholder="Kitabın son sayfasında yazmasını istediğiniz kişisel mesaj..."></textarea>
+              </div>
             </div>
 
             <div class="form-card">
@@ -574,11 +699,19 @@
                 <div class="upload-text"><strong>Fotograf yukle</strong></div>
                 <div class="upload-hint">JPG, PNG - Yuz net gorunmeli</div>
               </div>
-              <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+              <div id="photoPreviewArea" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
+              </div>
+              <div style="margin-top:6px; font-size:12px; color:var(--text-3)">
+                En fazla 5 fotograf yukleyebilirsiniz. Ilk fotograf ana karakter referansi olarak kullanilir.
+              </div>
+              <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
             </div>
           </div>
 
           <button class="btn-generate" id="btnGenerate" disabled>Kitap Olustur</button>
+          <button class="btn-generate" id="btnGenerateSpecial" style="background:linear-gradient(135deg,#9b7fff,#7c5cfc);margin-top:8px;font-size:13px;padding:10px 20px;" disabled onclick="generateSpecialPages()">
+            🎨 Özel Sayfaları Üret
+          </button>
 
           <!-- Progress -->
           <div class="progress-panel" id="progressPanel">
@@ -635,7 +768,7 @@
   </div>
 
   <!-- Lightbox / Editor -->
-  <div class="lightbox" id="lightbox">
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <div class="lb-close" onclick="closeLightbox()">X</div>
     <div class="lb-content" onclick="event.stopPropagation()">
       <img id="lbImg" src="" alt="">
@@ -649,9 +782,16 @@
           <label style="color:var(--text-2)">Metin</label>
           <textarea id="editText" rows="6" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;width:100%;font-size:13px;resize:vertical;font-family:inherit;line-height:1.6;"></textarea>
         </div>
-        <div style="display:flex;gap:8px">
-          <button class="btn-sm" id="btnRerender" onclick="rerenderScene()" style="flex:1;background:var(--accent);color:#fff;border:none;font-weight:600;">Gorseli Guncelle</button>
-          <button class="btn-sm" id="btnRebuildPdf" onclick="rebuildPdf()" style="flex:1;">PDF Yeniden Olustur</button>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn-sm" id="btnRerender" onclick="rerenderScene()" style="background:var(--surface-3);color:var(--text);border:1px solid var(--border);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px">
+            ✏️ Metni Guncelle
+          </button>
+          <button class="btn-sm" id="btnRegenerate" onclick="regenerateScene()" style="background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;border:none;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600">
+            🔄 Gorseli Yeniden Uret
+          </button>
+          <button class="btn-sm" id="btnRebuildPdf" onclick="rebuildPdf()" style="background:var(--surface-3);color:var(--text);border:1px solid var(--border);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px">
+            📄 PDF Yeniden Olustur
+          </button>
         </div>
         <div id="editStatus" style="font-size:11px;color:var(--text-3);margin-top:8px;"></div>
       </div>
@@ -662,8 +802,10 @@
     // === STATE ===
     let selectedBook = null;
     let selectedFile = null;
+    let selectedFiles = [];
     let allBooks = [];
     let currentAgeFilter = 'all';
+    let currentCategoryFilter = 'all';
     let currentOutputDir = ''; // Uretim sonrasi output klasoru
     let currentChildName = '';
     let sceneTexts = {}; // { sceneNumber: { title, text, src } }
@@ -692,7 +834,7 @@
         const ageClass = 'age-' + (b.ageGroup || '3-6').replace('-','');
         const ageBadgeClass = 'age-' + (b.ageGroup || '3-6');
         return `
-        <div class="book-card" data-id="${b.id}" data-age="${b.ageGroup||'3-6'}" onclick="selectBook('${b.id}')" style="--card-color:${b.primaryColor||'var(--accent)'}">
+        <div class="book-card" data-id="${b.id}" data-age="${b.ageGroup||'3-6'}" data-category="${b.category||'hikaye'}" onclick="selectBook('${b.id}')" style="--card-color:${b.primaryColor||'var(--accent)'}">
           <div class="book-card-icon">${b.icon||'&#x1F4D6;'}</div>
           <div class="book-card-title">${b.title}</div>
           <div class="book-card-desc">${b.description||''}</div>
@@ -704,7 +846,7 @@
       }).join('');
 
       sidebar.innerHTML = books.map(b => `
-        <div class="nav-item" onclick="selectBook('${b.id}');switchView('produce')">
+        <div class="nav-item sidebar-book-item" data-category="${b.category||'hikaye'}" data-age="${b.ageGroup||'3-6'}" onclick="selectBook('${b.id}');switchView('produce')">
           <span class="nav-icon">${b.icon||'&#x1F4D6;'}</span>
           ${b.title.length > 20 ? b.title.substring(0,18)+'...' : b.title}
           <span class="nav-age-badge">${b.ageGroup||'3-6'}</span>
@@ -713,12 +855,40 @@
     }
 
     function updateFilterCounts() {
-      const counts = { 'all': allBooks.length, '0-3': 0, '3-6': 0, '6-12': 0 };
-      allBooks.forEach(b => { counts[b.ageGroup||'3-6']++; });
-      document.getElementById('countAll').textContent = '(' + counts['all'] + ')';
-      document.getElementById('count03').textContent = '(' + counts['0-3'] + ')';
-      document.getElementById('count36').textContent = '(' + counts['3-6'] + ')';
-      document.getElementById('count612').textContent = '(' + counts['6-12'] + ')';
+      const ageCounts = { 'all': allBooks.length, '0-3': 0, '3-6': 0, '6-12': 0 };
+      const catCounts = { 'all': allBooks.length, 'hikaye': 0, 'boyama': 0, 'ozel-gunler': 0 };
+      allBooks.forEach(b => {
+        ageCounts[b.ageGroup||'3-6']++;
+        catCounts[b.category||'hikaye']++;
+      });
+      document.getElementById('countAll').textContent = '(' + ageCounts['all'] + ')';
+      document.getElementById('count03').textContent = '(' + ageCounts['0-3'] + ')';
+      document.getElementById('count36').textContent = '(' + ageCounts['3-6'] + ')';
+      document.getElementById('count612').textContent = '(' + ageCounts['6-12'] + ')';
+      document.getElementById('countCatAll').textContent = '(' + catCounts['all'] + ')';
+      document.getElementById('countCatHikaye').textContent = '(' + catCounts['hikaye'] + ')';
+      document.getElementById('countCatBoyama').textContent = '(' + catCounts['boyama'] + ')';
+      document.getElementById('countCatOzel').textContent = '(' + catCounts['ozel-gunler'] + ')';
+    }
+
+    function filterCategory(cat) {
+      currentCategoryFilter = cat;
+      document.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+
+      // Show/hide age filter for ozel-gunler
+      const ageFilterSection = document.getElementById('ageFilter');
+      const ageFilterLabel = document.getElementById('ageFilterLabel');
+      if (ageFilterSection) ageFilterSection.style.display = cat === 'ozel-gunler' ? 'none' : '';
+      if (ageFilterLabel) ageFilterLabel.style.display = cat === 'ozel-gunler' ? 'none' : '';
+
+      // Show/hide form sections based on category
+      const childFormCard = document.getElementById('childFormCard');
+      const adultFormCard = document.getElementById('adultFormCard');
+      if (childFormCard) childFormCard.style.display = cat === 'ozel-gunler' ? 'none' : '';
+      if (adultFormCard) adultFormCard.style.display = cat === 'ozel-gunler' ? '' : 'none';
+
+      applyFilters();
+      updateFilterCounts();
     }
 
     function filterAge(age) {
@@ -726,17 +896,32 @@
       document.querySelectorAll('.age-filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.age === age);
       });
-      document.querySelectorAll('.book-card').forEach(card => {
-        if (age === 'all') {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.toggle('hidden', card.dataset.age !== age);
+      applyFilters();
+      // If selected book is hidden, deselect
+      if (selectedBook) {
+        const sel = document.querySelector('.book-card[data-id="'+selectedBook+'"]');
+        if (sel && sel.style.display === 'none') {
+          selectedBook = null;
+          checkValid();
         }
+      }
+    }
+
+    function applyFilters() {
+      document.querySelectorAll('.book-card').forEach(card => {
+        const matchesCat = currentCategoryFilter === 'all' || card.dataset.category === currentCategoryFilter;
+        const matchesAge = currentAgeFilter === 'all' || card.dataset.age === currentAgeFilter;
+        card.style.display = (matchesCat && matchesAge) ? '' : 'none';
+      });
+      document.querySelectorAll('.sidebar-book-item').forEach(item => {
+        const matchesCat = currentCategoryFilter === 'all' || item.dataset.category === currentCategoryFilter;
+        const matchesAge = currentAgeFilter === 'all' || item.dataset.age === currentAgeFilter;
+        item.style.display = (matchesCat && matchesAge) ? '' : 'none';
       });
       // If selected book is hidden, deselect
       if (selectedBook) {
         const sel = document.querySelector('.book-card[data-id="'+selectedBook+'"]');
-        if (sel && sel.classList.contains('hidden')) {
+        if (sel && sel.style.display === 'none') {
           selectedBook = null;
           checkValid();
         }
@@ -751,22 +936,41 @@
 
     // === FILE UPLOAD ===
     fileInput.addEventListener('change', e => {
-      const file = e.target.files[0]; if(!file) return;
-      selectedFile = file;
-      const reader = new FileReader();
-      reader.onload = ev => {
+      const files = Array.from(e.target.files).slice(0, 5); // Max 5
+      if (files.length === 0) return;
+      selectedFiles = files;
+      selectedFile = files[0] || null; // Backward compat
+
+      // Upload zone'u guncelle
+      if (files.length > 0) {
         uploadZone.classList.add('has-file');
         uploadZone.innerHTML = `
           <div class="upload-preview">
-            <img src="${ev.target.result}" alt="">
             <div class="upload-preview-info">
-              <div class="name">${file.name}</div>
-              <div class="size">${(file.size/1024).toFixed(0)} KB</div>
+              <div class="name">${files.length} fotograf secildi</div>
+              <div class="size">${files.map(f => (f.size/1024).toFixed(0)).join(' + ')} KB</div>
             </div>
             <button class="upload-remove" onclick="event.stopPropagation();removeFile()">x</button>
           </div>`;
-      };
-      reader.readAsDataURL(file);
+      }
+
+      // Coklu onizleme alani
+      const previewArea = document.getElementById('photoPreviewArea');
+      previewArea.innerHTML = '';
+
+      files.forEach((file, idx) => {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          const div = document.createElement('div');
+          div.style.cssText = 'position:relative; width:80px; height:80px; border-radius:8px; overflow:hidden; border:2px solid ' + (idx === 0 ? 'var(--accent)' : 'var(--border)');
+          div.innerHTML = '<img src="' + ev.target.result + '" style="width:100%;height:100%;object-fit:cover;">' +
+            (idx === 0 ? '<div style="position:absolute;bottom:0;left:0;right:0;background:var(--accent);color:white;font-size:9px;text-align:center;padding:2px;">Ana Foto</div>' :
+            '<button onclick="event.stopPropagation();removePhoto(' + idx + ')" style="position:absolute;top:2px;right:2px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,0.6);color:white;border:none;cursor:pointer;font-size:10px;line-height:18px;">x</button>');
+          previewArea.appendChild(div);
+        };
+        reader.readAsDataURL(file);
+      });
+
       checkValid();
     });
 
@@ -774,21 +978,49 @@
     uploadZone.addEventListener('dragleave', () => { uploadZone.style.borderColor=''; });
     uploadZone.addEventListener('drop', e => {
       e.preventDefault(); uploadZone.style.borderColor='';
-      const f = e.dataTransfer.files[0];
-      if(f && f.type.startsWith('image/')) { fileInput.files=e.dataTransfer.files; fileInput.dispatchEvent(new Event('change')); }
+      const droppedFiles = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/'));
+      if(droppedFiles.length > 0) {
+        const dt = new DataTransfer();
+        droppedFiles.slice(0, 5).forEach(f => dt.items.add(f));
+        fileInput.files = dt.files;
+        fileInput.dispatchEvent(new Event('change'));
+      }
     });
 
     function removeFile() {
-      selectedFile=null; fileInput.value='';
+      selectedFile=null; selectedFiles=[]; fileInput.value='';
       uploadZone.classList.remove('has-file');
       uploadZone.innerHTML = `<div class="upload-icon">+</div><div class="upload-text"><strong>Fotograf yukle</strong></div><div class="upload-hint">JPG, PNG - Yuz net gorunmeli</div>`;
+      document.getElementById('photoPreviewArea').innerHTML = '';
       checkValid();
     }
 
+    function removePhoto(idx) {
+      const dt = new DataTransfer();
+      selectedFiles.filter((_, i) => i !== idx).forEach(f => dt.items.add(f));
+      selectedFiles = Array.from(dt.files);
+      selectedFile = selectedFiles[0] || null;
+      fileInput.files = dt.files;
+      fileInput.dispatchEvent(new Event('change'));
+    }
+
     function checkValid() {
-      btnGen.disabled = !(selectedBook && selectedFile && document.getElementById('childName').value.trim());
+      const selectedBookData = allBooks.find(b => b.id === selectedBook);
+      const isOzel = currentCategoryFilter === 'ozel-gunler' || (selectedBookData && selectedBookData.category === 'ozel-gunler');
+      if (isOzel) {
+        btnGen.disabled = !(selectedBook && (selectedFile || selectedFiles.length > 0) && document.getElementById('recipientName').value.trim());
+      } else {
+        btnGen.disabled = !(selectedBook && (selectedFile || selectedFiles.length > 0) && document.getElementById('childName').value.trim());
+      }
     }
     document.getElementById('childName').addEventListener('input', checkValid);
+    document.getElementById('recipientName').addEventListener('input', checkValid);
+    document.getElementById('sharedActivity')?.addEventListener('change', function() {
+      document.getElementById('customActivityField').style.display = this.value === 'diger' ? '' : 'none';
+    });
+    document.getElementById('recipientHobby')?.addEventListener('change', function() {
+      document.getElementById('customHobbyField').style.display = this.value === 'diger' ? '' : 'none';
+    });
 
     // === GENERATE ===
     btnGen.addEventListener('click', startGen);
@@ -797,9 +1029,19 @@
     let genDone = false;
 
     async function startGen() {
-      const name = document.getElementById('childName').value.trim();
-      const gender = document.getElementById('childGender').value;
-      const age = document.getElementById('childAge').value;
+      const selectedBookData = allBooks.find(b => b.id === selectedBook);
+      const isOzel = currentCategoryFilter === 'ozel-gunler' || (selectedBookData && selectedBookData.category === 'ozel-gunler');
+
+      let name, gender, age;
+      if (isOzel) {
+        name = document.getElementById('recipientName').value.trim();
+        gender = 'erkek';
+        age = '25';
+      } else {
+        name = document.getElementById('childName').value.trim();
+        gender = document.getElementById('childGender').value;
+        age = document.getElementById('childAge').value;
+      }
 
       currentChildName = name;
       currentOutputDir = '';
@@ -862,6 +1104,14 @@
               addLog('Sahne '+m.sceneNumber+': '+(m.title||'') +' - tamamlandi','ok');
               sceneTexts[m.sceneNumber] = { title: m.title||'', text: m.text||'', src: m.imagePath||'' };
               if(m.imagePath) addGallery(m.sceneNumber,m.title,m.imagePath,m.text,'sahne');
+              if(m.textPagePath) {
+                var tg=document.getElementById('galleryGrid');
+                var td=document.createElement('div');
+                td.className='gallery-item';
+                td.onclick=function(){document.getElementById('lbImg').src=m.textPagePath+'?t='+Date.now();document.getElementById('lightbox').classList.add('active');};
+                td.innerHTML='<img src="'+m.textPagePath+'?t='+Date.now()+'" loading="lazy"><div class="gallery-item-type" style="background:rgba(124,92,252,0.85)">METİN</div><div class="gallery-item-info"><strong>S'+m.sceneNumber+' Metin</strong><span>'+(m.title||'')+'</span></div>';
+                tg.appendChild(td);
+              }
             } else if(m.type==='pdf_ready') {
               addLog(m.message,'ok');
               showPdf(m.pdfPath);
@@ -879,6 +1129,23 @@
               addLog('Kitap uretimi tamamlandi!','ok');
               if(m.pdfPath) showPdf(m.pdfPath);
               if(m.outputDir) currentOutputDir = m.outputDir.replace(/^\/output\//,'');
+              document.getElementById('btnGenerateSpecial').disabled = false;
+              // Ozel sayfalari galeriye ekle
+              var dir = currentOutputDir || '';
+              if (dir) {
+                var specials = [
+                  ['cover-final.png', 'Ön Kapak', 'KAPAK'],
+                  ['hero-page.png', 'Hikayemizin Kahramanı', 'KAHRAMAN'],
+                  ['sender-note.png', 'Gönderenden Not', 'NOT'],
+                  ['back-cover.png', 'Arka Kapak', 'ARKA'],
+                ];
+                for (var fi = 1; fi <= 15; fi++) {
+                  specials.push(['funfact-after-' + fi + '.png', 'Biliyor Muydun (S' + fi + ')', 'BİLGİ']);
+                }
+                specials.forEach(function(sp) {
+                  addSpecialGallery(sp[0], sp[1], sp[2], dir);
+                });
+              }
               sse.close(); activeSse=null;
               btnGen.textContent='Kitap Olustur'; btnGen.disabled=false;
             }
@@ -914,7 +1181,32 @@
       fd.append('childName',name);
       fd.append('childGender',gender);
       fd.append('childAge',age);
-      fd.append('childPhoto',selectedFile);
+      // Append all photos - first one as childPhoto (backward compat), rest as extraPhotos
+      if (selectedFiles.length > 0) {
+        fd.append('childPhoto', selectedFiles[0]);
+        for (let i = 1; i < selectedFiles.length; i++) {
+          fd.append('extraPhoto_' + i, selectedFiles[i]);
+        }
+      } else {
+        fd.append('childPhoto', selectedFile);
+      }
+      if (isOzel) {
+        fd.append('recipientName', document.getElementById('recipientName').value.trim());
+        fd.append('recipientNickname', document.getElementById('recipientNickname')?.value?.trim() || '');
+        fd.append('senderName', document.getElementById('senderName').value.trim());
+        fd.append('senderGender', document.getElementById('senderGender')?.value || 'erkek');
+        const activity = document.getElementById('sharedActivity')?.value;
+        fd.append('sharedActivity', activity === 'diger' ? (document.getElementById('customActivity')?.value?.trim() || '') : (activity || ''));
+        const hobby = document.getElementById('recipientHobby')?.value;
+        fd.append('recipientHobby', hobby === 'diger' ? (document.getElementById('customHobby')?.value?.trim() || '') : (hobby || ''));
+        fd.append('specialMemory', document.getElementById('specialMemory')?.value?.trim() || '');
+        fd.append('customMessage', document.getElementById('customMessage').value.trim());
+      } else {
+        const childSenderName = document.getElementById('childSenderName')?.value?.trim() || '';
+        const childSenderNote = document.getElementById('childSenderNote')?.value?.trim() || '';
+        if (childSenderName) fd.append('senderName', childSenderName);
+        if (childSenderNote) fd.append('customMessage', childSenderNote);
+      }
 
       try {
         const r = await fetch('/api/generate',{method:'POST',body:fd});
@@ -930,6 +1222,52 @@
         if(activeSse) { activeSse.close(); activeSse=null; }
         genDone = true;
         btnGen.textContent='Kitap Olustur'; btnGen.disabled=false;
+      }
+    }
+
+    async function generateSpecialPages() {
+      if (!currentOutputDir || !selectedBook) {
+        alert('Önce bir kitap üretin veya mevcut bir üretimi seçin.');
+        return;
+      }
+
+      const btn = document.getElementById('btnGenerateSpecial');
+      btn.disabled = true;
+      btn.textContent = '⏳ Özel sayfalar üretiliyor...';
+
+      try {
+        const r = await fetch('/api/generate-special-pages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            outputDir: currentOutputDir,
+            bookId: selectedBook,
+            childName: document.getElementById('childName')?.value?.trim() || 'Kahraman',
+            senderName: document.getElementById('childSenderName')?.value?.trim() ||
+                        document.getElementById('senderName')?.value?.trim() || '',
+            customMessage: document.getElementById('childSenderNote')?.value?.trim() ||
+                           document.getElementById('customMessage')?.value?.trim() || '',
+          })
+        });
+
+        const d = await r.json();
+        if (d.success) {
+          btn.textContent = '✅ Tamamlandı!';
+          var dir = currentOutputDir;
+          ['cover-final.png', 'hero-page.png', 'sender-note.png', 'back-cover.png'].forEach(function(file) {
+            addSpecialGallery(file, file.replace('.png','').replace(/-/g,' '), 'ÖZEL', dir);
+          });
+          for (var i = 1; i <= 15; i++) {
+            addSpecialGallery('funfact-after-' + i + '.png', 'Biliyor Muydun S' + i, 'BİLGİ', dir);
+          }
+          setTimeout(function() { btn.textContent = '🎨 Özel Sayfaları Üret'; btn.disabled = false; }, 3000);
+        } else {
+          btn.textContent = '❌ Hata: ' + (d.error || 'Bilinmeyen');
+          setTimeout(function() { btn.textContent = '🎨 Özel Sayfaları Üret'; btn.disabled = false; }, 3000);
+        }
+      } catch (err) {
+        btn.textContent = '❌ ' + err.message;
+        setTimeout(function() { btn.textContent = '🎨 Özel Sayfaları Üret'; btn.disabled = false; }, 3000);
       }
     }
 
@@ -963,14 +1301,36 @@
       const g=document.getElementById('galleryGrid');
       const d=document.createElement('div');
       d.className='gallery-item';
+      d.dataset.sceneNum = num;
       d.onclick=()=>openEditor(num,src,title,text);
       const downloadBtn = `<div class="gallery-item-download" onclick="event.stopPropagation();downloadImage('${src}','sahne-${num}.png')" title="Bu gorseli indir">
         <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
       </div>`;
+      const regenBtn = (type === 'sahne' || type === 'scene') ? `<div class="gallery-item-regen" onclick="event.stopPropagation();quickRegenerate(${num},this)" title="Görseli yeniden üret" style="position:absolute;top:6px;left:6px;width:28px;height:28px;border-radius:50%;background:rgba(124,92,252,0.85);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:transform 0.2s;font-size:14px;" onmouseenter="this.style.transform='scale(1.15)'" onmouseleave="this.style.transform=''">🔄</div>` : '';
       const typeLabel = '<div class="gallery-item-type">SAHNE '+num+'</div>';
-      d.innerHTML=`<img src="${src}" alt="" loading="lazy">${downloadBtn}${typeLabel}<div class="gallery-item-info"><strong>Sahne ${num}</strong><span>${title}</span></div>`;
+      d.innerHTML=`<img src="${src}" alt="" loading="lazy">${downloadBtn}${regenBtn}${typeLabel}<div class="gallery-item-info"><strong>Sahne ${num}</strong><span>${title}</span></div>`;
+      g.appendChild(d);
+    }
+
+    // Ozel sayfa galerisi (kapak, kahraman, arka kapak, funfact vb.)
+    function addSpecialGallery(file, label, type, outputDir) {
+      document.getElementById('galleryPanel').classList.add('active');
+      const src = '/output/' + outputDir + '/' + file + '?t=' + Date.now();
+      const g = document.getElementById('galleryGrid');
+      const d = document.createElement('div');
+      d.className = 'gallery-item';
+      d.onclick = function() {
+        document.getElementById('lbImg').src = src;
+        document.getElementById('lightbox').classList.add('active');
+      };
+      const downloadBtn = '<div class="gallery-item-download" onclick="event.stopPropagation();downloadImage(\'' + src + '\',\'' + file + '\')" title="Bu gorseli indir">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>' +
+        '</svg></div>';
+      const typeLabel = '<div class="gallery-item-type" style="background:rgba(124,92,252,0.85)">' + type + '</div>';
+      d.innerHTML = '<img src="' + src + '" alt="' + label + '" loading="lazy" onerror="this.parentElement.remove()">' + downloadBtn + typeLabel + '<div class="gallery-item-info"><strong>' + label + '</strong><span>Özel Sayfa</span></div>';
       g.appendChild(d);
     }
 
@@ -1030,7 +1390,9 @@
       document.getElementById('lightbox').classList.add('active');
     }
     function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
+      var lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      lb.style.display = '';
       editingScene = null;
     }
     document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
@@ -1081,6 +1443,113 @@
         statusEl.style.color = 'var(--error)';
       }
       document.getElementById('btnRerender').disabled = false;
+    }
+
+    async function quickRegenerate(sceneNum, btnEl) {
+      if (!currentOutputDir || !selectedBook) {
+        alert('Önce bir kitap üretin.');
+        return;
+      }
+
+      btnEl.textContent = '⏳';
+      btnEl.style.pointerEvents = 'none';
+      addLog('Sahne ' + sceneNum + ' yeniden üretiliyor...', 'ok');
+
+      try {
+        var r = await fetch('/api/regenerate-scene', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            outputDir: currentOutputDir,
+            sceneNumber: sceneNum,
+            bookId: selectedBook,
+            title: sceneTexts[sceneNum]?.title || '',
+            text: sceneTexts[sceneNum]?.text || '',
+          })
+        });
+
+        var d = await r.json();
+        if (d.success) {
+          addLog('Sahne ' + sceneNum + ' yeniden üretildi!', 'ok');
+          // Galeri görselini güncelle
+          var items = document.querySelectorAll('.gallery-item');
+          items.forEach(function(item) {
+            if (item.dataset.sceneNum == sceneNum) {
+              var img = item.querySelector('img');
+              if (img) img.src = d.imagePath + '?t=' + Date.now();
+            }
+          });
+          btnEl.textContent = '✅';
+          setTimeout(function(){ btnEl.textContent = '🔄'; btnEl.style.pointerEvents = ''; }, 2000);
+        } else {
+          addLog('Sahne ' + sceneNum + ' hata: ' + (d.error || 'Bilinmeyen'), 'err');
+          btnEl.textContent = '❌';
+          setTimeout(function(){ btnEl.textContent = '🔄'; btnEl.style.pointerEvents = ''; }, 2000);
+        }
+      } catch (err) {
+        addLog('Sahne ' + sceneNum + ' bağlantı hatası: ' + err.message, 'err');
+        btnEl.textContent = '❌';
+        setTimeout(function(){ btnEl.textContent = '🔄'; btnEl.style.pointerEvents = ''; }, 2000);
+      }
+    }
+
+    async function regenerateScene() {
+      if(!editingScene || !currentOutputDir) {
+        document.getElementById('editStatus').textContent = 'Lutfen once kitap uretin';
+        return;
+      }
+
+      const statusEl = document.getElementById('editStatus');
+      const btn = document.getElementById('btnRegenerate');
+
+      if (!confirm('Bu sahnenin gorseli yeniden uretilecek. Bu islem 30-60 saniye surebilir. Devam etmek istiyor musunuz?')) return;
+
+      statusEl.textContent = '🔄 Gorsel yeniden uretiliyor... Lutfen bekleyin...';
+      statusEl.style.color = 'var(--warning, #f59e0b)';
+      btn.disabled = true;
+      btn.textContent = '⏳ Uretiliyor...';
+
+      try {
+        const r = await fetch('/api/regenerate-scene', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            outputDir: currentOutputDir,
+            sceneNumber: editingScene,
+            bookId: selectedBook,
+            title: document.getElementById('editTitle').value,
+            text: document.getElementById('editText').value,
+          })
+        });
+
+        const d = await r.json();
+        if(d.success) {
+          statusEl.textContent = '✅ Gorsel basariyla yeniden uretildi!';
+          statusEl.style.color = 'var(--success)';
+          // Lightbox gorselini guncelle
+          document.getElementById('lbImg').src = d.imagePath + '?t=' + Date.now();
+          // Gallery grid gorselini guncelle
+          sceneTexts[editingScene] = {
+            title: document.getElementById('editTitle').value,
+            text: document.getElementById('editText').value,
+            src: d.imagePath
+          };
+          const items = document.querySelectorAll('.gallery-item img');
+          items.forEach(img => {
+            if(img.src.includes('scene-'+String(editingScene).padStart(2,'0'))) {
+              img.src = d.imagePath + '?t=' + Date.now();
+            }
+          });
+        } else {
+          statusEl.textContent = '❌ Hata: ' + (d.error||'Bilinmeyen hata');
+          statusEl.style.color = 'var(--error)';
+        }
+      } catch(err) {
+        statusEl.textContent = '❌ Baglanti hatasi: ' + err.message;
+        statusEl.style.color = 'var(--error)';
+      }
+      btn.disabled = false;
+      btn.textContent = '🔄 Gorseli Yeniden Uret';
     }
 
     async function rebuildPdf() {
@@ -1141,6 +1610,7 @@
         if (!latest || latest.sceneCount === 0) return;
 
         currentOutputDir = latest.dir;
+        document.getElementById('btnGenerateSpecial').disabled = false;
 
         // Profil gorsellerini ekle
         for (const p of latest.profiles) {
@@ -1153,11 +1623,34 @@
           );
         }
 
-        // Sahne gorsellerini ekle
+        // Sahne gorsellerini ve metin sayfalarini ekle
         for (const s of latest.scenes) {
           sceneTexts[s.sceneNumber] = { title: s.title, text: s.text, src: s.imagePath };
           addGallery(s.sceneNumber, s.title, s.imagePath + '?t=' + Date.now(), s.text, 'sahne');
+          // Metin sayfasi
+          var tf='scene-'+String(s.sceneNumber).padStart(2,'0')+'-text.png';
+          var tp='/output/'+currentOutputDir+'/'+tf;
+          var te=document.createElement('div');te.className='gallery-item';
+          te.onclick=(function(p){return function(){document.getElementById('lbImg').src=p+'?t='+Date.now();document.getElementById('lightbox').classList.add('active');};})(tp);
+          te.innerHTML='<img src="'+tp+'?t='+Date.now()+'" loading="lazy" onerror="this.parentElement.remove()"><div class="gallery-item-type" style="background:rgba(124,92,252,0.85)">METİN</div><div class="gallery-item-info"><strong>S'+s.sceneNumber+' Metin</strong><span>'+(s.title||'')+'</span></div>';
+          document.getElementById('galleryGrid').appendChild(te);
         }
+
+        // Ozel sayfalari galeriye ekle
+        var prevSpecials = [
+          ['cover-final.png', 'Ön Kapak', 'KAPAK'],
+          ['hero-page.png', 'Hikayemizin Kahramanı', 'KAHRAMAN'],
+          ['inner-cover.png', 'İç Kapak', 'İÇ KAPAK'],
+          ['dedication.png', 'İthaf', 'İTHAF'],
+          ['sender-note.png', 'Gönderenden Not', 'NOT'],
+          ['back-cover.png', 'Arka Kapak', 'ARKA'],
+        ];
+        for (var fi = 1; fi <= 15; fi++) {
+          prevSpecials.push(['funfact-after-' + fi + '.png', 'Biliyor Muydun (S' + fi + ')', 'BİLGİ']);
+        }
+        prevSpecials.forEach(function(sp) {
+          addSpecialGallery(sp[0], sp[1], sp[2], latest.dir);
+        });
 
         // PDF banner goster
         if (latest.pdfPath) {

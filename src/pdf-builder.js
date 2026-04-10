@@ -7,8 +7,10 @@
  * Sayfa akisi:
  *   [1]  Kapak (pre-rendered PNG)
  *   [2]  Ic kapak (pre-rendered PNG)
- *   [3]  Ithaf (pre-rendered PNG)
- *   [4+] Sahne (tek sayfa: illustrasyon + metin overlay)
+ *   [3]  Hikayemizin Kahramani (pre-rendered PNG)
+ *   [4]  Ithaf (pre-rendered PNG)
+ *   [5]  Gonderen notu (opsiyonel, pre-rendered PNG)
+ *   [6+] Sahne (tek sayfa: illustrasyon + metin overlay)
  *        Araya "Biliyor muydun?" PNG sayfalari eklenir
  *   [Son-1] Kapanis (pre-rendered PNG)
  *   [Son]   Arka kapak (pre-rendered PNG)
@@ -29,7 +31,9 @@ class PDFBuilder {
    * @param {string} options.childName - Cocugun adi
    * @param {Buffer|string} options.coverPNG - Kapak sayfasi PNG
    * @param {Buffer|string} options.innerCoverPNG - Ic kapak PNG
+   * @param {Buffer|string} options.heroPagePNG - Hikayemizin Kahramani PNG
    * @param {Buffer|string} options.dedicationPNG - Ithaf sayfasi PNG
+   * @param {Buffer|string} options.senderNotePNG - Gonderen notu PNG (opsiyonel)
    * @param {Array<{finalPNG, sceneNumber}>} options.scenePages - Sahne sayfalari (tek sayfa per sahne)
    * @param {Array<{afterScene: number, png: Buffer|string}>} options.funFactPages - Biliyor muydun sayfalari
    * @param {Buffer|string} options.endingPNG - Kapanis sayfasi PNG
@@ -41,11 +45,10 @@ class PDFBuilder {
       title,
       childName,
       coverPNG,
-      innerCoverPNG,
-      dedicationPNG,
+      heroPagePNG,
+      senderNotePNG,
       scenePages = [],
       funFactPages = [],
-      endingPNG,
       backCoverPNG,
     } = options;
 
@@ -74,28 +77,35 @@ class PDFBuilder {
     await this._addImagePage(doc, coverPNG, pageCount === 0);
     pageCount++;
 
-    // === SAYFA 2: IC KAPAK ===
-    if (innerCoverPNG) {
+    // === SAYFA 2: HIKAYEMIZIN KAHRAMANI ===
+    if (heroPagePNG && fs.existsSync(heroPagePNG)) {
       this._newPage(doc);
-      await this._addImagePage(doc, innerCoverPNG);
+      await this._addImagePage(doc, heroPagePNG);
       pageCount++;
     }
 
-    // === SAYFA 3: ITHAF ===
-    if (dedicationPNG) {
+    // === SAYFA 3: GONDEREN NOTU ===
+    if (senderNotePNG && fs.existsSync(senderNotePNG)) {
       this._newPage(doc);
-      await this._addImagePage(doc, dedicationPNG);
+      await this._addImagePage(doc, senderNotePNG);
       pageCount++;
     }
 
-    // === TEK SAYFA PER SAHNE: Illustrasyon + Metin Overlay ===
+    // === SAHNELER: Her sahne 2 sayfa (illustrasyon + metin) ===
     for (let i = 0; i < scenePages.length; i++) {
       const scene = scenePages[i];
 
-      // Sahne: tek sayfa (illustrasyon + metin birlikte)
+      // Sayfa A: Illustrasyon (saf gorsel, metin yok)
       this._newPage(doc);
       await this._addImagePage(doc, scene.finalPNG);
       pageCount++;
+
+      // Sayfa B: Metin sayfasi (AI uretilmis)
+      if (scene.textPNG && fs.existsSync(scene.textPNG)) {
+        this._newPage(doc);
+        await this._addImagePage(doc, scene.textPNG);
+        pageCount++;
+      }
 
       // Bu sahneden sonra funFact?
       const sceneNum = scene.sceneNumber || (i + 1);
@@ -104,13 +114,6 @@ class PDFBuilder {
         await this._addImagePage(doc, funFactMap.get(sceneNum));
         pageCount++;
       }
-    }
-
-    // === KAPANIS ===
-    if (endingPNG) {
-      this._newPage(doc);
-      await this._addImagePage(doc, endingPNG);
-      pageCount++;
     }
 
     // === ARKA KAPAK ===

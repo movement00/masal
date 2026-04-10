@@ -186,15 +186,23 @@ class TextPageRenderer {
    * "Biliyor Muydun?" sayfasini PNG olarak render eder
    */
   async renderFunFactPage(options) {
-    const { funFact, theme = {}, outputPath } = options;
+    const { funFact, theme = {}, outputPath, backgroundImagePath } = options;
 
     const factBg = theme.funFactBg || "#FF6D00";
     const icon = funFact.icon || theme.icon || "★";
     const rgb = this._hexToRgb(factBg);
 
-    const bgBuffer = await sharp({
-      create: { width: PW, height: PH, channels: 4, background: { r: rgb.r, g: rgb.g, b: rgb.b, alpha: 255 } },
-    }).png().toBuffer();
+    let bgBuffer;
+    if (backgroundImagePath && fs.existsSync(backgroundImagePath)) {
+      bgBuffer = await sharp(backgroundImagePath)
+        .resize(PW, PH, { fit: "cover" })
+        .png()
+        .toBuffer();
+    } else {
+      bgBuffer = await sharp({
+        create: { width: PW, height: PH, channels: 4, background: { r: rgb.r, g: rgb.g, b: rgb.b, alpha: 255 } },
+      }).png().toBuffer();
+    }
 
     const svg = this._createFunFactSVG({ funFact, factBg, icon, rgb });
 
@@ -236,16 +244,240 @@ class TextPageRenderer {
    * Arka kapak sayfasini PNG olarak render eder
    */
   async renderBackCoverPage(options) {
-    const { title, theme = {}, outputPath } = options;
-
+    const { title, childName, description, lessons, theme = {}, outputPath, backgroundImagePath } = options;
     const primary = theme.primaryColor || "#8b5cf6";
+    const icon = theme.icon || "★";
     const rgb = this._hexToRgb(primary);
 
-    const bgBuffer = await sharp({
-      create: { width: PW, height: PH, channels: 4, background: { r: 15, g: 15, b: 26, alpha: 255 } },
-    }).png().toBuffer();
+    let bgBuffer;
+    if (backgroundImagePath && fs.existsSync(backgroundImagePath)) {
+      bgBuffer = await sharp(backgroundImagePath)
+        .resize(PW, PH, { fit: "cover" })
+        .png()
+        .toBuffer();
+    } else {
+      bgBuffer = await sharp({
+        create: { width: PW, height: PH, channels: 4, background: { r: 15, g: 15, b: 26, alpha: 255 } },
+      }).png().toBuffer();
+    }
 
-    const svg = this._createBackCoverSVG({ title, primary, rgb });
+    const svg = this._createBackCoverSVG({ title, primary, rgb, childName, description, icon, lessons });
+
+    const result = await sharp(bgBuffer)
+      .composite([{ input: Buffer.from(svg), top: 0, left: 0 }])
+      .png({ quality: 95 })
+      .toBuffer();
+
+    if (outputPath) fs.writeFileSync(outputPath, result);
+    return result;
+  }
+
+  /**
+   * "Hikayemizin Kahramani" sayfasini render eder
+   * AI arka plan uzerine gercek fotograflari Sharp ile yerlestirir
+   * 1-5 fotografa gore dinamik grid olusturur
+   */
+  async renderHeroPage(options) {
+    const { childName, childPhotoPath, extraPhotoPaths = [], theme = {}, ageGroup = "3-6", bookTitle, outputPath, backgroundImagePath } = options;
+
+    const primary = theme.primaryColor || "#8b5cf6";
+
+    // 1. Arka plan: AI uretilmis veya duz renk
+    let bgBuffer;
+    if (backgroundImagePath && fs.existsSync(backgroundImagePath)) {
+      bgBuffer = await sharp(backgroundImagePath)
+        .resize(PW, PH, { fit: "cover" })
+        .png()
+        .toBuffer();
+    } else {
+      bgBuffer = await sharp({
+        create: { width: PW, height: PH, channels: 4, background: { r: 254, g: 252, b: 249, alpha: 255 } },
+      }).png().toBuffer();
+    }
+
+    // 2. Tum fotograflari topla
+    const allPhotos = [];
+    if (childPhotoPath && fs.existsSync(childPhotoPath)) {
+      allPhotos.push(childPhotoPath);
+    }
+    if (extraPhotoPaths && extraPhotoPaths.length > 0) {
+      for (const ep of extraPhotoPaths) {
+        if (ep && fs.existsSync(ep)) allPhotos.push(ep);
+      }
+    }
+
+    // 3. Fotograf sayisina gore grid layout hesapla
+    const composites = [];
+    const photoCount = Math.min(allPhotos.length, 5);
+
+    if (photoCount > 0) {
+      const layouts = this._getPhotoGridLayout(photoCount);
+      const frameColor = this._hexToRgb(primary);
+      const framePadding = 10;
+      const cornerRadius = 24;
+
+      for (let i = 0; i < photoCount; i++) {
+        const layout = layouts[i];
+        try {
+          // Fotografi resize et
+          const photoBuffer = await sharp(allPhotos[i])
+            .resize(layout.w, layout.h, { fit: "cover", position: "centre" })
+            .png()
+            .toBuffer();
+
+          // Rounded corner mask uygula
+          const roundedMask = Buffer.from(
+            `<svg width="${layout.w}" height="${layout.h}">
+              <rect width="${layout.w}" height="${layout.h}" rx="${cornerRadius}" ry="${cornerRadius}" fill="white"/>
+            </svg>`
+          );
+          const maskedPhoto = await sharp(photoBuffer)
+            .composite([{ input: roundedMask, blend: 'dest-in' }])
+            .png()
+            .toBuffer();
+
+          // Cerceve (frame) olustur
+          const frameW = layout.w + framePadding * 2;
+          const frameH = layout.h + framePadding * 2;
+          const frameSvg = Buffer.from(
+            `<svg width="${frameW}" height="${frameH}">
+              <rect width="${frameW}" height="${frameH}" rx="${cornerRadius + 4}" ry="${cornerRadius + 4}"
+                fill="rgb(${frameColor.r},${frameColor.g},${frameColor.b})" opacity="0.9"/>
+            </svg>`
+          );
+          const frameBuffer = await sharp({
+            create: { width: frameW, height: frameH, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
+          })
+          .composite([{ input: frameSvg, top: 0, left: 0 }])
+          .png()
+          .toBuffer();
+
+          // Cerceve + foto composite
+          composites.push({
+            input: frameBuffer,
+            top: layout.y - framePadding,
+            left: layout.x - framePadding,
+          });
+          composites.push({
+            input: maskedPhoto,
+            top: layout.y,
+            left: layout.x,
+          });
+        } catch (photoErr) {
+          console.warn(`  [TextPageRenderer] Hero foto ${i + 1} isleme hatasi:`, photoErr.message);
+        }
+      }
+    }
+
+    // 4. Her seyi birlestir
+    const result = await sharp(bgBuffer)
+      .composite(composites)
+      .png({ quality: 95 })
+      .toBuffer();
+
+    if (outputPath) fs.writeFileSync(outputPath, result);
+    return result;
+  }
+
+  /**
+   * Fotograf sayisina gore dinamik grid layout hesaplar
+   * @param {number} count - 1 ile 5 arasi fotograf sayisi
+   * @returns {Array<{x, y, w, h}>} Her fotografin pozisyon ve boyutu
+   */
+  _getPhotoGridLayout(count) {
+    const margin = 80;
+    const gap = 24;
+    const gridTop = 580;   // Baslik alani altinda
+    const gridBottom = PH - 200; // Alt metin alani ustunde
+    const gridH = gridBottom - gridTop;
+    const gridW = PW - margin * 2;
+
+    switch (count) {
+      case 1: {
+        // Tek buyuk fotograf, ortada
+        const size = Math.min(gridW * 0.65, gridH * 0.85);
+        return [{
+          x: Math.round((PW - size) / 2),
+          y: Math.round(gridTop + (gridH - size) / 2),
+          w: Math.round(size),
+          h: Math.round(size),
+        }];
+      }
+      case 2: {
+        // 2 fotograf yan yana
+        const photoW = Math.round((gridW - gap) / 2);
+        const photoH = Math.min(photoW, Math.round(gridH * 0.85));
+        const startY = Math.round(gridTop + (gridH - photoH) / 2);
+        return [
+          { x: margin, y: startY, w: photoW, h: photoH },
+          { x: margin + photoW + gap, y: startY, w: photoW, h: photoH },
+        ];
+      }
+      case 3: {
+        // 1 buyuk ust, 2 kucuk alt
+        const topW = Math.round(gridW * 0.6);
+        const topH = Math.round(gridH * 0.52);
+        const botW = Math.round((gridW - gap) / 2);
+        const botH = Math.round(gridH * 0.42);
+        return [
+          { x: Math.round((PW - topW) / 2), y: gridTop, w: topW, h: topH },
+          { x: margin, y: gridTop + topH + gap, w: botW, h: botH },
+          { x: margin + botW + gap, y: gridTop + topH + gap, w: botW, h: botH },
+        ];
+      }
+      case 4: {
+        // 2x2 grid
+        const photoW = Math.round((gridW - gap) / 2);
+        const photoH = Math.round((gridH - gap) / 2);
+        return [
+          { x: margin, y: gridTop, w: photoW, h: photoH },
+          { x: margin + photoW + gap, y: gridTop, w: photoW, h: photoH },
+          { x: margin, y: gridTop + photoH + gap, w: photoW, h: photoH },
+          { x: margin + photoW + gap, y: gridTop + photoH + gap, w: photoW, h: photoH },
+        ];
+      }
+      case 5: {
+        // 2 ust + 3 alt
+        const topW = Math.round((gridW - gap) / 2);
+        const topH = Math.round(gridH * 0.48);
+        const botW = Math.round((gridW - gap * 2) / 3);
+        const botH = Math.round(gridH * 0.46);
+        return [
+          { x: margin, y: gridTop, w: topW, h: topH },
+          { x: margin + topW + gap, y: gridTop, w: topW, h: topH },
+          { x: margin, y: gridTop + topH + gap, w: botW, h: botH },
+          { x: margin + botW + gap, y: gridTop + topH + gap, w: botW, h: botH },
+          { x: margin + (botW + gap) * 2, y: gridTop + topH + gap, w: botW, h: botH },
+        ];
+      }
+      default:
+        return [];
+    }
+  }
+
+  /**
+   * "Kimden Not" sayfasini render eder - el yazisi stili
+   */
+  async renderSenderNotePage(options) {
+    const { childName, senderName, senderNote, theme = {}, outputPath, backgroundImagePath } = options;
+
+    const primary = theme.primaryColor || "#8b5cf6";
+    const secondary = theme.secondaryColor || "#a78bfa";
+    const icon = theme.icon || "★";
+
+    let bgBuffer;
+    if (backgroundImagePath && fs.existsSync(backgroundImagePath)) {
+      bgBuffer = await sharp(backgroundImagePath)
+        .resize(PW, PH, { fit: "cover" })
+        .png()
+        .toBuffer();
+    } else {
+      bgBuffer = await sharp({
+        create: { width: PW, height: PH, channels: 4, background: { r: 254, g: 252, b: 249, alpha: 255 } },
+      }).png().toBuffer();
+    }
+
+    const svg = this._createSenderNoteSVG({ childName, senderName, senderNote, primary, secondary, icon });
 
     const result = await sharp(bgBuffer)
       .composite([{ input: Buffer.from(svg), top: 0, left: 0 }])
@@ -553,18 +785,18 @@ class TextPageRenderer {
   _createFunFactSVG({ funFact, factBg, icon, rgb }) {
     const mx = 120;
     const facts = funFact.facts || [];
-    const factCount = Math.min(facts.length, 4);
-    const startY = 380;
+    const factCount = Math.min(facts.length, 5);
+    const startY = 350;
     const cardW = PW - mx * 2;
-    const gap = 30;
-    const cardH = Math.min(220, (PH - startY - 120 - gap * (factCount - 1)) / factCount);
+    const gap = 22;
+    const cardH = Math.min(180, (PH - startY - 100 - gap * (factCount - 1)) / factCount);
 
     let factsSVG = "";
     for (let i = 0; i < factCount; i++) {
       const y = startY + i * (cardH + gap);
       const factLines = this._wrapText(facts[i], 42);
-      const factFontSize = factLines.length > 3 ? 28 : 32;
-      const factLineH = Math.round(factFontSize * 1.6);
+      const factFontSize = factCount >= 5 ? 26 : (factLines.length > 3 ? 28 : 32);
+      const factLineH = Math.round(factFontSize * 1.5);
 
       factsSVG += `
     <!-- Kart ${i + 1} -->
@@ -635,23 +867,118 @@ class TextPageRenderer {
   // =========================================================================
   // ARKA KAPAK SVG
   // =========================================================================
-  _createBackCoverSVG({ title, primary, rgb }) {
+  _createBackCoverSVG({ title, primary, rgb, childName, description, icon, lessons }) {
+    const mx = 140;
+    const descLines = this._wrapText(description || '', 38);
+    let descSVG = '';
+    for (let i = 0; i < Math.min(descLines.length, 4); i++) {
+      descSVG += `<text x="${PW/2}" y="${PH/2 + 90 + i * 42}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="28" fill="#8a8a9e">${this._esc(descLines[i])}</text>`;
+    }
+
     return `<svg width="${PW}" height="${PH}" xmlns="http://www.w3.org/2000/svg">
   <!-- Ust/alt tema seritleri -->
-  <rect x="0" y="0" width="${PW}" height="6" fill="${primary}"/>
-  <rect x="0" y="${PH-6}" width="${PW}" height="6" fill="${primary}"/>
+  <rect x="0" y="0" width="${PW}" height="8" fill="${primary}"/>
+  <rect x="0" y="${PH-8}" width="${PW}" height="8" fill="${primary}"/>
 
-  <!-- Dekoratif daire -->
-  <circle cx="${PW/2}" cy="${PH/2}" r="200" fill="${primary}" opacity="0.05"/>
+  <!-- Dekoratif daireler -->
+  <circle cx="${PW/2}" cy="${PH/2 - 100}" r="280" fill="${primary}" opacity="0.04"/>
+  <circle cx="${PW/2}" cy="${PH/2 - 100}" r="200" fill="${primary}" opacity="0.04"/>
 
-  <!-- MASAL logosu -->
-  <text x="${PW/2}" y="${PH/2 - 20}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="60" fill="white" letter-spacing="6">MASAL</text>
-
-  <!-- Alt baslik -->
-  <text x="${PW/2}" y="${PH/2 + 30}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="24" fill="#5a5a6e">Ki&#351;iselle&#351;tirilmi&#351; Hikaye Kitab&#305;</text>
+  <!-- Ikon -->
+  <text x="${PW/2}" y="${PH/2 - 280}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="80" fill="${primary}" opacity="0.8">${this._esc(icon || '★')}</text>
 
   <!-- Kitap adi -->
-  <text x="${PW/2}" y="${PH - 80}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="20" fill="#3a3a4e">${this._esc(title)}</text>
+  <text x="${PW/2}" y="${PH/2 - 180}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="44" fill="white">${this._esc(title)}</text>
+
+  <!-- Dekoratif cizgi -->
+  <rect x="${PW/2 - 60}" y="${PH/2 - 140}" width="120" height="4" rx="2" fill="${primary}"/>
+
+  <!-- Masal bitti tagline -->
+  <text x="${PW/2}" y="${PH/2 - 80}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="32" fill="#c0b0d0" font-style="italic">"Masal bitti ama izleri kald&#305;..."</text>
+
+  <!-- Aciklama -->
+  ${descSVG}
+
+  <!-- Ogrenilen degerler -->
+  ${(() => {
+    let lessonsSVG = '';
+    if (lessons && lessons.length > 0) {
+      const lessonY = PH/2 + 180;
+      lessonsSVG = `
+  <text x="${PW/2}" y="${lessonY}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="28" fill="#a0a0b8" letter-spacing="3">BU K&#304;TAPTA NE &#214;&#286;REND&#304;K?</text>
+  <rect x="${PW/2 - 40}" y="${lessonY + 15}" width="80" height="2" rx="1" fill="${primary}" opacity="0.4"/>`;
+      const lessonStartY = lessonY + 55;
+      const lessonGap = 48;
+      for (let i = 0; i < Math.min(lessons.length, 4); i++) {
+        lessonsSVG += `
+  <text x="${PW/2}" y="${lessonStartY + i * lessonGap}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="26" fill="#8a8a9e">&#10022; ${this._esc(lessons[i])}</text>`;
+      }
+    }
+    return lessonsSVG;
+  })()}
+
+  <!-- Cocuk icin ozel -->
+  ${childName ? `<text x="${PW/2}" y="${PH/2 + 280}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="500" font-size="26" fill="#6a6a7e">${this._esc(childName)} i&#231;in sevgiyle haz&#305;rland&#305;</text>` : ''}
+
+  <!-- MASAL logosu -->
+  <text x="${PW/2}" y="${PH - 140}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="48" fill="white" letter-spacing="6">MASAL</text>
+  <text x="${PW/2}" y="${PH - 95}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="20" fill="#5a5a6e">Ki&#351;iselle&#351;tirilmi&#351; Hikaye Kitab&#305;</text>
+</svg>`;
+  }
+
+  // =========================================================================
+  // HERO SAYFASI SVG
+  // =========================================================================
+  // =========================================================================
+  // GONDEREN NOTU SVG
+  // =========================================================================
+  _createSenderNoteSVG({ childName, senderName, senderNote, primary, secondary, icon }) {
+    const mx = 160;
+    const noteText = senderNote || `Canim ${childName}, bu hikaye sana olan sevgimle hazirlandi. Her sayfasinda seni dusundum. Seni cok seviyorum!`;
+    const noteLines = this._wrapText(noteText, 30);
+    const fontSize = 36;
+    const lineH = Math.round(fontSize * 2.0);
+    const startY = 750;
+
+    let notesSVG = "";
+    for (let i = 0; i < noteLines.length; i++) {
+      const y = startY + i * lineH;
+      notesSVG += `<text x="${mx + 40}" y="${y}" font-family="Segoe Script, Comic Sans MS, Georgia, serif" font-weight="400" font-size="${fontSize}" fill="#3a3020" font-style="italic" opacity="0.85">${this._esc(noteLines[i])}</text>`;
+    }
+
+    const signY = startY + noteLines.length * lineH + 60;
+
+    return `<svg width="${PW}" height="${PH}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Kagit dokusu cerceve -->
+  <rect x="80" y="80" width="${PW-160}" height="${PH-160}" rx="4" fill="#faf6f0" stroke="#e0d0c0" stroke-width="1"/>
+  <rect x="90" y="90" width="${PW-180}" height="${PH-180}" rx="2" fill="none" stroke="#ece0d4" stroke-width="0.5"/>
+
+  <!-- Sol kenar kirmizi cizgi (defter etkisi) -->
+  <line x1="${mx}" y1="200" x2="${mx}" y2="${PH - 200}" stroke="#e8b0a0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Yazilar icin yatay cizgiler (defter etkisi) -->
+  ${Array.from({length: 20}, (_, i) => `<line x1="${mx + 20}" y1="${700 + i * lineH}" x2="${PW - 160}" y2="${700 + i * lineH}" stroke="#d8d0c8" stroke-width="0.5" opacity="0.5"/>`).join('\n  ')}
+
+  <!-- Ikon -->
+  <text x="${PW/2}" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="72" fill="${primary}">${this._esc(icon)}</text>
+
+  <!-- Baslik -->
+  <text x="${PW/2}" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="300" font-size="32" fill="#8a7a6a" letter-spacing="6">SANA B&#304;R NOT</text>
+
+  <!-- Dekoratif cizgi -->
+  <rect x="${PW/2 - 50}" y="490" width="100" height="2" rx="1" fill="${primary}" opacity="0.4"/>
+
+  <!-- Sevgili ... -->
+  <text x="${mx + 40}" y="600" font-family="Segoe Script, Comic Sans MS, Georgia, serif" font-weight="700" font-size="44" fill="#3a3020" font-style="italic">Sevgili ${this._esc(childName)},</text>
+
+  <!-- Not metni -->
+  ${notesSVG}
+
+  <!-- Imza -->
+  <text x="${PW - mx - 40}" y="${signY}" text-anchor="end" font-family="Segoe Script, Comic Sans MS, Georgia, serif" font-weight="700" font-size="40" fill="${primary}" font-style="italic">Sevgiyle, ${this._esc(senderName || 'Seni seven')}</text>
+
+  <!-- Dekoratif kalp -->
+  <text x="${PW - mx - 40}" y="${signY + 50}" text-anchor="end" font-family="Segoe UI" font-size="28" fill="${primary}" opacity="0.5">&#10084;</text>
 </svg>`;
   }
 

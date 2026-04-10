@@ -24,10 +24,12 @@ const config = require("../config");
 const PromptArchitect = require("./prompt-architect");
 const SceneGenerator = require("./scene-generator");
 const QualityValidator = require("./quality-validator");
+const TextValidator = require("./text-validator");
 const TextGenerator = require("../api/text-generator");
 const CanvasTextRenderer = require("../canvas-text-renderer");
 const TextPageRenderer = require("../text-page-renderer");
 const PDFBuilder = require("../pdf-builder");
+const BookQualityValidator = require("./book-quality-validator");
 const { MAX_REGEN_ATTEMPTS } = require("../constants");
 
 class BookOrchestrator {
@@ -55,8 +57,8 @@ class BookOrchestrator {
    * @returns {Promise<{success: boolean, outputDir: string, imageCount: number}>}
    */
   async generateBook(opts) {
-    const { bookId, childPhotoPath, childName, childGender, childAge, outputDir, dirName } = opts;
-    const childInfo = { name: childName, gender: childGender, age: childAge };
+    const { bookId, childPhotoPath, childName, childGender, childAge, outputDir, dirName, recipientName, senderName, customMessage, recipientNickname, senderGender, sharedActivity, recipientHobby, specialMemory, extraPhotoPaths } = opts;
+    const childInfo = { name: childName, gender: childGender, age: childAge, recipientName, senderName, customMessage, recipientNickname, senderGender, sharedActivity, recipientHobby, specialMemory, extraPhotoPaths: extraPhotoPaths || [] };
 
     // ──────────────────────────────────────────
     // FAZ 1: BASLANGIC
@@ -64,6 +66,25 @@ class BookOrchestrator {
     const bookPath = path.join(__dirname, "..", "stories", bookId, "book.json");
     if (!fs.existsSync(bookPath)) throw new Error(`Kitap bulunamadi: ${bookId}`);
     const bookData = JSON.parse(fs.readFileSync(bookPath, "utf-8"));
+
+    // ── KALITE KONTROLU (uretim oncesi) ──
+    {
+      const qcValidator = new BookQualityValidator(bookData, { autoFix: true, strict: false });
+      const qcResult = qcValidator.validate();
+      if (qcResult.issues.length > 0) {
+        console.log("  [orchestrator] Kalite Kontrolu:");
+        console.log("    Hatalar:", qcResult.errors, "| Uyarilar:", qcResult.warnings);
+        for (const fix of qcResult.fixes) {
+          console.log("    ✅ Otomatik duzeltme:", fix.fix);
+        }
+        for (const issue of qcResult.issues.filter(i => i.severity === "error" && !qcResult.fixes.find(f => f.code === issue.code && f.sceneNumber === issue.sceneNumber))) {
+          console.log("    ❌ Duzeltilemeyen:", issue.message);
+        }
+        this.sendSSE({ type: "step", message: `Kalite kontrolü: ${qcResult.fixes.length} otomatik düzeltme yapıldı` });
+      } else {
+        console.log("  [orchestrator] Kalite kontrolu: Tum kontroller gecti ✅");
+      }
+    }
 
     const sceneCount = bookData.scenes?.length || 10;
     const hasOutfitSystem = bookData.scenes?.some((s) => s.outfitId) && !bookData.outfit;
@@ -93,12 +114,85 @@ class BookOrchestrator {
       this.sendSSE({ type: "error", message: `Metin hatasi: ${err.message}` });
       textsArray = bookData.scenes.map((s) => ({ sceneNumber: s.sceneNumber, title: s.title, text: s.text }));
     }
+
+    // Metin kalite kontrolu
+    const textValidator = new TextValidator({
+      maxNamePerScene: 2,
+      ageGroup: bookData.ageGroup || "3-6"
+    });
+    const validation = textValidator.validateAll(textsArray, childName);
+    if (validation.issues.length > 0) {
+      console.log(`  [orchestrator] Metin sorunlari bulundu: ${validation.summary.warnings} uyari, ${validation.summary.info} bilgi`);
+      // Duzeltilmis metinleri kullan
+      textsArray = validation.correctedScenes;
+    }
+
     fs.writeFileSync(path.join(outputDir, "texts.json"), JSON.stringify(textsArray, null, 2), "utf-8");
+
+    // Meta bilgilerini kaydet (yeniden uretim icin)
+    const metaPath = path.join(outputDir, "meta.json");
+    fs.writeFileSync(metaPath, JSON.stringify({
+      childName,
+      childGender: childInfo.gender,
+      childAge: childInfo.age,
+      bookId,
+      bookTitle: bookData.title,
+      extraPhotoCount: (extraPhotoPaths || []).length,
+    }, null, 2), "utf-8");
+
+    // Cocuk fotografinin kopyasini output dizinine kaydet (yeniden uretim icin)
+    try {
+      const photoExt = path.extname(childPhotoPath) || ".jpg";
+      const childPhotoCopy = path.join(outputDir, `child-photo${photoExt}`);
+      if (!fs.existsSync(childPhotoCopy)) {
+        fs.copyFileSync(childPhotoPath, childPhotoCopy);
+        console.log(`  [orchestrator] Cocuk fotografi kopyalandi: ${childPhotoCopy}`);
+      }
+    } catch (copyErr) {
+      console.warn(`  [orchestrator] Cocuk fotografi kopyalanamadi: ${copyErr.message}`);
+    }
+
+    // Ek fotograflari output dizinine kopyala (rerender icin kalici)
+    const copiedExtraPaths = [];
+    try {
+      if (childInfo.extraPhotoPaths) {
+        childInfo.extraPhotoPaths.forEach((ep, i) => {
+          if (ep && fs.existsSync(ep)) {
+            const ext = path.extname(ep) || ".jpg";
+            const dest = path.join(outputDir, `extra-photo-${i + 1}${ext}`);
+            fs.copyFileSync(ep, dest);
+            copiedExtraPaths.push(dest);
+            console.log(`  [orchestrator] Ek fotograf kopyalandi: ${dest}`);
+          }
+        });
+      }
+      // Hero page icin kopyalanmis yollari kullan
+      childInfo._copiedExtraPaths = copiedExtraPaths;
+    } catch (copyErr) {
+      console.warn("  [orchestrator] Ek foto kopyalama hatasi:", copyErr.message);
+    }
 
     // Cocuk fotografini yukle
     this.sendSSE({ type: "step", step: 2, total: TOTAL_STEPS, message: "Karakter referansi hazirlaniyor..." });
     const childPhotoRef = await sceneGenerator.prepareChildPhoto(childPhotoPath);
     this.sendSSE({ type: "scene_done", sceneNumber: 0, title: "Karakter Referansi", imagePath: null, text: "Cocuk fotografi referans olarak kullaniliyor" });
+
+    // Ek fotograflari hazirla
+    const extraPhotoRefs = [];
+    if (extraPhotoPaths && extraPhotoPaths.length > 0) {
+      for (const ep of extraPhotoPaths) {
+        try {
+          const ref = await sceneGenerator.prepareExtraPhoto(ep);
+          extraPhotoRefs.push(ref);
+          console.log(`  [orchestrator] Ek fotograf hazir: ${ref}`);
+        } catch (e) {
+          console.warn(`  [orchestrator] Ek foto hazirlama hatasi: ${e.message}`);
+        }
+      }
+      if (extraPhotoRefs.length > 0) {
+        console.log(`  [orchestrator] ${extraPhotoRefs.length} ek fotograf hazir`);
+      }
+    }
 
     // Cocuk fotografi buffer'i - yuz tutarliligi kontrolu icin
     let childPhotoBuffer = null;
@@ -262,6 +356,13 @@ class BookOrchestrator {
         referenceImages.push(activeProfileRef);
       }
 
+      // Ek fotograflari referans olarak ekle (max 2 per scene to not overwhelm)
+      if (extraPhotoRefs.length > 0) {
+        for (let ep = 0; ep < Math.min(extraPhotoRefs.length, 2); ep++) {
+          referenceImages.push(extraPhotoRefs[ep]);
+        }
+      }
+
       if (hasOutfitProfile) {
         console.log(`    → Sahne ${scene.sceneNumber}: Kiyafet profili: ${scene.outfitId}`);
       }
@@ -305,7 +406,11 @@ class BookOrchestrator {
     const totalBatchElapsed = Math.round((Date.now() - batchStartTime) / 1000);
     console.log(`  [orchestrator] Tum sahneler uretildi: ${totalBatchElapsed}s (${completedCount}/${sceneCount})`);
 
-    // Sonuclari isle — sirayla diske yaz + overlay uygula
+    // CoverPromptArchitect — metin sayfalari ve ozel sayfalar icin
+    const CoverPromptArchitect = require("./cover-prompt-architect");
+    const coverArchitect = new CoverPromptArchitect(bookData, childInfo);
+
+    // Sonuclari isle — illustrasyon kaydet + AI metin sayfasi uret
     for (let i = 0; i < bookData.scenes.length; i++) {
       const scene = bookData.scenes[i];
       const sceneNum = scene.sceneNumber;
@@ -346,22 +451,58 @@ class BookOrchestrator {
         console.error(`  [orchestrator] Sahne ${sceneNum} BASARISIZ`);
       }
 
-      // Canvas metin overlay
+      // Illustrasyon sayfasi = saf gorsel, overlay YOK
+      if (sceneSuccess) {
+        fs.copyFileSync(illPath, finalPath);
+      }
+
+      // AI metin sayfasi uret (ayri sayfa)
+      const textPagePath = path.join(outputDir, `scene-${padNum}-text.png`);
       if (sceneSuccess) {
         try {
-          await canvasRenderer.renderTextOnImage(illPath, {
-            sceneNumber: sceneNum,
+          this.sendSSE({ type: "heartbeat", message: `Sahne ${sceneNum} metin sayfası üretiliyor...` });
+          const textPagePrompt = coverArchitect.buildTextPagePrompt({
             title: textEntry?.title || scene.title,
             text: textEntry?.text || scene.text,
-            theme: bookData.theme || {},
-            ageGroup: bookData.ageGroup || "3-6",
-            pageNumber: 4 + i,
-            totalScenes: sceneCount,
-            outputPath: finalPath,
+            mood: scene.mood || "warm",
           });
-        } catch (overlayErr) {
-          console.error(`  [orchestrator] Sahne ${sceneNum} overlay hatasi:`, overlayErr.message);
-          fs.copyFileSync(illPath, finalPath);
+          const textResult = await sceneGenerator.generateBackground({
+            prompt: textPagePrompt,
+            referenceImages: [],
+            maxRetries: 1,
+          });
+          if (textResult.success && textResult.buffer) {
+            fs.writeFileSync(textPagePath, textResult.buffer);
+            console.log(`  [orchestrator] Sahne ${sceneNum} metin sayfasi AI ile uretildi`);
+          } else {
+            console.log(`  [orchestrator] Sahne ${sceneNum} metin AI basarisiz, canvas fallback`);
+            await canvasRenderer.renderTextOnImage(illPath, {
+              sceneNumber: sceneNum,
+              title: textEntry?.title || scene.title,
+              text: textEntry?.text || scene.text,
+              theme: bookData.theme || {},
+              ageGroup: bookData.ageGroup || "3-6",
+              pageNumber: 4 + i,
+              totalScenes: sceneCount,
+              outputPath: textPagePath,
+            });
+          }
+        } catch (textErr) {
+          console.error(`  [orchestrator] Sahne ${sceneNum} metin hatasi:`, textErr.message, "- canvas fallback");
+          try {
+            await canvasRenderer.renderTextOnImage(illPath, {
+              sceneNumber: sceneNum,
+              title: textEntry?.title || scene.title,
+              text: textEntry?.text || scene.text,
+              theme: bookData.theme || {},
+              ageGroup: bookData.ageGroup || "3-6",
+              pageNumber: 4 + i,
+              totalScenes: sceneCount,
+              outputPath: textPagePath,
+            });
+          } catch (e2) {
+            console.error(`  [orchestrator] Sahne ${sceneNum} canvas fallback da basarisiz`);
+          }
         }
       }
 
@@ -370,6 +511,7 @@ class BookOrchestrator {
         sceneNumber: sceneNum,
         title: scene.title,
         imagePath: sceneSuccess ? `/output/${dirName}/scene-${padNum}-final.png` : null,
+        textPagePath: sceneSuccess ? `/output/${dirName}/scene-${padNum}-text.png` : null,
         text: textEntry?.text || scene.text,
         imageType: "scene",
       });
@@ -378,7 +520,11 @@ class BookOrchestrator {
         this.sendSSE({ type: "error", message: `Sahne ${sceneNum}: basarisiz, atlaniyor...` });
       }
 
-      finalScenePaths.push({ sceneNumber: sceneNum, finalPNG: sceneSuccess ? finalPath : null });
+      finalScenePaths.push({
+        sceneNumber: sceneNum,
+        finalPNG: sceneSuccess ? finalPath : null,
+        textPNG: sceneSuccess ? textPagePath : null,
+      });
     }
 
     // Sahne siralamasi (zaten sirali ama emin olmak icin)
@@ -394,29 +540,165 @@ class BookOrchestrator {
     const theme = bookData.theme || {};
     const ageGroup = bookData.ageGroup || "3-6";
 
-    // Kapak PNG
-    const firstIllPath = path.join(outputDir, "scene-01-illustration.png");
-    const firstIll = fs.existsSync(firstIllPath) ? firstIllPath : null;
+    // ════════════════════════════════════════════════════════════
+    // OZEL SAYFALAR: Tamamen AI ile uretim (SVG overlay YOK)
+    // coverArchitect zaten yukarida olusturuldu (satir 390-391)
+    // ════════════════════════════════════════════════════════════
+
+    // 1. ON KAPAK — AI ile metin dahil uret (referans: karakter profili)
+    this.sendSSE({ type: "step", message: "Ön kapak üretiliyor..." });
+    const coverFinalPath = path.join(outputDir, "cover-final.png");
     try {
-      await textRenderer.renderCoverPage({
-        imagePath: firstIll, title: bookData.title, childName, theme, ageGroup,
-        outputPath: path.join(outputDir, "cover-final.png"),
+      const coverPrompt = coverArchitect.buildCoverPrompt({
+        characterDesc: bookData.characterDescription?.base || ""
       });
-    } catch (err) { console.error("  [orchestrator] Kapak render hatasi:", err.message); }
-
-    // Ic kapak, Ithaf, Kapanis, Arka kapak
-    const specialPages = [
-      { method: "renderInnerCoverPage", opts: { title: bookData.title, childName, theme, ageGroup, outputPath: path.join(outputDir, "inner-cover.png") } },
-      { method: "renderDedicationPage", opts: { childName, theme, outputPath: path.join(outputDir, "dedication.png") } },
-      { method: "renderEndingPage", opts: { childName, theme, outputPath: path.join(outputDir, "ending.png") } },
-      { method: "renderBackCoverPage", opts: { title: bookData.title, theme, outputPath: path.join(outputDir, "back-cover.png") } },
-    ];
-
-    for (const page of specialPages) {
+      const coverRefs = [];
+      if (characterProfileRef) coverRefs.push(characterProfileRef);
+      const coverResult = await sceneGenerator.generateBackground({
+        prompt: coverPrompt,
+        referenceImages: coverRefs,
+        maxRetries: 2,
+      });
+      if (coverResult.success && coverResult.buffer) {
+        fs.writeFileSync(coverFinalPath, coverResult.buffer);
+        console.log("  [orchestrator] On kapak AI ile uretildi (metin dahil)");
+      } else {
+        // Fallback: ilk sahne + SVG overlay
+        const firstIll = path.join(outputDir, "scene-01-illustration.png");
+        await textRenderer.renderCoverPage({
+          imagePath: fs.existsSync(firstIll) ? firstIll : null,
+          title: bookData.title, childName, theme, ageGroup,
+          outputPath: coverFinalPath,
+        });
+        console.log("  [orchestrator] On kapak SVG fallback kullanildi");
+      }
+    } catch (err) {
+      console.error("  [orchestrator] On kapak hatasi:", err.message);
       try {
-        await textRenderer[page.method](page.opts);
+        const firstIll = path.join(outputDir, "scene-01-illustration.png");
+        await textRenderer.renderCoverPage({
+          imagePath: fs.existsSync(firstIll) ? firstIll : null,
+          title: bookData.title, childName, theme, ageGroup,
+          outputPath: coverFinalPath,
+        });
+      } catch (e2) { console.error("  [orchestrator] On kapak fallback da basarisiz:", e2.message); }
+    }
+
+    // 2. (İç kapak, ithaf, bitiş sayfaları kaldırıldı — gereksiz SVG sayfalarıydı)
+
+    // 3. HIKAYEMIZIN KAHRAMANI — AI arka plan + gercek fotograflar
+    this.sendSSE({ type: "step", message: "Kahraman sayfası üretiliyor..." });
+    const heroPagePath = path.join(outputDir, "hero-page.png");
+    try {
+      // AI ile tematik arka plan uret (metin yok, sadece cerceve/dekor)
+      const heroPrompt = bookData.specialPagePrompts?.heroPage
+        ? promptArchitect.buildScenePrompt(
+            { prompt: bookData.specialPagePrompts.heroPage, mood: "heroic", setting: "hero-page" },
+            { useProfile: true, useOutfitGrid: !!combinedOutfitRef }
+          )
+        : null;
+
+      let heroBgPath = null;
+      if (heroPrompt) {
+        const heroRefs = [];
+        if (characterProfileRef) heroRefs.push(characterProfileRef);
+        const heroResult = await sceneGenerator.generateBackground({
+          prompt: heroPrompt,
+          referenceImages: heroRefs,
+          maxRetries: 2,
+        });
+        if (heroResult.success && heroResult.buffer) {
+          heroBgPath = path.join(outputDir, "hero-page-bg.png");
+          fs.writeFileSync(heroBgPath, heroResult.buffer);
+          console.log("  [orchestrator] Hero page AI arka plan uretildi");
+        }
+      }
+
+      // Gercek fotograflari AI arka plan uzerine yerlestir
+      const heroChildPhoto = path.join(outputDir, "child-photo" + (path.extname(opts.childPhotoPath) || ".jpg"));
+      await textRenderer.renderHeroPage({
+        childName,
+        childPhotoPath: fs.existsSync(heroChildPhoto) ? heroChildPhoto : opts.childPhotoPath,
+        extraPhotoPaths: childInfo._copiedExtraPaths || [],
+        theme,
+        ageGroup: bookData.ageGroup,
+        bookTitle: bookData.title,
+        outputPath: heroPagePath,
+        backgroundImagePath: heroBgPath,
+      });
+      console.log("  [orchestrator] Hero page tamamlandi");
+    } catch (err) {
+      console.error("  [orchestrator] Hero page hatasi:", err.message);
+      // Fallback: SVG only
+      try {
+        await textRenderer.renderHeroPage({
+          childName, childPhotoPath: opts.childPhotoPath, theme,
+          ageGroup: bookData.ageGroup, bookTitle: bookData.title, outputPath: heroPagePath,
+          extraPhotoPaths: childInfo._copiedExtraPaths || [],
+        });
+      } catch (e2) { console.error("  [orchestrator] Hero SVG fallback da basarisiz:", e2.message); }
+    }
+
+    // 4. ARKA KAPAK — AI ile metin dahil (referans: yok)
+    this.sendSSE({ type: "step", message: "Arka kapak üretiliyor..." });
+    const backCoverPath = path.join(outputDir, "back-cover.png");
+    try {
+      const bcPrompt = coverArchitect.buildBackCoverPrompt();
+      const bcResult = await sceneGenerator.generateBackground({
+        prompt: bcPrompt,
+        referenceImages: [],
+        maxRetries: 2,
+      });
+      if (bcResult.success && bcResult.buffer) {
+        fs.writeFileSync(backCoverPath, bcResult.buffer);
+        console.log("  [orchestrator] Arka kapak AI ile uretildi (metin dahil)");
+      } else {
+        await textRenderer.renderBackCoverPage({
+          title: bookData.title, childName, description: bookData.description,
+          lessons: bookData.lessons || [], theme, outputPath: backCoverPath,
+        });
+      }
+    } catch (err) {
+      console.error("  [orchestrator] Arka kapak hatasi:", err.message);
+      try {
+        await textRenderer.renderBackCoverPage({
+          title: bookData.title, childName, description: bookData.description,
+          lessons: bookData.lessons || [], theme, outputPath: backCoverPath,
+        });
+      } catch (e2) {}
+    }
+
+    // 5. GONDEREN NOTU — Her zaman uret (senderName yoksa genel not)
+    {
+      // senderName yoksa varsayilan deger ata (customMessage'a dokunma — buildSenderNotePrompt kendi dinamik notunu olusturur)
+      if (!childInfo.senderName) childInfo.senderName = "Seni \u00e7ok seven ailenden";
+      this.sendSSE({ type: "step", message: "Gönderen notu üretiliyor..." });
+      try {
+        const snPrompt = coverArchitect.buildSenderNotePrompt();
+        const snResult = await sceneGenerator.generateBackground({
+          prompt: snPrompt,
+          referenceImages: [],
+          maxRetries: 2,
+        });
+        if (snResult.success && snResult.buffer) {
+          fs.writeFileSync(path.join(outputDir, "sender-note.png"), snResult.buffer);
+          console.log("  [orchestrator] Sender note AI ile uretildi (metin dahil)");
+        } else {
+          await textRenderer.renderSenderNotePage({
+            childName, senderName: childInfo.senderName || "",
+            senderNote: childInfo.customMessage || "", theme,
+            outputPath: path.join(outputDir, "sender-note.png"),
+          });
+        }
       } catch (err) {
-        console.error(`  [orchestrator] ${page.method} hatasi:`, err.message);
+        console.error("  [orchestrator] Sender note hatasi:", err.message);
+        try {
+          await textRenderer.renderSenderNotePage({
+            childName, senderName: childInfo.senderName || "",
+            senderNote: childInfo.customMessage || "", theme,
+            outputPath: path.join(outputDir, "sender-note.png"),
+          });
+        } catch (e2) {}
       }
     }
 
@@ -453,9 +735,33 @@ class BookOrchestrator {
       if (fact) {
         try {
           const ffPath = path.join(outputDir, `funfact-after-${placement.afterScene}.png`);
-          await textRenderer.renderFunFactPage({ funFact: fact, theme, outputPath: ffPath });
+
+          // FunFact: AI ile metin dahil uret
+          const ffPrompt = coverArchitect.buildFunFactPagePrompt(fact);
+          const ffResult = await sceneGenerator.generateBackground({
+            prompt: ffPrompt,
+            referenceImages: [],
+            maxRetries: 1,
+          });
+          if (ffResult.success && ffResult.buffer) {
+            fs.writeFileSync(ffPath, ffResult.buffer);
+            console.log(`  [orchestrator] FunFact ${placement.afterScene} AI ile uretildi (metin dahil)`);
+          } else {
+            // Fallback: SVG
+            await textRenderer.renderFunFactPage({ funFact: fact, theme, outputPath: ffPath });
+            console.log(`  [orchestrator] FunFact ${placement.afterScene} SVG fallback`);
+          }
+
           funFactPages.push({ afterScene: placement.afterScene, png: ffPath });
-        } catch (err) { console.error("  [orchestrator] FunFact hatasi:", err.message); }
+        } catch (err) {
+          console.error("  [orchestrator] FunFact hatasi:", err.message);
+          // SVG fallback
+          try {
+            const ffPath = path.join(outputDir, `funfact-after-${placement.afterScene}.png`);
+            await textRenderer.renderFunFactPage({ funFact: fact, theme, outputPath: ffPath });
+            funFactPages.push({ afterScene: placement.afterScene, png: ffPath });
+          } catch(e2) {}
+        }
       }
     }
 
@@ -470,11 +776,10 @@ class BookOrchestrator {
         title: bookData.title,
         childName,
         coverPNG: path.join(outputDir, "cover-final.png"),
-        innerCoverPNG: path.join(outputDir, "inner-cover.png"),
-        dedicationPNG: path.join(outputDir, "dedication.png"),
+        heroPagePNG: path.join(outputDir, "hero-page.png"),
+        senderNotePNG: fs.existsSync(path.join(outputDir, "sender-note.png")) ? path.join(outputDir, "sender-note.png") : null,
         scenePages: finalScenePaths,
         funFactPages,
-        endingPNG: path.join(outputDir, "ending.png"),
         backCoverPNG: path.join(outputDir, "back-cover.png"),
       });
       this.sendSSE({ type: "pdf_ready", pdfPath: `/output/${dirName}/kitap.pdf`, message: "PDF hazir!" });
