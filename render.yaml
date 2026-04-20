@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: masal
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    region: frankfurt
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "3000"
+      - key: NODE_ENV
+        value: production
+      - key: IMAGE_PROVIDER
+        value: google
+      - key: IMAGE_RESOLUTION
+        value: 2K
+      # Gizli keyler (Render dashboard'tan manuel gir):
+      # GOOGLE_API_KEY, OPENAI_API_KEY, FAL_API_KEY, KIE_API_KEY
+      # SHOPIFY_WEBHOOK_SECRET, SHOPIFY_ADMIN_TOKEN
+      # TELEGRAM_BOT_TOKEN, TELEGRAM_ADMIN_CHAT_ID
+      - key: SHOPIFY_HOST
+        value: masalsensin-3.myshopify.com
+      - key: OUTPUT_DIR
+        value: /app/output
+      - key: UPLOADS_DIR
+        value: /app/uploads
+    disk:
+      name: masal-data
+      mountPath: /app/output
+      sizeGB: 10

@@ -1,0 +1,44 @@
+{
+  "_template": "hayvan-dostum",
+  "_doc": "1-3 yas toddler icin ilk hayvan dostu. Bebek tonu + soft palette + 'Hayvan Dost Sertifikasi' (sertifika sayfa eklenebilir).",
+  "id": "REPLACE-WITH-PRODUCT-HANDLE",
+  "category": "hayvan-dostum",
+  "title": "REPLACE — Örnek: Kaya ve Minnoş",
+  "coverTitle": "{CHILD_NAME} ve Minnoş",
+  "description": "REPLACE — 1-3 yas toddler ile evcil hayvan dostlugu. Sevgi, sorumluluk, nezaket.",
+  "lessons": [
+    "Sevgi",
+    "Sorumluluk",
+    "Nezaket",
+    "Dostluk"
+  ],
+  "ageGroup": "1-3",
+  "ageRange": "1-3",
+  "pageCount": 14,
+  "sceneCount": 14,
+  "style": "Pixar/Disney 3D CGI animation, soft baby-shark style rounded proportions for toddler, warm pastel palette, hyper-detailed fur/fabric, photorealistic textures, ultra-detailed render",
+  "characterDescription": {
+    "base": "a toddler with the EXACT same facial features as the reference photo, rendered in soft 3D Pixar style with very rounded baby proportions, big eyes, soft cheeks",
+    "notes": "Toddler aesthetic; hayvan (kedi/kopek/tavsan) toddler boyu ile orantili, sevimli ve guvenli durur."
+  },
+  "theme": {
+    "primaryColor": "#A1887F",
+    "secondaryColor": "#D7CCC8",
+    "accentColor": "#FBF6EC",
+    "icon": "🐾"
+  },
+  "noteStyle": "soft-baby-nursery",
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "toddler-pajamas",
+      "title": "İlk Buluşma",
+      "text": "{CHILD_NAME} sabah uyandığında küçük bir misafiri vardı. Yatağın yanında, yumuşacık bir kedi onu izliyordu.",
+      "prompt": "REPLACE — Pixar 3D CGI sahne prompt'u",
+      "mood": "warm",
+      "setting": "Sicak yatak odasi, sabah ilk isik"
+    },
+    { "_note": "14 sahne kadar devam ettir." }
+  ]
+}

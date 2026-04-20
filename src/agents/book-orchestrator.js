@@ -27,6 +27,7 @@ const QualityValidator = require("./quality-validator");
 const TextValidator = require("./text-validator");
 const TextGenerator = require("../api/text-generator");
 const CanvasTextRenderer = require("../canvas-text-renderer");
+const { generateMazePng } = require("../utils/maze-generator");
 const TextPageRenderer = require("../text-page-renderer");
 const PDFBuilder = require("../pdf-builder");
 const BookQualityValidator = require("./book-quality-validator");
@@ -77,7 +78,7 @@ class BookOrchestrator {
         for (const fix of qcResult.fixes) {
           console.log("    ✅ Otomatik duzeltme:", fix.fix);
         }
-        for (const issue of qcResult.issues.filter(i => i.severity === "error" && !qcResult.fixes.find(f => f.code === issue.code && f.sceneNumber === issue.sceneNumber))) {
+        for (const issue of qcResult.issues.filter(i => i.severity === "error" && !qcResult.fixes.find(f => f.code === i.code && f.sceneNumber === i.sceneNumber))) {
           console.log("    ❌ Duzeltilemeyen:", issue.message);
         }
         this.sendSSE({ type: "step", message: `Kalite kontrolü: ${qcResult.fixes.length} otomatik düzeltme yapıldı` });
@@ -332,7 +333,7 @@ class BookOrchestrator {
     // FAZ 3: PARALEL BATCH SAHNE URETIMI
     // ──────────────────────────────────────────
     const BATCH_SIZE = 7; // Ayni anda max 7 sahne
-    console.log(`  [orchestrator] FAZ 3: ${sceneCount} sahne PARALEL uretilecek (batch: ${BATCH_SIZE})...`);
+    console.log(`  [orchestrator] FAZ 3: ${nonMazeScenes.length} sahne PARALEL uretilecek + ${mazeScenes.length} labirent programatik (batch: ${BATCH_SIZE})...`);
 
     const outfitStepOffset = hasOutfitSystem ? 1 : 0;
     this.sendSSE({
@@ -342,8 +343,30 @@ class BookOrchestrator {
       message: `${sceneCount} sahne paralel uretiliyor...`,
     });
 
-    // Tum sahneler icin prompt ve referanslari onceden hazirla
-    const sceneConfigs = bookData.scenes.map((scene, i) => {
+    // Labirent sahnelerini programatik uret (AI yerine)
+    const mazeScenes = bookData.scenes.filter(s => s.specialType === "maze");
+    const nonMazeScenes = bookData.scenes.filter(s => s.specialType !== "maze");
+    const mazeResults = [];
+    for (const ms of mazeScenes) {
+      const padNum = String(ms.sceneNumber).padStart(2, "0");
+      const mazePath = path.join(outputDir, `scene-${padNum}-illustration.png`);
+      try {
+        const ageGroup = bookData.ageGroup || "3-6";
+        const heroName = childInfo?.name || bookData.heroName || "Kahraman";
+        const mazeGoal = bookData.meta?.maze_goal || "hedefe";
+        await generateMazePng({ ageGroup, heroName, mazeGoal, outputPath: mazePath, characterBuffer: characterProfileBuffer });
+        const buffer = fs.readFileSync(mazePath);
+        mazeResults.push({ sceneNumber: ms.sceneNumber, success: true, buffer });
+        this.sendSSE({ type: "heartbeat", message: `Labirent sayfası programatik üretildi (${ageGroup})` });
+        console.log(`  [orchestrator] Labirent sahne ${ms.sceneNumber} PROGRAMATIK uretildi`);
+      } catch (e) {
+        console.error(`  [orchestrator] Labirent uretim hatasi:`, e.message);
+        mazeResults.push({ sceneNumber: ms.sceneNumber, success: false, buffer: null });
+      }
+    }
+
+    // Tum sahneler icin prompt ve referanslari onceden hazirla (labirent haric)
+    const sceneConfigs = nonMazeScenes.map((scene, i) => {
       const sceneOutfitProfile = scene.outfitId ? outfitProfileMap.get(scene.outfitId) : null;
       const activeProfileRef = sceneOutfitProfile?.ref || characterProfileRef;
       const hasOutfitProfile = !!sceneOutfitProfile;
@@ -419,34 +442,45 @@ class BookOrchestrator {
       const finalPath = path.join(outputDir, `scene-${padNum}-final.png`);
       const textEntry = textsArray.find((t) => t.sceneNumber === sceneNum);
 
-      // Batch sonucundan bul
-      const result = batchResults.find((r) => r.sceneNumber === sceneNum);
-      const sceneConfig = sceneConfigs[i];
+      // Batch sonucundan bul (maze sonuclari ayri)
+      const result = scene.specialType === "maze"
+        ? mazeResults.find((r) => r.sceneNumber === sceneNum)
+        : batchResults.find((r) => r.sceneNumber === sceneNum);
+      const sceneConfig = scene.specialType === "maze" ? null : sceneConfigs.find(sc => sc.sceneNumber === sceneNum);
+      const sceneOutfitProfile = scene.outfitId ? outfitProfileMap.get(scene.outfitId) : null;
 
       let sceneSuccess = false;
       if (result && result.success && result.buffer) {
-        // Validasyon (paralel uretim sonrasi)
-        const validation = await qualityValidator.validateScene(result.buffer, {
-          outfitDescription: outfitDesc,
-          style: bookData.style,
-          mood: scene.mood,
-          setting: scene.setting,
-          scenePrompt: scene.prompt,
-          childPhotoBuffer,
-        }, sceneConfig._activeProfileBuffer);
+        if (scene.specialType === "maze") {
+          // Labirent programatik — validasyona gerek yok
+          fs.writeFileSync(illPath, result.buffer);
+          sceneSuccess = true;
+          console.log(`  [orchestrator] Sahne ${sceneNum} TAMAM (programatik labirent)`);
+        } else {
+          // Validasyon (paralel uretim sonrasi)
+          const validation = await qualityValidator.validateScene(result.buffer, {
+            outfitDescription: outfitDesc,
+            style: bookData.style,
+            category: bookData.category,
+            mood: scene.mood,
+            setting: scene.setting,
+            scenePrompt: scene.prompt,
+            childPhotoBuffer,
+          }, sceneConfig?._activeProfileBuffer);
 
-        this.sendSSE({
-          type: "validation",
-          sceneNumber: sceneNum,
-          passed: validation.passed,
-          score: validation.overallScore,
-          checks: validation.checks,
-        });
+          this.sendSSE({
+            type: "validation",
+            sceneNumber: sceneNum,
+            passed: validation.passed,
+            score: validation.overallScore,
+            checks: validation.checks,
+          });
 
-        // Diske yaz
-        fs.writeFileSync(illPath, result.buffer);
-        sceneSuccess = true;
-        console.log(`  [orchestrator] Sahne ${sceneNum} TAMAM`);
+          // Diske yaz
+          fs.writeFileSync(illPath, result.buffer);
+          sceneSuccess = true;
+          console.log(`  [orchestrator] Sahne ${sceneNum} TAMAM`);
+        }
       } else {
         console.error(`  [orchestrator] Sahne ${sceneNum} BASARISIZ`);
       }
@@ -456,24 +490,65 @@ class BookOrchestrator {
         fs.copyFileSync(illPath, finalPath);
       }
 
-      // AI metin sayfasi uret (ayri sayfa)
+      // BOYAMA kategorisinde her sahnenin kendi illustrasyonu zaten başlık+metin içerir — ayrı text sayfası YOK
+      const skipTextPage = bookData.category === "boyama";
       const textPagePath = path.join(outputDir, `scene-${padNum}-text.png`);
-      if (sceneSuccess) {
+      if (sceneSuccess && !skipTextPage) {
         try {
           this.sendSSE({ type: "heartbeat", message: `Sahne ${sceneNum} metin sayfası üretiliyor...` });
-          const textPagePrompt = coverArchitect.buildTextPagePrompt({
-            title: textEntry?.title || scene.title,
-            text: textEntry?.text || scene.text,
-            mood: scene.mood || "warm",
-          });
-          const textResult = await sceneGenerator.generateBackground({
-            prompt: textPagePrompt,
-            referenceImages: [],
-            maxRetries: 1,
-          });
-          if (textResult.success && textResult.buffer) {
+          // Sahne prompt'undan SADECE kiyafet tarifini cikar (ilk virgule kadar)
+          let sceneOutfit = "";
+          if (scene.prompt) {
+            const m = scene.prompt.match(/wearing\s+([^,]+)/i);
+            if (m) sceneOutfit = m[1].trim();
+          }
+          // Karakter yüzü + outfit profili reference olarak — sahne illustration'ı YOK.
+          const textPageRefs = [];
+          if (characterProfileRef) textPageRefs.push(characterProfileRef);
+          if (sceneOutfitProfile?.ref) textPageRefs.push(sceneOutfitProfile.ref);
+
+          // Google content-filter vurunca prompt'u yumusatip yeniden dene
+          const softenPrompt = (txt) => txt
+            .replace(/pajamas?/gi, "comfortable home clothes")
+            .replace(/pijama/gi, "rahat ev kiyafeti")
+            .replace(/bedroom/gi, "home room")
+            .replace(/yatak odas[iı]/gi, "ev")
+            .replace(/\bbed\b/gi, "couch")
+            .replace(/sleepwear/gi, "home clothes")
+            .replace(/undressed|naked|bare/gi, "clothed");
+          let textResult = null;
+          let softened = false;
+          for (let attempt = 1; attempt <= 3; attempt++) {
+            let promptToUse = coverArchitect.buildTextPagePrompt({
+              title: textEntry?.title || scene.title,
+              text: textEntry?.text || scene.text,
+              mood: scene.mood || "warm",
+              setting: scene.setting || "",
+              sceneAction: scene.title || "",
+              sceneOutfit: softened ? softenPrompt(sceneOutfit) : sceneOutfit,
+            });
+            if (softened) promptToUse = softenPrompt(promptToUse);
+            textResult = await sceneGenerator.generateBackground({
+              prompt: promptToUse,
+              referenceImages: textPageRefs,
+              maxRetries: 1,
+            });
+            if (textResult?.success && textResult?.buffer) break;
+            const errLower = String(textResult?.error || "").toLowerCase();
+            const isPolicy = errLower.includes("prohibited") || errLower.includes("filtered") || errLower.includes("policy");
+            if (attempt < 3 && isPolicy && !softened) {
+              console.log(`  [orchestrator] Sahne ${sceneNum} metin policy-filter'a takildi, prompt yumusatilarak tekrar deneniyor`);
+              softened = true;
+              continue;
+            }
+            if (attempt < 3) {
+              console.log(`  [orchestrator] Sahne ${sceneNum} metin basarisiz (attempt ${attempt}/3), tekrar deneniyor`);
+              continue;
+            }
+          }
+          if (textResult?.success && textResult?.buffer) {
             fs.writeFileSync(textPagePath, textResult.buffer);
-            console.log(`  [orchestrator] Sahne ${sceneNum} metin sayfasi AI ile uretildi`);
+            console.log(`  [orchestrator] Sahne ${sceneNum} metin sayfasi AI ile uretildi${softened ? ' (softened)' : ''}`);
           } else {
             console.log(`  [orchestrator] Sahne ${sceneNum} metin AI basarisiz, canvas fallback`);
             await canvasRenderer.renderTextOnImage(illPath, {
@@ -511,7 +586,7 @@ class BookOrchestrator {
         sceneNumber: sceneNum,
         title: scene.title,
         imagePath: sceneSuccess ? `/output/${dirName}/scene-${padNum}-final.png` : null,
-        textPagePath: sceneSuccess ? `/output/${dirName}/scene-${padNum}-text.png` : null,
+        textPagePath: (sceneSuccess && !skipTextPage) ? `/output/${dirName}/scene-${padNum}-text.png` : null,
         text: textEntry?.text || scene.text,
         imageType: "scene",
       });
@@ -523,7 +598,7 @@ class BookOrchestrator {
       finalScenePaths.push({
         sceneNumber: sceneNum,
         finalPNG: sceneSuccess ? finalPath : null,
-        textPNG: sceneSuccess ? textPagePath : null,
+        textPNG: (sceneSuccess && !skipTextPage) ? textPagePath : null,
       });
     }
 
@@ -549,9 +624,12 @@ class BookOrchestrator {
     this.sendSSE({ type: "step", message: "Ön kapak üretiliyor..." });
     const coverFinalPath = path.join(outputDir, "cover-final.png");
     try {
-      const coverPrompt = coverArchitect.buildCoverPrompt({
-        characterDesc: bookData.characterDescription?.base || ""
-      });
+      // Boyama kitabı: use bundle's dedicated coverPrompt (colored Pixar cover, from coloring-book-writer)
+      const coverPrompt = (bookData.category === "boyama" && bookData.coverPrompt)
+        ? bookData.coverPrompt
+        : coverArchitect.buildCoverPrompt({
+            characterDesc: bookData.characterDescription?.base || ""
+          });
       const coverRefs = [];
       if (characterProfileRef) coverRefs.push(characterProfileRef);
       const coverResult = await sceneGenerator.generateBackground({
@@ -584,7 +662,51 @@ class BookOrchestrator {
       } catch (e2) { console.error("  [orchestrator] On kapak fallback da basarisiz:", e2.message); }
     }
 
-    // 2. (İç kapak, ithaf, bitiş sayfaları kaldırıldı — gereksiz SVG sayfalarıydı)
+    // 2. IC KAPAK (title page) — AI ile uretim (UrunStudio-tarzi vintage stationery)
+    this.sendSSE({ type: "step", message: "İç kapak üretiliyor..." });
+    const innerCoverPath = path.join(outputDir, "inner-cover.png");
+    try {
+      const icPrompt = coverArchitect.buildInnerCoverPrompt({
+        characterDesc: bookData.characterDescription?.base || ""
+      });
+      const icRefs = [];
+      if (fs.existsSync(coverFinalPath)) icRefs.push(coverFinalPath); // brand/typography continuity
+      const icResult = await sceneGenerator.generateBackground({
+        prompt: icPrompt,
+        referenceImages: icRefs,
+        maxRetries: 2,
+      });
+      if (icResult.success && icResult.buffer) {
+        fs.writeFileSync(innerCoverPath, icResult.buffer);
+        console.log("  [orchestrator] Ic kapak AI ile uretildi");
+      } else {
+        console.warn("  [orchestrator] Ic kapak AI uretilemedi, atlandi");
+      }
+    } catch (err) {
+      console.error("  [orchestrator] Ic kapak hatasi:", err.message);
+    }
+
+    // 2.5 ITHAF (dedication) — AI ile uretim (watercolor stationery + duygusal ithaf)
+    this.sendSSE({ type: "step", message: "İthaf sayfası üretiliyor..." });
+    const dedicationPath = path.join(outputDir, "dedication.png");
+    try {
+      const dedPrompt = coverArchitect.buildDedicationPrompt();
+      const dedRefs = [];
+      if (fs.existsSync(coverFinalPath)) dedRefs.push(coverFinalPath); // typography/palette continuity
+      const dedResult = await sceneGenerator.generateBackground({
+        prompt: dedPrompt,
+        referenceImages: dedRefs,
+        maxRetries: 2,
+      });
+      if (dedResult.success && dedResult.buffer) {
+        fs.writeFileSync(dedicationPath, dedResult.buffer);
+        console.log("  [orchestrator] Ithaf AI ile uretildi");
+      } else {
+        console.warn("  [orchestrator] Ithaf AI uretilemedi, atlandi");
+      }
+    } catch (err) {
+      console.error("  [orchestrator] Ithaf hatasi:", err.message);
+    }
 
     // 3. HIKAYEMIZIN KAHRAMANI — AI arka plan + gercek fotograflar
     this.sendSSE({ type: "step", message: "Kahraman sayfası üretiliyor..." });
@@ -602,6 +724,8 @@ class BookOrchestrator {
       if (heroPrompt) {
         const heroRefs = [];
         if (characterProfileRef) heroRefs.push(characterProfileRef);
+        // Cross-page multi-ref: front cover'i ekle (palette + brand consistency icin)
+        if (fs.existsSync(coverFinalPath)) heroRefs.push(coverFinalPath);
         const heroResult = await sceneGenerator.generateBackground({
           prompt: heroPrompt,
           referenceImages: heroRefs,
@@ -643,14 +767,25 @@ class BookOrchestrator {
     this.sendSSE({ type: "step", message: "Arka kapak üretiliyor..." });
     const backCoverPath = path.join(outputDir, "back-cover.png");
     try {
-      let bcPrompt = coverArchitect.buildBackCoverPrompt();
+      const isBoyama = bookData.category === "boyama" && bookData.specialPagePrompts?.backCover;
+      let bcPrompt = isBoyama
+        ? bookData.specialPagePrompts.backCover
+        : coverArchitect.buildBackCoverPrompt();
       // CHARACTER_DESC'yi gercek karakter tarifiyle degistir
       if (characterProfileRef && bcPrompt.includes("CHARACTER_DESC")) {
         const charBase = bookData.characterDescription?.base || "a child with the EXACT same facial features as the reference photo";
         bcPrompt = bcPrompt.replace("CHARACTER_DESC", charBase);
       }
-      // Referans gorseller — karakter profili varsa ekle
-      const bcRefs = characterProfileRef ? [characterProfileRef] : [];
+      // Referans gorseller — karakter profili + on kapak (yuz tutarliligi icin). Boyama: +logo
+      const bcRefs = [];
+      if (characterProfileRef) bcRefs.push(characterProfileRef);
+      if (isBoyama) {
+        const logoPath = "C:/Users/ASUS/Desktop/MasalSensinUrunStudio/public/brand/masalsensin-logo.jpg";
+        if (fs.existsSync(logoPath)) bcRefs.push(logoPath);
+      } else {
+        const coverFinalLocal = path.join(outputDir, "cover-final.png");
+        if (fs.existsSync(coverFinalLocal)) bcRefs.push(coverFinalLocal);
+      }
       const bcResult = await sceneGenerator.generateBackground({
         prompt: bcPrompt,
         referenceImages: bcRefs,
@@ -680,13 +815,17 @@ class BookOrchestrator {
       // senderName yoksa varsayilan deger ata
       if (!childInfo.senderName) childInfo.senderName = "Ailen";
       console.log("  [orchestrator] Not icin senderName:", childInfo.senderName);
-      this.sendSSE({ type: "step", message: "Gönderen notu üretiliyor..." });
+      const isBoyamaNote = bookData.category === "boyama";
+      this.sendSSE({ type: "step", message: isBoyamaNote ? "Tamamlandı sertifikası üretiliyor..." : "Gönderen notu üretiliyor..." });
       try {
-        const snPrompt = coverArchitect.buildSenderNotePrompt();
+        const snPrompt = await coverArchitect.buildSenderNotePrompt();
         console.log("  [orchestrator] Not prompt baslik:", snPrompt.substring(0, 200));
+        // Cross-page multi-ref: front cover'i palette/typography continuity icin ekle
+        const snRefs = [];
+        if (fs.existsSync(coverFinalPath)) snRefs.push(coverFinalPath);
         const snResult = await sceneGenerator.generateBackground({
           prompt: snPrompt,
-          referenceImages: [],
+          referenceImages: snRefs,
           maxRetries: 2,
         });
         if (snResult.success && snResult.buffer) {
@@ -747,9 +886,12 @@ class BookOrchestrator {
 
           // FunFact: AI ile metin dahil uret
           const ffPrompt = coverArchitect.buildFunFactPagePrompt(fact);
+          // Cross-page multi-ref: front cover'i palette continuity icin ekle
+          const ffRefs = [];
+          if (fs.existsSync(coverFinalPath)) ffRefs.push(coverFinalPath);
           const ffResult = await sceneGenerator.generateBackground({
             prompt: ffPrompt,
-            referenceImages: [],
+            referenceImages: ffRefs,
             maxRetries: 1,
           });
           if (ffResult.success && ffResult.buffer) {
@@ -774,6 +916,56 @@ class BookOrchestrator {
       }
     }
 
+    // MESLEK DIPLOMASI — sadece meslek-hikayeleri kategorisi icin (kapanistan once)
+    let diplomaPath = null;
+    if (bookData.category === "meslek-hikayeleri") {
+      this.sendSSE({ type: "step", message: "Meslek diploması üretiliyor..." });
+      diplomaPath = path.join(outputDir, "diploma.png");
+      try {
+        const diplomaPrompt = coverArchitect.buildMeslekDiplomaPrompt();
+        const diplomaRefs = [];
+        if (fs.existsSync(coverFinalPath)) diplomaRefs.push(coverFinalPath);
+        if (characterProfileRef) diplomaRefs.push(characterProfileRef);
+        const diplomaResult = await sceneGenerator.generateBackground({
+          prompt: diplomaPrompt,
+          referenceImages: diplomaRefs,
+          maxRetries: 2,
+        });
+        if (diplomaResult.success && diplomaResult.buffer) {
+          fs.writeFileSync(diplomaPath, diplomaResult.buffer);
+          console.log("  [orchestrator] Meslek diplomasi AI ile uretildi");
+        } else {
+          diplomaPath = null;
+          console.warn("  [orchestrator] Meslek diplomasi uretilemedi, atlandi");
+        }
+      } catch (err) {
+        diplomaPath = null;
+        console.error("  [orchestrator] Meslek diplomasi hatasi:", err.message);
+      }
+    }
+
+    // KAPANIS (SON) sayfasi — AI ile uretim, arka kapaktan once
+    this.sendSSE({ type: "step", message: "Kapanış sayfası üretiliyor..." });
+    const endingPath = path.join(outputDir, "ending.png");
+    try {
+      const endPrompt = coverArchitect.buildEndingPrompt();
+      const endRefs = [];
+      if (fs.existsSync(coverFinalPath)) endRefs.push(coverFinalPath);
+      const endResult = await sceneGenerator.generateBackground({
+        prompt: endPrompt,
+        referenceImages: endRefs,
+        maxRetries: 2,
+      });
+      if (endResult.success && endResult.buffer) {
+        fs.writeFileSync(endingPath, endResult.buffer);
+        console.log("  [orchestrator] Kapanis AI ile uretildi");
+      } else {
+        console.warn("  [orchestrator] Kapanis AI uretilemedi, atlandi");
+      }
+    } catch (err) {
+      console.error("  [orchestrator] Kapanis hatasi:", err.message);
+    }
+
     // PDF olustur
     this.sendSSE({ type: "step", step: TOTAL_STEPS - 1, total: TOTAL_STEPS, message: "PDF olusturuluyor..." });
     const pdfBuilder = new PDFBuilder();
@@ -785,10 +977,14 @@ class BookOrchestrator {
         title: bookData.title,
         childName,
         coverPNG: path.join(outputDir, "cover-final.png"),
+        innerCoverPNG: fs.existsSync(innerCoverPath) ? innerCoverPath : null,
         heroPagePNG: path.join(outputDir, "hero-page.png"),
+        dedicationPNG: fs.existsSync(dedicationPath) ? dedicationPath : null,
         senderNotePNG: fs.existsSync(path.join(outputDir, "sender-note.png")) ? path.join(outputDir, "sender-note.png") : null,
         scenePages: finalScenePaths,
         funFactPages,
+        diplomaPNG: (diplomaPath && fs.existsSync(diplomaPath)) ? diplomaPath : null,
+        endingPNG: fs.existsSync(endingPath) ? endingPath : null,
         backCoverPNG: path.join(outputDir, "back-cover.png"),
       });
       this.sendSSE({ type: "pdf_ready", pdfPath: `/output/${dirName}/kitap.pdf`, message: "PDF hazir!" });

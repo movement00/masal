@@ -11,6 +11,7 @@ const PDFBuilder = require("./pdf-builder");
 const TextPageRenderer = require("./text-page-renderer");
 const CanvasTextRenderer = require("./canvas-text-renderer");
 const { BookOrchestrator } = require("./agents");
+const shopifyWebhook = require("./shopify-webhook");
 const { validateBookId, validateChildName, validateGender, validateAge, validatePhotoExt, sanitizePath } = require("./validation");
 const archiver = require("archiver");
 const { SSE_BUFFER_MAX: SSE_MAX, UPLOAD_MAX_BYTES, UPLOAD_TIMEOUT_MS } = require("./constants");
@@ -187,6 +188,11 @@ const server = http.createServer(async (req, res) => {
   }
 
   try {
+    // Story wizard UI (entegrasyon — yedege geri donduk ama endpointleri koruyoruz)
+    if ((url.pathname === "/story-wizard" || url.pathname === "/story-wizard.html") && req.method === "GET") {
+      return serveStatic(res, path.join(PUBLIC_DIR, "story-wizard.html"));
+    }
+
     // Ana sayfa -> admin panel
     if (url.pathname === "/" && req.method === "GET") {
       return serveStatic(res, path.join(PUBLIC_DIR, "index.html"));
@@ -242,6 +248,131 @@ const server = http.createServer(async (req, res) => {
         uptime: Math.round(process.uptime()),
       });
     }
+
+    if (url.pathname === "/api/story/create" && req.method === "POST") {
+      try {
+        const body = await collectBody(req);
+        const data = JSON.parse(body.toString());
+        const { ageGroup, theme, heroName, heroAge, heroGender, lessons, physicalFeatures } = data;
+        if (!ageGroup || !heroName) return sendJson(res, 400, { error: "ageGroup ve heroName gerekli" });
+        const { writeStory } = require("./agents/story-writer");
+        const { saveBundle, bundleToMasalBook } = require("./story-bundle");
+        sendSSE({ type: "step", message: "Hikaye yazimi basliyor..." });
+        const bundle = await writeStory({
+          ageGroup, theme, heroName, heroAge: heroAge || "6", heroGender: heroGender || "erkek",
+          lessons: Array.isArray(lessons) ? lessons : (lessons ? [lessons] : []),
+          physicalFeatures: physicalFeatures || null,
+          onProgress: (p) => sendSSE({ type: "heartbeat", message: p.message, step: p.step }),
+        });
+        const bundlePath = saveBundle(bundle);
+        // Masal book.json olarak stories/ai-generated/<id>/ altına kaydet (mevcut /api/generate ile üretilebilsin)
+        const masalBook = bundleToMasalBook(bundle);
+        const aiDir = path.join(__dirname, "stories", bundle.id);
+        if (!fs.existsSync(aiDir)) fs.mkdirSync(aiDir, { recursive: true });
+        fs.writeFileSync(path.join(aiDir, "book.json"), JSON.stringify(masalBook, null, 2));
+        sendSSE({ type: "step", message: "Hikaye hazır: " + bundle.title });
+        return sendJson(res, 200, { success: true, bundle, bundlePath, bookId: bundle.id });
+      } catch (e) {
+        console.error("[server] /api/story/create hata:", e.message);
+        return sendJson(res, 500, { error: e.message });
+      }
+    }
+
+    // Boyama kitabı oluştur (category: boyama)
+    if (url.pathname === "/api/coloringbook/create" && req.method === "POST") {
+      try {
+        const body = await collectBody(req);
+        const data = JSON.parse(body.toString());
+        const { ageGroup, theme, heroName, heroAge, heroGender, lessons, physicalFeatures } = data;
+        if (!ageGroup || !heroName) return sendJson(res, 400, { error: "ageGroup ve heroName gerekli" });
+        const { writeColoringBook } = require("./agents/coloring-book-writer");
+        const { saveBundle, bundleToMasalBook } = require("./story-bundle");
+        sendSSE({ type: "step", message: "Boyama kitabı yazımı başlıyor..." });
+        const bundle = await writeColoringBook({
+          ageGroup, theme, heroName, heroAge: heroAge || "6", heroGender: heroGender || "erkek",
+          lessons: Array.isArray(lessons) ? lessons : (lessons ? [lessons] : []),
+          physicalFeatures: physicalFeatures || null,
+          onProgress: (p) => sendSSE({ type: "heartbeat", message: p.message, step: p.step }),
+        });
+        const bundlePath = saveBundle(bundle);
+        const masalBook = bundleToMasalBook(bundle);
+        const aiDir = path.join(__dirname, "stories", bundle.id);
+        if (!fs.existsSync(aiDir)) fs.mkdirSync(aiDir, { recursive: true });
+        fs.writeFileSync(path.join(aiDir, "book.json"), JSON.stringify(masalBook, null, 2));
+        sendSSE({ type: "step", message: "Boyama kitabı hazır: " + bundle.title });
+        return sendJson(res, 200, { success: true, bundle, bundlePath, bookId: bundle.id });
+      } catch (e) {
+        console.error("[server] /api/coloringbook/create hata:", e.message);
+        return sendJson(res, 500, { error: e.message });
+      }
+    }
+
+    // Bundle listele
+    if (url.pathname === "/api/story/list" && req.method === "GET") {
+      const { listBundles } = require("./story-bundle");
+      return sendJson(res, 200, { bundles: listBundles() });
+    }
+
+    // UrunStudio'dan gelen BookConcept'i alıp masal story bundle'ına çevir
+    if (url.pathname === "/api/story/import-concept" && req.method === "POST") {
+      try {
+        const body = await collectBody(req);
+        const data = JSON.parse(body.toString());
+        const { concept, visuals, seo, ageGroup } = data;
+        if (!concept || !concept.baslik || !concept.kahraman) {
+          return sendJson(res, 400, { error: "concept.baslik ve concept.kahraman gerekli" });
+        }
+        // UrunStudio concept'teki sahne açıklamalarından hikaye yaz
+        const { writeStory } = require("./agents/story-writer.js");
+        const { saveBundle, bundleToMasalBook } = require("./story-bundle");
+        const age = ageGroup || (concept.yasGrubu || "3-6");
+        const theme = concept.baslik + ". " + (concept.ozet || "") + " Sahneler: " + (concept.sahneler || []).join(" / ");
+        sendSSE({ type: "step", message: "UrunStudio konsepti alındı: " + concept.baslik });
+        const bundle = await writeStory({
+          ageGroup: age,
+          theme,
+          heroName: concept.kahraman.isim,
+          heroAge: String(concept.kahraman.yas || "6"),
+          heroGender: concept.kahraman.cinsiyet || "erkek",
+          lessons: concept.kazanimlar || [],
+          physicalFeatures: concept.kahraman.fizikselOzellikler || null,
+          onProgress: (p) => sendSSE({ type: "heartbeat", message: p.message, step: p.step }),
+        });
+        // UrunStudio asset URL'lerini bundle'a ekle
+        bundle.source = "urunstudio";
+        bundle.urunStudioSource = { concept, visuals: visuals || [], seo: seo || null };
+        saveBundle(bundle);
+        // Masal book.json olusustur
+        const masalBook = bundleToMasalBook(bundle);
+        const aiDir = path.join(__dirname, "stories", bundle.id);
+        if (!fs.existsSync(aiDir)) fs.mkdirSync(aiDir, { recursive: true });
+        fs.writeFileSync(path.join(aiDir, "book.json"), JSON.stringify(masalBook, null, 2));
+        return sendJson(res, 200, { success: true, bookId: bundle.id, bundle });
+      } catch (e) {
+        console.error("[server] /api/story/import-concept hata:", e.message);
+        return sendJson(res, 500, { error: e.message });
+      }
+    }
+
+    // Bundle import — dışarıdan gelen bundle'ı stories/ altına çek
+    if (url.pathname === "/api/story/import" && req.method === "POST") {
+      try {
+        const body = await collectBody(req);
+        const data = JSON.parse(body.toString());
+        const { bundleId } = data;
+        if (!bundleId) return sendJson(res, 400, { error: "bundleId gerekli" });
+        const { loadBundle, bundleToMasalBook } = require("./story-bundle");
+        const bundle = loadBundle(bundleId);
+        if (!bundle) return sendJson(res, 404, { error: "Bundle bulunamadi" });
+        const masalBook = bundleToMasalBook(bundle);
+        const aiDir = path.join(__dirname, "stories", bundle.id);
+        if (!fs.existsSync(aiDir)) fs.mkdirSync(aiDir, { recursive: true });
+        fs.writeFileSync(path.join(aiDir, "book.json"), JSON.stringify(masalBook, null, 2));
+        return sendJson(res, 200, { success: true, bookId: bundle.id });
+      } catch (e) { return sendJson(res, 500, { error: e.message }); }
+    }
+
+    // Kitap listesi (ageGroup bilgisi ile)
 
     // Kitap listesi (ageGroup bilgisi ile)
     if (url.pathname === "/api/books" && req.method === "GET") {
@@ -348,6 +479,38 @@ const server = http.createServer(async (req, res) => {
         }
       });
       return;
+    }
+
+    // SHOPIFY WEBHOOK — orders/paid eventi
+    // Siparis alindiginda Masal uretimi tetikler + Telegram'a PDF gonderir
+    if (url.pathname === "/shopify-webhook" && req.method === "POST") {
+      const rawBody = await collectBody(req);
+      const result = await shopifyWebhook.handleShopifyWebhook(rawBody, req.headers, {
+        storiesDir: path.join(__dirname, "stories"),
+        uploadsDir: UPLOADS_DIR,
+        triggerMasalGenerate: async (opts) => {
+          // Her sipariş arka planda seri işleyelim ki generation lock'u bozmayalim
+          while (isGenerating) { await new Promise((r) => setTimeout(r, 5000)); }
+          const result = await generateBookWithProgress({
+            bookId: opts.bookId,
+            childPhotoPath: opts.photoPath,
+            childName: opts.childName,
+            childGender: opts.gender,
+            childAge: opts.age,
+            extraPhotoPaths: opts.extraPhotoPaths || [],
+            customMessage: opts.customMessage,
+          });
+          if (!result || !result.outputDir) throw new Error("Masal generation failed");
+          const pdfPath = path.join(result.outputDir, "kitap.pdf");
+          return { outputDir: result.outputDir, pdfPath };
+        },
+      });
+      if (!result.ok) {
+        console.warn("  [webhook] Rejected:", result.error);
+        return sendJson(res, 401, result);
+      }
+      // 200 hemen don — isleme arka planda devam eder
+      return sendJson(res, 200, { ok: true, processedItems: result.processedItems });
     }
 
     // Kitap uret
@@ -848,7 +1011,11 @@ const server = http.createServer(async (req, res) => {
         sendSSE({ type: "step", message: "📕 3/5 Arka kapak üretiliyor..." });
         console.log("  [server] Ozel: Arka kapak uretiliyor...");
         const bcPrompt = coverArchitect.buildBackCoverPrompt();
-        const bcResult = await sceneGen.generateBackground({ prompt: bcPrompt, referenceImages: [], maxRetries: 1 });
+        const bcRefs = [];
+        if (profileRef) bcRefs.push(profileRef);
+        const coverFinalPath = path.join(absDir, "cover-final.png");
+        if (fs.existsSync(coverFinalPath)) bcRefs.push(coverFinalPath);
+        const bcResult = await sceneGen.generateBackground({ prompt: bcPrompt, referenceImages: bcRefs, maxRetries: 2 });
         if (bcResult.success) {
           fs.writeFileSync(path.join(absDir, "back-cover.png"), bcResult.buffer);
           sendSSE({ type: "step", message: "✅ Arka kapak tamamlandı" });

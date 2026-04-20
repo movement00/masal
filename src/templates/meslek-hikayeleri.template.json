@@ -1,0 +1,81 @@
+{
+  "_template": "meslek-hikayeleri",
+  "_doc": "Meslek hikayeleri kategorisi sablonu. Diploma sayfasi uretmek icin meslekProfile alani ZORUNLU. Shopify urununun handle'ini id alanina yaz, baslik/aciklama/scenes alanlarini doldur.",
+  "id": "REPLACE-WITH-PRODUCT-HANDLE",
+  "category": "meslek-hikayeleri",
+  "title": "REPLACE — Örnek: Kahraman Doktor {CHILD_NAME}",
+  "coverTitle": "{CHILD_NAME}'in Beyaz Önlüğü",
+  "description": "REPLACE — 2-3 cümlelik özet. Çocuğun mesleği yaşayışı, ilk gün heyecanı, kazandığı duygular.",
+  "lessons": [
+    "Kalpten yardım etmek",
+    "Şefkatle şifa vermek",
+    "Bilimi sevmek",
+    "Sorumluluk taşımak"
+  ],
+  "ageGroup": "4-10",
+  "ageRange": "4-10",
+  "pageCount": 14,
+  "sceneCount": 14,
+  "style": "Pixar/Disney 3D CGI animation (Encanto/Coco quality), warm cinematic lighting, hyper-detailed textures, exaggerated cute child proportions, photorealistic fabric and skin, ultra-detailed render",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D Pixar/Disney CGI style, slightly exaggerated cute proportions, big expressive eyes, detailed skin and hair textures matching the reference photo exactly",
+    "notes": "Outfit gruplari: 1=evde-pijama, 2-3=kliniğe-yola-cikis, 4-12=meslek-uniformasi (ana gorev kiyafeti), 13=gun-sonu-yorgun, 14=eve-donus"
+  },
+  "theme": {
+    "primaryColor": "#1976D2",
+    "secondaryColor": "#90CAF9",
+    "accentColor": "#FFFFFF",
+    "icon": "🩺"
+  },
+  "meslekProfile": {
+    "labelTR": "Doktor",
+    "diplomaTitle": "ÇOCUK DOKTORU DİPLOMASI",
+    "diplomaSymbols": "caduceus staff + heart + stethoscope + first-aid cross",
+    "uniformEN": "small white doctor coat perfectly sized, stethoscope around neck, name badge on chest, comfortable white medical shoes",
+    "toolsEN": "stethoscope, pocket notebook, digital thermometer, colorful sticker sheet, otoscope, reflex hammer",
+    "iconicSceneHints": "wakes up proud on first day, carefully puts on white coat, enters clinic greeted by nurses, small crying patient arrives, listens to heartbeat with stethoscope, explains diagnosis with kind smile, places colorful sticker on patient as reward, patient leaves happy, writes in notebook, end of day satisfied",
+    "colorPaletteHint": "bright clean medical whites + soft sky-blue accents + warm cream highlights"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "evde-pijama",
+      "title": "İlk Sabah",
+      "text": "{CHILD_NAME} bugün heyecanlıydı. Bu, onun ilk doktorluk günüydü. Aynanın önünde durdu. Sessizce gülümsedi.",
+      "prompt": "REPLACE — sahne icin Pixar 3D CGI prompt. CHARACTER_DESC wearing [outfit detayi], CAMERA [aci], [aksiyon], [setting], [mood lighting], Pixar/Disney CGI style, ultra detail",
+      "mood": "dreamy-excited",
+      "setting": "Yatak odası aynası, sabah sıcak ışık"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "kliniğe-yola-cikis",
+      "title": "Yolda",
+      "text": "REPLACE — sahne metni. {CHILD_NAME} adı en az 1 kez gecsin.",
+      "prompt": "REPLACE — sahne prompt'u",
+      "mood": "nervous-excited",
+      "setting": "REPLACE"
+    },
+    {
+      "_note": "14 sahne kadar devam ettir. Her sahne: sceneNumber, outfitId, title, text, prompt, mood, setting"
+    }
+  ],
+  "specialPagePrompts": {
+    "heroPage": "Bright clean modern pediatric clinic interior with colorful animal stickers on walls, soft warm lighting, NO TEXT, NO CHARACTERS — just the themed backdrop"
+  },
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🩺",
+      "icon": "🩺",
+      "facts": [
+        "Doktorlar her gün ortalama 30 hastaya bakar — herkesin şikayetini ayrı ayrı dinler.",
+        "Stetoskop, kalbin sesini dinlemek için 200 yıl önce icat edildi.",
+        "Bir doktor olabilmek için en az 6 yıl tıp fakültesi okumak gerekir."
+      ]
+    }
+  ],
+  "funFactPlacements": [
+    { "afterScene": 7, "factId": "fact-1" }
+  ]
+}

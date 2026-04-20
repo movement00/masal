@@ -18,7 +18,7 @@ const config = {
     model: "gpt-4o",
   },
   geminiVision: {
-    model: process.env.GEMINI_VISION_MODEL || "gemini-2.0-flash",
+    model: process.env.GEMINI_VISION_MODEL || "gemini-2.5-flash",
     enabled: process.env.GEMINI_VISION_ENABLED !== "false",
   },
   imageProvider: process.env.IMAGE_PROVIDER || "google",
@@ -26,6 +26,15 @@ const config = {
     dir: process.env.OUTPUT_DIR || "./output",
     resolution: process.env.IMAGE_RESOLUTION || "2K",
     format: process.env.IMAGE_FORMAT || "png",
+  },
+  shopify: {
+    webhookSecret: process.env.SHOPIFY_WEBHOOK_SECRET || "",
+    adminToken: process.env.SHOPIFY_ADMIN_TOKEN || "",
+    host: process.env.SHOPIFY_HOST || "masalsensin-3.myshopify.com",
+  },
+  telegram: {
+    botToken: process.env.TELEGRAM_BOT_TOKEN || "",
+    adminChatId: process.env.TELEGRAM_ADMIN_CHAT_ID || "",
   },
 };
 

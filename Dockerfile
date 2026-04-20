@@ -1,6 +1,6 @@
 FROM node:22-slim
 
-# canvas native dependencies
+# canvas native dependencies + ghostscript (PDF compression for Telegram delivery)
 RUN apt-get update && apt-get install -y \
     build-essential \
     libcairo2-dev \
@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     librsvg2-dev \
     pkg-config \
     python3 \
+    ghostscript \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

@@ -1,0 +1,197 @@
+{
+  "id": "erol-ve-duzen-kralligi-kisiye-ozel-kitap",
+  "category": "gunluk-degerler-egitimi",
+  "title": "Erol ve Düzen Krallığı",
+  "description": "Erol için odası bir krallık gibiydi. Ama bir gün fark etti ki bir kralın işi düzeni korumakmış. Oyuncaklarını topladı, yatağını yaptı, kıyafetlerini katladı. Krallığını her gün yeniden yarattı. İşte Erol'un düzen masalı.",
+  "lessons": [
+    "Oyuncakları toplamak",
+    "Yatağını yapmak",
+    "Kıyafetlerini katlamak",
+    "Düzenli olmak",
+    "Sorumluluk almak"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#FFDDC1",
+    "secondaryColor": "#A8DADC",
+    "accentColor": "#F7B801",
+    "icon": "🎨"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Krallığın Kapısı",
+      "text": "Erol, sabah uyanır uyanmaz, yumuşacık yatağında gerinerek gülümsedi. Güneşin ilk ışıkları, pencereden süzülerek renkli oyuncak kutularına düşmüştü. Erol için odası, her sabah kapısı açılan sihirli bir krallıktı. Odaya her adım attığında, küçük kalbinde macera kıvılcımları beliriyordu. Bugün hangi oyuncağıyla ne oynayacağını düşünürken yorganı ayakucuna itti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol, still in bed, stretching and smiling as sunlight streams into his colorful room, setting: Erol'un odası, sabah, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Erol'un odası, sabah"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Kralın Oyuncağı",
+      "text": "Erol, gözlerini odanın ortasındaki dev yapboz şatosuna dikti. Şato, dün gece yarım kalmıştı; kulelerinden biri eksikti. Erol'un aklına hemen, 'Bir kralın şatosu asla yarım kalmaz,' diyen babasının sesi geldi. Şatoyu tamamlamak için sabırsızlanıyordu. Yatağından kalkıp ayakucundaki yumuşak terliklerini giydi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol, out of bed, looking at a half-finished puzzle castle in the middle of his room, setting: Erol'un odası, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Erol'un odası, sabah"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Dağınık Krallık",
+      "text": "Ancak Erol yataktan kalktığında, zeminin oyuncaklarla kaplı olduğunu gördü. Arabalar bir köşede devrilmiş, pelüş ayılar üst üste yığılmış, boya kalemleri halıya dağılmıştı. Ayaklarını basacak yer bulmakta zorlanıyordu. Küçük parmak uçlarında yürüyerek yapboz şatosuna doğru ilerlemeye çalıştı. Kalbinde, bu dağınıklığın oluşturduğu hafif bir ağırlık hissetti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol tiptoeing through a floor covered with toys (cars, plush bears, crayons) towards a puzzle castle, setting: Erol'un odası, sabah, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Erol'un odası, sabah"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "Taşların Sesi",
+      "text": "Erol, bir adım attığında, ayağının altından geçen küçük bir kırmızı lego parçası 'çıt' diye bir ses çıkardı. Parmağını kaldırdığı zaman, halıdaki bir oyuncak arabanın tekerleği koptu. Erol, hafifçe duraksadı. Bu ses, odasının düzenli olmamasından kaynaklanan bir uyarı gibiydi; sanki her yerdeki oyuncaklar ona bir şeyler anlatmaya çalışıyordu. Şatosuna ulaşmaya çalışırken daha dikkatli adımlar atmaya başladı. Gözleri, yerdeki oyuncakların arasında kaybolmuştu; bir sonraki adımda neye basacağını kestiremiyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol looks down at a broken toy car wheel after stepping on a lego piece, a thoughtful expression on his face, setting: Erol'un odası, sabah, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Erol'un odası, sabah"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Annenin Sesi",
+      "text": "O sırada annesinin sesi kapıdan duyuldu. \"Erol'um, kahvaltı hazır! Odana baktım, bir an önce toplamalısın. Krallar, krallıklarını dağınık bırakmazlar!\" Annesinin sesi her zamanki gibi sevgi doluydu ama Erol'un kulaklarında yankılanan bu sözler, ona bir görev hatırlatmıştı. Kalbinde, annesinin beklentisini karşılamak için bir istek belirdi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol looking towards the open door as his mother's voice comes from outside, a determined look on his face, setting: Erol'un odası, sabah, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "Erol'un odası, sabah"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "İlk Adım: Yorgan",
+      "text": "Erol, derin bir nefes aldı. Gözleri, dağınık yatağına takıldı. Yorgan bir yana, çarşaf bir yana, yastık düşmüştü. 'Küçük bir başlangıç yapabilirim,' diye düşündü. Önce yatağına yaklaştı. Yastığını yerden alıp başucuna koydu. Sonra yorganını düzeltti, yatağın kenarlarını sıkıca örttü. Yorganın köşelerini tamamlarken, sanki şatosunun kulesini tamamlıyor gibi hissetti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol making his bed, carefully arranging his pillow and pulling up the duvet, a small smile appearing, setting: Erol'un odası, yatağının yanı, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Erol'un odası, yatağının yanı"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Oyuncakların Dansı",
+      "text": "Yatağını toparladıktan sonra Erol, odanın ortasındaki oyuncaklara döndü. Pelüş ayılar, kutularına girmeyi bekliyordu. Arabalar ise garajlarına. Erol, bir arabanın tekerleğini nazikçe yerine taktı. Sonra oyuncakları teker teker, ait oldukları yerlere götürmeye başladı. Her oyuncağı yerine koyarken, onların dans eder gibi yerlerine yerleştiğini hayal etti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol carefully putting a wheel back on a toy car, then placing it and other toys into their respective boxes, setting: Erol'un odası, oyuncakların yanı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Erol'un odası, oyuncakların yanı"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Gizli Köşe",
+      "text": "Erol, en sevdiği kırmızı uçağı, pencerenin kenarına, özel yerine bıraktı. İçinden, \"Ne kadar da güzel duruyor, sanki bana gülümser gibi,\" diye geçirdi. Uçak, her sabah güneşin ilk ışıklarını yakalayan bir köşede duruyordu. Orada dururken, sanki her an uçmaya hazır bir kuş gibiydi. Erol, uçağını yerine koyarken, küçük parmaklarıyla kanatlarını okşadı. Odasının her köşesinde, küçük sırları olduğunu biliyordu. \"Bu sırları sadece ben ve oyuncaklarım biliyoruz,\" diye düşündü.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol carefully places his favorite red toy airplane on a special spot near the window, gently touching its wings, setting: Erol'un odası, pencere kenarı, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Erol'un odası, pencere kenarı"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Kıyafet Kulesi",
+      "text": "Odasının bir köşesinde, katlanmayı bekleyen kıyafetleri gördü. Tişörtler üst üste yığılmış, çoraplar dağınık bir şekilde duruyordu. Erol, kıyafetlerin yanına oturdu. Bu dağınıklık gözüne batıyordu, bir an önce düzenlemeliydi. Önce en sevdiği mavi tişörtü aldı. Köşelerini birleştirerek katladı. Sonra diğer tişörtleri, pantolonları özenle katlayıp çekmecesine yerleştirdi. Her katladığı kıyafet, sanki odasına düzen getiriyor gibiydi. Bu küçük çaba bile içini rahatlatmaya yetiyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol sitting by a pile of clothes, carefully folding a blue t-shirt and placing it in a drawer, setting: Erol'un odası, kıyafet yığınının yanı, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Erol'un odası, kıyafet yığınının yanı"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Son Dokunuş",
+      "text": "Son olarak Erol, odanın ortasındaki yapboz şatosuna geri döndü. Eksik kule parçasını bulmak için eğildi. Gözleri, halının üzerinde gezindi. Birden, yatağın kenarına sıkışmış son parçayı gördü. Heyecanla uzandı, parçayı aldı. Parmağında hissettiği pürüzsüz yüzey, ona bir zaferin yakın olduğunu fısıldadı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol bending down, eyes scanning the floor, then spotting the last puzzle piece near the bed and reaching for it with excitement, setting: Erol'un odası, yapboz şatosunun yanı, mood: climactic, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "climactic",
+      "setting": "Erol'un odası, yapboz şatosunun yanı"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Şatonun Tamamlanması",
+      "text": "Erol, son parçayı şatonun üzerine dikkatlice yerleştirdi. 'Tak!' diye hafif bir ses duyuldu. Şato artık tamamlanmıştı! Kuleleri gökyüzüne uzanıyor, pencereleri ışıl ışıl parlıyordu. Erol, şatonun etrafında gururla döndü. Kalbi, minicik bir davul gibi atıyordu. Elini şatonun en yüksek kulesine koydu. Sanki kendi elleriyle bir hayali inşa etmişti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol carefully placing the final puzzle piece, completing the castle, then circling it with a proud smile, hand on the tallest tower, setting: Erol'un odası, tamamlanmış yapboz şatosunun yanı, mood: triumphant, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Erol'un odası, tamamlanmış yapboz şatosunun yanı"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "Işıkla Dolu Oda",
+      "text": "Erol, odasının ortasında durdu. Güneş, şimdi tüm pencerelerden içeri giriyor, odanın her köşesini aydınlatıyordu. Halıdaki oyuncaklar kutularında, kıyafetler çekmecelerde, yatağı dümdüzdü. Oda, sanki derin bir nefes almıştı. Erol, odasının kokusunu içine çekti; temizliğin ve düzenin hafif, ferah kokusunu hissetti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol standing in the middle of his now tidy room, sunlight filling the space, taking a deep breath and smiling, setting: Erol'un odası, öğle, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Erol'un odası, öğle"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "Kralın Huzuru",
+      "text": "Annesi, kapıdan içeri girdi ve gülümsedi. \"Vay canına, Erol! Odan ne kadar da güzel olmuş!\" Erol, annesine bakıp gözlerinin içi parladı. \"Gerçek bir kral, krallığını böyle düzenli tutar, değil mi anne?\" Annesi, Erol'un saçlarını okşadı. Erol, odasına her baktığında, kalbinde oluşan huzuru hissetti. Düzenin getirdiği bu rahatlık, pencerelerden giren güneş ışığı gibiydi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol's mother enters the room, smiling proudly at the tidy space, as Erol looks up at her with shining eyes, setting: Erol'un odası, öğle, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Erol'un odası, öğle"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Her Gün Yeni Bir Başlangıç",
+      "text": "O günden sonra Erol, her sabah krallığına, yani odasına aynı heyecanla girdi. Küçük oyuncaklarını toplarken, yatağını yaparken ve kıyafetlerini katlarken, her bir eşyanın kendi yerini bulduğunu biliyordu. Erol, odasının sadece bir yer değil, aynı zamanda kalbinin de yansıması olduğunu anlamıştı. Her gün, kendi küçük krallığını yeniden inşa etmenin ve düzenin getirdiği o tarifsiz huzurun tadını çıkaran bir kral oldu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: navy-blue cotton t-shirt with small star, beige chino shorts, white sneakers) Erol, with a gentle smile, tidying his room; putting away toys, making his bed, folding clothes, a consistent routine, setting: Erol'un odası, her sabah, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "Erol'un odası, her sabah"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🌿",
+      "facts": [
+        "Ağaçlar, yaşadıkları ortamı düzenli tutmak için birbirlerine yardım ederler.",
+        "Bazı bitkiler, köklerinden birbirlerine bağlanarak besin ve su paylaşırlar.",
+        "Dünya üzerindeki en büyük ağaç, yaklaşık 2750 yaşındadır ve hala büyümektedir!"
+      ],
+      "icon": "🌿"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ⭐",
+      "facts": [
+        "Japonya'da, çocuklara okullarda kendi sınıflarını temizleme ve düzenleme öğretilir.",
+        "Düzenli bir ortam, beynimizin daha iyi odaklanmasına ve yeni şeyler öğrenmesine yardımcı olur.",
+        "Gezegenimizdeki en düzenli hayvanlardan biri olan kunduzlar, evlerini inşa ederken her şeyi titizlikle yerleştirirler."
+      ],
+      "icon": "⭐"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Erol'un Taçlı Odası\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Erol, a 5-year-old Turkish boy with brown hair and warm eyes, is kneeling, focused on putting a toy away. Midground: A partially visible, colorful toy box and a tidy arrangement of various toys (a plush bear, building blocks, a small airplane) on a soft rug. Background: A sunlit window with soft curtains, a neatly made bed, and a bookshelf with children's books..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Erol\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Erol'un Taçlı Odası\". Erol'un odası, her sabah yeni maceralara açılan krallığı gibiydi. Ama bir gün, bu krallık oyuncak dağlarının altında kaybolunca, Erol gerçek bir kralın sadece oynamakla kalmayıp, düzeni de sağlaması gerektiğini keşfetti. Her bir oyuncağı yerine koydukça, odasının sadece bir yer değil, kalbinin de yansıması olduğunu anladı. Erol, her gün krallığını yeniden inşa eden, düzenli ve mutlu bir kral olmayı öğrendi.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "erol-ve-duzen-kralligi-kisiye-ozel-kitap",
+  "coverTitle": "Erol ve Düzen Krallığı"
+}

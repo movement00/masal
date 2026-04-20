@@ -20,7 +20,8 @@
     "dotenv": "^16.4.0",
     "openai": "^4.70.0",
     "pdfkit": "^0.17.2",
-    "sharp": "^0.33.0"
+    "sharp": "^0.33.0",
+    "tesseract.js": "^7.0.0"
   },
   "devDependencies": {
     "electron": "^40.4.1",

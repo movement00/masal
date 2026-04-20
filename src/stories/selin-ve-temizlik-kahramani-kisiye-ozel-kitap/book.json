@@ -1,0 +1,197 @@
+{
+  "id": "selin-ve-temizlik-kahramani-kisiye-ozel-kitap",
+  "category": "gunluk-degerler-egitimi",
+  "title": "Selin ve Temizlik Kahramanı",
+  "description": "Selin için temizlik bir oyun gibiydi. Köpürten sabun, sıçrayan su, parıldayan dişler... Her gün biraz daha kahraman oldu. Anne ve baba ona gururla bakıyordu. İşte Selin'in tertemiz masalı.",
+  "lessons": [
+    "Ellerini yıkamak",
+    "Dişlerini fırçalamak",
+    "Saçını taramak",
+    "Temiz olmak",
+    "Öz-bakım yapmak"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#ADD8E6",
+    "secondaryColor": "#FFD700",
+    "accentColor": "#90EE90",
+    "icon": "🫧"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Sabahın Kokusu",
+      "text": "{CHILD_NAME}, yatağında dönerken burnuna ılık süt kokusu geldi. 'Oh, ne güzel bir koku!' diye düşündü, 'Anneannem kesin kahvaltı hazırlıyordur.' Güneş, perdenin aralığından içeri süzülüyor, küçük toz zerreciklerini havada pırıl pırıl dans ettiriyordu. Gözlerini ovuşturdu, esnedi. Yorganını biraz daha kendine çekti. Bugün de hiç elini yüzünü yıkamak istemiyordu. 'Keşke bütün gün yatakta kalabilsem,' diye geçirdi içinden. Dün akşam oynadığı oyun hamurunun hafif kokusu hâlâ parmak uçlarındaydı. Gözlerini kapadı, hayalinde renkli hamurları tekrar yoğurdu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) A 5-year-old girl, Selin, wakes up in her bed, stretching and smelling breakfast., setting: Selin'in yatak odası, sabah, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Selin'in yatak odası, sabah"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Kahvaltı Sofrası",
+      "text": "Mutfağa giren {CHILD_NAME}, annesini masada gördü. Annesi, taze sıkılmış portakal suyunu bardağa dolduruyordu. Masadaki peynir kokusu, taze ekmek buharı {CHILD_NAME}'nin içini gıdıkladı. 'Ne kadar da acıkmıştım!' diye düşündü. Sandalyesine oturdu, tabağındaki zeytinlere uzanmak istedi. Annesi, eline küçük bir kağıt mendil bıraktı. \"Ellerini yıkamadan mı oturacaksın kızım?\" diye sordu annesi, sesi yumuşacıktı. {CHILD_NAME}, başını önüne eğdi. Parmaklarını masanın kenarında sessizce gezdirirken, annesinin 'kirli' kelimesini duymak onu biraz üzmüştü. 'Sanki kötü bir şey yapmışım gibi hissettim,' diye düşündü, 'oysa sadece kahvaltı yapmak istemiştim.'",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin sits at the breakfast table, looking at her mother with a slight frown., setting: Mutfak, kahvaltı zamanı, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Mutfak, kahvaltı zamanı"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Banyo Aynası",
+      "text": "{CHILD_NAME}, banyoya yavaşça gitti. Musluğun parlaklığı gözünü aldı. Lavabonun kenarında duran renkli sabuna baktı. Sabun, sanki ona gülümsüyor gibiydi. Parmak uçlarıyla sabuna dokundu, sabun soğuktu. Suyun sesini duymak istemiyordu, musluğu hiç açmak istemiyordu. Aynadaki yansımasına baktı, kendi gözleri bile biraz uykulu görünüyordu. 'Keşke ellerimi yıkamak hiç gerekmeseydi,' diye düşündü içinden. Ama annesinin sözleri hâlâ kulaklarındaydı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin stands in front of the bathroom sink, looking at the bar of soap with hesitation., setting: Banyo, lavabo, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Banyo, lavabo"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "Sabun Balığı",
+      "text": "{CHILD_NAME}, musluğu hafifçe açtı. Soğuk su, parmaklarına değince irkildi. Sonra ılıklaştı. Sabunu eline aldı, ovaladı. Avucunda küçük bir köpük belirdi. Köpük, minicik bir balık gibi suya doğru yüzdü. {CHILD_NAME}, gözlerini açtı, balığın sırtı pırıl pırıldı. Suya her değdiğinde sanki içinde küçük yıldızlar yanıp sönüyordu. \"Merhaba,\" diye fısıldadı {CHILD_NAME}. Küçük balık, lavabonun içinde kıvrılarak yüzmeye devam etti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin washes her hands, and a small, shimmering soap bubble in the shape of a fish appears in her palm., setting: Banyo, lavabo, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Banyo, lavabo"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Köpük Oyunları",
+      "text": "Sabun balığı, {CHILD_NAME}'nin avucunda neşeyle zıplıyordu. {CHILD_NAME}, parmaklarını hareket ettirdikçe balık da onunla birlikte dans ediyordu. Küçük balık, suyun içinde dönüyor, etrafa minik pırıltılar saçıyordu. \"Sen ne kadar güzelsin!\" dedi {CHILD_NAME}, sesi biraz yükselmişti. Balık, sanki onu anlamış gibi, lavabonun kenarına doğru yüzdü, sonra tekrar {CHILD_NAME}'nin eline geri geldi. {CHILD_NAME}, balıkla oynamanın çok eğlenceli olduğunu fark etti. Ellerini yıkamak artık sıkıcı bir görev gibi değildi, aksine neşeli bir oyun gibiydi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin playfully interacts with the soap fish in her hands, watching it shimmer., setting: Banyo, lavabo, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Banyo, lavabo"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "Görünmez İzler",
+      "text": "{CHILD_NAME}, balığa dikkatlice baktı. Balık, parmaklarının arasındaki görünmez izlerin üzerinden geçtikçe, o izler kayboluyordu. Sanki balık, parmaklarındaki her şeyi toplayıp götürüyordu. {CHILD_NAME}, annesinin 'kirli' kelimesini tekrar hatırladı. Şimdi anlıyordu, ellerindeki o görünmez şeyler, balık sayesinde yok oluyordu. Balık, minicik bir temizleyici gibiydi. {CHILD_NAME}, balığın bu işi yaparken hiç yorulmadığını, aksine daha da pırıl pırıl parladığını gördü. İçinde bir sıcaklık hissetti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin observes the soap fish as it cleans her hands, making the 'invisible' dirt disappear., setting: Banyo, lavabo, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Banyo, lavabo"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Daha Çok Su",
+      "text": "{CHILD_NAME}, balığın daha da parlaması için musluğu biraz daha açtı. Su, lavaboyu doldurmaya başladı. Sabun balığı, şimdi daha büyük bir alanda yüzüyordu. {CHILD_NAME}, ellerini suya soktu, balık etrafında döndü. Köpükler, küçük kar taneleri gibi lavabonun içinde uçuşuyordu. Balık, sanki ona \"Daha çok su, daha çok temizlik!\" diyordu. {CHILD_NAME}, gülümseyerek ellerini balıkla birlikte köpürttü. İçinden, 'Keşke bu balık hep benimle kalsaydı,' diye geçirdi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin adds more water to the sink, creating a bigger playground for the soap fish., setting: Banyo, lavabo, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Banyo, lavabo"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Pırıl Pırıl Eller",
+      "text": "Sonunda {CHILD_NAME}'nin elleri pırıl pırıldı. Sabun balığı, son bir kez {CHILD_NAME}'nin parmaklarının arasında süzüldü, sonra yavaşça küçülmeye başladı. Köpük, suya karıştı, küçük bir pırıltı bırakarak gözden kayboldu. {CHILD_NAME}, ellerine baktı. Taptazeydi, mis gibi sabun kokuyordu. Eskiden bu kadar temiz hissettiğini hatırlamıyordu. Annesinin 'kirli' kelimesi artık aklına gelmiyordu, sadece bu temizlik hissi kalmıştı. Bu his, {CHILD_NAME}'nin içini ısıttı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin's hands are sparkling clean, and the soap fish slowly disappears into the water., setting: Banyo, lavabo, mood: triumphant, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Banyo, lavabo"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Kahvaltı Keyfi",
+      "text": "{CHILD_NAME}, mutfağa geri döndü. Annesi, hâlâ masada oturuyordu. {CHILD_NAME}, annesinin yanına oturdu, gülümsedi. Annesi, {CHILD_NAME}'nin temiz ellerini görünce o da gülümsedi. \"Aferin benim kızıma,\" dedi annesi. {CHILD_NAME}, tabağındaki zeytinlere uzandı. Sanki bu sabah zeytinlerin tadı daha güzeldi, bu temizlik hissiyle birlikte kahvaltı yapmak daha da keyifli geliyordu. İçinde bir hafiflik, bir neşe vardı; sanki küçük bir zafer kazanmış gibi hissediyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin returns to the breakfast table with clean hands, smiling at her mother., setting: Mutfak, kahvaltı zamanı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Mutfak, kahvaltı zamanı"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Yeni Bir Oyun",
+      "text": "Ertesi sabah, {CHILD_NAME} uyandığında aklına hemen sabun balığı geldi. Yatağından fırladı, hızlı adımlarla banyoya gitti. Musluğu açtı, sabunu eline aldı. Bu sefer balık daha hızlı belirdi. {CHILD_NAME}, onunla konuşmaya başladı, sanki eski bir arkadaşıyla sohbet ediyordu. Balık, {CHILD_NAME}'nin parmaklarının arasında neşeyle zıplıyor, pırıl pırıl parlıyordu. {CHILD_NAME}, balığın ona her gün yeni bir şeyler öğreteceğini biliyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) The next morning, Selin eagerly goes to the bathroom to wash her hands and play with the soap fish again., setting: Banyo, lavabo, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Banyo, lavabo"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Diş Fırçalama Zamanı",
+      "text": "Akşam, {CHILD_NAME} dişlerini fırçalama zamanı geldiğinde, aynaya baktı. Diş fırçasını eline aldı. 'Acaba diş macununun da bir balığı var mıydı?' diye düşündü. Dişlerini fırçalarken, macunun köpükleri ağzında dans ediyordu. {CHILD_NAME}, hayalinde küçük diş fırçası balıklarının dişlerini tek tek temizlediğini canlandırdı. Bu düşünceyle fırçalamak daha kolay geldi. Köpükler, sanki minik yıldızlar gibi parlıyordu. Bu yeni oyun, her şeyi güzelleştiriyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin brushes her teeth, imagining tiny 'toothpaste fish' cleaning them., setting: Banyo, lavabo, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Banyo, lavabo"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "Saç Fırçası Rüzgarı",
+      "text": "Saçlarını tarama zamanı geldiğinde, {CHILD_NAME} bu sefer saç fırçasına dikkatle baktı. 'Acaba bunun da bir sırrı var mıydı?' diye düşündü. Fırçayı saçlarına değdirdi. Fırçanın telleri, sanki küçük rüzgarlar estiriyor, saçlarını nazikçe açıyordu. {CHILD_NAME}, saç fırçasının da görünmez bir yardımcı olduğunu düşündü. Saçları yumuşacık oldu, sanki her teli parlıyordu. Her küçük iş, şimdi bir maceraya dönüşüyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin brushes her hair, imagining a gentle wind from the brush tidying her strands., setting: Selin'in yatak odası, akşam, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Selin'in yatak odası, akşam"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "Temizlik Dansı",
+      "text": "Günler geçtikçe {CHILD_NAME}, sabahları ellerini yıkamayı, akşamları dişlerini fırçalamayı, saçlarını taramayı hiç unutmuyordu. Bunları yapmak artık o kadar kolay geliyordu ki sanki hep böyleymiş gibiydi. Her bir işi yaparken, hayalindeki minik yardımcılarıyla birlikte hareket ediyordu. Sabun balığı, diş macunu balıkları, saç fırçası rüzgarı... Hepsi onunla birlikteydi. Temizlik yapmak, artık bir görev değil, neşeli bir dansa dönüşmüştü. {CHILD_NAME}, her temizliğin sonunda kendini daha güçlü, daha mutlu hissediyordu. İçinde büyük bir özgüven yeşermişti. Ne kadar da büyüdüğünü hissediyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin joyfully performs various hygiene routines, imagining her invisible helpers., setting: Selin'in evi, farklı zaman dilimleri, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Selin'in evi, farklı zaman dilimleri"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Pırıl Pırıl Her Gün",
+      "text": "Bir sabah, {CHILD_NAME} annesinin yanına koştu. Ellerini uzattı. \"Anne, bak ellerim ne kadar temiz!\" dedi, sesi pırıl pırıldı. Annesi, {CHILD_NAME}'nin ellerini tuttu, öptü. \"Evet, kızım,\" dedi annesi, gözleri parlıyordu. \"Senin ellerin hep pırıl pırıl.\" {CHILD_NAME}, içinden gülümsedi. Biliyordu ki, sabun balığı ve diğer tüm arkadaşları, her gün onunla birlikteydi. Hayal gücüyle birlikte, her gün yeni bir macera başlıyordu. Temizliğin sadece dışarıda değil, kalbinde de olduğunu anlamıştı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: mint-green cotton dress with tiny flower print, white cotton tights, small white shoes) Selin shows her clean hands to her mother, who smiles and kisses them., setting: Mutfak, sabah, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Mutfak, sabah"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 💧",
+      "facts": [
+        "Ellerimizi yıkarken kullandığımız sabunlar, görünmez kirleri ve mikropları sudan daha kolay uzaklaştırmamıza yardım eder.",
+        "Dünyadaki suyun büyük bir kısmı tuzludur, içebileceğimiz tatlı su miktarı çok azdır.",
+        "Bir musluktan damlayan su, bir yılda koca bir banyo küvetini doldurabilir, bu yüzden suyu dikkatli kullanmalıyız."
+      ],
+      "icon": "💧"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ✨",
+      "facts": [
+        "Sabun köpükleri, havayla suyun birleşimiyle oluşur ve içlerine hava girdiği için parlak görünürler.",
+        "Saçlarımız, tırnaklarımız ve derimiz tıpkı bir bitkinin yaprakları gibi sürekli yenilenir ve büyür.",
+        "Dişlerimizi fırçalamak, yediğimiz yiyeceklerden kalan minik parçaları temizleyerek ağzımızın ferah kalmasını sağlar."
+      ],
+      "icon": "✨"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Selin'in Sabun Balığı\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Selin's hands and the soap fish. Midground: A bright, clean bathroom sink. Background: A blurry, warm-toned bathroom..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Selin\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Selin'in Sabun Balığı\". Selin, ellerini yıkamayı pek sevmeyen bir kızdı. Ta ki bir sabah, avucunda pırıl pırıl parlayan sabun balığını keşfedene kadar! Bu küçük arkadaşıyla birlikte, temizliğin sadece bir görev değil, aynı zamanda eğlenceli ve ışıl ışıl bir macera olduğunu öğrendi.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "selin-ve-temizlik-kahramani-kisiye-ozel-kitap",
+  "coverTitle": "Selin ve Temizlik Kahramanı"
+}

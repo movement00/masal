@@ -1,0 +1,178 @@
+{
+  "id": "boyama-1776288853098-ela",
+  "category": "boyama",
+  "title": "Ela'nın Neşeli Ormanı",
+  "description": "Ela, ormandaki en yakın arkadaşı Sincap Fındık ile birlikte yeni bir güne uyanıyor. Kitap, Ela ve arkadaşlarının ormanda neşe içinde oyunlar oynayarak geçirdiği, renkli ve eğlenceli bir günü anlatıyor. Her sayfada farklı bir orman hayvanıyla tanışıyor, onların komik anlarını renklendiriyoruz.",
+  "lessons": [
+    "yarat�c�l�k",
+    "renk",
+    "hayal g�c�"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 16,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#8BC34A",
+    "secondaryColor": "#FFC107",
+    "accentColor": "#FF5722",
+    "icon": "🌳"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "default",
+      "title": "Sabah Güneşi",
+      "text": "Günaydın Ela! Güneş pırıl pırıl doğdu. Bak, ağaçlar ne kadar yeşil!",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: A young Turkish girl, Ela, 5 years old, peeking out from her treehouse window at the morning sun..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "dreamy",
+      "setting": "Ela'nın ağaç evinin penceresi."
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "default",
+      "title": "Fındık Uyandı",
+      "text": "Sincap Fındık da uyanmış! Karnı çok aç olmalı.",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA playful squirrel, Fındık, stretching and looking for nuts near Ela's treehouse.\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "playful",
+      "setting": "Ağaç evin önündeki çimenlik."
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "default",
+      "title": "Kelebek Dansı",
+      "text": "Ah, ne güzel kelebekler! Rengarenk kanatlarıyla dans ediyorlar.",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: Ela, 5 years old, laughing as she watches a group of colorful butterflies fluttering around her..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "joyful",
+      "setting": "Çiçeklerle dolu bir orman açıklığı."
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "default",
+      "title": "Kaplumbağa Tonton",
+      "text": "Tonton Kaplumbağa çok yavaş ilerliyor. Ona yardım edelim mi?",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: Ela and Fındık, the squirrel, observing a slow-moving turtle, Tonton, on a forest path..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "curious",
+      "setting": "Orman patikasında, bir su birikintisinin yanı."
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "default",
+      "title": "Kuş Sesleri",
+      "text": "Ağaçların dallarında şarkı söyleyen kuşlar var. Ne güzel ötüyorlar!",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nClose-up of three birds singing on a tree branch, with Ela and Fındık faintly visible in the background.\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "peaceful",
+      "setting": "Yüksek, dallı ağaçların olduğu bir bölüm."
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "default",
+      "title": "Mantar Evler",
+      "text": "Bak! Minik mantar evler var. Kim yaşıyor acaba içinde?",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: Ela and Fındık curiously looking at a cluster of colorful mushrooms that resemble small houses..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "adventurous",
+      "setting": "Büyük ağaç köklerinin arasında, mantarların olduğu yer."
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "default",
+      "title": "Tavşan Zıpçık",
+      "text": "Merhaba Zıpçık! Havucunu afiyetle yiyor.",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA fluffy rabbit, Zıpçık, happily munching on a carrot, with Ela and Fındık watching nearby.\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "playful",
+      "setting": "Bir havuç tarlasının kenarı."
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "default",
+      "title": "Dere Kenarı",
+      "text": "Serin sular akıyor. Balıklar saklambaç oynuyor.",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: Ela and Fındık sitting by a clear forest stream, watching small fish swim..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "peaceful",
+      "setting": "Güneşli bir orman deresinin kenarı."
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "default",
+      "title": "Uykulu Ayıcık",
+      "text": "Ayıcık Bal, ağacın altında uyuyor. Onu uyandırmayalım.",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA sleepy bear, Bal, napping peacefully under a large oak tree.\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "dreamy",
+      "setting": "Geniş bir ağacın gölgesi."
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "default",
+      "title": "Çiçek Toplama",
+      "text": "Ela, en güzel çiçekleri topluyor. Kime verecek acaba?",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: Ela, 5 years old, happily picking wildflowers in a vibrant meadow, with Fındık by her side..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "joyful",
+      "setting": "Renkli çiçeklerle dolu bir çayır."
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "default",
+      "title": "Gizemli Mağara",
+      "text": "Vay canına! Bir mağara! İçinde ne saklı olabilir?",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: Ela and Fındık cautiously peeking into the entrance of a small, ivy-covered cave..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "curious",
+      "setting": "Sarmaşıklarla kaplı, küçük bir mağara girişi."
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "default",
+      "title": "Akşam Yemeği",
+      "text": "Gün bitti, sıra geldi karınları doyurmaya! Fındık, fındıklarını buldu.",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: Ela sharing a small meal with Fındık outside her treehouse as the sun sets..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "peaceful",
+      "setting": "Ağaç evin önünde, gün batımı ışığında."
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "default",
+      "title": "Yıldızlar Parıldıyor",
+      "text": "Gökyüzü yıldızlarla dolu. Her biri bir masal anlatıyor.",
+      "prompt": "⚠️ RENDERING MODE OVERRIDE: This is a 2D BLACK-AND-WHITE LINE ART PAGE for a children's coloring book — NOT 3D, NOT Pixar. Any reference to \"3D style\", \"Pixar quality\", \"Character profile 3D\", or \"color rendering\" in other context blocks applies ONLY to FACIAL IDENTITY matching. The final image output MUST be flat 2D black ink on white paper, NO color fills, NO shading, NO 3D volume.\n\nA child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is performing: Ela, 5 years old, and Fındık looking up at a sky full of twinkling stars from their treehouse balcony..\n\nLINE ART STYLE (for coloring):\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Complexity: medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Large open white areas specifically intended for children to color in\n- Do NOT include: text, words, letters, watermark, signature, cross-hatching, half-tone\n- Ice Age / Shrek / Pixar level cute expressive character design, but rendered as FLAT 2D LINE ART (not 3D)\n- Full-bleed A4 portrait page composition, balanced negative space",
+      "mood": "dreamy",
+      "setting": "Gece gökyüzü ve uzak siluet orman."
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "default",
+      "title": "Gizli Şeyleri Bul!",
+      "text": "Ela, bu sayfada ormandaki gizli palamutlar ve çiçekler bulup istediğin renklerle boyayabilirsin.",
+      "prompt": "A \"FIND AND COLOR\" activity page — 2:3 portrait (A4).\n\nSCENE: a busy playful line-art illustration featuring Ela in a \"ormandaki gizli palamutlar ve çiçekler\" themed environment filled with hidden objects to find.\n\nACTIVITY:\n- Hide within the scene: 5 butterflies, 3 stars, 2 flowers, 4 small birds, 1 hidden key\n- A small side-bar at the top lists the items to find with a small icon + count (e.g., \"🦋 5 kelebek bul ve boya\" in hand-lettered style — but write it in LINE ART FONT so the child can color the letters too)\n- Each hidden object should be large enough for the child to color in easily\n- Leave clear coloring areas in the rest of the scene (grass, sky, trees)\n\nSTYLE:\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Busy enough to hide objects, but not overwhelming",
+      "mood": "playful",
+      "setting": "etkinlik sayfası"
+    },
+    {
+      "sceneNumber": 15,
+      "outfitId": "default",
+      "title": "Labirent Macerası",
+      "text": "Yolu bul ve ilerlerken çizdiğin çizgiyi renklendir.",
+      "prompt": "A MAZE PUZZLE page for a coloring book — 2:3 portrait (A4).\n\nSTRUCTURE:\n- A clear maze taking ~70% of the page area, printed in thick line art\n- Entry at top-left labeled \"Ela\" with a small character icon\n- Exit at bottom-right with a themed goal (star / treasure / heart)\n- Maze complexity: simple but fun, 5-7 wrong turns\n- A small decorative border around the maze (stars, arrows)\n- Above the maze: instruction \"Ela, Hedefe Giden Yolu Bul ve Boya!\" in playful line-art font (child colors the letters too)\n- Below the maze: reward stamp \"Sen Başardın!\" (sadece line art)\n\nSTYLE:\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.",
+      "mood": "adventurous",
+      "setting": "labirent"
+    },
+    {
+      "sceneNumber": 16,
+      "outfitId": "default",
+      "title": "Kendi Mandalan",
+      "text": "Bu mandalayı istediğin renklerle doldur. Senin stilin, senin kitabın.",
+      "prompt": "A BEAUTIFUL MANDALA COLORING PAGE for 3-6 age group. 2:3 portrait (A4).\n\nCOMPOSITION:\n- Perfectly symmetric radial mandala centered on the page, ~85% page height\n- Theme-inspired motifs: elements from \"orman hayvanları stilize, yapraklar ve çiçekler\" (stylized as decorative mandala shapes — flowers, leaves, stars, suns, hearts, animals in ornament form)\n- Multiple concentric rings of patterns, each ring different\n- Small decorative elements in the 4 corners (paisley/flower buds/stars)\n- Below the mandala, subtitle: \"Kendi Renklerinle Tamamla\" (small playful font, line-art style)\n\nSTYLE:\n- thick bold outlines (2.5-3.5px equivalent), clean clear shapes\n- medium detail, some decorative patterns (polka dots, stars, flowers) but large coloring areas dominant\n- Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style.\n- Balance: large areas for thick markers AND smaller areas for colored pencils\n- No text inside the mandala itself",
+      "mood": "peaceful",
+      "setting": "kapanış"
+    }
+  ],
+  "funFacts": [],
+  "funFactPlacements": [],
+  "coverPrompt": "A PREMIUM personalized children's COLORING BOOK COVER, 2:3 portrait format, cheerful and eye-catching.\n\nHERO CHARACTER (center or slightly off-center): a child with the EXACT same facial features as the reference photo — Ela, Turkish child. The child is joyfully engaging in A vibrant and cheerful forest scene with a treehouse in the background, bathed in warm, inviting colors, representing the joy of coloring and nature., holding a colored pencil or crayon, bright smiling face.\n\nIMPORTANT — UNLIKE INTERIOR PAGES, THIS COVER IS FULL-COLOR:\n- Fully rendered Ice Age / Pixar style 3D CGI, saturated warm colors, cinematic lighting, high-detail textures\n- Title (big playful hand-lettered Turkish decorative font, multi-colored): \"Ela'nın Neşeli Ormanı\"\n- \"BOYAMA KİTABI\" small subtitle underneath in playful font\n- Scattered colored crayons, pencils, paint splashes as decorative border elements\n- Warm inviting atmosphere — evokes \"this is MY book\" feeling\n\nTurkish diacritics (ş ç ğ ü ö ı İ) MUST be perfect. Title appears EXACTLY ONCE. No barcode, no price, no ISBN.",
+  "specialPagePrompts": {
+    "backCover": "A warm closing coloring-book line-art illustration matching \"Ela'nın Neşeli Ormanı\", large cheerful character waving goodbye with \"Ela ve arkadaşlarıyla ormanda geçen bir güne sen de katıl! Bu kitapta renkler, oyunlar ve kahkahalar seni bekliyor. Haydi, kalemlerini kap ve bu neşeli maceraya dal!\" feel — but rendered purely as Clean professional black and white line art coloring book page — pure black ink lines on pure white background, NO shading, NO gradients, NO gray tones, NO color fills, NO cross-hatching. Print-ready 300dpi A4 portrait, flat 2D line work, children's coloring book style."
+  }
+}

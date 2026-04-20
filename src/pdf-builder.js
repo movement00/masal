@@ -45,10 +45,14 @@ class PDFBuilder {
       title,
       childName,
       coverPNG,
+      innerCoverPNG,
       heroPagePNG,
+      dedicationPNG,
       senderNotePNG,
       scenePages = [],
       funFactPages = [],
+      diplomaPNG,
+      endingPNG,
       backCoverPNG,
     } = options;
 
@@ -77,14 +81,28 @@ class PDFBuilder {
     await this._addImagePage(doc, coverPNG, pageCount === 0);
     pageCount++;
 
-    // === SAYFA 2: HIKAYEMIZIN KAHRAMANI ===
+    // === SAYFA 2: IC KAPAK (title page) ===
+    if (innerCoverPNG && fs.existsSync(innerCoverPNG)) {
+      this._newPage(doc);
+      await this._addImagePage(doc, innerCoverPNG);
+      pageCount++;
+    }
+
+    // === SAYFA 3: HIKAYEMIZIN KAHRAMANI ===
     if (heroPagePNG && fs.existsSync(heroPagePNG)) {
       this._newPage(doc);
       await this._addImagePage(doc, heroPagePNG);
       pageCount++;
     }
 
-    // === SAYFA 3: GONDEREN NOTU ===
+    // === SAYFA 4: ITHAF ===
+    if (dedicationPNG && fs.existsSync(dedicationPNG)) {
+      this._newPage(doc);
+      await this._addImagePage(doc, dedicationPNG);
+      pageCount++;
+    }
+
+    // === SAYFA 5: GONDEREN NOTU ===
     if (senderNotePNG && fs.existsSync(senderNotePNG)) {
       this._newPage(doc);
       await this._addImagePage(doc, senderNotePNG);
@@ -114,6 +132,20 @@ class PDFBuilder {
         await this._addImagePage(doc, funFactMap.get(sceneNum));
         pageCount++;
       }
+    }
+
+    // === MESLEK DIPLOMASI (sadece meslek-hikayeleri) ===
+    if (diplomaPNG && fs.existsSync(diplomaPNG)) {
+      this._newPage(doc);
+      await this._addImagePage(doc, diplomaPNG);
+      pageCount++;
+    }
+
+    // === KAPANIS (SON) ===
+    if (endingPNG && fs.existsSync(endingPNG)) {
+      this._newPage(doc);
+      await this._addImagePage(doc, endingPNG);
+      pageCount++;
     }
 
     // === ARKA KAPAK ===

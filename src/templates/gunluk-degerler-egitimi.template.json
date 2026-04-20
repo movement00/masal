@@ -1,0 +1,46 @@
+{
+  "_template": "gunluk-degerler-egitimi",
+  "_doc": "3-6 yas pedagojik kitap. Zamaninda uyuma, yemek, temizlik, duzen, saygi. 'Yildiz Cocuk Sertifikasi' arka kapakta.",
+  "id": "REPLACE-WITH-PRODUCT-HANDLE",
+  "category": "gunluk-degerler-egitimi",
+  "title": "REPLACE — Örnek: Ada ve Günün Altın Kuralları",
+  "coverTitle": "{CHILD_NAME} ve Günün Altın Kuralları",
+  "description": "REPLACE — Cocugun gunun altin kurallarini kendi adiyla yasayarak ogrendigi pedagojik masal.",
+  "lessons": [
+    "Zamanında uyuma",
+    "Yemeğini bitirme",
+    "Temizlik alışkanlığı",
+    "Düzenli olma",
+    "Sözünü dinleme"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "sceneCount": 14,
+  "style": "Pixar/Disney 3D CGI animation (Encanto/Coco quality), bright warm everyday-home palette, hyper-detailed fabric and skin, photorealistic textures, ultra-detailed render",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D Pixar style, big expressive eyes, detailed skin and hair textures matching the reference photo exactly",
+    "notes": "Gunluk kiyafetler — pijama (uyku), kahvalti onlugu (yemek), oyun kiyafeti (oyun), banyo havlusu (temizlik), gece pijama (uyku) gibi rutine uygun."
+  },
+  "theme": {
+    "primaryColor": "#FFB300",
+    "secondaryColor": "#FFE082",
+    "accentColor": "#3E2723",
+    "icon": "🌟"
+  },
+  "noteStyle": "vintage-warm",
+  "certificateHint": "YILDIZ ÇOCUK SERTİFİKASI — honey-yellow + warm brown",
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas-yellow-star",
+      "title": "Sabah Yıldızı",
+      "text": "{CHILD_NAME} bugün erken uyandı. Pencereden bakan güneş ona göz kırpıyordu. Bir gün başlamak üzereydi.",
+      "prompt": "REPLACE — Pixar 3D CGI sahne prompt'u",
+      "mood": "joyful",
+      "setting": "Yatak odasi penceresi, sabah ilk isik"
+    },
+    { "_note": "14 sahne kadar devam ettir, her biri bir 'altin kural' temasi." }
+  ]
+}

@@ -59,14 +59,15 @@ class QualityValidator {
     }
 
     try {
-      // 5 kontrolu paralel calistir
+      // 5 kontrolu paralel calistir — kategori bazli
+      const category = expectations.category || "hikaye";
       const checkPromises = [
         expectations.outfitDescription
           ? this._checkOutfit(imageBuffer, expectations.outfitDescription)
           : Promise.resolve({ score: 100, feedback: "Outfit tanimlanmamis, atlaniyor" }),
-        this._checkStyle(imageBuffer, expectations.style, anchorImageBuffer),
+        this._checkStyle(imageBuffer, expectations.style, anchorImageBuffer, category),
         this._checkSceneAccuracy(imageBuffer, expectations.scenePrompt, expectations.mood, expectations.setting),
-        this._checkComposition(imageBuffer),
+        this._checkComposition(imageBuffer, category),
         expectations.childPhotoBuffer
           ? this._checkFaceConsistency(imageBuffer, expectations.childPhotoBuffer)
           : Promise.resolve({ score: 100, feedback: "Referans foto yok, atlaniyor" }),
@@ -159,13 +160,32 @@ Respond in JSON only:
   }
 
   /**
-   * Stil kalitesi kontrolu
+   * Stil kalitesi kontrolu — kategori bazli rubric
    */
-  async _checkStyle(imageBuffer, expectedStyle, anchorBuffer = null) {
-    const styleTxt = expectedStyle ||
-      "3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail";
+  async _checkStyle(imageBuffer, expectedStyle, anchorBuffer = null, category = "hikaye") {
+    let prompt;
+    if (category === "boyama") {
+      prompt = `Analyze this children's COLORING BOOK PAGE for style quality.
 
-    let prompt = `Analyze this illustration's visual quality and style.
+Score from 0-100 based on:
+- Is this CLEAN black-and-white LINE-ART (pure black ink on white paper) with generous coloring areas? Full marks for authentic coloring-book look.
+- Are outlines THICK and CLEAR enough for a child to color (2-3mm visual weight)?
+- Are inner areas LEFT EMPTY / HOLLOW (not pre-filled with solid black or gray)? Filled-in silhouettes are WRONG.
+- Is the composition FULL-BLEED (page occupies the entire frame, no desk/table/room background, no 3D mockup of a page sitting on a surface)?
+- Is the title at top rendered as HOLLOW line-art letters (child can color the title too)?
+- Is there ONE small colored guide thumbnail (~15% frame) at a corner labeled "Örnek renk" as the ONLY colored element on the page?
+- Turkish diacritics on any text present: perfect or not?
+
+Penalize heavily if:
+- Image shows a 3D mockup / table / desk / bedroom / any scene surrounding the coloring page
+- Character or objects are solid-black-filled (not hollow line-art)
+- Full Pixar 3D render (wrong for interior page — cover is Pixar, INSIDE is line-art)
+- Photographic / watercolor / painted style instead of pure line-art
+- Text uses wrong Turkish characters`;
+    } else {
+      const styleTxt = expectedStyle ||
+        "3D Pixar animated movie style, vibrant colors, warm lighting, cinematic composition, high detail";
+      prompt = `Analyze this illustration's visual quality and style.
 Expected style: "${styleTxt}"
 
 Score from 0-100 based on:
@@ -173,6 +193,7 @@ Score from 0-100 based on:
 - Are colors vibrant and lighting warm/cinematic?
 - Does it look like a professional Pixar/Disney quality render?
 - Are character proportions and details well-rendered?`;
+    }
 
     if (anchorBuffer) {
       prompt += `\n\nImage 2 is the STYLE REFERENCE (anchor scene). How well does Image 1 match the visual style of Image 2?`;
@@ -244,10 +265,28 @@ Respond in JSON only:
   }
 
   /**
-   * Kompozisyon kontrolu (alt %35 bos olmali)
+   * Kompozisyon kontrolu — kategori bazli
    */
-  async _checkComposition(imageBuffer) {
-    const prompt = `Analyze the composition of this children's book illustration.
+  async _checkComposition(imageBuffer, category = "hikaye") {
+    let prompt;
+    if (category === "boyama") {
+      prompt = `Analyze the composition of this children's COLORING BOOK PAGE.
+
+RULES (boyama kitabı):
+- Top 15% = hollow line-art TITLE
+- Middle 60% = main B/W coloring scene with generous open areas
+- Bottom 20% = hollow line-art narration text + small colored "Örnek renk" guide thumbnail (~15% frame) at bottom-right
+- Full-bleed — NO desk, NO table, NO room background, NO 3D mockup of a page sitting on a surface
+
+Score from 0-100:
+- 100 = full-bleed line-art page with title at top, scene in middle, narration at bottom, single colored guide at corner
+- 50 = mostly right but some mockup/background leakage OR missing title/narration/guide
+- 0 = page shown on a table/desk, OR title absent, OR scene replaced with real-life background
+
+Respond in JSON only:
+{"score": <number 0-100>, "feedback": "<brief explanation>"}`;
+    } else {
+      prompt = `Analyze the composition of this children's book illustration.
 
 RULE: All important content (characters, faces, action, key objects) should be in the TOP 65% of the image.
 The BOTTOM 35% should only contain simple background elements (ground, grass, floor).
@@ -259,6 +298,7 @@ Score from 0-100:
 
 Respond in JSON only:
 {"score": <number 0-100>, "feedback": "<brief explanation>"}`;
+    }
 
     return this._askVision(imageBuffer, prompt);
   }

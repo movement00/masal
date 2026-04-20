@@ -119,6 +119,58 @@ class FalImageGenerator {
     throw new Error("fal.ai yanıtında görsel bulunamadı");
   }
 
+  // ──────────────────────────────────────────────────────────────
+  // KIE-compat shim: scene-generator.generateBackground() çağrıları
+  // (_createTask, _uploadToKie, _waitForResult, _downloadImage) için.
+  // Fal sync_mode'da çalıştığından _createTask tüm üretimi yapar ve
+  // sonucu bir cache'te taskId ile tutar; diğer method'lar cache'i okur.
+  // ──────────────────────────────────────────────────────────────
+
+  async _uploadToKie(imagePath) {
+    return this._uploadImage(imagePath);
+  }
+
+  async _createTask(prompt, imageUrls = []) {
+    const hasRefs = Array.isArray(imageUrls) && imageUrls.length > 0;
+    const model = hasRefs ? config.fal.editModel : config.fal.model;
+    const input = {
+      prompt,
+      resolution: config.output.resolution,
+      aspect_ratio: "3:4",
+      output_format: config.output.format,
+      sync_mode: true,
+    };
+    if (hasRefs) input.image_urls = imageUrls;
+    const result = await fal.subscribe(model, { input });
+    const url = result.data?.images?.[0]?.url;
+    if (!url) throw new Error("fal.ai yanıtında görsel bulunamadı (_createTask)");
+    const response = await fetch(url);
+    const buffer = Buffer.from(await response.arrayBuffer());
+    const taskId = `fal-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    if (!this._taskCache) this._taskCache = new Map();
+    this._taskCache.set(taskId, { url, buffer });
+    return taskId;
+  }
+
+  async _waitForResult(taskId, timeoutMs = 300000, onProgress = null) {
+    const entry = this._taskCache?.get(taskId);
+    if (!entry) throw new Error(`fal shim: taskId cache'te yok: ${taskId}`);
+    if (typeof onProgress === "function") {
+      try { onProgress({ status: "completed", elapsed: 0 }); } catch {}
+    }
+    return entry.url;
+  }
+
+  async _downloadImage(resultUrl) {
+    if (this._taskCache) {
+      for (const entry of this._taskCache.values()) {
+        if (entry.url === resultUrl) return entry.buffer;
+      }
+    }
+    const response = await fetch(resultUrl);
+    return Buffer.from(await response.arrayBuffer());
+  }
+
   /**
    * Karakter referans sayfasi olusturur
    */

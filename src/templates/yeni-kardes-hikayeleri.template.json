@@ -1,0 +1,49 @@
+{
+  "_template": "yeni-kardes-hikayeleri",
+  "_doc": "Yeni kardes hikayeleri (Abla/Agabey olmaya hazirlik). Soft baby nursery not stili. Bebek ismi YOK — 'kardesin' kullan.",
+  "id": "REPLACE-WITH-PRODUCT-HANDLE",
+  "category": "yeni-kardes-hikayeleri",
+  "title": "REPLACE — Örnek: Defne Abla Oluyor",
+  "coverTitle": "{CHILD_NAME} Abla Oluyor",
+  "description": "REPLACE — 2-3 cümlelik özet. Yeni rolü öğrenme, sabır, sevgi paylaşımı.",
+  "lessons": [
+    "Sevgi paylaşmak",
+    "Koruyucu olmak",
+    "Yeni bir role alışmak",
+    "Sabırlı olmak"
+  ],
+  "ageGroup": "2-5",
+  "ageRange": "2-5",
+  "pageCount": 14,
+  "sceneCount": 14,
+  "style": "Pixar/Disney 3D CGI animation (Encanto/Coco quality), warm soft pastel lighting, toddler-friendly aesthetic, hyper-detailed textures, photorealistic fabric and skin, ultra-detailed render",
+  "characterDescription": {
+    "base": "a toddler with the EXACT same facial features as the reference photo, rendered in 3D Pixar/Disney CGI style, big expressive eyes, soft cheeks, detailed skin and hair textures matching the reference photo exactly",
+    "notes": "Outfit: pastel pinafore (kiz) veya cream overalls + dusty-blue tee (erkek). Soft tights/peter-pan collar, toddler aesthetic."
+  },
+  "theme": {
+    "primaryColor": "#E8927C",
+    "secondaryColor": "#F4C2C2",
+    "accentColor": "#FBF6EC",
+    "icon": "👶"
+  },
+  "noteStyle": "soft-baby-nursery",
+  "noteSenderHint": "anne+baba",
+  "noteImportantRule": "Bebek ismi YOK. 'kardesin' veya 'minik kardesin' kullan.",
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pinafore-pastel",
+      "title": "Yeni Bir Haber",
+      "text": "{CHILD_NAME} bugün annesinin gözlerinde farklı bir parıltı gördü. Anne ona bir sır söyledi: yakında bir kardeşi olacaktı.",
+      "prompt": "REPLACE — Pixar 3D CGI sahne prompt'u",
+      "mood": "warm",
+      "setting": "Sicak oturma odasi, anne-baba kucagi"
+    },
+    { "_note": "14 sahne kadar devam ettir." }
+  ],
+  "specialPagePrompts": {
+    "heroPage": "Soft pastel nursery atmosphere with rocking chair, mobile, baby toys, NO TEXT, NO CHARACTERS"
+  }
+}

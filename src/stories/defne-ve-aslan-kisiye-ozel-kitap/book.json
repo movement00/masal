@@ -1,0 +1,162 @@
+{
+  "id": "defne-ve-aslan-kisiye-ozel-kitap",
+  "category": "hayvan-dostum",
+  "title": "Defne ve Aslan",
+  "description": "Defne için Aslan sadece bir kaplumbağa değildi... yavaş adımları, parlak küçük gözleri ile en iyi dostuydu. Onunla beklemeyi, onunla bir yaprağı paylaşmayı öğrendi. İşte Defne'nin ilk sabırlı dostluk masalı.",
+  "lessons": [
+    "Sabırlı olmak",
+    "Yavaşlığın değerini bilmek",
+    "Sorumluluk almak",
+    "Sevgi göstermek"
+  ],
+  "ageGroup": "0-3",
+  "ageRange": "0-3",
+  "pageCount": 10,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#8BC34A",
+    "secondaryColor": "#FFC107",
+    "accentColor": "#4CAF50",
+    "icon": "🌿"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas",
+      "title": "Sabah Neşesi",
+      "text": "Defne, sabah erkenden uyandı. Güneş, penceresinden içeri gülümsüyordu. Hafif bir esinti saçlarını okşadı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) {CHILD_NAME} wakes up, stretches, and smiles at the sunlight from her window., setting: Defne'nin odası, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Defne'nin odası, sabah"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "everyday wear",
+      "title": "Parka Yolculuk",
+      "text": "Kahvaltısını yaptı, sonra annesiyle parka gitti. Adımları hafifçe zıplıyordu, yeni bir şeyler keşfetmek istiyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) {CHILD_NAME} walks hand in hand with her mother towards the park, looking around curiously., setting: Park yolu, sabah, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Park yolu, sabah"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "everyday wear",
+      "title": "Büyük Bir Yaprak",
+      "text": "Parkta yürürken, gözüne yeşil, kocaman bir yaprak takıldı. Yerde pırıl pırıl duruyordu, sanki onu bekliyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) {CHILD_NAME} spots a large, vibrant green leaf on the ground and bends down to pick it up., setting: Parkın yeşil alanı, öğleden önce, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Parkın yeşil alanı, öğleden önce"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "everyday wear",
+      "title": "Aslan'ın Ziyafeti",
+      "text": "Defne, Aslan'ı görünce heyecanlandı. Yaprağı nazikçe Aslan'ın önüne koydu, Aslan onu kokladı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) {CHILD_NAME} gently places the large leaf in front of Aslan, a small rabbit, who sniffs it curiously., setting: Parkta Aslan'ın yanı, öğleden önce, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Parkta Aslan'ın yanı, öğleden önce"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "everyday wear",
+      "title": "Küçük Lokmalar",
+      "text": "Aslan, küçük burnuyla yaprağı itti. Sonra yavaşça minik ısırıklar almaya başladı. Bu, Aslan'ın en sevdiği yiyecekti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) Aslan, the rabbit, takes small, slow bites from the green leaf, enjoying his meal., setting: Parkta Aslan'ın yanı, öğleden önce, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Parkta Aslan'ın yanı, öğleden önce"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "everyday wear",
+      "title": "Defne Bekliyor",
+      "text": "Defne, Aslan'ı sabırla izledi. Beklemek, bazen huzur vericiydi. Aslan'ın her lokması, Defne'nin kalbini ısıttı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) {CHILD_NAME} sits patiently beside Aslan, watching him eat the leaf with a gentle smile., setting: Parkta Aslan'ın yanı, öğleden önce, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Parkta Aslan'ın yanı, öğleden önce"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "everyday wear",
+      "title": "Hafif Bir Esinti",
+      "text": "Hafif bir esinti yaprağı hışırdattı. Aslan, bir an durdu, etrafına bakındı. Yaprak yine ona kokusunu verdi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) A gentle breeze rustles the remaining leaf as Aslan pauses, looking around before continuing to eat., setting: Parkta Aslan'ın yanı, öğleden önce, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Parkta Aslan'ın yanı, öğleden önce"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "everyday wear",
+      "title": "Paylaşmanın Keyfi",
+      "text": "Aslan, yaprağın son parçasını bitirdi. Mutlulukla burnunu oynattı. Defne'nin yüzünde kocaman bir gülümseme belirdi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) Aslan finishes the last piece of the leaf, twitches his nose, and {CHILD_NAME} beams with joy., setting: Parkta Aslan'ın yanı, öğleden önce, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Parkta Aslan'ın yanı, öğleden önce"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "everyday wear",
+      "title": "Teşekkürler Aslan",
+      "text": "Defne, Aslan'ın başını okşadı. Aslan, minik burnuyla onun eline dokundu. Bu bir teşekkürdü.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) {CHILD_NAME} gently strokes Aslan's head, and Aslan nuzzles her hand in return., setting: Parkta Aslan'ın yanı, öğleden önce, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Parkta Aslan'ın yanı, öğleden önce"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "everyday wear",
+      "title": "Dostluk Tohumu",
+      "text": "Defne, paylaştığı için çok mutluydu. Kalbinde küçük bir dostluk tohumu yeşermişti. Aslan'la yeni maceralar bekliyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sage-green cotton dress with tiny leaf print, cream cotton tights, brown leather sandals) {CHILD_NAME} stands up, looking at Aslan with a content smile, feeling the warmth of their friendship., setting: Park, öğleden önce, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Park, öğleden önce"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🌳",
+      "facts": [
+        "Ağaçlar, yapraklarıyla nefes alır. Yapraklar, güneş ışığını kullanarak kendilerine yemek yapar.",
+        "Her yaprağın içinde minicik borucuklar vardır. Bu borucuklar suyu ve besinleri yaprağın her yerine taşır.",
+        "Bazı yapraklar kışın sararır veya kızarır, sonra yere düşer. Böylece ağaçlar dinlenirler.",
+        "En büyük yapraklardan biri dev nilüfer yapraklarıdır. Bir insanı bile taşıyabilirler!"
+      ],
+      "icon": "🌳"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 🐇",
+      "facts": [
+        "Tavşanlar çok hızlı koşabilirler. Tehlike anında hemen saklanmak için bu onlara yardımcı olur.",
+        "Tavşanların kulakları çok uzundur. Bu sayede en minik sesleri bile duyabilirler.",
+        "Tavşanlar ot ve yaprak yemeyi çok severler. Dişleri hayatları boyunca uzamaya devam eder.",
+        "Bir tavşan yavrusuna 'yavru' denir. Yavrular doğduklarında gözleri kapalı ve tüysüz olurlar."
+      ],
+      "icon": "🐇"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 3,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 6,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Bir Yaprak İki Dost\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: {CHILD_NAME}'s outstretched hand and the green leaf. Midground: A small, soft rabbit looking at the leaf. Background: Blurry green park scenery with dappled sunlight through trees..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Defne\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Bir Yaprak İki Dost\". Defne, parkta yürürken kocaman bir yaprak bulur. Bu yaprak, küçük dostu Aslan'ın en sevdiği lezzettir. Paylaşmanın ve sabırla beklemenin ne kadar tatlı olduğunu, Defne ve Aslan bu küçük ziyafette keşfederler.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "defne-ve-aslan-kisiye-ozel-kitap",
+  "coverTitle": "Defne ve Aslan"
+}

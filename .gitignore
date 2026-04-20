@@ -1,5 +1,6 @@
 node_modules/
 .env
+.env.bak-*
 output/
 uploads/
 dist/
@@ -9,3 +10,28 @@ server_log.txt
 nul
 *.log
 Baglam/
+
+# Backup + research artifacts (not app code)
+backups/
+src-bak-*/
+*.bak
+*.bak-*
+*.legacy
+.claude/
+test-output/
+*.disabled
+
+# Top-level research/tooling scripts
+analyze-ref-*.js
+analyze-ref-*.mjs
+add-cover-prompts.js
+copy-to-d.js
+gen-boyama-reveal-pairs.js
+test-*.js
+run-variety-check.js
+analyze-variety.js
+
+# Old stories backup dirs + per-file stale backups
+src/stories-bak-*/
+src/stories/**/book.json.*bak*
+src/stories/**/book.json.*-bak-*

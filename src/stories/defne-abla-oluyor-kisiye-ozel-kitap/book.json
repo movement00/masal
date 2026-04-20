@@ -1,0 +1,162 @@
+{
+  "id": "defne-abla-oluyor-kisiye-ozel-kitap",
+  "category": "yeni-kardes-hikayeleri",
+  "title": "Defne Abla Oluyor",
+  "description": "Defne için artık her şey değişecekti... ama bu değişim kalbini daha da büyütecekti. Küçük kardeşi Ada geldiğinde ilk tuttuğu küçük eli hiç unutamadı. İşte o günden sonra Defne Abla oldu.",
+  "lessons": [
+    "Sevgi paylaşmak",
+    "Koruyucu olmak",
+    "Yeni bir role alışmak",
+    "Sabırlı olmak"
+  ],
+  "ageGroup": "0-3",
+  "ageRange": "0-3",
+  "pageCount": 10,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#FFD1DC",
+    "secondaryColor": "#B2EBF2",
+    "accentColor": "#F0E68C",
+    "icon": "💖"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas",
+      "title": "Minik Bir Tohum",
+      "text": "Annesinin dediğine göre, Defne'nin karnında minik bir tohum büyüyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne sits on her mother's lap, gently patting her mother's belly with a curious expression., setting: oturma odası, öğleden sonra, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "oturma odası, öğleden sonra"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "pajamas",
+      "title": "Kelebekler Uçuştu",
+      "text": "Defne'nin karnında kelebekler uçuşmaya başladı. İçini tatlı bir heyecan kapladı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne wakes up in her bed, stretching and smiling softly, thinking about the new baby., setting: yatak odası, sabah, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "yatak odası, sabah"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "day_dress",
+      "title": "Yeni Yatak",
+      "text": "Bebek için odasına küçük, bembeyaz bir yatak geldi. Defne onu dikkatle inceledi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne stands next to a newly placed baby crib, reaching out a finger to touch its soft sheet., setting: Defne'nin odası, öğleden sonra, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Defne'nin odası, öğleden sonra"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "day_dress",
+      "title": "Mis Kokulu Battaniye",
+      "text": "Defne, mis kokulu, yumuşacık battaniyeyi yatağa serdi. Bebeği bekliyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne carefully spreads a soft, pastel-colored blanket in the baby crib, a hopeful look on her face., setting: Defne'nin odası, akşam, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Defne'nin odası, akşam"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "pajamas",
+      "title": "Geliş Günü",
+      "text": "Bir sabah, annesiyle babası aceleyle evden çıktı. Defne merakla bekledi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne watches from the living room window as her parents leave in a car, waving goodbye with a slightly worried but excited expression., setting: salonda, sabah, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "salonda, sabah"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "day_dress",
+      "title": "Minik Bir El",
+      "text": "Bir süre sonra, annesinin kucağında küçük bir bebek gördü. Defne'nin kalbi hızla çarptı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne peeks from behind the door as her mother enters, cradling a tiny baby, Defne's eyes wide with wonder., setting: ev kapısı, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "ev kapısı, öğleden sonra"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "day_dress",
+      "title": "Sıcacık Dokunuş",
+      "text": "Defne, minik eli usulca tuttu. El sıcacık, yumuşacıktı. Gülümsedi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne gently holds the baby's tiny hand, a tender smile spreading across her face as she feels its warmth., setting: oturma odası, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "oturma odası, öğleden sonra"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "day_dress",
+      "title": "Abla Oldu",
+      "text": "Defne artık abla olmuştu. Bebeğin saçlarını okşadı, kalbi pır pır ediyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne gently strokes the baby's head, her face beaming with newfound responsibility and love., setting: oturma odası, akşam, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "oturma odası, akşam"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "pajamas",
+      "title": "Şarkı Söyledi",
+      "text": "Defne, bebeğe ninni söyledi. Sesi odada tatlı tatlı yankılandı, bebek uyudu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne sits beside the baby crib, softly singing a lullaby, her face illuminated by a gentle nightlight., setting: Defne'nin odası, gece, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Defne'nin odası, gece"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "pajamas",
+      "title": "Tatlı Rüyalar",
+      "text": "Bebek mışıl mışıl uyurken Defne de yatağına uzandı. Tatlı rüyalar gördü.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: 3-year-old Turkish girl, soft wavy dark brown hair (shoulder-length with gentle fringe), bright dark brown eyes, rosy cheeks, sweet gentle smile, wearing a soft blush-pink knit dress) Defne lies in her bed, smiling contentedly, a peaceful expression on her face as she dreams., setting: Defne'nin odası, gece, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Defne'nin odası, gece"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 👶",
+      "facts": [
+        "Yeni doğan bebekler ilk başta sadece siyah ve beyaz renkleri ayırt edebilirler.",
+        "Bebekler doğduklarında yaklaşık 300 kemikle dünyaya gelirler; yetişkinlerde ise bu sayı 206'dır.",
+        "Yeni doğan bir bebek, annesinin kalp atışını duyduğunda kendini daha güvende hisseder.",
+        "Bebekler rüyalarında bile gülümsediklerini gösteren minik hareketler yapabilirler."
+      ],
+      "icon": "👶"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 🦋",
+      "facts": [
+        "Kelebekler, çiçeklerin kokusunu ayaklarıyla alırlar, burunları yoktur.",
+        "Bazı kelebekler çok uzun mesafeler göç edebilir, hatta kıtalar arası yolculuk yapabilirler.",
+        "Bir kelebeğin kanatları aslında şeffaftır, üzerindeki minik pullar ışığı yansıtarak renklerini oluşturur.",
+        "Kelebekler, tırtıl halindeyken yediklerinden enerji depolarlar, bu sayede uçabilirler."
+      ],
+      "icon": "🦋"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 3,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 6,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Defne'nin Minik Eli\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Defne (3 years old, Turkish girl) is sitting on a cozy rug in a brightly lit living room. Her parents are in the midground, smiling gently. The baby is in a bassinet next to Defne. Soft sunlight streams through a window in the background..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Defne\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Defne'nin Minik Eli\". Defne'nin karnında kelebekler uçuşuyordu, çünkü evlerine yeni bir misafir geliyordu! O misafir geldiğinde, Defne minicik bir eli tuttu. Sıcacık, yumuşacık bir eldi. Defne artık 'Abla' olmuştu ve kalbi sevgiyle pır pır ediyordu.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "defne-abla-oluyor-kisiye-ozel-kitap",
+  "coverTitle": "Defne Abla Oluyor"
+}
