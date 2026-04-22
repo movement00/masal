@@ -1,0 +1,198 @@
+{
+  "id": "ai-1776858982114-veteriner-duru-ve-hayvan-dostl",
+  "category": "meslek-hikayeleri",
+  "title": "Veteriner Duru ve Hayvan Dostları",
+  "description": "Duru için veterinerlik bir meslek değil, bir sorumluluktu... konuşamayanların sesi olmak. Bugün ilk kliniği. Mavi önlük üzerinde, stetoskop elinde, ilk tüylü hastası kapının arkasında bekliyor. İşte Duru'nun ilk şifa günü.",
+  "lessons": [
+    "Hayvanları sevmek",
+    "Küçük canlılarla empati",
+    "Şifa verebilmek",
+    "Sorumlu bir arkadaş olmak"
+  ],
+  "ageGroup": "6-9",
+  "ageRange": "6-9",
+  "pageCount": 14,
+  "templateHeroName": "Duru",
+  "heroName": "Duru",
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#A2CDDE",
+    "secondaryColor": "#F5F5DC",
+    "accentColor": "#FDB813",
+    "icon": "🐾"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Mavi Önlük",
+      "text": "{CHILD_NAME}, yatağının üzerine serdiği yeni, masmavi önlüğe bakıyordu. Kumaşın serinliği parmaklarının ucuna değiyor, ütüden yayılan taze koku odasını dolduruyordu. Babasının hediye ettiği stetoskop, önlüğün cebinde bir hazine gibi parlıyordu. Kalbi, göğüs kafesinde heyecanlı bir kuş gibi çırpınıyordu; bugün kliniğini ilk defa açacaktı. Kendi kendine fısıldadı: \"Onların dilinden anlamalıyım.\"",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) A young boy, Duru, looking thoughtfully at a brand new blue veterinarian's coat and stethoscope laid out on his bed., setting: Duru'nun odası, sabah güneşi, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Duru'nun odası, sabah güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Kliniğin Anahtarı",
+      "text": "Annesinin hazırladığı simitten bir ısırık alıp kapıya yürüdü. Ayakkabılarının bağcıklarını bağlarken, cebindeki kliniğin anahtarı bacağına usulca dokundu. Metalin soğukluğu ona bugünün gerçek olduğunu hatırlattı; yıllardır kurduğu hayal nihayet başlıyordu. Dışarıdaki sokak her zamanki gibiydi ama {CHILD_NAME}'nun gözüne bambaşka görünüyordu. Her kedi mırıltısı, her kuş cıvıltısı ona bir şeyler fısıldıyor gibiydi. Kliniğe giden yol, sanki adımlarını ezbere biliyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru tying his shoelaces, with one hand touching the key in his pocket, looking out the open front door with a determined expression., setting: Evin antresi ve sokağın başı, sabah, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Evin antresi ve sokağın başı, sabah"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "pro-uniform",
+      "title": "Sessiz Bekleyiş",
+      "text": "{CHILD_NAME}, anahtarı kilide sokup çevirdiğinde tatlı bir tıkırtı duyuldu. İçerisi tertemizdi; havada hafif bir antiseptik kokusu asılıydı. Güneş, pencerelerden süzülerek bekleme odasındaki boş sandalyeleri aydınlatıyordu. Mavi önlüğünü giydi, stetoskopun soğuk metalini boynunda hissetti. Sessizlik, odanın duvarlarına sinmişti. Bu sessizlik, birazdan duyulacak patilerin, mırıltıların ve cıvıltıların habercisi miydi?",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru standing alone in the middle of his new, empty veterinary clinic, wearing his blue coat and stethoscope, sunlight streaming in., setting: Veteriner kliniğinin bekleme odası, sabah ışığı, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Veteriner kliniğinin bekleme odası, sabah ışığı"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "pro-uniform",
+      "title": "Kapıdaki Tıkırtı",
+      "text": "Tam masasının üzerindeki kalemleri düzeltirken kapıdan ürkek bir ses geldi. Bu bir zil sesi değildi, bir tıkırtıydı. Hatta daha çok bir tırmalama sesine benziyordu. {CHILD_NAME} olduğu yerde durakladı, nefesini tuttu. Bütün dikkati sese kesilmişti. Tıkırtı yinelendi, bu sefer daha belirgindi. İşte, ilk misafiri gelmişti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru pausing and looking towards the clinic door with a curious and attentive expression, having heard a faint scratching sound., setting: Veteriner kliniği, muayene odası, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Veteriner kliniği, muayene odası"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "pro-uniform",
+      "title": "Sepetteki Yumak",
+      "text": "{CHILD_NAME} kapıyı yavaşça araladı. Karşısında, gözleri endişeli küçük bir kız ve kucağında hasır bir sepet duruyordu. Sepetin içinden iki meraklı, zümrüt yeşili göz ona bakıyordu. Bembeyaz tüylü bir kedi, korkuyla içine sinmişti. Küçük kız, \"Adı Pamuk,\" diye fısıldadı. \"Patisini incitti sanırım, hiç üzerine basmıyor.\"",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru opening the clinic door to find a little girl holding a wicker basket, from which a fluffy white cat with green eyes peeks out nervously., setting: Kliniğin giriş kapısı, mood: gentle, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "gentle",
+      "setting": "Kliniğin giriş kapısı"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "pro-uniform",
+      "title": "Güven Fısıltıları",
+      "text": "{CHILD_NAME}, onları içeri buyur etti. Sepeti nazikçe muayene masasının üzerine koydular. Hemen Pamuk'a uzanmadı. Kedicik besbelli çok korkmuştu, onu daha fazla ürkütmemeliydi. Önce onunla konuştu, sesini olabildiğince yumuşak tutmaya çalıştı. \"Merhaba Pamuk,\" dedi. \"Sana sadece yardım etmek istiyorum.\" Kedi, kulaklarını arkaya yatırmıştı ve vücudu yay gibi gergindi. Onun dilini anlamaya çalışıyordu; bu duruş 'bana yaklaşma' demekti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru speaking softly to the nervous cat in the basket on the examination table, keeping a respectful distance, not yet touching it., setting: Muayene odası, mood: calm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "calm",
+      "setting": "Muayene odası"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "pro-uniform",
+      "title": "Küçük Bir Şüphe",
+      "text": "Pamuk, sepetin köşesinden hafifçe tıslayınca {CHILD_NAME}'in kalbine küçücük bir şüphe düştü. Ya yapamazsa? Ya canını daha çok acıtırsa? Gözü, odadaki metal alet tepsisinden yansıyan kendi görüntüsüne takıldı. Mavi önlük ve boynundaki stetoskop, ona neden burada olduğunu fısıldadı. Derin bir nefes aldı. İçindeki şefkat, korkusundan daha büyüktü.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru looking at his own reflection in a metal tray, his expression showing a flicker of doubt, then taking a deep breath to compose himself., setting: Muayene odası, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Muayene odası"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "pro-uniform",
+      "title": "İplik Topu",
+      "text": "Aklına gelen fikirle çekmeceye yöneldi ve kırmızı bir iplik yumağı çıkardı. Yumağı yavaşça masanın üzerinde Pamuk'a doğru yuvarladı. Kedi, bir anlığına gerginliğini unuttu. Gözleri, masada yuvarlanan kırmızı yumağı takip etmeye başladı. Bir patisi, içgüdüsel olarak hafifçe havaya kalktı. Bu, oyuna bir davet işaretiydi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru gently rolling a small red ball of yarn towards the cat, which watches the ball with curiosity, one paw slightly lifted., setting: Muayene odası, mood: playful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "playful",
+      "setting": "Muayene odası"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "pro-uniform",
+      "title": "Soğuk Metalin Sıcaklığı",
+      "text": "Bu küçük oyundan cesaret alarak stetoskopunu eline aldı. Önce metal ucunu avucunda ısıttı, sonra yavaşça Pamuk'un göğsüne dokundurdu. \"Sadece kalbini dinleyeceğim,\" diye fısıldadı. Pamuk'un kalbi de en az onunkisi kadar hızlı atıyordu. İkisinin de hızla çarpan kalpleri, aralarında sessiz bir bağ kurmuştu. Kedi artık, {CHILD_NAME}'in elinin yaralı patisine yaklaşmasına izin veriyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru gently placing the stethoscope on the cat's chest, both of them calm, establishing a moment of trust., setting: Muayene odası, mood: trusting, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "trusting",
+      "setting": "Muayene odası"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "pro-uniform",
+      "title": "Küçücük Bir Diken",
+      "text": "Patinin altındaki pembe yastıkçıkların arasına dikkatle baktı. İşte oradaydı! Neredeyse görünmez, küçücük bir diken batmıştı. Cımbızı eline aldığında parmakları hiç titremiyordu. Kendinden emin bir hareketle dikeni çıkardı. Pamuk sadece hafifçe miyavladı, sonra rahatlamış bir halde {CHILD_NAME}'in elini yalamaya başladı. Dilinin pütürlü dokunuşu, minnettar bir teşekkür gibiydi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Close-up on Duru's steady hands as he carefully removes a tiny thorn from the cat's paw with tweezers. The cat then licks his finger., setting: Muayene odası, mood: triumphant, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Muayene odası"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "pro-uniform",
+      "title": "Motor Sesi Gibi",
+      "text": "Küçük yarayı temizleyip minicik bir sargı beziyle sardı. Sargı biter bitmez Pamuk mırıldanmaya başladı. Mırıltısı, odayı bir ucundan diğerine dolduran huzurlu bir motor sesi gibiydi. Küçük kızın yüzündeki endişe bulutları dağılmış, yerini aydınlık bir gülümseme almıştı. \"Teşekkür ederim,\" dedi usulca.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) The little girl smiling brightly as Duru finishes bandaging the paw. The cat is purring contentedly on the table., setting: Muayene odası, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Muayene odası"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "pro-uniform",
+      "title": "En Güzel Teşekkür",
+      "text": "{CHILD_NAME}, onları kapıya kadar uğurladı. Kız, sepeti alırken durup ona döndü. \"Biliyor musunuz,\" dedi, \"Pamuk sizi sevdi. Normalde kimseye böyle mırıldanmaz.\" {CHILD_NAME}'in yüzüne sıcak bir tebessüm yayıldı; işte bu an bütün yorgunluğuna değerdi. Bu sözler, kulağında tatlı bir melodi gibi çınladı. Kapı kapandığında, kliniğin sessizliği artık boş değil, huzur doluydu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru standing at the clinic door, watching the girl and her cat leave, a warm and satisfied smile on his face., setting: Kliniğin kapısı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Kliniğin kapısı"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "pro-uniform",
+      "title": "Günün Işığı",
+      "text": "Akşam güneşi, pencerelerden odaya turuncu bir ışık demeti süzüyordu. {CHILD_NAME}, muayene masasının kenarına oturdu. Boynundaki stetoskop artık soğuk bir metal değil, vücudunun bir parçası gibi sıcaktı. Elini mavi önlüğünün cebine sokup sabahki heyecanını hatırladı. Bütün o endişe ne kadar da yersizmiş. Heyecanı, şimdi yerini sakin bir güvene bırakmıştı. Yapabilmişti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru sitting alone on the edge of the examination table as the sunset casts a warm, orange glow into the clinic. He is touching his stethoscope., setting: Klinik, gün batımı, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Klinik, gün batımı"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Yarın Görüşürüz",
+      "text": "Önlüğünü çıkarıp özenle katladı. Işıkları kapattığında oda alacakaranlığa büründü. Yalnızca sokak lambasının ışığı, bekleme odasındaki sandalyelerin üzerine vuruyordu. İçini hem tatlı bir yorgunluk hem de içini ısıtan bir umut kapladı. {CHILD_NAME}, kapıyı kilitlemeden önce boş sandalyelere doğru fısıldadı: \"Yarın görüşürüz.\" Bu, iyileşmeyi bekleyen tüm hayvan dostlarına verilmiş bir sözdü. İlk şifa günü sona ermişti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Turkish girl, 10 years old, warm Turkish features, cute expressive eyes matching reference photo, kind smile. Personality: dreamy, aspiring, proud to wear the Veteriner uniform.) Duru standing in the darkened clinic, looking at the empty chairs illuminated by a single streetlamp outside, before locking the door for the night., setting: Klinik, gece, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "Klinik, gece"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🐾",
+      "facts": [
+        "Kediler sadece mutlu olduklarında değil, bazen korktuklarında veya hasta olduklarında kendilerini sakinleştirmek için de mırıldanırlar.",
+        "Köpekler kuyruklarını sadece sağa salladıklarında mutlu, sola salladıklarında ise gergin olabilirler. Kuyruğun sallanma yönü bile bir şeyler anlatır!",
+        "Hayvanların bıyıkları sadece bir süs değildir. Bu bıyıklar, etraflarındaki en ufak hava akımını bile hissederek karanlıkta yollarını bulmalarına yardım eden birer radardır."
+      ],
+      "icon": "🐾"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 🩺",
+      "facts": [
+        "Bir kedinin duyma yeteneği, insanlarınkinden ve hatta köpeklerinkinden bile çok daha hassastır. Bizim duyamadığımız sesleri duyabilirler.",
+        "Köpeklerin burun izleri, tıpkı insanların parmak izleri gibi her köpek için benzersizdir ve tektir.",
+        "Bukalemunlar renklerini sadece saklanmak için değil, aynı zamanda nasıl hissettiklerini, üşüyüp üşümediklerini veya hasta olup olmadıklarını belli etmek için de değiştirirler."
+      ],
+      "icon": "🩺"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A warm, clean veterinary clinic with soft morning light. In the background, shelves with neatly arranged medicine bottles. The focus is on the gentle, caring connection between the boy and the animal..\n\nCRITICAL RULES:\n1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG.\n2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas.\n3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top.\n\nALLOWED ELEMENTS:\n- Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human)\n- Atmospheric lighting (warm glow, soft moonlight, golden hour)\n- Border decorations (top and bottom zones can have tasteful flourishes)\n\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Veteriner Duru ve Hayvan Dostları\". Duru'nun kliniğindeki ilk gün, sadece bir kedinin patisini değil, kendi kalbindeki cesareti de iyileştirdiği bir güne dönüşür. Bu hikâye, konuşamayan dostlarımızı anlamanın ve onlara şefkatle uzanan bir el olmanın ne kadar değerli olduğunu fısıldıyor.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "duru-isimli-veteriner-cocuk-kitabi",
+  "meslekKey": "veteriner"
+}

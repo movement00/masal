@@ -88,21 +88,34 @@ function parseOrder(order) {
     const props = {};
     (li.properties || []).forEach((p) => { if (p && p.name) props[p.name] = p.value; });
 
-    const childName = props["Çocuğun Adı"] || props["Cocugun Adi"] || "";
-    if (!childName) continue; // Ozellik yoksa kiside ozel olmayan urundur
+    // kw-wizard (mevcut canli form) "Kahraman" yaziyor; eski/alternatif forms "Çocuğun Adı" kullanabilir
+    const childName = props["Kahraman"] || props["Çocuğun Adı"] || props["Cocugun Adi"] || props["Çocuk Adı"] || "";
+    if (!childName) continue; // Ozellik yoksa kisiye ozel olmayan urundur
 
     const gender = (props["Cinsiyet"] || "").toLowerCase();
     const genderMasal = gender.startsWith("k") ? "kiz" : "erkek";
+
+    // Yas artik zorunlu degil (wizard'dan kaldirildi) — default 6
+    const age = String(props["Yaş"] || props["Yas"] || "6").trim();
+
+    // Fotograf URL'leri (imgbb uzerinden gelir). Eski form "2 adet" string yaziyorsa o URL degil, skip.
+    const foto1Raw = props["Fotoğraf 1"] || props["Fotograf 1"] || "";
+    const foto2Raw = props["Fotoğraf 2"] || props["Fotograf 2"] || "";
+    const photoUrl1 = /^https?:\/\//.test(foto1Raw) ? foto1Raw : null;
+    const photoUrl2 = /^https?:\/\//.test(foto2Raw) ? foto2Raw : null;
 
     items.push({
       productHandle: li.product_handle || li.handle || "",
       productTitle: li.title || li.name || "",
       childName: childName.trim(),
-      age: String(props["Yaş"] || props["Yas"] || "6").trim(),
+      age,
       gender: genderMasal,
-      photoUrl1: props["Fotoğraf 1"] || props["Fotograf 1"] || null,
-      photoUrl2: props["Fotoğraf 2"] || props["Fotograf 2"] || null,
+      photoUrl1,
+      photoUrl2,
       customMessage: (props["Özel Not"] || props["Ozel Not"] || "").trim(),
+      // kw-wizard'a ozgu alanlar (anne-baba notunda + hero sayfasinda kullanilabilir)
+      giftSenderName: (props["Hazırlayan"] || props["Hazirlayan"] || "").trim(),
+      giftSenderRelation: (props["İlişki"] || props["Iliski"] || "").trim(),
       orderId: String(order.id || ""),
       orderName: order.name || "",
       customerEmail,
@@ -356,6 +369,8 @@ async function processItems(items, opts) {
         photoPath: mainPath,
         extraPhotoPaths: extraPaths,
         customMessage: item.customMessage,
+        giftSenderName: item.giftSenderName,
+        giftSenderRelation: item.giftSenderRelation,
         orderMeta: {
           orderName: item.orderName,
           orderId: item.orderId,
@@ -373,12 +388,19 @@ async function processItems(items, opts) {
       const pdfToSend = await maybeCompressPdf(result.pdfPath);
 
       // Telegram'a PDF gonder
+      const senderInfo = item.giftSenderName
+        ? `\n<b>Hediye eden:</b> ${item.giftSenderName}${item.giftSenderRelation ? ` (${item.giftSenderRelation})` : ""}`
+        : "";
+      const customMsgInfo = item.customMessage
+        ? `\n<b>Özel not:</b> ${item.customMessage.slice(0, 300)}`
+        : "";
       const caption =
         `<b>✅ Kitap hazır</b>\n` +
         `<b>Sipariş:</b> ${item.orderName}\n` +
         `<b>Ürün:</b> ${item.productTitle}\n` +
-        `<b>Çocuk:</b> ${item.childName}, ${item.age} yaş\n\n` +
-        `<b>Baskı için teslim alın:</b>\n` +
+        `<b>Çocuk:</b> ${item.childName}${item.age && item.age !== "6" ? `, ${item.age} yaş` : ""}` +
+        senderInfo + customMsgInfo +
+        `\n\n<b>Baskı için teslim alın:</b>\n` +
         `👤 <b>${item.shippingName}</b>\n` +
         `📍 ${item.shippingAddress}\n` +
         `✉️ ${item.customerEmail}`;

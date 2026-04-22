@@ -1,0 +1,166 @@
+{
+  "id": "ai-1776849199112-ali-nin-orman-ark-s-",
+  "category": "hayvan-dostum",
+  "title": "Ali'nin Orman Şarkısı",
+  "description": "Ali bahçede oynarken yaprakların arasından sevimli, zümrüt yeşili bir kurbağa ile tanışır. Kurbağa komik sesler çıkararak Ali'yi doğanın saklı ritmini keşfetmeye davet eder. İkili birlikte kristal mağaralardan renkli sualtı dünyalarına, pamuk bulutlardan yıldızlı uzaya kadar uzanan neşeli bir yolculuğa çıkarlar. Gittikleri her yeni yerde farklı bir doğa sesini taklit ederek kendi eğlenceli şarkılarını yaratırlar. Yolculuğun sonunda bu coşkulu şarkı, fısıltılı ve huzurlu bir ninniye dönüşür. Ali yatağına uzandığında, kendi ürettiği bu tatlı melodi eşliğinde güvenle uykuya dalar.",
+  "lessons": [
+    "Yansıma sesleri tekrar ederek artikülasyon ve dil gelişimini destekleme",
+    "Görsel çevre ile işitsel öğeleri birleştirerek duyusal eşleştirme becerisi kazanma",
+    "Hareketli enerjiden sakinliğe geçiş yaparak özdenetim ve duygu regülasyonu sağlama",
+    "Farklı mekanlara adapte olarak bilişsel esneklik ve oyun kurma hayal gücünü geliştirme"
+  ],
+  "ageGroup": "0-3",
+  "ageRange": "0-3",
+  "pageCount": 10,
+  "templateHeroName": "Ali",
+  "heroName": "Ali",
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#4CAF50",
+    "secondaryColor": "#81C784",
+    "accentColor": "#FFEB3B",
+    "icon": "🐸"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "day_clothes",
+      "title": "Bahçedeki Ses",
+      "text": "{CHILD_NAME}, yemyeşil bahçede duruyordu. Güneş, ensesine sıcacık bir öpücük kondurmuştu. Toprak mis gibi kokarken, yaprakların altından minicik bir ses duydu: \"Vrak!\"",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} is crouching in a lush green garden, peering curiously under a large plant leaf from which a sound is coming. His expression is one of gentle wonder., setting: Güneşli bir arka bahçe, öğleden sonra., mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Güneşli bir günde, yemyeşil bir bahçe."
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "day_clothes",
+      "title": "Yeşil Arkadaş",
+      "text": "Zümrüt yeşili bir kurbağa, parlak bir yaprağın üzerine zıpladı. Boncuk gibi gözleriyle {CHILD_NAME}'e bakıp neşeyle seslendi: \"Vırak-vırak!\" O da kıkırdayarak kurbağayı taklit etmeye çalıştı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) A tiny, vibrant emerald-green frog is leaping out from under a leaf. {CHILD_NAME} is sitting on the grass, laughing with delight, his hands clapped near his mouth., setting: Bahçedeki çiçeklerin ve yaprakların arası., mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Bahçede, büyük bir yaprağın üzeri."
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "day_clothes",
+      "title": "Kristal Mağara",
+      "text": "Kurbağa, yapraktaki bir su damlasına dokundu. {CHILD_NAME} de merakla parmağını uzattı. Damla ışıkla parlayınca, etrafları kristal bir mağaraya dönüştü. Tavandan yavaşça sular damlıyordu: \"Pıt, pıt, pıt...\"",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} and the little green frog are playfully hopping together on the grass. Both are mid-jump, mirroring each other's joyful energy., setting: Bahçenin ortası, oyun anı., mood: playful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Işıltılı, kristal duvarları olan bir mağara."
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "day_clothes",
+      "title": "Sualtı Dünyası",
+      "text": "Kurbağa, yerdeki küçük su birikintisine atladı. Sudan \"Şilop!\" diye bir ses yükseldi. {CHILD_NAME} eğilip baktığında, kendini rengârenk balıkların arasında buldu. Balıklar sessizce fısıldaşıyordu: \"Fıs, fıs, fıs...\"",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} and the frog are inside a shimmering crystal cave. {CHILD_NAME} has his finger to his lips, listening to a drop of water falling from a stalactite into a small puddle., setting: Işıltılı, kristallerle kaplı loş bir mağara., mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Rengârenk balıkların ve bitkilerin olduğu sakin bir sualtı dünyası."
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "day_clothes",
+      "title": "Pamuk Bulutlar",
+      "text": "En büyük balığın üflediği hava kabarcığı, kurbağayı yukarı taşıdı. {CHILD_NAME} de onun peşinden süzüldü. Ayaklarının altında pamuk gibi yumuşacık bulutlar vardı. Rüzgâr usulca bir şarkı söylüyordu: \"Vuuuu...\"",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} and the frog are floating peacefully in a colorful underwater world, surrounded by gentle fish and rising air bubbles. {CHILD_NAME}'s expression is serene., setting: Sakin, rengarenk mercanların ve balıkların olduğu bir sualtı alemi., mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Gökyüzünde, yumuşak, beyaz bulutların üzeri."
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "day_clothes",
+      "title": "Yıldızlı Uzay",
+      "text": "Kurbağa, gökyüzündeki ilk yıldıza baktı. {CHILD_NAME} de başını kaldırdı. Bulutlar eriyip gözden kayboldu. Şimdi binlerce yıldızın arasında sessizce süzülüyorlardı. Uzaydan incecik bir ses geliyordu: \"Ziiiinnn...\"",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} and the frog are sitting on a fluffy, cotton-like cloud high in the sky. {CHILD_NAME} is reaching out to touch another cloud, a gentle breeze rustling his hair., setting: Gün batımında, yumuşak ve pembe bulutların üzeri., mood: magical, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Milyonlarca parlayan yıldızla dolu, karanlık ve huzurlu uzay boşluğu."
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "day_clothes",
+      "title": "Şarkının Dönüşü",
+      "text": "Bütün sesler birleşerek tatlı bir melodi oluşturdu: \"Vırak, pıt, fıs, vuuu, zinnn...\" Bu tatlı şarkı, onları yavaşça yıldızlardan aşağıya indirdi. Yeniden kendilerini gün batımının ısıttığı bahçede buldular.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} and the frog are floating in a peaceful starry space. They are looking up at the countless twinkling stars with a sense of calm and wonder., setting: Koyu lacivert bir gökyüzü, sayısız parlayan yıldız., mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Gün batımının turuncu renkleriyle boyanmış bahçe."
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "pajamas",
+      "title": "Annenin Sesi",
+      "text": "Kurbağa, bir yaprağın altına saklanıp göz kırptı. Tam o anda annesinin şefkatli sesini duydu: \"{CHILD_NAME}, hadi içeri gel tatlım.\" {CHILD_NAME} gülümseyerek eve doğru koştu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} is floating downwards from the starry sky, eyes half-closed with sleepiness. The frog is resting peacefully on his tummy. The mood is tranquil., setting: Yıldızlı gökyüzünden yavaşça aşağı süzülürken., mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Evin bahçeye açılan kapısı."
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "pajamas",
+      "title": "Yataktaki Ninni",
+      "text": "Annesi, {CHILD_NAME}'i yatağına yatırdı. Pencereden odaya gümüş bir ay ışığı süzülüyordu. O, gözlerini kapattı ve kendi orman şarkısını mırıldanmaya başladı: \"Pıt... vuuu... zinnn...\"",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} is tucked into his bed, mostly asleep. His mother is leaning over to kiss his forehead gently. A warm nightlight glows in the room., setting: Çocuğun kendi odası, gece lambası yanıyor., mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Ay ışığının aydınlattığı, huzurlu bir çocuk odası."
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "pajamas",
+      "title": "Orman Rüyaları",
+      "text": "Mırıldandığı şarkı, giderek yavaşlayan bir nefese dönüştü. Kalbindeki bu melodi onu sımsıkı sarmaladı. Artık güvendeydi. {CHILD_NAME}, kendi tatlı ninnisiyle huzurlu bir uykuya daldı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Light brown, soft and messy curly hair. A cute, stubborn single curl falling right in the middle of his forehead. Big, round hazel eyes looking with wonder. Light olive and warm skin tone. Chubby pink cheeks that become prominent when he smiles or is excited, a tiny, cute button nose. Very curious, looking at everything around him with awe, full of life energy with a slightly mischievous smile.) {CHILD_NAME} is fast asleep in his cozy bed, a peaceful smile on his face. A soft toy frog is tucked in beside him. Moonlight streams gently through the window., setting: Yatakta uyuyan çocuk, huzurlu bir ifade., mood: peaceful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Ali'nin yatağı, rüya gibi bir atmosferde."
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🌿",
+      "facts": [
+        "Erkek kurbağalar, seslerini daha uzağa duyurmak için boğazlarındaki keseyi şişirerek vıraklarlar.",
+        "Ağustos böcekleri, karınlarındaki özel bir zarı titreştirerek o bildiğimiz yaz şarkısını söylerler.",
+        "Rüzgâr ağaçların yapraklarına çarpınca, her yaprak farklı bir ses çıkarır ve ormanda bir hışırtı oluşur."
+      ],
+      "icon": "🌿"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ⭐",
+      "facts": [
+        "Yağmur damlaları toprağa, yapraklara veya suya düşünce \"pıt pıt\" diye ses çıkarır. Her yüzeyde ses farklıdır.",
+        "Yıldızlar aslında hep aynı ışıkla yanar ama ışıkları dünyamıza gelirken havanın içinde titrer. Bu yüzden biz onları göz kırpıyor gibi görürüz.",
+        "Denizdeki dalgaların sesi, rüzgârın suyu hareket ettirmesiyle oluşur. Sakin bir günde dalgalar fısıldar, fırtınada ise kükrer."
+      ],
+      "icon": "⭐"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 3,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 6,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A vibrant and lush garden background with soft-focus flowers and sparkling dewdrops. The overall feeling is cheerful, wondrous, and full of life. Sunlight filters through the leaves..\n\nCRITICAL RULES:\n1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG.\n2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas.\n3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top.\n\nALLOWED ELEMENTS:\n- Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human)\n- Atmospheric lighting (warm glow, soft moonlight, golden hour)\n- Border decorations (top and bottom zones can have tasteful flourishes)\n\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Ali'nin Orman Şarkısı\". {CHILD_NAME} ve minik dostu kurbağanın neşeli şarkısına sen de katıl. Doğanın ritmiyle oyna, yıldızların ninnisiyle uyu. Hayallerle dolu, huzurlu bir uyku macerası.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "orman-sarkisi-kisiye-ozel-kitap",
+  "sidekick": {
+    "name": "Yeşilgöz",
+    "species": "frog",
+    "description": "a tiny vibrant emerald-green frog (small enough to sit in a hand), smooth shiny emerald skin with slightly darker spots, big round sparkling emerald-green eyes, small cream-colored belly, gentle round face with a soft friendly smile. Always the SAME emerald-green frog — never brown, never large, never scary."
+  }
+}

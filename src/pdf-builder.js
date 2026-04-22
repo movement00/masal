@@ -4,16 +4,18 @@
  * Her sahne TEK PNG olarak verilir (illustrasyon + metin overlay birlikte).
  * Bu builder PNG'leri sirasiyla A4 sayfasina yerlestirir.
  *
- * Sayfa akisi:
- *   [1]  Kapak (pre-rendered PNG)
- *   [2]  Ic kapak (pre-rendered PNG)
- *   [3]  Hikayemizin Kahramani (pre-rendered PNG)
- *   [4]  Ithaf (pre-rendered PNG)
- *   [5]  Gonderen notu (opsiyonel, pre-rendered PNG)
- *   [6+] Sahne (tek sayfa: illustrasyon + metin overlay)
- *        Araya "Biliyor muydun?" PNG sayfalari eklenir
- *   [Son-1] Kapanis (pre-rendered PNG)
- *   [Son]   Arka kapak (pre-rendered PNG)
+ * UPGRADE 2026-04-20: Kullanici talebi dogrultusunda sadelesmis akis.
+ *
+ * Yeni sayfa akisi:
+ *   [1]      On kapak
+ *   [2]      Hikayemizin Kahramani
+ *   [3..N]   Sahneler (her sahne 2 sayfa: illustrasyon + text sayfa)
+ *            Sahne aralarina 2 adet "Bunlari biliyor muydunuz" kartlari
+ *   [N+1]    Diploma (kategoriye gore isim)
+ *   [N+2]    Not sayfasi (hediyeyi hazirlayanin)
+ *   [Son]    Arka kapak
+ *
+ * KALDIRILDI: Ic kapak, Ithaf, Kapanis (SON) — kullanici konseptinde yok.
  */
 
 const PDFDocument = require("pdfkit");
@@ -30,13 +32,11 @@ class PDFBuilder {
    * @param {string} options.title - Kitap basligi
    * @param {string} options.childName - Cocugun adi
    * @param {Buffer|string} options.coverPNG - Kapak sayfasi PNG
-   * @param {Buffer|string} options.innerCoverPNG - Ic kapak PNG
    * @param {Buffer|string} options.heroPagePNG - Hikayemizin Kahramani PNG
-   * @param {Buffer|string} options.dedicationPNG - Ithaf sayfasi PNG
-   * @param {Buffer|string} options.senderNotePNG - Gonderen notu PNG (opsiyonel)
-   * @param {Array<{finalPNG, sceneNumber}>} options.scenePages - Sahne sayfalari (tek sayfa per sahne)
+   * @param {Array<{finalPNG, sceneNumber, textPNG}>} options.scenePages - Sahne sayfalari (illustrasyon + text)
    * @param {Array<{afterScene: number, png: Buffer|string}>} options.funFactPages - Biliyor muydun sayfalari
-   * @param {Buffer|string} options.endingPNG - Kapanis sayfasi PNG
+   * @param {Buffer|string} options.diplomaPNG - Diploma / kategori sertifikasi PNG
+   * @param {Buffer|string} options.senderNotePNG - Hediyeyi hazirlayanin notu PNG
    * @param {Buffer|string} options.backCoverPNG - Arka kapak PNG
    */
   async build(options) {
@@ -45,14 +45,11 @@ class PDFBuilder {
       title,
       childName,
       coverPNG,
-      innerCoverPNG,
       heroPagePNG,
-      dedicationPNG,
-      senderNotePNG,
       scenePages = [],
       funFactPages = [],
       diplomaPNG,
-      endingPNG,
+      senderNotePNG,
       backCoverPNG,
     } = options;
 
@@ -77,48 +74,27 @@ class PDFBuilder {
       funFactMap.set(ff.afterScene, ff.png);
     }
 
-    // === SAYFA 1: KAPAK ===
+    // === SAYFA 1: ON KAPAK ===
     await this._addImagePage(doc, coverPNG, pageCount === 0);
     pageCount++;
 
-    // === SAYFA 2: IC KAPAK (title page) ===
-    if (innerCoverPNG && fs.existsSync(innerCoverPNG)) {
-      this._newPage(doc);
-      await this._addImagePage(doc, innerCoverPNG);
-      pageCount++;
-    }
-
-    // === SAYFA 3: HIKAYEMIZIN KAHRAMANI ===
+    // === SAYFA 2: HIKAYEMIZIN KAHRAMANI ===
     if (heroPagePNG && fs.existsSync(heroPagePNG)) {
       this._newPage(doc);
       await this._addImagePage(doc, heroPagePNG);
       pageCount++;
     }
 
-    // === SAYFA 4: ITHAF ===
-    if (dedicationPNG && fs.existsSync(dedicationPNG)) {
-      this._newPage(doc);
-      await this._addImagePage(doc, dedicationPNG);
-      pageCount++;
-    }
-
-    // === SAYFA 5: GONDEREN NOTU ===
-    if (senderNotePNG && fs.existsSync(senderNotePNG)) {
-      this._newPage(doc);
-      await this._addImagePage(doc, senderNotePNG);
-      pageCount++;
-    }
-
-    // === SAHNELER: Her sahne 2 sayfa (illustrasyon + metin) ===
+    // === SAHNELER: Her sahne 2 sayfa (illustrasyon + text) + aralarda fun facts ===
     for (let i = 0; i < scenePages.length; i++) {
       const scene = scenePages[i];
 
-      // Sayfa A: Illustrasyon (saf gorsel, metin yok)
+      // Sayfa A: Saf illustrasyon (metin yok)
       this._newPage(doc);
       await this._addImagePage(doc, scene.finalPNG);
       pageCount++;
 
-      // Sayfa B: Metin sayfasi (AI uretilmis)
+      // Sayfa B: Text sayfasi (AI ile uretilmis, minyatur karakter + story text)
       if (scene.textPNG && fs.existsSync(scene.textPNG)) {
         this._newPage(doc);
         await this._addImagePage(doc, scene.textPNG);
@@ -134,21 +110,21 @@ class PDFBuilder {
       }
     }
 
-    // === MESLEK DIPLOMASI (sadece meslek-hikayeleri) ===
+    // === DIPLOMA (not sayfasindan once) ===
     if (diplomaPNG && fs.existsSync(diplomaPNG)) {
       this._newPage(doc);
       await this._addImagePage(doc, diplomaPNG);
       pageCount++;
     }
 
-    // === KAPANIS (SON) ===
-    if (endingPNG && fs.existsSync(endingPNG)) {
+    // === NOT SAYFASI (arka kapaktan once) ===
+    if (senderNotePNG && fs.existsSync(senderNotePNG)) {
       this._newPage(doc);
-      await this._addImagePage(doc, endingPNG);
+      await this._addImagePage(doc, senderNotePNG);
       pageCount++;
     }
 
-    // === ARKA KAPAK ===
+    // === ARKA KAPAK (son sayfa) ===
     if (backCoverPNG) {
       this._newPage(doc);
       await this._addImagePage(doc, backCoverPNG);
@@ -172,7 +148,6 @@ class PDFBuilder {
    */
   async _addImagePage(doc, pngSource, isFirstPage = false) {
     if (!pngSource) {
-      // Bos sayfa: koyu arka plan
       doc.rect(0, 0, W, H).fill("#0f0f1a");
       return;
     }
@@ -185,14 +160,13 @@ class PDFBuilder {
       } else if (typeof pngSource === "string" && fs.existsSync(pngSource)) {
         buffer = fs.readFileSync(pngSource);
       } else {
-        // Dosya yok: bos koyu sayfa
         doc.rect(0, 0, W, H).fill("#0f0f1a");
         return;
       }
 
-      // Orijinal PNG'yi dogrudan PDFKit'e ver - PDFKit otomatik olceklendirir
-      // Kaynak PNG'ler 1785x2526 px -> A4 uzerinde ~216 DPI (sharp resize ile ~200 DPI'dan iyilestirme)
-      doc.image(buffer, 0, 0, { width: W, height: H });
+      // Full-bleed cover (2026-04-22 fix): aspect korunur + sayfayi tamamen doldurur, beyaz bosluk yok
+      // Kucuk crop (~3% kenar) olabilir ama aspect dogru, print-ready.
+      doc.image(buffer, 0, 0, { cover: [W, H], align: "center", valign: "center" });
     } catch (err) {
       console.error("  [pdf] Sayfa gorseli eklenemedi:", err.message);
       doc.rect(0, 0, W, H).fill("#1a1a2e");

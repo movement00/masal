@@ -71,12 +71,13 @@ class GoogleImageGenerator {
     const fullPrompt = this._buildPrompt(prompt, referenceImages.length);
     contents.push({ text: fullPrompt });
 
-    // API cagrisi
+    // API cagrisi — aspectRatio: "3:4" portrait, A4 sayfalarla tutarli (memory: 2026-04-22 aspect fix)
     const response = await this.client.models.generateContent({
       model: config.google.model,
       contents: [{ role: "user", parts: contents }],
       config: {
         responseModalities: ["TEXT", "IMAGE"],
+        imageConfig: { aspectRatio: "3:4", imageSize: config.output.resolution || "2K" },
       },
     });
 
@@ -175,6 +176,54 @@ White/light grey background. Clean professional character sheet layout.`;
     }
 
     throw new Error("Karakter sayfası oluşturulamadı");
+  }
+
+  /**
+   * Background/ozel sayfa uretir — cocuk fotografi OLMADAN.
+   * Kapak, ic kapak, ithaf, hero bg, sender note, fun fact, diploma, kapanis, arka kapak icin.
+   * referenceImages: opsiyonel ref goerselleri (front cover, karakter profili vs.)
+   *
+   * scene-generator.js'in generateBackground metodunun Google tarafi.
+   */
+  async generateBackground(prompt, referenceImages = []) {
+    const parts = [];
+    // Referans gorseller varsa once onlar (max 4 ref — palette/karakter tutarliligi icin)
+    const maxRefs = Math.min(referenceImages.length, 4);
+    for (let i = 0; i < maxRefs; i++) {
+      const refPath = referenceImages[i];
+      try {
+        const b64 = this._imageToBase64(refPath);
+        const mime = this._getMimeType(refPath);
+        parts.push({ inlineData: { mimeType: mime, data: b64 } });
+      } catch (e) {
+        console.warn(`  [google-image] Ref yuklenemedi (${refPath}):`, e.message);
+      }
+    }
+    // Metin prompt'u
+    parts.push({ text: prompt });
+
+    const response = await this.client.models.generateContent({
+      model: config.google.model,
+      contents: [{ role: "user", parts }],
+      config: {
+        responseModalities: ["TEXT", "IMAGE"],
+        imageConfig: { aspectRatio: "3:4", imageSize: config.output.resolution || "2K" },
+      },
+    });
+
+    if (!response.candidates || response.candidates.length === 0) {
+      throw new Error("Background API yanıtı boş - içerik filtresi devreye girmiş olabilir");
+    }
+    if (!response.candidates[0].content?.parts) {
+      throw new Error("Background yanıtında content.parts bulunamadı");
+    }
+
+    for (const part of response.candidates[0].content.parts) {
+      if (part.inlineData) {
+        return { buffer: Buffer.from(part.inlineData.data, "base64"), resultUrl: null };
+      }
+    }
+    throw new Error("Background yanıtında görsel bulunamadı");
   }
 }
 

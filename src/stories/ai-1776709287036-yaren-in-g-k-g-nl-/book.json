@@ -1,0 +1,198 @@
+{
+  "id": "ai-1776709287036-yaren-in-g-k-g-nl-",
+  "category": "meslek-hikayeleri",
+  "title": "Yaren'in Gök Günlüğü",
+  "description": "Kaptan Yaren, en yakın dostu oyuncak ayısı Pofuduk'un uçuş korkusunu yenmesine yardım etmek için gökyüzünde bir sefere çıkar. Uçağın kanatlarını dev bir kucak gibi, motorların sesini ise uyku getiren bir ninni gibi anlatarak Pofuduk’a ve tüm yolculara gökyüzünün ne kadar güvenli bir yer olduğunu gösterir. Bu yolculuk, Yaren’in cesaretinin sadece uçağı uçurmak değil, kalpleri de rahatlatmak olduğunu anladığı bir serüvene dönüşür.",
+  "lessons": [
+    "Cesaret",
+    "Sorumluluk alma",
+    "Tak�m �al��mas�",
+    "Hayallerin pe�inden ko�ma",
+    "Detaylara dikkat"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#87CEEB",
+    "secondaryColor": "#FFFFFF",
+    "accentColor": "#FFD700",
+    "icon": "✈️"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Karton Kanatlar",
+      "text": "{CHILD_NAME}, odasının ortasına yerleştirdiği büyük karton kutunun içinde oturuyordu. Kutunun kenarlarına keçeli kalemle pencereler ve kanatlar çizmişti. En yakın arkadaşı Pofuduk, onun hemen yanında, pilot yardımcısı koltuğuna kurulmuştu. Odadaki eski saatin tik takları, hayali uçağın motor sesi gibiydi. {CHILD_NAME}, “Kule, Kaptan Yaren konuşuyor, Pofuduk ile bulutlara doğru yola çıkıyoruz,” diye fısıldadı. Pofuduk’un pamuk gövdesini okşarken, zihni gerçek bulutların hayaliyle doluydu.",
+      "prompt": "CHARACTER_DESC A 5-year-old girl sits inside a large cardboard box decorated like a cockpit, holding her teddy bear, dreaming of flying., setting: Çocuk odası, öğleden sonra güneşi, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Çocuk odası, öğleden sonra güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Pofuduk'un Fısıltısı",
+      "text": "Annesi odaya girdiğinde elinde iki bilet tutuyordu. Biletlerin üzerindeki uçak resmi, vuran ışıkla parlıyordu. Annesi, “Haftaya anneanneni görmeye gidiyoruz,” dediğinde {CHILD_NAME}'in gözleri parladı. Ancak Pofuduk’a baktığında, ayıcığın düğme gözlerinin endişeyle kendisine baktığını fark etti. Pofuduk, sanki bir anda küçülmüş gibi onun kolunun altına saklandı. {CHILD_NAME}, ayıcığın sessiz korkusunu, pelüş gövdesindeki hafif bir titremeyle hissetti.",
+      "prompt": "CHARACTER_DESC The girl's eyes light up looking at plane tickets, but she notices her teddy bear hiding behind her arm with a worried expression., setting: Çocuk odası, annesiyle birlikte, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Çocuk odası, annesiyle birlikte"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Bir Kaptan Sözü",
+      "text": "{CHILD_NAME}, o gece yatağında Pofuduk’a sıkıca sarıldı. Odanın sessizliğinde, duvardaki yıldız çıkartmaları ay ışığıyla parlıyordu. “Korkma Pofuduk,” diye fısıldadı ayıcığın kadife kulağına. “Uçaklar, yalnızca büyük kanatları olan kuşlardır. Onlar gökyüzünü kucaklar, biz de tam içlerinde olacağız.” Pofuduk hiç kıpırdamadı ama {CHILD_NAME} onun endişesinin hafiflediğini hissetti. Ne de olsa bu, bir kaptan sözüydü.",
+      "prompt": "CHARACTER_DESC In her moonlit room, the girl whispers reassuringly to her teddy bear, hugging it tightly in bed., setting: Çocuk odası, gece vakti, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuk odası, gece vakti"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "hoodie",
+      "title": "Havalimanı Uğultusu",
+      "text": "Havalimanı, dev bir karınca yuvasını andırıyordu. Her yandan tekerlekli valizlerin takırtısı ve birbirine karışan anonsların uğultusu geliyordu. {CHILD_NAME}, babasının elini sıkıca tutuyordu. Sırt çantasından dışarıyı seyreden Pofuduk’un kulakları, her gürültüde biraz daha arkaya yatıyordu. Tavandaki yüksek pencerelerden sızan güneş, yerdeki parlak karolar üzerinde uzun ışık çizgileri oluşturuyordu. {CHILD_NAME}, “Burası bulut istasyonu Pofuduk,” dedi. “Burada trenler yerine kuşlar beklenir.”",
+      "prompt": "CHARACTER_DESC The girl holds her father's hand in a busy airport, with her teddy bear peeking nervously from her backpack., setting: Kalabalık bir havalimanı terminali, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Kalabalık bir havalimanı terminali"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "hoodie",
+      "title": "Uçağa Binen Adımlar",
+      "text": "Uçağa giden uzun koridor, yuvarlak pencereleriyle bir tırtıla benziyordu. {CHILD_NAME}, sırt çantasını önüne alıp Pofuduk’un başını okşadı. Ayıcığın düğme gözleri, koridorun sonundaki aydınlık kapıya sabitlenmişti. Pencereden dışarıdaki uçağın gümüş renkli dev kanadı göründüğünde bir an duraksadı. Bu devasa kuşun onları gökyüzüne taşıyacağı düşüncesiyle kalbi hızla çarptı. Kanat, sanki onlara güven veren büyük bir el gibiydi. “Bak,” dedi sessizce, “bizi bekliyor.”",
+      "prompt": "CHARACTER_DESC The girl walks down the jet bridge, comforting her teddy bear as they see the giant wing of the airplane through a window., setting: Uçağa biniş körüğü, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Uçağa biniş körüğü"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "hoodie",
+      "title": "Ninni Gibi Bir Ses",
+      "text": "Koltuklarına oturduklarında kemerlerin tokasından net bir “tık” sesi duyuldu. Uçağın motorları çalışmaya başlayınca, içeriye derin ve sürekli bir uğultu doldu. Pofuduk, {CHILD_NAME}'in kucağında kaskatı kesilmişti. {CHILD_NAME} gözlerini kapattı ve mırıldanmaya başladı: “Bu korkutucu bir ses değil,” diye fısıldadı. “Bu, uçağın ninnisi. Şimdi uykuya dalacak ve rüyasında bulutları görecek.” Titreşim, koltuğun altından ayaklarına doğru usulca yayılıyordu.",
+      "prompt": "CHARACTER_DESC As the plane's engines hum, the girl closes her eyes and whispers to her stiff teddy bear, reframing the sound as a lullaby., setting: Uçak kabini, kalkış öncesi, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "Uçak kabini, kalkış öncesi"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "hoodie",
+      "title": "Pamuk Deniz",
+      "text": "Uçak, bulutların arasına yavaşça süzüldü. Aşağıdaki gri ve beyaz karmaşa, yerini sonsuz bir pamuk tarlasına bıraktı. Güneş, bu beyaz denizi o kadar aydınlatıyordu ki {CHILD_NAME} gözlerini kısmak zorunda kaldı. Pofuduk’u pencereye doğru kaldırdı. “Gördün mü? Bulutların üstündeyiz. Burası gökyüzünün en yumuşak yeri.” Pofuduk’un kaskatı duruşu, sanki bir parça gevşemişti.",
+      "prompt": "CHARACTER_DESC The girl lifts her teddy bear to the window to show it the vast, sunlit sea of clouds below them., setting: Uçak penceresinden bulutların üstü, mood: magical, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Uçak penceresinden bulutların üstü"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "hoodie",
+      "title": "Bulut Gözcüsü",
+      "text": "{CHILD_NAME}, Pofuduk'u cam kenarına özenle yerleştirdi ve ona önemli bir görev verdi. “Senin görevin Bulut Gözcülüğü, Kaptan Pofuduk,” dedi ciddi bir sesle. “Tavşana benzeyen bir bulut görürsen bana haber ver.” Pofuduk, artık korkuyla değil, merakla dışarıya bakıyordu. Düğme gözleri, sanki gerçekten bir tavşan bulutu arar gibi hareketliydi.",
+      "prompt": "CHARACTER_DESC The girl gives her teddy bear a 'mission' to be the 'Cloud Watcher,' and the bear now looks out the window with curiosity., setting: Uçak koltuğu, gökyüzü manzarası, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Uçak koltuğu, gökyüzü manzarası"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "hoodie",
+      "title": "Gökyüzü Renkleri",
+      "text": "Güneş yavaş yavaş batarken gökyüzü bir ressamın paletine döndü; turuncular, pembeler ve morlar bulutların kenarlarını boyuyordu. Uçağın içindeki ışıklar yandı ve kabin, loş bir sıcaklığa büründü. Yan koltuktaki küçük bir bebek ağlamaya başlayınca {CHILD_NAME} ona bakıp gülümsedi. Kaptanlık, belki de sadece Pofuduk’u değil, herkesi rahatlatmak demekti.",
+      "prompt": "CHARACTER_DESC During a beautiful sunset seen from the plane window, the girl smiles kindly at another baby who starts to cry in the cabin., setting: Uçak kabini, gün batımı sırasında, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Uçak kabini, gün batımı sırasında"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "hoodie",
+      "title": "Yıldız Halısı",
+      "text": "Uçak alçalmaya başladığında bulut denizi geride kaldı. Aşağıda, karanlığın içinde milyonlarca ışık parlıyordu; şehir, yere serilmiş bir yıldız halısı gibiydi. “Pofuduk, bak,” diye fısıldadı {CHILD_NAME}. “Yıldızlara iniş yapıyoruz.” Pofuduk’un başı, onun omzuna yaslanmıştı. Artık hiç titremiyordu.",
+      "prompt": "CHARACTER_DESC The plane descends over a city at night, the lights twinkling like a carpet of stars, and the teddy bear rests calmly on the girl's shoulder., setting: Uçak penceresinden gece vakti şehir ışıkları, mood: magical-epic, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical-epic",
+      "setting": "Uçak penceresinden gece vakti şehir ışıkları"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "hoodie",
+      "title": "Kaptanlar Konuşuyor",
+      "text": "Uçak durup kemer ışıkları söndüğünde, pilotun tok sesi hoparlörlerden duyuldu. {CHILD_NAME}, Pofuduk’u kendine çevirdi. “Biz de başardık, değil mi Kaptan Pofuduk?” diye sordu. Ayıcık, sanki onu onaylar gibi, kucağında biraz daha dik durdu. {CHILD_NAME}, onun pamuk kalbinin cesaretle dolduğunu hissetti.",
+      "prompt": "CHARACTER_DESC After the plane lands, the girl holds up her teddy bear and speaks to it like a fellow captain, a proud smile on her face., setting: Uçak kabini, iniş sonrası, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Uçak kabini, iniş sonrası"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "hoodie",
+      "title": "Sıcak Bir Karşılama",
+      "text": "Anneannesi, onları terminalin çıkışında bekliyordu. Kollarını kocaman açarak {CHILD_NAME}'e sarıldığında, ondan tarçınlı kurabiye kokusu yayıldı. Anneannesi, “Uçuşun nasıl geçti kaptan?” diye sordu. {CHILD_NAME}, sırt çantasındaki Pofuduk’a göz kırptı. “Harikaydı,” dedi. “Pofuduk bütün bulutları saydı.”",
+      "prompt": "CHARACTER_DESC The girl's grandmother welcomes her with a warm hug at the airport arrivals gate., setting: Havalimanı geliş terminali, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Havalimanı geliş terminali"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "hoodie",
+      "title": "Yeni Pencere",
+      "text": "Anneannesinin evindeki odanın penceresi, çiçek açmış büyük bir manolya ağacına bakıyordu. {CHILD_NAME}, Pofuduk ile pencerenin önüne oturdu. Dışarıdan cırcır böceklerinin ninnisi andıran sesi geliyordu. Uçağın uğultusu artık çok uzakta kalmıştı. Pofuduk, sakince dışarıdaki yaprakların rüzgârda salınışını izliyordu. Hiçbir yere saklanma ihtiyacı duymuyordu.",
+      "prompt": "CHARACTER_DESC The girl and her teddy bear sit calmly by a window in a new room, looking out at a magnolia tree., setting: Anneannenin evi, gece vakti, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Anneannenin evi, gece vakti"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "hoodie",
+      "title": "Gök Günlüğü",
+      "text": "{CHILD_NAME}, yatağına uzanmadan önce çantasından boya kalemlerini ve bir kâğıt çıkardı. O gün yaşadığı o büyülü anı sonsuza dek saklamak istiyordu. Kâğıda, kanatları olan kocaman bir ayıcık çizdi. Ayıcık, pamuk gibi bulutların üzerinde gülümsüyordu. Bu, onun gök günlüğünün ilk sayfasıydı. Kaptan Yaren ve Kaptan Pofuduk'un macerası, şimdi kâğıdın üzerinde sonsuza dek uçacaktı.",
+      "prompt": "CHARACTER_DESC Before sleep, the girl lies on the floor and draws a picture of a smiling teddy bear with wings, flying above the clouds., setting: Anneannenin evindeki misafir odası, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Anneannenin evindeki misafir odası"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? ☁️",
+      "facts": [
+        "Bulutlar, aslında pamuk gibi olmasalar da milyonlarca küçücük su damlacığından veya buz kristalinden oluşur.",
+        "Uçaklar, genellikle kuşların ve havanın en sakin olduğu yer olan bulutların üzerinde uçar.",
+        "Gökyüzünün mavi görünmesinin sebebi, Güneş ışığının Dünya'nın atmosferindeki küçük parçacıklara çarpıp dağılmasıdır.",
+        "Gökkuşağı, güneş ışığı yağmur damlalarının içinden geçtiğinde ortaya çıkan harika bir renk gösterisidir."
+      ],
+      "icon": "☁️"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ⭐",
+      "facts": [
+        "Heyecanlandığımızda veya korktuğumuzda derin bir nefes almak, kalbimizin yavaşlamasına ve sakinleşmemize yardımcı olur.",
+        "Birine sarılmak veya sevdiğimiz bir oyuncağı tutmak, kendimizi daha güvende hissetmemizi sağlar.",
+        "Yeni bir şeyi denemekten birazcık korkmak çok normaldir. Cesaret, hiç korkmamak değil, korksak bile denemektir.",
+        "Pilotlar, uçakları güvenli bir şekilde uçurmak için uzun eğitimler alır ve her zaman yanlarında bir yardımcı pilotları bulunur."
+      ],
+      "icon": "⭐"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: The scene is warm and full of light. Foreground has the girl and her bear, their bond is central. Midground is the airplane window frame. Background is a beautiful, dreamy sky with fluffy, inviting clouds.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Yaren'in Gök Günlüğü\". Herkesin içinde bir kaptan vardır. Yaren için kaptanlık, sadece gökyüzünde uçmak değil, en yakın dostu Pofuduk’un kalbindeki korku bulutlarını dağıtmaktır. Bu sıcacık hikâye, cesaretin en güzel kanatlarının sevgi ve anlayış olduğunu fısıldıyor.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "meslekKey": "pilot"
+}

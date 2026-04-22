@@ -13,6 +13,52 @@ const CanvasTextRenderer = require("./canvas-text-renderer");
 const { BookOrchestrator } = require("./agents");
 const shopifyWebhook = require("./shopify-webhook");
 const { validateBookId, validateChildName, validateGender, validateAge, validatePhotoExt, sanitizePath } = require("./validation");
+const { regeneratePage } = require("./page-regenerator");
+
+// Shared helper: assemble PDF from an output dir using the CURRENT page layout
+// (cover → hero → 14 scenes with scene+text pages and funfact inserts → diploma → note → back cover).
+async function _rebuildPdfForDir(absDir, relDir, meta) {
+  let bookTitle = (meta && meta.bookTitle) || "MASAL Hikaye Kitabi";
+  if (meta && meta.bookId) {
+    const bookPath = path.join(__dirname, "stories", meta.bookId, "book.json");
+    if (fs.existsSync(bookPath)) {
+      try { bookTitle = JSON.parse(fs.readFileSync(bookPath, "utf-8")).title || bookTitle; } catch (_) {}
+    }
+  }
+  const scenePages = [];
+  for (let i = 1; i <= 20; i++) {
+    const pad = String(i).padStart(2, "0");
+    const finalPath = path.join(absDir, `scene-${pad}-final.png`);
+    const textPath  = path.join(absDir, `scene-${pad}-text.png`);
+    if (fs.existsSync(finalPath)) {
+      scenePages.push({
+        sceneNumber: i,
+        finalPNG: finalPath,
+        textPNG: fs.existsSync(textPath) ? textPath : null,
+      });
+    }
+  }
+  const funFactPages = [];
+  for (let i = 1; i <= 20; i++) {
+    const p = path.join(absDir, `funfact-after-${i}.png`);
+    if (fs.existsSync(p)) funFactPages.push({ afterScene: i, png: p });
+  }
+  const pdfBuilder = new PDFBuilder();
+  const pdfPath = path.join(absDir, "kitap.pdf");
+  await pdfBuilder.build({
+    pdfPath,
+    title: bookTitle,
+    childName: (meta && meta.childName) || "Cocuk",
+    coverPNG: path.join(absDir, "cover-final.png"),
+    heroPagePNG: fs.existsSync(path.join(absDir, "hero-page.png")) ? path.join(absDir, "hero-page.png") : null,
+    scenePages,
+    funFactPages,
+    diplomaPNG: fs.existsSync(path.join(absDir, "diploma.png")) ? path.join(absDir, "diploma.png") : null,
+    senderNotePNG: fs.existsSync(path.join(absDir, "sender-note.png")) ? path.join(absDir, "sender-note.png") : null,
+    backCoverPNG: path.join(absDir, "back-cover.png"),
+  });
+  return { pdfPath, pdfPathRel: `/output/${relDir}/kitap.pdf?t=${Date.now()}` };
+}
 const archiver = require("archiver");
 const { SSE_BUFFER_MAX: SSE_MAX, UPLOAD_MAX_BYTES, UPLOAD_TIMEOUT_MS } = require("./constants");
 
@@ -138,6 +184,7 @@ async function generateBookWithProgress(options) {
     bookId, childPhotoPath, childName, childGender, childAge, extraPhotoPaths,
     recipientName, recipientNickname, senderName, senderGender,
     customMessage, sharedActivity, recipientHobby, specialMemory,
+    giftSenderName, giftSenderRelation,
   } = options;
 
   // Cikti klasoru
@@ -171,6 +218,8 @@ async function generateBookWithProgress(options) {
     sharedActivity,
     recipientHobby,
     specialMemory,
+    giftSenderName,
+    giftSenderRelation,
   });
 }
 
@@ -336,8 +385,21 @@ const server = http.createServer(async (req, res) => {
           heroGender: concept.kahraman.cinsiyet || "erkek",
           lessons: concept.kazanimlar || [],
           physicalFeatures: concept.kahraman.fizikselOzellikler || null,
+          // forcedIdea: UrunStudio baslik + ozet — brainstorm + select atlanır,
+          // writeStory DOĞRUDAN bu fikri 14 sahneye genişletir (deep-thinking aynı şekilde çalışır).
+          forcedIdea: {
+            baslik: concept.baslik,
+            ozet: concept.ozet || "",
+            anahtarNokta: (concept.sahneler || []).slice(0, 2).join(" / "),
+            duyguYayi: concept.mood || "",
+            sembol: "",
+          },
           onProgress: (p) => sendSSE({ type: "heartbeat", message: p.message, step: p.step }),
         });
+        // Ekstra güvence: başlık / özet / templateHeroName eşleşsin
+        bundle.title = concept.baslik;
+        if (concept.ozet) bundle.description = concept.ozet;
+        bundle.templateHeroName = concept.kahraman.isim;
         // UrunStudio asset URL'lerini bundle'a ekle
         bundle.source = "urunstudio";
         bundle.urunStudioSource = { concept, visuals: visuals || [], seo: seo || null };
@@ -499,6 +561,8 @@ const server = http.createServer(async (req, res) => {
             childAge: opts.age,
             extraPhotoPaths: opts.extraPhotoPaths || [],
             customMessage: opts.customMessage,
+            giftSenderName: opts.giftSenderName,
+            giftSenderRelation: opts.giftSenderRelation,
           });
           if (!result || !result.outputDir) throw new Error("Masal generation failed");
           const pdfPath = path.join(result.outputDir, "kitap.pdf");
@@ -623,6 +687,9 @@ const server = http.createServer(async (req, res) => {
         sharedActivity: parts.sharedActivity || null,
         recipientHobby: parts.recipientHobby || null,
         specialMemory: parts.specialMemory || null,
+        // Webhook veya form'dan gelen hediyeyi hazirlayan bilgisi
+        giftSenderName: parts.giftSenderName || parts.senderName || null,
+        giftSenderRelation: parts.giftSenderRelation || parts.senderRelation || null,
       }).catch((err) => {
         console.error("  [server] Uretim hatasi:", err.message);
         sendSSE({ type: "error", message: `Kritik hata: ${err.message}` });
@@ -923,6 +990,66 @@ const server = http.createServer(async (req, res) => {
         });
       } catch (err) {
         console.error("  [server] PDF rebuild hatasi:", err.message);
+        return sendJson(res, 500, { error: err.message });
+      }
+    }
+
+    // Tek sayfa yeniden uret (per-page regenerate)
+    if (url.pathname === "/api/regenerate-page" && req.method === "POST") {
+      try {
+        const body = await collectBody(req);
+        const data = JSON.parse(body.toString("utf-8"));
+        const { outputDir: relDir, pageType, sceneNumber, customInstruction, rebuildPdf } = data;
+        if (!relDir || !pageType) return sendJson(res, 400, { error: "outputDir ve pageType gerekli" });
+
+        const pathCheck = sanitizePath(OUTPUT_DIR, relDir);
+        if (!pathCheck.safe) return sendJson(res, 403, { error: pathCheck.error });
+        const absDir = pathCheck.resolved;
+
+        // meta.json'dan bookId + child bilgilerini oku
+        const metaPath = path.join(absDir, "meta.json");
+        if (!fs.existsSync(metaPath)) return sendJson(res, 400, { error: "meta.json bulunamadi — bu klasor Masal tarafindan uretilmemis gorunuyor" });
+        const meta = JSON.parse(fs.readFileSync(metaPath, "utf-8"));
+        if (!meta.bookId) return sendJson(res, 400, { error: "meta.json icinde bookId yok" });
+
+        const bookCheck = validateBookId(meta.bookId);
+        if (!bookCheck.valid) return sendJson(res, 400, { error: bookCheck.error });
+
+        const imageGen = createImageGenerator();
+        const srcRoot = __dirname;
+        const assetsRoot = path.join(__dirname, "..", "assets");
+
+        console.log(`  [server] /api/regenerate-page ${pageType}${sceneNumber ? " scene#" + sceneNumber : ""} for ${relDir}`);
+        const result = await regeneratePage({
+          outputDir: absDir,
+          bookId: meta.bookId,
+          srcRoot,
+          assetsRoot,
+          meta,
+          imageGen,
+          pageType,
+          sceneNumber,
+          customInstruction,
+        });
+
+        // Opsiyonel: PDF'i yeniden birlestir
+        let pdfPathRel = null;
+        if (rebuildPdf) {
+          try {
+            const rebuildResult = await _rebuildPdfForDir(absDir, relDir, meta);
+            pdfPathRel = rebuildResult.pdfPathRel;
+          } catch (pdfErr) {
+            console.error("  [server] PDF rebuild after regenerate hatasi:", pdfErr.message);
+          }
+        }
+
+        return sendJson(res, 200, {
+          success: true,
+          pagePath: `/output/${relDir}/${path.basename(result.pagePath)}?t=${Date.now()}`,
+          pdfPath: pdfPathRel,
+        });
+      } catch (err) {
+        console.error("  [server] /api/regenerate-page hatasi:", err.message);
         return sendJson(res, 500, { error: err.message });
       }
     }

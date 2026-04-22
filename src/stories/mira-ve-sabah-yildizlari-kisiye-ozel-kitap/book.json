@@ -2,6 +2,7 @@
   "id": "mira-ve-sabah-yildizlari-kisiye-ozel-kitap",
   "category": "gunluk-degerler-egitimi",
   "title": "Mira ve Sabah Yıldızları",
+  "templateHeroName": "Mira",
   "description": "Mira için sabahlar yepyeni bir hediyeydi. Güneş penceresinden ona göz kırptığında, yatağından fırlayıp gününe başlardı. Kendi giyindi, kahvaltısını bitirdi, dişlerini fırçaladı. İşte Mira'nın altın sabahlarının masalı.",
   "lessons": [
     "Erken kalkmak",
@@ -15,7 +16,7 @@
   "pageCount": 14,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
@@ -31,7 +32,7 @@
       "outfitId": "pajamas",
       "title": "Güneşin Fısıltısı",
       "text": "Sabahın ilk ışıkları, Mira'nın odasının penceresinden süzülerek içeri girdi. Güneş, perdeye asılı tülleri hafifçe aralayıp yanaklarına sıcak bir öpücük kondurdu. Mira, yatağında ufacık bir kıpırtıyla gözlerini açtı. Göz kapakları aralandığında, odasındaki eşyalar uykudan uyanmış gibi parladı. İçinden, \"Yeni bir gün başlıyor, tıpkı dün gibi güzel olmalı,\" diye düşündü.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl in pajamas wakes up as sunbeams stream through her window, touching her face softly., setting: Mira'nın yatak odası, sabah erken, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl in pajamas wakes up as sunbeams stream through her window, touching her face softly., setting: Mira'nın yatak odası, sabah erken, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "Mira'nın yatak odası, sabah erken"
     },
@@ -40,7 +41,7 @@
       "outfitId": "pajamas",
       "title": "Yatağın Dansı",
       "text": "Mira, yatağından bir fışkıran su misali fırladı. Ayakları, soğuk parke zemine değdiğinde hafifçe titredi ama bu onu hiç durdurmadı. Odasında asılı duran bulut şeklindeki lamba, sanki ona gülümsüyordu. Yastığını düzeltip yorganını katlarken, minik elleriyle yatağına şekil verdi. Bu hareketleri yaparken kalbi, neşeyle çarpıyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl jumps out of bed, eagerly tidying her bed with a wide smile., setting: Mira'nın yatak odası, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl jumps out of bed, eagerly tidying her bed with a wide smile., setting: Mira'nın yatak odası, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Mira'nın yatak odası, sabah"
     },
@@ -49,7 +50,7 @@
       "outfitId": "pajamas",
       "title": "Kıyafetlerin Oyunu",
       "text": "Mira, dolabının kapısını yavaşça araladı. Renkli elbiseler, askılarda adeta bir dans gösterisi sergiliyordu. \"Bugün ne giyeceğim?\" Bu önemli karar, onu her zaman biraz zorlar. Parmağını nazikçe gezdirerek, hangi kıyafeti giyeceğine karar vermeye çalıştı. Kırmızı elbiseyi mi seçmeliydi, yoksa üzerinde minik kuş desenleri olan maviyi mi? İçinde bir his, ona bugün kuşların eşlik etmesini fısıldıyordu. \"Evet, kuşlar bana şans getirir.\" Mavi elbiseyi dikkatlice aldı, sanki kırılacak bir hediye taşıyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl opens her closet, thoughtfully choosing an outfit, her finger tracing the clothes., setting: Mira'nın yatak odası, dolabın önü, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl opens her closet, thoughtfully choosing an outfit, her finger tracing the clothes., setting: Mira'nın yatak odası, dolabın önü, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "Mira'nın yatak odası, dolabın önü"
     },
@@ -58,7 +59,7 @@
       "outfitId": "casual",
       "title": "Giyinme Zamanı",
       "text": "Mavi elbiseyi üzerine geçirdi. Küçük parmakları, düğmeleri iliklerken bazen zorlansa da pes etmedi; çünkü bu küçük zaferleri kendi başına kazanmak istiyordu. Kendi başına başarmak, ona büyük bir sevinç veriyordu. Elbisenin etekleri, döndüğünde havada hafifçe dalgalandı. Ayna karşısına geçti, kendine kocaman bir gülümseme yolladı. Bu gülümseme, onun günün geri kalanına bir sözü gibiydi; bugün neşe dolu bir gün olacaktı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl, dressed in a blue dress, proudly looks at herself in the mirror, smiling., setting: Mira'nın yatak odası, aynanın önü, mood: triumphant, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl, dressed in a blue dress, proudly looks at herself in the mirror, smiling., setting: Mira'nın yatak odası, aynanın önü, mood: triumphant, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant",
       "setting": "Mira'nın yatak odası, aynanın önü"
     },
@@ -67,7 +68,7 @@
       "outfitId": "casual",
       "title": "Kahvaltı Kokusu",
       "text": "Mutfağa doğru ilerlerken burnuna sıcacık, tatlı bir koku geldi. Annesi, masayı hazırlıyordu. Balın ve taze ekmeğin kokusu, Mira'yı adeta kendine çekiyordu. Sandalyesine oturdu, minik elleriyle tabağındaki peyniri ve zeytini inceledi. Annesi, ona bir bardak süt uzattı. Sütün buğusu, yüzüne nazikçe değdi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl sits at the breakfast table, inhaling the sweet aroma of food as her mother places a glass of milk in front of her., setting: Mutfak, kahvaltı masası, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl sits at the breakfast table, inhaling the sweet aroma of food as her mother places a glass of milk in front of her., setting: Mutfak, kahvaltı masası, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Mutfak, kahvaltı masası"
     },
@@ -76,7 +77,7 @@
       "outfitId": "casual",
       "title": "Lezzetli Lokmalar",
       "text": "Mira, kahvaltısını her lokmasında tadını çıkararak yedi. Ağzında eriyen balın tatlılığı, ona günün ne kadar keyifli olacağını fısıldıyordu. Bu lezzetler, annesinin sevgisiyle birleşince her şey daha da güzelleşiyordu. Peynirin tuzlu tadı, zeytinin buruk lezzeti... Her biri, güne başlamanın bir parçasıydı. Tabağını bitirdiğinde, içini sıcak bir mutluluk doldurdu. Sanki tüm dünya, bu kahvaltıyla daha parlak bir yer olmuştu. “Anneciğim, ellerine sağlık!” dedi, sesinde samimi bir minnettarlık vardı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl savors her breakfast, taking each bite with pleasure, then thanks her mother., setting: Mutfak, kahvaltı masası, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl savors her breakfast, taking each bite with pleasure, then thanks her mother., setting: Mutfak, kahvaltı masası, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Mutfak, kahvaltı masası"
     },
@@ -85,7 +86,7 @@
       "outfitId": "casual",
       "title": "Dişlerin Dansı",
       "text": "Kahvaltıdan sonra banyoya geçti. Diş fırçasını eline aldı, macunu dikkatlice sıktı. Aynadaki yansımasına gülümsedi. Dişlerini özenle fırçalarken, fırçanın her hareketi ağzında küçük bir dans gibiydi. Beyaz köpükler, dişlerinin üzerinde gezindi. Temiz ve ferah bir nefesle güne başlamak, ona ayrı bir keyif veriyordu. “Şimdi bembeyaz oldular!” diye mırıldandı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl stands in front of the bathroom mirror, diligently brushing her teeth, making a foamy dance in her mouth., setting: Banyo, lavabo, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl stands in front of the bathroom mirror, diligently brushing her teeth, making a foamy dance in her mouth., setting: Banyo, lavabo, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "determined",
       "setting": "Banyo, lavabo"
     },
@@ -94,7 +95,7 @@
       "outfitId": "casual",
       "title": "Sıcak Bir Sarılma",
       "text": "Annesi, mutfakta bulaşıkları toplarken Mira yanına gitti. Annesinin bacaklarına sımsıkı sarıldı. İçinde biriken tüm sıkıntılar bu sarılmayla dağılır gibiydi. Annesinin kazağının yumuşak dokusu, ona huzur verdi. Annesinin saçlarından yayılan lavanta kokusu, onu sarıp sarmaladı. Bu kokuyla her şeyin düzeleceğini hissetti. Annesi, eğilip onun saçlarını okşadı. Bu sıcacık sarılma, sanki bütün günü güvence altına alıyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl gives her mother a tight hug in the kitchen, burying her face in her mother's side., setting: Mutfak, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl gives her mother a tight hug in the kitchen, burying her face in her mother's side., setting: Mutfak, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Mutfak"
     },
@@ -103,7 +104,7 @@
       "outfitId": "casual",
       "title": "Günün Şarkısı",
       "text": "Annesi, Mira'nın yanağına küçük bir öpücük kondurdu. \"Bugün ne yapacaksın bakalım, küçük kuşum?\" diye sordu. Mira, annesine baktı. \"Bugün yeni hikayeler dinleyeceğim, bahçedeki çiçekleri sulayacağım ve belki de bir resim yapacağım,\" dedi, gözleri parlıyordu. Her sabah yeni bir şarkı gibiydi. Kalbinde, yeni günün getireceği tüm güzellikleri hissediyordu. \"Bugün çok güzel olacak, biliyorum,\" diye ekledi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl, full of excitement, tells her mother about her plans for the day, her eyes sparkling with anticipation., setting: Mutfak kapısı, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl, full of excitement, tells her mother about her plans for the day, her eyes sparkling with anticipation., setting: Mutfak kapısı, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "inspirational",
       "setting": "Mutfak kapısı"
     },
@@ -112,7 +113,7 @@
       "outfitId": "casual",
       "title": "Kapıdan Süzülme",
       "text": "Mira, annesiyle vedalaşıp kapıdan dışarı çıktı. Sabahın serin havası yüzüne değdiğinde, hafifçe ürperdi. Dışarıdaki dünya, ona kollarını açmış bekliyordu. Kuş sesleri, uzaklardan gelip kulaklarına ulaştı. Günün ilk ışıkları, bahçedeki ağaçların yapraklarını altın rengine boyuyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl steps out of her house, a gentle breeze touching her face, as birds sing in the distance., setting: Evin dış kapısı, sabah, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl steps out of her house, a gentle breeze touching her face, as birds sing in the distance., setting: Evin dış kapısı, sabah, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "Evin dış kapısı, sabah"
     },
@@ -121,7 +122,7 @@
       "outfitId": "casual",
       "title": "Bahçenin Sırları",
       "text": "Bahçede yürürken, çiğ taneleri ayaklarının ucunu ıslattı. Çiçeklerin üzerindeki küçük su damlaları, güneşin ışığında pırıl pırıl parlıyordu. Mira, eğilip mor bir menekşeyi kokladı. Menekşenin narin kokusu, burnuna doldu. Her çiçeğin, her yaprağın bir sırrı olduğunu düşünüyordu. Bu sırlar, ona her gün yeni şeyler öğretiyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl walks through her garden, bending down to smell a purple violet, its dewdrops glistening., setting: Bahçe, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl walks through her garden, bending down to smell a purple violet, its dewdrops glistening., setting: Bahçe, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "mysterious",
       "setting": "Bahçe"
     },
@@ -130,7 +131,7 @@
       "outfitId": "casual",
       "title": "Kelebeğin Uçuşu",
       "text": "Rengarenk bir kelebek önünden uçtu. Kanatları, güneş ışığında parladı. Mira, kelebeği gözleriyle takip etti. Kelebek, bir çiçekten diğerine kondu, sanki ona bir şeyler anlatmak istiyordu. Mira, kelebeğin özgürlüğüne hayran kaldı. “Ben de senin gibi hafif ve neşeli olmak istiyorum,” diye fısıldadı içinden.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl watches a colorful butterfly flutter from flower to flower, enchanted by its graceful flight., setting: Bahçe, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl watches a colorful butterfly flutter from flower to flower, enchanted by its graceful flight., setting: Bahçe, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "Bahçe"
     },
@@ -139,7 +140,7 @@
       "outfitId": "casual",
       "title": "Günün Hediyesi",
       "text": "Mira, bahçenin ortasında durdu. Güneş, başının üzerinden onu ısıtıyordu. Her sabah, yeni bir hediye gibiydi. Kendi kıyafetlerini seçmek, kahvaltısını keyifle bitirmek, annesine sarılmak... Tüm bunlar, günü altın değerinde kılıyordu. Gözlerini kapattı, kalbinde hissettiği minnetle gülümsedi. \"Her sabah bir altın sabahı,\" diye düşündü.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl stands in the middle of her garden, eyes closed, feeling the warm sun on her face and smiling contentedly., setting: Bahçe, güneşli bir alan, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl stands in the middle of her garden, eyes closed, feeling the warm sun on her face and smiling contentedly., setting: Bahçe, güneşli bir alan, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "Bahçe, güneşli bir alan"
     },
@@ -148,7 +149,7 @@
       "outfitId": "casual",
       "title": "Sıcak Bir Başlangıç",
       "text": "Gözlerini açtığında, dünya sanki daha parlak, daha canlı görünüyordu. Mira, yeni güne başlamanın getirdiği coşkuyla derin bir nefes aldı. Bugün de tıpkı dün gibi, tıpkı yarın gibi neşe dolu olacaktı. Her sabah, Mira'nın kalbini ısıtan, ona yeni maceralar ve güzellikler vadeden bir başlangıçtı. O, kendi altın sabahlarının mimarıydı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: yellow-star pajamas (morning), then pastel-pink cotton dress with star pocket (day)) A little girl opens her eyes, taking a deep breath in the vibrant garden, ready to embrace the new day., setting: Bahçe, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC, then pastel-pink cotton dress with star pocket (day)) A little girl opens her eyes, taking a deep breath in the vibrant garden, ready to embrace the new day., setting: Bahçe, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Bahçe"
     }
@@ -187,7 +188,7 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Mira'nın Altın Sabahları\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Lush green grass with scattered wildflowers. Midground: Mira, 4 years old, with flowing brown hair and sparkling eyes, caught mid-stride with a wide smile. Background: A sun-drenched garden with various blooming flowers and trees, a cozy looking house partially visible in the distance under a clear blue sky..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Mira\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Mira'nın Altın Sabahları\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Lush green grass with scattered wildflowers. Midground: Mira, 4 years old, with flowing brown hair and sparkling eyes, caught mid-stride with a wide smile. Background: A sun-drenched garden with various blooming flowers and trees, a cozy looking house partially visible in the distance under a clear blue sky.. TITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Mira\" Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves). LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon. Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title. Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
     "backCover": "A warm artistic closing scene matching \"Mira'nın Altın Sabahları\". Mira için her sabah altın değerinde bir hediyedir. Güneş ona göz kırptığında yatağından bir fışkıran su misali fırlar, kendi kıyafetlerini özenle seçer ve kahvaltısını her lokmasında tadını çıkararak bitirir. Annesine sıcacık sarılıp, yeni günün getireceği tüm güzellikleri kalbinde hissetmeye başlayan Mira ile her sabahın ne kadar kıymetli olduğunu keşfedin!. NO TEXT NO LETTERS in image, 3D CGI render."

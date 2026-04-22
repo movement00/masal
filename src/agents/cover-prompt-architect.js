@@ -12,6 +12,7 @@ const { CANVAS_W: PW, CANVAS_H: PH } = require("../constants");
 const { GoogleGenAI } = require("@google/genai");
 const config = require("../config");
 const { BRAND_VOCAB_RULE, BRAND_INLINE } = require("../rules/prompt-fragments");
+const { detectMeslekProfileFromBook } = require("../rules/meslek-profiles");
 
 // UrunStudio'dan port — rastgele gönderen seçimi
 const SENDER_POOL = [
@@ -31,13 +32,18 @@ function pickSender() {
   return SENDER_POOL[Math.floor(Math.random() * SENDER_POOL.length)];
 }
 
-async function generateNoteBody(bookData, heroName, heroAge, senderKey) {
+async function generateNoteBody(bookData, heroName, heroAge, senderKey, customName) {
   const senderHuman = {
     "anne+baba": "anne ve baba", anne: "anne", baba: "baba",
     anneanne: "anneanne", babaanne: "babaanne", dede: "dede",
     teyze: "teyze", hala: "hala", dayi: "dayı", amca: "amca",
+    abla: "abla", abi: "ağabey", arkadas: "yakın arkadaş",
+    diger: "yakınlarından biri",
   };
-  const persona = senderHuman[senderKey] || "aile büyüğü";
+  let persona = senderHuman[senderKey] || "aile büyüğü";
+  // customName (örn. "Reha") verilmişse, "yakınlarından biri adı Reha olan kişi" gibi
+  // ek bilgi promptun içinde AI'a geçsin — not metninde isim geçmese bile persona doğru.
+  if (customName) persona = `${persona} (adı: ${customName})`;
   const theme = bookData.theme || bookData.title || "macera";
   const ozet = bookData.description || bookData.ozet || "";
   const kazanimlar = (bookData.lessons || bookData.kazanimlar || []).slice(0, 3).join(", ");
@@ -46,15 +52,18 @@ async function generateNoteBody(bookData, heroName, heroAge, senderKey) {
 GÖREV: Bu kitabın ilk sayfasına eklenecek bir not yaz. Notu YAZAN kişi ${persona} olacak. Çocuğa ${persona === "anne ve baba" ? "ikisinden" : "kendisinden"} duygusal, sıcak, samimi bir mektup gibi olmalı.
 
 KURAL:
-- 3-4 kısa paragraf, toplam 4-7 cümle
-- Çocuğun adı (${heroName}) en az 1 kez geçsin
+- TAM 3 paragraf, HER paragraf 2-3 cümle → TOPLAM 6-8 cümle (MİNİMUM 6, MAKSİMUM 9)
+- HER CÜMLE NOKTA İLE BİTMELİ. Hiçbir cümle yarım kalmamalı.
+- Toplam ~350-500 karakter (kısa değil, uzun değil, orta dolu)
+- Çocuğun adı (${heroName}) tam 1-2 kez geçsin (3+ fazla)
 - Hikayenin temasına HAFIF bir gönderme olsun (örnek: kitap macera ise "her macerada yanındayız", uyku ise "her gece rüyalarında" gibi)
 - Aşırı klişe değil, gerçek bir aile büyüğünün el yazısıyla yazdığı doğal bir not havası
 - Türkçe karakterler MUTLAKA doğru: ş ç ğ ü ö ı İ
 - "sihir", "sihirli", "büyü", "büyülü", "mucize" KELİMELERİ YASAK — yerine "ışık", "yıldız", "kıvılcım", "hayal", "kalp" gibi yere basan kelimeler kullan
 - Klişe başlangıçlar yasak ("Canım kızım..." gibi başlama, doğrudan duyguyla başla)
 - "Bu kitap özel..." gibi giriş cümlesi kullan ama mutlaka yeniden yorumla, kopyala-yapıştır gibi olmasın
-- ÇIKTI: SADECE not metni (hitap ve imza zaten ayrı, onları yazma)`;
+- ÇIKTI: SADECE not metni (hitap ve imza zaten ayrı, onları yazma)
+- ÇIKTI DOĞRULAMA: çıktının SON KARAKTERİ nokta (.) olmalı. Çıktıyı kontrol et, son karakter nokta değilse ekle. ASLA "..." (üç nokta) ile bitme — tek nokta yeterli.`;
 
   try {
     const ai = new GoogleGenAI({ apiKey: config.google.apiKey });
@@ -63,8 +72,15 @@ KURAL:
       contents: promptText,
       config: { temperature: 0.85, maxOutputTokens: 1500, thinkingConfig: { thinkingBudget: 2048 } },
     });
-    const text = (res.text || "").trim().slice(0, 800);
+    let text = (res.text || "").trim().slice(0, 1500);
     if (!text) throw new Error("empty text");
+    // Ensure ends with a full sentence (last char is '.') — never a cut mid-word
+    if (!/[.!?]$/.test(text)) {
+      // Last period index
+      const lastPeriod = text.lastIndexOf(".");
+      if (lastPeriod > text.length * 0.3) text = text.slice(0, lastPeriod + 1);
+      else text += ".";
+    }
     return text;
   } catch (e) {
     // Fallback: safe static body if AI fails
@@ -154,6 +170,26 @@ class CoverPromptArchitect {
     const child = this.childInfo;
     const name = child.name;
 
+    // ── CATEGORY DISPATCH — per-category cover prompt branches ──
+    const cat = (book.category || "").toLowerCase();
+
+    // Meslek → detailed profile-based branch
+    if (cat.includes("meslek")) {
+      const meslekProfile = detectMeslekProfileFromBook(book);
+      if (meslekProfile) return this.buildMeslekCoverPrompt({ ...options, profile: meslekProfile });
+    }
+
+    // Boyama → existing branch (coloring book)
+    if (cat.includes("boyama") && book.coverPrompt) {
+      return book.coverPrompt;
+    }
+
+    // Other categories with config-driven branches
+    const catKey = this._detectCategoryKey(cat);
+    if (catKey && catKey !== "default") {
+      return this.buildCategoryCover({ ...options, catKey });
+    }
+
     // Kitap basligini kisisellesir
     const personalizedTitle = this._personalizeTitle(book.title, name);
 
@@ -189,12 +225,18 @@ class CoverPromptArchitect {
 ═══ TITLE TYPOGRAPHY (integrated into the scene) ═══
 TITLE: "${personalizedTitle}"
 ${typographyStyle}
-- Title INTERACTS with the scene — letters behind a tree branch, sitting on clouds, glowing with magic, resting on grass, partially occluded by foreground props.
+- Title INTERACTS with the scene — letters breathe alongside scene elements (clouds, light beams, soft foliage) but SCENE ELEMENTS MUST NEVER OCCLUDE OR CROP ANY LETTER.
 - The child's name "${name}" in playful HAND-LETTERED warm-color script with decorative flourishes.
 - Rest of the title in chunky friendly display font with contrasting weight.
-- NOT a floating text block above the scene — PART of the world.
-- Must still be clearly READABLE despite integration.
+- NOT a floating text block above the scene — PART of the world, but LEGIBLE TOP TO BOTTOM.
 - Title appears ONLY ONCE on the cover. No repetition. No subtitle restatement.
+
+═══ TITLE SAFE ZONE (ABSOLUTE) ═══
+- Reserve the TOP 30-35% of the canvas as a CLEAN TITLE BAND with minimum foreground interference.
+- No leaves, branches, or objects may cover ANY part of any letter — especially the final letter of each word. A clipped "ı", "i", dot over "İ", or tail of "ş", "ğ", "ç" makes the cover UNUSABLE.
+- Check: read every word of "${personalizedTitle}" from left to right. Every letter including diacritics MUST be 100% visible. If any letter is partially hidden, the image is WRONG.
+- Title wraps on its natural word-break only (no mid-word wraps). Line 1 and Line 2 are both fully readable and contained within safe horizontal margins (min 8% breathing room each side).
+- Keep the CENTER of the cover for the character; title stays TOP.
 
 ═══ TURKISH CHARACTERS (CRITICAL) ═══
 "${personalizedTitle}" spelled EXACTLY letter by letter.
@@ -237,29 +279,657 @@ This cover should make someone STOP SCROLLING and say "I want this for my child.
   }
 
   /**
-   * "Hikayemizin Kahramani" sayfasi prompt'u
+   * Kategoriye göre anahtarı belirler (config map'i için).
    */
-  buildHeroPagePrompt(options = {}) {
-    const { characterDesc } = options;
+  _detectCategoryKey(cat) {
+    cat = (cat || "").toLowerCase();
+    if (cat.includes("duygu")) return "duygu";
+    if (cat.includes("hayvan")) return "hayvan";
+    if (cat.includes("gunluk-degerler") || cat.includes("günlük-değerler")) return "gunluk";
+    if (cat.includes("yeni-kardes") || cat.includes("kardeş")) return "yenikardes";
+    if (cat.includes("dogum-gunu") || cat.includes("doğum-günü")) return "dogumgunu";
+    if (cat.includes("anneler")) return "annelergunu";
+    if (cat.includes("23-nisan") || cat.includes("nisan")) return "23nisan";
+    if (cat.includes("spor") || cat.includes("altin")) return "spor";
+    if (cat.includes("bebek")) return "bebek";
+    return "default";
+  }
+
+  /**
+   * Kategoriye özel ön kapak prompt'u — config-driven per-category directives.
+   */
+  buildCategoryCover(options = {}) {
+    const { catKey, characterDesc } = options;
     const book = this.bookData;
     const name = this.childInfo.name;
-    const themeElements = this._getThemeDecorations(book);
+    const personalizedTitle = this._personalizeTitle(book.title, name);
+    const firstScene = (book.scenes?.[0]?.title || "") + " — " + (book.scenes?.[0]?.text || "").slice(0, 180);
+    const charDesc = characterDesc || this._getDefaultCharacterDesc();
 
-    return `CHILDREN'S STORYBOOK SPECIAL PAGE — "Meet the Hero" page, 2:3 portrait format.
+    const configs = {
+      duygu: {
+        outfitDirective: "COZY EVERYDAY KIDS' CLOTHES — soft pastel sweater or t-shirt with a small heart/star motif, comfortable pants/leggings. ABSOLUTELY NOT a suit, NOT a formal jacket, NOT a uniform. Age-appropriate preschool/kindergarten outfit.",
+        sceneDirective: `HOME OR NEARBY EVERYDAY SETTING matching the story's first moment (bedroom, park corner, kitchen, living-room, garden). Scene: ${firstScene}. NO İstanbul skyline, NO generic city silhouette, NO mosque — the setting is INTIMATE and child-sized.`,
+        metaphorDirective: `The emotion metaphor (e.g., cloud, butterfly, small lantern) is the SECOND FOCAL POINT, positioned near the child — on the shoulder, beside the cheek, floating 20cm away. Size ~15-20% of frame width. The metaphor has a subtle face/expression that ECHOES the emotion.`,
+        emotionDirective: `The child's face shows the NAMED emotion clearly: pink cheeks for utanç, wide wondering eyes for merak, gentle tears-on-edge for üzüntü, peaceful acceptance for sabır, sparkling joy for sevinç. Emotion is the TITLE CARD of the cover — visible from a thumbnail.`,
+        paletteHint: "warm pastel palette — blush pink, butter cream, soft lavender, honey, warm brown. Dreamy emotional lighting, NOT dramatic.",
+        titleIconHint: "a tiny heart, small cloud, or emotion-metaphor silhouette integrated next to or above the title",
+      },
+      hayvan: {
+        outfitDirective: "Casual outdoor kid's outfit — denim overalls, cozy sweater, sneakers, or a light jacket. Age-appropriate and dirt-friendly (playing with animals).",
+        sceneDirective: `ANIMAL SIDEKICK'S NATURAL HABITAT (meadow, park, garden, countryside, beach). The pet/animal character IS IN THE SCENE beside the child. Scene: ${firstScene}.`,
+        metaphorDirective: `The animal companion (kedi, köpek, tavşan, kuş, etc.) is PROMINENT — beside the child, ~25-30% of frame, visual partner. Both caught mid-interaction (petting, running together, eye contact).`,
+        emotionDirective: "Joyful warmth between child and animal. Both faces visible. Child kneeling/crouching to be level with animal works well.",
+        paletteHint: "meadow green, honey gold, blush, cream, soft sky blue. Golden-hour afternoon warmth.",
+        titleIconHint: "a tiny paw print, leaf, or animal silhouette integrated with the title",
+      },
+      gunluk: {
+        outfitDirective: "Cozy morning home clothes — pajamas, robe, or simple everyday wear. Age-appropriate preschool outfit. Barefoot or soft slippers OK.",
+        sceneDirective: `HOME INTERIOR — child's bedroom, family kitchen, breakfast table. Morning light streaming through window. Scene: ${firstScene}.`,
+        metaphorDirective: "Daily-rule objects subtly in scene: neat bed, fruit plate, toothbrush in cup, folded towel — 1-2 visible as environmental storytelling, NOT inventory dump.",
+        emotionDirective: "Child caught in a moment of gentle pride, quiet discovery, or morning warmth. Face: curious, small smile.",
+        paletteHint: "cream, peach, honey, soft orange morning light.",
+        titleIconHint: "a tiny sun, star, or small sparkle integrated with the title",
+      },
+      yenikardes: {
+        outfitDirective: "Cozy home clothes with a small heart motif. Age-appropriate. If older sibling: slightly mature looking; if new baby: swaddle/blanket visible.",
+        sceneDirective: `FAMILY NURSERY OR LIVING ROOM — crib, soft lighting, family presence implied (parent arm, toys in scene). Scene: ${firstScene}.`,
+        metaphorDirective: `BOTH SIBLINGS VISIBLE — older child (${name}) holding/looking at new baby OR baby in crib with older child beside. The sibling bond is the cover's emotional anchor.`,
+        emotionDirective: "Warm, tender, slightly protective. Older sibling's face: gentle curiosity, dawning love. New baby: peaceful sleep or small smile.",
+        paletteHint: "nursery pastels — blush pink, butter cream, mint, warm honey.",
+        titleIconHint: "a tiny heart, small star, or soft cloud integrated with the title",
+      },
+      dogumgunu: {
+        outfitDirective: "Festive birthday outfit — party dress/shirt, party hat, balloons in hand, possibly a sash.",
+        sceneDirective: `BIRTHDAY PARTY SCENE — cake with candles, balloons (multi-color), streamers, small gifts, decorated table. Scene: ${firstScene}.`,
+        metaphorDirective: "Cake with candles, balloons floating, colorful confetti — festive but NOT crammed. Child is the hero, celebration around them.",
+        emotionDirective: "Joyful birthday wonder — eyes wide watching candles, big smile, anticipation face.",
+        paletteHint: "warm pink, butter yellow, mint turquoise, cream, gold.",
+        titleIconHint: "a tiny balloon, candle, or cake slice integrated with the title",
+      },
+      annelergunu: {
+        outfitDirective: "Cozy home outfit with a small heart motif. Could have flower in hair or hand (a small bouquet).",
+        sceneDirective: `TENDER HOME MOMENT WITH MOTHER — garden or living room, flowers, warm window light. Mother may be present (partial, blurred midground, or hands visible). Scene: ${firstScene}.`,
+        metaphorDirective: "Flowers (roses, daisies) and heart motifs integrated into the scene. Child giving flowers OR sharing a quiet moment with mother.",
+        emotionDirective: "Tender love. Child's face: proud, gentle, slightly shy. If mother visible: warm knowing smile.",
+        paletteHint: "blush rose, sage green, cream, warm honey. Romantic soft light.",
+        titleIconHint: "a tiny rose, heart, or bouquet integrated with the title",
+      },
+      "23nisan": {
+        outfitDirective: "School-uniform inspired OR cozy everyday wear with a small red ribbon or Turkish flag pin. Age-appropriate.",
+        sceneDirective: `SCHOOL SCHOOL YARD / CLASSROOM MORNING with Turkish flag, children-holding-hands silhouettes in background, golden morning light. Scene: ${firstScene}. Subtle patriotic ambiance, NOT military.`,
+        metaphorDirective: "A small Turkish flag on a stick, a laurel wreath, or a dove — subtle national day motifs as secondary elements.",
+        emotionDirective: "Gentle pride, childlike celebration, hope. Child's face: bright morning-energy smile.",
+        paletteHint: "cream, pale blue, warm honey, soft red accent. Gentle not aggressive.",
+        titleIconHint: "a tiny flag, dove, or star-and-crescent integrated with the title",
+      },
+      spor: {
+        outfitDirective: `Sport-appropriate uniform matching the book's sport (basketball jersey + shorts, football kit, tennis outfit, etc.). Team colors prominent.`,
+        sceneDirective: `SPORT VENUE — stadium at sunset, basketball court, tennis court, football field. 3-layer depth with equipment in foreground. Scene: ${firstScene}.`,
+        metaphorDirective: "Sport ball/equipment prominent — basketball mid-bounce, football mid-kick, tennis racket in action.",
+        emotionDirective: "Determined athletic focus. Child caught mid-action — jumping for a shot, sprinting, swinging. Emotion: focus + joy.",
+        paletteHint: "warm gold sunset + venue green + cream. Stadium golden-hour light.",
+        titleIconHint: "a tiny ball, trophy, or victory ribbon integrated with the title",
+      },
+      bebek: {
+        outfitDirective: "Baby/toddler appropriate outfit — onesie, soft romper, baby cap. Swaddle or soft blanket optional.",
+        sceneDirective: `NURSERY OR FAMILY SETTING — crib, soft toys, mobile, parent presence. Scene: ${firstScene}.`,
+        metaphorDirective: "Baby essentials subtly: pacifier, rattle, small teddy bear. Family warmth implied.",
+        emotionDirective: "Pure baby innocence — gentle sleep, first smile, curious look.",
+        paletteHint: "nursery pastels — blush, butter, mint, cream.",
+        titleIconHint: "a tiny star, moon, or baby footprint integrated with the title",
+      },
+    };
 
-TITLE TEXT: "Hikayemizin Kahramani"
-SUBTITLE TEXT: "${name}"
-TYPOGRAPHY — "Hikayemizin Kahramani" in elegant decorative header font at top. Character name "${name}" in large bold playful font below. Turkish characters PERFECT.
+    const cfg = configs[catKey] || {};
 
-CHARACTER: ${name}, a ${this.age}-year-old Turkish ${this.genderEn}. ${characterDesc || this._getDefaultCharacterDesc()}. Standing proudly in center with confident happy pose, hands on hips or arms crossed.
+    return `A PREMIUM CINEMATIC PIXAR-STYLE PERSONALIZED CHILDREN'S BOOK COVER — 2:3 portrait format. Full 3D Pixar/Disney CGI quality like a frame from an animated feature film.
 
-DECORATIVE FRAME: Beautiful ornate illustrated frame around the character, themed with ${themeElements}. The frame is decorative and magical.
+═══ CATEGORY IDENTITY (read first) ═══
+Category: ${book.category}. This cover MUST visually reflect the SPECIFIC category (not a generic Turkish kid cover). Every element — outfit, scene, props, metaphor — must tell the viewer the category from a thumbnail.
 
-BOTTOM TEXT: "Bu macera ${name} icin ozel olarak yazildi" in small elegant font.
+═══ OUTFIT (CRITICAL) ═══
+${cfg.outfitDirective || "Age-appropriate casual Turkish kids' clothes."}
+NEVER a formal suit, NEVER a tuxedo, NEVER a blazer. Clothing must be believable for a ${this.age}-year-old Turkish ${this.genderEn}.
 
-COMPOSITION: Title top 15%, character in decorative frame center 70%, bottom text 15%.
+═══ SCENE ═══
+${cfg.sceneDirective || "Warm themed scene matching the book's story world."}
+NO İstanbul skyline / mosque / generic Turkish city backdrop unless the story specifically calls for it.
 
-ART STYLE: ${this._getArtStyle(book)} Warm, inviting, heroic presentation. Mood: gururlu, ozel, heyecanli.`;
+═══ SYMBOL / METAPHOR ═══
+${cfg.metaphorDirective || ""}
+
+═══ EMOTION ═══
+${cfg.emotionDirective || "Child's face is the focal point — emotion first."}
+
+═══ CINEMATIC COMPOSITION (3-layer depth) ═══
+- FOREGROUND: scene props close to camera, slightly blurred
+- MIDGROUND: ${name} in dynamic pose, sharp focus, emotional anchor
+- BACKGROUND: rich themed environment, soft focus
+This creates CINEMATIC DEPTH like a Pixar key frame.
+
+═══ CINEMATIC LIGHTING ═══
+- Golden hour rim light on character
+- Volumetric light beams, soft dust particles
+- Palette: ${cfg.paletteHint || "warm cinematic tones matched to the story"}
+- NO flat even lighting
+
+═══ TITLE TYPOGRAPHY ═══
+"${personalizedTitle}"
+- Top of cover, occupies ~25-30% vertical
+- Warm hand-lettered decorative serif, cream/ivory (#F5EFE6), with subtle drop-shadow
+- Child name line slightly larger, playful; rest of title chunky
+- ${cfg.titleIconHint || "Small decorative flourish integrated with the title"}
+- Title appears EXACTLY ONCE
+
+═══ TITLE SAFE ZONE (ABSOLUTE) ═══
+- Top 30-35% reserved for title band with MINIMUM foreground interference
+- No leaves/branches/objects may occlude ANY letter (especially the final letter of each word)
+- Every letter of "${personalizedTitle}" including diacritics MUST be 100% visible
+
+═══ TURKISH CHARACTERS (CRITICAL) ═══
+"${personalizedTitle}" spelled EXACTLY letter by letter.
+- ı ≠ i | İ ≠ I | ş ≠ s | ç ≠ c | ğ ≠ g | ö ≠ o | ü ≠ u
+- Mixed case as provided
+
+═══ CHARACTER + FACE CONSISTENCY ═══
+${charDesc}
+Face MUST match the reference photo EXACTLY (same eyes, nose, mouth, hair, skin tone, age impression for ${this.age} years). Pixar stylization OK, identity NOT.
+
+═══ BOTTOM-RIGHT PERSONALIZATION SEAL ═══
+Gold-foil circular seal (#D4A574) with subtle emboss, ~14-18% frame width. Turkish text inside: "Bu kitap ${name} için özel üretilmiştir". Small decorative laurel/ornament around the seal edge.
+
+═══ BOOK FORMAT (CRITICAL) ═══
+- THIN FLEXIBLE PAPERBACK (not hardcover)
+- Render as FLAT print-ready cover page (2:3 portrait, full-bleed). NO 3D mockup, NO page curl, NO shelf perspective, NO hands holding the book, NO visible spine
+- ABSOLUTELY NOT: hardcover, case-bound, leather, cloth, embossed raised letters
+
+═══ BRAND VOCAB (MUTLAK) ═══
+- "sihir", "sihirli", "büyü", "büyülü", "mucize", "tılsım" KELİMELERİ YASAK (görselde dahi)
+- Yerine: "ışık", "yıldız", "kıvılcım", "hayal", "kalp"
+
+═══ ART STYLE ═══
+Full 3D Pixar / Disney / DreamWorks CGI — subsurface scattering, volumetric lighting, hyper-detailed textures. Magazine-cover polish. NO anime, NO 2D flat, NO cheap mobile-game look.
+
+═══ CRITICAL ═══
+- Turkish diacritics PERFECT
+- Title appears EXACTLY ONCE
+- No barcode, no price, no ISBN
+- Thumbnail-level category recognition: a stranger seeing this cover at 200px should INSTANTLY know what kind of book it is (emotion / animal / daily-rule / birthday / mother's day / 23-April / sport / new-sibling / baby).`;
+  }
+
+  /**
+   * Kategoriye özel ARKA kapak prompt'u (default-plus).
+   * Category-specific decorations at edges + semantic kazanım icons.
+   */
+  buildCategoryBackCover(options = {}) {
+    const { catKey } = options;
+    const book = this.bookData;
+    const name = this.childInfo.name;
+    const allLessons = (book.lessons || []).slice(0, 4);
+
+    let summary = book.description || "";
+    if (summary.length > 340) {
+      const cut = summary.slice(0, 340);
+      const lastPeriod = cut.lastIndexOf(".");
+      summary = lastPeriod > 180 ? cut.slice(0, lastPeriod + 1) : cut.slice(0, 337) + "...";
+    }
+
+    const kazanimGrid = allLessons.map((k, i) =>
+      `Card ${i + 1} — text: "${k}" — icon: a small 3D-illustrated icon that SEMANTICALLY MATCHES the meaning of this specific Turkish text. EACH CARD MUST HAVE A DIFFERENT ICON. Pick the icon that best represents "${k}" — e.g., cesaret → lion/shield; sevgi → heart; merak → magnifying glass; paylaşım → joined hands; sabır → hourglass; hayal → cloud with stars; uyku → moon; yemek → fruit bowl; temizlik → soap+bubbles; düzen → neat shelf; kardeş → two small hands together; kutlama → cake+candle; anne-sevgisi → rose+heart; bayrak → Turkish flag.`
+    ).join("\n");
+
+    const decorMap = {
+      duygu: "soft emotion-themed watercolor: tiny hearts, floating feathers, dream-clouds, gentle rainbow arc",
+      hayvan: "soft paw-prints, leaves, butterflies, small flowers",
+      gunluk: "morning motifs: toothbrush, spoon, folded towel, crescent moon, star, sunrise",
+      yenikardes: "nursery motifs: pacifier, tiny sock, swaddle, small star, heart charm",
+      dogumgunu: "confetti, balloons, ribbons, small cupcakes, sparkles",
+      annelergunu: "rose petals, tea cups, folded love-notes, flower wreaths",
+      "23nisan": "tiny Turkish flags, doves, laurel wreaths, little star-and-crescent motifs",
+      spor: "sport balls (matching the book's sport), victory ribbons, medals, whistles",
+      bebek: "tiny feet prints, stars, moon, pacifier, cloud",
+    };
+    const decor = decorMap[catKey] || "warm storybook motifs: open book, lantern, star cluster, feather quill";
+
+    return `CHILDREN'S STORYBOOK BACK COVER — 2:3 portrait.
+
+═══ BOOK FORMAT — ABSOLUTE ═══
+FLAT print-ready page, rendered as if scanned flat on a scanner bed. Straight, rigid, parallel to viewer. NO 3D mockup, NO bent corners, NO page curl, NO wavy paper, NO lifted edges, NO curved sides, NO shadows implying a 3D page, NO perspective, NO thickness shown, NO spine. Every corner is a perfect 90°. If any corner bends or page curves, the image is WRONG.
+You are rendering the print-ready ARTWORK FILE, not a photograph of a book.
+
+═══ CATEGORY IDENTITY ═══
+Category: ${book.category}. This back cover must feel part of the same visual language as its front cover.
+
+═══ LAYOUT (top to bottom) ═══
+
+HEADER — display EXACTLY:
+→ Masal Bitti Ama İzleri Kaldı...
+Do NOT insert child's name or category words into the header.
+Style: large elegant decorative bold serif, warm brown (#4E342E), optically centered.
+
+STORY SUMMARY (display EXACT Turkish text):
+"${summary}"
+Style: elegant readable serif, dark brown (#5D4037), centered, max 3 lines, breathing.
+
+SECTION HEADING (display EXACT Turkish text): "NE ÖĞRENDİ?"
+Style: bold playful display, warm orange (#E65100).
+
+ACHIEVEMENTS GRID (2×2 of 4 subtle rounded cards, ALL IN TURKISH). Each card has an illustrated 3D icon SEMANTICALLY MATCHING its Turkish text. EACH CARD MUST HAVE A DIFFERENT ICON.
+
+${kazanimGrid}
+
+Style: rounded cards, warm cream background, thin warm-brown border. Icon left (~22% of card width), text right (clean Nunito sans-serif).
+
+HERO CHARACTER ILLUSTRATION (bottom-left, NOT dominating):
+A small 3D Pixar illustration of ${name} — Age-appropriate cozy clothing (NOT a suit). Face matches the front cover reference EXACTLY. Size ~20-25% frame width, playful pose, happy confident smile. Same category world (scene/props match front cover category).
+
+FOOTER LINE (display EXACT Turkish text): "Her çocuk kendi hikâyesinin kahramanıdır..."
+Style: elegant italic warm script, warm orange (#BF360C).
+
+BRAND SECTION at very bottom (CRITICAL — use the LAST reference image as the brand logo):
+- MasalSensin LOGO (from LAST reference image), centered at bottom, ~14-18% width. Reproduce AS-CLOSE-AS-POSSIBLE to the reference (castle + quill + open book + cursive wordmark). Do NOT redesign.
+- Below logo: small text "www.masalsensin.com" in elegant subtle serif
+- Small personalization badge: "Bu kitap ${name} için özel olarak hazırlanmıştır ❤️"
+
+═══ DESIGN ═══
+- Soft warm cream to light peach gradient background
+- Edge decorations: ${decor}
+- Warm brown / orange color palette for text
+- Clean, elegant, premium book quality
+
+═══ CRITICAL ═══
+- Summary rendered VERBATIM
+- Turkish diacritics (ş ç ğ ü ö ı İ) PERFECT
+- "NE ÖĞRENDİ?" heading EXACTLY ONCE
+- 4 kazanım cards, each with a DIFFERENT semantic icon
+- Hero child bottom-left, ~20-25%, NOT dominating
+
+═══ BRAND VOCAB (MUTLAK) ═══
+- "sihir", "büyü", "mucize", "tılsım" KELİMELERİ YASAK.`;
+  }
+
+  /**
+   * MESLEK kategorisine özel ön kapak prompt'u.
+   * UrunStudio'dan port — meslek profili (uniform, workplace, tools, iconic scenes) ile profession-specific cover.
+   */
+  buildMeslekCoverPrompt(options = {}) {
+    const { characterDesc, profile } = options;
+    const book = this.bookData;
+    const name = this.childInfo.name;
+    const meslekLabel = profile?.labelTR || "Meslek";
+    const workplaceEN = profile?.workplaceEN || "the professional workplace";
+    const uniformEN = profile?.uniformEN || "age-appropriate professional uniform";
+    const toolsEN = profile?.toolsEN || "";
+    const iconicHint = profile?.iconicSceneHints || (book.scenes?.[0]?.title || "");
+    const titleIcon = profile?.titleIcon || "a small decorative profession icon integrated with the title";
+    const colorPaletteHint = profile?.colorPaletteHint || "warm cinematic tones matched to the profession";
+    const personalizedTitle = this._personalizeTitle(book.title, name);
+    const charDesc = characterDesc || this._getDefaultCharacterDesc();
+
+    return `A PREMIUM CINEMATIC PIXAR-STYLE PERSONALIZED CHILDREN'S BOOK COVER — 2:3 portrait format. Full 3D Pixar/Disney CGI quality like a frame from an animated feature film. NOT 2D, NOT flat cartoon, NOT anime.
+
+═══ PROFESSION IDENTITY (READ FIRST, CRITICAL) ═══
+This book is specifically about ${name} as a ${meslekLabel}. ONLY ${meslekLabel} context. Do NOT render a football player, doctor, dancer, astronaut, chef, vet, or any other profession unless the profession IS ${meslekLabel}. Every visual element — uniform, workplace, tools, colors — must match ${meslekLabel} and NOTHING else. Even if the child's name or the scene could suggest another context, ignore that — this is a ${meslekLabel} book, full stop.
+
+═══ HERO MOMENT ═══
+The cover captures ${name} in a DEFINING ICONIC MOMENT of being a ${meslekLabel}. Choose ONE visually powerful beat from: ${iconicHint}
+The child is caught MID-ACTION inside the profession — proud, focused, alive in the role. NOT posed for camera, NOT standing still. Dynamic body language, strong directional lighting, emotional facial expression.
+
+═══ CINEMATIC COMPOSITION (3-layer depth like a Pixar film frame) ═══
+- FOREGROUND: Profession-relevant objects close to camera (tool, desk edge, control panel corner) slightly blurred — adds depth
+- MIDGROUND: The CHARACTER in dynamic action pose, in sharp focus, as the emotional focal point
+- BACKGROUND: Rich workplace environment, softly focused — setting context without stealing attention
+- This 3-layer approach creates CINEMATIC DEPTH like a key frame from a Pixar feature
+
+═══ CINEMATIC LIGHTING (emotion through light) ═══
+- Warm rim-light catching the character's hair and shoulder edges (golden / sky / workplace-appropriate)
+- A MAGICAL or meaningful LIGHT SOURCE in the scene that fits the profession (cockpit instruments glowing, clinic bright overhead, stadium lights, stage spot, space porthole glow, kitchen hearth, lab screen, studio skylight)
+- Volumetric light beams or gentle dust particles catching light
+- Light = emotion: dramatic directional lighting, NOT flat even render
+
+═══ THE ${meslekLabel.toUpperCase()} UNIFORM (CRITICAL — get this RIGHT) ═══
+${name} wears this uniform EXACTLY: ${uniformEN}
+Every detail of the uniform must be clearly visible and accurate. This is the single biggest signal that "kitap ne hakkında" — get the costume perfect.
+Profession tools visible in composition: ${toolsEN}
+
+═══ WORKPLACE ENVIRONMENT ═══
+The setting is: ${workplaceEN}
+Render as a FULL 3D WORLD with depth, atmosphere, realistic lighting. 3-layer cinematic depth: FOREGROUND (tools/props of trade), MIDGROUND (child in action), BACKGROUND (workplace context softly focused). This environment tells the viewer "this book is about being a ${meslekLabel}" instantly.
+
+═══ HERO CHARACTER + FACE CONSISTENCY (NON-NEGOTIABLE) ═══
+${name}, a ${this.age}-year-old Turkish ${this.genderEn}. ${charDesc}.
+
+⚠️ REFERENCE PHOTO USAGE — CRITICAL:
+The reference photo (character-profile.png) is provided ONLY for FACE/HAIR/SKIN identity. You MUST COMPLETELY IGNORE the background, environment, outfit, props, and lighting from the reference photo. Do NOT reproduce ANY element from the reference photo's surroundings. The ONLY thing to carry forward from the reference is the child's facial features and Turkish ethnicity. The ENVIRONMENT, BACKGROUND, OUTFIT, and LIGHTING of THIS cover MUST be the ${meslekLabel} workplace as specified in the WORKPLACE ENVIRONMENT section above.
+
+FACE IDENTITY — ${name}'s face in this Pixar cover MUST be IMMEDIATELY recognizable as the SAME child from the reference photo.
+
+EMOTION + POSE:
+- Emotion on face is FOCAL POINT: proud determination / joyful confidence / dreamy focus
+- Child caught MID-ACTION (not posed for camera) in the profession
+- Age-appropriate for ${this.age} years — small child in a (slightly oversized but properly fitted) professional uniform, which amplifies the "playing grown-up" charm
+
+═══ TITLE TYPOGRAPHY ═══
+Main title: "${personalizedTitle}"
+- ALL TITLE TEXT in WARM HAND-LETTERED DECORATIVE SERIF (think Fraunces / Recoleta / Playfair Display bold-italic feel) — warm cream/ivory color (#F5EFE6 or #F7E9CF) on the darker workplace background, with subtle soft drop-shadow for readability
+- Child's name line slightly larger and more playful; rest of title slightly smaller but same decorative style — harmonious, not separated fonts
+- INTEGRATED PROFESSION ICON: ${titleIcon} — small, warm-toned, plays with the letters naturally
+- Title positioned TOP of the cover, takes ~25-30% vertical space
+- Title appears EXACTLY ONCE
+- Reference for typography style: classic storybook title — warm, inviting, decorative-but-readable
+
+═══ TITLE SAFE ZONE (ABSOLUTE) ═══
+- Reserve the TOP 30-35% of the canvas as a CLEAN TITLE BAND with minimum foreground interference.
+- No leaves, branches, or objects may cover ANY part of any letter — especially the final letter of each word. A clipped "ı", "i", dot over "İ", or tail of "ş", "ğ", "ç" makes the cover UNUSABLE.
+- Every letter of "${personalizedTitle}" including diacritics MUST be 100% visible.
+
+═══ TURKISH CHARACTERS (CRITICAL) ═══
+"${personalizedTitle}" spelled EXACTLY letter by letter.
+- ı (dotless i) ≠ i | İ (dotted cap I) ≠ I | ş ≠ s | ç ≠ c | ğ ≠ g | ö ≠ o | ü ≠ u
+- Mixed case as provided. "Macerası" NOT "MACERASI"
+
+═══ BOTTOM-RIGHT PERSONALIZATION SEAL ═══
+A beautiful gold-foil circular seal (#D4A574) with subtle emboss, ~14-18% frame width.
+Inside the seal Turkish text: "Bu kitap ${name} için özel üretilmiştir"
+Small decorative laurel/ornament around the seal edge.
+
+═══ BOOK FORMAT (CRITICAL) ═══
+- THIN FLEXIBLE PAPERBACK — magazine-style. NOT a thick novel. NOT a hardcover.
+- Render as a FLAT print-ready cover page (2:3 portrait, full-bleed artwork). NO 3D mockup, NO page curl, NO shelf perspective, NO hands holding the book, NO spine visible.
+- ABSOLUTELY NOT: hardcover, case-bound, leather, cloth, thick spine, gold-foil embossed title, raised letters.
+
+═══ STYLE ═══
+- Full Pixar/Ice Age 3D CGI — subsurface scattering, volumetric lighting, hyper-detailed textures, photorealistic fabric folds, cinematic depth
+- Saturated cinematic color palette: ${colorPaletteHint}
+- Rich textures: fabric folds on uniform, individual hair strands, skin subsurface, material-accurate surfaces (metal tools, cloth, leather)
+- Environmental storytelling: small profession-specific details in the scene
+
+═══ CRITICAL ═══
+- Turkish diacritics PERFECT
+- Title appears EXACTLY ONCE
+- No barcode, no price, no ISBN, no publisher strip
+- The uniform is the LOUDEST signal — someone glancing at the thumbnail must INSTANTLY know "this book is about a ${meslekLabel}"
+
+═══ BRAND VOCAB (MUTLAK) ═══
+- "sihir", "sihirli", "büyü", "büyülü", "mucize", "tılsım" KELİMELERİ YASAK (görselde dahi).
+- Yerine: "ışık", "yıldız", "kıvılcım", "hayal", "kalp" gibi yere basan kelimeler.`;
+  }
+
+  /**
+   * MESLEK kategorisine özel arka kapak prompt'u.
+   */
+  buildMeslekBackCoverPrompt(options = {}) {
+    const { profile } = options;
+    const book = this.bookData;
+    const name = this.childInfo.name;
+    const meslekLabel = profile?.labelTR || "Meslek";
+    const uniformEN = profile?.uniformEN || "age-appropriate professional uniform";
+    const diplomaTitle = profile?.diplomaTitle || "KAHRAMANLIK SERTİFİKASI";
+    const meslekSymbols = profile?.diplomaSymbols || "profession-matched icons";
+    const kazanimlar = (book.lessons || []).slice(0, 4);
+
+    // Summary — keep ~2 full sentences (up to ~340 chars), balanced between 280 (1-cümle) and 460 (3-cümle)
+    let summary = book.description || `${name}, ${meslekLabel} olmanın heyecanını ve sorumluluğunu keşfettiği bir yolculuğa çıkar.`;
+    if (summary.length > 340) {
+      const cut = summary.slice(0, 340);
+      const lastPeriod = cut.lastIndexOf(".");
+      summary = lastPeriod > 180 ? cut.slice(0, lastPeriod + 1) : cut.slice(0, 337) + "...";
+    }
+
+    const kazanimGrid = kazanimlar.map((k, i) =>
+      `Card ${i + 1} — text: "${k}" — icon: a small 3D-illustrated icon that VISUALLY REPRESENTS the meaning of this specific ${meslekLabel} value. Example: cesaret → shield or lion; disiplin → target or star; liderlik → crown or compass; sorumluluk → clock or heart-hands; empati → heart with hands; yaratıcılık → lightbulb with sparkles; merak → magnifying glass; bilimsel düşünme → atom or book; gözlem → eye or magnifier; sabır → hourglass; azim → mountain peak; takım çalışması → connected people; hayal kurma → cloud with stars; hızlı karar → lightning bolt; dayanışma → hands together; yardımseverlik → heart with helping hand. Pick the MOST fitting icon for "${k}".`
+    ).join("\n");
+
+    return `CHILDREN'S STORYBOOK BACK COVER — 2:3 portrait.
+
+═══ BOOK FORMAT — ABSOLUTE (read this FIRST, violation invalidates the image) ═══
+The output MUST be a FLAT print-ready page, as if scanned flat on a scanner bed. The page sits STRAIGHT, RIGID, PARALLEL to the viewer. NO 3D mockup, NO bent corners, NO page curl, NO wavy paper, NO lifted edges, NO curved sides, NO shadows implying a 3D page, NO perspective, NO thickness shown, NO spine, NO binding visible. Every corner is a perfect 90° on the 2:3 rectangle. If ANY corner bends or the page curves even slightly, the image is WRONG and must be regenerated.
+You are rendering the artwork FILE (the print-ready .pdf page design), not a photograph of a book.
+
+═══ PROFESSION IDENTITY (READ FIRST, CRITICAL) ═══
+This book is specifically about ${name} as a ${meslekLabel}. ONLY ${meslekLabel} context. Every symbol, color, icon must fit a ${meslekLabel}. Do NOT mix in elements from other professions.
+
+This is the REVERSE SIDE of the front cover shown in the reference image. Same book, same visual language, same art style.
+
+LANGUAGE: ALL text MUST be in TURKISH.
+
+═══ LAYOUT (top to bottom) ═══
+
+HEADER — display EXACTLY these 5 Turkish words with trailing ellipsis:
+→ Masal Bitti Ama İzleri Kaldı...
+Do NOT insert child's name, do NOT add "Kahraman", do NOT add profession word into the header.
+Style: large elegant decorative bold serif at top, warm brown color (#4E342E), optically centered.
+
+STORY SUMMARY (display EXACT Turkish text):
+"${summary}"
+Style: elegant readable serif, dark brown (#5D4037), centered, max 3 lines, breathing.
+
+SECTION HEADING (display EXACT Turkish text): "NE ÖĞRENDİ?"
+Style: bold playful display font, centered, warm orange (#E65100).
+
+ACHIEVEMENTS GRID (2×2 grid of 4 subtle rounded cards, ALL IN TURKISH). Each card has an illustrated 3D icon that SEMANTICALLY MATCHES its Turkish text. EACH CARD MUST HAVE A DIFFERENT ICON from the other 3.
+
+${kazanimGrid}
+
+Style: each achievement in a subtle rounded card with warm cream background and thin warm-brown border. 3D illustrated icon on the LEFT (~22% of card width), Turkish text on the RIGHT. Clean readable sans-serif (Nunito). Icons visually distinct AND meaningfully tied to their text.
+
+SMALL DIPLOMA PEEK (right of or below the kazanım grid):
+A small illustrated folded parchment diploma-corner peeking in, showing just the top header text "${diplomaTitle}" and a hint of gold-foil ornamental border + small heraldic emblem using ${meslekLabel} symbols: ${meslekSymbols}. ~15-18% of the page, subtle gold glow, slight tilt.
+
+HERO CHARACTER ILLUSTRATION (bottom area, NOT dominating):
+A 3D Pixar illustration of ${name} wearing the ${meslekLabel} uniform: ${uniformEN.split(",").slice(0, 3).join(",")}, standing proudly, holding the actual diploma with one hand, smiling warmly. Face matches the front cover reference EXACTLY. Size ~25-30% frame width. Confident pose — NOT static, NOT posed — a "proud graduation moment".
+
+FOOTER LINE (display EXACT Turkish text): "Her çocuğun hayallerine giden bir yolu vardır..."
+Style: elegant italic warm script font, warm orange (#BF360C).
+
+BRAND SECTION at very bottom (CRITICAL — use the LAST reference image as the brand logo):
+- Place MasalSensin LOGO (from LAST reference image) centered at bottom, ~14-18% width. Reproduce AS-CLOSE-AS-POSSIBLE (castle + quill + open book + cursive wordmark). Do NOT redesign, do NOT stylize.
+- Below logo: small text "www.masalsensin.com" in elegant subtle serif
+- Small personalization badge: "Bu kitap ${name} için özel olarak hazırlanmıştır ❤️"
+
+═══ DESIGN ═══
+- Soft warm cream to light peach gradient background
+- Subtle profession-themed watercolor decorations at edges (tools/symbols of ${meslekLabel}, not full scenes)
+- Clean, elegant, premium book quality
+- Warm brown and orange color palette for text
+
+═══ CRITICAL ═══
+- Summary rendered VERBATIM, Turkish diacritics (ş ç ğ ü ö ı İ) PERFECT
+- "NE ÖĞRENDİ?" heading appears EXACTLY ONCE
+- 4 kazanım cards, each with a DIFFERENT semantically matching icon
+- Diploma PEEK is small (15-18%) — NOT a full diploma
+- Hero child (uniform + diploma) bottom, ~25-30% — proud but not dominating
+- NO barcode, NO price, NO ISBN
+
+═══ BRAND VOCAB (MUTLAK) ═══
+- "sihir", "büyü", "mucize", "tılsım" KELİMELERİ YASAK.`;
+  }
+
+  /**
+   * "Hikayemizin Kahramani" sayfasi prompt'u — LEGACY (kept for backward compat).
+   * New code should call buildHeroPagePromptV2() below.
+   */
+  buildHeroPagePrompt(options = {}) {
+    return this.buildHeroPagePromptV2(options);
+  }
+
+  /**
+   * HERO PAGE V2 — "Photo-first unified backdrop with category-aware decor band"
+   *
+   * Layout:
+   *   - Unified top+middle backdrop (no band split). Title floats on it within top ~22%.
+   *   - Middle area is pure gradient — NO drawn rectangle / frame / character.
+   *     (A real photograph will be composited programmatically later by renderHeroPage().)
+   *   - Bottom ~30% is a rich illustrated decor band matching the BOOK's CATEGORY.
+   *
+   * Caller provides no photos here — that's handled in renderHeroPage (sharp composite).
+   */
+  buildHeroPagePromptV2(options = {}) {
+    const name = this.childInfo.name;
+    const book = this.bookData;
+    const category = book.category || options.category || "hikaye";
+
+    const decor = this._getHeroDecorBand(category, book);
+
+    return `A PREMIUM CHILDREN'S STORYBOOK HERO PAGE — 2:3 portrait, "Photo-first unified backdrop" concept. The page is designed around a real photograph that will be composited onto the middle area later.
+
+═══ LAYOUT (UNIFIED TOP+MIDDLE, decorative bottom band) ═══
+
+UNIFIED TOP+MIDDLE ZONE (~70% of the page, top to about y≈70%):
+- A SINGLE SEAMLESS atmospheric backdrop flowing top to ~70%. NO horizontal band splits, NO visible transition line between title and photo area.
+- Atmosphere: ${decor.backdrop}
+- TITLE TEXT floats ON this atmosphere:
+  • "Hikayemizin Kahramanı" — hand-lettered warm-orange script (#E65100), decorative, centered horizontally, positioned at ~y=3-9% of the page.
+  • "${name}" — LARGE display typography directly below, warm brown (#4E342E), chunky friendly cursive with tiny star flourishes, positioned ~y=9-16%.
+  • NO subtitle text. Nothing else below the name.
+  • CRITICAL: The ENTIRE title block (both lines + any ornaments/stars/flourishes) MUST fit within the TOP 20% of the page. NO descenders, NO stars, NO ornament flourishes may extend below y=20%. Use a COMPACT display font so ascenders/descenders stay contained. Below the title, at least 8% of pure calm backdrop space must exist before anything else.
+- NO drawn rectangles, NO placeholder boxes, NO frames, NO white boxes anywhere in this unified zone.
+- NO drawn characters, NO people, NO hands in the middle zone.
+- Very soft side ornaments (small watercolor leaves / tiny stars at the extreme edges only) — they should NOT intrude into the center ~75% of the width.
+- The ENTIRE unified zone from top to ~70% reads as ONE calm painted backdrop — title sits on it like embossed text on a mural.
+
+DECORATIVE STORY BAND (BOTTOM ~30% of page):
+${decor.band}
+
+═══ MOOD & STYLE ═══
+${decor.moodStyle}
+- Subtle paper-grain texture throughout.
+- NO harsh lines between zones — decor band horizon melts softly into the gradient above.
+
+═══ CRITICAL NEGATIVES ═══
+- NO drawn child character, NO human figure anywhere on the page (real photo goes in the middle later).
+- NO drawn frame / border in the middle zone (frame is added programmatically).
+- NO rectangular placeholder / box / cream rectangle in the middle.
+- DO NOT render the book's main title "${book.title || ""}" anywhere — this is NOT a cover.
+- The ONLY text on this page is exactly two lines: "Hikayemizin Kahramanı" and "${name}". NO subtitle, NO tagline, NO extra line.
+- Turkish diacritics (ş ç ğ ü ö ı İ) PERFECT.
+
+═══ ART STYLE ═══
+Premium 3D Pixar × storybook watercolor hybrid. Cozy, warm, handcrafted. Magazine-cover polish.
+
+═══ QUALITY BAR ═══
+A parent sees this page and thinks "my child belongs on this page" — and the child sees their own photo here and thinks "this book is about me."`;
+  }
+
+  /**
+   * Kategori bazli hero-page decor band seçimi.
+   * Returns { backdrop, band, moodStyle }.
+   */
+  _getHeroDecorBand(category, book) {
+    const c = (category || "").toLowerCase();
+
+    // Günlük değerler — yatak, yemek, diş, uyku
+    if (c.includes("gunluk-degerler") || c.includes("günlük-değerler")) {
+      return {
+        backdrop: "dreamy morning-sky-to-ground gradient — pale peach/cream with hints of sunrise gold, barely visible floating bokeh, tiny sparkle particles. Feels like one continuous painted sky-wall.",
+        band: `- Warm stylized morning horizon (rising sun on the left, gentle hill silhouette).
+- Hand-painted watercolor daily-rule objects scattered in balanced rhythm: a neat tidy bed with pillow, a breakfast plate with fruit, a standing toothbrush in a cup, a folded towel, an open storybook, cozy slippers, a small alarm clock showing 07:00.
+- Tiny sparkle motes and warm-orange dots between objects.
+- A graceful decorative ribbon / vine curving along the bottom-most edge.`,
+        moodStyle: "Palette: cream, peach, honey, warm brown, soft orange. Morning warmth × photographer's studio backdrop × children's book illustration.",
+      };
+    }
+    // Meslek
+    if (c.includes("meslek")) {
+      return {
+        backdrop: "dreamy SKY theme — soft morning clouds, pale blue-to-cream gradient, very light sunlight filtering through, tiny floating sparkle particles.",
+        band: `- Watercolor scene of a gentle runway or horizon with golden sunset behind hills.
+- Hand-painted profession icons scattered across the band: a pilot cap with gold wings pin, goggles, a clipboard with checklist, a compass rose, a small model airplane in warm honey, a cloud with propeller motif, a mini windsock.
+- Tiny sparkle motes and paper-sketched propeller dots between objects.
+- A graceful decorative pennant ribbon curving along the bottom-most edge.`,
+        moodStyle: "Palette: pale sky-blue, cream, warm honey, gold, soft orange. Sky-at-dawn × children's book × career nostalgia.",
+      };
+    }
+    // Hayvan dostum
+    if (c.includes("hayvan")) {
+      return {
+        backdrop: "warm garden-meadow sky — pale green-to-cream gradient, soft sun flare, tiny dandelion puffs floating.",
+        band: `- Watercolor meadow scene with gentle hills and a winding path.
+- Hand-painted pet/animal motifs scattered rhythmically: a paw print cluster, a collar with heart tag, a small dog-bone, a bowl of food, a ball of yarn, a butterfly, a small fetch-ball, a tiny sleeping-cat curl.
+- Tiny paw-print dots between objects.
+- A graceful decorative vine with small flowers curving along the bottom-most edge.`,
+        moodStyle: "Palette: meadow green, cream, warm honey, blush pink. Meadow afternoon × cozy pet corner.",
+      };
+    }
+    // Duygu kontrolleri
+    if (c.includes("duygu")) {
+      return {
+        backdrop: "dreamy dusk-to-twilight gradient — soft lavender-to-peach with hints of cloud shapes, barely visible sparkle particles, gentle rainbow mist at the edges.",
+        band: `- Watercolor emotion metaphors scattered along the band: a happy cloud with sunshine smile, a sleeping cloud with moon, a tiny rainbow arc, a heart with soft glow, a thoughtful cloud with question mark, a brave star, a calm lotus petal.
+- Tiny emotion-themed dots (hearts, stars, swirls) between objects.
+- A graceful decorative wave / vine curving along the bottom-most edge.`,
+        moodStyle: "Palette: soft lavender, peach, mint, blush, cream. Dreamy feelings × children's meditation book.",
+      };
+    }
+    // Yeni kardes
+    if (c.includes("yeni-kardes") || c.includes("kardeş")) {
+      return {
+        backdrop: "warm nursery-pastel gradient — soft pink-cream-to-butter, faint star-cluster motifs in corners, very subtle sparkle particles.",
+        band: `- Watercolor newborn motifs scattered softly: a tiny crib with soft pillow, a baby bottle, a pacifier, a folded swaddle blanket, a pair of small booties, a teddy bear bottom-center, a sibling-hands-holding-hearts icon, a tiny rattle.
+- Tiny sparkle dots and pastel stars between objects.
+- A graceful decorative ribbon with a small heart charm at the center curving along the bottom-most edge.`,
+        moodStyle: "Palette: blush pink, butter cream, mint, warm honey. Nursery warmth × cozy sibling moment.",
+      };
+    }
+    // Dogum gunu
+    if (c.includes("dogum-gunu") || c.includes("doğum-günü")) {
+      return {
+        backdrop: "festive warm backdrop — confetti-sky gradient, faint balloon-string motifs at corners, subtle sparkle particles.",
+        band: `- Watercolor birthday motifs scattered rhythmically: a multi-tier birthday cake with lit candle, 3-4 floating balloons (pink/yellow/turquoise), a small gift box with ribbon, a party hat, a celebration banner reading only sparkles (no text), a confetti burst, a small cupcake.
+- Tiny confetti dots between objects.
+- A graceful decorative garland curving along the bottom-most edge.`,
+        moodStyle: "Palette: warm pink, butter yellow, mint turquoise, cream, gold. Birthday morning × bakery window.",
+      };
+    }
+    // 23 Nisan
+    if (c.includes("23-nisan") || c.includes("nisan")) {
+      return {
+        backdrop: "pale national-holiday cream-to-blue gradient, soft sunlight, very subtle sparkle particles (no flags floating in center).",
+        band: `- Watercolor national-day motifs scattered softly: a small Turkish flag on a little pole, a Atatürk silhouette portrait in a small oval, children-holding-hands-in-a-row silhouette, a tiny school bell, a small laurel wreath, a paper airplane, a dove.
+- Tiny star-and-crescent dots between objects.
+- A graceful decorative ribbon curving along the bottom-most edge.`,
+        moodStyle: "Palette: cream, pale blue, warm honey, soft red accent. Gentle national pride × children's classroom morning.",
+      };
+    }
+    // Anneler günü
+    if (c.includes("anneler-gunu") || c.includes("anneler-günü")) {
+      return {
+        backdrop: "warm floral-pastel gradient — blush rose to butter cream, soft rose petals drifting, very subtle sparkle particles.",
+        band: `- Watercolor mother's-day motifs scattered tenderly: a small bouquet of roses in a jar, a heart-shaped card, a tea cup with saucer, a folded handwritten note, a small garden-flower cluster, an apron-with-heart icon, a hand-in-hand silhouette.
+- Tiny petal and heart dots between objects.
+- A graceful decorative floral vine curving along the bottom-most edge.`,
+        moodStyle: "Palette: blush rose, butter cream, sage green, warm brown. Rose garden morning × handwritten love note.",
+      };
+    }
+    // Boyama
+    if (c.includes("boyama")) {
+      return {
+        backdrop: "creamy art-studio gradient — pale cream with color-splash hints at edges, faint crayon-scribble texture, tiny sparkle particles.",
+        band: `- Watercolor art-studio motifs scattered: a set of colored pencils fanned out, a paint palette with rainbow dots, a small paintbrush, an open coloring book, a sheet of stars and sparkles, a mini maze puzzle, a cluster of crayons, a tiny canvas with a smile painted on it.
+- Tiny paint-dot splatters between objects.
+- A graceful decorative rainbow ribbon curving along the bottom-most edge.`,
+        moodStyle: "Palette: warm cream, rainbow accents (balanced, not overwhelming), warm brown. Art studio × sunlit craft table.",
+      };
+    }
+    // Sport (altin-*) — spor kategori kodu yok, category="kisisel-hikayeler" olabilir
+    if (c.includes("spor") || /altin-/i.test(book?.id || "")) {
+      return {
+        backdrop: "warm stadium-sunset gradient — golden peach with soft field-green bottom, subtle crowd-bokeh far in background, tiny sparkle particles.",
+        band: `- Watercolor sports motifs scattered: a small sports ball (basketball / soccer / tennis depending on book), a tiny trophy, a whistle, a ribbon rosette, a small sneaker pair, a stopwatch, a mini victory banner.
+- Tiny golden-dot sparkle between objects.
+- A graceful decorative victory ribbon curving along the bottom-most edge.`,
+        moodStyle: "Palette: warm gold, deep green, cream, honey brown. Sunset stadium × children's sports nostalgia.",
+      };
+    }
+    // Default (generic hikaye)
+    return {
+      backdrop: "dreamy warm gradient — cream-to-peach-to-honey, soft bokeh, tiny sparkle particles floating.",
+      band: `- Watercolor storybook motifs scattered: an open storybook, a small lantern, a tiny star cluster, a feather quill, a mini telescope, a few flower blossoms, a small sleeping-cloud.
+- Tiny sparkle dots between objects.
+- A graceful decorative ribbon / vine curving along the bottom-most edge.`,
+      moodStyle: "Palette: cream, peach, honey, warm brown. Storybook warmth × children's reading corner.",
+    };
   }
 
   /**
@@ -267,31 +937,68 @@ ART STYLE: ${this._getArtStyle(book)} Warm, inviting, heroic presentation. Mood:
    */
   buildFunFactPagePrompt(funFact, options = {}) {
     const book = this.bookData;
-    const facts = funFact.facts || [];
+    const facts = (funFact.facts || []).slice(0, 3); // max 3 facts — cleaner layout
     const title = funFact.title || "Biliyor Muydunuz?";
-    const icon = funFact.icon || book.theme?.icon || "***";
+    const icon = funFact.icon || book.theme?.icon || "✨";
     const themeElements = this._getThemeDecorations(book);
 
-    // Bilgileri metin olarak formatla
-    let factsText = "";
-    for (let i = 0; i < Math.min(facts.length, 5); i++) {
-      factsText += `\n${i + 1}. "${facts[i]}"`;
-    }
+    // Fact'ları satır bazlı, numaralandırılmış olarak formatla — sıkı verbatim direktifi için
+    const factsFormatted = facts.map((f, i) =>
+      `  Fact ${i + 1} — render VERBATIM inside its own card (do not shorten, do not paraphrase):\n    "${f}"`
+    ).join("\n\n");
 
-    return `CHILDREN'S STORYBOOK SPECIAL PAGE — "Biliyor Muydunuz?" fun facts page in TURKISH language, 2:3 portrait format.
+    return `PREMIUM CHILDREN'S STORYBOOK FUN-FACTS PAGE — 2:3 portrait format, FLAT full-bleed print-ready page. The page sits between story scenes as a delightful "did you know?" interlude.
 
-CRITICAL: ALL text on this page MUST be in TURKISH. The title and all facts are in Turkish language. Turkish characters (ş, ç, ğ, ü, ö, ı) must be PERFECT.
+═══ THEME & MOOD ═══
+Warm, magazine-quality children's fun facts spread. Mood: curious, warm, inviting. Makes a child stop reading the story for a moment and say "oooh!" — then jump back in.
 
-TITLE TEXT: "${title}"
-TYPOGRAPHY — Title in large playful bold font at top with ${icon} emoji icon. Each fact in clear readable children's book font. Turkish characters PERFECT.
+═══ LAYOUT (premium 3-zone) ═══
+TOP ZONE (~18% height):
+- HEADER: "${title}" — hand-lettered display font, warm brown (#4E342E), large (font-size ~8-10% of page height).
+- Paired with a SOFT ILLUSTRATED ICON matching theme "${icon}" — hand-drawn watercolor style, ~8% of frame width, sits left of the title.
+- Decorative underline: thin warm-orange double rule with a small ornamental motif in the center.
 
-FACTS (display as numbered cards or bubbles):${factsText}
+MIDDLE ZONE (~65% height):
+- ${facts.length} illustrated cards in a vertical stack (one per row), each sized for premium readability (~85% of page width, rounded corners, cream background #FBF6EC, thin warm-brown border #8B5E3C, subtle drop shadow).
+- Each card has THREE parts (left → right):
+  1. ROUND hand-drawn watercolor icon (~14% of card width) — SEMANTIC: icon must illustrate the fact's concept (e.g., a tiny sequoia for tree heights, a tiny moon for sleep rhythms, a tiny sun for plants that wake with sunrise, a tiny astronaut for space facts — PICK the most fitting illustration per fact).
+  2. A small decorative divider (golden dotted line or tiny star ornament).
+  3. Fact TEXT — readable children's serif (Nunito/Quicksand), dark chocolate (#3E2723), 1.55x line spacing, left-aligned.
+- Cards are subtly different warm pastel tints (peach, butter, lavender) for visual rhythm — NOT identical clones.
 
-DECORATIVE ELEMENTS: Themed background with ${themeElements}. Each fact in its own decorative card/bubble/frame. Colorful and engaging design that makes children excited to read.
+BOTTOM ZONE (~17% height):
+- Decorative footer: a horizontal row of tiny hand-drawn watercolor ornaments matching "${themeElements}" — think "spot illustrations" like stars, moons, plants, miniature world icons.
+- Small decorative corner flourishes at both bottom corners.
 
-COMPOSITION: Title with icon top 15%, facts in decorated cards center 75%, decorative footer 10%.
+═══ FACTS TO RENDER ═══
+${factsFormatted}
 
-ART STYLE: ${this._getArtStyle(book)} Bright, educational, fun atmosphere. The facts should be clearly readable against their card backgrounds. Mood: merakli, eglenceli, ogretici.`;
+═══ VERBATIM TEXT RULE (critical) ═══
+- Each fact MUST appear CHARACTER-BY-CHARACTER as written above. DO NOT paraphrase, shorten, reorder, merge, or drop sentences.
+- Turkish diacritics (ş ç ğ ü ö ı İ) MUST be rendered EXACTLY. No ASCII substitutions.
+- DO NOT translate to English.
+- If text does not fit, reduce font size or add a second line — NEVER truncate mid-word.
+
+═══ TYPOGRAPHY ═══
+- Header: hand-lettered serif, warm brown (#4E342E), generous kerning, decorative flourishes on first and last letters.
+- Fact text: rounded warm serif, chocolate (#3E2723), comfortable reading size, 7:1+ contrast against its card.
+- NO scene/chapter/page numbers. NO body-of-text errors ("bambambaşka" etc. FORBIDDEN).
+
+═══ COLOR & MATERIAL ═══
+- Background: soft cream-to-butter gradient (#FDF8F0 → #F5EFE6), subtle paper grain.
+- Warm watercolor edge decorations (top & bottom), soft bokeh at corners.
+- Cards: cream (#FBF6EC) with thin warm-brown border and tender drop shadow.
+- Icons: hand-drawn watercolor, warm palette — no flat solid shapes, no stock clip-art.
+
+═══ ART STYLE ═══
+${this._getArtStyle(book)}. Pixar × storybook × children's magazine hybrid. Cozy, premium, handcrafted.
+NOT: flat corporate infographic, NOT: cheap PowerPoint, NOT: AI-overproduced sterile look.
+
+═══ BRAND VOCAB ═══
+- "sihir", "büyü", "mucize", "tılsım" KELİMELERİ YASAK (görsel metninde dahi).
+
+═══ QUALITY BAR ═══
+A child sees this page and wants to read the facts twice before returning to the story. A parent flips open the book, pauses on this page, smiles, and thinks "this is lovely."`;
   }
 
   /**
@@ -304,32 +1011,69 @@ ART STYLE: ${this._getArtStyle(book)} Bright, educational, fun atmosphere. The f
     const name = this.childInfo.name;
     const category = book.category || options.category;
 
-    // Boyama kitabı: Tamamlandı Sertifikası
-    if (category === "boyama") {
-      return buildBoyamaCertificatePrompt(name);
+    // NOT: Boyama kitaplari icin de artik Not Sayfasi (hediyeyi hazirlayana ozel) kullanilir.
+    // Boyama'nin Tamamlandi Sertifikasi ARTIK diploma step'inde uretiliyor (ayri sayfa).
+
+    // ── SENDER RESOLVER ──
+    // Oncelik: childInfo'da senderName varsa ve senderRelation ya da (webhook'tan gelen) giftSenderRelation
+    // belirtilmisse → o isim + iliskiyi kullan. Yoksa SENDER_POOL'dan rastgele sec.
+    const customName = this.childInfo.giftSenderName || this.childInfo.senderName || "";
+    const customRelation = (this.childInfo.giftSenderRelation || "").toLowerCase();
+    let sender, hitap;
+
+    if (customName && customRelation) {
+      // Iliski anahtarini SENDER_POOL'daki key'lere normalize et
+      const relMap = {
+        "anne": "anne", "baba": "baba", "anne+baba": "anne+baba", "anne-baba": "anne+baba",
+        "anneanne/babaanne": "anneanne", "anneanne": "anneanne", "babaanne": "babaanne",
+        "dede": "dede", "nine": "anneanne",
+        "teyze/hala": "teyze", "teyze": "teyze", "hala": "hala",
+        "amca/dayı": "dayi", "amca/dayi": "dayi", "amca": "amca", "dayı": "dayi", "dayi": "dayi",
+        "abla": "abla", "abi": "abi", "agabey": "abi",
+        "arkadaş": "arkadas", "arkadas": "arkadas",
+      };
+      const matchedKey = relMap[customRelation] || "diger";
+      const found = SENDER_POOL.find((s) => s.key === matchedKey);
+      if (found) {
+        sender = found;
+        hitap = found.hitap(name);
+      } else {
+        // "Diğer" veya eslesmeyen: generic hitap + custom name imza
+        sender = { key: "diger", signoff: `Seni çok seven,\n${customName} ❤️` };
+        hitap = `Sevgili ${name}`;
+      }
+    } else if (customName) {
+      // Sadece isim geldi, ilişki yok → generic tone
+      sender = { key: "diger", signoff: `Seni çok seven,\n${customName} ❤️` };
+      hitap = `Sevgili ${name}`;
+    } else {
+      sender = pickSender();
+      hitap = sender.hitap(name);
     }
 
-    // Hikaye / Özel gün: rastgele gönderen + AI-generated mektup
-    const sender = pickSender();
-    const hitap = sender.hitap(name);
     let noteContent;
     try {
-      noteContent = await generateNoteBody(book, name, this.childInfo.age, sender.key);
+      noteContent = await generateNoteBody(book, name, this.childInfo.age, sender.key, customName);
     } catch (e) {
-      noteContent = this._buildDynamicNote(name, this.childInfo.senderName || "ailen", book);
+      noteContent = this._buildDynamicNote(name, customName || this.childInfo.senderName || "ailen", book);
     }
     const themeDecos = this._getThemeDecorations(book);
 
     return "CHILDREN'S STORYBOOK PERSONAL NOTE PAGE \u2014 2:3 portrait format. FLAT FULL PAGE \u2014 the page IS the stationery paper, filling the entire frame edge to edge. No table, no background surface.\n\n" +
 "THE PAGE: Beautiful aged cream/ivory vintage stationery paper with warm subtle texture. Slightly yellowed corners, gentle aged feel. The paper fills the ENTIRE frame.\n\n" +
 "TOP: An ornate wax seal with a heart in the center, warm burgundy color, positioned top-center. Below it a delicate decorative line.\n\n" +
-"LETTER TEXT \u2014 written in GENUINE HANDWRITTEN dark brown ink:\n" +
+"LETTER TEXT \u2014 written in GENUINE HANDWRITTEN dark brown ink. VERBATIM CHARACTER-BY-CHARACTER RENDERING (non-negotiable):\n" +
 "\"\"\"\n" +
 hitap + ",\n\n" +
 noteContent + "\n\n" +
 sender.signoff + "\n" +
 "\"\"\"\n\n" +
-"LANGUAGE: ALL text MUST be in TURKISH. Do NOT translate to English. Write EXACTLY as provided above.\n\n" +
+"LANGUAGE + EXACT TEXT RULE:\n" +
+"- ALL text MUST be in TURKISH. Do NOT translate.\n" +
+"- Render the letter EXACTLY word-by-word, sentence-by-sentence. DO NOT shorten, paraphrase, summarise, or cut mid-word.\n" +
+"- Every sentence MUST END CLEANLY on the page. If space is tight, reduce font size and enlarge the paper — NEVER leave a sentence unfinished (no trailing \"iç\", \"bambaşk\", etc.).\n" +
+"- Preserve all Turkish diacritics (\u015f \u00e7 \u011f \u00fc \u00f6 \u0131 \u0130) exactly.\n" +
+"- Preserve line breaks between paragraphs. The signature block stays on its own lines at the bottom.\n\n" +
 "TYPOGRAPHY:\n" +
 "1. \"" + hitap + "\" \u2014 large flowing elegant cursive at top, dark brown ink, personal and warm\n" +
 "2. The child name \"" + name + "\" \u2014 bolder with more ink pressure wherever it appears\n" +
@@ -441,6 +1185,176 @@ sender.signoff + "\n" +
     if (s.includes("abla")) return "Seni çok seven,\nAblan ❤️";
     if (s.includes("dayı") || s.includes("dayi")) return "Seni çok seven,\nDayın ❤️";
     return "Seni çok seven,\n" + senderName + " ❤️";
+  }
+
+  /**
+   * KATEGORI DIPLOMASI / SERTIFIKASI — TUM KATEGORILER icin uniform dispatcher.
+   * Kategori-ozgu baslik + semboller + mini karakter kiyafeti ile diploma uretir.
+   *
+   * Mapping:
+   *  - meslek-hikayeleri -> buildMeslekDiplomaPrompt (meslekProfile'a gore)
+   *  - boyama (her) -> buildBoyamaCertificatePrompt (Tamamlandi Sertifikasi)
+   *  - hayvan-dostum -> "HAYVAN DOST SERTIFIKASI" (pati + kalp)
+   *  - gunluk-degerler-egitimi -> "YILDIZ COCUK SERTIFIKASI" (yildiz + check)
+   *  - duygu-kontrolleri -> "DUYGU KAHRAMANI SERTIFIKASI" (kalp + nefes + duygu metaphor)
+   *  - yeni-kardes-hikayeleri -> "ABLA/AGABEY SERTIFIKASI" (kardes kalpleri)
+   *  - 23-nisan -> "CUMHURIYET COCUGU SERTIFIKASI" (bayrak + kitap)
+   *  - anneler-gunu -> "SEVGI KAHRAMANI SERTIFIKASI" (kalp + cicek)
+   *  - dogum-gunu -> "BUGUNUN YILDIZI SERTIFIKASI" (balon + pasta)
+   *  - bebek-masallari -> "SEVIMLI BEBEK SERTIFIKASI" (soft icons)
+   *  - default -> "KAHRAMAN SERTIFIKASI" (generic)
+   */
+  buildCategoryDiplomaPrompt(options = {}) {
+    const book = this.bookData;
+    const cat = (book.category || "").toLowerCase();
+    const name = this.childInfo.name;
+
+    // Boyama: Tamamlandi Sertifikasi (UrunStudio-tarzi)
+    if (cat === "boyama" || /boyama/.test(cat)) {
+      return buildBoyamaCertificatePrompt(name);
+    }
+    // Meslek: mevcut buildMeslekDiplomaPrompt
+    if (cat === "meslek-hikayeleri") {
+      return this.buildMeslekDiplomaPrompt(options);
+    }
+
+    // Kategori-ozgu baslik + semboller + mini karakter "costume"
+    const catMap = {
+      "hayvan-dostum": {
+        title: "HAYVAN DOST SERTIFIKASI",
+        body: "hayvan dostunla kurdugun sevgi bagi",
+        symbols: "small paw prints + hearts + tiny animal silhouettes (puppy, kitten, rabbit) + soft watercolor vines",
+        medallion: "paw print + heart inside a gold laurel, ribbon banner reading DOST ETMEK COK GUZEL",
+        miniCostume: "her regular outfit with a tiny pet (paw print silhouette) beside her/him",
+        palette: "warm cream + honey gold + soft terracotta + sage green accents",
+      },
+      "gunluk-degerler-egitimi": {
+        title: "YILDIZ COCUK SERTIFIKASI",
+        body: "gunun altin kurallarini basariyla ogrendin",
+        symbols: "5-pointed gold stars + small check marks + tiny daily-habit icons (toothbrush, cereal bowl, folded clothes, bed) + gentle moral-tone watercolor",
+        medallion: "large gold star with 5 small icons around it (yıkanma/yemek/giyinme/uyku/dis), ribbon banner reading YILDIZ GIBI PARLIYORSUN",
+        miniCostume: "her day outfit holding a tiny gold star",
+        palette: "honey yellow + warm chocolate brown + cream + soft golden gradient",
+      },
+      "duygu-kontrolleri": {
+        title: "DUYGU KAHRAMANI SERTIFIKASI",
+        body: "duygularini taniyip sag likla yonettin",
+        symbols: "tiny hearts (various soft colors: peach, sky blue, dusty lavender) + breath swirls + small emotion metaphors (cloud, butterfly, rainbow) + calm watercolor",
+        medallion: "large heart with smaller emotion icons around it (angry cloud, shy butterfly, sad raindrop, happy sun) — all softly colored, ribbon banner reading DUYGULARIMI TANIYORUM",
+        miniCostume: "cozy sweater/jumper, holding a small heart in open palm",
+        palette: "soft peach + dusty rose + pale sky-blue + cream + gentle lavender accents",
+      },
+      "yeni-kardes-hikayeleri": {
+        title: "ABLA OLMA SERTIFIKASI",
+        body: "kalbini acip kardesine yer actin",
+        symbols: "two interlocking pastel hearts + small hand-in-hand silhouettes + soft baby-breath florals + gentle pastel pink/blue palette",
+        medallion: "two hearts intertwined with ribbon, tiny baby footprint in center, banner reading KARDESINE KOL KANAT",
+        miniCostume: "her regular outfit gently holding an imaginary small bundle close to heart",
+        palette: "soft blush pink + cream + dusty sage + warm gold",
+      },
+      "23-nisan": {
+        title: "CUMHURIYET COCUGU SERTIFIKASI",
+        body: "Ataturk'un armaganini hak ettin",
+        symbols: "small Turkish flags + laurel + open book + quill + star-crescent motifs + red+white color accents",
+        medallion: "Turkish flag with star-crescent, open book beside, banner reading NE MUTLU TURKUM DIYENE",
+        miniCostume: "crisp white shirt with red ribbon, holding a tiny flag",
+        palette: "Turkish red (#E30A17) + pure white + warm navy + gold accents",
+      },
+      "anneler-gunu": {
+        title: "SEVGI KAHRAMANI SERTIFIKASI",
+        body: "kalbindeki sevgiyi tum anlamiyla paylasir gosterdin",
+        symbols: "delicate hearts + small watercolor flowers (roses, tulips) + gentle feminine florals + golden ribbons",
+        medallion: "large heart within a wreath of flowers, ribbon banner reading KALBIMIN KAHRAMANI",
+        miniCostume: "pastel dress, holding a small bouquet",
+        palette: "soft blush pink + rose gold + cream + warm coral",
+      },
+      "dogum-gunu": {
+        title: "BUGUNUN YILDIZI SERTIFIKASI",
+        body: "yeni bir yili kutladin, buyudun, parladin",
+        symbols: "colorful balloons + confetti + tiny party hats + candles + cake slices + gift boxes + streamers",
+        medallion: "large 'happy birthday' star with candles around, ribbon banner reading BUGUN SENIN GUNUN",
+        miniCostume: "party outfit with a small party hat, holding a balloon",
+        palette: "vibrant rainbow + cream + gold accents",
+      },
+      "bebek-masallari": {
+        title: "SEVIMLI BEBEK SERTIFIKASI",
+        body: "her yeni seyi merakla kesfediyorsun",
+        symbols: "tiny pacifiers + baby booties + small cloud wisps + gentle stars + soft pastel accents + baby animal silhouettes",
+        medallion: "round medallion with baby hand print, ribbon banner reading KUCUK AMA BUYUK KALPLI",
+        miniCostume: "cozy pajamas, holding a tiny plush toy",
+        palette: "soft baby-blue + pastel pink + cream + dusty gold",
+      },
+    };
+
+    const cfg = catMap[cat] || {
+      title: "KAHRAMAN SERTIFIKASI",
+      body: "bu yolculuga cesur, merakli ve sicak bir kalple girdin",
+      symbols: "small warm hearts + stars + laurel leaves + soft watercolor flourishes",
+      medallion: "a warm sun with a heart in center, ribbon banner reading HIKAYENIN KAHRAMANI",
+      miniCostume: "her regular outfit, beaming with pride",
+      palette: "warm cream + soft gold + dusty rose + chocolate brown",
+    };
+
+    return `CHILDREN'S STORYBOOK OFFICIAL CERTIFICATE PAGE — 2:3 portrait format, FLAT FULL PAGE, the page IS the parchment filling the entire frame edge to edge. No table, no 3D, no curl, no perspective.
+
+THE PAGE: Premium warm ivory/cream parchment with subtle aged texture and a rich ornate border frame. Slightly aged corners, gentle vintage feel. Paper fills the ENTIRE frame.
+
+ORNATE BORDER (4 edges):
+- Gold-foil ornamental frame with laurel wreaths, fine flourishes, and these specific symbols at the corners: ${cfg.symbols}
+- Corners: small ornamental rosettes
+- Delicate gold-leaf pattern running along all 4 edges
+- Palette throughout: ${cfg.palette}
+
+TOP HEADER (large, centered):
+"${cfg.title}" — in ornate calligraphic display serif, deep navy (#1A237E) with subtle gold shimmer. Letter-spaced, elegant, optically centered. Small laurel wreath under the heading.
+
+CENTER CONTENT (displayed in elegant Turkish):
+
+Line 1 (centered, warm brown serif italic): "İşbu belge ile"
+
+Line 2 — BIG hand-lettered child name, calligraphic display script, rich gold (#C9A227), with a subtle gold underline flourish: "${name}"
+
+Line 3 (centered, warm brown serif):
+"adlı kahramanın ${cfg.body}nı onaylar."
+
+Line 4 — CENTER MEDALLION (circular emblem ~25% frame width): ${cfg.medallion}
+
+Line 5 (centered, warm brown italic):
+"Kalbi acikti, merakla oldu. Bu sertifikayi hak ettin."
+
+TWO SIGNATURE LINES at the bottom of the diploma:
+- LEFT: "MasalSensin Ekibi" — below a handwritten-style signature flourish
+- RIGHT: "Kahramanin Kendisi" — below another signature flourish (signature line for child to sign)
+
+DATE LINE (centered, between signatures):
+"Tarih: _____ / _____ / _____" (dotted blank lines for the child to fill in)
+
+BOTTOM-LEFT: a gold-foil circular seal (~14% frame width, emboss effect) with a small heart in center and text around the ring: "ONAY MUHRU".
+
+BOTTOM-RIGHT: a small 3D Pixar illustration of ${name} wearing ${cfg.miniCostume}, beaming with pride holding this very certificate. ~18% frame width. Face matches the REFERENCE IMAGE exactly (same hair, skin, face).
+
+LANGUAGE: ALL text MUST be in TURKISH. Do NOT translate. Write EXACTLY as provided above.
+
+TYPOGRAPHY:
+- "${cfg.title}": large ornate calligraphic serif, deep navy with gold shimmer
+- Child name: large flowing calligraphic script in rich gold — the HERO of the page
+- Body lines: elegant readable warm brown serif, natural spacing
+- Italic lines: warm brown italic serif
+- Turkish diacritics (ş ç ğ ü ö ı İ) PERFECT — every dot and cedilla exact
+
+MASALSENSIN BRAND VOCAB (MUTLAK):
+- "sihir", "sihirli", "büyü", "büyülü", "mucize", "tılsım" KELİMELERİ YASAK.
+- Yerine: "ışık", "yıldız", "kıvılcım", "hayal", "kalp" kullan.
+
+CRITICAL:
+- FLAT full bleed — parchment IS the page, no 3D, no curl, no warp, no perspective.
+- Feels PREMIUM and OFFICIAL — like a real certificate a child would frame
+- Small 3D Pixar illustration of ${name} bottom-right supports but does NOT compete with the certificate text
+- Only ONE of each text block; no duplications
+- SINGLE COHESIVE FULL-BLEED page, NO panels, NO grids, NO split
+
+═══ CHARACTER IDENTITY (FROM REFERENCE IMAGE — CRITICAL) ═══
+The small 3D Pixar illustration of ${name} in the bottom-right corner MUST match the child character shown in the REFERENCE IMAGE (the front cover). Same face, same hair, same skin tone, same eyes. Only costume detail may differ.`;
   }
 
   /**
@@ -758,9 +1672,18 @@ ART STYLE: Premium vintage storybook closing-page aesthetic with watercolor warm
       "- Central text panel: soft cream / warm off-white with gentle rounded corners and a subtle drop shadow. Dominant in the composition, sitting over the scene background. Holds the full story text clearly.\n" +
       "- Miniature character: ONE small figure (20-30% of page height) placed in the lower foreground or beside the text panel, acting out this exact scene moment \u2014 think storybook \"diorama\" vignette.\n\n" +
       "SCENE TITLE: \"" + title + "\"\n\n" +
-      "STORY TEXT (display this EXACT Turkish text inside the central panel, beautifully formatted, fully readable):\n\"\"\"\n" + text + "\n\"\"\"\n\n" +
+      "STORY TEXT — ABSOLUTE FAITHFUL RENDER (non-negotiable):\n" +
+      "The central panel MUST show the following Turkish text CHARACTER-BY-CHARACTER, WORD-BY-WORD, SENTENCE-BY-SENTENCE.\n" +
+      "• DO NOT shorten, abbreviate, merge, or paraphrase.\n" +
+      "• DO NOT invent new words. DO NOT insert extra syllables (e.g., \"bambambaşka\" is forbidden; only \"bambaşka\" if the source says so).\n" +
+      "• DO NOT translate to English or any other language.\n" +
+      "• DO NOT drop diacritics. (ş, ç, ğ, ü, ö, ı, İ must appear exactly as in the source.)\n" +
+      "• Preserve Turkish possessive/case suffixes EXACTLY as given (e.g., \"Yaren'in\" stays \"Yaren'in\", never \"Yaren'nın\"; \"Yaren'e\" stays \"Yaren'e\", never \"Yaren'ye\").\n" +
+      "• If text is too long to fit, make the panel larger or reduce font size — NEVER trim, NEVER summarise, NEVER replace with a paraphrase.\n" +
+      "• Preserve line breaks and paragraph shape reasonably.\n" +
+      "The text below is the single source of truth. Render it verbatim:\n\"\"\"\n" + text + "\n\"\"\"\n\n" +
       "MINIATURE CHARACTER (small, adorable, supporting role \u2014 NOT the main focus):\n" +
-      "- " + name + ", a " + this.age + "-year-old Turkish " + this.genderEn + ", SAME exact face and hairstyle as the character profile reference image.\n" +
+      "- " + name + ", a " + this.age + "-year-old Turkish " + this.genderEn + ". CHARACTER IDENTITY LOCK: face MUST be IDENTICAL to the FIRST reference image (character-profile.png) — same eye shape/color, same nose, same mouth, same hair COLOR + same hair LENGTH + same hair STYLE (curly stays curly, straight stays straight, long stays long — never change these), same skin tone, same face shape, same proportions. If the reference shows short curly brown hair, DO NOT render long straight blonde. Accessory consistency: if reference has glasses/hair clip/dimples, render them here too. Drift punishable — if output character's hair differs from reference, the image is WRONG.\n" +
       "- Rendered in the SAME 3D Pixar-style as the opposite illustration page, high-quality consistent.\n" +
       "- SMALL size: occupies only 20-30% of the page area, positioned at a lower corner or margin beside the text panel \u2014 NEVER over the text.\n" +
       "- SCENE-LOCKED OUTFIT: the miniature MUST be wearing EXACTLY this outfit \u2014 \"" + (sceneOutfit || "the same outfit shown in the scene") + "\". If the outfit reference image is a GRID showing multiple outfits, pick ONLY the outfit matching the description above; DO NOT use any other outfit from the grid. Match colors, style and details precisely.\n" +
@@ -798,9 +1721,16 @@ ART STYLE: Premium vintage storybook closing-page aesthetic with watercolor warm
       "- \"sihir\", \"sihirli\", \"b\u00fcy\u00fc\", \"b\u00fcy\u00fcl\u00fc\", \"mucize\", \"t\u0131ls\u0131m\" KEL\u0130MELER\u0130 YASAK (g\u00f6rselde dahi).\n" +
       "- Yerine: \"\u0131\u015f\u0131k\", \"y\u0131ld\u0131z\", \"k\u0131v\u0131lc\u0131m\", \"hayal\", \"kalp\" gibi yere basan kelimeler.\n\n" +
       "COLORS: " + colors + "\n\n" +
-      "COMPOSITION DIVERSITY (CRITICAL):\n" +
-      "- The miniature character is NOT a copy of the opposite scene illustration. Choose a FRESH camera angle, DIFFERENT pose/staging, side-view or 3/4 view possible.\n" +
-      "- Variety is the goal \u2014 a small diorama figurine acting out the scene from a NEW perspective, not the same composition as the scene illustration.\n" +
+      "COMPOSITION DIVERSITY (CRITICAL — THE BIGGEST FAILURE MODE):\n" +
+      "- The miniature character MUST NOT copy the pose, gesture, or action from the scene illustration reference (if you see one in the references).\n" +
+      "- Use the scene illustration ONLY for atmosphere/lighting/environment cues — NEVER for character pose. The miniature character is a SEPARATE rendering that re-imagines the moment from a fresh angle.\n" +
+      "- Concrete examples of REQUIRED variety:\n" +
+      "  * If the scene shows the child sitting cross-legged → miniature shows the child standing/walking instead.\n" +
+      "  * If the scene shows the child reaching → miniature shows them looking back over the shoulder.\n" +
+      "  * If the scene shows the child face-on → miniature shows side or 3/4 profile view.\n" +
+      "  * If the scene shows hand on face → miniature shows arms outstretched or holding the prop differently.\n" +
+      "- Camera angle MUST differ: scene = wide shot → miniature = close-up; scene = front-on → miniature = side; scene = high angle → miniature = eye-level.\n" +
+      "- THE WHOLE POINT of the miniature is to give a DIFFERENT, complementary view of the same story moment, like a behind-the-scenes Polaroid sticker. If the miniature looks like a tiny copy of the scene, the page is WRONG.\n" +
       "- Place the miniature at a lower corner or beside the panel like a sticker, NOT centered in the page.\n\n" +
       "ART STYLE: Premium children's storybook interior, cinematic miniature-diorama feel \u2014 the character performs the scene in a small charming vignette while the story text anchors the page. Reference visual language: high-quality Pixar/DreamWorks 3D style, same as scene illustrations. NOT flat typography, NOT a pure text page \u2014 the page is ALIVE.";
   }
@@ -905,39 +1835,50 @@ ART STYLE: Premium vintage storybook closing-page aesthetic with watercolor warm
   buildBackCoverPrompt(options = {}) {
     const book = this.bookData;
     const name = this.childInfo.name;
-    const lessons = book.lessons || [];
+
+    const cat = (book.category || "").toLowerCase();
+
+    // Meslek → profile-based back cover
+    if (cat.includes("meslek")) {
+      const meslekProfile = detectMeslekProfileFromBook(book);
+      if (meslekProfile) return this.buildMeslekBackCoverPrompt({ ...options, profile: meslekProfile });
+    }
+
+    // Other categories → config-driven back cover
+    const catKey = this._detectCategoryKey(cat);
+    if (catKey && catKey !== "default") {
+      return this.buildCategoryBackCover({ ...options, catKey });
+    }
+
+    const allLessons = book.lessons || [];
+    // 2x2 grid — 4 kazanım (UrunStudio pattern)
+    const lessons = allLessons.slice(0, 4);
     const description = book.description || "";
     const themeDecos = this._getThemeDecorations(book);
 
-    // Kisisellestirilmis hikaye ozeti
-    const summary = `${name}, cesaretiyle, azmiyle ve kalbindeki tutkuyla ${description.includes("parkta") || description.includes("sahada") ? "parktan başlayan" : "başlayan"} yolculuğunda kendini keşfetti. Bu sadece bir hikâye değildi; bu, onun büyürken yazdığı ilk masaldı.`;
+    // Kisisellestirilmis hikaye ozeti — kitap açıklamasından türet (sport-centric şablonu kaldırıldı)
+    let summary;
+    if (description && description.length > 50) {
+      // Mevcut description'ı kısalt — son nokta yerinde kes, asla "..." ile bitme
+      const maxLen = 280;
+      if (description.length <= maxLen) {
+        summary = description;
+      } else {
+        const cut = description.slice(0, maxLen);
+        const lastPeriod = cut.lastIndexOf(".");
+        summary = lastPeriod > 120 ? cut.slice(0, lastPeriod + 1) : cut.slice(0, maxLen - 3) + "...";
+      }
+    } else {
+      // Fallback neutral summary — kategori-agnostik
+      summary = `${name}, bu hikâyenin içinde kendini keşfetti. Küçük bir adım bile, kocaman bir dünyanın kapısını aralamaya yeter.`;
+    }
 
-    // Kazanimlar metni
+    // Kazanim listesi — semantik icon talimatıyla (UrunStudio yaklaşımı)
+    // Her icon'un anlamı kazanım metnine uygun olmalı; default liste YOK.
     let lessonsText = "";
     if (lessons.length > 0) {
-      const emojis = ["\uD83D\uDC9B", "\uD83C\uDFC0", "\u2B50", "\uD83C\uDF1F"];
-      const explanations = {
-        "Azim ve karar\u0131l\u0131k": "D\u00fc\u015ft\u00fc\u011f\u00fcnde kalkt\u0131, her seferinde daha g\u00fc\u00e7l\u00fc d\u00f6nd\u00fc.",
-        "Azim ve tutku": "D\u00fc\u015ft\u00fc\u011f\u00fcnde kalkt\u0131, tutkusuyla devam etti.",
-        "Tak\u0131m \u00e7al\u0131\u015fmas\u0131": "Arkada\u015flar\u0131yla birlikte oynaman\u0131n de\u011ferini \u00f6\u011frendi.",
-        "Tak\u0131m ruhu": "Birlikte oynaman\u0131n g\u00fcc\u00fcn\u00fc ke\u015ffetti.",
-        "Asla pes etmeme": "Zorluklar kar\u015f\u0131s\u0131nda vazge\u00e7medi.",
-        "\u00c7al\u0131\u015fman\u0131n kar\u015f\u0131l\u0131\u011f\u0131n\u0131 alma": "Emeklerinin kar\u015f\u0131l\u0131\u011f\u0131n\u0131 ald\u0131.",
-        "Cesaret": "Bilinmeyene ad\u0131m atmaktan korkmad\u0131.",
-        "Hayallerin pe\u015finden ko\u015fma": "Kendi d\u00fcnyas\u0131n\u0131 kurdu ve hayallerinin pe\u015finden ko\u015ftu.",
-        "Yenilgiyi kabullenme": "Yenilgiden ders \u00e7\u0131karmay\u0131 \u00f6\u011frendi.",
-        "Yenilgiden ders \u00e7\u0131karma": "Her yenilgiyi bir \u00f6\u011frenme f\u0131rsat\u0131na d\u00f6n\u00fc\u015ft\u00fcrd\u00fc.",
-        "Sorumluluk alma": "Kendi ba\u015f\u0131na yapabilmenin gururunu ya\u015fad\u0131.",
-        "Ba\u011f\u0131ms\u0131zl\u0131k": "Kendi ayaklar\u0131 \u00fczerine durmay\u0131 \u00f6\u011frendi.",
-        "Yard\u0131mseverlik": "Ba\u015fkalar\u0131na yard\u0131m etmenin mutlulu\u011funu ke\u015ffetti.",
-        "Kendine g\u00fcven": "\u0130\u00e7indeki g\u00fcc\u00fc ke\u015ffetti.",
-        "Hayal g\u00fcc\u00fc": "Hayal kurman\u0131n s\u0131n\u0131r tan\u0131mad\u0131\u011f\u0131n\u0131 \u00f6\u011frendi.",
-      };
-
       lessonsText = lessons.map(function(l, i) {
-        const emoji = emojis[i] || "\u2728";
-        const explanation = explanations[l] || "";
-        return emoji + " " + l + ": " + explanation;
+        return "Card " + (i + 1) + " — text: \"" + l + "\" — icon: [AI must choose an illustrated icon that SEMANTICALLY MATCHES the meaning of this specific Turkish text. Examples: \"arkadaşlık/paylaşım\" → two small hands or hearts; \"cesaret\" → a lion or shield; \"hayal gücü\" → a lightbulb with sparkles; \"öğrenme/merak\" → an open book or magnifying glass; \"sevgi/aile\" → a glowing heart; \"düzen/temizlik\" → a broom or a neat shelf; \"uyku/gece\" → a crescent moon; \"yemek/beslenme\" → a fruit bowl or plate; \"söz dinleme\" → a listening ear or speech bubble; \"özgüven\" → a star or crown. Choose the MOST fitting one for THIS card's meaning — NEVER pick an unrelated icon like a basketball for a food-related lesson.]";
       }).join("\n");
     }
 
@@ -951,19 +1892,23 @@ Style: large elegant decorative bold font at top, warm brown color.
 STORY SUMMARY (display this EXACT Turkish text):
 "${summary}"
 
-SECTION HEADING (display this EXACT Turkish text): "KAZANIMLAR"
-Style: bold playful display font, centered.
+SECTION HEADING (display this EXACT Turkish text): "NE ÖĞRENDİ?"
+Style: bold playful display font, centered, warm orange (#E65100).
 
-ACHIEVEMENTS (display as a 2x2 grid with emoji icons and subtle card frames, ALL IN TURKISH):
+ACHIEVEMENTS (display as a 2×2 grid of 4 subtle rounded cards, ALL IN TURKISH). Each card has an illustrated icon that SEMANTICALLY MATCHES its Turkish text (NOT a fixed icon, NOT random — the icon must relate to what the text says). EACH CARD MUST HAVE A DIFFERENT ICON from the other 3 cards.
+
 ${lessonsText}
+
+Style: each achievement in a subtle rounded card/frame with warm cream background and thin warm-brown border. Illustrated 3D-style icon on the LEFT of each card (~22% of card width), Turkish text on the RIGHT. Clean readable sans-serif (Nunito/DM Sans). Icons must be visually distinct AND meaningfully tied to their text. If any icon is unrelated to its card's text OR if two cards show the same icon, the image is WRONG.
 
 FOOTER LINE (display this EXACT Turkish text): "Her çocuk kendi hikâyesinin kahramanıdır..."
 Style: elegant italic warm script font.
 
-BRAND SECTION at very bottom:
-- Small book/magic icon illustration
-- "www.masalsensin.com" in elegant small font
-- Small personalization badge: "Bu kitap ${name} için özel olarak hazırlanmıştır ❤️"
+BRAND SECTION at very bottom (CRITICAL — use the LAST reference image as the brand logo):
+- Place the MasalSensin LOGO (from the LAST reference image provided) centered at the bottom footer area, ~14-18% width of the page
+- The logo features an open storybook with a small castle and quill above, plus the cursive wordmark "Masalsensin" — reproduce this composition AS-CLOSE-AS-POSSIBLE to that reference image (preserve castle + quill + open book + wordmark exactly as shown). DO NOT redesign, DO NOT stylize, DO NOT invent a new logo.
+- Below the logo: small text "www.masalsensin.com" in elegant subtle serif
+- Small personalization badge near the logo: "Bu kitap ${name} için özel olarak hazırlanmıştır ❤️"
 
 CHARACTER: ${name} as a small cute 3D illustration peeking from the bottom left corner with a happy confident smile. The character's FACE MUST BE IDENTICAL to the reference profile image provided — SAME eyes, SAME nose, SAME mouth, SAME eyebrows, SAME hairstyle, SAME skin tone, SAME overall face shape. Do NOT invent a new or generic child face. Do NOT change hair color or style. Small and subtle, not dominating the page — occupies maximum 18% of the page area. Same rendering style as the scene illustrations (Pixar-style 3D CGI).
 
@@ -1000,10 +1945,13 @@ ART STYLE: Premium children's book back cover. Clean, warm, professional. Mix of
    * Kitap basligini cocuk adiyla kisisellestirir
    */
   _personalizeTitle(title, name) {
-    // "Altın Basketbol" -> "Toprak'ın Altın Basketbol Macerası"
-    // "Fenerbahçe'nin Yıldızı" -> "Toprak: Fenerbahçe'nin Yıldızı"
-    if (title.includes("'")) {
-      // Zaten possessive var
+    // Title zaten name ice riyorsa (orchestrator swap sonrasi) wrap etme — oldugu gibi don.
+    // Ornek: title="Yaren ve Pati" + name="Yaren" -> "Yaren ve Pati" (wrap yok)
+    if (title && name && new RegExp("\\b" + name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").test(title)) {
+      return title;
+    }
+    // Zaten possessive var mi (ör. "Fenerbahçe'nin Yıldızı")
+    if (title && title.includes("'")) {
       return `${name}: ${title}`;
     }
     // Genel: "Altın Basketbol" -> "Toprak'ın Altın Basketbol Macerası"

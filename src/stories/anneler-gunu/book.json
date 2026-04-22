@@ -20,7 +20,7 @@
   "style": "Soft dreamy watercolor painting illustration, delicate pastel pink lavender and cream colors, gentle flowing brushstrokes, floral botanical elements, romantic ethereal atmosphere, fine art watercolor on textured paper, warm soft natural lighting, elegant feminine aesthetic",
   "coverPrompt": "CHARACTER_DESC standing in a beautiful sunlit garden surrounded by blooming pink roses and white peonies, holding a bouquet of fresh flowers close to her heart with a warm radiant smile, soft golden morning light creating a gentle halo effect, butterflies dancing around, delicate flower petals floating in the breeze, a charming garden archway covered in climbing roses behind her, soft dreamy watercolor painting illustration, delicate pastel pink lavender and cream colors, gentle flowing brushstrokes, romantic ethereal poster composition, ultra high detail render quality",
   "characterDescription": {
-    "base": "the MOTHER - the OLDER woman with the EXACT same facial features as shown in the reference photo. If there are multiple people in the reference photo, focus ONLY on the older woman who is the mother. Rendered in soft watercolor illustration style with gentle brushstrokes, warm skin tones, natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": "Sulu boya tarzında anne karakteri, sıcak ve duygusal. Her sahnede aynı yüz özellikleri korunmalı. Referans fotoğraf birden fazla kişi içeriyorsa, sadece ANNE olan YAŞLI kadına odaklanılmalı."
   },
   "outfit": null,

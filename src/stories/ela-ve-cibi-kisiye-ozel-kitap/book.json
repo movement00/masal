@@ -2,6 +2,11 @@
   "id": "ela-ve-cibi-kisiye-ozel-kitap",
   "category": "hayvan-dostum",
   "title": "Ela ve Cik",
+  "sidekick": {
+    "name": "Cik",
+    "species": "small bird",
+    "description": "a tiny yellow songbird (canary), bright lemon-yellow feathers all over, small orange beak, little black bead eyes, cheerful and plump body, small grey twiggy feet. Always the SAME yellow canary — never a different color, never a sparrow or parrot."
+  },
   "description": "Ela için Cik sadece bir kuş değildi... küçük tüyleri, neşeli sesi ile en iyi dostuydu. Onun şarkısıyla uyanmayı, onun küçük dünyasına eşlik etmeyi öğrendi. İşte Ela'nın ilk şarkılı dostluk masalı.",
   "lessons": [
     "Sevgi göstermek",
@@ -14,7 +19,7 @@
   "pageCount": 10,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
@@ -30,7 +35,7 @@
       "outfitId": "pajamas",
       "title": "Uykudan Uyanış",
       "text": "Ela, yatağında yavaşça gözlerini açtı. Pencereden gelen ışık, yüzünü okşadı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) {CHILD_NAME} slowly opens her eyes in bed, sunlight gently touches her face., setting: Ela'nın yatak odası, sabah erken, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} slowly opens her eyes in bed, sunlight gently touches her face., setting: Ela'nın yatak odası, sabah erken, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "Ela'nın yatak odası, sabah erken"
     },
@@ -39,7 +44,7 @@
       "outfitId": "pajamas",
       "title": "Tatlı Bir Ses",
       "text": "Minik Ela, dışarıdan ince bir ses duydu. 'Cik, cik, cik!' diye ötüyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) {CHILD_NAME} hears a soft 'Cik, cik, cik!' sound from outside her window., setting: Ela'nın yatak odası, pencere kenarı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} hears a soft 'Cik, cik, cik!' sound from outside her window., setting: Ela'nın yatak odası, pencere kenarı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "Ela'nın yatak odası, pencere kenarı"
     },
@@ -48,7 +53,7 @@
       "outfitId": "pajamas",
       "title": "Pencereye Yaklaştı",
       "text": "Ela, merakla pencereye uzandı. Perdeyi yavaşça araladı. Sıcacık hava, içeri doldu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) {CHILD_NAME} reaches for the window, gently parting the curtains as warm air enters., setting: Ela'nın yatak odası, pencere kenarı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} reaches for the window, gently parting the curtains as warm air enters., setting: Ela'nın yatak odası, pencere kenarı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "Ela'nın yatak odası, pencere kenarı"
     },
@@ -57,7 +62,7 @@
       "outfitId": "pajamas",
       "title": "Sarı Bir Kuş",
       "text": "Küçük bir kuş, dalda duruyordu. Yumuşacık sarı tüyleri güneşte parlıyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) A small bird sits on a branch, its soft yellow feathers glistening in the sun., setting: Ela'nın bahçesi, pencere dışı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC A small bird sits on a branch, its soft yellow feathers glistening in the sun., setting: Ela'nın bahçesi, pencere dışı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Ela'nın bahçesi, pencere dışı"
     },
@@ -66,7 +71,7 @@
       "outfitId": "pajamas",
       "title": "Cik Şarkı Söyledi",
       "text": "Kuş, başını kaldırdı, gagasını açtı. 'Cik, cik, ciiik!' diye neşeyle şarkı söyledi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) The bird lifts its head, opens its beak, and sings 'Cik, cik, ciiik!' joyfully., setting: Ela'nın bahçesi, pencere dışı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC The bird lifts its head, opens its beak, and sings 'Cik, cik, ciiik!' joyfully., setting: Ela'nın bahçesi, pencere dışı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Ela'nın bahçesi, pencere dışı"
     },
@@ -75,7 +80,7 @@
       "outfitId": "pajamas",
       "title": "Ela Gülümsedi",
       "text": "Ela'nın yüzünde kocaman bir gülümseme belirdi. Kalbi, sevinçle doldu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) A big smile appears on {CHILD_NAME}'s face, her heart fills with joy., setting: Ela'nın yatak odası, pencere kenarı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC A big smile appears on {CHILD_NAME}'s face, her heart fills with joy., setting: Ela'nın yatak odası, pencere kenarı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Ela'nın yatak odası, pencere kenarı"
     },
@@ -84,7 +89,7 @@
       "outfitId": "pajamas",
       "title": "Nazik Bir Ses",
       "text": "Ela, minik kuşa usulca fısıldadı. 'Günaydın, Cik!' dedi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) {CHILD_NAME} gently whispers to the little bird, saying 'Good morning, Cik!', setting: Ela'nın yatak odası, pencere kenarı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} gently whispers to the little bird, saying 'Good morning, Cik!', setting: Ela'nın yatak odası, pencere kenarı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Ela'nın yatak odası, pencere kenarı"
     },
@@ -93,7 +98,7 @@
       "outfitId": "pajamas",
       "title": "Dostluk Şarkısı",
       "text": "Cik, başını çevirdi, Ela'ya baktı. Yine tatlı bir şarkı söyledi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) Cik turns its head, looks at {CHILD_NAME}, and sings another sweet song., setting: Ela'nın bahçesi, pencere dışı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Cik turns its head, looks at {CHILD_NAME}, and sings another sweet song., setting: Ela'nın bahçesi, pencere dışı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Ela'nın bahçesi, pencere dışı"
     },
@@ -102,7 +107,7 @@
       "outfitId": "pajamas",
       "title": "Yeni Bir Gün",
       "text": "Ela, Cik'in şarkısıyla güne başladı. İçinde şefkatli bir his yeşerdi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) {CHILD_NAME} starts her day with Cik's song, a feeling of tenderness blossoms within her., setting: Ela'nın yatak odası, pencere kenarı, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} starts her day with Cik's song, a feeling of tenderness blossoms within her., setting: Ela'nın yatak odası, pencere kenarı, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "inspirational",
       "setting": "Ela'nın yatak odası, pencere kenarı"
     },
@@ -111,7 +116,7 @@
       "outfitId": "pajamas",
       "title": "Mutlu Sabah",
       "text": "Sabah, Cik'in sesiyle daha güzeldi. Ela'nın kalbinde şarkı devam etti.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft buttery-yellow cotton dress with tiny bird print, white cotton tights, small yellow shoes) The morning is more beautiful with Cik's sound, the song continues in {CHILD_NAME}'s heart., setting: Ela'nın yatak odası, pencere kenarı, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC The morning is more beautiful with Cik's sound, the song continues in {CHILD_NAME}'s heart., setting: Ela'nın yatak odası, pencere kenarı, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "Ela'nın yatak odası, pencere kenarı"
     }
@@ -150,7 +155,7 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Cik'in Sabah Şarkısı\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: {CHILD_NAME}'s arm and partial face at the window. Midground: A small yellow bird on a branch, singing. Background: Soft green leaves and a bright morning sky..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Ela\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Cik'in Sabah Şarkısı\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: {CHILD_NAME}'s arm and partial face at the window. Midground: A small yellow bird on a branch, singing. Background: Soft green leaves and a bright morning sky.. TITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Ela\" Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves). LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon. Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title. Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
     "backCover": "A warm artistic closing scene matching \"Cik'in Sabah Şarkısı\". Minik Ela, penceresinden gelen tatlı bir kuş sesine uyanır. O sarı tüylü, sevimli kuş Cik'tir! Ela, bu yeni dostuna nazikçe 'Günaydın!' der ve kalbi sıcacık bir dostlukla dolar.. NO TEXT NO LETTERS in image, 3D CGI render."

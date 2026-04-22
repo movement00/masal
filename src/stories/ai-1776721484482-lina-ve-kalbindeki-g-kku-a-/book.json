@@ -1,0 +1,198 @@
+{
+  "id": "ai-1776721484482-lina-ve-kalbindeki-g-kku-a-",
+  "category": "duygu-kontrolleri",
+  "title": "Lina ve Gökkuşağı Balığı",
+  "description": "Lina'in içinde bazen gökkuşağı balığı uyanırdı. Bir gün Lina öğrendi ki bu duyguyla konuşabilir, onu tanıyabilir. İşte Lina'nın sevinç ile tanıştığı masal.",
+  "lessons": [
+    "Sevinç duygusunu tanımak",
+    "Duygularla konuşabilmek",
+    "İçsel kabul ve sabır",
+    "Duygularla dost olmak"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#FFD700",
+    "secondaryColor": "#87CEEB",
+    "accentColor": "#FFB6C1",
+    "icon": "🌈"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Sessiz Bir Sabah",
+      "text": "{CHILD_NAME} gözlerini araladığında, odasına süzülen sabah ışığı havadaki toz zerreleriyle dans ediyordu. Her şey yerli yerindeydi: Oyuncak sepeti köşede, kitapları ise rafında usulca duruyordu. Yine de içinde adını koyamadığı bir boşluk, bir beklenti vardı. Yorganının pamuklu dokusunu parmaklarının arasında gezdirerek tavanı izlemeye koyuldu. Odayı yavaşça dolduran sessizlik, sanki elle tutulacak gibiydi.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} lies in bed, looking up at the ceiling as morning light streams through the window, illuminating dust motes., setting: Çocuk odası, sabahın erken saatleri, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuk odası, sabahın erken saatleri"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Duvardaki Pırıltı",
+      "text": "Tavandaki beyazlıkta gözleri gezinirken, duvarın üzerinde bir ışık lekesi fark etti. Bu, bildiği güneş ışığına benzemiyordu; sanki kendi kendine nefes alıp veren, capcanlı bir pırıltıydı. {CHILD_NAME} yatağında doğruldu. Pırıltı, yumuşak bir kalp atışı gibi usulca parlayıp sönüyordu. Odanın sessizliğini bozan tek şey, onun meraklı soluklarıydı. Işığa uzanmayı düşündü ama parmakları yorganın kenarında kararsızca bekledi. \"Bu da ne?\" diye fısıldadı.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} sits up in bed, pointing with a curious expression at a shimmering spot of light appearing on the bedroom wall., setting: Çocuk odası, sabah, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Gökkuşağı Balığı",
+      "text": "Pırıltı, gözlerinin önünde yavaşça şekil değiştirmeye başladı. Önce uzadı, sonra kıvrıldı ve nihayetinde renkli pullarla ışıldayan, havada asılı duran bir balığa dönüştü. Gökkuşağının tüm renkleri, balığın saydam gövdesinde nazlıca dalgalanıyordu. Bu sihirli yaratık, duvar kâğıdındaki minik gemilerin hemen üzerinde, sessizce süzülüyordu. {CHILD_NAME} nefesini tutmuş, gözlerini kırpmadan ona bakıyordu; çünkü bu balık, bildiği hiçbir balığa benzemiyordu.",
+      "prompt": "CHARACTER_DESC A beautiful, translucent rainbow fish made of light materializes and floats silently in the middle of {CHILD_NAME}'s room., setting: Çocuk odası, sabah, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "Sıcak Bir Dokunuş",
+      "text": "{CHILD_NAME} yavaşça yataktan süzüldü. Çıplak ayakları ahşap zeminin serinliğine dokundu. Parmak uçlarında yükselerek balığa usulca yaklaştı ve elini tereddütle uzattı. İşaret parmağının ucu renkli ışığa değer değmez, içinde tatlı bir gıdıklanma hissetti. Işık, sanki güneşin ısıttığı bir cam gibi ılıktı. Dudaklarından engel olamadığı bir kıkırdama döküldü. \"Gerçeksin,\" diye fısıldadı şaşkınlıkla.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} tentatively reaches out a single finger to touch the floating rainbow fish, a look of wonder on his face., setting: Çocuk odası, sabah, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Odanın İçinde Dans",
+      "text": "Bu dokunuşla neşelenen balık, odanın içinde hızla yüzmeye başladı ve arkasında gökkuşağı renginde pırıltılı izler bıraktı. Yatağın üzerinden atladı, perdenin etrafında fır döndü, oyuncak arabanın üstünden süzüldü. {CHILD_NAME}, neşeli çığlıklar atarak onun peşinden koşturuyordu. Odanın dört bir yanı renklere ve coşkuya kesmişti. \"Dur, bekle beni!\" diye seslendi gülerek.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} laughs and chases the glowing rainbow fish as it zips around the room, leaving colorful trails of light., setting: Çocuk odası, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "Annenin Sesi",
+      "text": "Aşağıdan annesinin sesi odaya ulaştı: \"{CHILD_NAME}, kahvaltı hazır!\" Bu sesle birlikte {CHILD_NAME} olduğu yerde durakladı, kalbinin atışı hızlandı. Gökkuşağı balığı da onunla birlikte donakaldı; renkleri solgunlaşarak titrek bir ışığa dönüştü. Çocuk, bu renkli sırrı kimseyle paylaşmak istemiyordu, bu sadece ona aitti. Balık, yavaşça havada eriyerek gözden kayboldu.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} freezes mid-play, looking towards the door with a worried expression as the rainbow fish begins to fade., setting: Çocuk odası, sabah, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Saklanan Sevinç",
+      "text": "{CHILD_NAME} merdivenlerden usulca indi. Mutfaktan burnuna mis gibi taze ekmek kokusu geliyordu. Annesinin yanağına bir öpücük kondurup masaya oturdu. Sütünü içerken aklı hâlâ odasındaki renkli balıktaydı ve yüzünde beliren gülümsemeye engel olamadı. Annesi, \"Neye gülüyorsun öyle?\" diye sordu. O ise sadece omuzlarını silkti. \"Hiç,\" dedi ama içindeki sevinç küçük bir kuş gibi pır pır ediyordu.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} sits at the breakfast table, smiling secretly into his glass of milk while his mother looks on lovingly., setting: Mutfak, kahvaltı zamanı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Mutfak, kahvaltı zamanı"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Geri Dönüş",
+      "text": "Kahvaltının ardından odasına koştu. Kapıyı aralarken bir anlığına umutla etrafına bakındı, belki geri gelmiştir diye düşündü. Ama oda yine sessiz ve sakindi; gökkuşağı balığından geriye hiçbir iz kalmamıştı. Halısının üzerine oturup parmağıyla yerdeki deseni çizmeye başladı. Yüzündeki gülümseme kaybolmuştu. Gözlerini kapattı, parmağının ucundaki o ılık ve gıdıklayan hissi hatırlamaya çalıştı. \"Neredesin?\" diye fısıldadı boşluğa.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} sits alone on his bedroom floor, looking sad and tracing patterns on the rug with his finger., setting: Çocuk odası, sabah, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Kalpten Gelen Işık",
+      "text": "Gözleri kapalıyken tüm dikkatini kalbine verdi. Çok geçmeden göğsünün ortasında, içeriden gelen yumuşak bir sıcaklık hissetti. Bu sıcaklık yavaşça büyüdü, bir ışığa dönüştü. Gözlerini açtığında, tam karşısında, kendi göğsünden süzülen bir ışık demetinden gökkuşağı balığının yeniden oluştuğunu gördü. Balık dışarıdan gelmemişti, kendi içinden doğmuştu. \"Sen... benim içimdesin,\" dedi hayretle.",
+      "prompt": "CHARACTER_DESC A soft rainbow light emanates from {CHILD_NAME}'s chest, reforming into the beautiful fish right in front of him as he watches in awe., setting: Çocuk odası, sabah, mood: magical, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Sessiz Konuşma",
+      "text": "Balık, onun etrafında yavaşça bir daire çizdi. {CHILD_NAME} bu defa konuşmadı, sadece düşündü. Aklından en sevdiği çikolatalı dondurmayı geçirdiğinde, balığın renkleri anında canlanarak daha parlak bir hâl aldı. Sonra bisikletten düştüğü anı ve dizinin acısını hatırlayınca, balığın ışığı hemen soluklaştı, neredeyse görünmez oldu. Artık emindi: Bu balık, onun hisleriyle konuşuyordu. \"Anlıyorum,\" diye mırıldandı.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} sits cross-legged on the floor, concentrating with his eyes closed as the fish glows brightly in response to his happy thoughts., setting: Çocuk odası, sabah, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Çocuk odası, sabah"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Paylaşılan Neşe",
+      "text": "Akşam babası, elinde bir kitapla odasına girdi. Yatağın kenarına oturup okumaya başladı; sesi odayı huzurlu bir melodi gibi dolduruyordu. Bu hisle birlikte {CHILD_NAME}'ın içindeki mutluluk kabardı ve gökkuşağı balığı yeniden belirdi. Kitabın sayfaları arasında usulca yüzüyordu. Babası balığı görmese de oğlunun ışıldayan yüzünü fark etti. \"Bugün senin içinde bir güneş parlıyor sanki,\" dedi gülümseyerek.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME}'s father reads him a bedtime story, not seeing the glowing fish that swims around the book, but smiling at {CHILD_NAME}'s joyful face., setting: Çocuk odası, akşam, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "Çocuk odası, akşam"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "Pencereden Dışarı",
+      "text": "Babası odadan çıktıktan sonra {CHILD_NAME}, balıkla birlikte pencerenin önüne gitti. Dışarısı kararmış, sokak lambasının sarı ışığı bahçeyi aydınlatıyordu. Gökkuşağı balığının ışığı vurdukça, pencerenin önündeki sardunyanın yaprakları daha canlı bir yeşile büründü. Balık, çocuğun yanağına usulca sürtündü. Bu, kelimeleri olmayan bir vedalaşma gibiydi. \"Yarın yine gel, olur mu?\" diye fısıldadı cama vuran buğulu nefesiyle.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} and the glowing fish look out the window together at the quiet neighborhood street at night., setting: Çocuk odası, gece, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuk odası, gece"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "Işığa Sarılmak",
+      "text": "Yatağına uzanmadan önce son bir şey yaptı. Kollarını iki yana açıp gökkuşağı balığını kendine doğru çağırdı. Balık, tereddüt etmeden ışıklı gövdesiyle ona yaklaştı. {CHILD_NAME} kollarıyla o ışığı sarmaladı. Somut bir şeye dokunmuyordu ama sanki dünyanın en sıcak, en yumuşak yorganına sarılmış gibiydi. Kalbinden gelen bu sevince sarılıyordu. \"İyi ki varsın,\" diye fısıldadı sessizce.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} stands in his room, closing his eyes and hugging the glowing ball of light that is the rainbow fish, a blissful look on his face., setting: Çocuk odası, gece, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Çocuk odası, gece"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Renkli Rüyalar",
+      "text": "{CHILD_NAME} yorganının altındaydı. Gözleri kapalı, yüzünde ise huzurlu bir gülümseme vardı. Gökkuşağı balığı artık odada yüzmüyordu. Göğsünün üzerinde, kalbinin tam üstünde, kıyafetinin altından belli belirsiz, yumuşak bir gökkuşağı ışığı sızıyordu. Sevinci, yuvasına geri dönmüştü. O gece {CHILD_NAME}, rüyasında rengârenk balıklarla dolu okyanuslarda yüzdü.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} is fast asleep in bed with a peaceful smile, a faint rainbow-colored glow emanating from his chest., setting: Çocuk odası, gece, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuk odası, gece"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 😊",
+      "facts": [
+        "Gülümsediğimizde yüzümüzdeki bir sürü küçük kas çalışır. Bu kaslar beynimize \"mutluyum\" mesajı gönderir!",
+        "Kahkaha atmak, tıpkı koşup oynamak gibi vücudumuza iyi gelir ve bizi daha sağlıklı yapar.",
+        "Bazen çok sevinince içimiz içimize sığmaz, zıplamak isteriz. Bu, vücudumuzdaki mutluluk enerjisidir.",
+        "Sevdiğimiz birine sarıldığımızda vücudumuz bizi rahatlatan ve mutlu hissettiren bir madde salgılar."
+      ],
+      "icon": "😊"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 💖",
+      "facts": [
+        "Duygularımızın bir rengi yoktur ama onları bir renkle hayal edebilirsin. Senin sevincin ne renk?",
+        "Kalbimiz sadece kan pompalamaz. Sevgi, sevinç, heyecan gibi güçlü duyguları da en çok orada hissederiz.",
+        "Bazen en iyi oyun arkadaşımız kendi hayallerimizdir. Gözlerini kapatıp istediğin her şeyi düşünebilirsin.",
+        "Mutlu anları hatırlamak, o anları yeniden yaşıyormuş gibi hissetmemizi sağlayabilir."
+      ],
+      "icon": "💖"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: The scene is {CHILD_NAME}'s cozy bedroom. In the foreground, there are a few scattered wooden toys. In the midground, {CHILD_NAME} is the focus, embracing the light. The background shows his bed and a window with a starry night sky outside.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Lina ve Kalbindeki Gökkuşağı\". Lina'nın odasına bir gün gökkuşağı renklerinde bir misafir gelir. Bu pırıltılı balık, Lina'ya en yakın arkadaşının aslında kendi kalbinde saklı olduğunu öğretir. Sevincini dinlemeyi ve ona sarılmayı keşfeden Lina'nın kalbindeki ışık, bütün dünyasını aydınlatır.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "duyguKey": "sevinc",
+  "shopifyHandle": "lina-ve-gokkusagi-baligi"
+}

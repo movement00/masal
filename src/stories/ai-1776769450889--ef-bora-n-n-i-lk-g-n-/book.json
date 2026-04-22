@@ -1,0 +1,200 @@
+{
+  "id": "ai-1776769450889--ef-bora-n-n-i-lk-g-n-",
+  "category": "meslek-hikayeleri",
+  "title": "Şef Bora'nın İlk Günü",
+  "description": "Bora için mutfak sadece bir yer değildi... her tabakla bir hikaye anlatılan sahneydi. Bugün kendi mutfağı. Şef önlüğü beline bağlı, kokular yükseliyor, ilk sipariş geldi. İşte Bora'nın ilk mutfak günü.",
+  "lessons": [
+    "Yaratıcı olmak",
+    "Sabırla pişirmek",
+    "Tatları keşfetmek",
+    "Paylaşmanın tadı"
+  ],
+  "ageGroup": "6-9",
+  "ageRange": "6-9",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#E07A5F",
+    "secondaryColor": "#F4F1DE",
+    "accentColor": "#81B29A",
+    "icon": "🍳"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas",
+      "title": "Sessiz Mutfak",
+      "text": "{CHILD_NAME}, günün ilk ışıklarıyla birlikte mutfağa parmaklarının ucunda girdi. Mutfak, henüz uyuyan dev bir kedi gibi sessiz ve sakindi. Çelik tezgâhın üzerinde oynaşan güneş huzmeleri, birazdan başlayacak koşuşturmacanın habercisi gibi parlıyordu. {CHILD_NAME} derin bir nefes aldı; havada un, tarçın ve büyük bir hayalin kokusu vardı. O, bugün bu mutfağın şefi olacaktı ve kalbi göğüs kafesinde minik bir davul gibi tempo tutuyordu.",
+      "prompt": "CHARACTER_DESC A young boy, Bora, stands in the middle of a sunlit kitchen, looking around with wide, hopeful eyes, his hands clasped in front of him., setting: Sabahın erken saatlerinde aydınlık bir mutfak, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Sabahın erken saatlerinde aydınlık bir mutfak"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "pro-uniform",
+      "title": "Şef Önlüğü",
+      "text": "Sandalyenin üzerinde özenle katlanmış beyaz önlüğü gördü. Bu, dedesinin ona hediye ettiği, üzerinde minik bir domates lekesi olan eski bir şef önlüğüydü. {CHILD_NAME} önlüğü boynundan geçirdi ve iplerini arkasında sıkıca bağladı. Kumaşın pamuksu dokunuşu ona güven verdi. Aynadaki yansımasına baktığında, karşısında gerçek bir şef duruyordu. Artık sadece {CHILD_NAME} değil, Şef Bora'ydı. Kendi kendine, \"Her şey hazır,\" diye fısıldadı.",
+      "prompt": "CHARACTER_DESC Bora, standing on a small stool, ties a slightly-too-large white chef's apron around his waist, looking at his reflection in a shiny pot., setting: Mutfak, sandalyenin yanı, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Mutfak, sandalyenin yanı"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "pro-uniform",
+      "title": "Malzemelerin Dansı",
+      "text": "Tezgâhın üzerine dizdiği malzemelere dokundu. Kıpkırmızı domateslerin pürüzsüz kabuğu, fesleğen yapraklarının kadifemsi yüzeyi ve zeytinyağı şişesinin serinliği parmaklarının ucundaydı. Her birini özenle yıkadı, kuruladı. Fesleğenleri koparırken mutfağa yayılan taze koku, sanki yeşil bir şarkı söylüyordu. Bu malzemeler onun kelimeleri, tabak ise anlatacağı hikâyenin sayfası olacaktı.",
+      "prompt": "CHARACTER_DESC Close-up on Bora's hands carefully washing a bright red tomato under a gentle stream of water in the kitchen sink., setting: Mutfak tezgâhı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Mutfak tezgâhı"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "pro-uniform",
+      "title": "İlk Cızırtı",
+      "text": "Ocağın altını yaktığında çıkan \"tık\" sesi, maceranın başlangıç zilini çaldı. Tavaya döktüğü zeytinyağı ısınınca su gibi dalgalandı. İçine attığı sarımsakların cızırtısı, mutfağın sessizliğini tatlı bir melodiyle bozdu. {CHILD_NAME}, elindeki tahta kaşığı sıkıca tutuyordu; şimdi her şeyi doğru yapma zamanıydı. Yükselen kokular, birazdan yaşanacak lezzetli anların fısıltısı gibiydi. Tavasından gözlerini bir an bile ayırmıyordu.",
+      "prompt": "CHARACTER_DESC Bora stands attentively by the stove, holding a wooden spoon, watching and listening as garlic sizzles in a pan., setting: Ocağın başı, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Ocağın başı"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "pro-uniform",
+      "title": "Tuzlu Bir Damla",
+      "text": "Sosu hazırlarken her şey yolunda gidiyordu ama son bir dokunuş yapmak istedi. Tuzluğu eline alıp tencereye doğru eğildi ve \"Birazcık daha lezzetli olsun,\" diye düşündü. Fakat kapağı tam açık kalmış tuzluktan, sosun içine minik bir tuz tepesi döküldü. {CHILD_NAME} kaşığıyla sosun tadına baktığında yüzü buruştu. Dilinin ucundaki tat, denizin kendisinden bile tuzluydu. Gözleri doldu, bir damla yaş usulca yanağından süzüldü.",
+      "prompt": "CHARACTER_DESC Bora tastes a spoonful of sauce from a pot, his face immediately puckering with disappointment from too much salt., setting: Mutfak tezgâhı, tencerenin yanı, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Mutfak tezgâhı, tencerenin yanı"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "pro-uniform",
+      "title": "Boş Kepçe",
+      "text": "{CHILD_NAME}, elindeki kepçeyi tezgâhın üzerine yavaşça bıraktı. Yine başaramamıştı. Kepçeden damlayan kırmızı sos, beyaz tezgâhta küçük, üzgün bir göl oluşturdu. Mutfak şimdi ona çok büyük ve boş göründü. Fesleğenin ve sarımsağın o iştah açıcı kokuları sanki havadan çekilmiş, yerini sessiz bir hayal kırıklığı almıştı. Sandalyeye oturdu, başını ellerinin arasına aldı. Belki de şef olmak o kadar kolay değildi.",
+      "prompt": "CHARACTER_DESC Bora sits slumped on a kitchen chair, head in his hands, a ladle with red sauce resting defeatedly on the counter beside him., setting: Mutfak, sandalyede oturan Bora, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Mutfak, sandalyede oturan Bora"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "pro-uniform",
+      "title": "Dedenin Fısıltısı",
+      "text": "Omzunda sıcak bir el hissetti. Başını kaldırdığında dedesinin güleç yüzüyle karşılaştı. Dedesi yumuşak bir sesle, \"Her şefin ilk yemeği biraz fazla tuzlu olur, {CHILD_NAME},\" dedi. \"Çünkü içine sadece malzeme değil, heyecanını da katarsın. Önemli olan yeniden denemektir.\" Dedesinin sesi, mutfaktaki tüm hayal kırıklığını silip süpüren ılık bir rüzgâr gibiydi.",
+      "prompt": "CHARACTER_DESC Bora's grandfather places a comforting hand on his shoulder as the boy looks up at him with sad eyes., setting: Mutfak, dede ve Bora, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Mutfak, dede ve Bora"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "pro-uniform",
+      "title": "Yeni Bir Başlangıç",
+      "text": "{CHILD_NAME}, dedesinin sözleriyle yeniden cesaret buldu. Tezgâhı temizledi, yeni domatesler çıkardı ve ocağın başına geçti. Bu defa daha sakindi, her adımı daha dikkatli atıyordu. Malzemeleri tencereye eklerken onlarla konuşur gibiydi. Tuzluğu eline aldığında gülümsedi ve bu kez sadece bir tutam ekledi. Mutfak yeniden umutla ve yavaş yavaş kızaran domateslerin kokusuyla dolmaya başlamıştı.",
+      "prompt": "CHARACTER_DESC Bora, with renewed focus, carefully adds ingredients to a fresh pot on the stove, his expression calm and determined., setting: Ocağın başı, yeniden yemek hazırlarken, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Ocağın başı, yeniden yemek hazırlarken"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "pro-uniform",
+      "title": "Hikâye Tabağı",
+      "text": "Makarnayı süzdü ve özenle hazırladığı sosla birleştirdi. Tabağı bir tuval gibi kullanarak makarnayı ortasına yerleştirdi. Üzerine taze fesleğen yaprakları serpiştirdi, tıpkı bir ressamın son fırça darbesi gibi. Ortaya çıkan görüntü, yenmeye hazır bir sanat eseriydi. Bu sefer başardığına emindi. {CHILD_NAME} tabağa baktı; bu tabak, yeniden denemenin ve sabrın hikâyesini anlatıyordu.",
+      "prompt": "CHARACTER_DESC A beautiful plate of pasta being decorated by Bora's hands, carefully placing a final basil leaf on top., setting: Mutfak tezgâhı, tabağı hazırlarken, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Mutfak tezgâhı, tabağı hazırlarken"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "pro-uniform",
+      "title": "İlk Sipariş",
+      "text": "Mutfak kapısının altından küçük, katlanmış bir kâğıt parçası süzüldü. {CHILD_NAME}'ın kalbi yerinden fırlayacak gibi oldu. Yavaşça kâğıdı aldı ve açtı. Üzerinde acemi bir yazıyla tek bir kelime yazıyordu: \"AÇIM!\" Bu, onun ilk siparişiydi. Heyecanla tabağını kaptığı gibi yola koyuldu. Şimdi hikâyesini anlatma zamanıydı.",
+      "prompt": "CHARACTER_DESC Bora kneels down to pick up a small, folded piece of paper that has been slipped under the kitchen door., setting: Mutfak kapısının önü, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Mutfak kapısının önü"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "pro-uniform",
+      "title": "Büyük Sunum",
+      "text": "{CHILD_NAME}, elinde tabakla salona doğru yürüdü. Adımları küçük ama kararlıydı. Her adımda tabaktan yükselen buhar, bir zafer dumanı gibi tütüyordu. Kalbi o kadar hızlı atıyordu ki kulaklarında uğultusunu duyabiliyordu. Salona girdiğinde, masada oturan annesi ve dedesi ona gülümsüyordu. İşte onun ilk müşterileri onlardı.",
+      "prompt": "CHARACTER_DESC Bora carefully carries a plate of food, walking slowly from the kitchen into the living room, his face a mix of pride and nervousness., setting: Mutfaktan salona uzanan koridor, mood: climactic, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "climactic",
+      "setting": "Mutfaktan salona uzanan koridor"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "pro-uniform",
+      "title": "Sessiz Onay",
+      "text": "Tabağı yavaşça masanın ortasına koydu. Annesi ve dedesi birer çatal aldılar. İlk lokmalarını çiğnerken odada sadece çatalların tabağa değme sesi duyuluyordu. {CHILD_NAME} nefesini tutmuş, \"Umarım beğenirler,\" diye içinden geçirerek bekliyordu. Önce dedesinin gözleri parladı, sonra annesinin dudaklarında kocaman bir gülümseme belirdi. Hiç konuşmadılar ama yüzlerindeki ifade her şeyi anlatıyordu.",
+      "prompt": "CHARACTER_DESC Bora's mother and grandfather are tasting the food, their faces lighting up with delight as Bora watches them anxiously., setting: Yemek masası, aile, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Yemek masası, aile"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "pro-uniform",
+      "title": "Paylaşmanın Tadı",
+      "text": "Annesi göz kırparak, \"Bu yediğim en lezzetli hikâye, şefim,\" dedi. Dedesi ise başını sallayarak onu onayladı. {CHILD_NAME} o an anladı ki, en güzel tat, yemeğin kendisinde değil, onu sevdiklerinle paylaşmaktaydı. Kendi sandalyesine oturdu ve onlarla birlikte yemeğinin tadını çıkardı. Mutfaktan gelen o iştah açıcı kokular, şimdi salondaki kahkahalara karışmıştı.",
+      "prompt": "CHARACTER_DESC The whole family, including Bora, is happily eating together at the dining table, laughing and enjoying the meal., setting: Yemek masası, hep birlikte yerken, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Yemek masası, hep birlikte yerken"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "pajamas",
+      "title": "Günün Sonu",
+      "text": "Bulaşıklar yıkanmış, mutfak yeniden o ilk sessizliğine bürünmüştü. Ama bu seferki sessizlik boş değildi; içi başarı, mutluluk ve tarçın kokusuyla doluydu. {CHILD_NAME}, şef önlüğünü çıkardı, özenle katlayıp sandalyesinin üzerine koydu. Parlak bir tenceredeki yansımasına baktı ve \"Bunu gerçekten ben başardım,\" diye düşündü. Yorgun ama gururlu bir şef ona geri gülümsüyordu. İlk günü bitmişti ve yarın anlatacağı daha ne çok hikâye vardı.",
+      "prompt": "CHARACTER_DESC Bora, back in his pajamas, looks at his smiling reflection in a shiny, clean pot in the quiet evening kitchen., setting: Akşam, temiz ve toplanmış mutfak, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Akşam, temiz ve toplanmış mutfak"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🌿",
+      "facts": [
+        "Dilimizin üzerinde tatları almamızı sağlayan binlerce minik tomurcuk vardır. Bu sayede tatlı, tuzlu, ekşi ve acı gibi farklı tatları ayırt edebiliriz.",
+        "Soğan doğrarken ağlamamızın sebebi, soğanın içindeki bir gazın gözlerimizdeki suyla birleşerek bizi rahatsız etmesidir.",
+        "Domates aslında bir meyvedir, sebze değil! Botanik bilimine göre, içinde çekirdeği olan her bitki bir meyve sayılır.",
+        "Fesleğen gibi mis kokulu bitkiler, yemeklere sadece tat katmakla kalmaz, aynı zamanda iştahımızı da açar."
+      ],
+      "icon": "🌿"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ⭐",
+      "facts": [
+        "Doğum günlerinde pasta kesme geleneği çok eski zamanlardan gelir. İnsanlar, pastanın üzerindeki mumların dumanının dilekleri gökyüzüne taşıdığına inanırlardı.",
+        "Dünyanın en eski çorba tarifi yaklaşık 4000 yaşındadır ve eski Mezopotamya'da taş tabletler üzerine yazılmıştır.",
+        "Birlikte yemek yemek, sadece karnımızı doyurmaz. Ailemizle ve arkadaşlarımızla aramızdaki bağı güçlendirir ve bizi daha mutlu eder.",
+        "Aşçılar, yemeklerini daha güzel göstermek için tabaklarını bir ressam gibi düzenlerler. Buna 'tabaklama sanatı' denir."
+      ],
+      "icon": "⭐"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A cozy, sunlit kitchen. Foreground of fresh vegetables (tomatoes, basil), midground with Bora, background with wooden shelves holding jars and pots.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Şef Bora'nın İlk Günü\". Bir mutfak, bir şef önlüğü ve kocaman bir hayal... Bora için her tabak, anlatılacak yeni bir hikâyedir. Peki, bir tutam cesaret, bir kaşık sabır ve bolca sevgiyle hazırlanan ilk yemeğin hikâyesi nasıl olur? Gelin, Şef Bora'nın ilk gününe tanıklık edelim ve paylaşmanın en lezzetli tat olduğunu birlikte keşfedelim.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "bora-isimli-kisiye-ozel-cocuk-kitabi",
+  "meslekKey": "asci",
+  "templateHeroName": "Bora",
+  "heroName": "Bora"
+}

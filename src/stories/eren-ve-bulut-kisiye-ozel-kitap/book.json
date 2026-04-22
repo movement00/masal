@@ -2,6 +2,12 @@
   "id": "eren-ve-bulut-kisiye-ozel-kitap",
   "category": "hayvan-dostum",
   "title": "Eren ve Bulut",
+  "sidekick": {
+    "name": "Bulut",
+    "species": "rabbit",
+    "description": "a soft fluffy white rabbit (like an angora or holland lop mix), all-white cloud-like fur, long floppy-ish ears, tiny pink nose, big curious dark eyes, fluffy cottonball tail. Always the SAME white rabbit — never gray, never brown, never short-haired."
+  },
+  "templateHeroName": "Eren",
   "description": "Eren için Bulut sadece bir tavşan değildi... yumuşak burnu, parlak gözleri ile en iyi dostuydu. Onun pofuduk tüylerinde sevgiyi, küçücük zıplamalarında neşeyi keşfetti. İşte Eren'in ilk yumuşak dostluk masalı.",
   "lessons": [
     "Sevgi hissetmek",
@@ -14,7 +20,7 @@
   "pageCount": 10,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
@@ -30,7 +36,7 @@
       "outfitId": "pajamas",
       "title": "Sabahın Işığı",
       "text": "Eren uyanır. Güneş, pencereden usulca sızar. İçini tatlı bir sıcaklık sarar.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) A 2-year-old Turkish boy, Eren, stretches in his crib as sunlight streams through the window., setting: Çocuk odası, sabah, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC A 2-year-old Turkish boy, Eren, stretches in his crib as sunlight streams through the window., setting: Çocuk odası, sabah, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Çocuk odası, sabah"
     },
@@ -39,7 +45,7 @@
       "outfitId": "pajamas",
       "title": "Pencereden Bakış",
       "text": "O, pencereye doğru sürünür. Dışarıda hafif bir rüzgar, yaprakları hışırdatır. Merakla etrafa bakar.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren crawls to the window and peeks out, leaves rustling softly outside., setting: Çocuk odası, pencere kenarı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren crawls to the window and peeks out, leaves rustling softly outside., setting: Çocuk odası, pencere kenarı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "Çocuk odası, pencere kenarı"
     },
@@ -48,7 +54,7 @@
       "outfitId": "pajamas",
       "title": "Minik Bir Fısıltı",
       "text": "Uzaktan minik bir tıkırtı duyulur. Sanki bir şey Eren'i çağırır. Kalbi pıt pıt atar.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren hears a faint rustling sound from a distance, his heart beating a little faster with curiosity., setting: Çocuk odası, sessiz an, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren hears a faint rustling sound from a distance, his heart beating a little faster with curiosity., setting: Çocuk odası, sessiz an, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "nervous-excited",
       "setting": "Çocuk odası, sessiz an"
     },
@@ -57,7 +63,7 @@
       "outfitId": "day_clothes",
       "title": "Bahçede Beyazlık",
       "text": "Eren, bahçeye çıkar. Çimlerin üzerinde bembeyaz bir yumak durur. Gözlerini kocaman açar.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren walks into the backyard and sees a fluffy, white creature on the green grass., setting: Arka bahçe, öğle, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren walks into the backyard and sees a fluffy, white creature on the green grass., setting: Arka bahçe, öğle, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "Arka bahçe, öğle"
     },
@@ -66,7 +72,7 @@
       "outfitId": "day_clothes",
       "title": "Yumuşacık Dokunuş",
       "text": "Eren, yavaşça yaklaşır. Eli, yumuşacık tüylere değer. Tüyler, pamuk gibi hissettirir.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren gently reaches out and touches the soft, white fur of the creature., setting: Arka bahçe, çimler, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren gently reaches out and touches the soft, white fur of the creature., setting: Arka bahçe, çimler, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Arka bahçe, çimler"
     },
@@ -75,7 +81,7 @@
       "outfitId": "day_clothes",
       "title": "Minik Burun",
       "text": "Bu, bir tavşandı! Eren, onun minicik pembe burnunu okşar. Tavşan, sevinçle kıpırdanır.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren gently strokes the small, pink nose of the white rabbit, which twitches happily., setting: Arka bahçe, çimler, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren gently strokes the small, pink nose of the white rabbit, which twitches happily., setting: Arka bahçe, çimler, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Arka bahçe, çimler"
     },
@@ -84,7 +90,7 @@
       "outfitId": "day_clothes",
       "title": "Adı Bulut",
       "text": "Eren fısıldar: \"Senin adın Bulut olsun.\" Bulut, onun parmağını usulca koklar.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren whispers a name to the rabbit, who then gently sniffs Eren's finger., setting: Arka bahçe, çimler, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren whispers a name to the rabbit, who then gently sniffs Eren's finger., setting: Arka bahçe, çimler, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Arka bahçe, çimler"
     },
@@ -93,7 +99,7 @@
       "outfitId": "day_clothes",
       "title": "Havuç Zamanı",
       "text": "Eren, mutfaktan taptaze bir havuç getirir. Bulut, minik dişleriyle havucu kemirir.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren offers a fresh carrot to Bulut, who nibbles on it with tiny teeth., setting: Arka bahçe, yemek saati, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren offers a fresh carrot to Bulut, who nibbles on it with tiny teeth., setting: Arka bahçe, yemek saati, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Arka bahçe, yemek saati"
     },
@@ -102,7 +108,7 @@
       "outfitId": "day_clothes",
       "title": "Sabırla Beklemek",
       "text": "O, sabırla Bulut'un yemesini izler. Paylaşmanın neşesi içini ısıtır. Arkadaşlık başlar.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren watches patiently as Bulut eats, feeling a warm joy from sharing., setting: Arka bahçe, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren watches patiently as Bulut eats, feeling a warm joy from sharing., setting: Arka bahçe, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Arka bahçe, öğleden sonra"
     },
@@ -111,7 +117,7 @@
       "outfitId": "day_clothes",
       "title": "Dostluk Şarkısı",
       "text": "Güneş batarken, Eren ve Bulut yan yana oturur. Kalplerinde bir dostluk şarkısı başlar.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft sky-blue cotton t-shirt with tiny cloud print, beige cotton dungarees with wooden buttons, white socks) Eren and Bulut sit side by side as the sun sets, a new friendship blooming between them., setting: Arka bahçe, günbatımı, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Eren and Bulut sit side by side as the sun sets, a new friendship blooming between them., setting: Arka bahçe, günbatımı, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "Arka bahçe, günbatımı"
     }
@@ -150,7 +156,7 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Eren'in Yumuşacık Bulutu\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Eren's hand gently petting Bulut. Midground: Eren (2-year-old Turkish boy) kneeling beside Bulut, smiling. Background: A lush green backyard with a few colorful flowers, soft sunlight..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Eren\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Eren'in Yumuşacık Bulutu\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Eren's hand gently petting Bulut. Midground: Eren (2-year-old Turkish boy) kneeling beside Bulut, smiling. Background: A lush green backyard with a few colorful flowers, soft sunlight.. TITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Eren\" Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves). LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon. Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title. Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
     "backCover": "A warm artistic closing scene matching \"Eren'in Yumuşacık Bulutu\". Minik Eren'in dünyasına bembeyaz, yumuşacık bir misafir gelir: Bulut! Bu tatlı tavşanla tanışan Eren, dokunmanın, beklemenin ve paylaşmanın ne kadar güzel olduğunu keşfeder. Kalpleri sıcacık bir dostlukla dolacak bu hikaye, çocuklarınızı sevgiyle sarmalayacak.. NO TEXT NO LETTERS in image, 3D CGI render."

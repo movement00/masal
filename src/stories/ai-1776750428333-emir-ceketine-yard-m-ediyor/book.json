@@ -1,0 +1,159 @@
+{
+  "id": "ai-1776750428333-emir-ceketine-yard-m-ediyor",
+  "category": "duygu-kontrolleri",
+  "title": "Emir'in İnatçı Ceketi",
+  "description": "Emir üç yaşında, her şeyi tek başına yapmak isteyen çok meraklı ve kararlı bir çocuktur. Bir sabah dışarı çıkarken en sevdiği parlak ceketini kendi başına giymeye çalışır ama kollar ters girip fermuar sıkışınca çok sinirlenir. Emir'in hayal gücünde bu ceket macerası ışıltılı mağaralara, rengarenk mercan ormanlarına ve karlı dağ zirvelerine dönüşür. Yorulduğunda küçük bir kaplumbağa gibi durup derin bir nefes almayı hatırlar ve annesinin küçücük bir yardım eli uzatmasına izin verir. Birlikte ceketi giydiklerinde Emir kendini uzayda süzülen mutlu bir astronot gibi hisseder. Sonunda yardım istemenin de kendi başına başarmak kadar harika bir oyun olduğunu öğrenerek güneşli parka doğru neşeyle koşar.",
+  "lessons": [
+    "Duygu Düzenleme (Öfke anında durup kaplumbağa gibi nefes alarak sakinleşebilme)",
+    "İşbirliği ve Esneklik (Yardım kabul etmenin yetersizlik değil, harika bir takım oyunu olduğunu anlama)",
+    "Uzamsal Algı ve Motor Beceriler (Kıyafet giyme sürecindeki iç/dış, sağ/sol kavramlarını hayal gücüyle anlamlandırma)",
+    "Özgüven Gelişimi (Kendi başına deneme cesareti gösterme ve gerektiğinde bağ kurarak bağımsızlaşma)"
+  ],
+  "ageGroup": "0-3",
+  "ageRange": "0-3",
+  "pageCount": 10,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#A7C7E7",
+    "secondaryColor": "#F3EAD3",
+    "accentColor": "#F8B195",
+    "icon": "🧥"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "pajamas",
+      "title": "Uykucu Mavi Ceket",
+      "text": "{CHILD_NAME}, koltuğun üzerinde duran mavi ceketine baktı. Ceket, uykucu bir kedi gibi yumuşacık kıvrılmıştı. {CHILD_NAME} usulca dokundu, parmakları bulutların üzerinde gezindi. “Hadi,” diye fısıldadı. “Dışarıda bizi bekleyen yapraklar var.”",
+      "prompt": "CHARACTER_DESC A 3-year-old boy gently touching his soft blue jacket, which is lying curled up on a cozy armchair., setting: Oturma odası, sabah güneşi, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Oturma odası, sabah güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "pajamas",
+      "title": "İnatçı Küçük Kol",
+      "text": "Emir, bir kolunu ceketin koluna sokmaya çalıştı. Ama ceketin kolu sanki saklambaç oynamak istiyordu. Emir kolunu ittirdikçe, ceketin kolu öbür tarafa kaçıyordu. Kumaşın hışırtısı odayı doldurdu. “Lütfen durur musun?” diye mırıldandı.",
+      "prompt": "CHARACTER_DESC The boy, with a look of concentration, trying to push his arm into the sleeve of the jacket, but the sleeve is twisted and elusive., setting: Oturma odası, koltuğun yanı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Oturma odası, koltuğun yanı"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "pajamas",
+      "title": "Hıh Yapan Kaşlar",
+      "text": "Ceket bir türlü doğru yolu bulamıyordu, sanki labirentte kaybolmuştu. Emir'in kaşları çatıldı, ortada minik bir tepe oluştu. Dudaklarından sessiz bir “Hıh!” sesi süzüldü. Yaramaz ceket hâlâ yerinde durmuyordu.",
+      "prompt": "CHARACTER_DESC The boy sitting on the floor, his brow furrowed in frustration, looking at the tangled jacket in front of him., setting: Oturma odası, yerde, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Oturma odası, yerde"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "pajamas",
+      "title": "Tepetaklak Dünya",
+      "text": "Emir, bu sefer ceketini başından geçirmeyi denedi. Her yer bir anda masmavi oldu. Sesler boğuklaştı, içeriye solgun bir ışık sızdı. Dünya, kapüşonun içinden ne kadar da farklı görünüyordu! Kendi kendine “Güü!” diye bir ses çıkardı.",
+      "prompt": "CHARACTER_DESC The boy has pulled the jacket over his head, and he is peeking out from inside the hood, seeing the world in a blurry, blue-tinted way., setting: Oturma odası, ceketin içinde, mood: playful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "playful",
+      "setting": "Oturma odası, ceketin içinde"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "pajamas",
+      "title": "Sessiz Bir Mola",
+      "text": "Emir ceketini başından çıkardı. Yere oturup önündeki mavi yığına sessizce baktı. Parmağının ucuyla fermuarın soğuk metaline dokundu. Ceket de sanki onun gibi yorulmuştu. “Neden olmuyor?” diye düşündü.",
+      "prompt": "CHARACTER_DESC The boy is sitting quietly on the floor next to the crumpled jacket, sadly tracing the line of its zipper with his finger., setting: Oturma odası, yerde, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Oturma odası, yerde"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "pajamas",
+      "title": "Annenin Sıcak Sesi",
+      "text": "Annesi yanına usulca oturdu, sıcacık eliyle omzuna dokundu. Odaya fırından yeni çıkmış kurabiyelerin kokusu yayıldı. “Bu küçük mavi arkadaşın biraz yardıma mı ihtiyacı var?” diye sordu şefkatle.",
+      "prompt": "CHARACTER_DESC Mother kneeling down beside the sad boy on the floor, placing a gentle hand on his shoulder. Her expression is kind and understanding., setting: Oturma odası, yerde, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Oturma odası, yerde"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "pajamas",
+      "title": "Bir Yuva Oyunu",
+      "text": "Annesi ceketi kucağına alıp kollarını birer tünel gibi açtı. “Bak,” dedi. “Bunlar ceketin yuvaları. Senin kolların da yuvaya girmek isteyen minik kuşlar olsun.” Emir'in gözleri parladı. Kuş olup yuvaya uçma fikri hoşuna gitmişti.",
+      "prompt": "CHARACTER_DESC Mother holding the jacket open like a tunnel, smiling at the boy and inviting him to play a game., setting: Oturma odası, yerde, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Oturma odası, yerde"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "pajamas",
+      "title": "Kuş Yuvasında",
+      "text": "Emir, elini bir kuş kanadı gibi yapıp tünele doğru uçurdu. Annesi ceketi sabit tutarak ona yardım etti. Kolu, pıtır pıtır içeri süzüldü. “İşte bu kadar!” diye neşeyle seslendi annesi. Emir kıkırdadı.",
+      "prompt": "CHARACTER_DESC The boy, with his mother's help, is successfully sliding his arm into the jacket sleeve. He has a look of happy accomplishment., setting: Oturma odası, yerde, mood: triumphant, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Oturma odası, yerde"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "pajamas",
+      "title": "İki Kişilik Takım",
+      "text": "Sıra ikinci kola gelmişti. Emir artık ne yapacağını biliyordu. İkinci minik kuş da yuvasına kolayca süzüldü. Annesi fermuarı gösterince ikisi birlikte tutup yukarı çektiler. Fermuardan çıkan ‘cırt’ sesi, onların zafer şarkısı gibiydi.",
+      "prompt": "CHARACTER_DESC The boy and his mother are zipping up the jacket together, both holding the zipper pull with happy, focused faces., setting: Oturma odası, yerde, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Oturma odası, yerde"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "outdoor_jacket",
+      "title": "Maceraya Hazır",
+      "text": "Emir, sıcacık ceketinin içinde dimdik ayağa kalktı. Kendini bir süper kahraman gibi hissediyordu. Annesine kocaman sarıldı. Artık maceraya hazırdı. Dışarıdaki hışırdayan yapraklar, onu ve mavi ceketini bekliyordu.",
+      "prompt": "CHARACTER_DESC The boy, now fully dressed in his blue jacket, gives his mother a big, warm hug before heading towards the front door., setting: Oturma odası, kapının önü, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "Oturma odası, kapının önü"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🐢",
+      "facts": [
+        "Kendini kaplumbağa gibi hissedip yavaş ve derin bir nefes aldığında, beynine “sakinleşebilirsin” mesajı gider.",
+        "Üzgün veya sinirli hissettiğinde birine sarılmak, vücudunun mutluluk hormonu salgılamasına yardım eder.",
+        "Bazen en cesur şey, büyük duyguların varken durup sakince beklemektir."
+      ],
+      "icon": "🐢"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 🐜",
+      "facts": [
+        "Karıncalar, tek başlarına taşıyamayacakları büyük yiyecekleri hep birlikte çalışarak yuvalarına götürürler.",
+        "Bir yapbozu iki kişi yapmak, tek başına yapmaktan daha hızlı ve eğlenceli olabilir.",
+        "Yardım istemek, bir işi yapamadığın anlamına gelmez. Sadece harika bir takım kurmak istediğin anlamına gelir."
+      ],
+      "icon": "🐜"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 3,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 6,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A softly lit child's bedroom with warm, ambient light. A wooden toy chest is visible in the soft-focus background. The foreground is clear, focusing entirely on the boy's joyful and affectionate interaction with his jacket.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Emir Ceketine Yardım Ediyor\". Emir'in inatçı ceketiyle tatlı mücadelesi, bir takım olmanın en sıcak hikayesine dönüşüyor. Bazen en iyi maceralar, yardım etmeyi ve yardım istemeyi öğrendiğimizde başlar.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "emir-in-inatci-ceketi"
+}

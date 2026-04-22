@@ -1,0 +1,161 @@
+{
+  "id": "ai-1776842134601-umut-ve-minik-tosba-a",
+  "category": "hayvan-dostum",
+  "title": "Umut ve Minik Tosbağa",
+  "description": "3 yaşındaki Umut'un bahçede minicik bir tosbağayla tanışmasını ve sabrın, sessizliğin ve nazik bir arkadaşlığın sıcaklığını keşfetmesini anlatan ritmik ve duyusal bir hikaye. Bu kitap, en küçük okurlara doğanın yavaş temposundaki güzelliği fısıldıyor.",
+  "lessons": [],
+  "ageGroup": "0-3",
+  "ageRange": "0-3",
+  "pageCount": 10,
+  "templateHeroName": "Umut",
+  "heroName": "Umut",
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#6B8E23",
+    "secondaryColor": "#F4A460",
+    "accentColor": "#E55B5B",
+    "icon": "🐢"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "tshirt_and_shorts",
+      "title": "Güneşli Bahçe",
+      "text": "{CHILD_NAME}, yemyeşil bahçedeydi. Güneş, yanaklarını usulca ısıtıyordu. Parmağıyla toprağın nemli kokusunu içine çekti. Ayaklarının altındaki çimenler onu gıdıklıyordu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) A 3-year-old boy standing in a lush green garden, looking around with wonder, one hand touching the soft grass., setting: Evin arka bahçesi, öğleden sonra, mood: curious, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Evin arka bahçesi, öğleden sonra"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "tshirt_and_shorts",
+      "title": "Yaprağın Altında",
+      "text": "{CHILD_NAME}, büyük bir yonca yaprağının altına eğildi. Orada, güneş ışığında parıldayan bir şey duruyordu. Tıpkı minik, pürüzsüz bir çakıl taşı gibiydi. Merakla ona doğru bir adım attı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) The boy on his hands and knees, peering under a large clover leaf, his eyes wide with curiosity at something small and round., setting: Bahçedeki bir yonca öbeğinin yanı, mood: curious, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Bahçedeki bir yonca öbeğinin yanı"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "tshirt_and_shorts",
+      "title": "Merhaba Minik Tosbağa",
+      "text": "Ama o bir taş değildi. Desenli kabuğuyla minicik bir tosbağaydı! {CHILD_NAME}, yavaşça parmağını uzattı. Tosbağa, şıp diye başını kabuğunun içine çekti.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) A close-up on the boy's finger gently touching the shell of a tiny tortoise, which has its head pulled in., setting: Yonca yaprağının altı, yakından görünüm, mood: nervous-excited, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Yonca yaprağının altı, yakından görünüm"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "tshirt_and_shorts",
+      "title": "Sessiz Bekleyiş",
+      "text": "{CHILD_NAME}, kıpırdamadan oturdu. Havada yalnızca bir arının vızıltısı vardı. Kendi kendine sessiz bir şarkı mırıldandı. Beklemek ne kadar da huzurluydu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) The boy sitting cross-legged on the grass a small distance from the tortoise, humming to himself with a patient expression., setting: Bahçede, tosbağanın yanında sessizce oturan çocuk, mood: reflective, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Bahçede, tosbağanın yanında sessizce oturan çocuk"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "tshirt_and_shorts",
+      "title": "İki Küçük Göz",
+      "text": "Biraz sonra tosbağanın başı yavaşça dışarı süzüldü. İki parlak, siyah göz {CHILD_NAME}'e baktı. Çocuğun dudaklarında sıcacık bir gülümseme belirdi. \"Merhaba,\" diye fısıldadı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) An intimate shot of the tortoise's head peeking out, its tiny black eyes looking at the boy, who is smiling gently., setting: Bahçede, çocuk ve tosbağa göz göze, mood: warm, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Bahçede, çocuk ve tosbağa göz göze"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "tshirt_and_shorts",
+      "title": "Kırmızı Bir Hediye",
+      "text": "{CHILD_NAME}, yerden kadife yapraklı, kırmızı bir çiçek kopardı. Onu tosbağanın önüne doğru usulca ittirdi. \"Bu senin için,\" dedi yumuşacık bir sesle.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) The boy's hand gently pushing a tiny red clover flower on the ground towards the small tortoise., setting: Bahçede, çocuk tosbağaya bir çiçek sunuyor, mood: joyful, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Bahçede, çocuk tosbağaya bir çiçek sunuyor"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "tshirt_and_shorts",
+      "title": "Yavaş Adımlar",
+      "text": "Minik tosbağa çiçeği kokladı. Sonra bir adım attı, bir adım daha. {CHILD_NAME}, onun aheste yürüyüşünü izledi. Her adımı bir masal gibiydi.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) The tortoise taking a slow step towards the flower, as the boy watches from a low angle, fascinated., setting: Bahçede, tosbağanın yavaşça hareket edişi, mood: curious, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Bahçede, tosbağanın yavaşça hareket edişi"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "tshirt_and_shorts",
+      "title": "Yeni Bir Arkadaş",
+      "text": "{CHILD_NAME}, çenesini ellerine dayayıp çimenlere uzandı. Artık bir arkadaşı vardı. Kalbinin içinde minik bir kuş kanat çırpıyordu. Ona Yavaş ismini koydu.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) The boy lying on his stomach in the grass, chin in his hands, happily watching his new tortoise friend., setting: Bahçede çimlere uzanmış, tosbağayı izleyen çocuk, mood: joyful, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Bahçede çimlere uzanmış, tosbağayı izleyen çocuk"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "tshirt_and_shorts",
+      "title": "Yarın Görüşürüz",
+      "text": "Güneş, gökyüzünü portakal rengine boyarken tosbağa geldiği yaprağın altına geri döndü. {CHILD_NAME}, parmaklarıyla ona el salladı. \"İyi geceler Yavaş,\" diye fısıldadı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) The boy sitting up and waving a gentle goodbye with his fingers as the tortoise disappears under the leaf. The sky is orange and purple., setting: Bahçe, gün batımı renkleri altında, mood: warm, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Bahçe, gün batımı renkleri altında"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "pajamas",
+      "title": "Tatlı Rüyalar",
+      "text": "{CHILD_NAME}, desenli pijamalarıyla sıcacık yatağındaydı. Gözlerini kapattı. Rüyasında minik dostu Yavaş ile oynuyordu. Huzurla uykuya daldı.",
+      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: Rich chestnut brown hair styled in a messy, bouncy curly mop falling slightly over his forehead. Extremely large, expressive hazel eyes with a rounded, innocent shape. Warm olive skin tone. Features unbelievably soft, chubby toddler cheeks that flush slightly pink and a deep single dimple on his left cheek. Exudes an aura of pure, sweet curiosity with a soft, fascinated smile and a slightly tilted head.) The boy sleeping peacefully in his bed, a soft smile on his face, hugging a teddy bear. A soft, glowing dream bubble above shows the little tortoise., setting: Çocuğun yatak odası, gece, mood: warm, Eye-level with the child, creating an intimate feel. The background is soft and painterly, keeping focus on the characters and their gentle interaction., Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuğun yatak odası, gece"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🐢",
+      "facts": [
+        "Tosbağalar evlerini sırtlarında taşır. Bu sert kabuk onları tehlikelerden korur.",
+        "Bazı tosbağalar çok uzun yaşar, dedenden ve ninen bile daha yaşlı olabilirler!",
+        "Tosbağalar yavaş hareket eder ama çok iyi koku alırlar. Sevdikleri yemeği burunlarıyla bulurlar."
+      ],
+      "icon": "🌿"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 🐢",
+      "facts": [
+        "Dünyada hem karada hem de suda yaşayan bir sürü farklı tosbağa vardır.",
+        "Korktuklarında kafalarını ve bacaklarını kabuklarının içine saklayarak güvende kalırlar.",
+        "Tosbağalar otları, yaprakları ve mis kokulu çiçekleri yemeyi çok sever."
+      ],
+      "icon": "🌸"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 3,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 6,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A vibrant, sun-dappled garden. Soft-focus flowers in the foreground. The overall feeling is warm, gentle, and full of wonder..\n\nCRITICAL RULES:\n1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG.\n2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas.\n3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top.\n\nALLOWED ELEMENTS:\n- Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human)\n- Atmospheric lighting (warm glow, soft moonlight, golden hour)\n- Border decorations (top and bottom zones can have tasteful flourishes)\n\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Umut ve Minik Tosbağa\". Umut, bahçede minicik bir dost buldu. Bu dost çok yavaştı. Birlikte beklemenin, sessizliğin ve küçük bir çiçeğin mutluluğunu keşfettiler.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "umut-kisiye-ozel-cocuk-kitabi",
+  "sidekick": {
+    "name": "Minik Tosbağa",
+    "species": "land tortoise",
+    "description": "a tiny baby land tortoise (juvenile size, palm-sized), domed shell with warm tan-brown geometric patterns and lighter cream highlights between scutes, small leathery legs with tiny claws, gentle dark brown eyes, soft beige neck with subtle wrinkles, calm friendly expression. Always the SAME tan-brown patterned tortoise — never green, never large, never reptilian-scary."
+  }
+}

@@ -14,10 +14,10 @@ const ADVANCED_RULES = {
 
 const AGE_RULES = {
   "0-3": {
-    maxWordsPerScene: 14,
-    style: "Bebek/yürümeye başlayan çocuk için. Ritmik tekrar, duyusal dil (yumuşacık, sıcacık, mis gibi), ses kelimeleri (cıvıl cıvıl, şırıl şırıl, hop). Tek basit olay per sahne. Sade cümleler. Kazanım: günlük rutinler, sevgi, merak, güven.",
-    vocabularyNote: "Sadece günlük yaşamda sık geçen 500-700 kelime. Soyut kavram yok. Karmaşık fiil çekimi yok.",
-    acts: "Çok basit: başlangıç (merak) → karşılaşma (keşif) → mutlu son.",
+    maxWordsPerScene: 45,
+    style: "Bebek/yürümeye başlayan çocuk için — AMA kaliteli çocuk edebiyatı. Ritmik tekrar, duyusal dil (yumuşacık, sıcacık, mis gibi), ses kelimeleri (cıvıl cıvıl, şırıl şırıl, hop). Her sahne MIN 4 cümle, zengin duyusal atmosfer. Anne/babanın zevk alarak okuyacağı, çocuğun sesten ve ritimden keyif alacağı metin. Kısa ve kuru YASAK — sıcak ve dolu olsun.",
+    vocabularyNote: "Günlük yaşamda sık geçen 500-800 kelime. Soyut kavram yok. Karmaşık fiil çekimi yok. Ama betim+ritim+ses zengin — Sara Şahinkanat bebek kitapları dokusu.",
+    acts: "Basit 3-adım: başlangıç (merak+duyusal detay) → karşılaşma (keşif+duygu) → sıcak son (sevgi+huzur).",
   },
   "3-6": ADVANCED_RULES,
   "6-9": ADVANCED_RULES,
@@ -36,15 +36,20 @@ function makeClient() {
 }
 
 async function generateText(ai, prompt, opts = {}) {
-  const model = opts.model || "gemini-2.5-flash";
+  // UPGRADE 2026-04-20: Pro + thinking. Cagrilari eski opts.maxTokens dusuk degerler iletiyor
+  // (örn. 2048 brainstorm icin). Thinking 4000 token yiyince cikti icin yer kalmiyordu.
+  // Cozum: effective = opts.maxTokens + thinkingBudget + safety_margin.
+  const model = opts.model || "gemini-2.5-pro";
+  const thinkingBudget = opts.thinkingBudget ?? 4000;
+  const desiredOutput = opts.maxTokens || 4096;
+  const maxOutputTokens = Math.max(desiredOutput + thinkingBudget + 2000, 8192);
   const res = await ai.models.generateContent({
     model,
     contents: prompt,
     config: {
       temperature: opts.temperature ?? 0.85,
-      maxOutputTokens: opts.maxTokens || 4096,
-      // Thinking tokens cikti butcesini yemesin
-      thinkingConfig: { thinkingBudget: 0 },
+      maxOutputTokens,
+      thinkingConfig: { thinkingBudget },
     },
   });
   return res.text || "";
@@ -170,6 +175,15 @@ Başlık: ${idea.baslik}
 Özet: ${idea.ozet}
 Ton: ${idea.ton}
 
+═══ KONSEPT ÖZETİNE SADAKAT (MUTLAK) ═══
+Yukarıdaki ÖZET bir sözleşmedir. Hikayeyi 14 sahneye genişletirken:
+- ÖZETTE geçen her MEKÂN (orman / bahçe / mağara / atölye / sınıf / mutfak / ev / park / uzay / havaalanı / stadyum / gemi / çiftlik / hastane...) AYNI KELIMELERLE sahnelere ANCHOR olarak yerleştir. Başka bir mekân sözcüğüne ÇEVİRME.
+  Örnek: Özet "mantar ormanlarında" diyorsa, sahnelerde "bahçe" değil ORMAN kullan. Özet "muayenehanede" diyorsa sahnelerde "hastane" değil MUAYENEHANE.
+- ÖZETTE geçen her ANAHTAR METAFOR/NESNE (yumak / balık / bulut / kelebek / anahtar / ayna / bilezik / diploma / lamba...) sahnelerde aynı isimle yer alsın. Sinonimle değiştirme.
+- ÖZETTE geçen her KİLIT EYLEM (çözmek / örmek / uçmak / iyileştirmek / barıştırmak / oynamak...) sahnelerin büyük kısmında görünsün.
+- Son sahne (Scene ${sceneCount}) özetin sonundaki DÖNÜŞÜM/BARIŞ duygusunu tamamlamalı; özetteki son cümleyle tutarlı olmalı.
+Bu sadakat zorunlu — aksi halde okur "özette 'orman' vardı, sahnelerde hiç orman yok" diyerek boşluk hisseder.
+
 Kahraman: ${heroName}, ${heroAge} yaşında Türk ${genderTr} çocuk.
 Yaş grubu: ${ageGroup} (${rules.acts})
 Sahne sayısı: ${sceneCount}
@@ -178,9 +192,52 @@ Kazanımlar: ${(lessons || []).join(", ")}
 Stil: ${rules.style}
 Sözdağarcığı: ${rules.vocabularyNote}
 
+═══ SAHNE AKIŞI KURALLARI (MUTLAK) ═══
+
+1. SAHNE-ARASI SÜREKLİLİK — **NEDENLİ KÖPRÜ** (MUTLAK, world-class standart):
+   Her sahne geçişi "ne oldu da oraya geçtik?" sorusunu CEVAPLAMALI. Sadece zaman zarfı ("ardından", "sonra", "en sonunda", "yolculukları sürdü") YETMEZ — bu ZAYIF köprüdür. Dünya standardındaki çocuk kitaplarında bir FİZİKSEL EYLEM / DUYUSAL TETİKLEYİCİ / KARAKTER SEÇİMİ geçişi mümkün kılar.
+
+   Her Scene N+1'in ilk cümlesi, Scene N'in son eyleminin/duygusunun **doğrudan sonucu** olmalı. Eğer mekan değişiyorsa, değişim için somut bir köprü ("kurbağa suya atladı, parmakları suya değdi, balıklar arasında buluverdi kendini" gibi) yaz.
+
+   ZAYIF BRIDGE (BUNLARI KULLANMA):
+   ❌ "Ardından kendilerini sualtı dünyasında buldular." (ne oldu da?)
+   ❌ "Yolculukları bulutlar üzerinde sürdü." (nasıl uçtular?)
+   ❌ "En sonunda yıldızlara ulaştılar." (neyle, nasıl?)
+   ❌ "O sırada farklı bir yerdeydi." (teleport, gerekçesiz)
+
+   GÜÇLÜ BRIDGE (BÖYLE YAZ):
+   ✅ "Kurbağa damlaya atladı — {name} onu yakalamak için parmaklarını suya değdirdi ve kendini rengârenk balıkların arasında buldu."
+   ✅ "Bir rüzgar Yeşilgöz'ü savurdu; {name} onun peşinden havalanıverdi, ayaklarının altındaki bulutlar pamuk gibi yumuşaktı."
+   ✅ "Kurbağanın fısıltısı o kadar küçüldü ki bir yıldızın sesine karıştı — ve {name} kendini yıldızların arasında usul usul süzülürken buldu."
+
+   KURAL: Fantastik/rüya sekansında bile her geçişin bir **TEMAS NOKTASI** olmalı (dokunmak, atlamak, ses, nefes, elini uzatmak, gözlerini kapamak vs.). Olmayan sahneyi YENIDEN YAZ.
+
+   KENDINE SOR (her sahneyi yazdıktan sonra): "Çocuk 'nasıl oldu da buraya geçti?' diye sorabilir mi?" Eğer CEVAP VEREMİYORSAN bridge zayıf demektir — güçlendir.
+
+2. ANNE-BABA MİNİMUM KURALI: Anne/baba karakterleri ${sceneCount} sahnenin EN FAZLA %30'unda görünsün (${Math.floor(sceneCount * 0.3)} sahne max). Setup + climax resolution + bir teselli anı yeterli. Hikayenin çoğunluğunda kahraman tek başına veya YAN KARAKTER DOSTU (sidekick/arkadaş/hayvan dostu) ile olsun.
+
+3. YAN KARAKTER (SIDEKICK) — KATEGORIYE ÖZGÜ, ZORUNLU DEĞİL:
+   Sidekick'i zorla yerleştirme — kategori DOĞAL gerekçesi varsa kullan:
+   - hayvan-dostum → evcil hayvan zaten kitabın merkezi (pet_name HER sahnede)
+   - duygu-kontrolleri → duygu metaforu (bulut/kelebek/yağmur) her sahnede görsel sembol (karakter değil, METAFOR)
+   - yeni-kardes-hikayeleri → kardeş eşlik eder (action sidekick değil, duygusal referans)
+   - ilkokul-masallari → okul/park arkadaşı doğal olabilir (zorunlu değil)
+   - okul-oncesi-masallari → oyuncak ya da hayal arkadaşı OPSIYONEL
+   - meslek-hikayeleri → mentor/meslek büyüğü OPSIYONEL (bazı hikayeler "ilk gün yalnızlığı" teması)
+   - gunluk-degerler-egitimi → kahraman kendi öğrenir IDEALI (ebeveyn minimum, arkadaş opsiyonel)
+   - 23-nisan → sidekick UYGUN DEĞİL (hikaye bayrak + Atatürk + sınıf çerçevesi)
+   - anneler-gunu / dogum-gunu → aile ağırlıklı, sidekick yok
+   - bebek-masallari → soft toy/animal OPSIYONEL
+   - boyama → guide karakter OPSIYONEL
+   KURAL: Hikayenin doğal akışına GİRMİYORSA sidekick yerleştirme. Kahraman tek başına da hikaye taşıyabilir.
+
+4. SAHNE = TEK SAHNE (CRITICAL): Her sahne TEK bir anı/olayı anlatır. 3 farklı küçük olay bir sahnede toplanmaz. NO PANELS, NO GRIDS. Sahneler görsel tarafta TEK COHESIVE full-bleed illustrasyon olarak üretilecek — metin de TEK bir ana momente odaklansın.
+
+5. PANEL YASAK: Action alanı (scene.action) "x happens and then y happens and then z" şeklinde DEĞİL — tek ana moment "child discovering the puppy in a wicker basket" şeklinde. 3 ayrı eylem bir action'da yok.
+
 ${sceneCount} sahne yaz. Her sahne:
 - title: 2-4 kelime, Türkçe
-- text: ${rules.maxWordsPerScene ? rules.maxWordsPerScene + " kelimeyi aşma" : "doğal uzunluk, gerekiyorsa uzun olabilir"}, kahraman adı en fazla 2 kez, akıcı Türkçe (devrik cümle yok), ${heroName} eki olarak {CHILD_NAME} kullan (yaygın değişecek)
+- text: ${rules.maxWordsPerScene ? "MIN 4 cümle, MAX " + rules.maxWordsPerScene + " kelime. Kısa cümleler olabilir ama SAYI en az 4, zengin duyusal detay + bir duygu betimi içersin." : "MIN 5 cümle, doğal uzunluk (4 cümleden az ise REDDET). Her sahnede: somut duyusal detay (ses/koku/ısı/dokunuş), bir duygu betimi (show-don't-tell), ve mümkünse 1 kısa diyalog"}, kahraman adı en fazla 2 kez, akıcı Türkçe (devrik cümle yok), ${heroName} eki olarak {CHILD_NAME} kullan (yaygın değişecek)
 - mood: dreamy, nervous-excited, joyful, mysterious, magical, determined, reflective, triumphant, magical-epic, inspirational, intense, climactic, triumphant-emotional, warm, curious (sahneye uygun)
 - setting: mekan ve zaman (Türkçe kısa tarif)
 - outfitId: ${outfits.join(" | ")} (sahneye uygun; yaş bandına göre değişebilir)
@@ -202,7 +259,16 @@ Ayrıca şu alanlar:
 - theme_accent_color: hex
 - theme_icon: tek emoji
 - camera_framing_note: 1 satır, sahne illustration'ları için ortak kamera kuralı (örn. "wide shot, character 30-40% of frame, environment dominant")
-- fun_facts: 2 bölüm dizisi, her biri {"title":"Biliyor muydun? <emoji>", "facts":[3-4 Türkçe ilginç bilgi], "icon":"<emoji>"}. Temayla örtüşen, çocuk için uygun, doğrulanmış bilgiler.
+- fun_facts: 2 bölüm dizisi, her biri {"title":"Biliyor muydun? <emoji>", "facts":[3-4 Türkçe ilginç bilgi], "icon":"<emoji>"}.
+  KRİTİK KURAL — fun_facts KAZANIMLARLA / KİTABIN ANA TEMASIYLA ilgili olmalı. Yan karakter, oyuncak veya prop'larla (örn. "çocuğun oyuncak ayısı" → ayılarla ilgili bilgi YAZMA) değil.
+  Kitap hangi kazanımı öğretiyorsa funFacts da o kazanımın bilimsel/gerçek-dünya boyutunu anlatmalı:
+    - "Zamanında uyuma" kitabı → uyku ve vücut ritmi bilgileri
+    - "Temizlik" kitabı → mikroplar, el yıkama, diş sağlığı bilgileri
+    - "Yemek bitirme" kitabı → beslenme, vitamin, enerji bilgileri
+    - "Cesaret" kitabı → korkuyu yenen çocuk/insan örnekleri, beynin cesaret mekanizması
+    - "Arkadaşlık" kitabı → farklı kültürlerde arkadaşlık, hayvanların dostlukları
+    - "Doğa/hayvan" teması → o hayvan veya doğa olgusu hakkında
+  Her bilgi çocuk için ilginç, doğrulanmış ve 3-6 yaş anlayabileceği sadelikte olsun.
 - fun_fact_placements: 2 sayı dizisi, hangi sahnelerden sonra geleceği. Genelde [${Math.floor(sceneCount/3)}, ${Math.floor(2*sceneCount/3)}] gibi eşit aralık.
 
 Çıktı TAM olarak şu JSON:
@@ -305,15 +371,33 @@ ${JSON.stringify(scenes, null, 2)}
   }
 }
 
-async function writeStory({ ageGroup, theme, heroName, heroAge, heroGender, lessons, physicalFeatures, onProgress }) {
+async function writeStory({ ageGroup, theme, heroName, heroAge, heroGender, lessons, physicalFeatures, onProgress, forcedIdea }) {
   if (!SCENE_COUNTS[ageGroup]) throw new Error("ageGroup 0-3 / 3-6 / 6-9 olmali");
   const ai = makeClient();
 
-  onProgress?.({ step: 1, message: "Beş fikir üretiliyor..." });
-  const ideas = await brainstorm({ ai, ageGroup, theme, heroName, lessons });
+  let ideas, selected, reason;
+  if (forcedIdea && forcedIdea.baslik) {
+    // UrunStudio'dan gelen sabit konsept — brainstorm + select atlanır.
+    // Bu sayede final başlık = UrunStudio başlığı, hikaye o hikaye olarak genişletilir.
+    onProgress?.({ step: 1, message: "Sabit konsept alındı (UrunStudio) — brainstorm atlandı" });
+    selected = {
+      baslik: forcedIdea.baslik,
+      ozet: forcedIdea.ozet || theme,
+      anahtarNokta: forcedIdea.anahtarNokta || forcedIdea.ozet || "",
+      duyguYayi: forcedIdea.duyguYayi || "",
+      sembol: forcedIdea.sembol || "",
+    };
+    reason = "urunstudio-concept-forced";
+    ideas = [selected];
+  } else {
+    onProgress?.({ step: 1, message: "Beş fikir üretiliyor..." });
+    ideas = await brainstorm({ ai, ageGroup, theme, heroName, lessons });
 
-  onProgress?.({ step: 2, message: "En iyi fikir seçiliyor..." });
-  const { selected, reason } = await selectBest({ ai, ideas, ageGroup, theme, heroName });
+    onProgress?.({ step: 2, message: "En iyi fikir seçiliyor..." });
+    const result = await selectBest({ ai, ideas, ageGroup, theme, heroName });
+    selected = result.selected;
+    reason = result.reason;
+  }
 
   onProgress?.({ step: 3, message: `"${selected.baslik}" genişletiliyor (${SCENE_COUNTS[ageGroup]} sahne)...` });
   let expanded = await expand({ ai, idea: selected, ageGroup, heroName, heroAge, heroGender, lessons, theme });
@@ -366,12 +450,21 @@ async function writeStory({ ageGroup, theme, heroName, heroAge, heroGender, less
     funFacts: (expanded.fun_facts || []).map((f, i) => ({ id: "fact-" + (i + 1), title: f.title, facts: f.facts || [], icon: f.icon || "💡" })),
     funFactPlacements: (expanded.fun_fact_placements || [Math.floor(SCENE_COUNTS[ageGroup]/3), Math.floor(2*SCENE_COUNTS[ageGroup]/3)]).map((sc, i) => ({ afterScene: sc, factId: "fact-" + (i + 1) })),
     specialPagePrompts: {
-      heroPage: `A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching "${expanded.title}". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: ${expanded.cover_scene_desc || "matching the story world"}.
-TITLE (display EXACTLY as Turkish text, top 20% of the page): "Hikayemizin Kahramanı ${heroName}"
-Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).
-LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.
-Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.
-Ice Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.`,
+      // UPGRADE 2026-04-20: {CHILD_NAME} placeholder used (swap at generation time),
+      // AND "ABSOLUTELY NO CHILD/PEOPLE" enforced TWICE (AI was ignoring). Also NO baked text.
+      heroPage: `A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: ${expanded.cover_scene_desc || "matching the story world"}.
+
+CRITICAL RULES:
+1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG.
+2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas.
+3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top.
+
+ALLOWED ELEMENTS:
+- Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human)
+- Atmospheric lighting (warm glow, soft moonlight, golden hour)
+- Border decorations (top and bottom zones can have tasteful flourishes)
+
+Ice Age and Shrek style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.`,
       funFactBg: "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
       senderNoteBg: "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
       backCover: `A warm artistic closing scene matching "${expanded.title}". ${expanded.back_cover_summary || ""}. NO TEXT NO LETTERS in image, 3D CGI render.`,

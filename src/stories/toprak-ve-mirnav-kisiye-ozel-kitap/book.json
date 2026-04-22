@@ -2,6 +2,12 @@
   "id": "toprak-ve-mirnav-kisiye-ozel-kitap",
   "category": "hayvan-dostum",
   "title": "Toprak ve Mırnav",
+  "sidekick": {
+    "name": "Mırnav",
+    "species": "cat",
+    "description": "a playful short-haired kitten with black-and-white tuxedo markings (white chest, white paws, black back and head), bright blue eyes, small pink nose and pads, young kitten proportions. Always the SAME tuxedo kitten — never gray, never orange, never long-haired."
+  },
+  "templateHeroName": "Toprak",
   "description": "Toprak için Mırnav sadece bir kedi değildi... küçük patileri, mavi gözleri ile en iyi dostuydu. Onunla gizli köşeleri keşfetmeyi, ona nazikçe dokunmayı öğrendi. İşte Toprak'ın ilk dostluk masalı.",
   "lessons": [
     "Sevgi vermek",
@@ -14,7 +20,7 @@
   "pageCount": 10,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
@@ -30,7 +36,7 @@
       "outfitId": "pajamas",
       "title": "Sabah Neşesi",
       "text": "Toprak, sabah ışığıyla uyandı. Pencereden cıvıl cıvıl kuş sesleri geliyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) A toddler boy, Toprak, wakes up in his cozy bed, sunlight streaming through the window., setting: Toprak'ın odası, sabah, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC A toddler boy, Toprak, wakes up in his cozy bed, sunlight streaming through the window., setting: Toprak'ın odası, sabah, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Toprak'ın odası, sabah"
     },
@@ -39,7 +45,7 @@
       "outfitId": "pajamas",
       "title": "Meraklı Bakışlar",
       "text": "Annesi, Toprak'ın kahvaltı tabağına taze peynir koydu. O, merakla etrafına bakınıyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) Toprak sits in his high chair, looking around with wide eyes as his mother places a plate of food., setting: Mutfak, kahvaltı zamanı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Toprak sits in his high chair, looking around with wide eyes as his mother places a plate of food., setting: Mutfak, kahvaltı zamanı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "Mutfak, kahvaltı zamanı"
     },
@@ -48,7 +54,7 @@
       "outfitId": "pajamas",
       "title": "Bir Fısıltı",
       "text": "Dışarıdan incecik bir ses geldi. Toprak, duvara yapışık minik bir gölge gördü.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) Toprak peeks out the kitchen window, noticing a tiny shadow moving on the wall., setting: Mutfak penceresi, öğleden önce, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Toprak peeks out the kitchen window, noticing a tiny shadow moving on the wall., setting: Mutfak penceresi, öğleden önce, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "nervous-excited",
       "setting": "Mutfak penceresi, öğleden önce"
     },
@@ -57,7 +63,7 @@
       "outfitId": "day clothes",
       "title": "Minik Dokunuş",
       "text": "Annesi, Toprak'ı bahçeye çıkardı. Yumuşacık çimler ayaklarını gıdıklıyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) Toprak, wearing day clothes, walks barefoot on soft green grass in the garden., setting: Bahçe, güneşli öğle, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Toprak, wearing day clothes, walks barefoot on soft green grass in the garden., setting: Bahçe, güneşli öğle, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "Bahçe, güneşli öğle"
     },
@@ -66,7 +72,7 @@
       "outfitId": "day clothes",
       "title": "Pıt Pıt Kalp",
       "text": "Toprak, küçücük bir kedi yavrusu gördü. Kalbi pıt pıt atıyordu, heyecanla ellerini açtı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) Toprak spots a tiny kitten, his heart beating fast, and he extends his hands gently., setting: Bahçenin köşesi, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Toprak spots a tiny kitten, his heart beating fast, and he extends his hands gently., setting: Bahçenin köşesi, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Bahçenin köşesi, öğleden sonra"
     },
@@ -75,7 +81,7 @@
       "outfitId": "day clothes",
       "title": "İlk Merhaba",
       "text": "Mırnav, minik patileriyle Toprak'ın parmağına dokundu. Toprak, sıcak bir fısıltı duydu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) The kitten, Mırnav, gently touches Toprak's finger with its tiny paw., setting: Bahçedeki çiçek tarhı, ikindi, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC The kitten, Mırnav, gently touches Toprak's finger with its tiny paw., setting: Bahçedeki çiçek tarhı, ikindi, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Bahçedeki çiçek tarhı, ikindi"
     },
@@ -84,7 +90,7 @@
       "outfitId": "day clothes",
       "title": "Uyumlu Dostluk",
       "text": "Mırnav, Toprak'ın kucağında uyudu. Toprak, kediye nazikçe sarıldı, sıcacık hissetti.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) Mırnav sleeps peacefully in Toprak's lap, and Toprak gently hugs the kitten., setting: Bahçedeki gölgelik, akşamüstü, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mırnav sleeps peacefully in Toprak's lap, and Toprak gently hugs the kitten., setting: Bahçedeki gölgelik, akşamüstü, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "Bahçedeki gölgelik, akşamüstü"
     },
@@ -93,7 +99,7 @@
       "outfitId": "day clothes",
       "title": "Oyun Zamanı",
       "text": "Toprak, Mırnav ile ip atladı. Mırnav, topa minik patileriyle vurdu, çok eğlendiler.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) Toprak plays with Mırnav, tossing a small ball. Mırnav bats at the ball with its paws., setting: Bahçe, oyun alanı, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Toprak plays with Mırnav, tossing a small ball. Mırnav bats at the ball with its paws., setting: Bahçe, oyun alanı, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Bahçe, oyun alanı, öğleden sonra"
     },
@@ -102,7 +108,7 @@
       "outfitId": "pajamas",
       "title": "Gece Huzuru",
       "text": "Mırnav, Toprak'ın yatağının kenarında mırıldandı. Toprak, kendini güvende hissetti.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) Mırnav purrs softly by Toprak's bed. Toprak lies peacefully, feeling safe., setting: Toprak'ın odası, gece, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mırnav purrs softly by Toprak's bed. Toprak lies peacefully, feeling safe., setting: Toprak'ın odası, gece, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Toprak'ın odası, gece"
     },
@@ -111,7 +117,7 @@
       "outfitId": "pajamas",
       "title": "Sonsuz Sevgi",
       "text": "Toprak, Mırnav'ın yumuşacık patilerini sevdi. Kalbinde sonsuz bir sevgi hissetti.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange cotton t-shirt with small leaf print, cream cotton dungarees with wooden buttons, brown sandals) Toprak gently strokes Mırnav's soft paws, a feeling of endless love in his heart., setting: Toprak'ın yatağı, ertesi sabah, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Toprak gently strokes Mırnav's soft paws, a feeling of endless love in his heart., setting: Toprak'ın yatağı, ertesi sabah, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "Toprak'ın yatağı, ertesi sabah"
     }
@@ -150,7 +156,7 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Mırnav'ın Yumuşak Patileri\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: FOREGROUND: Toprak's hands cradling Mırnav. MIDGROUND: Toprak's face, smiling, and Mırnav's curious face. BACKGROUND: A softly blurred, warm, sunny garden setting with a few flowers..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Toprak\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Mırnav'ın Yumuşak Patileri\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: FOREGROUND: Toprak's hands cradling Mırnav. MIDGROUND: Toprak's face, smiling, and Mırnav's curious face. BACKGROUND: A softly blurred, warm, sunny garden setting with a few flowers.. TITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Toprak\" Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves). LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon. Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title. Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
     "backCover": "A warm artistic closing scene matching \"Mırnav'ın Yumuşak Patileri\". Toprak'ın minik kalbi, Mırnav'ın yumuşacık patileriyle tanıştığında pıt pıt attı. Bu sıcacık dostluk, küçük adımlarla büyüdü, sevgi dolu oyunlara dönüştü. Mırnav ve Toprak, birbirlerine sonsuz bir sevgiyle bağlandılar.. NO TEXT NO LETTERS in image, 3D CGI render."

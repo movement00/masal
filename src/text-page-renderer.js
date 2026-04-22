@@ -273,16 +273,22 @@ class TextPageRenderer {
   }
 
   /**
-   * "Hikayemizin Kahramani" sayfasini render eder
-   * AI arka plan uzerine gercek fotograflari Sharp ile yerlestirir
-   * 1-5 fotografa gore dinamik grid olusturur
+   * "Hikayemizin Kahramani" sayfasini render eder (V2 — D v5 layout).
+   * AI bg üzerine gerçek fotoğrafları sharp ile SVG-çerçeve + gölgeli olarak yerleştirir.
+   *
+   * Layout:
+   *   - 1 photo  → wide panorama, center of middle zone
+   *   - 2 photos → side-by-side, middle zone (recommended — user default)
+   *   - 3-5     → legacy grid (old _getPhotoGridLayout)
+   *
+   * Photo area (ratios on final page, PW=1785, PH=2526):
+   *   x: 12% - 88% (width 76%)
+   *   y: 33% - 70% (height 37%)
    */
   async renderHeroPage(options) {
-    const { childName, childPhotoPath, extraPhotoPaths = [], theme = {}, ageGroup = "3-6", bookTitle, outputPath, backgroundImagePath } = options;
+    const { childPhotoPath, extraPhotoPaths = [], outputPath, backgroundImagePath } = options;
 
-    const primary = theme.primaryColor || "#8b5cf6";
-
-    // 1. Arka plan: AI uretilmis veya duz renk
+    // 1. Arka plan: AI uretilmis veya duz cream
     let bgBuffer;
     if (backgroundImagePath && fs.existsSync(backgroundImagePath)) {
       bgBuffer = await sharp(backgroundImagePath)
@@ -297,79 +303,33 @@ class TextPageRenderer {
 
     // 2. Tum fotograflari topla
     const allPhotos = [];
-    if (childPhotoPath && fs.existsSync(childPhotoPath)) {
-      allPhotos.push(childPhotoPath);
+    if (childPhotoPath && fs.existsSync(childPhotoPath)) allPhotos.push(childPhotoPath);
+    for (const ep of (extraPhotoPaths || [])) {
+      if (ep && fs.existsSync(ep)) allPhotos.push(ep);
     }
-    if (extraPhotoPaths && extraPhotoPaths.length > 0) {
-      for (const ep of extraPhotoPaths) {
-        if (ep && fs.existsSync(ep)) allPhotos.push(ep);
-      }
-    }
-
-    // 3. Fotograf sayisina gore grid layout hesapla
-    const composites = [];
     const photoCount = Math.min(allPhotos.length, 5);
 
-    if (photoCount > 0) {
-      const layouts = this._getPhotoGridLayout(photoCount);
-      const frameColor = this._hexToRgb(primary);
-      const framePadding = 10;
-      const cornerRadius = 24;
-
-      for (let i = 0; i < photoCount; i++) {
-        const layout = layouts[i];
-        try {
-          // Fotografi resize et
-          const photoBuffer = await sharp(allPhotos[i])
-            .resize(layout.w, layout.h, { fit: "cover", position: "centre" })
-            .png()
-            .toBuffer();
-
-          // Rounded corner mask uygula
-          const roundedMask = Buffer.from(
-            `<svg width="${layout.w}" height="${layout.h}">
-              <rect width="${layout.w}" height="${layout.h}" rx="${cornerRadius}" ry="${cornerRadius}" fill="white"/>
-            </svg>`
-          );
-          const maskedPhoto = await sharp(photoBuffer)
-            .composite([{ input: roundedMask, blend: 'dest-in' }])
-            .png()
-            .toBuffer();
-
-          // Cerceve (frame) olustur
-          const frameW = layout.w + framePadding * 2;
-          const frameH = layout.h + framePadding * 2;
-          const frameSvg = Buffer.from(
-            `<svg width="${frameW}" height="${frameH}">
-              <rect width="${frameW}" height="${frameH}" rx="${cornerRadius + 4}" ry="${cornerRadius + 4}"
-                fill="rgb(${frameColor.r},${frameColor.g},${frameColor.b})" opacity="0.9"/>
-            </svg>`
-          );
-          const frameBuffer = await sharp({
-            create: { width: frameW, height: frameH, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
-          })
-          .composite([{ input: frameSvg, top: 0, left: 0 }])
-          .png()
-          .toBuffer();
-
-          // Cerceve + foto composite
-          composites.push({
-            input: frameBuffer,
-            top: layout.y - framePadding,
-            left: layout.x - framePadding,
-          });
-          composites.push({
-            input: maskedPhoto,
-            top: layout.y,
-            left: layout.x,
-          });
-        } catch (photoErr) {
-          console.warn(`  [TextPageRenderer] Hero foto ${i + 1} isleme hatasi:`, photoErr.message);
-        }
-      }
+    if (photoCount === 0) {
+      // Foto yoksa sadece arka planı döndür
+      if (outputPath) fs.writeFileSync(outputPath, bgBuffer);
+      return bgBuffer;
     }
 
-    // 4. Her seyi birlestir
+    // 3. D v5 layout coords (ratios on PW × PH)
+    const areaX = Math.round(PW * 0.12);
+    const areaY = Math.round(PH * 0.33);
+    const areaW = Math.round(PW * 0.76);
+    const areaH = Math.round(PH * 0.37);
+
+    let composites;
+    if (photoCount <= 2) {
+      composites = await this._buildHeroFrames(allPhotos.slice(0, photoCount), { areaX, areaY, areaW, areaH });
+    } else {
+      // 3+ foto için legacy grid fallback — eski styling ile
+      composites = await this._buildLegacyHeroGrid(allPhotos.slice(0, 5), options);
+    }
+
+    // 4. Compose ve kaydet
     const result = await sharp(bgBuffer)
       .composite(composites)
       .png({ quality: 95 })
@@ -377,6 +337,135 @@ class TextPageRenderer {
 
     if (outputPath) fs.writeFileSync(outputPath, result);
     return result;
+  }
+
+  /**
+   * Hero page için 1 veya 2 fotoğrafa göre SVG-çerçeve + gölge ile composite listesi üretir.
+   */
+  async _buildHeroFrames(photos, { areaX, areaY, areaW, areaH }) {
+    const BORDER = 22;           // cream outer border
+    const STROKE = 3;            // thin warm-brown stroke
+    const CORNER = 16;           // outer rounded corner
+    const SHADOW_BLUR = 18;
+    const SHADOW_OFFSET = 10;
+    const GAP = 26;
+
+    const buildFrame = async (photoPath, frameW, frameH) => {
+      const photoW = frameW - BORDER * 2;
+      const photoH = frameH - BORDER * 2;
+      const photoBuf = await sharp(photoPath)
+        .resize(photoW, photoH, { fit: "cover", position: "centre" })
+        .toBuffer();
+
+      const innerCorner = Math.max(CORNER - BORDER + 4, 6);
+      const innerMask = Buffer.from(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${photoW}" height="${photoH}">
+          <rect width="${photoW}" height="${photoH}" rx="${innerCorner}" ry="${innerCorner}" fill="white"/>
+        </svg>`
+      );
+      const photoMasked = await sharp(photoBuf)
+        .composite([{ input: innerMask, blend: "dest-in" }])
+        .png()
+        .toBuffer();
+
+      const CW = frameW + SHADOW_BLUR * 2 + SHADOW_OFFSET;
+      const CH = frameH + SHADOW_BLUR * 2 + SHADOW_OFFSET;
+      const frameSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="${CW}" height="${CH}">
+          <defs>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="${SHADOW_BLUR / 3}"/>
+              <feOffset dx="${SHADOW_OFFSET / 2}" dy="${SHADOW_OFFSET / 2}" result="offsetblur"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect x="${SHADOW_BLUR}" y="${SHADOW_BLUR}" width="${frameW}" height="${frameH}"
+                rx="${CORNER}" ry="${CORNER}"
+                fill="#FBF6EC" stroke="#8B5E3C" stroke-width="${STROKE}"
+                filter="url(#shadow)"/>
+          <rect x="${SHADOW_BLUR + BORDER - 5}" y="${SHADOW_BLUR + BORDER - 5}"
+                width="${photoW + 10}" height="${photoH + 10}"
+                rx="${Math.max(innerCorner + 2, 8)}" ry="${Math.max(innerCorner + 2, 8)}"
+                fill="none" stroke="#D4A574" stroke-width="2"/>
+        </svg>
+      `;
+      const framePng = await sharp(Buffer.from(frameSvg)).png().toBuffer();
+      return await sharp(framePng)
+        .composite([{ input: photoMasked, top: SHADOW_BLUR + BORDER, left: SHADOW_BLUR + BORDER }])
+        .png()
+        .toBuffer();
+    };
+
+    const composites = [];
+    if (photos.length === 1) {
+      // Portrait frame (2026-04-22 fix): dikey, photo aspect 3:4 preserve edilsin
+      const PH_local = 2526, PW_local = 1785;
+      const frameH = Math.round(PH_local * 0.58);
+      const frameW = Math.round(frameH * 0.75);
+      const frameX = Math.round((PW_local - frameW) / 2);
+      const frameY = Math.round(PH_local * 0.32);
+      const frame = await buildFrame(photos[0], frameW, frameH);
+      composites.push({ input: frame, top: frameY - SHADOW_BLUR, left: frameX - SHADOW_BLUR });
+    } else {
+      const frameW = Math.floor((areaW - GAP) / 2);
+      const f1 = await buildFrame(photos[0], frameW, areaH);
+      const f2 = await buildFrame(photos[1], frameW, areaH);
+      composites.push({ input: f1, top: areaY - SHADOW_BLUR, left: areaX - SHADOW_BLUR });
+      composites.push({ input: f2, top: areaY - SHADOW_BLUR, left: areaX + frameW + GAP - SHADOW_BLUR });
+    }
+    return composites;
+  }
+
+  /**
+   * 3-5 foto için legacy grid (eski _getPhotoGridLayout styling'i).
+   */
+  async _buildLegacyHeroGrid(photos, options) {
+    const { theme = {} } = options;
+    const primary = theme.primaryColor || "#8b5cf6";
+    const layouts = this._getPhotoGridLayout(photos.length);
+    const frameColor = this._hexToRgb(primary);
+    const framePadding = 10;
+    const cornerRadius = 24;
+    const composites = [];
+
+    for (let i = 0; i < photos.length; i++) {
+      const layout = layouts[i];
+      try {
+        const photoBuffer = await sharp(photos[i])
+          .resize(layout.w, layout.h, { fit: "cover", position: "centre" })
+          .png()
+          .toBuffer();
+        const roundedMask = Buffer.from(
+          `<svg width="${layout.w}" height="${layout.h}">
+            <rect width="${layout.w}" height="${layout.h}" rx="${cornerRadius}" ry="${cornerRadius}" fill="white"/>
+          </svg>`
+        );
+        const maskedPhoto = await sharp(photoBuffer)
+          .composite([{ input: roundedMask, blend: 'dest-in' }])
+          .png()
+          .toBuffer();
+        const frameW = layout.w + framePadding * 2;
+        const frameH = layout.h + framePadding * 2;
+        const frameSvg = Buffer.from(
+          `<svg width="${frameW}" height="${frameH}">
+            <rect width="${frameW}" height="${frameH}" rx="${cornerRadius + 4}" ry="${cornerRadius + 4}"
+              fill="rgb(${frameColor.r},${frameColor.g},${frameColor.b})" opacity="0.9"/>
+          </svg>`
+        );
+        const frameBuffer = await sharp({
+          create: { width: frameW, height: frameH, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
+        })
+        .composite([{ input: frameSvg, top: 0, left: 0 }])
+        .png()
+        .toBuffer();
+        composites.push({ input: frameBuffer, top: layout.y - framePadding, left: layout.x - framePadding });
+        composites.push({ input: maskedPhoto, top: layout.y, left: layout.x });
+      } catch (err) {
+        console.warn(`  [TextPageRenderer] Legacy hero foto ${i + 1} hatasi:`, err.message);
+      }
+    }
+    return composites;
   }
 
   /**
@@ -868,11 +957,41 @@ class TextPageRenderer {
   // ARKA KAPAK SVG
   // =========================================================================
   _createBackCoverSVG({ title, primary, rgb, childName, description, icon, lessons }) {
-    const mx = 140;
-    const descLines = this._wrapText(description || '', 38);
+    // Vertically stack: icon → title → divider → tagline → description → lessons header → lessons → childname → logo.
+    // Each block's Y is computed from the previous block's end, so nothing overlaps.
+    const descLines = this._wrapText(description || '', 38).slice(0, 5);
+    const lessonsArr = (lessons || []).slice(0, 4);
+
+    const ICON_Y = 380;
+    const ICON_SIZE = 90;
+    const TITLE_Y = ICON_Y + 140;
+    const TITLE_SIZE = 52;
+    const DIVIDER_Y = TITLE_Y + 40;
+    const TAGLINE_Y = DIVIDER_Y + 70;
+    const TAGLINE_SIZE = 32;
+    const DESC_START_Y = TAGLINE_Y + 90;
+    const DESC_SIZE = 28;
+    const DESC_LINE_H = 44;
+    const DESC_BLOCK_H = descLines.length * DESC_LINE_H;
+    const LESSONS_HEADER_Y = DESC_START_Y + DESC_BLOCK_H + 70;
+    const LESSONS_START_Y = LESSONS_HEADER_Y + 70;
+    const LESSON_GAP = 56;
+    const LESSONS_BLOCK_H = lessonsArr.length * LESSON_GAP;
+    const CHILDNAME_Y = LESSONS_START_Y + LESSONS_BLOCK_H + 70;
+
     let descSVG = '';
-    for (let i = 0; i < Math.min(descLines.length, 4); i++) {
-      descSVG += `<text x="${PW/2}" y="${PH/2 + 90 + i * 42}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="28" fill="#8a8a9e">${this._esc(descLines[i])}</text>`;
+    for (let i = 0; i < descLines.length; i++) {
+      descSVG += `<text x="${PW/2}" y="${DESC_START_Y + i * DESC_LINE_H}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="${DESC_SIZE}" fill="#b8b8c8">${this._esc(descLines[i])}</text>\n  `;
+    }
+
+    let lessonsSVG = '';
+    if (lessonsArr.length > 0) {
+      lessonsSVG = `<text x="${PW/2}" y="${LESSONS_HEADER_Y}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="28" fill="#a0a0b8" letter-spacing="3">BU K&#304;TAPTA NE &#214;&#286;REND&#304;K?</text>
+  <rect x="${PW/2 - 40}" y="${LESSONS_HEADER_Y + 15}" width="80" height="2" rx="1" fill="${primary}" opacity="0.4"/>
+  `;
+      for (let i = 0; i < lessonsArr.length; i++) {
+        lessonsSVG += `<text x="${PW/2}" y="${LESSONS_START_Y + i * LESSON_GAP}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="26" fill="#c0c0d0">&#10022; ${this._esc(lessonsArr[i])}</text>\n  `;
+      }
     }
 
     return `<svg width="${PW}" height="${PH}" xmlns="http://www.w3.org/2000/svg">
@@ -881,48 +1000,33 @@ class TextPageRenderer {
   <rect x="0" y="${PH-8}" width="${PW}" height="8" fill="${primary}"/>
 
   <!-- Dekoratif daireler -->
-  <circle cx="${PW/2}" cy="${PH/2 - 100}" r="280" fill="${primary}" opacity="0.04"/>
-  <circle cx="${PW/2}" cy="${PH/2 - 100}" r="200" fill="${primary}" opacity="0.04"/>
+  <circle cx="${PW/2}" cy="${TITLE_Y - 30}" r="360" fill="${primary}" opacity="0.04"/>
+  <circle cx="${PW/2}" cy="${TITLE_Y - 30}" r="240" fill="${primary}" opacity="0.04"/>
 
   <!-- Ikon -->
-  <text x="${PW/2}" y="${PH/2 - 280}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="80" fill="${primary}" opacity="0.8">${this._esc(icon || '★')}</text>
+  <text x="${PW/2}" y="${ICON_Y}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="${ICON_SIZE}" fill="${primary}" opacity="0.85">${this._esc(icon || '★')}</text>
 
   <!-- Kitap adi -->
-  <text x="${PW/2}" y="${PH/2 - 180}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="44" fill="white">${this._esc(title)}</text>
+  <text x="${PW/2}" y="${TITLE_Y}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="${TITLE_SIZE}" fill="white">${this._esc(title)}</text>
 
   <!-- Dekoratif cizgi -->
-  <rect x="${PW/2 - 60}" y="${PH/2 - 140}" width="120" height="4" rx="2" fill="${primary}"/>
+  <rect x="${PW/2 - 60}" y="${DIVIDER_Y}" width="120" height="4" rx="2" fill="${primary}"/>
 
   <!-- Masal bitti tagline -->
-  <text x="${PW/2}" y="${PH/2 - 80}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="32" fill="#c0b0d0" font-style="italic">"Masal bitti ama izleri kald&#305;..."</text>
+  <text x="${PW/2}" y="${TAGLINE_Y}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="${TAGLINE_SIZE}" fill="#c0b0d0" font-style="italic">"Masal bitti ama izleri kald&#305;..."</text>
 
   <!-- Aciklama -->
   ${descSVG}
 
   <!-- Ogrenilen degerler -->
-  ${(() => {
-    let lessonsSVG = '';
-    if (lessons && lessons.length > 0) {
-      const lessonY = PH/2 + 180;
-      lessonsSVG = `
-  <text x="${PW/2}" y="${lessonY}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="28" fill="#a0a0b8" letter-spacing="3">BU K&#304;TAPTA NE &#214;&#286;REND&#304;K?</text>
-  <rect x="${PW/2 - 40}" y="${lessonY + 15}" width="80" height="2" rx="1" fill="${primary}" opacity="0.4"/>`;
-      const lessonStartY = lessonY + 55;
-      const lessonGap = 48;
-      for (let i = 0; i < Math.min(lessons.length, 4); i++) {
-        lessonsSVG += `
-  <text x="${PW/2}" y="${lessonStartY + i * lessonGap}" text-anchor="middle" font-family="Segoe UI, Georgia, serif" font-weight="400" font-size="26" fill="#8a8a9e">&#10022; ${this._esc(lessons[i])}</text>`;
-      }
-    }
-    return lessonsSVG;
-  })()}
+  ${lessonsSVG}
 
   <!-- Cocuk icin ozel -->
-  ${childName ? `<text x="${PW/2}" y="${PH/2 + 280}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="500" font-size="26" fill="#6a6a7e">${this._esc(childName)} i&#231;in sevgiyle haz&#305;rland&#305;</text>` : ''}
+  ${childName ? `<text x="${PW/2}" y="${CHILDNAME_Y}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="500" font-size="26" fill="#9a9aae">${this._esc(childName)} i&#231;in sevgiyle haz&#305;rland&#305;</text>` : ''}
 
-  <!-- MASAL logosu -->
-  <text x="${PW/2}" y="${PH - 140}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="48" fill="white" letter-spacing="6">MASAL</text>
-  <text x="${PW/2}" y="${PH - 95}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="20" fill="#5a5a6e">Ki&#351;iselle&#351;tirilmi&#351; Hikaye Kitab&#305;</text>
+  <!-- MasalSensin marka alani -->
+  <text x="${PW/2}" y="${PH - 140}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="44" fill="white" letter-spacing="4">MasalSensin</text>
+  <text x="${PW/2}" y="${PH - 95}" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="20" fill="#8a8a9e">www.masalsensin.com</text>
 </svg>`;
   }
 

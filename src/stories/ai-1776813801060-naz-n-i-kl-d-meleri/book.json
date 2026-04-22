@@ -1,0 +1,197 @@
+{
+  "id": "ai-1776813801060-naz-n-i-kl-d-meleri",
+  "category": "gunluk-degerler-egitimi",
+  "title": "Naz'ın Işıklü Düğmeleri",
+  "description": "Naz, sabahları kendi başına giyinmekte zorlanan sabırsız bir kızdır. Bir sabah en sevdiği ceketini giymeye çalışırken inatçı düğmeler deliklerden bir türlü geçmez. Sinirlenip pes edecekken, beş renkli düğme aniden parlayarak ışıklı dünyalara açılan geçitlere dönüşür. Naz, ceketini ilikleyebilmek için kristal buz mağaralarından pofuduk bulut şehirlerine kadar fantastik bir maceraya atılır. Her bir dünyada düğmeleri yerine oturturken derin nefes almayı, odaklanmayı ve asla pes etmemeyi öğrenir. Sonunda aynanın karşısına geçtiğinde, kendi kendine giyinebilmenin ışıkk gururunu yaşar.",
+  "lessons": [
+    "İnce motor becerilerini geliştirme ve el-göz koordinasyonu sağlama",
+    "Karşılaşılan zorluklarda pes etmeyip sabırla tekrar deneme pratiği",
+    "Öfke kontrolü sağlayarak derin nefes alma ve odaklanma becerisi",
+    "Kendi başına giyinebilme ve otonomi kazanarak özgüven geliştirme"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "templateHeroName": "Naz",
+  "heroName": "Naz",
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#D9534F",
+    "secondaryColor": "#5BC0DE",
+    "accentColor": "#F0AD4E",
+    "icon": "🔘"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Sabah Telaşı",
+      "text": "{CHILD_NAME}, odasındaki halının üzerinde oturuyordu. Pencereden sızan bir güneş hüzmesi, havada dans eden toz zerrelerini aydınlatarak parkenin üzerine vuruyordu. Mutfaktan gelen taze pişmiş ekmeğin kokusu odasına kadar süzülüyordu. Çorabının teki ayağındaydı, diğeri ise yatağın altında bir yerlerde kaybolmuştu. Bu giyinme işini tek başına yapmaktan hiç hoşlanmıyordu. \"Bu çorap neden parmağıma dolanıyor?\" diye homurdandı kendi kendine.",
+      "prompt": "CHARACTER_DESC A young boy, Naz, sitting on the floor of his sunlit room, struggling to put on a sock with a frustrated expression., setting: Çocuğun dağınık odası, sabah güneşi, mood: frustrated, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "frustrated",
+      "setting": "Çocuğun dağınık odası, sabah güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "En Sevdiği Ceket",
+      "text": "Nihayet çoraplar ve pantolonla olan savaşını kazanmıştı. Sıra, en sevdiği yünlü kırmızı ceketine gelmişti. Ceketi sandalyenin üzerinden alırken, yünün yumuşak dokusunu avucunda hissetti. Üzerinde yan yana dizilmiş, her biri farklı renkte parlayan beş düğme vardı: okyanus mavisi, limon sarısı, çimen yeşili, portakal turuncusu ve çilek kırmızısı. Her bir düğme, onun için paha biçilmez bir hazineydi.",
+      "prompt": "CHARACTER_DESC Naz holding his favorite red wool jacket, looking fondly at the five colorful buttons lined up on it., setting: Çocuğun odası, mood: warm, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuğun odası"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "hoodie",
+      "title": "İnatçı Düğmeler",
+      "text": "Ceketini sırtına geçirdi. İlk düğmeyi, okyanus mavisini iliklemeye yeltendi. Minik parmakları düğmeyi bir o yana bir bu yana çekiştirdi ama düğme, o daracık ilikten bir türlü geçmek bilmedi. \"Bu kadar kolay bir işi artık tek başıma yapabilmeliyim,\" diye düşündü. Yanaklarının yandığını hissetti, kaşlarını çattı. Parmağıyla düğmeyi daha sert itti. \"Hadi ama!\" diye söylendi. Düğme, inatçı bir keçi gibi direniyordu.",
+      "prompt": "CHARACTER_DESC Close-up on Naz's small hands fumbling with the first blue button of his jacket, his face showing intense frustration., setting: Çocuğun odası, ceketine odaklanmış halde, mood: tense, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "tense",
+      "setting": "Çocuğun odası, ceketine odaklanmış halde"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "hoodie",
+      "title": "Mavi Kıvılcım",
+      "text": "{CHILD_NAME} pes etmek üzereydi; ceketi hırsla çıkarıp bir kenara fırlatmayı düşündü. Tam o sırada, mavi düğmeden usulca bir ışığın sızdığını fark etti. Bir su damlası gibi titreyen ışık, yavaşça büyüdü. Düğme, artık sıradan bir düğme olmaktan çıkmıştı. İlik ise bir girdap gibi dönerek onu içine çağırıyor gibiydi. Küçük çocuk, şaşkınlıkla gözlerini kırpıştırdı.",
+      "prompt": "CHARACTER_DESC The blue button on Naz's jacket begins to glow with a soft, magical light, and the buttonhole swirls like a tiny vortex., setting: Çocuğun odası, ceketin düğmesine odaklanmış, mood: mysterious, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Çocuğun odası, ceketin düğmesine odaklanmış"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "hoodie",
+      "title": "Kristal Buz Mağarası",
+      "text": "Odasının tanıdık sıcaklığı aniden yok oldu. Kendini serin ve fısıltılı bir sessizliğin ortasında buldu. Etrafını, tavanından devasa buz sarkıtlarının uzandığı kristal bir mağara sarmıştı. Aldığı nefes, havada minik bir buğu bulutuna dönüşüyordu. Karşısındaki parıldayan buz duvarda, yuvarlak ve pürüzsüz bir geçit açılmıştı. Yanı başında ise tıpkı mavi düğmesi gibi, avuç içi büyüklüğünde yassı bir buz diski duruyordu.",
+      "prompt": "CHARACTER_DESC Naz stands in awe inside a vast, shimmering ice cave. In front of him is a glowing, circular passage in an ice wall., setting: Geniş ve parıldayan bir kristal buz mağarası, mood: magical, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Geniş ve parıldayan bir kristal buz mağarası"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "hoodie",
+      "title": "Buzdan Geçit",
+      "text": "Görevi anlamıştı: Buz diskini, parlayan geçitten geçirmesi gerekiyordu. İlk denemesinde aceleci davrandı. Diski hızla itince, disk kayarak yana savruldu ve bir buz kütlesine çarpıp keskin bir \"tın\" sesi çıkardı. İçinde yine o eski, tanıdık sabırsızlık kabarmıştı; tıpkı odasında düğmeyle boğuşurken hissettiği gibi. \"Yine olmuyor,\" diye geçirdi aklından.",
+      "prompt": "CHARACTER_DESC Naz pushes a large ice disc towards the glowing passage, but it slips and slides away, showing his renewed frustration., setting: Kristal buz mağarasının içi, mood: nervous-excited, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Kristal buz mağarasının içi"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "hoodie",
+      "title": "Sakin Bir Nefes",
+      "text": "Gözlerini bir anlığına kapattı ve babasının öğrettiği o sakinleştirici nefesi hatırladı. Burnundan derin bir nefes alarak mağaranın serin havasını ciğerlerine doldurdu. Nefesini yavaşça verirken omuzlarının gevşediğini hissetti. Gözlerini açtığında her şey daha berrak görünüyordu; buz diskinin yüzeyindeki incecik desenleri bile seçebiliyordu artık. Bu sefer daha yavaş deneyecekti.",
+      "prompt": "CHARACTER_DESC Naz closes his eyes and takes a deep, calming breath, his shoulders relaxing. The ice disc sits peacefully in front of him., setting: Kristal buz mağarası, mood: reflective, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Kristal buz mağarası"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "hoodie",
+      "title": "Pofuduk Bulut Şehri",
+      "text": "Buz diski, yavaş ve dikkatli bir itişle geçitten süzülerek geçti ve tatlı bir 'klik' sesi duyuldu. Gözlerini açtığında kendini pamuk kadar yumuşak bir zeminde buldu. Ayaklarının altındaki şey, bir buluttu. Etrafında pofuduk bulutlardan yapılmış kulelerin ve köprülerin olduğu bir şehir uzanıyordu. Ceketinin ikinci düğmesi, limon sarısı olan, şimdi de parlayan bir ışık topu olarak yanında süzülüyordu.",
+      "prompt": "CHARACTER_DESC Naz stands on a soft cloud, looking with wonder at a city made of fluffy white clouds under a clear blue sky., setting: Pofuduk bulutlardan yapılmış fantastik bir şehir, mood: dreamy, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Pofuduk bulutlardan yapılmış fantastik bir şehir"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "hoodie",
+      "title": "Odaklanma Oyunu",
+      "text": "Buradaki geçit, kendi etrafında dönen bir buhar halkasıydı. {CHILD_NAME}, parmağının ucuyla sarı ışık topuna nazikçe dokundu. Topu halkanın kenarlarına değdirmeden, tam ortasından geçirmesi gerekiyordu; bu, sandığından çok daha fazla odaklanma istiyordu. Aklına yine o sakinleştirici nefes geldi. Bütün dikkatini parmağının ucuna ve ışık topunun süzülüşüne verdi. \"Sadece topa odaklan,\" diye mırıldandı. Top, halkadan ipek bir kumaş gibi sessizce kayıp geçti.",
+      "prompt": "CHARACTER_DESC Naz is focused, gently guiding a small orb of yellow light through a swirling ring of vapor with his fingertip., setting: Bulut şehrinin üzerinde, gökyüzünde, mood: determined, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Bulut şehrinin üzerinde, gökyüzünde"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "hoodie",
+      "title": "Yeşil Fısıltı",
+      "text": "Üçüncü düğme, çimen yeşili olan, onu dev yaprakların gölgesindeki fısıltılı bir ormana getirdi. Hafif bir rüzgâr, ağaçların tepesinde hışırdıyordu. Buradaki geçit, iki yana salınan bir sarmaşık halkasıydı. Geçirmesi gereken nesne ise yosun tutmuş, pürüzsüz bir nehir taşıydı. Sabırla sarmaşığın doğru anını bekledi ve taşı tam zamanında usulca halkaya doğru bıraktı.",
+      "prompt": "CHARACTER_DESC In a serene forest of giant leaves, Naz patiently waits for a swinging vine loop to align before dropping a mossy stone through it., setting: Dev yaprakların olduğu sakin bir orman, mood: calm, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "calm",
+      "setting": "Dev yaprakların olduğu sakin bir orman"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "hoodie",
+      "title": "Turuncu Ritim",
+      "text": "Turuncu düğme, onu günbatımının sıcak renkleriyle boyanmış bir dünyaya taşıdı. Burada, üzerinde zıplanabilen irili ufaklı platformlar vardı. Her zıplayış, havaya tatlı bir melodi yayıyordu. Turuncu düğmeyi geçitten geçirmek için doğru ritimle üç platformda zıplaması gerekiyordu. Zıpladı: bir, iki ve üç! Düğme, son notayla birlikte yerine oturdu.",
+      "prompt": "CHARACTER_DESC Naz joyfully bounces on a series of orange, trampoline-like platforms in a rhythmic sequence., setting: Günbatımı renklerinde, zıplayan platformlarla dolu bir dünya, mood: joyful, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Günbatımı renklerinde, zıplayan platformlarla dolu bir dünya"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "hoodie",
+      "title": "Son Düğme",
+      "text": "Gözlerini açtığında kendini yeniden odasında buldu. Ceketinin dört düğmesi de sımsıkı iliklenmişti. Geriye sadece en üstteki, çilek kırmızısı düğme kalmıştı. Bu son düğme, her zaman en zoru olurdu; sanki en büyük cesareti o istiyordu. Düğmenin parlak yüzeyinde kendi yansımasını gördü: Gözleri kararlı, dudaklarıysa hafifçe büzülmüştü. Artık sabırsızlanan o eski çocuk değildi.",
+      "prompt": "CHARACTER_DESC Close-up on the final red button of the jacket. Naz's determined face is reflected on its shiny surface., setting: Çocuğun odası, ceketin son düğmesine bakıyor, mood: reflective, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuğun odası, ceketin son düğmesine bakıyor"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "hoodie",
+      "title": "Kendi Başına",
+      "text": "Son bir derin nefes aldı. \"Bu sefer olacak,\" diye düşündü. Sağ elinin başparmağı ve işaret parmağıyla kırmızı düğmeyi kavradı, sol eliyle de iliğin kenarındaki kumaşı gerdi. Gözlerini bir an bile ayırmadan, öğrendiği o yeni sabırla düğmeyi iliğe doğru yönlendirdi. Bu defa hiç zorlanmadı. Düğme, tatlı bir 'tık' sesiyle yuvasına yerleşti.",
+      "prompt": "CHARACTER_DESC Naz's hands are shown carefully and successfully buttoning the final red button of his jacket with intense focus., setting: Çocuğun odası, mood: triumphant, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Çocuğun odası"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "hoodie",
+      "title": "Aynadaki Işık",
+      "text": "{CHILD_NAME} koşarak boy aynasının karşısına geçti. Aynadan ona, kırmızı ceketi üzerine tam oturmuş, bütün düğmeleri kusursuzca iliklenmiş bir çocuk bakıyordu. İşte olmuştu, artık kendi işini kendi gören büyükler gibiydi. Göğsünün ortasında, güneşli bir güne uyanmak gibi sıcak bir his yayıldı. Yüzündeki gülümseme o kadar içtendi ki, sanki odanın içindeki lamba ondan daha parlak yanıyordu. Başarmıştı. Tek başına başarmıştı.",
+      "prompt": "CHARACTER_DESC Naz stands proudly in front of a full-length mirror, smiling brightly, looking at his perfectly buttoned jacket., setting: Çocuğun odası, boy aynasının önü, mood: triumphant-emotional, Medium close-up shots, character is central and emotionally expressive. The background environment is soft and dreamy., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Çocuğun odası, boy aynasının önü"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🧠",
+      "facts": [
+        "Beynimiz, düğme iliklemek gibi yeni bir şey öğrendiğimizde minik yollar inşa eder.",
+        "Bir hareketi ne kadar çok tekrar edersek, beynimizdeki bu yollar o kadar güçlenir ve işimiz kolaylaşır.",
+        "Parmaklarımızın ucunda, beynimize sürekli mesaj gönderen binlerce alıcı vardır. Bu sayede bir kumaşın yumuşaklığını hissedebiliriz."
+      ],
+      "icon": "🧠"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 🌬️",
+      "facts": [
+        "Derin bir nefes aldığımızda beynimize \"sakinleşebilirsin\" diye bir sinyal gider. Bu, içimiz için küçük bir sarılma gibidir.",
+        "Sakin olduğumuzda gözlerimizi ve ellerimizi zor bir işe odaklamak daha kolay olur.",
+        "Hayvanlar bile sakinleşmek için nefeslerini kullanır. Hiç yorulan bir köpeğin derin bir nefes verdiğini gördün mü?"
+      ],
+      "icon": "🌬️"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: Naz is in his cozy, sunlit bedroom. In the foreground, his red jacket is prominent. In the background, his room is slightly blurred with toys and a bed, creating a sense of warmth and home.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Naz'ın Işıklı Düğmeleri\". Bir düğmenin ardında kaç dünya saklıdır? Naz, inatçı düğmeleriyle boğuşurken kendini sihirli bir maceranın içinde bulur. Bu yolculukta sabrı, odaklanmayı ve kendi gücünü keşfeder. Kendi başına giyinmek, bazen en büyük maceradır.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "naz-isimli-kisiye-ozel-kitap"
+}

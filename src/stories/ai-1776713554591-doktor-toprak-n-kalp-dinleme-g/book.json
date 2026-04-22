@@ -1,0 +1,195 @@
+{
+  "id": "ai-1776713554591-doktor-toprak-n-kalp-dinleme-g",
+  "category": "meslek-hikayeleri",
+  "title": "Doktor Toprak'ın Kalp Dinleme Günü",
+  "description": "Toprak'ın doktor olarak ilk günüdür ve kalbi heyecandan bir kuş gibi çırpınmaktadır. Ağlayan minik bir hastayı sakinleştirmek için önce onun oyuncak ayısını 'muayene eder' ve korkunun yerine bir kahkaha tohumu eker. Gün boyunca farklı insanlara sadece ilaç değil, şefkat ve anlayış da vererek, gerçek iyileştirmenin kalpten kalbe kurulan bir köprü olduğunu keşfeder.",
+  "lessons": [
+    "Empatiyle dinlemek",
+    "Korkulu anlarda sakin kalmak",
+    "Küçük bir dokunuşun iyileştirici gücü",
+    "Başkalarına yardım etmenin mutluluğu"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#E0F2F1",
+    "secondaryColor": "#FFCC80",
+    "accentColor": "#81C784",
+    "icon": "🩺"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Büyük Gün",
+      "text": "{CHILD_NAME} sabah gözlerini açtığında, odasına sızan güneş ışığının her zamankinden farklı parladığını hissetti. Bugün onun doktor olarak ilk günüydü. Yatağının başucundaki sandalyede asılı duran bembeyaz, jilet gibi ütülenmiş önlüğü ona göz kırpıyordu. Karnının içinde bir sürü kelebek kanat çırpıyor, kalbi ise göğüs kafesinde yuvasından uçmaya hazırlanan küçük bir serçe gibi atıyordu. Derin bir nefes alıp parmak uçlarında yükselerek önlüğün kolalı kumaşına dokundu.",
+      "prompt": "CHARACTER_DESC A young boy, Toprak, stands on his tiptoes in his pajamas, cautiously touching a crisp white doctor's coat hanging on a chair., setting: Toprak'ın aydınlık çocuk odası, sabahın erken saatleri, mood: nervous-excited, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Toprak'ın aydınlık çocuk odası, sabahın erken saatleri"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Biraz Büyük Önlük",
+      "text": "Annesi odaya usulca süzülüp gülümseyerek önlüğü {CHILD_NAME}'ın omuzlarına yerleştirdi. Önlüğün kolları biraz uzun geldiğinden, minik elleri içinde kayboluverdi. Annesi kollarını kıvırırken, kumaşın serinliği tenine değdi. \"Tıpkı gerçek bir doktora benzedin,\" diye fısıldadı annesi. {CHILD_NAME} aynadaki yansımasına baktı; gözleri merakla parlayan iki iri boncuk gibiydi. Bu bembeyaz önlüğün içinde kendini hem çok büyümüş hem de biraz kaybolmuş hissediyordu.",
+      "prompt": "CHARACTER_DESC Toprak's mother gently rolls up the oversized sleeves of his new white doctor's coat as he looks at his reflection in the mirror., setting: Toprak'ın odası, ayna karşısı, mood: warm, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Toprak'ın odası, ayna karşısı"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "İlk Hastalar",
+      "text": "{CHILD_NAME}, boynunda babasının hediye ettiği oyuncak stetoskopla salona geçti. Salon, o gün için onun muayenehanesiydi. Bütün oyuncakları bir sırada sessizce kendisini bekliyordu: benekli zürafa, tek gözü düğmeli tavşan, uykulu aslan... Stetoskopun metal ucu boynuna değince serin bir ürperti hissetti. Kimi önce iyileştireceğine karar vermeye çalışırken, odadaki beklenti dolu sessizlik kulağında uğulduyordu. \"Pekâlâ,\" diye mırıldandı, \"herkes sırasını beklesin.\"",
+      "prompt": "CHARACTER_DESC Toprak, wearing a doctor's coat and a toy stethoscope, stands seriously in the living room, looking at a line of his stuffed animal 'patients'., setting: Oyuncaklarla dolu bir salon, hayali bir muayenehane, mood: determined, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Oyuncaklarla dolu bir salon, hayali bir muayenehane"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "Babamın Karnı Gurulduyor",
+      "text": "İlk hasta, kapıdan eğilerek içeri giren babasıydı. Elini karnına bastırarak, \"Doktor bey, karnımda sanki bir bando takımı prova yapıyor,\" dedi. Küçük doktor, ciddiyetle babasına yaklaştı. Stetoskopunu onun tişörtüne dayadı ve gözlerini kapatıp dinlemeye koyuldu. Gerçekten de içeriden fokurdayan komik sesler geliyordu. \"Hmm,\" diye mırıldandı {CHILD_NAME}, \"sanırım bu bandonun biraz elmaya ihtiyacı var.\" Babası öyle bir güldü ki kahkahası bütün odayı çınlattı.",
+      "prompt": "CHARACTER_DESC Toprak seriously presses his toy stethoscope against his father's tummy, who is playfully clutching his stomach and making a funny face., setting: Salon/muayenehane, mood: joyful, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Salon/muayenehane"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Korkmuş Gözler",
+      "text": "Babası meyve bandosunu susturmak için mutfağa yöneldiğinde, kapının aralığından yeni bir hasta göründü. Bu, komşularının kızı Elif'ti. Sıkı sıkı sarıldığı oyuncak ayısının arkasına saklanmış, ürkek gözlerle etrafa bakınıyordu. Gözleri birer fincan tabağı gibi açılmıştı ve alt dudağı titriyordu. Salona girmek için tek bir adım bile atmadan, sadece kapının eşiğinde durup {CHILD_NAME}'a ve onun bembeyaz önlüğüne baktı. Odadaki neşeli hava, yerini fısıltılı bir sessizliğe bıraktı.",
+      "prompt": "CHARACTER_DESC A small girl, Elif, peeks shyly from behind a large teddy bear she's hugging, standing at the doorway and looking nervously at Toprak., setting: Salonun kapı eşiği, mood: nervous, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous",
+      "setting": "Salonun kapı eşiği"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "Gözyaşı Damlası",
+      "text": "Küçük doktor, en nazik sesiyle, \"Merhaba, içeri gelmez misin?\" diye sordu. Elif'i rahatlatmak için stetoskopunu ona doğru bir adım uzattı. Tam o anda kızın gözünden tombul bir damla yaş süzülüp ayısının pelüş kulağına düştü. Hıçkırarak bir adım geri çekildi. {CHILD_NAME}'ın yanakları ısındı. Sadece yardım etmek istemişti, onu korkutmak değil. Ne yapacağını bilemeyerek eli havada öylece kalakaldı. İyileştirmek için uzattığı alet, şimdi bir korku duvarı örmüştü.",
+      "prompt": "CHARACTER_DESC Toprak holds his stethoscope out, but the little girl Elif takes a step back, a single tear rolling down her cheek onto her teddy bear., setting: Salon/muayenehane, mood: intense, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Salon/muayenehane"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Bir Fikrin Kıvılcımı",
+      "text": "{CHILD_NAME}, elini yavaşça indirdi. Ne diyeceğini, ne yapacağını düşünürken gözü Elif'in sımsıkı tuttuğu ayıcığa takıldı. Ayıcığın düğme gözleri bile sanki endişeyle bakıyordu. Zihninde bir şimşek çaktı. Belki de... Belki de yanlış hastadan başlamıştı. Dikkatini Elif'ten alıp tamamen onun ayıcığına yöneltti. Ayıcığın yumuşak, kahverengi tüyleri ve sabırlı duruşu, ona ne yapması gerektiğini fısıldıyor gibiydi.",
+      "prompt": "CHARACTER_DESC Toprak lowers his hand, his gaze shifting from the crying girl to the teddy bear she is holding tightly. A thoughtful, gentle expression on his face., setting: Salon/muayenehane, mood: reflective, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Salon/muayenehane"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Önce Ayıcık",
+      "text": "{CHILD_NAME}, dizlerinin üzerine çökerek Elif ile aynı hizaya geldi. Gözlerini ayıcıktan ayırmadan, \"Sanırım önce ayıcığı dinlemeliyim,\" dedi fısıltıya benzer bir sesle. \"Baksana, o da biraz korkmuş gibi.\" Elif, hıçkırıklarının arasından şaşkınlıkla ona baktı. Gözyaşları yanaklarında donup kalmıştı. Doktorun kendisiyle değil de en yakın arkadaşıyla konuşması, her şeyi değiştirmişti. Yavaşça ayısını ona doğru uzattı.",
+      "prompt": "CHARACTER_DESC Toprak is kneeling on the floor, gently speaking to the teddy bear as Elif, still hesitant but no longer crying, watches him with curiosity., setting: Salon/muayenehane, yerde, mood: curious, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Salon/muayenehane, yerde"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Pofuduk Kalp Atışı",
+      "text": "{CHILD_NAME}, stetoskopun soğuk metal ucunu avcunda ısıttıktan sonra nazik bir hareketle ayının pofuduk göğsüne dayadı. Gözlerini kapattı, kaşlarını çatarak dikkatle dinliyormuş gibi yaptı. Bir süre öylece durdu. Oda o kadar sessizleşmişti ki duvardaki saatin tik takları bile duyuluyordu. Elif, nefesini tutmuş, doktorun ne duyacağını bekliyordu. Acaba ayısının kalbi nasıl atıyordu?",
+      "prompt": "CHARACTER_DESC Toprak kneels with his eyes closed, seriously listening to the teddy bear's chest with his stethoscope. Elif watches intently, holding her breath., setting: Salon/muayenehane, yerde, mood: magical, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Salon/muayenehane, yerde"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Bir Kıkırdama Tohumu",
+      "text": "{CHILD_NAME} gözlerini açtı ve yüzüne ciddi bir gülümseme yerleştirdi. \"Ayıcığının kalbi pamuk şeker gibi atıyor,\" dedi. \"Sadece kocaman bir sarılmaya ihtiyacı varmış.\" Elif'in yüzünde önce bir şaşkınlık belirdi, sonra dudaklarının kenarı yavaşça yukarı kıvrıldı. Çok geçmeden kendini tutamayıp küçük bir kıkırdama bıraktı. Bu kıkırdama, odadaki bütün korkuyu dağıtan tatlı bir rüzgâr gibiydi. {CHILD_NAME}, kalbinin içinin sıcacık olduğunu hissetti.",
+      "prompt": "CHARACTER_DESC Elif lets out a small giggle, her face breaking into a smile, as Toprak smiles back at her, still holding the stethoscope to the teddy bear., setting: Salon/muayenehane, yerde, mood: joyful, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Salon/muayenehane, yerde"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Gerçek Kalp Atışı",
+      "text": "Elif, ayısını geri alıp ona sımsıkı sarıldı. Sonra hiç tereddüt etmeden {CHILD_NAME}'a döndü ve \"Şimdi beni dinleyebilir misin?\" diye sordu. Sesi artık titremiyordu. O, başıyla onayladı. Stetoskopu bu kez Elif'in göğsüne yavaşça koydu. Güm... güm... güm... Bu ses, ayıcığın sessizliğinden çok farklıydı. Canlıydı. Sakin ve ritmik bir melodi gibiydi. Bu, güvenin sesiydi.",
+      "prompt": "CHARACTER_DESC A calm Elif now lets Toprak listen to her own chest with the stethoscope. Both children have gentle, trusting expressions on their faces., setting: Salon/muayenehane, mood: warm, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Salon/muayenehane"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "Yorgun Dede",
+      "text": "Tam o esnada dedesi yorgun adımlarla içeri girdi ve koltuğa otururken derince iç çekti. Bu, babasının oyunu gibi değildi. Dedesi gerçekten yorgun görünüyordu, yüzündeki çizgiler daha bir belirginleşmişti. {CHILD_NAME} bir an durup ona baktı. Elindeki stetoskopun bu gerçek yorgunluğu dinleyemeyeceğini anladı. Dedesi için başka bir şeye, daha farklı bir ilaca ihtiyaç vardı. Bu, bir oyun değildi.",
+      "prompt": "CHARACTER_DESC Toprak looks on with concern as his elderly grandfather enters the room, looking genuinely tired and sinking into an armchair., setting: Salon/muayenehane, mood: reflective, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Salon/muayenehane"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "En İyi İlaç",
+      "text": "{CHILD_NAME}, stetoskopunu yavaşça boynundan çıkarıp masanın üzerine bıraktı. Gerçek bir doktor olmasa da dedesine nasıl yardım edeceğini biliyordu. Sessizce odadan çıkıp dedesinin en sevdiği yumuşak battaniyeyi getirdi ve dizlerinin üzerine örttü. Sonra mutfaktan bir bardak su alıp ona uzattı. Hiç konuşmadan, dedesinin yanındaki küçük tabureye oturup elini tuttu. Dedesi, onun sıcak elini sıktı ve minnetle gülümsedi. Bazen en iyi ilacın bir alet değil, sıcacık bir dokunuş olduğunu o an anladı.",
+      "prompt": "CHARACTER_DESC Toprak gently places a warm blanket over his grandfather's knees and offers him a glass of water, sitting beside him quietly., setting: Salon, koltuk kenarı, mood: triumphant-emotional, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Salon, koltuk kenarı"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Artık Tam Uyan Önlük",
+      "text": "Gün bittiğinde, {CHILD_NAME} beyaz önlüğünü çıkarırken kollarının artık o kadar da uzun gelmediğini fark etti. Önlük, sanki gün boyunca yaşadıklarıyla tam onun üzerine göre dikilmişti. Onu sandalyesine özenle astı. Bugün sadece oyuncakları değil, korkuyu ve yorgunluğu da iyileştirmişti. Gerçek bir doktor olmanın, sadece kalp atışlarını değil, kalbin neye ihtiyacı olduğunu da dinlemek anlamına geldiğini hissetmişti.",
+      "prompt": "CHARACTER_DESC Toprak carefully hangs his white doctor's coat back on the chair. The coat seems to fit him perfectly now as he looks at it with a sense of quiet accomplishment., setting: Toprak'ın odası, akşam, mood: warm, Medium shot, character is the main focus, background is soft and warm. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Toprak'ın odası, akşam"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? ❤️",
+      "facts": [
+        "Kalbimiz, biz dinlenirken bile hiç durmadan çalışan çok güçlü bir kastır.",
+        "Bir çocuğun kalbi, bir yetişkinin kalbinden daha hızlı atar.",
+        "Sakin bir kalp atışı sesi dinlemek, hem hayvanları hem de insanları rahatlatabilir."
+      ],
+      "icon": "❤️"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 😄",
+      "facts": [
+        "Gülümsediğimizde yüzümüzde bir sürü minik kas aynı anda çalışır.",
+        "Kahkaha atmak, vücudumuz için küçük bir egzersiz gibidir ve bizi daha mutlu hissettirir.",
+        "Birine sarılmak ya da elini tutmak gibi küçücük bir iyilik bile beynimizin \"mutluluk hormonu\" salgılamasını sağlar."
+      ],
+      "icon": "😄"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: The scene is a bright, cozy living room. In the foreground, Toprak and the teddy bear are the focus. In the midground, a slightly blurry little girl watches with a hopeful expression. The background is filled with soft light from a window and other toys.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Doktor Toprak'ın Kalp Dinleme Günü\". Doktor Toprak için ilk iş günü heyecanla başlar. Ancak en önemli dersini, korkmuş bir hastasını ve onun oyuncak ayısını iyileştirmeye çalışırken öğrenir. Gerçek iyileştirmenin, kalpten kalbe uzanan sıcacık bir dinleme sanatı olduğunu keşfeder.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "meslekKey": "doktor"
+}

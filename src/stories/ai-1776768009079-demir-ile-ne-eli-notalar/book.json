@@ -1,0 +1,197 @@
+{
+  "id": "ai-1776768009079-demir-ile-ne-eli-notalar",
+  "category": "gunluk-degerler-egitimi",
+  "title": "Demir ile Neşeli Notalar",
+  "description": "Demir bazen sabırsız davranan ve isteklerini yüksek sesle söyleyen bir çocuktu. Bir gün odasında parlayan, ışıklı bir müzik aleti buldu. Bu alet sayesinde kelimelerin aslında birer melodi olduğunu keşfetti. 'Lütfen', 'Teşekkür ederim' ve 'Özür dilerim' gibi nazik kelimeler kullandığında, etrafında rengarenk ve harika notalar uçuşmaya başladı. Bu müzikli kelimelerle uykucu taşları güldürdü, gökyüzünde gökkuşağı köprüleri kurdu ve okyanusun derinliklerinde yeni dostluklar edindi. Demir, gerçek sihrin ve en güzel müziğin kendi nezaketinde saklı olduğunu öğrendi. Artık evdeki her günü, ailesiyle paylaştığı neşeli bir senfoniye dönüştü.",
+  "lessons": [
+    "Nazik iletişimin gücünü fark ederek isteklerini 'Lütfen' diyerek ifade etme alışkanlığı kazanma.",
+    "Hata yapıldığında 'Özür dilerim' demenin, ilişkileri onaran olumlu ve sorumlu bir davranış olduğunu anlama.",
+    "Başkalarının emeğine 'Teşekkür ederim' ile karşılık vererek minnettarlık duygusunu geliştirme.",
+    "Kullanılan kelimelerin ve ses tonunun çevredeki insanların duygularını nasıl etkilediğini fark etme (Duygusal zeka gelişimi)."
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#4A90E2",
+    "secondaryColor": "#F5A623",
+    "accentColor": "#7ED321",
+    "icon": "🎵"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Sabırsız Ayak Sesleri",
+      "text": "{CHILD_NAME}, mutfak kapısının eşiğinde duruyordu. Canı, annesinin yaptığı o lezzetli erik suyundan çekmişti ve bir an önce içmek için sabırsızlanıyordu. Ayakucunu ritmik bir sabırsızlıkla parkeye vuruyor, çıkan tok ses mutfağın sessizliğini deliyordu. Minik elleri birer yumruk olmuş, kaşları çatılmıştı. İçeriden annesinin sesi duyuldu: \"Biraz beklemen gerek tatlım.\" Fakat onun beklemeye hiç niyeti yoktu.",
+      "prompt": "CHARACTER_DESC A young boy, Demir, standing impatiently at the kitchen doorway, tapping his foot on the wooden floor., setting: Mutfak kapısının önü, öğleden sonra., mood: impatient, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "impatient",
+      "setting": "Mutfak kapısının önü, öğleden sonra."
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Tozlu Köşedeki Kutu",
+      "text": "{CHILD_NAME} somurtarak odasına döndü. Hıncını alamayıp oyuncak sepetini devirdi ama içinden hiçbir şeyle oynamak gelmiyordu. Tam o sırada bakışları, dolabın altındaki loş köşeye takıldı. Orada, daha önce hiç fark etmediği, üzeri oymalı ahşap bir kutu duruyordu. Kutunun kapağının arasından incecik bir ışık sızmaktaydı. Merakı, huysuzluğunu bir anda unutturdu.",
+      "prompt": "CHARACTER_DESC Demir in his messy room, noticing a mysterious wooden box tucked away under his closet, a faint light seeping from its edge., setting: Demir'in odası, oyuncakların arasında., mood: curious, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Demir'in odası, oyuncakların arasında."
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Işıklı Müzik Aleti",
+      "text": "Kutuyu kendine doğru çektiğinde, kapağı hafif bir gıcırtıyla aralandı. İçinde, avuç içine sığacak kadar pürüzsüz ahşaptan yapılma bir müzik aleti duruyordu. Üzerindeki parlak metal tuşlar, odaya sızan ışıkta pırıldıyordu. {CHILD_NAME} aleti eline aldığında, ahşabın avcunu ısıtan bir ılıklığı olduğunu fark etti. Tuşların tam ortasından, sakin bir kalp atışı gibi, yumuşak bir ışık yanıp sönüyordu.",
+      "prompt": "CHARACTER_DESC Close-up on Demir's hands holding a small, beautifully crafted wooden musical instrument (like a kalimba) that is glowing softly from within., setting: Demir'in odasının zemini., mood: mysterious, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Demir'in odasının zemini."
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "İlk Fısıltı, İlk Nota",
+      "text": "{CHILD_NAME} merakla parmağını tuşlardan birine bastırdı. Hiç ses çıkmadı. Bir daha, bir daha denedi ama alet sessizliğini koruyordu. Tam hayal kırıklığıyla onu yere bırakacakken, aklına bir fikir geldi. Aleti dudaklarına yaklaştırdı ve usulca fısıldadı: \"Lütfen... Lütfen, küçücük bir ses çıkar.\" Fısıltısı biter bitmez, aletten güneş gibi parlak, sarı bir ışık topu havalandı. Işık topu, odanın içinde süzülürken ardında cıvıl cıvıl bir nota bıraktı.",
+      "prompt": "CHARACTER_DESC Demir whispering 'Lütfen' to the instrument, and a single, bright, yellow orb of light emerges from it, floating in the air like a musical note., setting: Demir'in odası., mood: magical, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Demir'in odası."
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Kelimelerin Renkleri",
+      "text": "{CHILD_NAME} şaşkınlıkla olduğu yerde kalakaldı. Yeniden denemeye karar verdi. \"Elma!\" diye seslendi yüksek sesle. Hiçbir şey olmadı. Sonra yumuşacık bir sesle, \"Teşekkür ederim,\" diye mırıldandı. Bu defa aletten mavi ve yeşil renklerde, misket gibi yuvarlak notalar döküldü. Notalar, parkenin üzerinde zıplayıp kahkahayı andıran çınlamalar çıkararak bir bir gözden kayboldu. Onun yüzüne ise aydınlık bir gülümseme yayıldı.",
+      "prompt": "CHARACTER_DESC Demir sitting on the floor, smiling, as he says 'Teşekkür ederim' and a shower of blue and green light-orbs pours out of the instrument., setting: Demir'in odası, yerde otururken., mood: joyful, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Demir'in odası, yerde otururken."
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "Uykucu Taşlar",
+      "text": "{CHILD_NAME}, yeni oyuncağını kaptığı gibi bahçeye koştu. Annesinin çiçeklerinin dibindeki gri, yuvarlak taşlar her zamanki gibi hareketsizdi. Onlara kendi dilinde \"uykucu taşlar\" derdi. Taşlara doğru eğilip sihirli aletini onlara uzattı. \"Uyanın artık!\" diye seslendi. Fakat taşlar kımıldamadı bile.",
+      "prompt": "CHARACTER_DESC Demir in the garden, leaning over a cluster of smooth, grey stones, holding out his musical instrument towards them., setting: Evin arka bahçesi, çiçeklerin yanı., mood: determined, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Evin arka bahçesi, çiçeklerin yanı."
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Taşları Güldüren Melodi",
+      "text": "Sonra aklına odasında sihir yaratan kelimeler geldi. Derin bir nefes aldı. Belki de onlarla müziğin diliyle konuşmalıydı. Taşlara biraz daha yaklaştı ve en nazik sesiyle, \"Merhaba sevgili taşlar, benimle oynamak ister misiniz lütfen?\" diye sordu. Aletten çıkan rengârenk notalar, birer kelebek gibi uçuşup taşların üzerine kondu. {CHILD_NAME}, o an için gri taşların yüzeyinde minicik bir gülümseme belirdiğini gördüğüne yemin edebilirdi.",
+      "prompt": "CHARACTER_DESC Colorful notes fluttering from Demir's instrument and landing on the grey stones, which seem to have faint, smiling lines appearing on them., setting: Bahçedeki çiçek tarhı, yakından., mood: magical, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Bahçedeki çiçek tarhı, yakından."
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Gökkuşağı Köprüsü",
+      "text": "Bahçedeki sulama hortumundan sızan su, yerde küçük bir gölet oluşturmuştu. {CHILD_NAME}, karşı taraftaki kırmızı topuna ulaşmak istiyor ama ayakkabılarının ıslanmasını hiç istemiyordu. Aletini eline alıp neşeli bir melodi mırıldandı. Melodinin içinde bolca 'lütfen' ve 'teşekkür ederim' saklıydı. Notalar birleşerek su birikintisinin üzerinde ışıldayan bir gökkuşağı köprüsü kurdu.",
+      "prompt": "CHARACTER_DESC Demir creating a shimmering bridge of rainbow-colored light notes across a puddle in the garden to reach his red ball., setting: Güneşli bir bahçe, yerde su birikintisi., mood: triumphant, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Güneşli bir bahçe, yerde su birikintisi."
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Okyanusun Derinlikleri",
+      "text": "O akşam odasında, akvaryumdaki japon balığını izliyordu. Küçük balık, cam fanusun içinde tek başına yavaşça süzülüyordu. {CHILD_NAME} aletini akvaryumun camına usulca dayadı. \"Yalnız değilsin,\" diye fısıldadı. \"Ben senin arkadaşınım.\" Aletten çıkan yumuşak, lacivert notalar suyun içinde dans eden minik ateş böcekleri gibi parladı. Balık, ışıklara doğru yüzerek neşeyle kendi etrafında bir tur döndü. O an, okyanusun en derininde yeni bir dost edindiğini hissetti.",
+      "prompt": "CHARACTER_DESC Demir with his face close to his fish tank, the instrument glowing against the glass, creating soft blue light-notes that dance inside the water with the fish., setting: Demir'in odası, loş ışıkta, akvaryumun önünde., mood: warm, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Demir'in odası, loş ışıkta, akvaryumun önünde."
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Kırılan Vazo",
+      "text": "Neşeli notaların coşkusuyla odasında dans ederken ayağı sehpanın kenarına takılıverdi. Sehpanın üzerindeki, annesinin en sevdiği çiçekli vazo gürültüyle yere düştü. Kırılan porselenin keskin sesi, odadaki bütün cıvıltılı notaları susturdu. Müzik aletinin ışığı titreşerek söndü. {CHILD_NAME}'in midesine soğuk bir taş oturdu.",
+      "prompt": "CHARACTER_DESC Demir standing frozen in shock, looking down at a shattered flower vase on the floor. The musical instrument in his hand has gone dark., setting: Demir'in odası, yerde kırık bir vazo., mood: intense, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Demir'in odası, yerde kırık bir vazo."
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Sessizliğin Ağırlığı",
+      "text": "Kapı açıldı ve annesi içeri girdi. Yerdeki kırık parçaları gördüğünde yüzündeki gülümseme yavaşça soldu. Kızgın görünmüyordu, sadece çok üzgündü. {CHILD_NAME}, annesinin gözlerindeki o ifadeyi görünce zorlukla yutkundu. Keşke kızsaydı da böyle üzülmeseydi. Annesinin hayal kırıklığı, en büyük cezadan bile daha ağır gelmişti. Elindeki soğuk ve sessiz aleti sımsıkı tutuyordu. Söylemesi gereken bir şey vardı ama kelimeler boğazında düğümlenmişti.",
+      "prompt": "CHARACTER_DESC Demir's mother standing in the doorway with a sad expression, looking at the broken vase, while Demir looks at her with wide, worried eyes., setting: Demir'in odası, annesi kapıda duruyor., mood: nervous-excited, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Demir'in odası, annesi kapıda duruyor."
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "En Sıcak Melodi",
+      "text": "Derin bir nefes alıp cesaretini topladı. Annesinin gözlerinin içine baktı ve titreyen bir sesle, \"Özür dilerim anne,\" dedi. Bu iki kelime dudaklarından döküldüğü an, elindeki alet şimdiye dek hiç olmadığı kadar parlak, altın rengi bir ışıkla parladı. Odanın her köşesini dolduran sıcacık, yumuşak bir melodi yayıldı. Bu melodi, kırık parçaların keskinliğini bile unutturacak kadar huzurluydu.",
+      "prompt": "CHARACTER_DESC As Demir says 'Özür dilerim' to his mom, the instrument in his hand erupts in a warm, golden light that fills the entire room, enveloping both of them., setting: Demir'in odası., mood: climactic, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "climactic",
+      "setting": "Demir'in odası."
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "Paylaşılan Notalar",
+      "text": "Annesi eğilip ona sımsıkı sarıldı. Kulağına, \"Özrün için teşekkür ederim canım,\" diye fısıldadı. {CHILD_NAME}, annesinin sesinden de etrafa pembe ve turuncu, pamuk şeker kadar yumuşak notaların yayıldığını hissetti. İşte o zaman anladı: Bu sihirli müzik sadece onun aletinde değildi. Herkesin kalbinde saklıydı.",
+      "prompt": "CHARACTER_DESC Demir and his mother hugging tightly. Faint, soft-colored notes of pink and orange seem to emanate from his mother's words as well., setting: Demir'in odası, anne ve oğul sarılırken., mood: triumphant-emotional, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Demir'in odası, anne ve oğul sarılırken."
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Neşeli Bir Senfoni",
+      "text": "O akşam yemek masası, adeta bir konser salonuna dönmüştü. \"Lütfen tuzu uzatır mısın?\" diyen babasının sesinden gök mavisi notalar uçuştu. \"Eline sağlık anneciğim,\" dediğinde havada tarçın kokulu bir melodi belirdi. {CHILD_NAME} gülümsedi. Evleri, birbirine karışan neşeli notalarla dolu, sıcacık bir senfoniye dönüşmüştü ve dünyadaki en güzel müzik de buydu.",
+      "prompt": "CHARACTER_DESC The family sitting around the dinner table, smiling. The air around them is subtly filled with soft, colorful, and harmonious light-notes., setting: Akşam yemeği masası, aile bir arada., mood: warm, Medium wide shot, character is the focus but the environment is rich and detailed. The magical light from the notes should illuminate the scene., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Akşam yemeği masası, aile bir arada."
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🎶",
+      "facts": [
+        "Ses, havada minik dalgalar halinde yolculuk eder, tıpkı suya atılan bir taşın halkaları gibi.",
+        "Kulağımız o kadar hassastır ki, iki farklı müzik notasını birbirinden kolayca ayırabilir.",
+        "Balinalar, okyanusun altında birbirleriyle şarkı söyleyerek konuşurlar ve şarkıları yüzlerce kilometre uzaktan duyulabilir.",
+        "Mutlu bir müzik dinlediğimizde, beynimiz kendimizi iyi hissetmemizi sağlayan kimyasallar salgılar."
+      ],
+      "icon": "🎶"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ❤️",
+      "facts": [
+        "Birine 'Teşekkür ederim' dediğimizde, sadece o kişiyi değil, kendimizi de daha mutlu hissederiz.",
+        "'Özür dilerim' demek, arkadaşlar arasındaki en güçlü köprülerden birini kurar.",
+        "Sadece insanlar değil, bazı hayvanlar da birbirlerine yardım eder ve iyilik yaparlar.",
+        "Gülümsediğimizde, yüzümüzdeki kaslar beynimize 'mutlu ol' mesajı gönderir, bu yüzden gülümsemek bulaşıcıdır!"
+      ],
+      "icon": "❤️"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A cozy and slightly magical child's bedroom. The main light source is the glowing instrument. In the background, we see a bed, a window with a crescent moon outside. Foreground has a few scattered wooden toys. The mood is warm and wondrous.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Demir ile Neşeli Notalar\". Demir, kelimelerin de notalar gibi renkleri ve melodileri olduğunu keşfeder. Nazik sözcüklerle dolu bu sihirli macera, en güzel müziğin kalbimizden gelen iyilik olduğunu fısıldıyor.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "demir-neseli-notalar-kisiye-ozel-kitap"
+}

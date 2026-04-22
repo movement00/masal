@@ -1,28 +1,31 @@
 const OpenAI = require("openai");
+const { GoogleGenAI } = require("@google/genai");
 const config = require("../config");
 
 /**
- * Yaş grubu bazlı metin kuralları
- * Baglam/yapay_zeka_baglam_dosyasi.md referansına göre
+ * Yaş grubu bazlı metin kuralları — Behiç Ak / Sara Şahinkanat / Fatih Erdoğan seviyesinde
+ * edebi kalite için revize edildi (2026-04-21). Önceki "1-5 kelime, ses taklidi, Nerede? Göster!"
+ * kuralları GPT-4o tarafından harfiyen uygulanıp template metnini parçalıyordu.
+ * Yeni kurallar: show-don't-tell, duyusal detay, doğal Türkçe, anne-baba sesli okuma uyumlu.
  */
 const AGE_GROUP_RULES = {
   "0-3": {
-    sentenceLength: "1-5 kelime",
-    style: "Çok kısa ve tekrarlı cümleler. Ses taklitleri bol olsun: 'Miyav miyav!', 'Hav hav!', 'Vınn vınn!' gibi.",
-    vocabulary: "Çok basit, günlük kelimeler. Tek heceli kelimeler tercih edilsin.",
-    interaction: "Sorular: 'Nerede?', 'Göster!', ses taklidi yapma daveti",
-    sceneLength: "Her sahne maksimum 2-3 kısa cümle",
-    emotionalDepth: "Basit duygular: mutlu, üzgün, korkmuş. Sıcak ve güvenli atmosfer.",
-    specialNotes: "Onomatope (ses taklidi) kelimeler çok önemli. Tekrar eden kalıplar kullan."
+    sentenceLength: "2-8 kelime, tam Türk cümlesi (özne + yer/zaman + yüklem)",
+    style: "Yumuşak, sıcak, duyusal. Kısa tam cümleler — asla 'Nerede? Göster!' gibi komut parçaları değil. Anne-baba sesli okusun, bebek kulağına nazikçe değsin.",
+    vocabulary: "Basit ama somut. Duyusal kelimeler seç: yumuşak, ılık, parlak, cıvıl cıvıl, mışıl mışıl. Duyguyu ima et: 'gözleri parladı', 'yanakları pembeleşti'.",
+    interaction: "Gerçek hayat anları: 'Güneş yanağına dokundu', 'Minnoş kucağına kıvrıldı'. Sorular değil, sahneler.",
+    sceneLength: "Her sahne 3-5 kısa ama tam cümle.",
+    emotionalDepth: "Güven, sıcaklık, dostluk. İç dünyayı bir detayla ima et ('kalbi küçük bir kuş gibi çarptı').",
+    specialNotes: "Onomatope kullanılabilir ama sahne başı değil cümle içi: 'Mır mır fısıldadı', 'cik cik öttü'. DEVRİK CÜMLE YASAK. Klişe başlangıç ('bir varmış') YOK."
   },
   "3-6": {
-    sentenceLength: "4-6 kelime (kısa cümleler öncelikli)",
-    style: "Kısa ve akıcı anlatım. Diyaloglar önemli. Duygusal ifadeler kullan.",
-    vocabulary: "Basit ama zengin kelime dağarcığı. Sıfatlar kullanılabilir: 'kocaman', 'minik', 'parlak'.",
-    interaction: "Sorular, tahmin ettirme, duygu ifadeleri. 'Sence ne oldu?', 'Nasıl hissetmiş?'",
-    sceneLength: "Her sahne 3-5 cümle. Bir paragraf diyalog olabilir.",
-    emotionalDepth: "Empati, paylaşma, cesaret, dostluk temaları. Çatışma basit ve çözümü net.",
-    specialNotes: "Karakterlerin duygularını açıkça belirt. Mutlu son önemli."
+    sentenceLength: "5-12 kelime, akıcı tam cümleler",
+    style: "Pixar/Behiç Ak tarzı — show-don't-tell. Her sahnede bir duyusal detay + bir duygu imgesi + mümkünse kısa bir replik.",
+    vocabulary: "Zengin ama çocuğun anladığı — 'kocaman', 'minik', 'kıvrım kıvrım', 'pırıl pırıl'. Sıradan sıfatlardan ('güzel', 'mükemmel') kaçın.",
+    interaction: "Doğrudan sorulardan kaç — sahne içinden çocuğun kendi sorusu doğsun.",
+    sceneLength: "Her sahne 4-6 cümle. 1 kısa diyalog içersin.",
+    emotionalDepth: "Empati, paylaşma, cesaret, dostluk. Duyguyu ayrıntıyla kur — 'üzüldü' DEME, 'gözleri doldu, parmağıyla yaprağı çizdi' YAZ.",
+    specialNotes: "DEVRİK CÜMLE YASAK. Klişe başlangıç ('aniden', 'bir anda') YOK. Sonu umut verici ama didaktik değil."
   },
   "6-12": {
     sentenceLength: "6-12 kelime (yaşa göre artan karmaşıklık)",
@@ -60,8 +63,53 @@ class TextGenerator {
       this.client = new OpenAI({ apiKey: config.openai.apiKey });
     } else {
       this.client = null;
-      console.log("  [TextGenerator] OpenAI API key yok - metin üretimi devre dışı (book.json metinleri kullanılacak)");
     }
+    if (config.google?.apiKey) {
+      this.gemini = new GoogleGenAI({ apiKey: config.google.apiKey });
+    } else {
+      this.gemini = null;
+      console.log("  [TextGenerator] GOOGLE_API_KEY yok - cocuk kitabi text enhance devre disi (template aynen kullanilir)");
+    }
+  }
+
+  // Gemini 2.5-pro + thinkingBudget ile text enhancement.
+  // Ayni model ve benzer kalite hedefiyle story-writer expand()'e paralel.
+  async _geminiGenerate(prompt, { temperature = 0.75, thinkingBudget = 2048, maxTokens = 8000 } = {}) {
+    if (!this.gemini) throw new Error("Gemini client not initialized");
+    const desiredOutput = maxTokens;
+    const maxOutputTokens = Math.max(desiredOutput + thinkingBudget + 2000, 10240);
+    const res = await this.gemini.models.generateContent({
+      model: "gemini-2.5-pro",
+      contents: prompt,
+      config: {
+        temperature,
+        maxOutputTokens,
+        thinkingConfig: { thinkingBudget },
+      },
+    });
+    return res.text || "";
+  }
+
+  _extractJson(text) {
+    const fence = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+    const candidate = fence ? fence[1] : text;
+    const first = candidate.indexOf("{");
+    const firstArr = candidate.indexOf("[");
+    const start = first < 0 ? firstArr : (firstArr < 0 ? first : Math.min(first, firstArr));
+    if (start < 0) throw new Error("JSON bulunamadi");
+    let depth = 0, end = -1, openChar = candidate[start], closeChar = openChar === "{" ? "}" : "]";
+    let inStr = false, esc = false;
+    for (let i = start; i < candidate.length; i++) {
+      const c = candidate[i];
+      if (esc) { esc = false; continue; }
+      if (c === "\\" && inStr) { esc = true; continue; }
+      if (c === '"') { inStr = !inStr; continue; }
+      if (inStr) continue;
+      if (c === openChar) depth++;
+      else if (c === closeChar) { depth--; if (depth === 0) { end = i; break; } }
+    }
+    if (end < 0) throw new Error("JSON kapanisi yok");
+    return JSON.parse(candidate.slice(start, end + 1));
   }
 
   /**
@@ -76,29 +124,53 @@ class TextGenerator {
    * @returns {Promise<object[]>} - Kisisellesirilmis sahne metinleri
    */
   async personalizeStoryTexts(bookData, childInfo) {
+    // Helper: apply placeholder substitutions to a text string.
+    const applyPlaceholders = (txt) => (txt || "")
+      .replace(/\{CHILD_NAME\}/g, childInfo.name)
+      .replace(/\{RECIPIENT_NAME\}/g, childInfo.recipientName || childInfo.name)
+      .replace(/\{SENDER_NAME\}/g, childInfo.senderName || "")
+      .replace(/\{CUSTOM_MESSAGE\}/g, childInfo.customMessage || "")
+      .replace(/\{NICKNAME\}/g, childInfo.recipientNickname || childInfo.recipientName || childInfo.name)
+      .replace(/\{SHARED_ACTIVITY\}/g, childInfo.sharedActivity || '')
+      .replace(/\{RECIPIENT_HOBBY\}/g, childInfo.recipientHobby || '')
+      .replace(/\{SPECIAL_MEMORY\}/g, childInfo.specialMemory || '');
+
+    const returnAsIs = () => bookData.scenes.map(s => ({
+      sceneNumber: s.sceneNumber,
+      title: applyPlaceholders(s.title),
+      text: applyPlaceholders(s.text),
+    }));
+
+    // ── CHILD BOOKS: Gemini 2.5-pro + thinking ile Behic Ak kalitesinde ENHANCE et ──
+    // Template metni "outline/seed" olarak gorur, literatur zenginligi ekler.
+    // Daha once GPT-4o cagrisi harsh "1-5 kelime, Nerede? Goster!" kurallariyla
+    // template'i parcalariyordu. Simdi Gemini 2.5-pro + thinkingBudget=2048 +
+    // story-writer'daki "Behic Ak, Sara Sahinkanat, Fatih Erdogan seviyesi" prompt
+    // ile iyilestirilmis metin uretiyor.
+    const isAdultBook = bookData.targetAudience === 'yetiskin';
+    if (!isAdultBook) {
+      if (!this.gemini) {
+        console.log("  [text] Gemini yok - template aynen kullaniliyor (morphology swap yapildi)");
+        return returnAsIs();
+      }
+      try {
+        const enhanced = await this._enhanceChildBookText(bookData, childInfo);
+        return enhanced;
+      } catch (err) {
+        console.error("  [text] Gemini enhance hatasi:", err.message, "- template aynen kullaniliyor");
+        return returnAsIs();
+      }
+    }
+
     // OpenAI client yoksa basit {CHILD_NAME} replace yap
     if (!this.client) {
       console.log("  [text] OpenAI yok - book.json metinleri {CHILD_NAME} ile kişiselleştiriliyor");
-      return bookData.scenes.map(s => ({
-        sceneNumber: s.sceneNumber,
-        title: s.title,
-        text: (s.text || "")
-          .replace(/\{CHILD_NAME\}/g, childInfo.name)
-          .replace(/\{RECIPIENT_NAME\}/g, childInfo.recipientName || childInfo.name)
-          .replace(/\{SENDER_NAME\}/g, childInfo.senderName || "")
-          .replace(/\{CUSTOM_MESSAGE\}/g, childInfo.customMessage || "")
-          .replace(/\{NICKNAME\}/g, childInfo.recipientNickname || childInfo.recipientName || childInfo.name)
-          .replace(/\{SHARED_ACTIVITY\}/g, childInfo.sharedActivity || '')
-          .replace(/\{RECIPIENT_HOBBY\}/g, childInfo.recipientHobby || '')
-          .replace(/\{SPECIAL_MEMORY\}/g, childInfo.specialMemory || '')
-      }));
+      return returnAsIs();
     }
 
     // Yaş grubunu belirle (book.json'dan veya çocuk yaşından)
     const ageGroup = bookData.ageGroup || getAgeGroup(childInfo.age);
     const rules = AGE_GROUP_RULES[ageGroup] || AGE_GROUP_RULES["3-6"];
-
-    const isAdultBook = bookData.targetAudience === 'yetiskin';
 
     const systemPrompt = isAdultBook ?
 `Sen ödüllü bir Türk edebiyatçısısın. Kişiselleştirilmiş yetişkin hediye kitapları yazıyorsun.
@@ -341,6 +413,101 @@ Aşağıdaki JSON formatında döndür:
       throw new Error("AI yanıtı JSON olarak ayrıştırılamadı");
     }
     return result;
+  }
+
+  /**
+   * Çocuk kitabı sahne metinlerini Gemini 2.5-pro + thinkingBudget ile Behiç Ak
+   * kalitesinde yeniden yaz. Template metni OUTLINE / SEED olarak görür:
+   * olay akışı, mekân, nesneler, duygu arcı, karakterler KORUNUR ama
+   * anlatım zenginlesir — duyusal detay, show-don't-tell, canli diyalog.
+   */
+  async _enhanceChildBookText(bookData, childInfo) {
+    const ageGroup = bookData.ageGroup || getAgeGroup(childInfo.age);
+    const rules = AGE_GROUP_RULES[ageGroup] || AGE_GROUP_RULES["3-6"];
+    const name = childInfo.name;
+    const gender = childInfo.gender === "kiz" ? "kız" : "erkek";
+
+    const sidekickLine = bookData.sidekick
+      ? `Yan karakter: ${bookData.sidekick.name}${bookData.sidekick.species ? ` (${bookData.sidekick.species})` : ""}. Sahnelerde onu aynı isimle an.`
+      : "";
+
+    const scenesBlock = bookData.scenes.map((s) => (
+      `Sahne ${s.sceneNumber} — Başlık: "${s.title}"\nTaslak metin: ${s.text || "(boş)"}`
+    )).join("\n\n");
+
+    const prompt = `Sen dünya standartlarında bir Türk çocuk edebiyatı yazarısın — Behiç Ak, Sara Şahinkanat, Fatih Erdoğan, Feridun Oral, Gülten Dayıoğlu seviyesinde. Anne-babalar sesli okuyacak. Metin hem çocuğun hayalinde yaşamalı hem yetişkinin dudağında güzel dursun.
+
+GÖREV:
+Bu kişiye özel çocuk kitabının 14 sahnesinin TASLAK metinlerini verdim. Bunlar minimal, özet cümlelerdir. Sen bunları aynı olay akışını / aynı mekânı / aynı nesneleri / aynı duygu arkını KORUYARAK edebî kalitede YENİDEN YAZ.
+
+Kahraman: ${name} (${gender}, ${childInfo.age} yaşında)
+Kitap başlığı: ${bookData.title}
+Yaş grubu: ${ageGroup}
+Kazanımlar: ${(bookData.lessons || []).join(", ")}
+${sidekickLine}
+
+TÜRKÇE YAZIM KURALLARI (MUTLAK):
+- Noktalama eksiksiz (virgül, nokta, soru, ünlem, tırnak). Diyaloglar tırnak içinde.
+- Ünsüz yumuşaması, ünlü uyumu, ekler doğru.
+- DEVRİK CÜMLE KESİN YASAK. Özne → yer/zaman → yüklem (yüklem en sonda). "Deniz kenarında Elif yürüyordu" YANLIŞ; "Elif, deniz kenarında yürüyordu" DOĞRU.
+- "de/da/ki/mi" eklerini ayrı/birleşik doğru yaz.
+- Klişe başlangıçlar yasak ("bir anda", "aniden", "o sırada" tekrarı yok).
+
+KALİTE KURALLARI (MUTLAK):
+- Show, don't tell. "Üzüldü" yazma, "gözleri doldu, parmağıyla yaprağı çizdi" yaz.
+- Her sahnede EN AZ BİR somut duyusal detay (ses, koku, dokunuş, renk tonu, ısı).
+- Her sahnede mümkünse EN AZ BİR kısa replik (tırnak içinde).
+- "harika", "mükemmel", "muhteşem", "çok güzel" gibi boş sıfatlar YASAK.
+- "sihir", "sihirli", "büyü", "büyülü", "mucize", "tılsım" KELİMELERİ YASAK (MasalSensin marka kuralı). Yerine "ışık, yıldız, kıvılcım, hayal, kalp, rüya" gibi yere basan kelimeler.
+- Metaforlar doğal olsun, süslü değil: "kuşun sesi hâlâ kulağındaydı" tarzı.
+- Dil ritmi: kısa-uzun cümleler dönüşümlü, sesli okuyunca akıcı.
+
+SAHNE AKIŞI:
+- Her sahne önceki sahnenin duygusal/mekânsal uzantısı. Scene N'in sonu → Scene N+1'in başlangıcı doğal bir geçişle bağlanmalı.
+- Sahneler BİRBİRİYLE BAĞLANTILI bir arc oluşturur.
+- Son sahne, ilk sahnedeki hissi tamamlar — huzur, sevgi, güven.
+
+YAŞ GRUBU KURALLARI (${ageGroup}):
+- Cümle uzunluğu: ${rules.sentenceLength}
+- Stil: ${rules.style}
+- Söz dağarcığı: ${rules.vocabulary}
+- Etkileşim/anlatım: ${rules.interaction}
+- Sahne uzunluğu: ${rules.sceneLength}
+- Duygusal derinlik: ${rules.emotionalDepth}
+- Özel notlar: ${rules.specialNotes}
+
+İSİM KULLANIMI:
+- ${name} adını her sahnede 1-2 kez DOĞAL şekilde kullan, 3'ten fazla yazma.
+- İsim yerine "o", "küçük kahraman", "başını dayadığı yerde" gibi zamirler/sıfatlar kullan.
+
+SAHNE TASLAKLARI:
+${scenesBlock}
+
+ÇIKTI:
+Sadece şu JSON formatı, başka metin YOK:
+{
+  "scenes": [
+    { "sceneNumber": 1, "title": "<başlık — taslaktan aynen al ya da çok ufak iyileştir>", "text": "<yeniden yazılmış zengin Türkçe metin>" },
+    ...
+  ]
+}`;
+
+    const raw = await this._geminiGenerate(prompt, {
+      temperature: 0.8,
+      thinkingBudget: 2048,
+      maxTokens: 8000,
+    });
+    const data = this._extractJson(raw);
+    const scenes = data.scenes || data;
+    if (!Array.isArray(scenes) || scenes.length === 0) {
+      throw new Error("Gemini bos scenes dondu");
+    }
+    console.log(`  [text] Gemini enhance TAMAM: ${scenes.length} sahne Behic Ak kalitesinde yazildi`);
+    return scenes.map(s => ({
+      sceneNumber: s.sceneNumber,
+      title: s.title,
+      text: (s.text || "").trim(),
+    }));
   }
 }
 

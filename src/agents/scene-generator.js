@@ -84,7 +84,17 @@ class SceneGenerator {
           await new Promise((r) => setTimeout(r, 3000));
         }
 
-        // Direkt task olustur - cocuk fotografi OLMADAN
+        // Provider-agnostic: eger generator'in kendi generateBackground metodu varsa (Google/Fal) onu kullan,
+        // yoksa eski KIE _createTask flow'unu kullan.
+        if (typeof this.imageGen.generateBackground === "function") {
+          const result = await this.imageGen.generateBackground(prompt, referenceImages);
+          const buffer = result && result.buffer;
+          const resultUrl = result && result.resultUrl;
+          if (buffer && buffer.length > 1024) return { buffer, resultUrl, success: true };
+          throw new Error("Gorsel cok kucuk veya bos");
+        }
+
+        // Legacy KIE flow
         const taskId = await this.imageGen._createTask(prompt,
           referenceImages.length > 0 ?
             await Promise.all(referenceImages.map(async ref => {
@@ -93,13 +103,9 @@ class SceneGenerator {
             })).then(urls => urls.filter(Boolean)) :
             []
         );
-
         const resultUrl = await this.imageGen._waitForResult(taskId, 300000, onProgress);
         const buffer = await this.imageGen._downloadImage(resultUrl);
-
-        if (buffer && buffer.length > 1024) {
-          return { buffer, resultUrl, success: true };
-        }
+        if (buffer && buffer.length > 1024) return { buffer, resultUrl, success: true };
         throw new Error("Gorsel cok kucuk");
       } catch (err) {
         console.error(`  [scene-generator] BG uretim hatasi (${attempt}/${maxRetries}):`, err.message);

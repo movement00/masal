@@ -1,0 +1,196 @@
+{
+  "id": "ai-1776720008415-kayra-ve-huysuz-bulut",
+  "category": "duygu-kontrolleri",
+  "title": "Kayra ve Huysuz Bulut",
+  "description": "Kayra, her şeyin ters gittiği huysuz bir sabaha uyanır. Tam odasındaki oyuncaklara surat asarken, parıldayan Kalp Kutusu belirir ve içinden Şükran çıkar. Şükran, Kayra'ya en sevdiği şeyleri hatırlatarak huysuz bulutun ardındaki güneşi görmesine ve en somurtkan günlerde bile içindeki sıcaklığı bulabileceğini keşfetmesine yardım eder.",
+  "lessons": [
+    "Şükran duygusunu tanımak",
+    "Duygularla konuşabilmek",
+    "İçsel kabul ve sabır",
+    "Duygularla dost olmak"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#FDE68A",
+    "secondaryColor": "#A7C7E7",
+    "accentColor": "#F4A261",
+    "icon": "☁️"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Huysuz Sabah",
+      "text": "{CHILD_NAME} gözlerini araladığında, odasına dolan ışık ona hiç de “Günaydın!” demedi. Yorgan, onu bir türlü bırakmak istemeyen bir ahtapot gibiydi. Ayağına geçirdiği çorabın dikişi parmağını rahatsız ediyordu. Tam tepesinde minicik, gri bir bulutun dolaştığını hissediyordu; bugün her şey ters gidecekti.",
+      "prompt": "CHARACTER_DESC A young boy sits on the edge of his bed, looking grumpy, with a small, stylized grey cloud hovering just over his head., setting: Çocuk odası, sabahın ilk ışıkları, mood: reflective, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuk odası, sabahın ilk ışıkları"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Surat Asan Oyuncaklar",
+      "text": "{CHILD_NAME}, odasının ortasında durakaldı. Dün gece neşeyle oynadığı kırmızı arabası, şimdi yerde duran cansız bir lekeydi. Yapboz kutusu devrilmiş, parçalar halıya saçılmıştı. İçinde tarif edemediği bir sıkıntı vardı ve canı hiçbir şey oynamak istemiyordu. Parmağının ucuyla mavi kamyonunu itti; kamyon sessizce kayarak duvara usulca dokundu.",
+      "prompt": "CHARACTER_DESC The boy listlessly pushes a toy truck across the floor with one finger, his face sullen., setting: Dağınık bir çocuk odası, mood: reflective, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Dağınık bir çocuk odası"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Kalp Kutusu'nun Işığı",
+      "text": "Kitaplığın en üst rafından yumuşak bir parıltı sızdığını fark etti. Orada, daha önce hiç görmediği, avuç içi kadar ahşap bir kutu duruyordu. Kalbi heyecanla çarpmaya başladı: Bu kutu da nereden çıkmıştı? Kutunun üzerinden incecik bir ışık huzmesi süzülüyor, havadaki toz taneciklerini dans eden yıldızlara çeviriyordu. Kutudan belli belirsiz, tatlı bir uğultu yayılıyordu.",
+      "prompt": "CHARACTER_DESC The boy stands on his tiptoes, looking up at a small, intricately carved wooden box on a high shelf that is emitting a soft, warm glow., setting: Çocuk odası, kitaplığın önü, mood: mysterious, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Çocuk odası, kitaplığın önü"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "Minik Bir Ziyaretçi",
+      "text": "{CHILD_NAME}, bir tabureye tırmanıp kutuyu dikkatle aşağı indirdi. Kapağını kaldırdığı an, içinden süzülen ışık odanın gölgelerini silerek her köşeyi altın rengine boyadı. Işığın ortasında, bir ateş böceği gibi parıldayan minicik bir varlık havada süzülüyordu. \"Merhaba,\" diye fısıldadı. \"Sanırım tependeki o huysuz bulut için biraz yardıma ihtiyacın var.\"",
+      "prompt": "CHARACTER_DESC The boy sits on the floor with the open box in his lap, looking in wonder at a tiny, glowing, fairy-like being floating out of it., setting: Çocuk odası, yerde oturan çocuk, mood: magical, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Çocuk odası, yerde oturan çocuk"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Unutulan Ayıcık",
+      "text": "Minik ışık, \"Benim adım Şükran,\" diye tanıttı kendini. Sonra uçup yatağın başındaki eski, püskü ayıcığın üzerine kondu. \"Bu ayıcığı hatırlıyor musun?\" diye sordu. {CHILD_NAME} omuz silkti. O ayıcık artık onun için sadece tozlu, unutulmuş bir oyuncaktı. Şükran devam etti: \"Ona sarıldığında kulaklarının ne kadar yumuşak olduğunu, uyurken sana nasıl yoldaşlık ettiğini hatırla.\"",
+      "prompt": "CHARACTER_DESC The tiny glowing being, 'Şükran', sits on the head of a worn teddy bear, while the boy looks at the bear thoughtfully., setting: Çocuk odası, yatağın yanı, mood: reflective, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuk odası, yatağın yanı"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "Dedenin Kucağı",
+      "text": "{CHILD_NAME}'nin parmakları istemsizce ayıcığın kadifemsi kulağına dokundu. Yüreğine ufacık bir sıcaklık yayıldı. Şükran, duvardaki bir fotoğrafa doğru süzüldü. \"Peki ya dedenin anlattığı o güldüren hikayeler?\" diye sordu. Çocuk, dedesinin kucağındaki o güvenli sıcaklığı ve odada çınlayan kahkahaları anımsadı.",
+      "prompt": "CHARACTER_DESC The boy looks at a framed photo of him with his grandfather, a gentle, reminiscent smile starting to form on his face., setting: Çocuk odası, duvardaki fotoğrafa bakarken, mood: warm, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuk odası, duvardaki fotoğrafa bakarken"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Çilekli Sütün Tadı",
+      "text": "Tepesindeki gri bulut, sanki biraz dağılmaya başlamıştı. Şükran, pencereye doğru uçtu. \"En sevdiğin içecek neydi?\" diye sordu. {CHILD_NAME} bir an duraksadı. Sonra aklına annesinin yaptığı, bol köpüklü çilekli sütün o tatlı, serin lezzeti geldi. Dudaklarını şapırdattığını fark etti. \"Çilekli süt,\" diye mırıldandı.",
+      "prompt": "CHARACTER_DESC The boy stands by the window, a dreamy expression on his face as he imagines the taste of strawberry milk. The grey cloud above him is visibly smaller., setting: Çocuk odası, pencerenin önü, mood: joyful, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Çocuk odası, pencerenin önü"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Yağmurun Sesi",
+      "text": "Şükran, \"Yağmur yağarken camda yarışan damlaları izlemeyi sever misin?\" diye sordu. {CHILD_NAME} başını salladı. O tıpırtılı sesi, toprağın ıslak kokusunu ve ardından gökyüzünü boyayan kuşağı düşündü. Her yağmurdan sonra gelen o temiz ve taze hissi hatırladı. Gri bulut, şimdi bir tül kadar hafiflemişti.",
+      "prompt": "CHARACTER_DESC The boy imagines raindrops racing down a windowpane, his reflection visible in the glass. The cloud is now faint and transparent., setting: Çocuk odası, pencereden dışarı bakarken, mood: reflective, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuk odası, pencereden dışarı bakarken"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Salıncakta Uçmak",
+      "text": "\"Parktaki en sevdiğin şey ne?\" diye cıvıldadı Şükran. Bu soruya cevabı hazırdı. \"Salıncak!\" diye yanıtladı {CHILD_NAME}. Gözlerini kapattı ve salıncakla en yükseğe çıktığında karnında hissettiği o tatlı gıdıklanmayı, rüzgârın saçlarını okşamasını ve sanki parmak uçlarıyla gökyüzüne dokunacakmış gibi hissetmeyi anımsadı. İçinde bir sevinç kıpırdandı.",
+      "prompt": "CHARACTER_DESC The boy stands in his room with his eyes closed and arms outstretched, as if flying on a swing. The grey cloud has almost completely vanished., setting: Çocuk odası, gözleri kapalı hayal kurarken, mood: joyful, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Çocuk odası, gözleri kapalı hayal kurarken"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Güneşin Sıcaklığı",
+      "text": "{CHILD_NAME} gözlerini açtı. Sabah canını sıkan güneş, şimdi halının üzerine sıcak, altın rengi bir yama sermişti. Elini uzatıp ışığın ılıklığını avucunda hissetti. Güneş, ensesine konan minik bir el gibi ısıtıyordu. Artık tepesinde hiçbir bulut yoktu.",
+      "prompt": "CHARACTER_DESC The boy crouches on the floor, his hand touching a bright patch of sunlight on the rug, a look of peaceful discovery on his face., setting: Çocuk odası, güneşli bir köşe, mood: warm, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuk odası, güneşli bir köşe"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Odanın Yeni Rengi",
+      "text": "Etrafına yeniden baktı. Odası artık sıkıcı ve dağınık görünmüyordu. Kırmızı arabası onu yeni bir maceraya çağırıyordu. Yapboz parçaları, bir araya gelmeyi bekleyen gizemli bir haritaydı. Oyuncakları, oyuna başlamak için sabırsızlanan eski dostlarıydı. Her şey aynıydı ama onun için her şey farklıydı.",
+      "prompt": "CHARACTER_DESC The boy looks around his room, now bright and colorful, with a newfound appreciation for his toys. He picks up the red toy car with a smile., setting: Aydınlık ve neşeli görünen çocuk odası, mood: triumphant-emotional, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Aydınlık ve neşeli görünen çocuk odası"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "Hoşça Kal Şükran",
+      "text": "Şükran, parıldayan kutunun yanında süzülüyordu. Yüzünü aydınlatan bir gülümsemeyle, \"Gördün mü?\" dedi yumuşacık bir sesle. \"Güneş hep oradaydı, sadece bulutun arkasındaydı.\" {CHILD_NAME}, bu sözlerle yüreğini kaplayan ılıklığı hissederek ona gülümsedi. Şükran, yavaşça kutunun içine geri süzüldü ve kapağı usulca kapandı.",
+      "prompt": "CHARACTER_DESC The boy smiles gratefully at the small wooden box as the tiny glowing being peacefully fades back inside it., setting: Çocuk odası, kitaplığın önü, mood: warm, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuk odası, kitaplığın önü"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "Annenin Sesi",
+      "text": "Kutu eski sessizliğine bürünür bürünmez, aşağıdan annesinin sesi duyuldu: \"{CHILD_NAME}, kahvaltı hazır! En sevdiğinden, krep yaptım!\" Bu ses, kulağına dünyanın en neşeli şarkısı gibi geldi. Mutfaktan gelen sıcacık krep kokusu burnuna doldu. \"Geliyorum!\" diye cıvıldadı.",
+      "prompt": "CHARACTER_DESC The boy stands at his bedroom door, looking excitedly towards the stairs, drawn by the smell of breakfast., setting: Çocuk odasının kapısında, mood: joyful, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Çocuk odasının kapısında"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Sımsıcak Bir Kucaklama",
+      "text": "{CHILD_NAME}, merdivenlerden seke seke indi ve doğruca annesinin bacaklarına sarıldı. İçindeki o huysuzluğu ancak annesinin kucaklamasının dağıtabileceğini biliyordu. Annesi önce şaşırdı, sonra eğilip ona sımsıcak sarıldı. Bu kucaklama, çilekli sütün tadından da, güneşin ılıklığından da, ayıcığın yumuşaklığından da daha çok ısıttı içini. Huysuz bulutun yerinde şimdi pırıl pırıl bir güneş parlıyordu.",
+      "prompt": "CHARACTER_DESC The boy gives his mother a big, tight hug around her legs in a sunny kitchen. She leans down to hug him back., setting: Mutfak, sabah, mood: warm, Medium close-up shot, character is the main focus (50-60% of frame), with the background softly detailed to create a cozy, intimate feel., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Mutfak, sabah"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 😊",
+      "facts": [
+        "Gülümsediğimizde, beynimiz mutlu hissetmemizi sağlayan küçük haberciler gönderir. Bazen sadece gülümsemek bile modumuzu değiştirebilir!",
+        "Kocaman bir kucaklama, kendimizi daha güvende ve sakin hissetmemize yardımcı olur. Vücudumuzun \"rahatla\" düğmesine basmak gibidir.",
+        "Sevdiğimiz bir anıyı düşündüğümüzde, beynimiz o anı yeniden yaşıyormuş gibi hisseder ve bu bizi mutlu eder."
+      ],
+      "icon": "🧠"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ✨",
+      "facts": [
+        "İyi şeyleri fark edip onlara teşekkür etmeye \"şükran duymak\" denir. Bu, kalbimiz için bir vitamin gibidir!",
+        "Her gün sevdiğin üç küçük şeyi (mesela yediğin lezzetli bir meyveyi veya duyduğun güzel bir şarkıyı) hatırlamak, daha neşeli olmana yardım edebilir.",
+        "Sadece insanlar değil, bazı hayvanlar da birbirlerine yardım ederek ve oyun oynayarak mutluluklarını gösterirler."
+      ],
+      "icon": "💖"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: The scene is a cozy, slightly messy child's bedroom. Soft morning light streams through a window. In the foreground, the boy and the glowing box are the focus. In the midground, toys are scattered on a colorful rug. In the background, a bookshelf and a bed are visible.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Kayra ve Huysuz Bulut\". Bazen en somurtkan günlerde bile, içimizdeki güneşi hatırlamak için küçük bir kıvılcım yeter. Kayra'nın Kalp Kutusu'nda bulduğu sır, en sevdiğimiz şeylerin her zaman bizimle olduğunu fısıldıyor.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "duyguKey": "sukran",
+  "shopifyHandle": "kayra-ve-kalp-kutusu"
+}

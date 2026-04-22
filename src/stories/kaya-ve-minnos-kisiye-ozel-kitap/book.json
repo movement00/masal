@@ -2,6 +2,12 @@
   "id": "kaya-ve-minnos-kisiye-ozel-kitap",
   "category": "hayvan-dostum",
   "title": "Kaya ve Minnoş",
+  "sidekick": {
+    "name": "Minnoş",
+    "species": "cat",
+    "description": "a soft gray long-haired cat (like a persian/ragdoll mix), silver-gray fluffy coat with a lighter cream chest, big bright green eyes, pink nose, small ears with tufts, gentle expressive face, fluffy plume-like tail. Always the SAME gray long-haired cat — never short-haired, never orange, never tabby-striped."
+  },
+  "templateHeroName": "Kaya",
   "description": "Kaya için Minnoş sadece bir kedi değildi... patileri yumuşak, gözleri ışıl ışıl, en iyi dostuydu. Onunla uyumayı, onunla oyun oynamayı öğrendi. İşte Kaya'nın ilk arkadaşlık masalı.",
   "lessons": [
     "Sevgi hissetmek",
@@ -14,7 +20,7 @@
   "pageCount": 10,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
@@ -30,7 +36,7 @@
       "outfitId": "pajamas",
       "title": "Sabahın Işıltısı",
       "text": "Kaya, yatağında uyanır. Güneş, pencereden içeri süzülür.",
-      "prompt": "CHARACTER_DESC  A young boy, Kaya, 2 years old, wakes up in his bed, sunlight streaming through the window., setting: Kaya'nın odası, sabah, mood: dreamy, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC A young boy, Kaya, 2 years old, wakes up in his bed, sunlight streaming through the window., setting: Kaya'nın odası, sabah, mood: dreamy, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "Kaya'nın odası, sabah"
     },
@@ -39,7 +45,7 @@
       "outfitId": "pajamas",
       "title": "Yumuşacık Mırıldanma",
       "text": "Minnoş, Kaya'nın yatağına atlar. Yumuşacık tüyleri, Kaya'nın eline değer.",
-      "prompt": "CHARACTER_DESC  Minnoş, a fluffy cat, jumps onto Kaya's bed, brushing her soft fur against Kaya's hand., setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Minnoş, a fluffy cat, jumps onto Kaya's bed, brushing her soft fur against Kaya's hand., setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Kaya'nın odası, yatakta"
     },
@@ -48,7 +54,7 @@
       "outfitId": "pajamas",
       "title": "Küçük Bir Sır",
       "text": "Kaya, Minnoş'un kulaklarına fısıldamak ister. Küçük bir sırrı vardır.",
-      "prompt": "CHARACTER_DESC  Kaya leans in close to Minnoş, wanting to whisper a secret into her ear., setting: Kaya'nın odası, yatakta, mood: curious, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Kaya leans in close to Minnoş, wanting to whisper a secret into her ear., setting: Kaya'nın odası, yatakta, mood: curious, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "Kaya'nın odası, yatakta"
     },
@@ -57,7 +63,7 @@
       "outfitId": "pajamas",
       "title": "Minnoş'un Cevabı",
       "text": "Minnoş, başını Kaya'nın koluna koyar. Mırıl mırıl sesler çıkarır.",
-      "prompt": "CHARACTER_DESC  Minnoş rests her head on Kaya's arm, purring softly., setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Minnoş rests her head on Kaya's arm, purring softly., setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Kaya'nın odası, yatakta"
     },
@@ -66,7 +72,7 @@
       "outfitId": "pajamas",
       "title": "Sıcak Bir Duygu",
       "text": "Kaya, Minnoş'un sıcaklığını hisseder. Kalbi pır pır çarpar.",
-      "prompt": "CHARACTER_DESC  Kaya feels Minnoş's warmth, his heart fluttered with happiness., setting: Kaya'nın odası, yatakta, mood: joyful, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Kaya feels Minnoş's warmth, his heart fluttered with happiness., setting: Kaya'nın odası, yatakta, mood: joyful, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Kaya'nın odası, yatakta"
     },
@@ -75,7 +81,7 @@
       "outfitId": "pajamas",
       "title": "En İyi Dostum",
       "text": "Kaya, Minnoş'un kulağına eğilir. \"Sen benim en iyi dostumsun,\" diye fısıldar.",
-      "prompt": "CHARACTER_DESC  Kaya leans towards Minnoş's ear and whispers, \"You are my best friend.\", setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Kaya leans towards Minnoş's ear and whispers, \"You are my best friend.\", setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Kaya'nın odası, yatakta"
     },
@@ -84,7 +90,7 @@
       "outfitId": "pajamas",
       "title": "Gözler Kapanır",
       "text": "Minnoş, gözlerini kapatır. Sanki Kaya'nın sözlerini dinler.",
-      "prompt": "CHARACTER_DESC  Minnoş closes her eyes, as if listening intently to Kaya's words., setting: Kaya'nın odası, yatakta, mood: reflective, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Minnoş closes her eyes, as if listening intently to Kaya's words., setting: Kaya'nın odası, yatakta, mood: reflective, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "reflective",
       "setting": "Kaya'nın odası, yatakta"
     },
@@ -93,7 +99,7 @@
       "outfitId": "pajamas",
       "title": "Sımsıcak Bir Kalp",
       "text": "Kaya'nın kalbi sımsıcaktır. Onu çok sever.",
-      "prompt": "CHARACTER_DESC  Kaya's heart feels warm, full of love for Minnoş., setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Kaya's heart feels warm, full of love for Minnoş., setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Kaya'nın odası, yatakta"
     },
@@ -102,7 +108,7 @@
       "outfitId": "pajamas",
       "title": "Sakin Bir Huzur",
       "text": "İkisi de sessizce uzanır. Odaya, huzurlu bir hava dolar.",
-      "prompt": "CHARACTER_DESC  Both Kaya and Minnoş lie quietly, the room filled with a peaceful atmosphere., setting: Kaya'nın odası, yatakta, mood: dreamy, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Both Kaya and Minnoş lie quietly, the room filled with a peaceful atmosphere., setting: Kaya'nın odası, yatakta, mood: dreamy, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "Kaya'nın odası, yatakta"
     },
@@ -111,7 +117,7 @@
       "outfitId": "pajamas",
       "title": "Tatlı Rüyalar",
       "text": "Kaya, Minnoş ile uykuya dalar. Tatlı rüyalar görürler.",
-      "prompt": "CHARACTER_DESC  Kaya falls asleep with Minnoş, dreaming sweet dreams together., setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Kaya falls asleep with Minnoş, dreaming sweet dreams together., setting: Kaya'nın odası, yatakta, mood: warm, medium-close shot, character and cat 50-60% of frame, focus on emotional connection, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Kaya'nın odası, yatakta"
     }
@@ -150,7 +156,7 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Kaya ve Minnoş'un Fısıltıları\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Kaya's cozy bedroom, morning light. Kaya in pajamas, Minnoş curled up beside him. Soft blankets and a warm atmosphere..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Kaya\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Kaya ve Minnoş'un Fısıltıları\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Kaya's cozy bedroom, morning light. Kaya in pajamas, Minnoş curled up beside him. Soft blankets and a warm atmosphere.. TITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Kaya\" Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves). LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon. Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title. Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
     "backCover": "A warm artistic closing scene matching \"Kaya ve Minnoş'un Fısıltıları\". Kaya ve Minnoş'un sıcacık dostluğunu keşfedin. Minnoş'un mırıldanmaları, Kaya'nın fısıltılarıyla buluşur, kalpleri sevgiyle dolar. Minik okurlar için nazik bir başlangıç.. NO TEXT NO LETTERS in image, 3D CGI render."

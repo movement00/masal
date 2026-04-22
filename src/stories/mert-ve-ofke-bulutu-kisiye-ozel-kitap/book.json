@@ -2,6 +2,12 @@
   "id": "mert-ve-ofke-bulutu-kisiye-ozel-kitap",
   "category": "duygu-kontrolleri",
   "title": "Mert ve Öfke Bulutu",
+  "sidekick": {
+    "name": "Öfke Bulutu",
+    "species": "cloud character",
+    "description": "a small stylized grey cartoon cloud with a mildly grumpy anthropomorphic face, round puffy silhouette with little raindrop legs, thin black line eyes with one furrowed brow expression — still cute, not scary. Always the SAME grey cloud — never a different color, never raining heavily."
+  },
+  "templateHeroName": "Mert",
   "description": "Mert'in içinde bazen küçük bir bulut belirirdi. Gri, hızlı, gürültülü. O bulut öfkeydi. Bir gün Mert öğrendi ki bulutu bağırarak değil, derin nefeslerle dağıtabilirmiş. İşte Mert'in öfkesini tanıdığı masal.",
   "lessons": [
     "Öfkeyi tanımak",
@@ -15,7 +21,7 @@
   "pageCount": 14,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
@@ -31,7 +37,7 @@
       "outfitId": "casual",
       "title": "Kırmızı Kamyon",
       "text": "Mert, odasının ortasında büyük kırmızı kamyonuyla oynuyordu. Kamyonun tekerlekleri halının üzerinde yumuşakça dönüyor, küçük eliyle ittirdiğinde hafif bir hışırtı çıkarıyordu. Kırmızı kasası oyuncak bloklarla doluydu; Mert, her bloğu özenle yerleştiriyor, kuleler inşa ediyordu. Güneş, pencereden içeri süzülerek Mert'in sarı saçlarına dokunuyordu. Annesinin aşağıdan gelen neşeli sesi, mutfaktan yayılan taze demlenmiş çayın kokusuyla karışıyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) A young boy, Mert, happily plays with a large red toy truck in his sunlit room, stacking blocks in its bed., setting: Mert'in odası, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC A young boy, Mert, happily plays with a large red toy truck in his sunlit room, stacking blocks in its bed., setting: Mert'in odası, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -40,7 +46,7 @@
       "outfitId": "casual",
       "title": "Kırık Tekerlek",
       "text": "Mert, kamyonunu daha hızlı itmek istedi. Küçük parmakları aracı hızla kavramış, kollarını germişti. Bir anda, kamyonun tekerleği takıldı ve küçük bir sesle yerinden fırladı. Mert'in kalbi küt küt atmaya başladı. Yere düşen siyah tekerleğe baktı. Kırmızı kamyon, üç tekerleğiyle bir yana yatmış, sanki üzgün gibi duruyordu. Mert'in boğazında bir yumru oluştu, gözleri karardı. İçinde bir şeylerin sıkıştığını hissetti.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert accidentally breaks the wheel of his red toy truck, looking at the detached wheel on the floor with wide eyes., setting: Mert'in odası, öğleden sonra, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert accidentally breaks the wheel of his red toy truck, looking at the detached wheel on the floor with wide eyes., setting: Mert'in odası, öğleden sonra, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "nervous-excited",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -49,7 +55,7 @@
       "outfitId": "casual",
       "title": "Gri Bulut",
       "text": "Mert, elini kalbine götürdü. Göğsünün içinde küçük, gri bir bulut belirdiğini hissetti. Bu bulut, nefes alıp verdikçe büyüyordu sanki. Mert'in yüzü kızardı, yanakları sıcak oldu. Göz pınarlarında ince bir sızı hissetti. Kırık kamyona baktı; onu artık sevmiyor gibiydi. Eliyle kamyonu iteledi, itelediği yerde bile bırakmak istemiyordu. İçindeki gri bulut, tüm odasını kaplayacak kadar büyüyordu sanki.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert feels a growing grey cloud inside his chest, his face red with frustration, as he pushes away his broken toy truck., setting: Mert'in odası, öğleden sonra, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert feels a growing grey cloud inside his chest, his face red with frustration, as he pushes away his broken toy truck., setting: Mert'in odası, öğleden sonra, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "intense",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -58,7 +64,7 @@
       "outfitId": "casual",
       "title": "Annenin Şefkati",
       "text": "Annesi, mutfaktan geldi. Mert'in odasının kapısından içeri baktı. Mert'in yüzündeki ifadeyi hemen anladı. Annesinin adımları yavaşça yaklaştı. Mert'in yanına oturdu, sıcak eli Mert'in omzuna dokundu. Mert, annesinin parmaklarının teninde bıraktığı hafif sıcaklığı hissetti. Annesi, usulca Mert'in saçlarını okşadı. Odadaki gergin hava, annesinin varlığıyla biraz olsun yumuşadı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert's mother enters his room, sits beside him, and gently places a warm hand on his shoulder, stroking his hair., setting: Mert'in odası, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert's mother enters his room, sits beside him, and gently places a warm hand on his shoulder, stroking his hair., setting: Mert'in odası, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -67,7 +73,7 @@
       "outfitId": "casual",
       "title": "Adı Konan Duygu",
       "text": "\"Ne oldu, canım?\" diye sordu annesi, sesi pamuk gibi yumuşaktı. Mert, başını kaldırdı. Gözleri hâlâ nemliydi. \"Kamyonum kırıldı,\" dedi Mert, sesi titriyordu. \"İçimde bir bulut var, gri bir bulut.\" Annesi, Mert'in gözlerinin içine baktı. \"Anlıyorum,\" dedi. \"Bazen içimizde böyle bulutlar olur. Onlara 'öfke' deriz. Öfke, bir şeylerin ters gitmesinden sonra gelen sıcak bir duygu.\" Mert, öfke kelimesini duyduğunda, içindeki bulutun adını bulmuş gibiydi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert looks up at his mother, his eyes still moist, as she gently explains that the 'grey cloud' inside him is called 'anger'., setting: Mert'in odası, öğleden sonra, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert looks up at his mother, his eyes still moist, as she gently explains that the 'grey cloud' inside him is called 'anger'., setting: Mert'in odası, öğleden sonra, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "reflective",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -76,7 +82,7 @@
       "outfitId": "casual",
       "title": "Nefes Almak",
       "text": "Annesi, Mert'in elini tuttu. \"Şimdi, o bulutu nasıl dağıtabileceğimizi öğrenelim mi?\" diye sordu. Mert, annesinin elindeki sıcaklığı hissetti. Yavaşça başını salladı. \"Önce,\" dedi annesi, \"derin bir nefes alacağız. Burnundan kocaman bir çiçek kokluyor gibi.\" Mert, annesinin dediği gibi yaptı. Ciğerlerine dolan havayı hissetti, sanki çiçek kokusu burnuna geliyordu. Sonra, \"Yavaşça, bir mum üfler gibi,\" dedi annesi. Mert, usulca nefesini verdi. İçindeki bulut biraz küçülmüş gibiydi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert, guided by his mother, takes a deep breath through his nose as if smelling a flower, then slowly exhales as if blowing out a candle., setting: Mert'in odası, öğleden sonra, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert, guided by his mother, takes a deep breath through his nose as if smelling a flower, then slowly exhales as if blowing out a candle., setting: Mert'in odası, öğleden sonra, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -85,7 +91,7 @@
       "outfitId": "casual",
       "title": "Bulut Dağılıyor",
       "text": "Mert, annesiyle birlikte birkaç kez daha bu nefes egzersizini tekrarladı. Her derin nefes alışında, ciğerlerine giren taze havayı hissetti. Her yavaş nefes verişinde, içindeki gri bulutun biraz daha inceldiğini, kenarlarının şeffaflaştığını düşündü. Artık göğsündeki sıkışma eskisi kadar güçlü değildi. Odanın sıcaklığı, bulutun ağırlığından kurtulmuş gibi daha hafif geliyordu. Küçük kalbi daha sakin atmaya başlamıştı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert continues to take deep breaths with his mother, feeling the grey cloud inside him slowly dissipate and become transparent., setting: Mert'in odası, öğleden sonra, mood: calm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert continues to take deep breaths with his mother, feeling the grey cloud inside him slowly dissipate and become transparent., setting: Mert'in odası, öğleden sonra, mood: calm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "calm",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -94,7 +100,7 @@
       "outfitId": "casual",
       "title": "Düşünme Zamanı",
       "text": "\"Şimdi daha iyi hissediyor musun?\" diye sordu annesi. Mert, başını salladı. \"Evet,\" dedi, sesi daha net çıkıyordu. Sanki içindeki düğüm çözülmüştü. \"Peki, ne yapabiliriz bu kamyon için?\" diye sordu annesi. Mert, kırık kamyona baktı. Eskiden sadece kızgınlık hissediyordu. Şimdi ise, kamyonu tamir etme fikri zihninde belirmiş, bu düşünce ona umut veriyordu. Parmağıyla kopan tekerleğin yerini gösterdi. İçindeki bulut tamamen dağılmamıştı ama artık daha inceydi, sanki güneş yavaş yavaş kendini gösteriyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert, feeling calmer, looks at his broken toy truck and points to the missing wheel, thinking about fixing it., setting: Mert'in odası, öğleden sonra, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert, feeling calmer, looks at his broken toy truck and points to the missing wheel, thinking about fixing it., setting: Mert'in odası, öğleden sonra, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "reflective",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -103,7 +109,7 @@
       "outfitId": "casual",
       "title": "Fikir Işığı",
       "text": "Mert, odasına göz gezdirdi. \"Yapıştırıcı bulabiliriz,\" dedi. \"Belki babamın alet kutusunda vardır.\" Annesi gülümsedi. \"Çok iyi bir fikir,\" dedi. \"Bazen öfke bulutunun dağılmasını beklemek, ne yapacağımızı daha iyi düşünmemizi sağlar.\" Mert, annesinin sözleriyle içindeki ışığı hissetti. Artık kamyonu tamir etme arzusu, gri bulutun yerini almıştı. İçindeki küçücük bir kıvılcım, büyümeye hazırdı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert, with a hopeful expression, suggests finding glue to fix his truck, feeling a spark of an idea., setting: Mert'in odası, öğleden sonra, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert, with a hopeful expression, suggests finding glue to fix his truck, feeling a spark of an idea., setting: Mert'in odası, öğleden sonra, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "inspirational",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -112,7 +118,7 @@
       "outfitId": "casual",
       "title": "Birlikte Tamir",
       "text": "Mert ve annesi, babasının alet kutusunu buldular. Kutu, hafif metal kokuyordu. İçinden küçük bir tüp yapıştırıcı çıktı. Mert, annesinin yardımıyla kırık tekerleği dikkatlice yerine oturttu. Parmakları, tekerleği sıkıca tutarken biraz titriyordu. Annesi, Mert'in elini nazikçe destekledi. Yapıştırıcı kuruyana kadar beklediler. Beklerken, Mert annesine gün içinde yaşadıklarını anlattı. Kamyon, artık eskisi gibi dimdik duruyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert and his mother carefully reattach the broken wheel of the toy truck using glue from a toolbox, holding it steady., setting: Mert'in odası, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert and his mother carefully reattach the broken wheel of the toy truck using glue from a toolbox, holding it steady., setting: Mert'in odası, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -121,7 +127,7 @@
       "outfitId": "casual",
       "title": "Yeni Bir Oyun",
       "text": "Kamyon tamir olmuştu. Mert, kamyonuyla tekrar oynamaya başladı. Bu sefer daha dikkatliydi. Tekerlekler, halının üzerinde eski neşesiyle dönüyordu. Mert, yeni bir oyun uydurdu. Kamyonuna bir tekerlek tamir istasyonu kurdu. Diğer oyuncaklarını da getirip tekerleklerini kontrol ediyordu. Artık içindeki gri bulut tamamen yok olmuştu. Yerine, güneşli bir gülümseme ve neşeli bir oyun gelmişti.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert happily plays with his repaired red toy truck, creating a 'wheel repair station' for his other toys., setting: Mert'in odası, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert happily plays with his repaired red toy truck, creating a 'wheel repair station' for his other toys., setting: Mert'in odası, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -130,7 +136,7 @@
       "outfitId": "casual",
       "title": "Kalpteki Işık",
       "text": "Annesi, Mert'i izliyordu. Mert, dönüp annesine kocaman gülümsedi. \"Anne,\" dedi. \"İçimdeki bulut gitti. Şimdi ışık var.\" Annesi, Mert'in yanağına bir öpücük kondurdu. \"Evet, canım,\" dedi. \"Herkesin içinde böyle bir ışık vardır. Öfke bulutları geldiğinde, nefes alarak ve düşünerek o ışığı tekrar bulabiliriz.\" Mert, kalbindeki sıcak ışığı hissetti. Bu, onun kendi ışığıydı, her zaman orada duruyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert smiles brightly at his mother, declaring the grey cloud is gone and a light is now inside him, as his mother kisses his cheek., setting: Mert'in odası, öğleden sonra, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert smiles brightly at his mother, declaring the grey cloud is gone and a light is now inside him, as his mother kisses his cheek., setting: Mert'in odası, öğleden sonra, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "Mert'in odası, öğleden sonra"
     },
@@ -139,7 +145,7 @@
       "outfitId": "casual",
       "title": "Uyku Zamanı",
       "text": "Akşam oldu. Mert, yatağında uzanıyordu. Annesi, ona uyumadan önce bir hikaye okudu. Hikaye bittiğinde, annesi Mert'in alnını okşadı. Mert, gözlerini kapattı. Yatağının kenarında duran kırmızı kamyonuna baktı. Kırık tekerleği tamir edilmişti. Artık biliyordu, içeride gri bir bulut hissettiğinde, derin nefes alarak ve annesiyle konuşarak o bulutu dağıtabilirdi. İçindeki ışık, her zaman parlıyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert lies in bed, eyes closed, after his mother reads a story, looking at his repaired red truck on the bedside table., setting: Mert'in yatak odası, akşam, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert lies in bed, eyes closed, after his mother reads a story, looking at his repaired red truck on the bedside table., setting: Mert'in yatak odası, akşam, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Mert'in yatak odası, akşam"
     },
@@ -148,7 +154,7 @@
       "outfitId": "casual",
       "title": "Yeni Gün",
       "text": "Sabah oldu. Güneş, pencereden içeri süzüldü. Mert, yatağından kalktı. İçinde gri bir bulut hissetmiyordu. Kalbi hafif ve neşeyle doluydu. Kırmızı kamyonuna baktı. Kamyon, onu yeni maceralara çağırıyordu. Mert, gülümsedi. Bugün, yeni bir gündü. Ve o, içindeki ışığı her zaman hatırlayacaktı. Yeni bir şarkı mırıldanarak odasından çıktı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: warm rust-orange t-shirt with small lightning bolt, navy jogger pants, white sneakers) Mert wakes up in the morning, feeling light and joyful, looking at his red toy truck, ready for a new day., setting: Mert'in odası, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mert wakes up in the morning, feeling light and joyful, looking at his red toy truck, ready for a new day., setting: Mert'in odası, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Mert'in odası, sabah"
     }
@@ -187,7 +193,7 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Mert'in Bulutlu Günü\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Mert on a patterned rug, looking at his toy truck. Midground: The red toy truck with one wheel slightly detached. Background: A sunlit room with toys scattered, a window showing a bright sky, a hint of his mother's hand reaching towards him..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Mert\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Mert'in Bulutlu Günü\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Mert on a patterned rug, looking at his toy truck. Midground: The red toy truck with one wheel slightly detached. Background: A sunlit room with toys scattered, a window showing a bright sky, a hint of his mother's hand reaching towards him.. TITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Mert\" Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves). LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon. Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title. Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
     "backCover": "A warm artistic closing scene matching \"Mert'in Bulutlu Günü\". Mert'in en sevdiği kırmızı kamyonu kırılınca, minik kalbinde gri bir bulut belirir. Bu bulut büyüdükçe öfkesi de yükselir. Annesinin şefkatli rehberliğinde, Mert derin nefeslerin gücüyle içindeki bulutu nasıl dağıtacağını ve her zaman parlayan ışığını nasıl bulacağını keşfeder.. NO TEXT NO LETTERS in image, 3D CGI render."

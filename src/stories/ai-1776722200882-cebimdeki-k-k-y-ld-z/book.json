@@ -1,0 +1,198 @@
+{
+  "id": "ai-1776722200882-cebimdeki-k-k-y-ld-z",
+  "category": "duygu-kontrolleri",
+  "title": "Duru ve Küçük Yıldız",
+  "description": "Duru'in içinde bazen küçük yıldız uyanırdı. Bir gün Duru öğrendi ki bu duyguyla konuşabilir, onu tanıyabilir. İşte Duru'nun umut ile tanıştığı masal.",
+  "lessons": [
+    "Umut duygusunu tanımak",
+    "Duygularla konuşabilmek",
+    "İçsel kabul ve sabır",
+    "Duygularla dost olmak"
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#2c3e50",
+    "secondaryColor": "#f1c40f",
+    "accentColor": "#ecf0f1",
+    "icon": "⭐"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Perde ve Dünya",
+      "text": "{CHILD_NAME}, odasının penceresinden dışarıyı seyrediyordu. Perdenin kenarını parmaklarıyla sıkıca kavramıştı. Bahçeden yükselen çocuk cıvıltıları, camın ardından boğuk bir melodi gibi kulağına ulaşıyordu. Güneş, salıncakta sallananların saçlarında pırıltılar bırakıyordu. {CHILD_NAME} derin bir nefes aldı; ciğerlerine dolan hava, odanın durgunluğu gibi kokuyordu. İçinden, “Keşke o kahkahalardan biri de benim olsa,” diye geçirdi.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} standing by the window, peeking through the curtain at other children playing outside in a sunny garden., setting: Çocuk odası, öğleden sonra güneşi, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuk odası, öğleden sonra güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Yastığın Altındaki Işık",
+      "text": "Sabah olduğunda {CHILD_NAME} gözlerini yavaşça araladı. Yorganının altından bir mızrak gibi sızan güneş ışığı, havadaki toz zerrelerini dans ettiriyordu. Yastığını kabartmak için elini uzattığında, parmaklarına pürüzlü fakat yumuşak bir cisim dokundu. Merakla yastığı kaldırdı: Tam orada, çarşafın üzerinde avuç içi büyüklüğünde, solgun renkli bir yıldız duruyordu. Işığı o denli zayıftı ki, sanki usul usul nefes alıp veriyordu.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} waking up in bed, lifting his pillow to discover a small, faintly glowing, pale star lying on the sheet., setting: Çocuk odası, sabahın ilk ışıkları, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Çocuk odası, sabahın ilk ışıkları"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Solgun Bir Merhaba",
+      "text": "Küçük yıldızı avucuna aldı. Hiç ısısı yoktu; sanki çok uzun bir yoldan gelmiş yorgun bir yolcu gibi soğuktu. Köşeleri törpülenmiş, rengi ay ışığı gibi matlaşmıştı. {CHILD_NAME}, yıldızın titreştiğini sandı, oysa belki de titreyen kendi eliydi. Parmağının ucuyla gök cismine usulca dokundu. “Korkma,” diye fısıldadı. “Senin adın Umut olsun.”",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} sitting on his bed, gently holding the small, pale star in his cupped hands, examining it closely., setting: Çocuk odası, yatağının üzeri, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuk odası, yatağının üzeri"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "hoodie",
+      "title": "İlk Fısıltı",
+      "text": "{CHILD_NAME}, Umut'u en sevdiği yün kazağının cebine özenle yerleştirdi. Cebin içi, sıcacık bir kuş yuvasını andırıyordu. Parmağıyla kumaşın üzerinden Umut'un varlığını hissetti. “İçindeki ışığı yeniden bulabilirsin,” diye mırıldandı. “Yalnızca biraz dinlenmen gerek.” Bunu söylerken göğsünde tatlı bir sıcaklık duyumsadı; sanki bu fısıltı, yankılanıp kendi kalbine dönmüştü.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} carefully placing the small star into his hoodie pocket and then gently patting the pocket with a thoughtful look., setting: Çocuk odası, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Çocuk odası"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "hoodie",
+      "title": "Bahçeye İlk Adım",
+      "text": "Annesi mutfaktan seslendiği sırada {CHILD_NAME}, bahçe kapısının eşiğinde durakladı. Ayakkabılarını giymişti ama dışarıya o son adımı bir türlü atamıyordu. Diğer çocuklar yine oradaydı; neşeyle top oynuyor, kahkahaları havada rengârenk sabun köpükleri gibi süzülüyordu. “Ya beni yine aralarına almazlarsa?” diye bir fısıltı geçti içinden. Eli kapının soğuk metal kolundayken avucu terlemişti. Cebindeki Umut ise sessiz bir ağırlıktı yalnızca.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} standing hesitantly at the open backdoor, looking out at the garden where other kids are playing. His hand is on the door handle., setting: Evin bahçeye açılan kapısı, içeriden görünüm, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Evin bahçeye açılan kapısı, içeriden görünüm"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "hoodie",
+      "title": "Salıncağın Boş Yeri",
+      "text": "Bahçenin köşesindeki salıncaklardan biri boştu. Hemen yanında Elif adında bir kız, kuru yaprakları üst üste dizerek bir kule inşa ediyordu. {CHILD_NAME}'nin ayakları, sanki görünmez bir iple yere çivilenmiş gibi ağırdı. Cebine doğru fısıldadı: “Bak, Umut. Orada boş bir salıncak var.” Kendi sesini duymak, göğsündeki telaşlı çarpıntıyı bir nebze olsun dindirdi.",
+      "prompt": "CHARACTER_DESC From {CHILD_NAME}'s perspective, a view of an empty swing next to a little girl (Elif) who is building a tower of autumn leaves., setting: Bahçenin kenarı, uzaktan salıncaklara bakarken, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Bahçenin kenarı, uzaktan salıncaklara bakarken"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "hoodie",
+      "title": "Rüzgâr ve Kule",
+      "text": "Derken haşarı bir rüzgâr eserek Elif'in özenle dizdiği yaprak kulesini bir anda dağıttı. Etrafa savrulan yapraklarla birlikte Elif'in de omuzları düştü, yüzündeki tebessüm uçup gitti. {CHILD_NAME}, onun hayal kırıklığıyla büzülen dudaklarını görünce içinde bir yerin sızladığını hissetti. Bu, çok tanıdık bir histi.",
+      "prompt": "CHARACTER_DESC A gust of wind scattering the tower of leaves that Elif was building. Elif looks down at the scattered leaves with a sad expression., setting: Bahçe, rüzgârın estiği an, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Bahçe, rüzgârın estiği an"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "hoodie",
+      "title": "Cebimdeki Titreşim",
+      "text": "İşte o an, cebindeki Umut hafifçe titreşir gibi oldu; küçücük, sıcacık bir nabız atışıydı bu. Çocuk irkildi. Sanki Umut ona bir şeyler fısıldıyordu. Aklına yıldıza söylediği sözler geldi: “İçindeki ışığı yeniden bulabilirsin.” Derin bir nefes aldığında, ciğerlerine bu defa bahçenin taze çimen kokusu doldu.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} standing still, his hand on his pocket with a look of surprise and realization on his face. The focus is on his internal moment., setting: Bahçenin kenarında, içsel bir an, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Bahçenin kenarında, içsel bir an"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "hoodie",
+      "title": "En Büyük Yaprak",
+      "text": "Bakışları, hemen yanındaki çınarın dibinde duran, avuç içi kadar geniş, sarıdan kızıla çalan bir yaprağa takıldı. Renkleri, batan güneşin gökyüzüne bıraktığı izleri andırıyordu. Yavaşça eğilip yaprağı yerden aldı; kenarları içe kıvrıktı, dokusu kadifeyi andırıyordu. Titreyen parmaklarıyla sapını kavrarken bunun yalnızca bir yaprak değil, atılacak ilk adım olduğunu biliyordu.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} carefully picking up a large, beautiful red-and-yellow autumn leaf from the ground. His focus is entirely on the leaf., setting: Bahçedeki çınar ağacının altı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Bahçedeki çınar ağacının altı"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "hoodie",
+      "title": "Uzanırken",
+      "text": "Ayakları, sanki kendi iradesiyle onu Elif'e doğru götürdü. Her adımı bir öncekinden daha kararlıydı. Elif'in tam önünde durduğunda, kalbinin sesi kulaklarında çınlıyordu. Hiçbir şey söylemeden, elindeki alacalı yaprağı ona doğru yavaşça uzattı. Eli havada asılı kalırken, sanki bütün bahçe nefesini tutmuştu.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} slowly and shyly offering the large autumn leaf to Elif, who is sitting on the ground amidst her scattered leaves., setting: Bahçede, Elif'in yanında, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Bahçede, Elif'in yanında"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "hoodie",
+      "title": "Bir Gülümseme",
+      "text": "Elif’in bakışları önce yaprağa, sonra da {CHILD_NAME}'nin yüzüne çevrildi. Gözlerinde bir ışık yandı. Yüzüne yayılan duru tebessüm, sabah güneşi gibi çocuğun içini ısıttı. “Teşekkür ederim,” diye fısıldadı incecik sesiyle. “Bu, kulemizin temeli olacak en sağlam taş olabilir.” O an, {CHILD_NAME}'nin omuzlarındaki görünmez yük hafifleyip uçtu.",
+      "prompt": "CHARACTER_DESC Elif looking up at {CHILD_NAME} with a bright, genuine smile as she accepts the leaf he is offering., setting: Bahçede, iki çocuk karşı karşıya, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Bahçede, iki çocuk karşı karşıya"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "hoodie",
+      "title": "Birlikte İnşa Etmek",
+      "text": "Elif, yaprağı özenle yere koydu. “Haydi,” dedi, “birlikte daha yükseğini yapalım.” {CHILD_NAME} hiç duraksamadan onun yanına, toprağın üzerine oturdu. Birlikte yeni yapraklar aramaya, kuleleri için en kırmızısını, en sarısını seçip üst üste dizmeye koyuldular. Çok geçmeden, bahçedeki cıvıltılara bir kahkaha daha eklendi; bu onundu ve sesi, kulağına bir melodi gibi geliyordu.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} and Elif sitting together on the grass, happily building a new, larger tower of leaves together., setting: Bahçede, yerde oturan iki çocuk, mood: triumphant, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant",
+      "setting": "Bahçede, yerde oturan iki çocuk"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "hoodie",
+      "title": "Parlayan Cep",
+      "text": "Oyun bittiğinde, {CHILD_NAME} elini usulca cebine götürdü. Umut artık solgun değildi. İçinden sızan sakin ve kararlı bir ışık, yün kazağının dokusundan bile fark ediliyordu. Avucuna aldığında, yıldızın etrafa ılık bir meltem gibi tatlı bir sıcaklık yaydığını hissetti. Umut, yalnızca avucunda değil, asıl kalbinin içinde parlıyordu.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} looking into his pocket, which is emitting a soft, warm glow. He has a gentle, wondrous smile on his face., setting: Bahçe, gün batarken, mood: magical-epic, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical-epic",
+      "setting": "Bahçe, gün batarken"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "hoodie",
+      "title": "Eve Dönüş",
+      "text": "Akşam olup odasına döndüğünde, Umut'u pencerenin önüne, ay ışığını içebileceği bir yere yerleştirdi. Yıldızın loş aydınlığı, duvarlara titrek gölgeler çiziyordu. {CHILD_NAME}, camdaki yansımasıyla göz göze geldi. Orada, günün tatlı yorgunluğunu taşıyan ama gözlerinin içi gülen bir çocuk duruyordu. Artık yalnız değildi; çünkü en parlak yıldızın, insanın kendi içinde taşıdığı cesaret olduğunu öğrenmişti.",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} placing the now brightly glowing star on his windowsill. The star illuminates his face with a soft, warm light., setting: Çocuk odası, gece, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuk odası, gece"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 😊",
+      "facts": [
+        "Birine güzel bir söz söylediğimizde veya gülümsediğimizde, beynimiz kendimizi daha iyi hissetmemizi sağlayan küçük mutluluk habercileri gönderir.",
+        "Gülümsemek gerçekten bulaşıcıdır! Birinin gülümsediğini gördüğümüzde, yüz kaslarımız farkında olmadan onu taklit etmeye çalışır.",
+        "Hayvanlar bile birbirlerine nezaket gösterir. Örneğin filler, üzgün bir arkadaşlarını rahatlatmak için hortumlarıyla onu nazikçe okşarlar.",
+        "Birine yardım etmek, sadece o kişiyi değil, bizi de mutlu eder. Buna 'yardım etme mutluluğu' denir."
+      ],
+      "icon": "😊"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ✨",
+      "facts": [
+        "Cesaret, korkmamak demek değildir. Cesaret, korktuğumuz halde denemeye devam etmektir.",
+        "Yeni bir şey denemek, beynimizde yeni patikalar açmak gibidir. Bu patikaları ne kadar çok kullanırsak, o kadar cesur ve becerikli oluruz.",
+        "Gökyüzündeki her yıldız aslında Güneş gibi kocaman ve parlaktır. Sadece bizden çok uzakta oldukları için küçücük birer ışık noktası gibi görünürler.",
+        "Bazen en büyük gücümüz, içimizdeki o sessiz fısıltıyı dinlemektir. O fısıltı bize doğru yolu gösterebilir."
+      ],
+      "icon": "✨"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A cozy, soft-focus bedroom setting at dusk. Gentle moonlight streams through the window. The foreground shows the character and the star, the midground is his bed and toys, the background is the night sky seen through the window.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Cebimdeki Küçük Yıldız\". Herkesin içinde bir parıltı saklıdır, bazen onu keşfetmek için bir dosta fısıldamak gerekir. {CHILD_NAME}'nin solgun bir yıldıza umut verirken kendi cesaretini bulmasının ve ilk arkadaşlığına adım atmasının bu sıcacık öyküsü, kalbinizdeki ışığı size hatırlatacak.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "duyguKey": "umut",
+  "shopifyHandle": "duru-ve-kucuk-yildiz"
+}

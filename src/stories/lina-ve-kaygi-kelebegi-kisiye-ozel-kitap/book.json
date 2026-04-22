@@ -2,6 +2,12 @@
   "id": "lina-ve-kaygi-kelebegi-kisiye-ozel-kitap",
   "category": "duygu-kontrolleri",
   "title": "Lina ve Kaygı Kelebeği",
+  "sidekick": {
+    "name": "Kaygı Kelebeği",
+    "species": "butterfly",
+    "description": "a small soft pastel-pink butterfly with delicate translucent wings featuring gentle lilac spots and thin dark veins, a tiny cute body with big shy eyes, thin antennae. Always the SAME pink-lilac butterfly — never a different color, never a different insect."
+  },
+  "templateHeroName": "Lina",
   "description": "Lina'nın içinde bazen küçük kelebekler uçardı. O kelebekler kaygıydı. Karnında, kalbinde çırpınırdı. Bir gün Lina öğrendi ki kelebeklerle konuşabilir, onlara 'merhaba' diyebilirmiş. İşte Lina'nın kaygısını tanıdığı masal.",
   "lessons": [
     "Kaygıyı tanımak",
@@ -15,7 +21,7 @@
   "pageCount": 14,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
@@ -31,7 +37,7 @@
       "outfitId": "casual",
       "title": "Sabahın Işıltısı",
       "text": "Sabah güneşi, pencereden içeri süzülen altın rengi ışıklarıyla Lina'nın yatağının üzerine usulca düşüyordu. Oda, taze yıkanmış çamaşırların ve annesinin yeni demlediği çayın ılık kokusuyla doluydu. Lina, yorganını hafifçe iterek gerindi, minik parmak uçları yorganın pamuklu dokusuna değdi. İçinde bir kıpırtı vardı, sanki bugün sıradan bir gün olmayacaktı. Bugün bambaşka bir gündü, biliyordu. İçinde tarifsiz bir his, minik bir fısıltı dolaşıyordu sanki.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina stretching in her bed as golden sunlight streams through the window, setting: Lina'nın yatak odası, sabah erken saatler, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina stretching in her bed as golden sunlight streams through the window, setting: Lina'nın yatak odası, sabah erken saatler, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "Lina'nın yatak odası, sabah erken saatler"
     },
@@ -40,7 +46,7 @@
       "outfitId": "casual",
       "title": "Kelebeklerin Uyanışı",
       "text": "Lina, gözlerini açtığında kalbinin içinde küçük, minicik bir kıpırtı hissetti. Sanki karnının derinliklerinde, uykudan yeni uyanmış bir sürü kelebek kanat çırpmaya başlamıştı. Kelebekler önce yavaş yavaş havalandı, sonra hızlandılar; Lina'nın içini tatlı bir gıdıklanma kapladı. Bu his, neşe ve biraz da merak doluydu. \"Ne oluyor bana?\" diye düşündü Lina, yanaklarına hafif bir sıcaklık yayıldı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina in bed, a soft glow around her belly suggesting inner butterflies, setting: Lina'nın yatak odası, yatakta, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina in bed, a soft glow around her belly suggesting inner butterflies, setting: Lina'nın yatak odası, yatakta, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "nervous-excited",
       "setting": "Lina'nın yatak odası, yatakta"
     },
@@ -49,7 +55,7 @@
       "outfitId": "casual",
       "title": "Kahvaltı Sofrası",
       "text": "Mutfaktan gelen kızarmış ekmek kokusu Lina'yı aşağıya çağırdı. Merdivenlerden inerken kelebekler de onunla birlikte, her basamakta daha da hareketlendi. Annesi, masaya bal kavanozunu koyuyordu. Lina'nın en sevdiği baldı o, altın sarısı rengiyle parıl parıl parlardı. \"Günaydın canım,\" dedi annesi, Lina'nın saçlarını okşarken. Lina, annesinin elinin sıcaklığını ensesinde hissetti; o an kelebekler biraz duruldu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina coming downstairs to the kitchen, her mother placing honey on the table, setting: Mutfak, kahvaltı zamanı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina coming downstairs to the kitchen, her mother placing honey on the table, setting: Mutfak, kahvaltı zamanı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Mutfak, kahvaltı zamanı"
     },
@@ -58,7 +64,7 @@
       "outfitId": "casual",
       "title": "Yeni Okul Çantası",
       "text": "Kahvaltının ardından Lina, annesiyle yeni okul çantasını hazırlamak için odasına gitti. Çanta, yepyeni ve capcanlı renkleriyle masanın üzerinde duruyordu. İçine özenle kalemleri, defterleri yerleştirdiler. Her bir eşyayı çantaya koyarken Lina'nın kalbi de bir tık daha hızlı atıyordu. Kelebekler yine kanat çırpmaya başlamış, sanki çanta onları da heyecanlandırmıştı. Acaba okulda neler olacaktı? Lina'nın aklında bin bir soru dönüyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina and her mother packing a new, colorful school bag together, setting: Lina'nın yatak odası, sabah, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina and her mother packing a new, colorful school bag together, setting: Lina'nın yatak odası, sabah, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "nervous-excited",
       "setting": "Lina'nın yatak odası, sabah"
     },
@@ -67,7 +73,7 @@
       "outfitId": "casual",
       "title": "Ayna Karşısında",
       "text": "Lina, okul kıyafetlerini giydi. Aynanın karşısına geçti. Üzerindeki yeni elbise, bahar çiçekleri gibi rengârenkti. Ama aynadan ona bakan Lina'nın yüzü biraz solgundu. Kelebekler karnında büyük bir fırtına koparıyor, onu nereye götüreceklerini şaşırtıyordu. Dudaklarını büzdü. Annesinin her zaman söylediği söz aklına geldi: \"Korktuğun zaman derin bir nefes al, kalbinde bir çiçek açtığını hayal et.\" Lina, yavaşça derin bir nefes aldı ama karnındaki kelebekler hâlâ uçuyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina in her new school dress, looking at her slightly anxious reflection in the mirror, setting: Lina'nın yatak odası, aynanın karşısı, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina in her new school dress, looking at her slightly anxious reflection in the mirror, setting: Lina'nın yatak odası, aynanın karşısı, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "nervous-excited",
       "setting": "Lina'nın yatak odası, aynanın karşısı"
     },
@@ -76,7 +82,7 @@
       "outfitId": "casual",
       "title": "Annenin Fısıltısı",
       "text": "Annesi, Lina'nın yanına geldi. Küçük kızının omuzlarına şefkatle dokundu. Lina'nın gözleri doldu, parmağıyla elbisesinin üzerindeki küçük bir yaprağı sessizce çizdi. Annesi, Lina'yı kendine çekti, sıcacık bir kucaklamayla sardı. Kulağına usulca fısıldadı: \"Karnındaki bu kelebekler, sana yeni şeyler yaşayacağın zaman gelirler canım. Onlar senin arkadaşların, sana eşlik etmek isterler.\" Lina, annesinin sesindeki güveni duydu; kelebekler hafifledi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina's mother hugging her gently, whispering into her ear as Lina looks down, setting: Lina'nın yatak odası, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina's mother hugging her gently, whispering into her ear as Lina looks down, setting: Lina'nın yatak odası, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Lina'nın yatak odası"
     },
@@ -85,7 +91,7 @@
       "outfitId": "casual",
       "title": "Kelebeklere Merhaba",
       "text": "Annesinin sözleri, Lina'nın kalbine ılık bir damla gibi düştü. Lina, gözlerini kapattı, karnındaki kelebekleri hissetti. Sanki her biri ayrı ayrı kanat çırpıyor, bir ritim tutturuyorlardı. \"Merhaba kelebekler,\" diye fısıldadı Lina içinden. \"Ben Lina. Bugün sizinle yeni bir güne başlıyoruz.\" Bu sözleri söylerken kelebekler sanki yavaşladı, Lina'nın içinde tatlı bir huzur yayıldı. Artık onlardan korkmuyordu, onlarla konuşuyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina closing her eyes, a soft smile on her face, as she mentally greets her butterflies, setting: Lina'nın yatak odası, annesinin kucağında, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina closing her eyes, a soft smile on her face, as she mentally greets her butterflies, setting: Lina'nın yatak odası, annesinin kucağında, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "reflective",
       "setting": "Lina'nın yatak odası, annesinin kucağında"
     },
@@ -94,7 +100,7 @@
       "outfitId": "casual",
       "title": "Okul Kapısı",
       "text": "Lina, annesinin elini sıkıca tutarak okul kapısına doğru yürüdü. Okulun bahçesi cıvıl cıvıl çocuk sesleriyle doluydu. Her yerden neşeli kahkahalar yükseliyordu. Yeni okul binası, kocaman pencereleri ve kırmızı çatısıyla Lina'ya gülümsüyordu sanki. Annesi, Lina'nın elini bıraktı. \"Hazır mısın?\" diye sordu, sesi yumuşacıktı. Lina, başını salladı; karnındaki kelebekler bu sefer daha sakin, daha düzenli uçuyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina and her mother standing at the school gate, children playing in the background, setting: Okul bahçesi, okul kapısının önü, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina and her mother standing at the school gate, children playing in the background, setting: Okul bahçesi, okul kapısının önü, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "determined",
       "setting": "Okul bahçesi, okul kapısının önü"
     },
@@ -103,7 +109,7 @@
       "outfitId": "casual",
       "title": "İlk Adım",
       "text": "Lina, derin bir nefes aldı. Gözlerini okulun kapısına dikti. Kapı, kocaman ve biraz da ürkütücü görünüyordu. Ama Lina, artık yalnız değildi. Karnındaki kelebekler, sanki ona cesaret veriyordu. Her kanat çırpışlarında, Lina'nın kalbi daha güçlü atıyordu. \"İçeriye girmeliyim,\" diye düşündü. \"Kelebeklerimle birlikte.\" Küçük adımlarla, kararlılıkla okulun bahçesine doğru ilk adımını attı. Ayakkabısının altından gelen kumların hışırtısı, ona eşlik etti.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina taking her first step into the schoolyard, a determined look on her face, setting: Okul bahçesi, kapının hemen içinde, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina taking her first step into the schoolyard, a determined look on her face, setting: Okul bahçesi, kapının hemen içinde, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "determined",
       "setting": "Okul bahçesi, kapının hemen içinde"
     },
@@ -112,7 +118,7 @@
       "outfitId": "casual",
       "title": "Sıcak Bir Gülümseme",
       "text": "Biraz ilerledikten sonra, Lina'nın yanına sevimli, uzun saçlı bir kız yaklaştı. Kızın gür saçları, güneşin altında kızıl ışıltılar saçıyordu. \"Merhaba!\" dedi kız, kocaman bir gülümsemeyle. \"Ben Deniz. Sen yeni misin?\" Lina, şaşkınlıkla baktı. Ne kadar da cana yakın görünüyordu! Karnındaki kelebekler birden canlandı, sanki Deniz'in gülümsemesi onlara ışık vermişti. \"Merhaba,\" dedi Lina, sesi önce cılız çıktı, sonra biraz daha güçlendi. \"Ben Lina. Evet, yeniyim.\" Elini uzattı, Deniz'in yumuşacık elini tuttu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) A girl named Deniz smiling and approaching Lina in the schoolyard, offering her hand, setting: Okul bahçesi, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC A girl named Deniz smiling and approaching Lina in the schoolyard, offering her hand, setting: Okul bahçesi, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Okul bahçesi"
     },
@@ -121,7 +127,7 @@
       "outfitId": "casual",
       "title": "Oyun Başlıyor",
       "text": "Deniz, Lina'yı bahçedeki diğer çocukların yanına götürdü. Çocuklar neşeyle koşuşturuyor, top oynuyorlardı. Bahçenin toprak kokusu, Lina'nın burnuna doldu. Deniz, Lina'yı oyuna davet etti. \"Hadi gel, biz de oynayalım!\" dedi. Lina, önce tereddüt etti. Karnındaki kelebekler yine hafifçe kıpırdanmaya başladı. Ama bu kıpırtı, artık korkudan değildi. Meraktan, heyecandan, yeni bir başlangıcın tatlı telaşındandı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Deniz inviting Lina to play with other children in the sunny schoolyard, setting: Okul bahçesi, oyun alanı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Deniz inviting Lina to play with other children in the sunny schoolyard, setting: Okul bahçesi, oyun alanı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "Okul bahçesi, oyun alanı"
     },
@@ -130,7 +136,7 @@
       "outfitId": "casual",
       "title": "Kelebeklerin Dansı",
       "text": "Lina, kendini oyunun akışına bıraktı. Koştu, güldü, yeni arkadaşlarıyla birlikte topun peşinden gitti. Her kahkahasıyla, karnındaki kelebekler sanki daha da güzelleşiyor, birbiriyle uyumlu bir dans ediyordu. Artık onlar Lina'nın en iyi arkadaşlarıydı. Ona eşlik ediyor, her yeni adımında yanında oluyorlardı. Lina'nın kalbi, neşe ve yeni keşiflerin heyecanıyla dolup taşıyordu. Kelebekler, şimdi onun içinde rengârenk bir şenlik kurmuştu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina running and laughing with her new friends, a vibrant glow around her belly suggesting dancing butterflies, setting: Okul bahçesi, oyunun içinde, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina running and laughing with her new friends, a vibrant glow around her belly suggesting dancing butterflies, setting: Okul bahçesi, oyunun içinde, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "Okul bahçesi, oyunun içinde"
     },
@@ -139,7 +145,7 @@
       "outfitId": "casual",
       "title": "Güneşin Batışı",
       "text": "Gün biterken, güneşin son ışıkları bahçeyi turuncu ve mor renklere boyadı. Lina, yorgun ama mutlu bir şekilde evine döndü. Annesi onu kapıda karşıladı, gözleri parlıyordu. \"Anlat bakalım, nasıl geçti günün?\" diye sordu. Lina, annesine sımsıkı sarıldı. \"Çok güzel geçti anne!\" dedi. \"Kelebeklerim de benimle birlikte çok eğlendi.\" Annesi, Lina'nın saçlarını okşadı. Lina, içindeki kelebeklerin hâlâ nazikçe kanat çırptığını hissetti. Onlar, şimdi onunla birlikte eve dönüyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina hugging her mother at the doorstep as the sun sets in the background, setting: Lina'nın evi, akşamüstü, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina hugging her mother at the doorstep as the sun sets in the background, setting: Lina'nın evi, akşamüstü, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "Lina'nın evi, akşamüstü"
     },
@@ -148,7 +154,7 @@
       "outfitId": "casual",
       "title": "Yeni Başlangıçlara",
       "text": "Lina, yatağına uzandı. Günün bütün anıları gözlerinin önünden geçti: yeni okul, yeni arkadaşlar ve tabii ki kelebekleri. Bu kelebekler, artık onun içindeki heyecanın, cesaretin ve yeni başlangıçlara duyduğu inancın simgesiydi. Gözlerini kapadı. Karnındaki kelebekler, yavaşça uykuya daldı. Lina biliyordu, yarın yeni bir gün, yeni maceralar ve yeni kelebek dansları bekliyordu onu. Her yeni gün, kalbinde yeni bir şarkı, yeni bir kıvılcım demekti.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft lavender cotton dress with tiny butterfly print, white cotton tights, small lavender shoes) Lina peacefully sleeping in her bed, a gentle glow around her belly fading to a soft sparkle, setting: Lina'nın yatak odası, gece, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Lina peacefully sleeping in her bed, a gentle glow around her belly fading to a soft sparkle, setting: Lina'nın yatak odası, gece, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "reflective",
       "setting": "Lina'nın yatak odası, gece"
     }
@@ -187,7 +193,7 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Lina'nın Kelebekleri Uyanıyor\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Lina running, midground: other children playing, background: a colorful school building with a red roof under a bright blue sky, some trees; warm and inviting atmosphere.\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Lina\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Lina'nın Kelebekleri Uyanıyor\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Foreground: Lina running, midground: other children playing, background: a colorful school building with a red roof under a bright blue sky, some trees; warm and inviting atmosphere. TITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Lina\" Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves). LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon. Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title. Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
     "backCover": "A warm artistic closing scene matching \"Lina'nın Kelebekleri Uyanıyor\". Lina'nın karnında uçuşan kelebekler, yeni bir okulun kapısında onu bekleyen heyecanın ta kendisiydi. Annesinin şefkatli fısıltılarıyla, Lina kelebeklerine 'merhaba' demeyi öğrendi ve bu minik kanatlı arkadaşlarıyla birlikte cesaretle yeni güne adım attı. Bu hikaye, her yeni başlangıçta içimizde yükselen o tatlı telaşı kucaklamanın ve kendi cesaretimizi keşfetmenin sıcacık bir daveti.. NO TEXT NO LETTERS in image, 3D CGI render."

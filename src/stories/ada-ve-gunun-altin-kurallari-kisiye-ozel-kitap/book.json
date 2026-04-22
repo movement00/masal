@@ -1,8 +1,8 @@
 {
   "id": "ada-ve-gunun-altin-kurallari-kisiye-ozel-kitap",
   "category": "gunluk-degerler-egitimi",
-  "title": "Ada ve Günün Altın Kuralları",
-  "description": "Ada için bazı günler karışıktı... Ama bir gün günün altın kurallarını keşfetti. Zamanında uyuyup erken kalktı, yemeğini bitirdi, dişlerini fırçaladı, oyuncaklarını topladı ve ailesini dinledi. O günden sonra her günü yepyeni bir başlangıçtı.",
+  "title": "{CHILD_NAME} ve Günün Altın Kuralları",
+  "description": "{CHILD_NAME} için bazı günler karışıktı... Ama bir gün günün altın kurallarını keşfetti. Zamanında uyuyup erken kalktı, yemeğini bitirdi, dişlerini fırçaladı, oyuncaklarını topladı ve ailesini dinledi. O günden sonra her günü yepyeni bir başlangıçtı.",
   "lessons": [
     "Zamanında uyuma",
     "Yemeğini bitirme",
@@ -15,162 +15,164 @@
   "pageCount": 14,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
-    "primaryColor": "#FFD700",
-    "secondaryColor": "#87CEEB",
-    "accentColor": "#FF69B4",
-    "icon": "🎨"
+    "primaryColor": "#F3D5A5",
+    "secondaryColor": "#8B5E34",
+    "accentColor": "#A8DADC",
+    "icon": "🧸"
   },
   "outfit": null,
   "scenes": [
     {
       "sceneNumber": 1,
-      "outfitId": "casual",
-      "title": "Karışık Bir Sabah",
-      "text": "{CHILD_NAME}, yorganı ayak ucuna yuvarlanmış, oyuncak ayısı başucunda, saçları yastığa yapışmış bir hâlde uyandı. Pencereden süzülen sabah güneşi, odasının tozlu havasında dans eden zerrecikleri ortaya çıkarıyordu. Gözlerini ovuşturdu, esnedi. Yatağından fırlarken, dün gece okuduğu kitabın sayfaları yere savruldu. Her sabah olduğu gibi, birazdan anne sesi duyulacaktı ve {CHILD_NAME}, o sese yetişmek için her şeyi çabucak yapması gerektiğini biliyordu. İçinden bir ses, 'Bugün de mi böyle başlayacak?' diye fısıldadı. Sanki her gün aynı döngünün içinde sıkışıp kalmış gibiydi; acaba bu monotonluk hiç bitecek miydi?",
-      "prompt": "CHARACTER_DESC  Ada yawns and stretches in her messy bed, sunbeams streaming into the room, setting: Ada'nın odası, sabah, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "dreamy",
-      "setting": "Ada'nın odası, sabah"
+      "outfitId": "pajamas",
+      "title": "Uykusuz Gözler",
+      "text": "{CHILD_NAME}, sabah uyanınca ilk işi Pofuduk Ayı’ya sarılmak oldu. Ayıcığın pamuk kadar yumuşak kürkünde tanıdık bir sıcaklık vardı, yine de bir şeyler başkaydı. {CHILD_NAME}, Pofuduk Ayı’nın düğme gözlerinin her zamankinden yorgun baktığını fark etti. Parmağını usulca ayıcığın gözüne dokundurdu. \"İyi uyudun mu?\" diye fısıldadı ama ayıcık her zamanki gibi sessizliğini korudu. Odaya sızan sabah güneşi, yerdeki oyuncakların üzerine uzun gölgeler çiziyordu.",
+      "prompt": "CHARACTER_DESC A 5-year-old girl in pajamas sits on her bed, tenderly holding a well-loved teddy bear, looking closely at its face with a concerned expression. Morning light streams through the window., setting: Ada'nın dağınık yatak odası, sabahın ilk ışıkları, mood: reflective, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Ada'nın dağınık yatak odası, sabahın ilk ışıkları"
     },
     {
       "sceneNumber": 2,
-      "outfitId": "casual",
-      "title": "Günlük Koşturmaca",
-      "text": "Annesinin neşeli sesi mutfaktan yükseldi. \"{CHILD_NAME}, kahvaltı hazır, güzel kızım!\" {CHILD_NAME}, hızla yatağından kalktı. Üzerini giymeye çalışırken, çekmeceden seçtiği çoraplardan birinin tek olduğunu fark etti. \"Of, yine mi bu çorap!\" diye düşündü, biraz canı sıkılmıştı. Diğer tek çorabı bulmak için oyuncak kutusunu devirdi, giysilerini dağıttı. Kahvaltı masasına yetiştiğinde, annesi ona hafifçe gülümsemişti. {CHILD_NAME}, tabağındaki peyniri çatalla itip duruyordu, sütünü ise yarım bırakmıştı. \"Keşke hemen oyun oynamaya başlasam,\" diye içinden geçirdi. \"Karnım tok,\" diye mırıldandı, oysa oyuna bir an önce başlamak istiyordu.",
-      "prompt": "CHARACTER_DESC  Ada quickly gets dressed, scattering clothes and toys in her room, then sits at the breakfast table, pushing food around, setting: Mutfak, kahvaltı vakti, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "nervous-excited",
-      "setting": "Mutfak, kahvaltı vakti"
+      "outfitId": "pajamas",
+      "title": "Gece Macerası",
+      "text": "{CHILD_NAME} dün geceyi hatırladı. Annesi uyku saatinin geldiğini söylediğinde, o yatağının içinde fenerle bir resimli kitaba daha bakmak istemişti. Pofuduk Ayı da koltuğunun altında, fenerin titrek ışığında sabırla beklemişti. Göz kapakları ağırlaşana dek sayfaları çevirmiş, sonunda uykuya dalarken Pofuduk Ayı'yı yatağın kenarından düşürmüştü. Şimdi ayıcığına bakarken, onun da bütün gece uyanık kalmış olabileceği düşüncesiyle içi sızladı. Yorganın altından sızan serinlik tüylerini ürpertti.",
+      "prompt": "CHARACTER_DESC The girl sits on the edge of her bed, looking at the teddy bear lying next to her. A faint memory of reading a book with a flashlight under the covers is visible in her thoughtful expression., setting: Ada'nın yatak odası, sabah, mood: contemplative, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "contemplative",
+      "setting": "Ada'nın yatak odası, sabah"
     },
     {
       "sceneNumber": 3,
-      "outfitId": "casual",
-      "title": "Sıcak Bir Işık",
-      "text": "Ada, kahvaltıdan sonra odasına döndü. Annesi, 'Oyuncaklarını topla, Ada,' diye seslendi. Ada, pencerenin önünde durdu. O sırada, penceresinden süzülen güneş ışığı, tam dağınık masasının üzerindeki küçük deftere vurdu. Işık, defterin boş sayfalarını altın rengine boyadı, sanki oraya gizli bir mesaj bırakmış gibiydi. Ada, elini uzattı, ışığın sıcaklığını parmak uçlarında hissetti. Bu ışık, ona sanki bir şeyler anlatmak istiyordu, yumuşak bir fısıltı gibi.",
-      "prompt": "CHARACTER_DESC  Ada stands by her window, a warm sunbeam highlights an empty notebook on her messy desk, setting: Ada'nın odası, öğleden sonra, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "mysterious",
-      "setting": "Ada'nın odası, öğleden sonra"
+      "outfitId": "pajamas",
+      "title": "Yapış Yapış Bir Sır",
+      "text": "Annesi mutfaktan, \"Kahvaltı hazır!\" diye seslendi. {CHILD_NAME}, Pofuduk Ayı’yı da kucaklayıp masaya koştu. Tabağındaki pankekin üzerine ahududu reçelinden bir nehir akıttı. Bir lokma almıştı ki pencereden süzülen tekir bir kediye gözü takıldı. Kediye dalmışken, reçelli parmakları Pofuduk Ayı’nın bembeyaz göğsüne dokundu. Küçük çocuk bunu fark etmedi bile. Ayıcığın kar gibi beyaz kürkünde şimdi yapışkan, kırmızı bir parmak izi kalmıştı.",
+      "prompt": "CHARACTER_DESC The girl sits at a breakfast table, distracted by something outside the window, while her sticky, jam-covered fingers rest on her white teddy bear's chest, leaving a small stain., setting: Mutfak, kahvaltı masası, mood: distracted, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "distracted",
+      "setting": "Mutfak, kahvaltı masası"
     },
     {
       "sceneNumber": 4,
       "outfitId": "casual",
-      "title": "Altın Kurallar",
-      "text": "Ada, ışığın vurduğu defteri merakla açtı. Sayfalar bomboştu. Ama Ada'nın zihninde, o altın ışıkla birlikte bir fikir belirdi. Bu ışık, ona her gününü daha anlamlı kılacak birkaç özel kuralı hatırlatıyordu sanki. İlk kuralı fısıldadı kendi kendine: 'Her sabah yatağımı toplayacağım.' İkinci kuralı da düşündü: 'Yemeklerimi bitireceğim.' Ada, bu fikirle birlikte kalbinin içindeki küçük bir kıvılcımın parladığını hissetti. Bu kurallar, gününü düzene sokacaktı ve o zaman her şey daha iyi olacaktı.",
-      "prompt": "CHARACTER_DESC  Ada holds her empty notebook, a determined look on her face, the sunbeam still illuminating the pages, setting: Ada'nın odası, öğleden sonra, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "determined",
-      "setting": "Ada'nın odası, öğleden sonra"
+      "title": "Kayıp Arkadaş",
+      "text": "Kahvaltının ardından oyun zamanı gelmişti. {CHILD_NAME}, oturma odasındaki minderlerden kendine bir kale inşa etti. Sonra en sadık arkadaşını kalesine davet etmek istedi. \"Pofuduk Ayı, gel!\" diye seslendi, fakat bir cevap alamadı. Ayıcık ortalarda görünmüyordu. Mutfak masasının altına baktı, koltuğun arkasını yokladı. Kalbi göğsünde daha hızlı çarpmaya başladı. Evin alışılmadık sessizliği kulaklarında uğulduyordu. Pofuduk Ayı nereye gitmiş olabilirdi?",
+      "prompt": "CHARACTER_DESC A young girl is on her hands and knees, peering under a couch with a worried look. A messy fort made of pillows and blankets stands in the middle of the living room., setting: Oturma odası, minderlerden yapılmış bir kale, mood: nervous-excited, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Oturma odası, minderlerden yapılmış bir kale"
     },
     {
       "sceneNumber": 5,
       "outfitId": "casual",
-      "title": "Yatağın Düzeni",
-      "text": "Ertesi sabah Ada, gözlerini açar açmaz bir önceki günkü 'altın kural'ı hatırladı. Yorganını dikkatlice katladı, yastığını düzeltti. Oyuncak ayısını yatağın başucuna özenle yerleştirdi. Annesi odaya girdiğinde, Ada'nın yatağının düzenli olduğunu görünce şaşırdı. Annesi, 'Vay canına, Ada! Yatağını ne güzel toplamışsın,' dedi. Ada'nın yüzünde kocaman bir gülümseme belirdi. Kalbi, anneannesinin pişirdiği kurabiyeler gibi sıcacık olmuştu.",
-      "prompt": "CHARACTER_DESC  Ada meticulously makes her bed, folding the duvet and placing her teddy bear, her mother enters the room smiling, setting: Ada'nın odası, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "joyful",
-      "setting": "Ada'nın odası, sabah"
+      "title": "Oyuncak Dağının Altında",
+      "text": "{CHILD_NAME} telaşla kendi odasına koştu. Oyuncaklar, halının üzerinde renkli bir tepe gibi yığılmıştı. Yapboz kutularının, tahta blokların ve bez bebeklerin arasına daldı. Eşyaları bir o yana bir bu yana savurdu. Tahta bloklardan biri devrilince çıkan tıkırtı onu yerinden sıçrattı. Tam umudunu yitirmek üzereyken, bir resimli kitabın altından görünen kahverengi, tüylü bir kulak fark etti. Yavaşça kitabı kaldırdı. İşte oradaydı.",
+      "prompt": "CHARACTER_DESC The girl carefully lifts a large picture book from a pile of toys on the floor, revealing the ear of her lost teddy bear hidden underneath. Her face shows a mix of relief and concern., setting: Ada'nın çok dağınık odası, oyuncak yığınları, mood: anxious, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "anxious",
+      "setting": "Ada'nın çok dağınık odası, oyuncak yığınları"
     },
     {
       "sceneNumber": 6,
       "outfitId": "casual",
-      "title": "Lezzetli Lokmalar",
-      "text": "Kahvaltıda, Ada tabağındaki haşlanmış yumurtayı dikkatlice soydu. Annesinin hazırladığı domatesleri ve salatalıkları da yavaş yavaş yemeye başladı. Her lokmayı tadarak çiğnedi, sanki her biri özel bir lezzet taşıyordu. Önceleri iştahsızca ittiği yiyecekler, şimdi ona bambaşka bir dünyanın kapılarını açmış gibi geliyordu. Tabağını bitirdiğinde, annesi ona hayranlıkla baktı. Ada, karnının doyduğunu hissettiği gibi, içindeki küçük kıvılcımın daha da büyüdüğünü fark etti.",
-      "prompt": "CHARACTER_DESC  Ada, with focused attention, eats her breakfast, finishing everything on her plate, as her mother watches proudly, setting: Mutfak, kahvaltı vakti, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "warm",
-      "setting": "Mutfak, kahvaltı vakti"
+      "title": "Ezilmiş Bir Kulak",
+      "text": "{CHILD_NAME}, Pofuduk Ayı’yı nazikçe kucağına aldı. Zavallı ayıcık, oyuncakların altında sıkışıp kalmıştı. Bir kulağı katlanmış, yüzüne komik bir ifade vermişti. Göğsündeki reçel lekesi kuruyarak oradaki tüyleri birbirine yapıştırmıştı. Yorgun düğme gözleri ise sanki, \"Nefes alamadım,\" diye fısıldıyordu. {CHILD_NAME}, arkadaşına sımsıkı sarıldı. Ayıcığın içindeki pamukların ezildiğini ve havasının indiğini hissetti.",
+      "prompt": "CHARACTER_DESC The girl sits on the floor amidst scattered toys, holding her teddy bear. She gently straightens its crumpled ear, her expression full of empathy and sadness., setting: Ada'nın dağınık odasının zemini, mood: sad, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "sad",
+      "setting": "Ada'nın dağınık odasının zemini"
     },
     {
       "sceneNumber": 7,
       "outfitId": "casual",
-      "title": "Oyun Zamanı",
-      "text": "Ada, oyuncaklarını toparlamak için odasına girdi. Arabalarını garajlarına yerleştirdi, bebeklerinin kıyafetlerini katladı, yapboz parçalarını kutusuna koydu. Odası şimdi tertemiz ve düzenliydi. Bu düzen, ona daha çok oyun alanı bırakmıştı. Ada, rahatlıkla yere oturdu, yeni bir oyun kurmaya başladı. Oyuncakları arasında kaybolmak yerine, her şeyin yerinde olması ona huzur vermişti. Odaya giren babası, 'Ada, odan ne kadar derli toplu olmuş, çok başarılısın!' diye seslendi. Ada, babasının sözleriyle bir fidan gibi daha da büyüdüğünü hissetti.",
-      "prompt": "CHARACTER_DESC  Ada neatly arranges her toys in her clean room, then sits down to play, her father enters and praises her, setting: Ada'nın odası, öğleden sonra, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "joyful",
-      "setting": "Ada'nın odası, öğleden sonra"
+      "title": "Kalpteki Kıvılcım",
+      "text": "{CHILD_NAME}, Pofuduk Ayı’nın yorgunluğunun sebebini işte o an anladı. Kendisi geç yattığı için Pofuduk Ayı uyuyamıyordu. Yemeğini özensiz yediği için Pofuduk Ayı kirleniyordu. Oyuncaklarını toplamadığı için Pofuduk Ayı kayboluyor, hatta eziliyordu. Gözleri buğulandı. Bu onun suçu değildi belki ama onun yüzündendi. Arkadaşının yeniden mutlu olmasını her şeyden çok istiyordu. Parmağıyla ayıcığın reçelli kürkünü okşarken aklına bir çözüm geldi.",
+      "prompt": "CHARACTER_DESC Sitting by the window with the teddy bear in her lap, the girl has a moment of realization. A single tear rolls down her cheek as she looks at the stained fur, a new determination in her eyes., setting: Ada'nın odası, pencerenin önü, mood: revelatory, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "revelatory",
+      "setting": "Ada'nın odası, pencerenin önü"
     },
     {
       "sceneNumber": 8,
       "outfitId": "casual",
-      "title": "Sözler ve Sözler",
-      "text": "Bir öğleden sonra, annesi Ada'ya, 'Bugün teyzenlere gideceğiz, Ada. Yemekten sonra hemen hazırlanmalısın,' dedi. Ada, önce oynamak istediği için biraz homurdandı. Ama sonra 'altın kural'ı hatırladı: 'Büyüklerinin sözünü dinle.' Ada, oyuncağını dikkatlice yerine koydu, kirlenen ellerini yıkadı. Annesi, 'Ada, şimdi hazırlanmalısın,' dediğinde, Ada hemen koştu, kıyafetlerini seçti. Bu defa annesini bekletmemişti. Annesi, Ada'ya sarıldı. Ada, annesinin kollarında güvende hissetti, kalbi sımsıcak oldu.",
-      "prompt": "CHARACTER_DESC  Ada puts away her toy, washes her hands, and then quickly prepares to go out with her mother, who embraces her, setting: Oturma odası, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "warm",
-      "setting": "Oturma odası, öğleden sonra"
+      "title": "Pofuduk Ayı Bakım Listesi",
+      "text": "{CHILD_NAME} doğruca çalışma masasına yöneldi. Bu kez her şeyi doğru yapmaya kararlıydı. Renkli kalemlerini ve bir parça temiz kâğıt çıkardı. Kâğıdın en üstüne dikkatle bir başlık çiziktirdi. Sonra altına resimler yapmaya başladı: üzerinde pırıl pırıl yıldızlar olan bir yatak, ağzına kadar dolu bir yemek tabağı ve kapağı kapalı, düzenli bir oyuncak kutusu. \"Bu senin için bir liste, Pofuduk,\" dedi ciddi bir sesle. \"Sana daha iyi bakacağım.\"",
+      "prompt": "CHARACTER_DESC The girl sits at her small desk, focused and determined, drawing simple pictures of a bed, a plate of food, and a toy box on a piece of paper with colorful crayons. The teddy bear sits beside her, watching., setting: Ada'nın çalışma masası, mood: determined, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Ada'nın çalışma masası"
     },
     {
       "sceneNumber": 9,
       "outfitId": "casual",
-      "title": "Uyku Zamanı",
-      "text": "Akşam oldu, yıldızlar pencereden gülümsüyordu. {CHILD_NAME}, annesinin 'Uyku zamanı,' demesiyle odasına yöneldi. Dişlerini fırçaladı, pijamalarını giydi. Annesi ona bir kitap okudu. {CHILD_NAME}, yatağına uzandı, yorganını üzerine çekti. Eskiden uyumak istemez, hep biraz daha oyun oynamak için direnirdi. Ama şimdi, düzenli bir günün ardından yorgun ama huzurluydu. Gözlerini kapattığında, gün boyu yaşadığı güzel anlar zihninde bir film gibi canlandı. Keşke her gün böyle olsa, diye düşündü. İçinden, 'Ne güzel bir gündü,' diye geçirdi.",
-      "prompt": "CHARACTER_DESC  Ada brushes her teeth, puts on pajamas, and listens to her mother read a book before peacefully falling asleep in bed, setting: Ada'nın odası, gece, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "reflective",
-      "setting": "Ada'nın odası, gece"
+      "title": "İlk Görev: Temiz Tabak",
+      "text": "Öğle yemeği vakti geldiğinde, {CHILD_NAME} listesini de masaya getirdi. Annesinin önüne koyduğu buğulu sebze çorbasına baktı. Normalde havuçları kaşığının ucuyla kenara iterdi ama listedeki dolu tabak resmini hatırladı. Kaşığını çorbaya daldırdı ve tabağındakilerin hepsini bitirdi. Son lokmasını yutarken Pofuduk Ayı’ya göz kırptı. \"Bak,\" diye fısıldadı, \"karnımız doydu ve hiç kirlenmedin.\" Masanın pürüzsüz ahşap dokusu parmaklarının altındaydı.",
+      "prompt": "CHARACTER_DESC At the dining table, the girl proudly shows her empty soup bowl to her teddy bear, which is propped up on the chair next to her. Her hand-drawn 'care list' lies on the table., setting: Mutfak, öğle yemeği zamanı, mood: proud, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "proud",
+      "setting": "Mutfak, öğle yemeği zamanı"
     },
     {
       "sceneNumber": 10,
       "outfitId": "casual",
-      "title": "Kural Yaptım Ben!",
-      "text": "{CHILD_NAME}, birkaç hafta sonra, artık altın kurallara alışmıştı. Her sabah odası düzenliydi, yemeklerini bitiriyordu, oyuncakları yerli yerindeydi, büyüklerinin sözünü dinliyordu ve zamanında uyuyordu. Annesi ve babası, {CHILD_NAME}'nın bu değişimine çok sevindiler. {CHILD_NAME}, bir gün bahçede oynarken, arkadaşı Can'a, \"Benim altın kurallarım var, biliyor musun?\" dedi. İçinden \"Ne kadar da güzel bir şey bu, herkesin bilmesini istiyorum\" diye geçirdi. Can şaşkınlıkla, \"Ne kuralları?\" diye sordu. {CHILD_NAME}, \"Günümü güzelleştiren kurallar,\" diye cevap verdi, göğsünü kabartarak. Bu kurallar sayesinde her şeyin yolunda gittiğini hissetmek onu çok mutlu ediyordu.",
-      "prompt": "CHARACTER_DESC  Ada proudly tells her friend Can about her 'golden rules' while playing in the garden, setting: Bahçe, öğleden sonra, mood: triumphant, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "triumphant",
-      "setting": "Bahçe, öğleden sonra"
+      "title": "Her Oyuncak Evine",
+      "text": "Sıradaki görev en zoru gibi görünüyordu: oyuncakları toplamak. Odasına döndüğünde, sabahki oyuncak dağı onu bekliyordu. Derin bir nefes aldı. Önce Pofuduk Ayı’yı yatağının üzerine, güvenli bir yere oturttu. Sonra blokları kutusuna, bebekleri sepetine, kitapları da tek tek rafına dizmeye başladı. Oda yavaş yavaş ferahlıyor, eşyalar nefes alıyordu. Yerden kalkan hafif toz kokusu, çalışkanlığın kokusuydu ve {CHILD_NAME} mutluydu.",
+      "prompt": "CHARACTER_DESC The girl is actively putting her toys away into a large toy chest. Her room is visibly getting tidier. The teddy bear sits safely on her neatly made bed, overseeing the process., setting: Ada'nın odası, toplama zamanı, mood: focused, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "focused",
+      "setting": "Ada'nın odası, toplama zamanı"
     },
     {
       "sceneNumber": 11,
       "outfitId": "casual",
-      "title": "Küçük Bir Hata",
-      "text": "Bir gün Ada, okuldan eve geldiğinde çok yorgundu. Çantasını yere fırlattı, ayakkabılarını kapının önüne attı. Odasına girer girmez pijamalarını giydi ve yatağına uzandı. O günkü 'altın kuralları' unutmuştu. Akşam yemeğinde, tabağındaki bezelyeleri itip duruyordu. Annesi, 'Ada, bezelyelerini bitirmelisin,' dedi. Ada, 'İstemiyorum,' diye mırıldandı. İçinden bir ses, 'Bu kurallar ne işe yarıyor ki?' diye sordu, küçük bir hayal kırıklığı hissetti.",
-      "prompt": "CHARACTER_DESC  Ada, tired from school, throws her bag and shoes, refuses to eat her peas at dinner, looking sad, setting: Ada'nın odası ve mutfak, akşam, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "nervous-excited",
-      "setting": "Ada'nın odası ve mutfak, akşam"
+      "title": "Temiz Bir Kürk",
+      "text": "Babası, {CHILD_NAME}'nın Pofuduk Ayı’nın lekesini temizlemesine yardım etti. Ilık suya batırılmış bir bezi yavaşça reçelli bölgeye sürdüler. Leke yavaşça çözülünce Pofuduk Ayı’nın kürkü yeniden kabardı ve kar gibi beyazladı. {CHILD_NAME}, ayıcığının mis gibi kokan göğsüne yüzünü yasladı. Temiz kumaşın ve sabunun kokusunu içine çekti. \"Artık daha rahatsın, değil mi?\" diye sordu. Babası, onun saçını okşayarak gülümsedi.",
+      "prompt": "CHARACTER_DESC A father gently helps his daughter clean a spot on her teddy bear's fur with a damp cloth. The girl watches intently, her face full of care and love., setting: Banyo veya mutfak, lavabo kenarı, mood: warm, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Banyo veya mutfak, lavabo kenarı"
     },
     {
       "sceneNumber": 12,
-      "outfitId": "casual",
-      "title": "Işığın Hatırlatması",
-      "text": "Ada, yatağına uzandığında gözlerini kapattı. Odası dağınıktı, karnı tam doymamıştı. İçinde tuhaf bir boşluk hissetti, tıpkı o altın ışığın gelmediği ilk sabahlar gibi. Pencereden dışarı baktı, yıldızlar parlıyordu. O sırada, ay ışığı odasına süzüldü, tıpkı o altın ışık gibi. Ay ışığı, Ada'nın dağınık masasının üzerindeki deftere vurdu. Ada, o ışıkla birlikte 'altın kurallar'ı tekrar hatırladı. Bu kurallar sadece birer görev değil, gününü aydınlatan pırıltılardı.",
-      "prompt": "CHARACTER_DESC  Ada lies in her messy bed, feeling a sense of emptiness, when moonlight shines on her notebook, reminding her of her rules, setting: Ada'nın odası, gece, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "reflective",
-      "setting": "Ada'nın odası, gece"
+      "outfitId": "pajamas",
+      "title": "Yıldızların Altında Uyku",
+      "text": "Akşam olup gökyüzü laciverte büründüğünde, annesi uyku vaktinin geldiğini söyledi. Bu defa {CHILD_NAME} itiraz etmedi, çünkü Pofuduk Ayı’nın da dinlenmeye ihtiyacı vardı. Ayıcığını yatağına yatırdı ve üzerini minik battaniyesiyle örttü. Sonra kendisi de yorganın altına süzüldü. Işık kapandı. {CHILD_NAME}, ayıcığının kulağına eğildi. \"İyi geceler, Pofuduk Ayı. Tatlı rüyalar gör,\" diye fısıldadı. Odadaki tek ses, ikisinin de sakin nefes alıp verişiydi.",
+      "prompt": "CHARACTER_DESC In a dimly lit bedroom, the girl is tucked into her bed, and she has also tucked her teddy bear in beside her with its own tiny blanket. She whispers something to the bear., setting: Ada'nın yatak odası, gece, loş ışık, mood: peaceful, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "peaceful",
+      "setting": "Ada'nın yatak odası, gece, loş ışık"
     },
     {
       "sceneNumber": 13,
-      "outfitId": "casual",
-      "title": "Geri Dönen Parıltı",
-      "text": "Ertesi sabah Ada, erkenden uyandı. Önce yatağını özenle topladı, oyuncaklarını kutularına yerleştirdi. Sonra kahvaltı masasına oturdu, tabağındaki her şeyi afiyetle bitirdi. Annesine yardım etti, babasının sözünü dinledi. Her şeyi yaparken, kalbinde yine o parlak kıvılcımı hissetti. Dağınıklık ve unutkanlık gittiğinde, içindeki neşe geri gelmişti. Ada, 'Bu kurallar bana günümü geri verdi,' diye düşündü, yüzünde kocaman bir gülümseme belirdi. Gün, tekrar altın rengine boyanmıştı.",
-      "prompt": "CHARACTER_DESC  Ada joyfully tidies her room and eats her breakfast with gusto, feeling happy and proud of her renewed routine, setting: Ada'nın odası ve mutfak, sabah, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "triumphant-emotional",
-      "setting": "Ada'nın odası ve mutfak, sabah"
+      "outfitId": "pajamas",
+      "title": "Dinlenmiş Bir Sabah",
+      "text": "Ertesi sabah {CHILD_NAME} uyandığında, oda aydınlık ve huzurluydu. Yanında yatan Pofuduk Ayı’ya döndü. Ayıcığın parlak düğme gözleri ona bakıyordu. Katlanmış kulağı düzelmiş, kürkü temiz ve kabarıktı. Yorgunluktan eser kalmamıştı. Aksine, yeni bir maceraya hazır gibi duruyordu. {CHILD_NAME}'in içi sevinçle doldu; en yakın arkadaşı bir gecede iyileşmişti. Ayıcığını kollarına alırken, ensesinde güneşin sıcak bir el gibi dokunduğunu hissetti.",
+      "prompt": "CHARACTER_DESC The girl wakes up in her tidy room and joyfully hugs her teddy bear, which looks clean and refreshed. Bright sunlight fills the room, creating a warm and happy atmosphere., setting: Ada'nın temiz ve düzenli odası, parlak sabah güneşi, mood: joyful, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Ada'nın temiz ve düzenli odası, parlak sabah güneşi"
     },
     {
       "sceneNumber": 14,
       "outfitId": "casual",
-      "title": "Her Gün Bir Macera",
-      "text": "Artık Ada'nın her günü, küçük bir maceraydı. Sabahları yatağını toplarken, bir kaşif gibi düzeni keşfediyordu. Yemeklerini bitirirken, her lokmanın yeni bir lezzet olduğunu fark ediyordu. Oyuncaklarını toplarken, eşyalarına nasıl değer vereceğini öğreniyordu. Büyüklerinin sözünü dinlerken, etrafındaki dünyayla daha iyi anlaştığını hissediyordu. Ve her akşam zamanında uyurken, ertesi günün maceraları için dinleniyordu. Ada, her gününün bir pırıltıyla parladığını görüyordu. Kalbi, sonsuz bir şarkı gibi neşeyle doluydu.",
-      "prompt": "CHARACTER_DESC  Ada, with a bright smile, performs her daily routines – tidying, eating, playing – radiating happiness and order, setting: Ada'nın odası, her gün, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "warm",
-      "setting": "Ada'nın odası, her gün"
+      "title": "Yeni Bir Gün",
+      "text": "{CHILD_NAME} ve Pofuduk Ayı, odanın temiz halısı üzerinde neşeyle oynuyorlardı. Duvarda asılı duran liste, artık yalnızca bir kâğıt parçası değildi. O liste, bir arkadaşı nasıl seveceğini ve ona nasıl özen göstereceğini hatırlatan bir kalp anahtarı olmuştu. {CHILD_NAME} gülümsedi, çünkü Pofuduk Ayı mutluysa o da mutluydu. \"Bugün hangi maceraya atılsak?\" diye sordu ve ayıcığını neşeyle havaya kaldırdı.",
+      "prompt": "CHARACTER_DESC The girl sits happily on the floor of her clean room, lifting her teddy bear into the air as if it's flying. Her hand-drawn 'care list' is taped to the wall in the background., setting: Ada'nın düzenli odası, oyun zamanı, mood: triumphant-emotional, Medium wide shot, character is the focus but the environment tells part of the story. Eye-level perspective of a child., Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Ada'nın düzenli odası, oyun zamanı"
     }
   ],
   "funFacts": [
     {
       "id": "fact-1",
-      "title": "Biliyor muydun? 🌿",
+      "title": "Biliyor muydun? ✨",
       "facts": [
-        "Bitkiler ve ağaçlar, tıpkı bizim gibi nefes alır; onlar havayı temizler, bize temiz hava verir.",
-        "Dünyadaki en büyük canlılardan biri olan sekoya ağaçları, tam 100 metreden daha uzun büyüyebilir, tıpkı çok katlı bir bina gibi!",
-        "Bazı bitkiler, sabah güneş açtığında uyanır, akşam güneş batınca uyur; tıpkı senin gibi bir uyku düzenleri vardır."
+        "Dişlerini günde iki kere fırçalayan çocukların dişleri daha parlak ve güçlü olur; çünkü küçük bir fırça büyük mikropları uzaklaştırır.",
+        "Yatağını her sabah toplamak beynimize \"bugüne düzenli başlıyoruz\" mesajı verir; bu yüzden gün boyunca daha mutlu ve odaklı oluruz.",
+        "Meyve ve sebzeler birbirinden farklı renklerde olurlar; çünkü her renk vücuduna ayrı bir vitamin taşır, tabağımızda birkaç renk olması bu yüzden önemli.",
+        "Her gün aynı saatte uyanıp aynı saatte uyumak, küçük bir ritim yaratır; vücudumuz bu ritmi öğrenince hem enerjimiz artar hem de kendimizi daha iyi hissederiz."
       ],
-      "icon": "🌿"
+      "icon": "✨"
     },
     {
       "id": "fact-2",
       "title": "Biliyor muydun? ⭐",
       "facts": [
-        "Gökyüzündeki yıldızlar aslında çok büyük ve çok parlak güneşlerdir, ama bize çok uzakta oldukları için minik noktalar gibi görünürler.",
-        "Ay'a ayak basan ilk insanlar, ayda yürürken tozların havada uçuşmadığını fark ettiler; çünkü ayda hava yoktur.",
-        "Güneşimiz, gezegenimiz Dünya'dan tam 109 kat daha büyüktür; düşünsene ne kadar kocaman!"
+        "Tıpkı senin gibi, büyümek için bütün çocukların her gece bol bol uyuması gerekir. Uyku, beynimizin dinlenmesine ve öğrendiklerimizi hatırlamamıza yardım eder.",
+        "Rüyalar, uyurken zihnimizin bize anlattığı küçük hikayeler veya gösterdiği filmler gibidir.",
+        "Sadece insanlar değil, kediler, köpekler ve hatta balıklar bile dinlenmek için uyurlar.",
+        "Her gün aynı saatlerde uyuyup uyanmak, vücudumuzun kendini daha enerjik ve mutlu hissetmesini sağlar."
       ],
       "icon": "⭐"
     }
@@ -187,11 +189,12 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Ada'nın Renkli Kuralları\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Vibrant, sun-drenched children's bedroom. Ada (5yo Turkish girl) in the midground, smiling, making her bed. In the foreground, a corner of a tidy toy chest. In the background, a window with bright sunbeams, a small plant on the sill. The room is organized but still playful, with soft colors..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Ada\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: The scene is set in a cozy, slightly messy child's room. Foreground has scattered crayons. Midground is the girl and her bear. Background shows a bed and a window with soft light coming in. The mood is determined and loving.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
-    "backCover": "A warm artistic closing scene matching \"Ada'nın Renkli Kuralları\". Ada'nın dünyası, minik kurallarla nasıl da parladı! Her sabah penceresinden süzülen bir ışık huzmesi, ona gününü güzelleştirecek 'altın kuralları' fısıldadı. Ada bu kurallara uymaya başladığında, her gününün sıcacık bir maceraya dönüştüğünü gördü ve kalbi neşeyle doldu. Küçük Ada'nın hikayesi, çocuklara düzenin ve sevginin büyülü pırıltısını hatırlatıyor.. NO TEXT NO LETTERS in image, 3D CGI render."
+    "backCover": "A warm artistic closing scene matching \"Pofuduk Ayı'nın Yorgun Günü\". {CHILD_NAME}, en yakın arkadaşı Pofuduk Ayı'nın neden yorgun olduğunu keşfettiğinde, sevginin ve sorumluluğun en güzel listesini hazırladı. Bu liste, sadece ayıcığının değil, kendi günlerinin de anahtarı oldu.. NO TEXT NO LETTERS in image, 3D CGI render."
   },
   "shopifyHandle": "ada-ve-gunun-altin-kurallari-kisiye-ozel-kitap",
-  "coverTitle": "Ada ve Günün Altın Kuralları"
+  "coverTitle": "{CHILD_NAME} ve Günün Altın Kuralları",
+  "templateHeroName": "Ada"
 }

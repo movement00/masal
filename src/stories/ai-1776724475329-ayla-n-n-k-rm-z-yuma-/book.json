@@ -1,0 +1,197 @@
+{
+  "id": "ai-1776724475329-ayla-n-n-k-rm-z-yuma-",
+  "category": "duygu-kontrolleri",
+  "title": "Ayla'nın Kırmızı Yumağı",
+  "description": "Ayla, okulda arkadaşının harika projesini görünce karnında sıkı ve ağır bir düğüm hisseder. Bu kıskançlık hissi aniden büyüyerek devasa, parlayan kırmızı bir yumağa dönüşür ve onu sihirli bir yolculuğa çıkarır. Ayla başlarda öfkeyle yumağı çekiştirip saklamaya çalışır ancak yumak daha da kördüğüm olur. Işıl ışıl mantar ormanlarında ve aydınlık mağaralarda dolaşırken, zorlamak yerine sabırla düğümleri çözmesi gerektiğini keşfeder. Derin nefesler alarak yumağı usulca çözer ve ondan esnek, parlak bir kırmızı ip elde eder. Bu iple arkadaşına harika bir dostluk bilekliği örerek kıskançlığını şefkat ve yaratıcılığa dönüştürür.",
+  "lessons": [
+    "Zorlayıcı duyguları suçluluk hissetmeden tanımak ve kabullenmek.",
+    "Kıskançlık gibi hisleri zorbalıkla değil sabır ve şefkatle çözmek.",
+    "Negatif duyguların içindeki enerjiyi yaratıcılığa ve sanata dönüştürmek.",
+    "Akranlarıyla kendini kıyaslamak yerine sağlıklı ve destekleyici bağlar kurmak."
+  ],
+  "ageGroup": "6-9",
+  "ageRange": "6-9",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#D9534F",
+    "secondaryColor": "#5BC0DE",
+    "accentColor": "#F0AD4E",
+    "icon": "🎨"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Atölyedeki Maket",
+      "text": "{CHILD_NAME}, sanat atölyesindeki uzun masanın kenarında duruyordu. Arkadaşı Can, kartondan ve yapraklardan yaptığı ağaç evini gururla herkese gösteriyordu. *Keşke ben de böyle bir şey yapabilseydim,* diye geçirdi içinden. Minik pencerelerden sızan gün ışığı, yerdeki kuru yosunları parlatıyordu. Can'ın yanakları, eserini anlatırken heyecandan al al olmuştu. {CHILD_NAME}, \"Bu... bu sanki içinde minicik insanlar yaşıyormuş gibi,\" diye fısıldadı.",
+      "prompt": "CHARACTER_DESC Ayla stands by a large table in an art classroom, looking with wide-eyed admiration at his friend Can's intricate model of a treehouse made from cardboard and leaves., setting: Okulun sanat atölyesi, öğleden sonra güneşi, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Okulun sanat atölyesi, öğleden sonra güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "İlk Düğüm",
+      "text": "Öğretmenleri Can'ın maketini sınıfın başköşesindeki rafa yerleştirirken herkes alkışladı. {CHILD_NAME}'in avuçları terlemişti; göğsüne sıkı, sıcak bir düğüm oturmuştu. Kendi yaptığı kil kuşa baktı, o an gözüne ne kadar da sevimsiz göründü. Tam o sırada avucunun içinde, sanki kalbinden uzanan minik, kırmızı bir iplik belirdi.",
+      "prompt": "CHARACTER_DESC Ayla clenches his fist slightly, a tiny, glowing red thread appearing in the center of his palm as he looks down at his own simple clay bird, feeling a pang of inadequacy., setting: Sanat atölyesi, alkış sesleri arasında, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Sanat atölyesi, alkış sesleri arasında"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Büyüyen Yumak",
+      "text": "{CHILD_NAME} odasındaydı. Kırmızı iplik artık avucuna sığmıyor, parmaklarının arasından bir sarmaşık gibi taşıyordu. İpliğin ucu, doğrudan göğsünün ortasındaki o sıkıntılı düğüme bağlıydı. Ne zaman Can'ın ağaç evini aklından geçirse, iplik biraz daha uzuyor, kendi etrafında dolanarak küçük bir yumağa dönüşüyordu. Bu yumak hem sıcaktı hem de kurşun gibi ağırdı.",
+      "prompt": "CHARACTER_DESC In his bedroom, Ayla sits on his bed, looking at the small, glowing red ball of yarn in his hands. The end of the thread seems to lead directly into his chest., setting: {CHILD_NAME}'in odası, akşam ışıkları, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "{CHILD_NAME}'in odası, akşam ışıkları"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "Çekip Giden İplik",
+      "text": "Yumak, {CHILD_NAME}'in elinden usulca kayıp yere düştü. Fakat orada durmadı, odanın kapısına doğru yuvarlanmaya başladı. İplik hâlâ onun göğsüne bağlıydı ve çocuğu yavaşça peşinden çekiştiriyordu. Gitmek istemiyordu ama karşı koyacak gücü de bulamıyordu; ayakları sanki kendi iradesiyle yumağı takip ediyordu.",
+      "prompt": "CHARACTER_DESC The red ball of yarn rolls off Ayla's bed and across the floor, gently but irresistibly pulling him by a thread connected to his heart, leading him out of his room., setting: {CHILD_NAME}'in odası, gece, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "{CHILD_NAME}'in odası, gece"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Işıltılı Mantarlar",
+      "text": "Kırmızı yumak, onu arka bahçeye çıkardı. Bahçe, artık bildiği o tanıdık bahçe değildi. Çimlerin arasında avuç içi büyüklüğünde, kadifemsi şapkalı mantarlar bitmişti. Bu şapkalardan etrafa loş, mavi bir ışık yayılıyordu. Havada ıslak toprak ve çam reçinesinin tatlı kokusu vardı. Her adımında, ayaklarının altındaki kuru yapraklar hışırdıyordu.",
+      "prompt": "CHARACTER_DESC Ayla steps into his backyard, which has transformed into a magical forest of large, softly glowing blue mushrooms. The red yarn leads him between them., setting: Gece vakti, parıldayan mantarlarla dolu bir bahçe, mood: magical, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Gece vakti, parıldayan mantarlarla dolu bir bahçe"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "Öfkeli Çekiş",
+      "text": "Bu zoraki yolculuk {CHILD_NAME}'in sabrını taşırmıştı. Durmak istiyordu ama yumak onu dinlemiyordu. Bu anlamsız takibe bir son vermeye karar verdi. Dişlerini sıktı, yumağı iki eliyle kavrayıp bütün gücüyle çekiştirdi. İplikler parmaklarını kesse de aldırmadı. \"Bırak beni!\" diye bağırdı. Sesi, ağaçların arasındaki sessizlikte yutulup gitti. O çektikçe yumak daha da sıkılaştı, mantarların ışığı titreyerek azaldı.",
+      "prompt": "CHARACTER_DESC Frustrated, Ayla grabs the red ball of yarn with both hands and pulls hard. As he struggles against it, the yarn glows brighter and tighter, and the surrounding mushrooms dim., setting: Parıldayan mantar ormanı, loş ışıkta, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Parıldayan mantar ormanı, loş ışıkta"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Kristal Mağara",
+      "text": "Yumak, onu bir kayanın dibindeki dar aralıktan içeri çekti. Kendini, duvarları pırıl pırıl kristallerle kaplı bir mağarada buldu. Kristaller, dışarıdaki mantarların mavi ışığını binlerce parçaya bölerek yansıtıyordu. Zihni karmakarışıktı, gördükleri bir rüya mıydı, gerçek miydi kestiremiyordu. Yorgunlukla, \"Neden?\" diye fısıldadı. Mağaranın duvarları fısıltısını binlerce kez tekrarladı: \"Neden... neden... neden...\"",
+      "prompt": "CHARACTER_DESC The yarn pulls Ayla into a narrow cave. The walls are covered in shimmering crystals that echo his quiet, frustrated whispers back at him., setting: Duvarları yansıtıcı kristallerle kaplı bir mağara, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Duvarları yansıtıcı kristallerle kaplı bir mağara"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Sessiz Bir An",
+      "text": "Soğuk taşın üzerine yavaşça oturdu. Artık ipliği çekiştirmiyordu. Sadece ellerinde tuttuğu sıcak yumağa bakıyordu. Yumağın içinden, kendi kalp atışlarıyla uyumlu, hafif bir zonklama geliyordu. O sustukça, mağaradaki yankılar da birer birer dindi. Geriye yalnızca kristallerin sessiz ışıltısı ve yumağın dinmeyen sıcaklığı kaldı.",
+      "prompt": "CHARACTER_DESC Exhausted, Ayla sits down on the cave floor. He stops fighting and simply holds the warm, pulsating ball of yarn, looking into its intricate red threads., setting: Kristal mağaranın sessiz derinliği, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Kristal mağaranın sessiz derinliği"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Şefkatli Dokunuş",
+      "text": "{CHILD_NAME}, yumağın üzerindeki gevşek bir iplik ucunu fark etti. Bu defa öfkeyle asılmadı. Öfkenin ipleri daha da sıkılaştırdığını hissetmişti. Parmağının ucuyla ipliği nazikçe okşadı. Onu yavaşça, düğüme zarar vermeden gevşetmeye çalıştı. İplik, bu yumuşak dokunuşa karşılık verdi. Yumak, bir tomurcuğun açılması gibi katman katman çözülmeye başladı.",
+      "prompt": "CHARACTER_DESC With a newfound gentleness, Ayla finds a loose thread and, instead of pulling, he carefully begins to unravel the ball of yarn. It responds to his soft touch, loosening easily., setting: Kristal mağaranın sakin atmosferi, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Kristal mağaranın sakin atmosferi"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Yeni Bir Desen",
+      "text": "Çözülen iplik artık onu çekiştirmiyordu. {CHILD_NAME}'in elinde şimdi upuzun, yumuşacık bir iplik duruyordu. Bu kırmızı iplikle ne yapabilirdi? Parmaklarının etrafında döndürmeye, ilmekler atmaya başladı. Yavaş yavaş, küçük ve basit bir bileklik şekilleniyordu. O ördükçe, mağaradaki kristaller daha sıcak, bal rengi bir ışıkla parlamaya başladı.",
+      "prompt": "CHARACTER_DESC Ayla begins to weave the now-long, soft red thread with his fingers, creating a simple friendship bracelet. As he works, the crystals in the cave begin to glow with a warm, golden light., setting: Kristal mağara, sıcak bir ışıkla aydınlanmış, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Kristal mağara, sıcak bir ışıkla aydınlanmış"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Geri Dönüş Yolu",
+      "text": "Bilekliği bitirip bileğine taktı. Göğsündeki o sıkı düğümden eser kalmamıştı. Ayağa kalkıp mağaranın girişine yürüdü. Dışarıda, mantarların mavi ışığı onu bekliyordu. Artık onu çeken bir yumak yoktu. Kendi adımlarıyla, yaprakların hışırtısını dinleyerek bahçeye geri döndü.",
+      "prompt": "CHARACTER_DESC Wearing the newly crafted red bracelet, Ayla walks confidently out of the cave and back through the glowing mushroom forest, which now seems peaceful and beautiful., setting: Parıldayan mantar ormanından çıkış, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Parıldayan mantar ormanından çıkış"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "İki Arkadaş",
+      "text": "Ertesi gün okulda {CHILD_NAME}, Can'ın yanına gitti. Kalbi biraz hızlı atsa da göğsünde o eski ağırlık yoktu. Elini uzattı. \"Bunu senin için yaptım,\" dedi. Can, kırmızı iplikten örülmüş bilekliği görünce gülümsedi. Gözleri, ağaç evini anlatırken olduğu gibi ışıl ışıldı.",
+      "prompt": "CHARACTER_DESC In the schoolyard, Ayla nervously but bravely approaches Can and offers him the red friendship bracelet he made. Can's face lights up with a genuine smile., setting: Okul bahçesi, sabah güneşi, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Okul bahçesi, sabah güneşi"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "Paylaşılan Hayaller",
+      "text": "Can bilekliği takarken, \"Teşekkür ederim, tam sevdiğim renk,\" dedi. \"Bir sonraki projeyi birlikte yapalım mı? Belki senin kil kuşun için bir yuva?\" {CHILD_NAME}'in yüzüne sıcak bir gülümseme yayıldı. Başını hevesle salladı. Artık Can'ın projesine baktığında sadece hayranlık ve yaklaşan yeni maceraların heyecanını duyuyordu.",
+      "prompt": "CHARACTER_DESC Can puts on the bracelet and suggests they work on the next project together. The two friends stand side-by-side, smiling and sharing ideas, the feeling of competition gone., setting: Okul bahçesi, iki arkadaş yan yana, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Okul bahçesi, iki arkadaş yan yana"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Sakin Bir Akşam",
+      "text": "{CHILD_NAME}, odasındaki masasında oturuyordu. Önünde bir parça kil ve birkaç kuru dal duruyordu. Kırmızı bilekliğin aynısından bir tane de kendine örmüştü. Bileğindeki iplik, ona o geceki sihirli ormanı hatırlatıyordu. Ama artık içinde ne bir sıkıntı ne de bir ağırlık vardı; yalnızca yeni bir şeye başlamanın o tatlı, sakin coşkusu hissediliyordu.",
+      "prompt": "CHARACTER_DESC Ayla sits at his desk in his cozy room, wearing his own red bracelet. He calmly works on a new clay project, a peaceful and content expression on his face., setting: {CHILD_NAME}'in odası, huzurlu bir akşam, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "{CHILD_NAME}'in odası, huzurlu bir akşam"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? ❤️",
+      "facts": [
+        "Heyecanlandığımızda veya utandığımızda kalbimizin daha hızlı atması gibi, duygularımız vücudumuzda hissedilir.",
+        "Bazen zor bir duygu karnımızda bir düğüm gibi gelebilir. Bu hissi çizmek veya birine anlatmak, o düğümün çözülmesine yardım edebilir.",
+        "Tıpkı insanlar gibi, hayvanlar da duygularını gösterir. Bir köpeğin kuyruğunu sallaması mutlu, bir kedinin mırlaması ise huzurlu olduğunu gösterir.",
+        "Derin bir nefes alıp yavaşça vermek, içimizdeki en karışık duyguları bile sakinleştirebilir."
+      ],
+      "icon": "❤️"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? 🧶",
+      "facts": [
+        "İnsanlar, binlerce yıldır yün ve pamuk gibi ipliklerden giysiler, battaniyeler ve hatta sanat eserleri örüyor.",
+        "Basit bir iplikle parmaklarımızı kullanarak harika dostluk bileklikleri ve süsler yapabiliriz.",
+        "Ellerimizle bir şeyler yaratmak, beynimizin mutlu ve sakin hissetmesini sağlayan özel bölümlerini çalıştırır.",
+        "Doğadaki birçok şeyden ilham alabiliriz: bir örümceğin ağı, bir kuşun yuvası veya bir salyangozun kabuğu, hepsi harika birer desen fikridir."
+      ],
+      "icon": "🧶"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A dreamlike scene in a dark forest at night. The foreground features Ayla and the bright red yarn. The midground and background are filled with oversized, magical mushrooms emitting a soft blue and purple light, creating a sense of wonder and mystery.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Ayla'nın Kırmızı Yumağı\". Bazen en karmaşık düğümler, içimizde saklanır. Ayla'nın kırmızı yumağı, onu kıskançlığın dar yollarından dostluğun ve yaratıcılığın aydınlık bahçelerine çıkaran bir rehbere dönüşür. Bu hikâye, en zor duyguların bile şefkatli bir dokunuşla nasıl bir hediye olabileceğini fısıldar.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "ayla-nin-kirmizi-yumagi"
+}

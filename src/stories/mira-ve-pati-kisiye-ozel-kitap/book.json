@@ -1,8 +1,8 @@
 {
   "id": "mira-ve-pati-kisiye-ozel-kitap",
   "category": "hayvan-dostum",
-  "title": "Mira ve Pati",
-  "description": "Mira için Pati sadece bir köpek değildi... yumuşacık tüyleri, sevgi dolu gözleri ile en iyi dostuydu. Onunla bahçede koşmayı, onunla yan yana uyumayı öğrendi. İşte Mira'nın ilk arkadaşlık masalı.",
+  "title": "{CHILD_NAME} ve Pati",
+  "description": "{CHILD_NAME} için Pati sadece bir köpek değildi... yumuşacık tüyleri, sevgi dolu gözleri ile en iyi dostuydu. Onunla bahçede koşmayı, onunla yan yana uyumayı öğrendi. İşte {CHILD_NAME}'nın ilk arkadaşlık masalı.",
   "lessons": [
     "Sevgi paylaşmak",
     "Sorumluluk almak",
@@ -14,106 +14,106 @@
   "pageCount": 10,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
-    "primaryColor": "#FFDAB9",
-    "secondaryColor": "#87CEEB",
-    "accentColor": "#FF69B4",
-    "icon": "🌙"
+    "primaryColor": "#FDEE_A_0",
+    "secondaryColor": "#A0C4FF",
+    "accentColor": "#FFC_8_B0",
+    "icon": "🐾"
   },
   "outfit": null,
   "scenes": [
     {
       "sceneNumber": 1,
       "outfitId": "pajamas",
-      "title": "Güneş Batarken",
-      "text": "{CHILD_NAME} cama yaklaştı. Dışarıdaki gökyüzü turuncu ve mor renklerle boyandı. Hafif bir esinti saçlarını okşadı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) A little girl looks out the window, watching the sunset paint the sky in orange and purple hues., setting: Çocuk odası penceresi, akşamüstü, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "warm",
-      "setting": "Çocuk odası penceresi, akşamüstü"
+      "title": "Minik Bir Tıpırtı",
+      "text": "{CHILD_NAME}, kırmızı topuyla oynuyordu. Odadan minicik bir ses geldi. Tıp... tıp... tıp... {CHILD_NAME} durup kulak kabarttı. “Bu da ne?” diye merakla fısıldadı.",
+      "prompt": "CHARACTER_DESC A 3-year-old girl stops playing with her red ball on the floor, tilting her head with a curious expression, listening intently., setting: Güneşli bir odanın halısı, öğleden sonra, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Güneşli bir odanın halısı, öğleden sonra"
     },
     {
       "sceneNumber": 2,
       "outfitId": "pajamas",
-      "title": "Yatağa Gitme Vakti",
-      "text": "Annesi, {CHILD_NAME}'nin elini tuttu. \"Uyku vakti geldi,\" dedi. {CHILD_NAME} yatağının kenarına oturdu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) A mother gently leads her daughter to her bed, ready for bedtime., setting: Çocuk odası, yatak kenarı, mood: calm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "calm",
-      "setting": "Çocuk odası, yatak kenarı"
+      "title": "Ses Nereden Geliyor?",
+      "text": "Bu defa ses daha yakındı. Hışırtılı, yumuşacık bir sesti; sanki bir yaprak kımıldıyordu. {CHILD_NAME}, gözleriyle odanın her köşesini dikkatle aradı.",
+      "prompt": "CHARACTER_DESC The girl is on all fours, peering around a toy box with wide, curious eyes, trying to locate the source of a sound., setting: Oturma odasının köşesi, oyuncakların yanı, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Oturma odasının köşesi, oyuncakların yanı"
     },
     {
       "sceneNumber": 3,
       "outfitId": "pajamas",
-      "title": "Pati'nin Sepeti",
-      "text": "Pati, sepetinde mışıl mışıl uyuyordu. Tüyleri bembeyazdı. Küçük burnu tatlı tatlı hareket ediyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) A fluffy white puppy sleeps peacefully in its cozy basket., setting: Çocuk odası, Pati'nin sepeti, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "dreamy",
-      "setting": "Çocuk odası, Pati'nin sepeti"
+      "title": "Battaniyenin Altında",
+      "text": "Ses, salondaki koltuğun üzerindeki yün battaniyeden geliyordu. {CHILD_NAME}'in kalbi pıt pıt atmaya başladı. “Orada kim var?” diye usulca seslendi.",
+      "prompt": "CHARACTER_DESC The girl stands on her tiptoes, cautiously approaching a large knitted blanket draped over a sofa. Her hand is slightly outstretched., setting: Oturma odasındaki büyük bir koltuk, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Oturma odasındaki büyük bir koltuk"
     },
     {
       "sceneNumber": 4,
       "outfitId": "pajamas",
-      "title": "Minik Bir Dokunuş",
-      "text": "{CHILD_NAME} yavaşça elini uzattı. Parmak uçları Pati'nin yumuşacık tüylerine değdi. Kalbi pıt pıt attı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) A little girl gently touches the soft fur of the sleeping puppy., setting: Çocuk odası, Pati'nin sepeti yanı, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "curious",
-      "setting": "Çocuk odası, Pati'nin sepeti yanı"
+      "title": "İki Parlak Göz",
+      "text": "Yavaşça battaniyenin ucunu kaldırdı. Altında kıvrılmış bir yumak vardı. Altın sarısı tüyleri ve kendisine bakan iki parlak gözü gördü. Nefesini tutmuş, öylece bakakaldı.",
+      "prompt": "CHARACTER_DESC Close-up on the girl's face, filled with awe, as she lifts the corner of a blanket to reveal a tiny, sleepy golden retriever puppy., setting: Koltuğun üzerindeki battaniyenin altı, mood: magical, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "magical",
+      "setting": "Koltuğun üzerindeki battaniyenin altı"
     },
     {
       "sceneNumber": 5,
       "outfitId": "pajamas",
-      "title": "Tatlı Bir Kıvrılma",
-      "text": "Pati, uykusunda hafifçe kıvrıldı. Gözleri kapalıydı. {CHILD_NAME} gülümsedi, çok sevimli görünüyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) The puppy stirs slightly in its sleep, curling up more tightly., setting: Çocuk odası, Pati'nin sepeti, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "warm",
-      "setting": "Çocuk odası, Pati'nin sepeti"
+      "title": "Minicik Bir Esneme",
+      "text": "Minik köpek esnedi. Ağzını kocaman açınca pembe dili dışarı sarktı. {CHILD_NAME}, bu sevimli görüntüye dayanamayıp kıkırdadı. “Çok komiksin,” diye fısıldadı.",
+      "prompt": "CHARACTER_DESC The puppy lets out a huge, adorable yawn. The girl covers her mouth with her hands, giggling softly., setting: Koltuğun üzeri, battaniye kenarı, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Koltuğun üzeri, battaniye kenarı"
     },
     {
       "sceneNumber": 6,
       "outfitId": "pajamas",
-      "title": "Fısıltılı Sözler",
-      "text": "{CHILD_NAME} Pati'ye fısıldadı: \"İyi geceler, canım Pati.\" Sessizlik odada yankılandı, huzur doluydu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) The little girl whispers 'Good night' to the sleeping puppy., setting: Çocuk odası, Pati'nin sepeti yanı, mood: calm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "calm",
-      "setting": "Çocuk odası, Pati'nin sepeti yanı"
+      "title": "Yumuşacık Bir Dokunuş",
+      "text": "{CHILD_NAME}, işaret parmağını yavaşça uzattı. Acaba pamuk gibi tüyleri ne kadar yumuşaktı? Parmağı birazcık titriyordu. Sadece bir kez dokunmak istedi.",
+      "prompt": "CHARACTER_DESC A focused shot of the girl's small hand slowly reaching out, her index finger about to touch the puppy's furry head., setting: Koltuğun üzeri, köpek ve çocuk çok yakın, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Koltuğun üzeri, köpek ve çocuk çok yakın"
     },
     {
       "sceneNumber": 7,
       "outfitId": "pajamas",
-      "title": "Kendi Yatağına",
-      "text": "{CHILD_NAME} yatağına uzandı. Yorganını üzerine çekti. Yumuşacık yatağı onu sarıp sarmaladı.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) The little girl settles into her own bed, pulling the covers up., setting: Çocuk odası, {CHILD_NAME}'nin yatağı, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "warm",
-      "setting": "Çocuk odası, {CHILD_NAME}'nin yatağı"
+      "title": "Islak Bir Burun",
+      "text": "Küçük köpek, ıslak burnuyla onun parmağına dokundu. Sonra da sıcacık diliyle bir kez yaladı. {CHILD_NAME}'in içine ılık bir sevinç yayıldı. “Gıdıklıyorsun!” diye neşeyle güldü.",
+      "prompt": "CHARACTER_DESC The puppy licks the girl's finger. Her face breaks into a wide, joyous smile, her eyes crinkling with happiness., setting: Koltuğun üzeri, yakın plan, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Koltuğun üzeri, yakın plan"
     },
     {
       "sceneNumber": 8,
       "outfitId": "pajamas",
-      "title": "Yan Yana Uykular",
-      "text": "Pati sepetinde, {CHILD_NAME} yatağında. İkisi de yan yana, sıcacık uyudu. Oda mis gibi kokuyordu.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) The puppy in its basket and the girl in her bed sleep peacefully, side by side., setting: Çocuk odası, {CHILD_NAME}'nin yatağı ve Pati'nin sepeti, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "dreamy",
-      "setting": "Çocuk odası, {CHILD_NAME}'nin yatağı ve Pati'nin sepeti"
+      "title": "Yeni Arkadaşım",
+      "text": "{CHILD_NAME}, yavaşça koltuğa, yumağın yanına kıvrıldı. Başını köpeğin yanına koyduğunda mis gibi bir süt kokusu aldı. “Senin adın Pati olsun,” diye fısıldadı.",
+      "prompt": "CHARACTER_DESC The girl lies down on the sofa next to the puppy, snuggling close and whispering in its ear., setting: Koltuğun üzeri, battaniyenin yanında, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Koltuğun üzeri, battaniyenin yanında"
     },
     {
       "sceneNumber": 9,
       "outfitId": "pajamas",
-      "title": "Tatlı Rüyalar",
-      "text": "{CHILD_NAME}'nin gözleri kapandı. Tatlı rüyalar görüyordu. Pati'nin varlığı ona güven verdi.",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) The little girl's eyes close as she drifts into sleep, dreaming sweet dreams., setting: Çocuk odası, {CHILD_NAME}'nin yatağı, mood: calm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "calm",
-      "setting": "Çocuk odası, {CHILD_NAME}'nin yatağı"
+      "title": "Sıcacık Bir Yumak",
+      "text": "Pati, ona doğru biraz daha sokuldu. Sıcacık bedeni, minik bir soba gibiydi. Gözlerini kapattı ve huzurlu bir mırıltı çıkardı. O an {CHILD_NAME} kendini güvende hissetti.",
+      "prompt": "CHARACTER_DESC The puppy snuggles into the girl's side, letting out a contented sigh. The girl gently places her arm over the puppy., setting: Koltuğun üzeri, birbirlerine sarılmış halde, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Koltuğun üzeri, birbirlerine sarılmış halde"
     },
     {
       "sceneNumber": 10,
       "outfitId": "pajamas",
-      "title": "Huzur Dolu Gece",
-      "text": "Ay ışığı pencereden süzüldü. {CHILD_NAME} ve Pati, huzur dolu bir gece geçirdiler. Yarın sabah görüşmek üzere!",
-      "prompt": "CHARACTER_DESC (physical features that MUST be preserved in every scene: , outfit: soft pastel-pink cotton dress with tiny daisy print, white cotton tights, small pink shoes) Moonlight streams into the quiet room where the girl and puppy are sound asleep., setting: Çocuk odası, gece, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
-      "mood": "warm",
-      "setting": "Çocuk odası, gece"
+      "title": "Tatlı Rüyalar",
+      "text": "Göz kapakları ağırlaştı. İkisi de sıcacık bir yumağa dönüşmüştü. Oda sessizliğe büründü. Sadece iki küçük kalbin sakin atışları duyuluyordu. Birlikte uykuya daldılar.",
+      "prompt": "CHARACTER_DESC The girl and the puppy are curled up together asleep on the sofa, bathed in the soft afternoon light from a window., setting: Koltuğun üzeri, uykuya dalmış halde, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Koltuğun üzeri, uykuya dalmış halde"
     }
   ],
   "funFacts": [
@@ -121,21 +121,22 @@
       "id": "fact-1",
       "title": "Biliyor muydun? 🐾",
       "facts": [
-        "Köpekler, insanlar gibi rüya görürler. Uyurken bacaklarını oynattıklarını veya havladıklarını görebilirsin.",
-        "Yavru köpekler, doğduklarında gözleri kapalı olur. Yaklaşık iki hafta sonra gözlerini açmaya başlarlar.",
-        "Köpeklerin burunları çok hassastır. Koku alma duyuları, bizimkinden binlerce kat daha güçlüdür."
+        "Köpeklerin burunları, daha iyi koku almalarına yardım etmek için ıslaktır.",
+        "Yavru köpekler de tıpkı bizim gibi rüya görürler.",
+        "Bir köpeğin koku alma duyusu, bizimkinden binlerce kat daha güçlüdür.",
+        "Köpekler mutlu olduklarını göstermek için kuyruklarını sallarlar."
       ],
       "icon": "🐾"
     },
     {
       "id": "fact-2",
-      "title": "Biliyor muydun? 😴",
+      "title": "Biliyor muydun? ❤️",
       "facts": [
-        "Yeni doğan bebekler, günün çoğunu uyuyarak geçirirler. Bu, büyümeleri için çok önemlidir.",
-        "Uykuda beyin dinlenir ama aynı zamanda öğrendiğimiz şeyleri düzenler ve hatıralarımızı güçlendirir.",
-        "Uyku sırasında vücudumuz kendini yeniler. Bu yüzden iyi bir uyku, enerjik olmamızı sağlar."
+        "Hayvanlar da arkadaşlarını sever ve onlara sarılmaktan hoşlanır.",
+        "Bir dosta nazikçe fısıldamak, onun kendini güvende hissetmesini sağlar.",
+        "Sıcacık bir kucaklaşma, hem insanları hem de hayvanları mutlu eder."
       ],
-      "icon": "😴"
+      "icon": "❤️"
     }
   ],
   "funFactPlacements": [
@@ -144,17 +145,18 @@
       "factId": "fact-1"
     },
     {
-      "afterScene": 6,
+      "afterScene": 7,
       "factId": "fact-2"
     }
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Pati'nin Yumuşacık Uykusu\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Cozy child's bedroom at night. Foreground: a sleeping white puppy in a soft basket. Midground: a young girl in colorful pajamas, hand reaching out gently. Background: a warm lamp glow, a window with a soft moonlight..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Mira\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Cozy child bedroom corner at soft golden-hour with warm lamp glow and a window showing gentle moonlight. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If any person is rendered, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere. Text will be added by AI overlay step later. 3. CENTER AREA (roughly 55%) must be visually CALM — soft warm cream gradient or soft bokeh only. No objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS ON EDGES ONLY: - Top edge: gentle star sparkles, soft moonlight rays, small decorative leaves - Bottom edge: soft themed decorations — a few tiny flower accents, ribbons, sparkle dots (NO puppy, NO child) - Corners: tasteful ornamental flourishes (small hearts, stars) - Atmospheric lighting: warm cream + dusty rose + soft gold glow Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish, premium storybook feel. Pure decorative background — NO characters, NO typography.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
-    "backCover": "A warm artistic closing scene matching \"Pati'nin Yumuşacık Uykusu\". Küçük {CHILD_NAME}, uyku vakti geldiğinde, sevimli dostu Pati'yi özenle okşar. Yumuşacık tüylerin sıcaklığında, ikisi de yan yana, sıcacık bir uykuya dalar. Bu kitap, sevgi ve dostluğun en tatlı masalıdır.. NO TEXT NO LETTERS in image, 3D CGI render."
+    "backCover": "A warm artistic closing scene matching \"Pati'nin Yumuşacık Merhabası\". Bir tıpırtı... Bir hışırtı... {CHILD_NAME}'nın evinde yeni bir misafir var. Yumuşacık tüyleri, ıslak bir burnu ve kocaman sevgisiyle Pati, en yakın arkadaşı olmaya geldi. Bu sıcacık tanışma, kalpleri ısıtan bir dostluğun ilk sayfasıdır.. NO TEXT NO LETTERS in image, 3D CGI render."
   },
   "shopifyHandle": "mira-ve-pati-kisiye-ozel-kitap",
-  "coverTitle": "Mira ve Pati"
+  "coverTitle": "{CHILD_NAME} ve Pati",
+  "templateHeroName": "Mira"
 }

@@ -1,0 +1,197 @@
+{
+  "id": "ai-1776755537394--yk-n-n-kalp-orkestras-",
+  "category": "duygu-kontrolleri",
+  "title": "Öykü'nün Işıklı Orkestrası",
+  "description": "Öykü çok zor bir gün geçiriyordu ve içindeki öfke, hüzün, heyecan gibi duygular birbirine karışarak kocaman bir gürültü yaratmıştı. Tam kulaklarını kapatıp bu karmaşadan kaçmak isterken oyuncak kutusunda pırıl pırıl parlayan ışıklı bir şef bageti buldu. Bageti eline aldığı anda kendi iç dünyasında, aydınlık ve rengarenk diyarlara uzanan muazzam bir yolculuğa çıktı. Farklı duygularını temsil eden ve kendi başlarına gürültü çıkaran sevimli enstrümanlarla karşılaşıp onlara sevgiyle ritim verdi. Tüm bu duygularını susturmak yerine onlara derin nefesler alarak yol gösterdiğinde, içindeki gürültü harika bir senfoniye dönüştü. Öykü artık duygularının onu yönetmesine izin vermiyor, kendi içindeki muhteşem orkestranın şefliğini ışıkk bir özgüvenle yapıyordu.",
+  "lessons": [
+    "Duyguları Ayrıştırma: Çocuk, hissettiği karmaşık hislerin öfke veya hüzün gibi farklı parçalardan oluştuğunu somutlaştırarak fark eder.",
+    "Dürtü Kontrolü ve Esneklik: Sesi kısmak eylemini nefes alma egzersizi ile eşleştirerek anlık tepkilerini sakinleştirmeyi öğrenir.",
+    "Öz-Şefkat: Zorlayıcı duygularını dışlamak yerine onlara alan açarak kendi hislerine şefkat göstermeyi benimser.",
+    "İçsel Liderlik: Duygularının kölesi değil, onları yöneten bir orkestra şefi olduğunu kavrayarak büyük bir özgüven kazanır."
+  ],
+  "ageGroup": "3-6",
+  "ageRange": "3-6",
+  "pageCount": 14,
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#2c3e50",
+    "secondaryColor": "#e74c3c",
+    "accentColor": "#f1c40f",
+    "icon": "🎶"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Gürültülü Bir Gün",
+      "text": "{CHILD_NAME}, odasının ortasında duruyordu. Uğruna o kadar uğraştığı rengârenk kulesi, küçük bir sarsıntıyla yere devrilmişti. Bütün emeği bir çırpıda boşa gitmişti. Blokların parkeye çarparken çıkardığı takırtı kulaklarında çınlıyordu. Yanakları ısındı, parmak uçları karıncalandı. İçinde bir yerlerde, hem hızlı hem de gürültülü davullar çalmaya başlamış gibiydi. Annesi mutfaktan, “Her şey yolunda mı canım?” diye seslendi. {CHILD_NAME} cevap vermedi, yalnızca dağılmış kuleye bakakaldı.",
+      "prompt": "CHARACTER_DESC A 6-year-old boy stands frozen in the middle of his room, looking at his colorful toy tower that has just collapsed on the wooden floor., setting: Çocuğun oyun odası, öğleden sonra güneşi, mood: frustrated, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "frustrated",
+      "setting": "Çocuğun oyun odası, öğleden sonra güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Oyuncak Kutusu",
+      "text": "Odasındaki her şey fazla parlak, her ses fazla keskindi. {CHILD_NAME}, bu karmaşadan kaçmak için en sevdiği köşeye sığındı. Büyük, hasır oyuncak sepetinin kapağını usulca araladı. İçeriden tanıdık bir koku yayıldı: ahşap oyuncakların ve naftalinli kumaşların kokusu. Parmağını pelüş bir ayının kadife kulağında gezdirdi. İçindeki davullar hâlâ gümbürdüyordu ama sepetin loşluğunda sesleri boğuklaşıyordu. Yine de bu yeterli değildi; o dinmek bilmeyen gürültü bir türlü susmuyordu. Tek istediği biraz sessizlikti.",
+      "prompt": "CHARACTER_DESC The boy kneels by a large wicker toy chest, peering inside. His hand rests on a soft teddy bear, seeking comfort from the chaos., setting: Oyun odasının köşesi, büyük bir oyuncak kutusunun yanı, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Oyun odasının köşesi, büyük bir oyuncak kutusunun yanı"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Işıklı Baget",
+      "text": "Elini sepetin derinliklerine daldırdı. Parmakları, çoktandır unuttuğu bir nesnenin pürüzsüz yüzeyine dokundu. Onu yavaşça yukarı çekti. Bu, babasının bir zamanlar konserden getirdiği ahşap bir orkestra şefi bagetiydi. Ucunda minicik, yıldız şeklinde bir süs vardı. Tozunu üflediğinde, yıldız bir anlığına titrek bir ışıkla parıldadı. {CHILD_NAME}, bagetin serinliğini avucunda hissetti. Tam o anda, içindeki gürültü bir anlığına sustu.",
+      "prompt": "CHARACTER_DESC The boy pulls an old, wooden conductor's baton with a small star at its tip out of the toy chest. The star faintly glows., setting: Oyun odası, oyuncak kutusunun başında, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Oyun odası, oyuncak kutusunun başında"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "İlk Kıvılcım",
+      "text": "Merakla bageti havada salladı. Ucundaki yıldız anında odaya yumuşak, bal rengi bir ışık yaydı. Duvardaki saatin tik-takları yavaşladı, dışarıdan gelen araba sesleri sanki uzak bir şehirden geliyormuş gibi kısıldı. Bütün sesler bir yorganın altından duyulurcasına boğuklaştı. {CHILD_NAME} şaşkınlıkla etrafına bakındı. “Bu da ne?” diye fısıldadı. Bageti bir kez daha salladığında, ışık girdap gibi güçlenerek onu içine çekti.",
+      "prompt": "CHARACTER_DESC The boy waves the glowing baton, and a warm, honey-colored light fills the room, making everything seem quiet and slow., setting: Oyun odası, loşlaşmış ve sessizleşmiş, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Oyun odası, loşlaşmış ve sessizleşmiş"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Kalp Mağarası",
+      "text": "Gözlerini açtığında artık odasında değildi. Duvarları nazikçe parıldayan dev bir mağaranın içindeydi. Duvarlar belli belirsiz bir ritimle, tıp... tıp... diye atıyordu. Hava ılık ve sedir ağacı gibi kokuyordu. Burası tanıdık bir yerdi; güvenli ve sıcak. {CHILD_NAME}, elindeki bagetin ışığının mağaranın damarlarında dans ettiğini gördü. Burası olsa olsa kendi kalbinin içiydi. Derinlerden boğuk bir gümbürtü yükseliyordu.",
+      "prompt": "CHARACTER_DESC The boy stands in awe inside a vast, softly glowing cave. The walls pulse with a gentle, rhythmic light, like a heartbeat. He holds the illuminated baton., setting: Büyük, nazikçe parıldayan bir mağara, duvarları hafifçe atıyor, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Büyük, nazikçe parıldayan bir mağara, duvarları hafifçe atıyor"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "Öfke Kanyonu",
+      "text": "Gümbürtüyü takip ederek mağaranın derinliklerine doğru yürüdü. Ses, her adımda daha da güçleniyordu. Sonunda, toprağın kırmızıya döndüğü dev bir kanyona ulaştı. Kanyonun duvarlarına oyulmuş devasa davullar, görünmez eller tarafından öfkeyle dövülüyordu. Her vuruşta yer sarsılıyor, havaya kızıl toz bulutları kalkıyordu. Bu, odasındaki kuleden dökülen bloklardan bile daha gürültülüydü. Nefesi göğsüne sıkıştı.",
+      "prompt": "CHARACTER_DESC The boy stands at the edge of a vast red canyon where giant, ancient drums are being beaten furiously, shaking the ground., setting: Kırmızı topraklı dev bir kanyon, duvarlarında devasa davullar çalıyor, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Kırmızı topraklı dev bir kanyon, duvarlarında devasa davullar çalıyor"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Davulların Ritmi",
+      "text": "{CHILD_NAME}, bir an geri kaçmak istedi ama elindeki bageti sımsıkı tuttu. Titreyen elleriyle onu havaya kaldırdı. Davulların vahşi ritmi bir anlığına tekledi. Onları yönetmeyi denemek için bageti hızla salladı. Fakat bu, davulları daha da kızdırdı. Ritim çığırından çıktı, gümbürtü beyninin içinde zonkluyordu. “Durun!” diye bağırmak istedi ama sesi gürültünün içinde kaybolup gitti.",
+      "prompt": "CHARACTER_DESC The boy nervously raises his glowing baton towards the giant drums, trying to conduct them, but the rhythm becomes even more chaotic and overwhelming., setting: Öfke kanyonunun ortası, toz ve gürültü içinde, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Öfke kanyonunun ortası, toz ve gürültü içinde"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Hüzün Gölü",
+      "text": "Gürültüden kaçarken kendini sisler içinde, dingin bir yerde buldu. Önünde masmavi, durgun bir göl uzanıyordu. Havada serin bir buğu ve ıslak toprak kokusu vardı. Gölün derinliklerinden yavaş, içli bir melodi yükseliyordu; sanki bir keman sessizce ağlıyordu. {CHILD_NAME} gölün kenarına oturdu. Bu hüzünlü melodi, içindeki davulların gürültüsünü bastırıyordu. Gözlerinin dolduğunu hissetti.",
+      "prompt": "CHARACTER_DESC The boy sits by the edge of a calm, misty lake. He looks into the deep blue water, from which a slow, melancholic melody is rising., setting: Sisli, durgun bir gölün kenarı, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Sisli, durgun bir gölün kenarı"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Su Altı Melodisi",
+      "text": "Bu defa acele etmedi. Bageti yavaşça kaldırdı ve gözlerini kapadı. Yalnızca müziği dinledi. Suyun altında parlayan çellolar hayal etti. Bagetini, suyun üzerinde süzülen bir yaprak gibi nazikçe hareket ettirdi. Melodi anında cevap verdi; daha yumuşak, daha berrak bir tınıya büründü. Hüzün hâlâ oradaydı ama artık acıtmıyor, yalnızca usulca yağan bir yağmur gibi ruhunu yıkıyordu.",
+      "prompt": "CHARACTER_DESC With his eyes closed, the boy gently moves the baton in the air. In the lake, ethereal, glowing cellos can be seen underwater, their music softening in response., setting: Hüzün gölünün kenarı, suyun altı parlıyor, mood: calm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "calm",
+      "setting": "Hüzün gölünün kenarı, suyun altı parlıyor"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Neşe Pınarı",
+      "text": "Huzurlu melodiyle birlikte yürürken, şen şakrak bir ses duydu. Küçük bir pınarın etrafında, su damlacıklarının vurduğu minicik kristal ziller şıngırdıyordu. Her bir şıngırtı, havaya minik bir ışık zerresi bırakıyordu. Bu, kıkırdamaya benzeyen bir sesti; saf ve aydınlık. {CHILD_NAME} gülümsedi. Anladı ki bu neşe de onun bir parçasıydı. Kalbinin içinde hem gümbürtülü davullar, hem hüzünlü çellolar, hem de bu neşeli ziller vardı.",
+      "prompt": "CHARACTER_DESC The boy discovers a small, bubbling spring surrounded by tiny, bell-like instruments that chime joyfully, releasing little sparks of light with each note., setting: Işık saçan zillerle dolu küçük bir pınar, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "joyful",
+      "setting": "Işık saçan zillerle dolu küçük bir pınar"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Bütün Sesler",
+      "text": "Neşeli zillerin sesi, uzaktaki davulların öfkeli gümbürtüsünü yeniden kışkırttı. Çok geçmeden, hüzünlü çelloların melodisi de onlara katıldı. Üç farklı müzik aynı anda çalmaya başladı ve birbiriyle kavga eden, uyumsuz bir gürültüye dönüştü. Mağaranın duvarları huzursuzca titredi. {CHILD_NAME}, odasında hissettiği o bunaltıcı duygunun aynısını yaşadı. Kalbinin içindeki bütün sesler birbirine karışmıştı.",
+      "prompt": "CHARACTER_DESC The sounds of the drums, cellos, and bells clash, creating a chaotic, overwhelming noise. The boy stands in the middle, looking distressed., setting: Kalp mağarasının merkezi, üç farklı müzik birbiriyle çatışıyor, mood: chaotic, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "chaotic",
+      "setting": "Kalp mağarasının merkezi, üç farklı müzik birbiriyle çatışıyor"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "Orkestra Şefi",
+      "text": "O, gözlerini sımsıkı kapattı ve derin bir nefes aldı. Ciğerlerine dolan hava, içindeki fırtınayı bir anlığına dindirdi. Bu sefer hiçbir sesi susturmaya çalışmadı. Bagetini bir orkestra şefi gibi kararlılıkla kaldırdı. Önce davullara döndü ve onlara güçlü, sabit bir ritim verdi. Gümbürtü, öfkeden güce dönüştü. Sonra çellolara yumuşak bir işaretle eşlik etmelerini istedi. Hüzünlü melodi, gücün üzerine nazikçe yerleşti.",
+      "prompt": "CHARACTER_DESC The boy stands tall, eyes closed, taking a deep breath. He then raises the baton with newfound confidence, conducting the chaotic sounds with purpose., setting: Kalp mağarasının ortası, çocuk kararlılıkla bagetini sallıyor, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Kalp mağarasının ortası, çocuk kararlılıkla bagetini sallıyor"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "Kalbin Şarkısı",
+      "text": "Son olarak, neşeli zillere işaret etti. Şıngırtıları, müziğin arasına serpiştirilmiş yıldız tozları gibi parladı. Üç farklı duygu, üç farklı melodi, şimdi tek bir şarkıda birleşmişti. Bu, daha önce hiç duyulmamış, yalnızca ona ait bir şarkıydı. Mağara, uyumlu seslerle ve sıcak bir ışıkla doldu. {CHILD_NAME} gülümsedi. Bu artık bir gürültü değil, onun kendi kalp orkestrasıydı.",
+      "prompt": "CHARACTER_DESC A beautiful harmony of music and light fills the cave. The boy stands conducting, a peaceful and proud smile on his face. The drums, cellos, and bells are all playing together., setting: Kalp mağarası, uyumlu bir müzik ve sıcak bir ışıkla dolu, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Kalp mağarası, uyumlu bir müzik ve sıcak bir ışıkla dolu"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "casual",
+      "title": "Sessiz Oda",
+      "text": "Gözlerini açtığında yine odasındaydı. Bagetin ucundaki yıldızın ışığı yavaşça söndü. Oda sessizdi ama bu, huzurlu bir sessizlikti. Yere dağılmış bloklara baktı. İçinde ne gümbürdeyen davullar ne de kontrolsüz bir gürültü vardı. Artık bütün seslerin yönetimi kendi elindeydi. Yavaşça yere oturdu ve blokları toplamaya başladı. Annesi kapıdan başını uzattı. “İyi misin {CHILD_NAME}?” Çocuk başını kaldırdı ve annesine içten bir gülümsemeyle karşılık verdi. “İyiyim anne. Sadece kulemi yeniden yapıyorum.”",
+      "prompt": "CHARACTER_DESC The boy is back in his quiet room, calmly rebuilding his collapsed tower. His mother peeks in from the doorway with a gentle smile., setting: Çocuğun odası, gün batımı ışığı vuruyor, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Çocuğun odası, gün batımı ışığı vuruyor"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🎵",
+      "facts": [
+        "Müzik dinlemek, beynimizin kendini daha mutlu hissetmesini sağlayan kimyasallar salgılamasına yardımcı olur.",
+        "Hızlı müzikler kalp atışlarımızı hızlandırırken, yavaş ve sakin müzikler yavaşlatabilir.",
+        "Dünyadaki bütün insanlar, farklı diller konuşsalar bile, müziğin dilini anlayabilirler.",
+        "Bazen bir şarkı dinlediğimizde, o şarkıyı ilk dinlediğimiz andaki anılarımızı ve hislerimizi hatırlarız."
+      ],
+      "icon": "🎵"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ❤️",
+      "facts": [
+        "Kalbimiz, yaklaşık olarak kendi yumruğumuz büyüklüğünde çok güçlü bir kastır.",
+        "Heyecanlandığımızda veya korktuğumuzda, kalbimiz vücudumuza daha çok enerji göndermek için daha hızlı atmaya başlar.",
+        "Derin bir nefes alıp yavaşça vermek, kalbimizin sakinleşmesine ve bizim de rahatlamamıza yardımcı olur.",
+        "Gülmek kalbimiz için çok faydalıdır. Tıpkı neşeli bir şarkı gibi!"
+      ],
+      "icon": "❤️"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: The background is a dreamy, cave-like space, softly lit. In the foreground, glowing musical notes and light trails swirl around the boy, emanating from the instruments of his heart orchestra.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Öykü'nün Kalp Orkestrası\". Bazen içimizdeki sesler çok gürültülü olabilir. Öykü, kalbinin derinliklerindeki bu seslerle tanıştığında, onları susturmak yerine onlara şefkatle kulak vermeyi öğrenir. Çünkü her duygu, kalbimizin en güzel şarkısının bir notasıdır.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "oyku-isimli-kisiye-ozel-cocuk-kitabi"
+}

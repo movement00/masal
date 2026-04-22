@@ -361,6 +361,47 @@ Respond in JSON only:
   }
 
   /**
+   * Karakter profili gorseline bakip cinsiyeti tespit eder.
+   * Beklenen cinsiyetle uyusmazsa uretici tarafi retry edebilir.
+   *
+   * @param {Buffer} imageBuffer
+   * @param {"kiz"|"erkek"} expectedGender
+   * @returns {Promise<{match: boolean, perceived: "kiz"|"erkek"|"unclear", confidence: number, feedback: string}>}
+   */
+  async checkGenderMatch(imageBuffer, expectedGender) {
+    if (!this.enabled || !this.client) {
+      return { match: true, perceived: "unclear", confidence: 0, feedback: "validator disabled" };
+    }
+    const prompt = `You are given a 3D Pixar-style character profile image showing a child in multiple poses.
+Task: identify whether the depicted child reads as a GIRL (kız) or a BOY (erkek) at first glance, based on facial proportions, hair style/length, clothing cut, and overall gender presentation.
+Return STRICT JSON only, no markdown: { "perceived": "kiz" | "erkek" | "unclear", "confidence": 0-100, "reason": "<one short sentence>" }
+- Use "kiz" for clearly feminine presentation, "erkek" for clearly masculine, "unclear" only if genuinely ambiguous.
+- confidence: how sure you are about the perceived gender.`;
+    try {
+      const parts = [
+        { inlineData: { mimeType: "image/png", data: imageBuffer.toString("base64") } },
+        { text: prompt },
+      ];
+      const response = await this.client.models.generateContent({
+        model: config.geminiVision?.model || "gemini-2.0-flash",
+        contents: [{ role: "user", parts }],
+        config: { responseMimeType: "application/json", temperature: 0.1 },
+      });
+      const text = response.candidates?.[0]?.content?.parts?.[0]?.text || "";
+      let cleaned = text.trim();
+      if (cleaned.startsWith("```")) cleaned = cleaned.replace(/^```(?:json)?\s*/, "").replace(/\s*```$/, "");
+      const result = JSON.parse(cleaned);
+      const perceived = ["kiz", "erkek", "unclear"].includes(result.perceived) ? result.perceived : "unclear";
+      const confidence = Math.max(0, Math.min(100, parseInt(result.confidence) || 0));
+      const match = perceived === "unclear" ? true : perceived === expectedGender;
+      return { match, perceived, confidence, feedback: result.reason || "" };
+    } catch (err) {
+      console.warn(`  [quality-validator] Gender check hatasi: ${err.message}`);
+      return { match: true, perceived: "unclear", confidence: 0, feedback: `API hatasi: ${err.message}` };
+    }
+  }
+
+  /**
    * Validasyon yapilmadan gecis sonucu olusturur
    */
   _passResult(reason) {

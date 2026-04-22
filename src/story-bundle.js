@@ -61,6 +61,9 @@ function bundleToMasalBook(bundle) {
     ageGroup: bundle.ageGroup,
     ageRange: bundle.ageGroup,
     pageCount: scenes.length,
+    // templateHeroName enables Bora→Kaan morphology substitution at order time
+    templateHeroName: bundle.templateHeroName || bundle.heroName || null,
+    heroName: bundle.heroName || bundle.templateHeroName || null,
     style: bundle.style || "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
     characterDescription: bundle.characterDescription || {
       base: "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",

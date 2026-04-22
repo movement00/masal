@@ -14,7 +14,7 @@
   "pageCount": 10,
   "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
   "characterDescription": {
-    "base": "a child with the EXACT same facial features as the reference photo, rendered in 3D CGI style with slightly exaggerated cute proportions, big expressive eyes, detailed skin textures, and natural hair matching the photo exactly",
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
     "notes": ""
   },
   "theme": {
@@ -30,7 +30,7 @@
       "outfitId": "pajamas",
       "title": "Karnında Minik Deniz",
       "text": "Kaan, annesinin şişkin karnını severdi. Kulağını dayadı, içeriden yavaşça bir pıt pıt sesi duydu.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} gently presses his ear against his mother's pregnant belly, a soft smile on his face., setting: oturma odası, öğleden sonra, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} gently presses his ear against his mother's pregnant belly, a soft smile on his face., setting: oturma odası, öğleden sonra, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "curious",
       "setting": "oturma odası, öğleden sonra"
     },
@@ -39,7 +39,7 @@
       "outfitId": "pajamas",
       "title": "Dokunuşların Sihri",
       "text": "Annesi gülümsedi. \"Deniz'in eli,\" dedi. Kaan'ın parmakları, karnın üzerinde minik bir tepeyi hissetti.",
-      "prompt": "CHARACTER_DESC  Mother gently guides {CHILD_NAME}'s hand to feel a small bump on her pregnant belly, both smiling softly., setting: oturma odası, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC Mother gently guides {CHILD_NAME}'s hand to feel a small bump on her pregnant belly, both smiling softly., setting: oturma odası, öğleden sonra, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "oturma odası, öğleden sonra"
     },
@@ -48,7 +48,7 @@
       "outfitId": "pajamas",
       "title": "Bekleyişin Tatlılığı",
       "text": "Kaan, Deniz'in geleceği günü hayal etti. Kalbi şimdiden pıt pıt atıyordu, onu çok merak ediyordu.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} lies in bed, eyes wide open, imagining his new sibling. A soft light from the window illuminates his face., setting: Kaan'ın odası, akşam, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} lies in bed, eyes wide open, imagining his new sibling. A soft light from the window illuminates his face., setting: Kaan'ın odası, akşam, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "nervous-excited",
       "setting": "Kaan'ın odası, akşam"
     },
@@ -57,7 +57,7 @@
       "outfitId": "daily_clothes",
       "title": "Kapı Çaldı",
       "text": "Kapı çaldı. Babası heyecanla seslendi: \"Kaan, Deniz geldi!\" Kaan'ın gözleri parladı.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} stands by the front door, his father's excited voice echoing. His eyes sparkle with anticipation., setting: ev koridoru, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} stands by the front door, his father's excited voice echoing. His eyes sparkle with anticipation., setting: ev koridoru, sabah, mood: joyful, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "joyful",
       "setting": "ev koridoru, sabah"
     },
@@ -66,7 +66,7 @@
       "outfitId": "daily_clothes",
       "title": "Minicik Bir El",
       "text": "Kaan, yatağında yatan annesine yaklaştı. Minicik pembe bir yüz gördü. Minicik, sıcacık bir el.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} stands by his mother's bed, looking at the newborn baby. He sees a tiny pink face and a tiny hand., setting: ebeveyn yatak odası, sabah, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} stands by his mother's bed, looking at the newborn baby. He sees a tiny pink face and a tiny hand., setting: ebeveyn yatak odası, sabah, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "dreamy",
       "setting": "ebeveyn yatak odası, sabah"
     },
@@ -75,7 +75,7 @@
       "outfitId": "daily_clothes",
       "title": "İlk Dokunuş",
       "text": "Kaan, nazikçe uzandı. Minicik parmağını uzattı. Deniz'in eli, onun parmağını hafifçe sardı.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} gently extends his finger towards the baby's hand. The baby's tiny fingers softly close around his., setting: ebeveyn yatak odası, sabah, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} gently extends his finger towards the baby's hand. The baby's tiny fingers softly close around his., setting: ebeveyn yatak odası, sabah, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "warm",
       "setting": "ebeveyn yatak odası, sabah"
     },
@@ -84,7 +84,7 @@
       "outfitId": "daily_clothes",
       "title": "Kalpteki Şarkı",
       "text": "Kaan'ın kalbinde tatlı bir şarkı başladı. Bu şarkı, Deniz'in kokusu gibi, mis gibiydi.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} holds the baby's hand, a look of profound love and wonder on his face. A soft, warm light surrounds them., setting: ebeveyn yatak odası, sabah, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} holds the baby's hand, a look of profound love and wonder on his face. A soft, warm light surrounds them., setting: ebeveyn yatak odası, sabah, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "ebeveyn yatak odası, sabah"
     },
@@ -93,7 +93,7 @@
       "outfitId": "daily_clothes",
       "title": "Ağabey Oldu",
       "text": "Artık Kaan bir ağabeydi. Deniz'i hep koruyacaktı. Bu yeni rolü onu çok mutlu etti.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} looks at his baby sister with a determined yet loving expression, a sense of responsibility dawning on him., setting: ebeveyn yatak odası, sabah, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} looks at his baby sister with a determined yet loving expression, a sense of responsibility dawning on him., setting: ebeveyn yatak odası, sabah, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "determined",
       "setting": "ebeveyn yatak odası, sabah"
     },
@@ -102,7 +102,7 @@
       "outfitId": "daily_clothes",
       "title": "Birlikte Gelecek",
       "text": "Kaan, Deniz ile oyunlar oynamayı, masallar okumayı hayal etti. Hep birlikte büyüyeceklerdi.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} sits on his bedroom floor, surrounded by toys, imagining playing with his new baby sister. A bright, hopeful light fills the room., setting: Kaan'ın odası, öğleden sonra, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} sits on his bedroom floor, surrounded by toys, imagining playing with his new baby sister. A bright, hopeful light fills the room., setting: Kaan'ın odası, öğleden sonra, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "inspirational",
       "setting": "Kaan'ın odası, öğleden sonra"
     },
@@ -111,7 +111,7 @@
       "outfitId": "daily_clothes",
       "title": "Kucak Dolusu Sevgi",
       "text": "Kaan, Deniz'in elini sıkıca tuttu. Kalbi sıcacık oldu. Bu sevgi, sonsuza dek sürecekti.",
-      "prompt": "CHARACTER_DESC  {CHILD_NAME} gently holds his baby sister's hand, both their hands glowing with a soft, warm light, symbolizing their bond., setting: ebeveyn yatak odası, sabah, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "prompt": "CHARACTER_DESC {CHILD_NAME} gently holds his baby sister's hand, both their hands glowing with a soft, warm light, symbolizing their bond., setting: ebeveyn yatak odası, sabah, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
       "mood": "triumphant-emotional",
       "setting": "ebeveyn yatak odası, sabah"
     }
@@ -150,7 +150,7 @@
   ],
   "coverPrompt": "",
   "specialPagePrompts": {
-    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Kaan'ın Minik Eli\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Close-up of {CHILD_NAME}'s hand on mother's belly, warm, soft lighting. Mother's hand slightly visible. Simple, comforting background..\nTITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Kaan\"\nTypography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves).\nLAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon.\nTurkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title.\nIce Age and Shrek style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
+    "heroPage": "A beautiful premium children's storybook HERO PAGE in 2:3 portrait — themed decorative background matching \"Kaan'ın Minik Eli\". ABSOLUTELY NO CHILD CHARACTER, NO PEOPLE, NO HUMAN FIGURES anywhere on the page. Themed environment: Close-up of {CHILD_NAME}'s hand on mother's belly, warm, soft lighting. Mother's hand slightly visible. Simple, comforting background.. TITLE (display EXACTLY as Turkish text, top 20% of the page): \"Hikayemizin Kahramanı Kaan\" Typography: large playful HAND-LETTERED decorative title with rainbow/multi-color warm palette, sparkles and floating decorative elements around letters, drop shadow, cheerful children's book cover-level fun. Each word a slightly different warm color (gold, coral, rose, turquoise), letters may have tiny ornaments (stars, hearts, leaves). LAYOUT: title top 20%, LEAVE THE CENTER ~55% OF THE PAGE VISUALLY CALM (soft gradient or soft bokeh, no busy elements, no text, no objects) so a rectangular photo frame can be composited on top later. Bottom 25% may have tasteful themed decorative ornaments, flowers, sparkles, a ribbon. Turkish characters (ş ç ğ ü ö ı İ) MUST be perfect. No other text on page besides the title. Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, ultra high detail, magazine-cover polish.",
     "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
     "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
     "backCover": "A warm artistic closing scene matching \"Kaan'ın Minik Eli\". Kaan'ın kalbi, annesinin karnındaki Deniz için pıt pıt atıyordu. Sonra bir gün, minicik bir el, Kaan'ın parmağını sıcacık sardı. Artık o bir ağabeydi, kocaman bir sevgiyle dolu!. NO TEXT NO LETTERS in image, 3D CGI render."

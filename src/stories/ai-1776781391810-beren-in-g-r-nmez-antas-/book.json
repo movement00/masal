@@ -1,0 +1,197 @@
+{
+  "id": "ai-1776781391810-beren-in-g-r-nmez-antas-",
+  "category": "duygu-kontrolleri",
+  "title": "Beren'in Görünmez Çantası",
+  "description": "Beren, hata yapmaktan çekinen ve tüm endişelerini şeffaf, görünmez bir çantaya saklayan tatlı bir çocuktur. Yükünden kurtulmak için fantastik bir yolculuğa çıkar ve asıl çözümün güvendiği bir yetişkinle sohbet etmek olduğunu keşfeder.",
+  "lessons": [
+    "Duygusal İfade Becerisi",
+    "Mükemmeliyetçiliği Aşmak",
+    "Paylaşmanın Gücü",
+    "Şefkat ve Cesaret"
+  ],
+  "ageGroup": "6-9",
+  "ageRange": "6-9",
+  "pageCount": 14,
+  "templateHeroName": "Beren",
+  "heroName": "Beren",
+  "style": "Ice Age and Shrek style 3D CGI animation with exaggerated cute proportions, hyper-detailed textures, subsurface skin scattering, volumetric lighting, vibrant warm color palette, photorealistic fabric wrinkles, cinematic composition, Disney Pixar render quality",
+  "characterDescription": {
+    "base": "Turkish child. Exact face, hair, skin tone, and accessories come from the character-profile reference photo. No hardcoded physical traits — the reference photo is the sole source of truth for identity.",
+    "notes": ""
+  },
+  "theme": {
+    "primaryColor": "#A2C5D6",
+    "secondaryColor": "#FFDDA1",
+    "accentColor": "#B3D5A5",
+    "icon": "🎒"
+  },
+  "outfit": null,
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "outfitId": "casual",
+      "title": "Yamuk Bıyık",
+      "text": "{CHILD_NAME}, odasının sessizliğinde oturuyordu. En sevdiği sarı pastel boyasıyla bir kedi resmi çiziyordu. Her şey yolundaydı, ta ki kedinin bıyığı birazcık yamuk olana dek. {CHILD_NAME} kaşlarını çattı. Elindeki kalemi usulca masaya bıraktı. Tam o anda omzunda tanıdık bir ağırlık hissetti. İşte yine oradaydı; görünmez çantası.",
+      "prompt": "CHARACTER_DESC A young boy sits at his desk, looking sadly at a drawing with a slightly crooked whisker on a cat; a transparent, shimmering bag materializes on his shoulder., setting: Çocuk odası, öğleden sonra güneşi, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Çocuk odası, öğleden sonra güneşi"
+    },
+    {
+      "sceneNumber": 2,
+      "outfitId": "casual",
+      "title": "Ağırlaşan Adımlar",
+      "text": "Kahvaltı masasında annesi reçel kavanozunu uzattı. {CHILD_NAME} uzanmaya çalıştı ama omzundaki çanta onu yana doğru çekti. Sandalyesi hafifçe gıcırdadı. Annesi, \"İyi misin canım?\" diye sordu. {CHILD_NAME} sadece başını salladı. Çantanın içindeki yamuk bıyık, dün dökülen bir damla sütle birlikte sessizce sallanıyordu. Konuşmak zordu.",
+      "prompt": "CHARACTER_DESC At the breakfast table, the boy struggles to reach for a jar of jam, weighed down by his invisible bag, while his mother looks on with gentle concern., setting: Mutfak, sabah, mood: nervous-excited, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "nervous-excited",
+      "setting": "Mutfak, sabah"
+    },
+    {
+      "sceneNumber": 3,
+      "outfitId": "casual",
+      "title": "Uzak Tepe",
+      "text": "{CHILD_NAME}, odasının penceresinden dışarıyı seyrediyordu. Bahçenin ötesinde, yemyeşil bir tepe gökyüzüne uzanıyordu. Tepenin zirvesindeki ulu ağacın dalları, rüzgârda özgürce dans ediyordu. Belki, diye düşündü, çantasını oraya bırakabilirdi. Rüzgâr onu alıp çok uzaklara götürebilirdi. Bu düşünce kalbinde küçük bir umut filizlendirdi.",
+      "prompt": "CHARACTER_DESC The boy looks out his bedroom window at a distant, sunlit hill with a large tree on top, a look of determination on his face., setting: Pencereden dışarıya bakan çocuk, uzakta bir tepe, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Pencereden dışarıya bakan çocuk, uzakta bir tepe"
+    },
+    {
+      "sceneNumber": 4,
+      "outfitId": "casual",
+      "title": "Yolculuk Başlıyor",
+      "text": "Arka kapıdan sessizce süzüldü. Ayağının altındaki çimenler nemliydi ve sabah serinliği yanaklarını pembeleştirdi. Görünmez çanta her adımda bacağına çarpıyordu. Sanki içindeki bütün endişeler, küçük taşlar gibi birbirine vurup ses çıkarıyordu. {CHILD_NAME} bu sesleri sadece kendisinin duyduğunu biliyordu. Tepeye doğru kararlılıkla yürümeye başladı.",
+      "prompt": "CHARACTER_DESC The boy walks determinedly across a dewy backyard lawn, heading towards a distant hill, the invisible bag seeming to bump against his leg., setting: Evin arka bahçesi, sabah erken saatler, mood: curious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "curious",
+      "setting": "Evin arka bahçesi, sabah erken saatler"
+    },
+    {
+      "sceneNumber": 5,
+      "outfitId": "casual",
+      "title": "Dere Kenarı",
+      "text": "Tepeye giden yolun kenarından incecik bir dere akıyordu. Su, taşların üzerinden atlarken neşeli bir ses çıkarıyordu. {CHILD_NAME} durup düşündü. Çantasını suya bırakırsa belki de endişeleri akıp giderdi. Çantayı omzundan indirmeye çalıştı ama yapışıktı sanki. Sadece parmak uçlarını suyun soğukluğuna değdirebildi. Çanta yerinden oynamadı.",
+      "prompt": "CHARACTER_DESC The boy kneels by a small, clear stream, trying to 'dip' his invisible bag into the water, but it remains stubbornly attached to him., setting: Ormanlık alanda küçük bir dere, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Ormanlık alanda küçük bir dere"
+    },
+    {
+      "sceneNumber": 6,
+      "outfitId": "casual",
+      "title": "Rüzgârlı Zirve",
+      "text": "Nihayet tepenin zirvesine ulaştı. Rüzgâr, saçlarını karıştırıyor ve kulağında bir şarkı gibi uğulduyordu. {CHILD_NAME} kollarını iki yana açtı. Çantanın rüzgârla dolup bir uçurtma gibi havalanmasını bekledi. Çanta biraz dalgalandı, hafifledi gibi oldu ama gitmedi. Aksine, rüzgâr estikçe daha sıkı sarıldı ona.",
+      "prompt": "CHARACTER_DESC On top of a windy hill, the boy stands with his arms outstretched, hoping the wind will carry his invisible bag away like a kite, but it only clings to him., setting: Rüzgârlı bir tepenin zirvesi, ulu bir ağacın altı, mood: dreamy, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "dreamy",
+      "setting": "Rüzgârlı bir tepenin zirvesi, ulu bir ağacın altı"
+    },
+    {
+      "sceneNumber": 7,
+      "outfitId": "casual",
+      "title": "Ağacın Kulağı",
+      "text": "Yorulmuştu. Ulu ağacın gövdesine yaslandı. Ağacın kabukları, bilge bir yüzün kırışıklıkları gibiydi. Elini gövdeye koydu. Ağacın sessiz ve güçlü duruşu ona iyi geldi. Bu yükü daha ne kadar taşıyabileceğini bilmiyordu. \"Çok ağır,\" diye fısıldadı kimsenin duyamayacağını bilerek. Cevap olarak sadece yaprakların hışırtısı duyuldu.",
+      "prompt": "CHARACTER_DESC The boy rests against the trunk of a huge, ancient tree, his hand on its rough bark, whispering to it with a tired expression., setting: Büyük, yaşlı bir ağacın gölgesi, mood: mysterious, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "mysterious",
+      "setting": "Büyük, yaşlı bir ağacın gölgesi"
+    },
+    {
+      "sceneNumber": 8,
+      "outfitId": "casual",
+      "title": "Toprağın Altı",
+      "text": "Ağacın dibinde, köklerin arasında yumuşak bir toprak parçası buldu. Belki de endişelerini gömebilirdi. Küçük bir çukur kazdı elleriyle. Tırnaklarının arasına toprak doldu. Çantayı çukurun içine sığdırmaya çalıştı. Üzerini toprakla örttü. Ayağa kalktığında bir anlık bir hafiflik hissetti ama sonra o tanıdık ağırlık yine omzuna yerleşti.",
+      "prompt": "CHARACTER_DESC The boy digs a small hole with his hands at the base of the tree and tries to 'bury' the invisible bag, only to feel its weight return instantly., setting: Ağacın dibinde, toprakla uğraşırken, mood: intense, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "intense",
+      "setting": "Ağacın dibinde, toprakla uğraşırken"
+    },
+    {
+      "sceneNumber": 9,
+      "outfitId": "casual",
+      "title": "Yalnız Kalabalık",
+      "text": "Güneş yavaş yavaş alçalmaya başlamıştı. Gökyüzü turuncuya boyandı. {CHILD_NAME} tepeye oturdu ve aşağıda ışıkları yanmaya başlayan evlere baktı. Bütün denemeleri işe yaramamıştı. Çanta, içindeki görünmez taşlarla birlikte her zamankinden daha ağırdı. Gözleri doldu, parmağıyla toprağa anlamsız çizgiler çizdi.",
+      "prompt": "CHARACTER_DESC The boy sits alone on the hill at sunset, looking down at the town lights below, his shoulders slumped under the weight of his invisible bag., setting: Gün batımında tepe, aşağıda kasabanın ışıkları, mood: reflective, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "reflective",
+      "setting": "Gün batımında tepe, aşağıda kasabanın ışıkları"
+    },
+    {
+      "sceneNumber": 10,
+      "outfitId": "casual",
+      "title": "Sıcak Işık",
+      "text": "Evlerin arasında bir ışık diğerlerinden daha tanıdıktı. Mutfaklarının penceresiydi. Annesinin orada olduğunu, belki de en sevdiği kurabiyeden yaptığını hayal etti. Kurabiyenin tarçınlı kokusu burnuna gelir gibi oldu. O sıcak ışık, kalbine küçücük bir cesaret tohumu ekti. Belki de çantayı uzaklara atmak gerekmiyordu.",
+      "prompt": "CHARACTER_DESC From the dark hill, the boy's gaze is fixed on a single, warm, glowing window in his house far below, a spark of hope in his eyes., setting: Uzakta parlayan tek bir pencere ışığına odaklanmış, mood: inspirational, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "inspirational",
+      "setting": "Uzakta parlayan tek bir pencere ışığına odaklanmış"
+    },
+    {
+      "sceneNumber": 11,
+      "outfitId": "casual",
+      "title": "Dönüş Yolu",
+      "text": "Ayağa kalktı. Geriye doğru yürümeye başladı. Artık çantayı atmaya çalışmıyordu. Sadece onunla birlikte, adımlarını teker teker atıyordu. Patika, geldiği yoldan daha az korkutucu görünüyordu şimdi. Cırcır böceklerinin sesi ona eşlik ediyordu. Her adımda evinin ışığı biraz daha büyüdü.",
+      "prompt": "CHARACTER_DESC The boy walks back down the path towards his home, no longer fighting the invisible bag but simply carrying it with newfound resolve., setting: Alacakaranlıkta patika yolda evine doğru yürürken, mood: determined, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "determined",
+      "setting": "Alacakaranlıkta patika yolda evine doğru yürürken"
+    },
+    {
+      "sceneNumber": 12,
+      "outfitId": "casual",
+      "title": "Görünmez Çantanın Sırrı",
+      "text": "Mutfağın kapısında duraksadı. Annesi tezgâhta bir şeyler hazırlıyordu. {CHILD_NAME} derin bir nefes aldı. İçeri girdi. Annesi ona dönüp gülümsedi. \"Anne,\" dedi {CHILD_NAME}, sesi titreyerek. \"Benim görünmez bir çantam var. Ve içi çok dolu.\"",
+      "prompt": "CHARACTER_DESC The boy stands in the kitchen doorway, taking a deep breath before speaking to his mother, who turns to him with a warm, welcoming smile., setting: Sıcak ve aydınlık mutfak, mood: climactic, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "climactic",
+      "setting": "Sıcak ve aydınlık mutfak"
+    },
+    {
+      "sceneNumber": 13,
+      "outfitId": "casual",
+      "title": "Boşalan Kelimeler",
+      "text": "Annesi elindeki işi bıraktı ve yanına oturdu. \"Anlat bakalım, içinde neler var?\" diye sordu yumuşacık bir sesle. {CHILD_NAME} anlatmaya başladı. Yamuk bıyığı, dökülen sütü, arkadaşına söylediği kırıcı sözü... Her bir kelime ağzından çıktıkça, omzundaki çantanın hafiflediğini hissetti. Sanki içindeki taşlar birer birer buharlaşıyordu. En sonunda annesi ona sımsıkı sarıldı.",
+      "prompt": "CHARACTER_DESC The mother listens intently as the boy speaks, and with each word he shares, the invisible bag around him becomes fainter and lighter until it disappears in a warm hug., setting: Mutfak masasında anne ve çocuk sohbet ediyor, mood: triumphant-emotional, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "triumphant-emotional",
+      "setting": "Mutfak masasında anne ve çocuk sohbet ediyor"
+    },
+    {
+      "sceneNumber": 14,
+      "outfitId": "pajamas",
+      "title": "Hafif Sabah",
+      "text": "Ertesi sabah {CHILD_NAME} yine resim masasının başındaydı. Yeni bir kâğıt çıkardı. Bu sefer bir kuş çiziyordu. Kuşun kanadı biraz fazla uzun oldu. {CHILD_NAME} duraksadı, içgüdüsel olarak omzuna dokundu. Orada hiçbir ağırlık yoktu. Gülümsedi. Uzun kanadın yanına bir bulut çizdi. Hatalar, bazen resimleri daha da güzelleştirirdi.",
+      "prompt": "CHARACTER_DESC The boy is happily drawing again. He makes a small mistake, pauses, touches his empty shoulder where the bag used to be, and then smiles, turning the mistake into a cloud., setting: Aynı çocuk odası, aydınlık bir sabah, mood: warm, wide shot, character 30-40% of frame, environment dominant, consistent across all scenes, Pixar 3D CGI animation style with exaggerated cute proportions and hyper-detailed textures, ultra high detail render quality",
+      "mood": "warm",
+      "setting": "Aynı çocuk odası, aydınlık bir sabah"
+    }
+  ],
+  "funFacts": [
+    {
+      "id": "fact-1",
+      "title": "Biliyor muydun? 🧠",
+      "facts": [
+        "Endişelerimiz hakkında konuşmak, beynimizin rahatlamasına yardımcı olur. Tıpkı bir balondan yavaşça hava kaçırmak gibi, konuştukça endişelerimiz de küçülür.",
+        "Birine sımsıkı sarıldığımızda vücudumuz \"oksitosin\" adında bir mutluluk hormonu salgılar. Bu hormon kendimizi güvende ve sakin hissetmemizi sağlar.",
+        "Beynimizde \"amigdala\" adında, minicik bir bademe benzeyen bir bölüm vardır. Bu bölüm, korku ve endişe gibi duygular için bir alarm zili görevi görür."
+      ],
+      "icon": "🧠"
+    },
+    {
+      "id": "fact-2",
+      "title": "Biliyor muydun? ✨",
+      "facts": [
+        "Hata yapmak, öğrenmenin en önemli yollarından biridir! En akıllı bilim insanları bile doğru cevabı bulmak için yüzlerce hata yaparlar.",
+        "Derin bir nefes alıp yavaşça vermek, beynimize \"Her şey yolunda, rahatla!\" mesajı gönderir. Bu, herkesin kullanabileceği gizli bir süper güçtür.",
+        "Japonya'da \"Kintsugi\" adında bir sanat vardır. Kırılan seramikleri altın tozuyla birleştirirler. Çünkü onlara göre, kırıklar o eşyayı daha değerli ve özel yapar."
+      ],
+      "icon": "✨"
+    }
+  ],
+  "funFactPlacements": [
+    {
+      "afterScene": 4,
+      "factId": "fact-1"
+    },
+    {
+      "afterScene": 9,
+      "factId": "fact-2"
+    }
+  ],
+  "coverPrompt": "",
+  "specialPagePrompts": {
+    "heroPage": "A beautiful premium children's storybook HERO PAGE background in 2:3 portrait — themed decorative scene only. Themed environment: A gentle, rolling hill at dusk. A warm, glowing light from a single house in the valley below. The sky is a soft mix of orange and purple. A large, friendly tree is silhouetted on the hill.. CRITICAL RULES: 1. ABSOLUTELY NO HUMAN FIGURES, NO CHILD CHARACTER, NO ADULT, NO PEOPLE IN ANY FORM. If you draw any person, image is WRONG. 2. NO TEXT, NO LETTERS, NO WORDS anywhere in the image. No title, no captions, no typography. Text will be added later via Canvas. 3. CENTER AREA (roughly 50-60% middle) must be visually CALM — soft gradient, soft bokeh, or simple atmospheric color wash. No busy elements, no objects, no animals centered. This area reserves space for a photo frame to be composited on top. ALLOWED ELEMENTS: - Themed environment decoration on the edges (e.g. soft themed ornaments, sparkles, flowers, ribbons, stars, soft clouds, subtle pet silhouette in the BOTTOM corner ONLY if core to theme — never centered, never human) - Atmospheric lighting (warm glow, soft moonlight, golden hour) - Border decorations (top and bottom zones can have tasteful flourishes) Pixar 3D CGI animation style 3D CGI / painterly storybook illustration blend, magazine-cover polish. Pure background ornament, no characters, no typography.",
+    "funFactBg": "A warm decorative themed background with sparkles and soft glow, NO TEXT NO LETTERS, 3D CGI illustration.",
+    "senderNoteBg": "A cozy warm background with soft golden light, NO TEXT NO LETTERS, 3D CGI render.",
+    "backCover": "A warm artistic closing scene matching \"Beren'in Görünmez Çantası\". Beren'in bir sırrı var: Her endişesini sakladığı görünmez bir çanta. Bu ağır yükten kurtulmak için çıktığı yolda, en büyük yardımcının aslında her zaman yanı başında olduğunu keşfeder. Kalpleri ısıtan bu hikâye, konuşmanın ve paylaşmanın iyileştirici gücünü anlatıyor.. NO TEXT NO LETTERS in image, 3D CGI render."
+  },
+  "shopifyHandle": "beren-gorunmez-cantasi-kisiye-ozel-cocuk-kitabi"
+}

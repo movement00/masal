@@ -204,12 +204,36 @@ class PromptArchitect {
         `- Image ${n}: Previous scene → maintain character look, outfit, and art style continuity`
       );
     }
+    if (options.hasSidekickProfile) {
+      let n = 2;
+      if (options.hasOutfitProfile || options.hasCharacterProfile) n++;
+      if (options.hasPreviousScene) n++;
+      parts.push(
+        `- Image ${n}: Sidekick turntable → reproduce this EXACT same sidekick (species, fur color + pattern, fur length, eye color, body shape) in every scene with ZERO variation`
+      );
+    }
 
     // Gozluk/aksesuar — TEK SATIR, etkili
     parts.push(
       "- RULE: If the child has glasses or accessories in the photo, they MUST appear in this scene"
     );
     parts.push("");
+
+    // ── TEXT RENDERING RULES (CRITICAL — prevent literal brand/English leak) ──
+    parts.push("═══ TEXT RENDERING RULES (CRITICAL) ═══");
+    parts.push("- Any English words in this prompt are ART DIRECTION for the AI — NEVER render them as visible text in the scene (no English words on walls, no posters with English titles, no signs in English, no labels in English).");
+    parts.push("- Brand names like \"Shrek\", \"Ice Age\", \"Pixar\", \"Disney\", \"DreamWorks\" are STYLE REFERENCES ONLY — NEVER render them as literal posters, logos, products, or signs in the scene.");
+    parts.push("- Only Turkish text may appear as visible text in the scene, and only when the prompt explicitly asks for a specific Turkish sign/label.");
+    parts.push("");
+
+    // ── SIDEKICK CONSISTENCY (pet, yan karakter) ──
+    const sidekick = this.bookData.sidekick;
+    if (sidekick && sidekick.description) {
+      const sName = sidekick.name || "the sidekick";
+      parts.push(`SIDEKICK CONSISTENCY (CRITICAL): This book features ${sName}, described as: "${sidekick.description}".`);
+      parts.push(`${sName} MUST look IDENTICAL in every scene — same species${sidekick.species ? ` (${sidekick.species})` : ""}, same fur/feather/skin color and pattern, same coat length, same eye color, same body proportions. Do NOT vary species, do NOT change colors or markings between scenes. If a sidekick turntable reference image is provided, reproduce it exactly.`);
+      parts.push("");
+    }
 
     // ── Sabit kiyafet (sadece tanimli kitaplarda) ──
     const outfit = this.bookData.outfit;
@@ -279,6 +303,13 @@ class PromptArchitect {
       "FRAMING: FULL BLEED illustration — fill the ENTIRE frame edge to edge with the scene. " +
         "Character and action should be centered and prominent. Use the complete canvas, no empty borders or blank areas at bottom."
     );
+    parts.push("");
+    parts.push("═══ COMPOSITION RULES (CRITICAL) ═══");
+    parts.push("SINGLE COHESIVE SCENE — ONE unified full-bleed illustration filling the entire frame edge to edge.");
+    parts.push("NO GRIDS. NO PANELS. NO SPLIT-SCREEN. NO COMIC STRIP LAYOUT. NOT a 2×2 grid. NOT a 3-panel layout. NOT a diptych.");
+    parts.push("If the scene implies multiple moments in time, render as LAYERED DEPTH (foreground/midground/background) — NOT as separate panels.");
+    parts.push("Example WRONG: [frame A: child running] [frame B: child jumping] [frame C: child landing]. If you render as 3 frames, the image is REJECTED.");
+    parts.push("Example RIGHT: Single cinematic moment captured with depth cues showing the full action through pose, expression, and environment.");
 
     return parts.join("\n");
   }
@@ -411,6 +442,33 @@ class PromptArchitect {
     const hasOutfitIds = scenes.some((s) => s.outfitId);
     if (!hasOutfitIds) return [];
 
+    // Meslek profile lookup (for "pro-uniform" → chef/doctor/etc uniform)
+    let meslekProfile = null;
+    if (this.bookData.meslekKey) {
+      try {
+        const { getMeslekProfileByKey } = require("../rules/meslek-profiles");
+        meslekProfile = getMeslekProfileByKey(this.bookData.meslekKey);
+      } catch (_) { /* noop if module not available */ }
+    }
+
+    // Label → human-readable outfit description (used when scene.prompt doesn't
+    // contain an explicit "wearing …" clause). Prevents the outfit-grid generator
+    // from receiving raw labels like "pro-uniform" which Gemini otherwise
+    // interprets as a generic astronaut/pilot jumpsuit.
+    const labelToDescription = (id) => {
+      const key = String(id).toLowerCase();
+      if (key === "pro-uniform" && meslekProfile?.uniformEN) {
+        return meslekProfile.uniformEN;
+      }
+      if (key === "pajamas") {
+        return "soft cotton pajamas, cozy home evening wear, age-appropriate and comfortable";
+      }
+      if (key === "casual" || key === "default") {
+        return "age-appropriate casual everyday clothes (t-shirt and pants), soft warm colors";
+      }
+      return null;
+    };
+
     // outfitId'ye gore grupla
     const groups = new Map();
     for (const scene of scenes) {
@@ -418,8 +476,9 @@ class PromptArchitect {
       if (!id) continue;
 
       if (!groups.has(id)) {
-        // Ilk sahnenin prompt'undan kiyafet tarifini cikart
-        const desc = this.extractSceneOutfit(scene.prompt) || id;
+        // Priority: scene.prompt "wearing …" clause → label lookup → raw id (last resort)
+        const extracted = this.extractSceneOutfit(scene.prompt);
+        const desc = extracted || labelToDescription(id) || id;
         groups.set(id, {
           outfitId: id,
           description: desc,
@@ -561,6 +620,44 @@ class PromptArchitect {
     );
 
     return parts.join("\n");
+  }
+
+  /**
+   * Sidekick / pet turntable profili prompt'u uretir.
+   * Book.json'da `sidekick: { name, species, description }` varsa cagrilir.
+   * Cikti: 4-pose turntable referans goerseli (front, 3/4, side, playful pose).
+   * Her sahneye ref olarak gecer — kedinin/kopegin/tavsanin sahneler arasinda
+   * tur/renk/desen degismesini engeller.
+   *
+   * @param {object} sidekick - { name, species?, description }
+   * @returns {string}
+   */
+  buildSidekickProfilePrompt(sidekick) {
+    const name = sidekick.name || "the sidekick";
+    const species = sidekick.species || "pet";
+    const description = sidekick.description || species;
+
+    return `Character reference turntable for "${name}" — the animal/pet sidekick companion of a children's storybook.
+
+SPECIES: ${species}
+APPEARANCE: ${description}
+
+LAYOUT: Single image split into a clean 2×2 grid (4 cells), each cell showing the SAME sidekick from a different angle against a soft cream/off-white background with thin warm-gray dividing lines:
+- TOP-LEFT: FRONT view — facing camera, full body, standing naturally
+- TOP-RIGHT: 3/4 SIDE view — turned slightly to show the body's profile
+- BOTTOM-LEFT: FULL SIDE view (left or right) — showing full body profile
+- BOTTOM-RIGHT: PLAYFUL POSE — natural expressive action (curled up, reaching, pouncing, looking up) while still clearly showing face and body
+
+CONSISTENCY RULES (CRITICAL):
+- Each of the 4 cells shows the SAME animal — identical species, identical fur/feather/skin color AND pattern AND length, identical eye color, identical body proportions.
+- If the description says "gray long-haired cat" then ALL four cells show a gray long-haired cat — not one gray, one tabby, one orange.
+- If specific markings are mentioned (stripes, white paws, heart-shaped patch, floppy ear), they appear identically in every cell.
+
+ART STYLE: Pixar/DreamWorks 3D CGI, cute-but-realistic proportions, subsurface scattering on fur, individual hair/feather detail, warm soft rim light. No human characters in the frame.
+
+PURPOSE: This is the MASTER SIDEKICK REFERENCE SHEET. Every scene illustration in the book will use this image to keep ${name} visually consistent. If ${name} looks different from this sheet in any scene, that scene is WRONG.
+
+NO text labels, NO grid cell borders beyond thin dividers, NO scene props. Only the sidekick in 4 clean poses.`;
   }
 
   // ══════════════════════════════════════════════════════════════
